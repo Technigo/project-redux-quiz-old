@@ -109,9 +109,8 @@ const answer = useSelector((state) => state.quiz.answers.find((a) => (
 1. Fork this repo
 2. Clone this repo into your projects folder on your computer
 3. Open up VS Code
-4. In the terminal, run `cd code` to change into the code folder
-5. Install the dependencies needed for react by running `npm install`
-6. Run the react development server by running `npm start`
+4. Install the dependencies needed for react by running `npm install`
+5. Run the react development server by running `npm start`
 
 ## Requirements 🧪
 
