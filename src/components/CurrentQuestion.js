@@ -10,7 +10,7 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h1>Question: {question.question}</h1>
+      <h1>Question: {question.questionText}</h1>
     </div>
   )
 }
