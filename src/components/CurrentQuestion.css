@@ -1,0 +1,26 @@
+section {
+  display: flex;
+  justify-content: center;
+}
+
+.questions {
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: rgba(255, 0, 221, 0.495);
+}
+
+h1.questionHeader {
+  color: rgb(250, 248, 248);
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.questionText {
+  width: 800px;
+  color: rgb(252, 247, 247);
+  font-size: 30px;
+}

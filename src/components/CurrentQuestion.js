@@ -1,7 +1,10 @@
+/* eslint-disable arrow-parens */
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Options } from './Options';
-import { NextButton } from './NextButton';
+import { NextButtonContainer } from './NextButtonContainer';
+import './CurrentQuestion.css';
+import { Counter } from './Counter';
 
 export const CurrentQuestion = () => {
   const question = useSelector(
@@ -13,10 +16,18 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <section>
-      <h1>Question: {question.questionText}</h1>
-      <Options />
-      <NextButton />
-    </section>
+    <>
+      <section>
+        <div>
+          <div className="questions">
+            <h1 className="questionHeader">Question:</h1>
+            <h2 className="questionText">{question.questionText}</h2>
+          </div>
+          <Options />
+          <NextButtonContainer />
+          <Counter />
+        </div>
+      </section>
+    </>
   );
 };

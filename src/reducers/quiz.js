@@ -17,7 +17,7 @@ const questions = [
   },
   {
     id: 3,
-    questionText: 'what is Balis most widely grown agricultural crop?',
+    questionText: 'What is Balis most widely grown agricultural crop?',
     options: ['Rice', 'Banana', 'Coconut', 'Coffe'],
     correctAnswerIndex: 0
   },
