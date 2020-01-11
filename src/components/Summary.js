@@ -10,7 +10,7 @@ export const Summary = () => {
   return (
     <>
       <div>
-        <h2>Your answer</h2>
+        <h2>Your answers</h2>
       </div>
       <div className="answerContainer">
         {sumOfAnswers.map(answer => (

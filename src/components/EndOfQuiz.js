@@ -14,10 +14,8 @@ export const EndOfQuiz = () => {
         <header>
           <Header />
         </header>
-
         <div>
           {!quizOver && <CurrentQuestion />}
-
           {quizOver && <Summary />}
         </div>
       </div>

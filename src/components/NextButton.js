@@ -3,8 +3,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { Summary } from './Summary';
-import './NextButton.css';
+import './CurrentQuestion.css';
 
 export const NextButton = () => {
   const questions = useSelector(state => state.quiz.questions);

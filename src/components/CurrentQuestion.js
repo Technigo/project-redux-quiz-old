@@ -20,7 +20,6 @@ export const CurrentQuestion = () => {
       <section>
         <div>
           <div className="questions">
-            <h1 className="questionHeader">Question:</h1>
             <h2 className="questionText">{question.questionText}</h2>
           </div>
           <Options />

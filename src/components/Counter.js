@@ -1,5 +1,7 @@
+/* eslint-disable arrow-parens */
 import { useSelector } from 'react-redux';
 import React from 'react';
+import './CurrentQuestion.css';
 
 export const Counter = () => {
   const numberOfQuestions = useSelector(state => state.quiz.questions.length);
@@ -7,8 +9,10 @@ export const Counter = () => {
   const questionsLeft = numberOfQuestions - currentQuestion;
 
   return (
-    <div>
-      {questionsLeft}/{numberOfQuestions}
+    <div className="counterContainer">
+      <div className="counter">
+        {questionsLeft}/{numberOfQuestions}
+      </div>
     </div>
   );
 };

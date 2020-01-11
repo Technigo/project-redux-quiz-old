@@ -22,3 +22,11 @@ button {
   height: 40px;
   margin: 5px;
 }
+
+button:active {
+  background: darkcyan;
+}
+
+button:focus {
+  background: darkcyan;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
