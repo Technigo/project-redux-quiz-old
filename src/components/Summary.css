@@ -1,9 +1,11 @@
-.scoreContainer {
+h2 {
   display: flex;
   justify-content: center;
-  font-size: 40px;
-  color: rgb(241, 18, 141);
-  text-shadow: 2px 2px 4px grey;
+}
+
+p {
+  margin: 30px;
+  font-weight: bold;
 }
 
 .answerContainer {
@@ -20,12 +22,17 @@
   margin: 10px;
 }
 
-p {
-  margin: 30px;
-  font-weight: bold;
+.scoreContainer {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: rgb(241, 18, 141);
+  text-shadow: 2px 2px 4px grey;
 }
 
-h2 {
+/*Styling for RestartButton on Summary page*/
+
+.restartBtnContainer {
   display: flex;
   justify-content: center;
 }

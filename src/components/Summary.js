@@ -2,10 +2,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Summary.css';
+import { RestartButton } from './RestartButton';
 
 export const Summary = () => {
   const sumOfAnswers = useSelector(state => state.quiz.answers);
   const correctAnswers = sumOfAnswers.filter(answer => answer.isCorrect);
+  const quizOver = useSelector(state => state.quiz.quizOver);
 
   return (
     <>
@@ -27,6 +29,7 @@ export const Summary = () => {
       <h4 className="scoreContainer">
         Your score is: {correctAnswers.length}/{sumOfAnswers.length}
       </h4>
+      {quizOver && <RestartButton />}
     </>
   );
 };

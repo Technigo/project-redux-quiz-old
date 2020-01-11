@@ -9,7 +9,6 @@ section {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  /*background: rgba(255, 0, 221, 0.495);*/
 }
 
 h1.questionHeader {
@@ -26,6 +25,8 @@ h1.questionHeader {
   text-shadow: 2px 2px 4px grey;
 }
 
+/* Styling for the counter*/
+
 .counterContainer {
   display: flex;
   justify-content: flex-end;
@@ -41,6 +42,8 @@ h1.questionHeader {
   height: 50px;
   border-radius: 100%;
 }
+
+/* Styling for next button */
 
 .nextBtn {
   margin-top: 100px;
