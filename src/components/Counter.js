@@ -10,9 +10,7 @@ export const Counter = () => {
 
   return (
     <div className="counterContainer">
-      <div className="counter">
-        {questionsLeft}/{numberOfQuestions}
-      </div>
+      <div className="counter">- {questionsLeft - 1} questions left</div>
     </div>
   );
 };

@@ -37,10 +37,7 @@ h1.questionHeader {
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  background-color: blueviolet;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
+  font-weight: bold;
 }
 
 /* Styling for next button */
