@@ -10,6 +10,19 @@ In this repo, we've defined a Redux store and a reducer with a few actions you c
 
 We've connected the redux dots and set up a store from the reducer and passed the store into a Provider in src/App.js. We've also created a starting point for you - a component which selects the current question from the store and renders the question, in src/components/CurrentQuestion.js.
 
+## Planning
+**You have should these questions before you clone the repo:**  
+
+- How are you gonna work in the team? mob, smaller groups or pairs etc.  
+- What is your quiz about?  
+- Which are your (at least) 5 questions and answers? (Remember, multiple choices required)  
+- How are you going to show the progress? i.e 1 / 5, 20%, 4 questions left.  
+- How will the user select the answer? Dropdown, selecting with keyboard commands, buttons, images?  
+- What will the summary screen look like?  
+- What components do you need?  
+- How are you dealing with the styling? CSS or Styled components?  
+- What stretch goals are you aiming for?  
+  
 ## The questions array
 
 You can find the `quiz` store in src/reducers/quiz.js. In it, there's a `questions` array with a couple of placeholder objects for you to get started with. You should replace these questions with your own ones.
