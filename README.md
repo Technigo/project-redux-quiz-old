@@ -13,6 +13,7 @@ We've connected the redux dots and set up a store from the reducer and passed th
 ## Planning
 **You have should these questions before you clone the repo:**  
 
+- Will you used a planning tool (Jamboard, Figma) to plan your design/app structure?
 - How are you gonna work in the team? mob, smaller groups or pairs etc.  
 - What is your quiz about?  
 - Which are your (at least) 5 questions and answers? (Remember, multiple choices required)  
