@@ -11,6 +11,7 @@ export const Timer = () => {
     let timerinterval = null
     if (seconds === 0) {
       dispatch(quiz.actions.setTimer())
+      dispatch(quiz.actions.enableNextButton())
       clearInterval(timerinterval)
     }
     if (timerstart) {
@@ -24,7 +25,6 @@ export const Timer = () => {
   return (
     <>
       <p>{(seconds > 0) ? `Time is ${seconds}` : 'Time is up'}</p>
-      <div id="progressbar" className="progressbar"><div className="inner" /></div>
     </>
   )
 }

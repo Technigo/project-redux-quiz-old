@@ -8,6 +8,7 @@ import { Timer } from '../components/Timer'
 
 export const Quiz = () => {
   const disabled = useSelector((state) => state.quiz.disabled)
+  const seconds = useSelector((state) => state.quiz.seconds)
   const optionDisabled = useSelector((state) => state.quiz.optionDisabled)
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questions = useSelector((state) => state.quiz.questions.length)
@@ -28,7 +29,7 @@ export const Quiz = () => {
           {options.map((option, optionindex) => {
             return (
               <OptionButton
-                disabled={optionDisabled}
+                disabled={optionDisabled || seconds === 0}
                 onClick={() => {
                   dispatch(quiz.actions.submitAnswer({ questionId: index, answerIndex: optionindex }))
                 }}>

@@ -77,6 +77,9 @@ export const quiz = createSlice({
     },
     countdownSeconds: (state) => {
       state.seconds -= 1
+    },
+    enableNextButton: (state) => {
+      state.disabled = false
     }
   }
 })
