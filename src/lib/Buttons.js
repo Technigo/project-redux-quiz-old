@@ -32,6 +32,10 @@ export const Button = styled.button`
   :hover{
     transform: scale(105%);
   }
+
+  :disabled{
+    background: rgba(246, 188, 0, 0.5);
+  }
 `
 
 export const OptionButton = styled.button`
@@ -42,6 +46,10 @@ export const OptionButton = styled.button`
   color: white;
   cursor: pointer;
   font-size: 30px;
+
+  :disabled{
+    background: rgba(236, 115, 3, 0.5);
+  }
 
   :hover{
     transform: scale(102%);
