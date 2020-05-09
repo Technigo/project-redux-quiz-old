@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StartButton = styled.button`
+export const BigButton = styled.button`
   all: unset;
   text-transform: uppercase;
   text-align: center;
@@ -18,7 +18,7 @@ export const StartButton = styled.button`
   }
 `
 
-export const Button = styled.button`
+export const SmallButton = styled.button`
   all: unset;
   text-transform: uppercase;
   text-align: center;

@@ -49,3 +49,20 @@ export const PicText = styled.p`
   font-size: 14px;
   color: black;
 `
+export const ResultText = styled.h3`
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: black;
+`
+
+export const Quote = styled.p`
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 2;
+`

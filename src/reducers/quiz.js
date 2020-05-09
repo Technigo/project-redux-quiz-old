@@ -13,6 +13,13 @@ const questions = [
   { id: 9, questionText: "If you run into this girl, it's very likely to occur...", options: ['an accident', 'a catastrophe', 'a disaster', 'a tragedy'], image: './images/disaster.png', correctAnswerIndex: 2 }
 ]
 
+const results = [
+  { text: "Don't know if you are a true master of if you cheated.", image: './images/futurama.png' },
+  { text: '"Oh a meme? You mean an image or video that is spread widely on the internet, often altered by internet users for humorous effect?"', image: './images/pooh.png' },
+  { text: 'When you thought you aced the quiz but still failed it.', image: './images/kanye.png' },
+  { text: 'Have you been living under a rock?', image: './images/confused.png' }
+]
+
 const initialState = {
   questions,
   answers: [],
@@ -21,7 +28,9 @@ const initialState = {
   disabled: true,
   optionDisabled: false,
   seconds: 10,
-  timerStart: true
+  timerStart: true,
+  showSummary: false,
+  results
 }
 
 export const quiz = createSlice({
@@ -34,6 +43,10 @@ export const quiz = createSlice({
       state.optionDisabled = true
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
+
+      if (state.currentQuestionIndex + 1 === state.questions.length) {
+        state.showSummary = true
+      }
 
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
@@ -52,15 +65,11 @@ export const quiz = createSlice({
       })
     },
     goToNextQuestion: (state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizStart = true
-      } else {
-        state.disabled = true
-        state.optionDisabled = false
-        state.seconds = 10
-        state.timerStart = true
-        state.currentQuestionIndex += 1
-      }
+      state.disabled = true
+      state.optionDisabled = false
+      state.seconds = 10
+      state.timerStart = true
+      state.currentQuestionIndex += 1
     },
     goToPreviousQuestion: (state) => {
       state.disabled = true

@@ -1,23 +1,23 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { PicContainer, Picture, StartQuizContainer, HeaderContainer } from '../lib/Containers'
+import { PicContainer, Picture, Container, HeaderContainer } from '../lib/Containers'
 import { Header, PicText, SubHeader } from '../lib/Text'
-import { StartButton } from '../lib/Buttons'
+import { BigButton } from '../lib/Buttons'
 
 export const HomePage = () => {
   return (
     <>
-      <StartQuizContainer>
+      <Container>
         <HeaderContainer>
           <Header>What do you meme?</Header>
           <SubHeader>How much do you really know about memes?</SubHeader>
-          <NavLink to="/quiz"><StartButton>start</StartButton></NavLink>
+          <NavLink to="/quiz"><BigButton>start</BigButton></NavLink>
         </HeaderContainer>
         <PicContainer>
           <Picture src="./images/grumpy.png" alt="" />
           <PicText>&quot;Oh great, now I&apos;m part of the design...&quot;</PicText>
         </PicContainer>
-      </StartQuizContainer>
+      </Container>
     </>
   )
 }

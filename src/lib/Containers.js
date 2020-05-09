@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
-// START QUIZ
+// HOMEPAGE
 
-export const StartQuizContainer = styled.section`
+export const Container = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
@@ -59,4 +59,13 @@ export const OptionsContainer = styled.ul`
 export const QuestionPicture = styled.img`
   object-fit: cover;
   margin-right: 10px;
+`
+
+// SUMMARY
+
+export const SummaryPicture = styled.img`
+  height: 220px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 `

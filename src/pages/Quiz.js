@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
-import { OptionButton, Button } from '../lib/Buttons'
+import { OptionButton, SmallButton } from '../lib/Buttons'
 import { ButtonContainer, QuestionContainer, QuestionPicture, OptionsContainer } from '../lib/Containers'
 import { Timer } from '../components/Timer'
 
@@ -13,8 +13,9 @@ export const Quiz = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questions = useSelector((state) => state.quiz.questions.length)
   const index = (useSelector((state) => state.quiz.questions)).indexOf(question)
-  const dispatch = useDispatch()
   const { options } = question
+  const showSummary = useSelector((state) => state.quiz.showSummary)
+  const dispatch = useDispatch()
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -40,9 +41,15 @@ export const Quiz = () => {
         </OptionsContainer>
       </QuestionContainer>
       <ButtonContainer>
-        <Button disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</Button>
-        <Button disabled={disabled} onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</Button>
-        <NavLink to="/"><Button onClick={() => dispatch(quiz.actions.restart())}>Restart</Button></NavLink>
+        {showSummary
+          ? <NavLink to="/summary"><SmallButton>Summary</SmallButton></NavLink>
+          :
+          <>
+            <SmallButton disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</SmallButton>
+            <SmallButton disabled={disabled} onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</SmallButton>
+            <NavLink to="/"><SmallButton onClick={() => dispatch(quiz.actions.restart())}>Restart</SmallButton></NavLink>
+          </>
+        }
       </ButtonContainer>
       <Timer duration={10} />
     </>
