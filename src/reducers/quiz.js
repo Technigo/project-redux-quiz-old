@@ -59,14 +59,10 @@ export const quiz = createSlice({
       }
     },
     goToPreviousQuestion: (state) => {
-      if (state.currentQuestionIndex === 0) {
-        state.quizStart = false
-      } else {
-        state.disabled = true
-        state.optionDisabled = false
-        state.seconds = 10
-        state.currentQuestionIndex -= 1
-      }
+      state.disabled = true
+      state.optionDisabled = false
+      state.seconds = 10
+      state.currentQuestionIndex -= 1
     },
     restart: () => {
       return initialState

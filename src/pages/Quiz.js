@@ -39,7 +39,7 @@ export const Quiz = () => {
         </OptionsContainer>
       </QuestionContainer>
       <ButtonContainer>
-        <Button onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</Button>
+        <Button disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</Button>
         <Button disabled={disabled} onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</Button>
         <NavLink to="/"><Button onClick={() => dispatch(quiz.actions.restart())}>Restart</Button></NavLink>
       </ButtonContainer>
