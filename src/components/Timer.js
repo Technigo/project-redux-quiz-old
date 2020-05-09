@@ -1,22 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { quiz } from '../reducers/quiz'
 
-export const Timer = ({ duration }) => {
-  const [seconds, setSeconds] = useState(duration)
-  const [timerstart, setTimerStart] = useState(true)
+export const Timer = () => {
+  const timerstart = useSelector((state) => state.quiz.timerStart)
+  const seconds = useSelector((state) => state.quiz.seconds)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     let timerinterval = null
     if (seconds === 0) {
-      setTimerStart(false)
+      dispatch(quiz.actions.setTimer())
       clearInterval(timerinterval)
     }
     if (timerstart) {
       timerinterval = setInterval(() => {
-        setSeconds(seconds - 1)
+        dispatch(quiz.actions.countdownSeconds())
       }, 1000)
     }
     return () => clearInterval(timerinterval)
-  }, [timerstart, seconds])
+  }, [timerstart, seconds, dispatch])
 
   return (
     <>

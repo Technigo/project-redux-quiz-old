@@ -19,7 +19,9 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   disabled: true,
-  optionDisabled: false
+  optionDisabled: false,
+  seconds: 10,
+  timerStart: true
 }
 
 export const quiz = createSlice({
@@ -27,6 +29,7 @@ export const quiz = createSlice({
   initialState,
   reducers: {
     submitAnswer: (state, action) => {
+      state.timerStart = false
       state.disabled = false
       state.optionDisabled = true
       const { questionId, answerIndex } = action.payload
@@ -55,18 +58,25 @@ export const quiz = createSlice({
         state.disabled = true
         state.optionDisabled = false
         state.seconds = 10
+        state.timerStart = true
         state.currentQuestionIndex += 1
       }
     },
     goToPreviousQuestion: (state) => {
       state.disabled = true
       state.optionDisabled = false
+      state.timerStart = true
       state.seconds = 10
       state.currentQuestionIndex -= 1
     },
     restart: () => {
       return initialState
+    },
+    setTimer: (state) => {
+      state.timerStart = false
+    },
+    countdownSeconds: (state) => {
+      state.seconds -= 1
     }
-
   }
 })
