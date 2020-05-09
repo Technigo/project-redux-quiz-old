@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
-import { Timer } from './Timer'
-import { Button, OptionButton } from '../lib/Buttons'
-import { QuestionContainer, QuestionPicture, OptionsContainer, ButtonContainer } from '../lib/Containers'
+import { QuestionContainer, QuestionPicture, OptionsContainer } from '../lib/Containers'
+import { OptionButton } from '../lib/Buttons'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuesionIndex])
@@ -31,12 +30,6 @@ export const CurrentQuestion = () => {
           })}
         </OptionsContainer>
       </QuestionContainer>
-      <ButtonContainer>
-        <Button onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</Button>
-        <Button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</Button>
-        <Button onClick={() => dispatch(quiz.actions.restart())}>Restart</Button>
-      </ButtonContainer>
-      <Timer duration={10} />
     </>
   )
 }
