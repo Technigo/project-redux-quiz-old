@@ -10,12 +10,12 @@ export const HomePage = () => {
       <StartQuizContainer>
         <HeaderContainer>
           <Header>What do you meme?</Header>
-          <SubHeader>How much do you know about memes?</SubHeader>
+          <SubHeader>How much do you really know about memes?</SubHeader>
           <NavLink to="/quiz"><StartButton>start</StartButton></NavLink>
         </HeaderContainer>
         <PicContainer>
           <Picture src="./images/grumpy.png" alt="" />
-          <PicText>Oh great, Now I&apos;m part of the design...</PicText>
+          <PicText>&quot;Oh great, now I&apos;m part of the design...&quot;</PicText>
         </PicContainer>
       </StartQuizContainer>
     </>

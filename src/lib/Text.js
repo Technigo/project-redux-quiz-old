@@ -34,8 +34,9 @@ export const Header = styled.h1`
 
 export const SubHeader = styled.h2`
   font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
   color: black;
-  text-transform: uppercase;
   margin-top: -50px;
 `
 
@@ -43,7 +44,8 @@ export const PicText = styled.p`
   position: absolute;
   bottom: 0;
   left: 250px;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
   font-size: 14px;
   color: black;
-  text-transform: uppercase;
 `

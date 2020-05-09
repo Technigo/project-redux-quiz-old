@@ -5,12 +5,12 @@ export const StartButton = styled.button`
   text-transform: uppercase;
   text-align: center;
   width: 200px;
-  height: 50px;
-  border-radius: 20px;
+  height: 70px;
+  border-radius: 10px;
   background: rgb(246, 188, 0);
   color: white;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 38px;
   z-index: 2;
 
   :hover{
@@ -35,6 +35,11 @@ export const Button = styled.button`
 
   :disabled{
     background: rgba(246, 188, 0, 0.5);
+    cursor: auto;
+
+    :hover{
+      transform: none;
+    }
   }
 `
 
@@ -49,6 +54,11 @@ export const OptionButton = styled.button`
 
   :disabled{
     background: rgba(236, 115, 3, 0.5);
+    cursor: auto;
+
+    :hover{
+      transform: none;
+    }
   }
 
   :hover{

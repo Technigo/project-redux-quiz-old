@@ -83,7 +83,7 @@ const answer = useSelector((state) => state.quiz.answers.find((a) => (
 
 * After selecting an answer, highlight the correct answer if they chose incorrectly
 * A countdown timer to answer the question - if the user doesn't answer in time, they get the question wrong
-* A timer for how long it took to complete the quiz
 * Use images related to the question
+* Enabled and disabled buttons for different conditions
 
 
