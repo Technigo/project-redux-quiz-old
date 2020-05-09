@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { QuizStart } from './QuizStart'
 
-export const Container = styled.main`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;

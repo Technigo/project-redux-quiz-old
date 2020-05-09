@@ -24,13 +24,13 @@ export const Button = styled.button`
   text-align: center;
   width: 100px;
   height: 30px;
-  border-radius: 10px;
+  border-radius: 5px;
   background: rgb(246, 188, 0);
   color: white;
   cursor: pointer;
 
   :hover{
-    transform: scale(125%);
+    transform: scale(105%);
   }
 `
 
@@ -38,15 +38,12 @@ export const OptionButton = styled.button`
   all: unset;
   text-transform: uppercase;
   text-align: center;
-  border-radius: 10px;
   background: rgb(236, 115, 3);
   color: white;
   cursor: pointer;
-  height: 100px;
-  min-width: 100%;
   font-size: 30px;
 
-  li{
-    width: 100%;
+  :hover{
+    transform: scale(102%);
   }
 `

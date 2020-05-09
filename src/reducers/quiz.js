@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, questionText: 'Who is this?', options: ['Good guy greg', 'Ermahgerd', 'Bad Luck Brian', 'Star Wars Kid'], correctAnswerIndex: 2 },
-  { id: 2, questionText: "This meme's background is usually blue and...", options: ['Orange', 'Red', 'Green', 'Yellow'], correctAnswerIndex: 1 },
-  { id: 3, questionText: 'This cat is...', options: ['Angry', 'Annoyed', 'Grumpy', 'Crabby'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'In this meme, Kermit is drinking...', options: ['Lemonade', 'Whiskey', 'Tea', 'Coffee'], correctAnswerIndex: 2 },
-  { id: 5, questionText: "This meme's captions typically end with the word...", options: ['Forever', 'Everywhere', 'Nobody', 'Beyond'], correctAnswerIndex: 1 },
-  { id: 6, questionText: 'What is the original name of this meme?', options: ['Fist bumb baby', 'Success kid', 'I hate sandcastles', 'Ima gonna mess you up'], correctAnswerIndex: 2 },
-  { id: 7, questionText: 'This fist belongs to...', options: ['Arthur', 'Bart Simpson', 'Bob the builder', 'Binky Barnes'], correctAnswerIndex: 2 },
-  { id: 8, questionText: 'Finish the meme: Is this...', options: ['alive', 'a pigeon', 'an insect', 'stupid'], correctAnswerIndex: 1 },
-  { id: 9, questionText: 'Can you name this meme?', options: ['SRSLY?', 'O RLY?', 'O WLY?', 'BOY!'], correctAnswerIndex: 1 },
-  { id: 10, questionText: "If you run into this girl, it's very likely to occur...", options: ['an accident', 'a catastrophe', 'a disaster', 'a tragedy'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Who is this?', options: ['Good guy greg', 'Ermahgerd', 'Bad Luck Brian', 'Star Wars Kid'], image: './images/badluck.png', correctAnswerIndex: 2 },
+  { id: 2, questionText: "This meme's background is usually blue and...", options: ['Orange', 'Red', 'Green', 'Yellow'], image: './images/pingvin.png', correctAnswerIndex: 1 },
+  { id: 3, questionText: 'This cat is...', options: ['Angry', 'Annoyed', 'Grumpy', 'Crabby'], image: './images/cat.png', correctAnswerIndex: 2 },
+  { id: 4, questionText: 'In this meme, Kermit is drinking...', options: ['Lemonade', 'Whiskey', 'Tea', 'Coffee'], image: './images/kermit.png', correctAnswerIndex: 2 },
+  { id: 5, questionText: "This meme's captions typically end with the word...", options: ['Forever', 'Everywhere', 'Nobody', 'Beyond'], image: './images/toystory.png', correctAnswerIndex: 1 },
+  { id: 6, questionText: 'What is the original name of this meme?', options: ['Fist bumb kid', 'Success kid', 'I hate sandcastles', 'Gonna mess you up'], image: './images/kid.png', correctAnswerIndex: 2 },
+  { id: 7, questionText: 'This fist belongs to...', options: ['Arthur', 'Bart Simpson', 'Bob the builder', 'Binky Barnes'], image: './images/fist.png', correctAnswerIndex: 2 },
+  { id: 8, questionText: 'Finish the meme: Is this...', options: ['alive', 'a pigeon', 'an insect', 'stupid'], image: './images/pigeon.png', correctAnswerIndex: 1 },
+  { id: 9, questionText: 'Can you name this meme?', options: ['SRSLY?', 'O RLY?', 'O WLY?', 'BOY!'], image: './images/owl.png', correctAnswerIndex: 1 },
+  { id: 10, questionText: "If you run into this girl, it's very likely to occur...", options: ['an accident', 'a catastrophe', 'a disaster', 'a tragedy'], image: './images/disaster.png', correctAnswerIndex: 2 }
 ]
 
 const initialState = {

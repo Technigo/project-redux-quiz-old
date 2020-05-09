@@ -1,29 +1,4 @@
-# Redux quiz group project
 
-During the two days you're in Stockholm, your team's task is to build a quiz game using Redux. It's a multiple choice quiz, so you'll need to define your own questions and a bunch of possible answers to present to your users.
-
-It's up to your team to decide what your quiz should be about! You could come up with something fun and whacky like the [Buzzfeed quizes](https://www.buzzfeed.com/quizzes), or you could test your user's general knowledge with [trivia questions](https://www.opinionstage.com/blog/trivia-questions/).
-
-## Getting started
-
-In this repo, we've defined a Redux store and a reducer with a few actions you can use to control your quiz. You need to work as a team to use the state to render the quiz questions one at a time. When rendering a question, you should render the question itself and also the possible answers. The user then clicks an answer and you should show if it is correct or not before letting the user continue on to the next question.
-
-We've connected the redux dots and set up a store from the reducer and passed the store into a Provider in src/App.js. We've also created a starting point for you - a component which selects the current question from the store and renders the question, in src/components/CurrentQuestion.js.
-
-## Planning
-**You have should these questions before you clone the repo:**  
-
-- Will you used a planning tool (Jamboard, Figma) to plan your design/app structure?
-- How are you gonna work in the team? mob, smaller groups or pairs etc.  
-- What is your quiz about?  
-- Which are your (at least) 5 questions and answers? (Remember, multiple choices required)  
-- How are you going to show the progress? i.e 1 / 5, 20%, 4 questions left.  
-- How will the user select the answer? Dropdown, selecting with keyboard commands, buttons, images?  
-- What will the summary screen look like?  
-- What components do you need?  
-- How are you dealing with the styling? CSS or Styled components?  
-- What stretch goals are you aiming for?  
-  
 ## The questions array
 
 You can find the `quiz` store in src/reducers/quiz.js. In it, there's a `questions` array with a couple of placeholder objects for you to get started with. You should replace these questions with your own ones.
@@ -113,43 +88,23 @@ const answer = useSelector((state) => state.quiz.answers.find((a) => (
 )))
 ```
 
-## What you will learn 🧠
+## What I learned 🧠
 
-* How to interact with your store using selectors or by dispatching actions
-* Practice working in a development team
-
-## How to get started 💪🏼
-
-1. Fork this repo
-2. Clone this repo into your projects folder on your computer
-3. Open up VS Code
-4. Install the dependencies needed for react by running `npm install`
-5. Run the react development server by running `npm start`
+* How to interact with a global state using selectors and by dispatching actions
 
 ## Requirements 🧪
 
-* Your quiz should have at least 5 questions.
-* When the user selects an answer, it should show if they were correct or not.
-* While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'.
-* When the user has answered all the questions, they should get to a summary screen which tells them how many the got correct or incorrect.
-* You should challenge yourself to make use of redux by making small components which interact with the store - don't just go for one big component.
-* Don't forget CSS! Your quiz should be well styled.
-* Code follows Technigo’s code guidelines.
+* The quiz should have at least 5 questions
+* When the user selects an answer, it should show if they were correct or not
+* While going through the quiz, it should show which question you're on, or how many left 
+* When the user has answered all the questions, they should get to a summary screen which tells them how many the got correct or incorrect
+* Having small components which interact with the store
 
-## Hints and tips to complete the project 🤓
+## Stretch Goals I reached 🏃‍♂
 
-This project is quite open ended, so you should make sure to start with a sketch and make sure your team is aligned on how things should work and who's going to do what. It's up to you to decide how you want to work in your teams; whether you break up into smaller groups and work on specific features, or whether you work as a big mob.
-
-Whatever you do, remember to break tasks up into small chunks and don't take on too many things at once!
-
-## Stretch Goals 🏃‍♂
-
-Since this is such an open task, **it's up to you to decide how far to push your app!** Here's some ideas for potential features you could add:
-
-* After selecting an answer, highlight the correct answer if they chose incorrectly.
-* A countdown timer to answer the question - if the user doesn't answer in time, they get the question wrong.
+* After selecting an answer, highlight the correct answer if they chose incorrectly
+* A countdown timer to answer the question - if the user doesn't answer in time, they get the question wrong
 * A timer for how long it took to complete the quiz
-* Give a score for correct answers and deduct points for incorrect answers. If the user goes below a certain score, they lose!
-* Use images or videos to make your questions and answers look richer
+* Use images related to the question
 
 

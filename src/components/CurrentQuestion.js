@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import { Button, OptionButton } from '../lib/Buttons'
-import { ButtonContainer, OptionsContainer } from '../lib/Containers'
+import { CurrentQuestionContainer, ButtonContainer, OptionsContainer, QuestionContainer, QuestionPicture } from '../lib/Containers'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuesionIndex])
@@ -16,17 +16,19 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      <h1>Question: {question.questionText}</h1>
-      <img src={question.picture} alt="" />
-      <OptionsContainer>
-        {options.map((option, index) => {
-          return (
-            <OptionButton onClick={() => dispatch(quiz.actions.submitAnswer())}>
-              <li key={index}>{option}</li>
-            </OptionButton>
-          )
-        })}
-      </OptionsContainer>
+      <h1>{question.questionText}</h1>
+      <QuestionContainer>
+        <QuestionPicture src={question.image} alt="" />
+        <OptionsContainer>
+          {options.map((option, index) => {
+            return (
+              <OptionButton onClick={() => dispatch(quiz.actions.submitAnswer())}>
+                <li key={index}>{option}</li>
+              </OptionButton>
+            )
+          })}
+        </OptionsContainer>
+      </QuestionContainer>
       <ButtonContainer>
         <Button onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</Button>
         <Button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</Button>

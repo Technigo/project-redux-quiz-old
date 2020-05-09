@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+// START QUIZ
+
 export const StartQuizContainer = styled.section`
   width: 100%;
   height: 100%;
@@ -31,16 +33,30 @@ export const PicContainer = styled.section`
   bottom: 0;
 `
 
+// CURRENT QUESTION
+
 export const ButtonContainer = styled.section`
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   width: 330px;
 `
 
+export const QuestionContainer = styled.section`
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  height: 65%;
+`
+
 export const OptionsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 5px;
-  width: 80%;
-  margin: 20px 0;
+  grid-gap: 10px;
+  width: 700px;
+`
+
+export const QuestionPicture = styled.img`
+  object-fit: cover;
+  margin-right: 10px;
 `
