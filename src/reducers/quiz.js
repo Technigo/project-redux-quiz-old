@@ -17,14 +17,17 @@ const initialState = {
   questions,
   answers: [],
   currentQuesionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  quizStart: false
 }
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
+    beginQuiz: (state) => {
+      state.quizStart = true
+    },
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -60,29 +63,20 @@ export const quiz = createSlice({
         isCorrect: question.correctAnswerIndex === answerIndex
       })
     },
-
-    /**
-     * Use this action to progress the quiz to the next question. If there's
-     * no more questions (the user was on the final question), set `quizOver`
-     * to `true`.
-     *
-     * This action does not require a payload.
-     */
     goToNextQuestion: (state) => {
       if (state.currentQuesionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizStart = true
       } else {
         state.currentQuesionIndex += 1
       }
     },
-
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
+    goToPreviousQuestion: (state) => {
+      if (state.currentQuesionIndex === 0) {
+        state.quizStart = false
+      } else {
+        state.currentQuesionIndex -= 1
+      }
+    },
     restart: () => {
       return initialState
     }

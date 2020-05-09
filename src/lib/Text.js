@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.h1`
-  font-size: 75px;
+  font-size: 120px;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -30,14 +30,19 @@ export const Header = styled.h1`
     2px -1px 0 #000,
     -2px -1px 0 #000;
   -webkit-font-smoothing: antialiased;
-  position: absolute;
-  top: 5rem;
-  `
+`
 
-export const Paragraph = styled.pattern`
+export const SubHeader = styled.h2`
+  font-size: 28px;
+  color: black;
+  text-transform: uppercase;
+  margin-top: -50px;
+`
+
+export const PicText = styled.p`
   position: absolute;
   bottom: 0;
-  left: 2rem;
+  left: 250px;
   font-size: 14px;
   color: black;
   text-transform: uppercase;

@@ -1,17 +1,6 @@
 import styled from 'styled-components'
 
-export const AppContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  height: 400px;
-  background: white;
-  border: solid 2px black;
-`
-
-export const HomePageContainer = styled.div`
+export const StartQuizContainer = styled.section`
   width: 100%;
   height: 100%;
   display: flex;
@@ -21,13 +10,37 @@ export const HomePageContainer = styled.div`
   position: relative;
 `
 
+export const HeaderContainer = styled.div`
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+`
+
 export const Picture = styled.img`
-  height: 170px;
+  height: 220px;
 `
 
 export const PicContainer = styled.section`
-  height: 170px;
+  height: 220px;
   width: 100%;
   position: absolute;
   bottom: 0;
+`
+
+export const ButtonContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  width: 330px;
+`
+
+export const OptionsContainer = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 5px;
+  width: 80%;
+  margin: 20px 0;
 `
