@@ -1,18 +1,5 @@
 
-## The questions array
 
-You can find the `quiz` store in src/reducers/quiz.js. In it, there's a `questions` array with a couple of placeholder objects for you to get started with. You should replace these questions with your own ones.
-
-You're free to restructure things if you want to, but it's recommended to stick with the current setup where each question has:
-
-* `id` - a unique identifier for the question. You can just keep incrementing numbers for these.
-* `question` - this is the text which is displayed to the user for this question. The example questions use a string of text, but you could turn this into an object if you wanted to include images or other data.
-* `options` - an array of possible answers to the question which your user will choose from. Again, in the placeholder questions, we've used strings, but you can switch them to objects if you want to add additional details such as image urls.
-* `correctAnswerIndex` - the index of the item in the `options` array which is the correct answer.
-
-## Redux actions
-
-In the `quiz` store, there's a few actions made for you:
 
 ### `submitAnswer`
 
@@ -73,14 +60,6 @@ dispatch(quiz.actions.restart())
 </p>
 
 ## Selecting from the store
-
-Use the redux dev tools in chrome to inspect the store and see what it contains. You can write your own selectors to fetch whatever you need from the store. We've given you one example in src/components/CurrentQuestion.js to get you started with fetching the current question from the store:
-
-```js
-const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuesionIndex])
-```
-
-You can build up these selector functions to use other information you have to fetch specific things. For example, you could fetch the answer to a question:
 
 ```js
 const answer = useSelector((state) => state.quiz.answers.find((a) => (

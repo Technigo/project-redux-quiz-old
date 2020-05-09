@@ -67,6 +67,7 @@ export const quiz = createSlice({
       if (state.currentQuesionIndex + 1 === state.questions.length) {
         state.quizStart = true
       } else {
+        state.seconds = 10
         state.currentQuesionIndex += 1
       }
     },
@@ -74,6 +75,7 @@ export const quiz = createSlice({
       if (state.currentQuesionIndex === 0) {
         state.quizStart = false
       } else {
+        state.seconds = 10
         state.currentQuesionIndex -= 1
       }
     },

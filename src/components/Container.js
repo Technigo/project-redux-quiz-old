@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { QuizStart } from './QuizStart'
 
-const Container = styled.main`
+const Content = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +19,14 @@ const Container = styled.main`
   }
 `
 
-export const AppContainer = () => {
-  const begin = useSelector((state) => state.quiz.quizStart)
-  console.log(begin)
+export const Container = () => {
+  const start = useSelector((state) => state.quiz.quizStart)
 
   return (
     <>
-      <Container>
-        {begin ? <CurrentQuestion /> : <QuizStart />}
-      </Container>
+      <Content>
+        {start ? <CurrentQuestion /> : <QuizStart />}
+      </Content>
     </>
   )
 }
