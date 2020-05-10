@@ -16,8 +16,7 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer })
 
-const AppContainer = styled.main`
-  margin: auto;
+const AppContainer = styled(Div100vh)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,21 +28,15 @@ const AppContainer = styled.main`
 
   @media (max-width: 800px) {
     width: 90vw;
-    height: 80vh;
+    height: 80vrh;
   }
 
   @media (max-width: 500px) {
-    height: 90vh;
+    height: 90vrh;
     padding: 0 20px;
     justify-content: space-evenly;
   }
 `
-
-const divStyle = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-};
 
 export const App = () => {
   return (
@@ -51,19 +44,17 @@ export const App = () => {
       <GlobalFonts />
       <BrowserRouter>
         <Switch>
-          <Div100vh style={divStyle}>
-            <AppContainer>
-              <Route path="/" exact>
-                <HomePage />
-              </Route>
-              <Route path="/quiz" exact>
-                <Quiz />
-              </Route>
-              <Route path="/summary" exact>
-                <Summary />
-              </Route>
-            </AppContainer>
-          </Div100vh>
+          <AppContainer>
+            <Route path="/" exact>
+              <HomePage />
+            </Route>
+            <Route path="/quiz" exact>
+              <Quiz />
+            </Route>
+            <Route path="/summary" exact>
+              <Summary />
+            </Route>
+          </AppContainer>
         </Switch>
       </BrowserRouter>
     </Provider>
