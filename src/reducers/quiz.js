@@ -7,7 +7,7 @@ const questions = [
   { id: 3, questionText: 'In this meme, Kermit is drinking...', options: ['Lemonade', 'Whiskey', 'Tea', 'Coffee'], image: './images/kermit.png', correctAnswerIndex: 2 },
   { id: 4, questionText: "This meme's captions typically end with the word...", options: ['Forever', 'Everywhere', 'Nobody', 'Beyond'], image: './images/toystory.png', correctAnswerIndex: 1 },
   { id: 5, questionText: 'What is the original name of this meme?', options: ['Fist bumb kid', 'Success kid', 'I hate sandcastles', 'Gonna mess you up'], image: './images/kid.png', correctAnswerIndex: 2 },
-  { id: 6, questionText: 'This fist belongs to...', options: ['Arthur', 'Bart Simpson', 'Bob the builder', 'Binky Barnes'], image: './images/fist.png', correctAnswerIndex: 2 },
+  { id: 6, questionText: 'This fist belongs to...', options: ['Arthur', 'Bart Simpson', 'Bob the builder', 'Binky Barnes'], image: './images/fist.png', correctAnswerIndex: 0 },
   { id: 7, questionText: 'Finish the meme: Is this...', options: ['alive', 'a pigeon', 'an insect', 'stupid'], image: './images/pigeon.png', correctAnswerIndex: 1 },
   { id: 8, questionText: 'Can you name this meme?', options: ['SRSLY?', 'O RLY?', 'O WLY?', 'BOY!'], image: './images/owl.png', correctAnswerIndex: 1 },
   { id: 9, questionText: "If you run into this girl, it's very likely to occur...", options: ['an accident', 'a catastrophe', 'a disaster', 'a tragedy'], image: './images/disaster.png', correctAnswerIndex: 2 }
@@ -17,20 +17,27 @@ const results = [
   { text: "Don't know if you are a true master of if you cheated.", image: './images/futurama.png' },
   { text: '"Oh a meme? You mean an image or video that is spread widely on the internet, often altered by internet users for humorous effect?"', image: './images/pooh.png' },
   { text: 'When you thought you aced the quiz but still failed it.', image: './images/kanye.png' },
-  { text: 'Have you been living under a rock?', image: './images/confused.png' }
+  { text: 'Have you been living under a rock?', image: './images/rock.png' }
 ]
+
+const summary = {
+  numberOfQuestions: null,
+  correctAnswers: null,
+  quote: null,
+  image: null
+}
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false,
   disabled: true,
   optionDisabled: false,
   seconds: 10,
   timerStart: true,
   showSummary: false,
-  results
+  results,
+  summary
 }
 
 export const quiz = createSlice({
@@ -89,6 +96,31 @@ export const quiz = createSlice({
     },
     enableNextButton: (state) => {
       state.disabled = false
+    },
+    setSummary: (state, action) => {
+      const { numberOfQuestions, correctAnswers } = action.payload
+      state.summary.numberOfQuestions = numberOfQuestions
+      state.summary.correctAnswers = correctAnswers
+
+      if (correctAnswers > 8) {
+        state.summary.quote = state.results[0].text
+        state.summary.image = state.results[0].image
+      }
+
+      if (correctAnswers > 6) {
+        state.summary.quote = state.results[1].text
+        state.summary.image = state.results[1].image
+      }
+
+      if (correctAnswers > 4) {
+        state.summary.quote = state.results[2].text
+        state.summary.image = state.results[2].image
+      }
+
+      if (correctAnswers <= 4) {
+        state.summary.quote = state.results[3].text
+        state.summary.image = state.results[3].image
+      }
     }
   }
 })

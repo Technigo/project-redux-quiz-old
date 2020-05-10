@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
-import { OptionButton, SmallButton } from '../lib/Buttons'
+import { OptionButton, SmallButton, BigButton } from '../lib/Buttons'
 import { ButtonContainer, QuestionContainer, QuestionPicture, OptionsContainer } from '../lib/Containers'
 import { Timer } from '../components/Timer'
 
@@ -14,7 +14,11 @@ export const Quiz = () => {
   const questions = useSelector((state) => state.quiz.questions.length)
   const index = (useSelector((state) => state.quiz.questions)).indexOf(question)
   const { options } = question
-  const showSummary = useSelector((state) => state.quiz.showSummary)
+
+  const showSummaryButton = useSelector((state) => state.quiz.showSummary)
+  const answers = useSelector((state) => (state.quiz.answers))
+  const correct = (answers.filter((answer) => answer.isCorrect)).length
+
   const dispatch = useDispatch()
 
   if (!question) {
@@ -40,18 +44,18 @@ export const Quiz = () => {
           })}
         </OptionsContainer>
       </QuestionContainer>
-      <ButtonContainer>
-        {showSummary
-          ? <NavLink to="/summary"><SmallButton>Summary</SmallButton></NavLink>
-          :
-          <>
+      {showSummaryButton
+        ? <NavLink to="/summary"><BigButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>Summary</BigButton></NavLink>
+        :
+        <>
+          <ButtonContainer>
             <SmallButton disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</SmallButton>
             <SmallButton disabled={disabled} onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</SmallButton>
             <NavLink to="/"><SmallButton onClick={() => dispatch(quiz.actions.restart())}>Restart</SmallButton></NavLink>
-          </>
-        }
-      </ButtonContainer>
-      <Timer duration={10} />
+          </ButtonContainer>
+          <Timer />
+        </>
+      }
     </>
   )
 }
