@@ -84,6 +84,7 @@ export const Question = styled.h1`
 
   span {
     text-transform: uppercase;
+    color: rgb(246, 188, 0);
   }
 
   @media (max-width: 800px) {
