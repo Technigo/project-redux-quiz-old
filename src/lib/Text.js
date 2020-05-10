@@ -34,6 +34,11 @@ export const Header = styled.h1`
   @media (max-width: 800px) {
     font-size: 75px;
   }
+
+  @media (max-width: 500px) {
+    font-size: 34px;
+    text-align: center;
+  }
 `
 
 export const SubHeader = styled.h2`
@@ -42,6 +47,12 @@ export const SubHeader = styled.h2`
   font-weight: lighter;
   color: black;
   margin-top: -50px;
+
+  @media (max-width: 500px) {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+  }
 `
 
 export const Question = styled.h1`
@@ -61,6 +72,12 @@ export const Question = styled.h1`
       font-size: 28px;
     }
   }
+
+  @media (max-width: 500px) {
+    span{
+      font-size: 17px;
+    }
+  }
 `
 
 export const PicText = styled.p`
@@ -71,12 +88,24 @@ export const PicText = styled.p`
   font-style: italic;
   font-size: 14px;
   color: black;
+
+  @media (max-width: 500px) {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
 `
 export const ResultText = styled.h3`
   font-size: 28px;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   color: black;
+
+  @media (max-width: 500px) {
+    font-size: 17px;
+    text-align: center;
+  }
 `
 
 export const Quote = styled.p`
@@ -88,4 +117,9 @@ export const Quote = styled.p`
   text-align: center;
   padding: 0 20px;
   z-index: 2;
+
+  @media (max-width: 500px) {
+    font-size: 17px;
+    text-align: center;
+  }
 `

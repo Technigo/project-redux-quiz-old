@@ -17,6 +17,13 @@ export const BigButton = styled.button`
   :hover{
     transform: scale(125%);
   }
+
+  @media (max-width: 500px) {
+    font-size: 17px;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+  }
 `
 
 export const SmallButton = styled.button`
@@ -41,6 +48,14 @@ export const SmallButton = styled.button`
     :hover{
       transform: none;
     }
+  }
+
+  @media (max-width: 500px) {
+    width: 90px;
+    font-size: 14px;
+    height: 25px;
+    border-radius: 7px;
+    border: solid 2px white;
   }
 `
 
@@ -71,6 +86,11 @@ export const OptionButton = styled.button`
 
   @media (max-width: 800px) {
     font-size: 24px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 17px;
+    border-radius: 7px;
   }
 `
 

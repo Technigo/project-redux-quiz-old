@@ -10,6 +10,11 @@ const Text = styled.p`
   -o-transition: color .3s ease;
   transition: color .3s ease;
   margin-top: 5px;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+    font-style: italic;
+  }
 `
 
 export const TimeIsUp = ({ color }) => {

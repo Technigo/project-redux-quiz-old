@@ -8,6 +8,10 @@ const Container = styled.div`
   background-color: rgb(240, 240, 245);
   border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 const Inner = styled.div`

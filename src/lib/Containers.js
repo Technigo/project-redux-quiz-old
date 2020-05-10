@@ -20,10 +20,20 @@ export const HeaderContainer = styled.div`
   align-items: center;
   position: relative;
   z-index: 2;
+
+  @media (max-width: 500px) {
+    height: 100%;
+    justify-content: center;
+    position: static;
+  }
 `
 
 export const Picture = styled.img`
   height: 220px;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `
 
 export const PicContainer = styled.section`
@@ -45,6 +55,11 @@ export const QuestionContainer = styled.section`
     flex-direction: column;
     height: 75%;
   }
+
+  @media (max-width: 500px) {
+    height: 65%;
+    padding: 20px 0 0 0;
+  }
 `
 
 export const ButtonContainer = styled.section`
@@ -52,11 +67,16 @@ export const ButtonContainer = styled.section`
   display: flex;
   justify-content: space-between;
   width: 330px;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    justify-content: space-evenly;
+  }
 `
 
 export const OptionsContainer = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
   width: 700px;
 
@@ -78,6 +98,11 @@ export const QuestionPicture = styled.img`
     max-height: 65%;
     margin-right: 0;
   }
+
+  @media (max-width: 500px) {
+    max-height: 60%;
+    border-radius: 7px;
+  }
 `
 
 // SUMMARY
@@ -87,4 +112,8 @@ export const SummaryPicture = styled.img`
   position: absolute;
   bottom: 20px;
   left: 20px;
+
+  @media (max-width: 500px) {
+    left: auto;
+  }
 `

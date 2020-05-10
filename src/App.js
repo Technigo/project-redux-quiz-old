@@ -29,6 +29,13 @@ const AppContainer = styled.main`
     width: 90vw;
     height: 80vh;
   }
+
+  @media (max-width: 500px) {
+    height: 90vh;
+    padding: 0 20px;
+  }
+
+
 `
 
 export const App = () => {
