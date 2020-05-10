@@ -13,7 +13,7 @@ export const Container = styled.section`
 `
 
 export const HeaderContainer = styled.div`
-  height: 300px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -30,6 +30,7 @@ export const HeaderContainer = styled.div`
 
 export const Picture = styled.img`
   height: 220px;
+  border-radius: 10px;
 
   @media (max-width: 500px) {
     width: 100%;
@@ -78,11 +79,10 @@ export const OptionsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
-  width: 700px;
+  width: 100%;
 
   @media (max-width: 800px) {
     margin-top: 10px;
-    width: 100%;
     height: 100%;
     grid-gap: 5px;
   }
@@ -93,10 +93,12 @@ export const QuestionPicture = styled.img`
   margin-right: 10px;
   border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
+  max-width: 40%;
 
   @media (max-width: 800px) {
     max-height: 65%;
     margin-right: 0;
+    max-width: unset;
   }
 
   @media (max-width: 500px) {

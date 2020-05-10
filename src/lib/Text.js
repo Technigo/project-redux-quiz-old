@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.h1`
-  font-size: 120px;
+  font-size: 100px;
   color: white;
   font-weight: bold;
   text-transform: uppercase;
@@ -46,7 +46,7 @@ export const SubHeader = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   color: black;
-  margin-top: -50px;
+  margin-top: -30px;
 
   @media (max-width: 500px) {
     margin-top: 10px;

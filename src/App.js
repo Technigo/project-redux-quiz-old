@@ -1,4 +1,5 @@
 import React from 'react'
+import GlobalFonts from './fonts/fonts'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
@@ -22,7 +23,6 @@ const AppContainer = styled.main`
   width: 1108px;
   height: 500px;
   background: white;
-  border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
 
   @media (max-width: 800px) {
@@ -41,6 +41,7 @@ const AppContainer = styled.main`
 export const App = () => {
   return (
     <Provider store={store}>
+      <GlobalFonts />
       <BrowserRouter>
         <Switch>
           <AppContainer>
