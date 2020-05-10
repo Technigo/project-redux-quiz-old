@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import { OptionButton, SmallButton, SummaryButton } from '../lib/Buttons'
 import { Question } from '../lib/Text'
-import { ButtonContainer, QuestionContainer, QuestionPicture, OptionsContainer } from '../lib/Containers'
+import { ButtonContainer, QuestionContainer, QuestionPicture, OptionsContainer, NavContainer } from '../lib/Containers'
 import { Timer } from '../components/Timer'
 import { TimeIsUp } from '../components/TimeIsUp'
 
@@ -46,10 +46,14 @@ export const Quiz = () => {
           })}
         </OptionsContainer>
       </QuestionContainer>
-      {showSummaryButton
-        ? <NavLink to="/summary"><SummaryButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>See results</SummaryButton></NavLink>
-        :
-        <>
+      {showSummaryButton &&
+        <NavContainer>
+          <NavLink to="/summary">
+            <SummaryButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>See results</SummaryButton>
+          </NavLink>
+        </NavContainer>}
+      {!showSummaryButton &&
+        <NavContainer>
           {(deciseconds > 0) ? <TimeIsUp color="rgba(0, 0, 0, 0)" /> : <TimeIsUp color="rgba(0, 0, 0, 1)" />}
           <ButtonContainer>
             <SmallButton disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</SmallButton>
@@ -57,8 +61,7 @@ export const Quiz = () => {
             <NavLink to="/"><SmallButton onClick={() => dispatch(quiz.actions.restart())}>Restart</SmallButton></NavLink>
           </ButtonContainer>
           <Timer />
-        </>
-      }
+        </NavContainer>}
     </>
   )
 }

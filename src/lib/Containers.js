@@ -47,19 +47,32 @@ export const PicContainer = styled.section`
 // CURRENT QUESTION
 
 export const QuestionContainer = styled.section`
-  padding: 20px 20px 0 20px;
+  padding: 0 20px 0 20px;
   display: flex;
   width: 100%;
-  height: 65%;
+  height: 55%;
 
   @media (max-width: 800px) {
     flex-direction: column;
-    height: 75%;
+    min-height: 65%;
   }
 
   @media (max-width: 500px) {
-    height: 65%;
     padding: 20px 0 0 0;
+    max-height: 70%;
+  }
+`
+
+export const NavContainer = styled.section`
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 500px) {
+   min-height: 20%;
+   justify-content: center;
   }
 `
 
@@ -80,11 +93,16 @@ export const OptionsContainer = styled.ul`
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 10px;
   width: 100%;
+  max-height: max-content;
 
   @media (max-width: 800px) {
     margin-top: 10px;
-    height: 100%;
     grid-gap: 5px;
+    height:
+  }
+
+  @media (max-width: 500px) {
+    height: 60%;
   }
 `
 
@@ -96,13 +114,13 @@ export const QuestionPicture = styled.img`
   max-width: 40%;
 
   @media (max-width: 800px) {
-    max-height: 65%;
+    height: 55%;
     margin-right: 0;
     max-width: unset;
   }
 
   @media (max-width: 500px) {
-    max-height: 60%;
+    height: 40%;
     border-radius: 7px;
   }
 `

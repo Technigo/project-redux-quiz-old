@@ -86,11 +86,13 @@ export const OptionButton = styled.button`
 
   @media (max-width: 800px) {
     font-size: 24px;
+    padding: 2rem 0;
   }
 
   @media (max-width: 500px) {
     font-size: 17px;
     border-radius: 7px;
+    padding: 15px;
   }
 `
 

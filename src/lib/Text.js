@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
+// HOMEPAGE
+
 export const Header = styled.h1`
+  text-align: center;
   font-size: 100px;
   color: white;
   font-weight: bold;
@@ -37,7 +40,6 @@ export const Header = styled.h1`
 
   @media (max-width: 500px) {
     font-size: 34px;
-    text-align: center;
   }
 `
 
@@ -52,31 +54,6 @@ export const SubHeader = styled.h2`
     margin-top: 10px;
     text-align: center;
     font-size: 17px;
-  }
-`
-
-export const Question = styled.h1`
-  color: rgb(246, 188, 0);
-  margin-top: 20px;
-  text-align: center;
-
-  span {
-    text-transform: uppercase;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 35px;
-
-    span{
-      display: block;
-      font-size: 28px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    span{
-      font-size: 17px;
-    }
   }
 `
 
@@ -96,24 +73,44 @@ export const PicText = styled.p`
     text-align: center;
   }
 `
-export const ResultText = styled.h3`
-  font-size: 28px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  color: black;
+
+// CURRENT QUESTION
+
+export const Question = styled.h1`
+  width: 100%;
+  color: rgb(246, 188, 0);
+  padding: 20px 0;
+  text-align: center;
+
+  span {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+
+    span{
+      display: block;
+      font-size: 28px;
+    }
+  }
 
   @media (max-width: 500px) {
     font-size: 17px;
-    text-align: center;
+
+    span{
+      font-size: 17px;
+    }
   }
 `
 
-export const Quote = styled.p`
+// SUMMARY TEXT
+
+export const SummaryText = styled.p`
   font-size: 28px;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   color: black;
-  margin-bottom: 20px;
   text-align: center;
   padding: 0 20px;
   z-index: 2;

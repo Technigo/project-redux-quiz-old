@@ -33,9 +33,8 @@ const AppContainer = styled.main`
   @media (max-width: 500px) {
     height: 90vh;
     padding: 0 20px;
+    justify-content: space-evenly;
   }
-
-
 `
 
 export const App = () => {
