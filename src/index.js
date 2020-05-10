@@ -5,8 +5,7 @@ import { App } from './App'
 
 ReactDOM.render(<App />, document.getElementById('root'))
 
-const resetHeight = () => {
-  document.body.style.height = `${window.innerHeight}px`
-}
-window.addEventListener('resize', resetHeight)
-resetHeight()
+window.addEventListener('resize', () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
