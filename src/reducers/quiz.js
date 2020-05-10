@@ -103,21 +103,19 @@ export const quiz = createSlice({
       state.summary.correctAnswers = correctAnswers
 
       if (correctAnswers > 8) {
+        console.log('eight')
         state.summary.quote = state.results[0].text
         state.summary.image = state.results[0].image
-      }
-
-      if (correctAnswers > 6) {
+      } else if (correctAnswers > 6) {
+        console.log('six')
         state.summary.quote = state.results[1].text
         state.summary.image = state.results[1].image
-      }
-
-      if (correctAnswers > 4) {
+      } else if (correctAnswers > 4) {
+        console.log('four')
         state.summary.quote = state.results[2].text
         state.summary.image = state.results[2].image
-      }
-
-      if (correctAnswers <= 4) {
+      } else {
+        console.log('under four')
         state.summary.quote = state.results[3].text
         state.summary.image = state.results[3].image
       }
