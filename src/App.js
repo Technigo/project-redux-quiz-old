@@ -1,5 +1,4 @@
 import React from 'react'
-import GlobalFonts from './fonts/fonts'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
@@ -8,6 +7,8 @@ import { HomePage } from 'pages/HomePage'
 import { Quiz } from 'pages/Quiz'
 import { Summary } from 'pages/Summary'
 import styled from 'styled-components'
+import Div100vh from 'react-div-100vh'
+import GlobalFonts from './fonts/fonts'
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -16,6 +17,7 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 const AppContainer = styled.main`
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,23 +39,31 @@ const AppContainer = styled.main`
   }
 `
 
+const divStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
+};
+
 export const App = () => {
   return (
     <Provider store={store}>
       <GlobalFonts />
       <BrowserRouter>
         <Switch>
-          <AppContainer>
-            <Route path="/" exact>
-              <HomePage />
-            </Route>
-            <Route path="/quiz" exact>
-              <Quiz />
-            </Route>
-            <Route path="/summary" exact>
-              <Summary />
-            </Route>
-          </AppContainer>
+          <Div100vh style={divStyle}>
+            <AppContainer>
+              <Route path="/" exact>
+                <HomePage />
+              </Route>
+              <Route path="/quiz" exact>
+                <Quiz />
+              </Route>
+              <Route path="/summary" exact>
+                <Summary />
+              </Route>
+            </AppContainer>
+          </Div100vh>
         </Switch>
       </BrowserRouter>
     </Provider>
