@@ -40,6 +40,15 @@ export const SubHeader = styled.h2`
   margin-top: -50px;
 `
 
+export const Question = styled.h1`
+  color: rgb(246, 188, 0);
+  margin-top: 20px;
+
+  span {
+    text-transform: uppercase;
+  }
+`
+
 export const PicText = styled.p`
   position: absolute;
   bottom: 0;

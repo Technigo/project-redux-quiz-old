@@ -2,13 +2,15 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
-import { OptionButton, SmallButton, BigButton } from '../lib/Buttons'
+import { OptionButton, SmallButton, SummaryButton } from '../lib/Buttons'
+import { Question } from '../lib/Text'
 import { ButtonContainer, QuestionContainer, QuestionPicture, OptionsContainer } from '../lib/Containers'
 import { Timer } from '../components/Timer'
+import { TimeIsUp } from '../components/TimeIsUp'
 
 export const Quiz = () => {
   const disabled = useSelector((state) => state.quiz.disabled)
-  const seconds = useSelector((state) => state.quiz.seconds)
+  const deciseconds = useSelector((state) => state.quiz.deciseconds)
   const optionDisabled = useSelector((state) => state.quiz.optionDisabled)
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questions = useSelector((state) => state.quiz.questions.length)
@@ -22,19 +24,19 @@ export const Quiz = () => {
   const dispatch = useDispatch()
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+    return <Question>Oh no! I could not find the current question!</Question>
   }
 
   return (
     <>
-      <h1>Question {(index + 1)} of {questions}: {question.questionText}</h1>
+      <Question>Question {(index + 1)} of {questions}: <span>{question.questionText}</span></Question>
       <QuestionContainer>
         <QuestionPicture src={question.image} alt="" />
         <OptionsContainer>
           {options.map((option, optionindex) => {
             return (
               <OptionButton
-                disabled={optionDisabled || seconds === 0}
+                disabled={optionDisabled || deciseconds === 0}
                 onClick={() => {
                   dispatch(quiz.actions.submitAnswer({ questionId: index, answerIndex: optionindex }))
                 }}>
@@ -45,9 +47,10 @@ export const Quiz = () => {
         </OptionsContainer>
       </QuestionContainer>
       {showSummaryButton
-        ? <NavLink to="/summary"><BigButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>Summary</BigButton></NavLink>
+        ? <NavLink to="/summary"><SummaryButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>Summary</SummaryButton></NavLink>
         :
         <>
+          {(deciseconds > 0) ? <TimeIsUp color="rgba(0, 0, 0, 0)" /> : <TimeIsUp color="rgba(0, 0, 0, 1)" />}
           <ButtonContainer>
             <SmallButton disabled={(index === 0)} onClick={() => dispatch(quiz.actions.goToPreviousQuestion())}>Back</SmallButton>
             <SmallButton disabled={disabled} onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next</SmallButton>

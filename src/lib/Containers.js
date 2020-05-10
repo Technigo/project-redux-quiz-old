@@ -36,14 +36,14 @@ export const PicContainer = styled.section`
 // CURRENT QUESTION
 
 export const ButtonContainer = styled.section`
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
   width: 330px;
 `
 
 export const QuestionContainer = styled.section`
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   display: flex;
   width: 100%;
   height: 65%;
@@ -59,6 +59,8 @@ export const OptionsContainer = styled.ul`
 export const QuestionPicture = styled.img`
   object-fit: cover;
   margin-right: 10px;
+  border: solid 2px rgb(240, 240, 245);
+  border-radius: 10px;
 `
 
 // SUMMARY

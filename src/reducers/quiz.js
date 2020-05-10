@@ -14,9 +14,9 @@ const questions = [
 ]
 
 const results = [
-  { text: "Don't know if you are a true master of if you cheated.", image: './images/futurama.png' },
-  { text: '"Oh a meme? You mean an image or video that is spread widely on the internet, often altered by internet users for humorous effect?"', image: './images/pooh.png' },
-  { text: 'When you thought you aced the quiz but still failed it.', image: './images/kanye.png' },
+  { text: 'Not sure if the quiz was too easy of if you cheated.', image: './images/futurama.png' },
+  { text: '"When you aced the quiz and your confidence skyrockets."', image: './images/pooh.png' },
+  { text: '"When you thought you aced the quiz but still failed it."', image: './images/kanye.png' },
   { text: 'Have you been living under a rock?', image: './images/rock.png' }
 ]
 
@@ -33,7 +33,7 @@ const initialState = {
   currentQuestionIndex: 0,
   disabled: true,
   optionDisabled: false,
-  seconds: 10,
+  deciseconds: 100,
   timerStart: true,
   showSummary: false,
   results,
@@ -74,7 +74,7 @@ export const quiz = createSlice({
     goToNextQuestion: (state) => {
       state.disabled = true
       state.optionDisabled = false
-      state.seconds = 10
+      state.deciseconds = 100
       state.timerStart = true
       state.currentQuestionIndex += 1
     },
@@ -82,7 +82,7 @@ export const quiz = createSlice({
       state.disabled = true
       state.optionDisabled = false
       state.timerStart = true
-      state.seconds = 10
+      state.deciseconds = 100
       state.currentQuestionIndex -= 1
     },
     restart: () => {
@@ -91,8 +91,8 @@ export const quiz = createSlice({
     setTimer: (state) => {
       state.timerStart = false
     },
-    countdownSeconds: (state) => {
-      state.seconds -= 1
+    countdowndeciseconds: (state) => {
+      state.deciseconds -= 1
     },
     enableNextButton: (state) => {
       state.disabled = false

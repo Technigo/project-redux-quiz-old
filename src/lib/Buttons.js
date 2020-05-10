@@ -6,6 +6,7 @@ export const BigButton = styled.button`
   text-align: center;
   width: 200px;
   height: 70px;
+  border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
   background: rgb(246, 188, 0);
   color: white;
@@ -23,8 +24,8 @@ export const SmallButton = styled.button`
   text-transform: uppercase;
   text-align: center;
   width: 100px;
-  height: 30px;
-  border-radius: 5px;
+  height: 35px;
+  border-radius: 10px;
   background: rgb(246, 188, 0);
   color: white;
   cursor: pointer;
@@ -45,12 +46,15 @@ export const SmallButton = styled.button`
 
 export const OptionButton = styled.button`
   all: unset;
+  border: solid 2px rgb(240, 240, 245);
+  border-radius: 10px;
   text-transform: uppercase;
   text-align: center;
   background: rgb(236, 115, 3);
   color: white;
   cursor: pointer;
   font-size: 30px;
+  transition: background ease 0.5s;
 
   :disabled{
     background: rgba(236, 115, 3, 0.5);
@@ -63,5 +67,22 @@ export const OptionButton = styled.button`
 
   :hover{
     transform: scale(102%);
+  }
+`
+
+export const SummaryButton = styled.button`
+  all: unset;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100px;
+  height: 35px;
+  border-radius: 10px;
+  background: rgb(246, 188, 0);
+  color: white;
+  cursor: pointer;
+  margin-top: 20px;
+
+  :hover{
+    transform: scale(105%);
   }
 `
