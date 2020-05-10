@@ -13,16 +13,15 @@ https://rautellin-quiz.netlify.app/
 ## Requirements 🧪
 
 * The quiz should have at least 5 questions
-* When the user selects an answer, it should show if they were correct or not
 * While going through the quiz, it should show which question you're on, or how many left 
-* When the user has answered all the questions, they should get to a summary screen which tells them how many the got correct or incorrect
+* When the user has answered all the questions, they should get to a summary screen which tells them how many the got correct
 * Having small components which interact with the store
 
 ## Stretch Goals I reached 🏃‍♂
 
-* After selecting an answer, highlight the correct answer if they chose incorrectly
-* A countdown timer to answer the question - if the user doesn't answer in time, they get the question wrong
-* Use images related to the question
+* Used a countdown timer - if the user doesn't answer in time, they get the question wrong
+* Used images related to the question
 * Enabled and disabled buttons for different conditions
+* Added a progressbar
 
 

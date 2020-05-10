@@ -68,6 +68,10 @@ export const OptionButton = styled.button`
   :hover{
     transform: scale(102%);
   }
+
+  @media (max-width: 800px) {
+    font-size: 24px;
+  }
 `
 
 export const SummaryButton = styled.button`
@@ -84,5 +88,10 @@ export const SummaryButton = styled.button`
 
   :hover{
     transform: scale(105%);
+  }
+
+  @media (max-width: 800px) {
+    height: 45px;
+    margin: 35px 0;
   }
 `

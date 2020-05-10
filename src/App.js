@@ -25,8 +25,9 @@ const AppContainer = styled.main`
   border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
 
-  @media (max-width: 500px) {
-    width: 100vw;
+  @media (max-width: 800px) {
+    width: 90vw;
+    height: 80vh;
   }
 `
 

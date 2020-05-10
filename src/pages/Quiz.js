@@ -47,7 +47,7 @@ export const Quiz = () => {
         </OptionsContainer>
       </QuestionContainer>
       {showSummaryButton
-        ? <NavLink to="/summary"><SummaryButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>Summary</SummaryButton></NavLink>
+        ? <NavLink to="/summary"><SummaryButton onClick={() => dispatch(quiz.actions.setSummary({ numberOfQuestions: questions, correctAnswers: correct }))}>See results</SummaryButton></NavLink>
         :
         <>
           {(deciseconds > 0) ? <TimeIsUp color="rgba(0, 0, 0, 0)" /> : <TimeIsUp color="rgba(0, 0, 0, 1)" />}

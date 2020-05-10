@@ -35,6 +35,18 @@ export const PicContainer = styled.section`
 
 // CURRENT QUESTION
 
+export const QuestionContainer = styled.section`
+  padding: 20px 20px 0 20px;
+  display: flex;
+  width: 100%;
+  height: 65%;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    height: 75%;
+  }
+`
+
 export const ButtonContainer = styled.section`
   margin-top: 5px;
   display: flex;
@@ -42,18 +54,18 @@ export const ButtonContainer = styled.section`
   width: 330px;
 `
 
-export const QuestionContainer = styled.section`
-  padding: 20px 20px 0 20px;
-  display: flex;
-  width: 100%;
-  height: 65%;
-`
-
 export const OptionsContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 10px;
   width: 700px;
+
+  @media (max-width: 800px) {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+    grid-gap: 5px;
+  }
 `
 
 export const QuestionPicture = styled.img`
@@ -61,6 +73,11 @@ export const QuestionPicture = styled.img`
   margin-right: 10px;
   border: solid 2px rgb(240, 240, 245);
   border-radius: 10px;
+
+  @media (max-width: 800px) {
+    max-height: 65%;
+    margin-right: 0;
+  }
 `
 
 // SUMMARY

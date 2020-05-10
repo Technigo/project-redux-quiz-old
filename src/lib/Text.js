@@ -30,6 +30,10 @@ export const Header = styled.h1`
     2px -1px 0 #000,
     -2px -1px 0 #000;
   -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 800px) {
+    font-size: 75px;
+  }
 `
 
 export const SubHeader = styled.h2`
@@ -43,9 +47,19 @@ export const SubHeader = styled.h2`
 export const Question = styled.h1`
   color: rgb(246, 188, 0);
   margin-top: 20px;
+  text-align: center;
 
   span {
     text-transform: uppercase;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 35px;
+
+    span{
+      display: block;
+      font-size: 28px;
+    }
   }
 `
 
