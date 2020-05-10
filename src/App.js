@@ -32,7 +32,7 @@ const AppContainer = styled(Div100vh)`
   }
 
   @media (max-width: 500px) {
-    height: 90vrh;
+    height: 80vrh;
     padding: 0 20px;
     justify-content: space-evenly;
   }
