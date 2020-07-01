@@ -72,11 +72,15 @@ export const OptionButton = styled.button`
   transition: background ease 0.5s;
 
   :disabled{
-    background: rgba(236, 115, 3, 0.5);
+    background: ${(props) => (props.background ? props.background : 'rgba(236, 115, 3, 0.5)')};
     cursor: auto;
 
     :hover{
       transform: none;
+    }
+
+    &&.correct{
+      background: green;
     }
   }
 

@@ -36,6 +36,7 @@ export const Quiz = () => {
           {options.map((option, optionindex) => {
             return (
               <OptionButton
+                background={(optionindex === question.correctAnswerIndex) ? 'green' : 'red'}
                 disabled={optionDisabled || deciseconds === 0}
                 onClick={() => {
                   dispatch(quiz.actions.submitAnswer({ questionId: index, answerIndex: optionindex }))

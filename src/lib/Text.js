@@ -121,3 +121,18 @@ export const SummaryText = styled.p`
     text-align: center;
   }
 `
+
+export const Text = styled.p`
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: ${(props) => props.color};
+  -webkit-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  transition: color .3s ease;
+
+  @media (max-width: 500px) {
+    font-size: 12px;
+    font-style: italic;
+  }
+`
