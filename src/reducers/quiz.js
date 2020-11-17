@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { CurrentQuestion } from '../components/CurrentQuestion'
 
 // Change these to your own questions!
 const questions = [
