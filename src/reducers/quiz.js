@@ -1,23 +1,61 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+  {
+    id: 1,
+    questionText: '1991 what was the most popular Christmas gift?',
+    options: [
+      'Nintendo Game Boy (no color)',
+      'Sushi sticks',
+      'Boombox',
+      'Coca Cola fridge'
+    ],
+    correctAnswerIndex: 0
+  },
+  {
+    id: 2,
+    questionText:
+      'At what year was the Portable Cassette Player Recorder the Christmas gift of the year?',
+    options: ['1981', '1979', '1975', '1997'],
+    correctAnswerIndex: 2
+  },
+  {
+    id: 3,
+    questionText: 'In 1988 what was the most popular Christmas gift?',
+    options: [
+      'Polly pocket',
+      'Ghostbusters: Proton Pack and Wand',
+      'R2-D2 Toy Box',
+      'Lego airport'
+    ],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 4,
+    questionText: 'Xxxxxxxx?',
+    options: ['1981', '1979', '1975', '1997'],
+    correctAnswerIndex: 2
+  },
+  {
+    id: 5,
+    questionText: 'Yyyyyyy?',
+    options: ['1981', '1979', '1975', '1997'],
+    correctAnswerIndex: 2
+  }
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false
-}
+};
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -34,15 +72,19 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const { questionId, answerIndex } = action.payload;
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -51,7 +93,7 @@ export const quiz = createSlice({
         question,
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
-      })
+      });
     },
 
     /**
@@ -63,9 +105,9 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1;
       }
     },
 
@@ -77,8 +119,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
+      return initialState;
     }
-
   }
-})
+});
