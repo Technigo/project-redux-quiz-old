@@ -26,7 +26,7 @@ export const CurrentQuestion = () => {
   } else {
     return (
       <div>
-        <h1>Question: {question.questionText}</h1>
+        <h1>{question.id}/7 {question.questionText}</h1>
         <button onClick={submitAnswer}>Submit</button>
         <button onClick={nextQuestion}>{question.id < 7 ? "Next question" : "Show result"}</button>
       </div>
