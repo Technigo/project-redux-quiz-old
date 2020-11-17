@@ -95,14 +95,6 @@ const answer = useSelector((state) => state.quiz.answers.find((a) => ( a.questio
 - Practice working in a development team
 ---
 
-## **How to get started 💪🏼**
-1. Fork this repo
-1. Clone this repo into your projects folder on your computer
-1. Open up VS Code
-1. Install the dependencies needed for react by running `npm install`
-1. Run the react development server by running `npm start`
----
-
 ## **Hints and tips to complete the project 🤓**
 This project is quite open-ended, so you should make sure to start with a sketch and make sure your team is aligned on how things should work and who's going to do what. It's up to you to decide how you want to work in your project groups; whether you break up into smaller groups and work on specific features, or whether you work as a big mob.
 
