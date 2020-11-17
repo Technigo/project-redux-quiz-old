@@ -11,14 +11,16 @@ const questions = [
       'Boombox',
       'Coca Cola fridge'
     ],
-    correctAnswerIndex: 0
+    correctAnswerIndex: 0,
+    image: './assets/NirvanaNevermindalbumcover.jpg'
   },
   {
     id: 2,
     questionText:
       'At what year was the Portable Cassette Player Recorder the Christmas gift of the year?',
     options: ['1981', '1979', '1975', '1997'],
-    correctAnswerIndex: 2
+    correctAnswerIndex: 2,
+    image: './assets/Portable-Cassette-Player-Recorder.jpg'
   },
   {
     id: 3,
@@ -29,20 +31,23 @@ const questions = [
       'R2-D2 Toy Box',
       'Lego airport'
     ],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
+    image: './assets/christmas1988.jpg'
   },
   {
     id: 4,
     questionText:
       'What year was Optimus Prime the most popular Christmas present?',
     options: ['1981', '1984', '1987', '1990'],
-    correctAnswerIndex: 2
+    correctAnswerIndex: 1,
+    image: './assets/optimusprime.jpg'
   },
   {
     id: 5,
-    questionText: 'Yyyyyyy?',
-    options: ['1981', '1979', '1975', '1997'],
-    correctAnswerIndex: 2
+    questionText: 'What was the Christmas gift of the year in 1979?',
+    options: ['Monopoly', 'BMX bike', 'The Millennium Falcon', 'The Batmobile'],
+    correctAnswerIndex: 2,
+    image: './assets/christmas1979.jpg'
   }
 ];
 
