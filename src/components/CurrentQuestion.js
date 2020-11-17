@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
 import { Summary } from './Summary';
@@ -6,20 +6,28 @@ import { Summary } from './Summary';
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const quizOver = useSelector((state) => state.quiz.quizOver)
+  const [answer, setAnswer] = useState([]);
+  console.log("answer: " + answer);
+  console.log(question.correctAnswerIndex);
 
   const dispatch = useDispatch();
 
   const submitAnswer = ({ id, index }) => {
+    console.log("I'm here!");
       dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  };
+  }
 
+  if (parseInt(answer) === question.correctAnswerIndex) {
+    console.log("Rätt svar");
+  } else {
+    console.log("Fel svar");
+  }
+  
   const nextQuestion = () => { 
     dispatch(quiz.actions.goToNextQuestion())
   };
 
   const options = question.options;
-
-  const Radiobuttons = ({ answer, setAnswer });
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -33,14 +41,14 @@ export const CurrentQuestion = () => {
         <h1>{question.id}/7</h1>
         <legend>{question.id}. {question.questionText}</legend>
         {options.map((option, index) => (
-          <label htmlFor={question.id} >
+          <label htmlFor={index} >
             <input 
-              id={question.id} 
+              id={index} 
               type="radio" 
-              name={option[index]} 
-              value={question.id}
+              name="answer"
+              value={index}
               onChange={(event) => setAnswer(event.target.value)}
-              checked={answer === options} 
+              //checked={answer === index} 
               required
             />
             {option}
