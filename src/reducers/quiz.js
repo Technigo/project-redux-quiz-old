@@ -4,7 +4,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
   {
     id: 1,
-    image: '/src/images/q1.jpg',
     questionText: 'Monica briefly dates billionaire Pete Becker. Which country does he take her to for their first date?',
     options: ['France', 'England', 'Italy', 'Canada', 'Spain'],
     correctAnswerIndex: 2
@@ -12,7 +11,6 @@ const questions = [
 
   {
     id: 2,
-    image: 'images/q2.png',
     questionText: 'Rachel was popular in high school. Her prom date Chip ditched her for which girl at school?',
     options: ['Janine Lecroix', 'Amy Welsh', 'Janice Litman-Goralnik', 'Phoebe Buffay', 'Emily Waltham'],
     correctAnswerIndex: 1
@@ -20,7 +18,6 @@ const questions = [
 
   {
     id: 3,
-    image: 'images/q3.jpg',
     questionText: 'What’s the name of the 1950s-themed diner where Monica worked as a waitress?',
     options: ['Golden Pigeon Diner', 'The Crispy Biscuit', 'Momma’s Kitchen', 'Pinup Paradise Diner', 'The Moondance Diner'],
     correctAnswerIndex: 4
@@ -28,7 +25,6 @@ const questions = [
 
   {
     id: 4,
-    image: 'images/q4.jpg',
     questionText: 'Which character has a twin?',
     options: ['Phoebe Buffay', ' Ross Geller', 'Joey Tribiani', 'Gunther', 'Carol Willick'],
     correctAnswerIndex: 0
@@ -36,7 +32,6 @@ const questions = [
 
   {
     id: 5,
-    image: 'images/q5.png',
     questionText: 'Who is Estelle?',
     options: ['Central Perk owner', 'Chandler’s first love', 'Carol’s wife', 'Joey’s acting agent', 'Rachel’s mother'],
     correctAnswerIndex: 3
@@ -44,7 +39,6 @@ const questions = [
 
   {
     id: 6,
-    image: 'images/q6.jpeg',
     questionText: 'When Ross and Rachel were "on a break," Ross slept with Chloe. Where does she work?',
     options: ['The grocery store', 'Oracle', 'Central Perk', 'Microsoft', 'Xerox'],
     correctAnswerIndex: 4
@@ -52,7 +46,6 @@ const questions = [
 
   {
     id: 7,
-    image: 'images/q7.jpg',
     questionText: 'What fake name does Phoebe use when she wants to remain anonymous?',
     options: ['Princess Consuela', 'Regina Phalange', 'Miranda Knuckles', 'Rachel Green', 'Amanda Higgins'],
     correctAnswerIndex: 1

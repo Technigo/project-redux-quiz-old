@@ -34,13 +34,14 @@ code {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
   align-items: center;
   font-size: 18px;
+  height: 100vh;
 }
 .question {
   font-family: "Lora", serif;
-  font-size: 20px;
+  font-size: 25px;
   padding-bottom: 20px;
   color: #faff7f;
 }
@@ -50,4 +51,11 @@ code {
   padding-bottom: 20px;
   color: #ff88dc;
   display: inline-block;
+}
+img {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 20px;
 }

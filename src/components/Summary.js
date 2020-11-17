@@ -4,9 +4,17 @@ import { quiz } from '../reducers/quiz'
 
 export const Summary = () => {
     const answersCorrect = useSelector((state) => state.quiz.answers.filter((answer) => answer.isCorrect === true).length)
+
     const dispatch = useDispatch()
+
     const restart = () => {
         dispatch(quiz.actions.restart())
+    }
+
+    if (answersCorrect === 7) {
+        return (
+            <h1>You must really love Friends!</h1>
+        )
     }
 
     return (
