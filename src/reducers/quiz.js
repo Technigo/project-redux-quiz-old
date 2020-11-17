@@ -33,8 +33,9 @@ const questions = [
   },
   {
     id: 4,
-    questionText: 'Xxxxxxxx?',
-    options: ['1981', '1979', '1975', '1997'],
+    questionText:
+      'What year was Optimus Prime the most popular Christmas present?',
+    options: ['1981', '1984', '1987', '1990'],
     correctAnswerIndex: 2
   },
   {
