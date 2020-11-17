@@ -28,7 +28,7 @@ export const CurrentQuestion = () => {
       <div>
         <h1>Question: {question.questionText}</h1>
         <button onClick={submitAnswer}>Submit</button>
-        <button onClick={nextQuestion}>Next question</button>
+        <button onClick={nextQuestion}>{question.id < 7 ? "Next question" : "Show result"}</button>
       </div>
     );
   };

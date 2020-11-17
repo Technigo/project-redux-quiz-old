@@ -10,10 +10,9 @@ export const Summary = () => {
     };
 
  return (
-    <>
+    <div>
         <h1>Hello summary!</h1>
         <button onClick={restartQuiz}>Restart Quiz</button>
-
-    </>
+    </div>
  );
 };
