@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
+
 import { Status } from 'components/Status'
 import { quiz } from 'reducers/quiz'
+import { Summary } from './Summary'
 // This is the main component
 // Next button will be included here
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const ifQuizOver = useSelector((state) => state.quiz.quizOver)
 
   const dispatch = useDispatch()
   const handleClick = () => {
@@ -19,6 +23,10 @@ export const CurrentQuestion = () => {
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
+  }
+
+  if (ifQuizOver) {
+    return <Summary />
   }
   return (
     <div className="main">
