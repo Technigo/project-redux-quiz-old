@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { AnswerList } from './AnswerList';
 
 //This is the main component
 //Next button will be included here
@@ -16,6 +17,7 @@ export const CurrentQuestion = () => {
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
+      <AnswerList />
     </div>
   );
 };
