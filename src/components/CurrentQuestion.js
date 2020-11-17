@@ -11,6 +11,8 @@ export const CurrentQuestion = () => {
   return (
     <div>
       <h1>{question.questionText}</h1>
+
+      
       {/* <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
         Next Question
       </button> */}
