@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { CurrentQuestion } from '../components/CurrentQuestion'
+import { createSlice } from '@reduxjs/toolkit';
+import { CurrentQuestion } from '../components/CurrentQuestion';
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Ungefär hur många askar av den mörka Aladdinchokladen säjs i genomsnitt varje december i Sverige?', options: ['1.2 miljoner', '4 miljoner', '2.7 miljoner'], correctAnswerIndex: 1 },
+  { id: 1, questionText: 'Ungefär hur många askar av den mörka Aladdinchokladen säljs i genomsnitt varje december i Sverige?', options: ['1.2 miljoner', '4 miljoner', '2.7 miljoner'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'Vilken månad träffas världens auktoriserade tomtar på tomtarnas världskongress i Danmark?', options: ['1 April', 'November', 'Juli'], correctAnswerIndex: 2 },
   { id: 3, questionText: 'Ungefär hur mycket julskinka äts det per person till jul i Sverige varje år?', options: ['300 gram', '1 kilo', '580 gram'], correctAnswerIndex: 1 },
   { id: 4, questionText: 'Hur mycket farinsocker gick det åt för att smycka världens störstapepparkakshus, 1100 kubikmeter stort?', options: ['800 kilo', '15 000 ton', '1,3 ton'], correctAnswerIndex: 2 },
