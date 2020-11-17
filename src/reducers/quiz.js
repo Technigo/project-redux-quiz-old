@@ -1,10 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
+// Array to hold questions and answer options
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Do you speak Klingon?', options: ['Yes', 'No'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'What does the Dungeon Master do?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'What does the Dungeon Master do?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'What does the Dungeon Master do?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 5, questionText: 'What does the Dungeon Master do?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
 ]
+
+// comics, STEM, scifi
 
 const initialState = {
   questions,
