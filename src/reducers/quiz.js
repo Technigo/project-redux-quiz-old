@@ -3,7 +3,6 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 // Array to hold questions and answer options
 const questions = [
-  
   { id: 0, questionText: 'Just how nerdy are you? Take the Nerd Quiz to find out!', options: ['Start Quiz'], correctAnswerIndex: 0 },
   { id: 1, questionText: 'Do you speak Klingon?', options: ['Ghobe', 'HIja', 'What is Klingon?', 'Ya Ya Ding Dong'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'When was Dungeons & Dragons first published?', options: ['1977', '1988', '2050', '1974'], correctAnswerIndex: 3 },
