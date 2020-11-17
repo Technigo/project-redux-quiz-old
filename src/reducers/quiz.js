@@ -2,8 +2,13 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Ungefär hur många askar av den mörka Aladdinchokladen säjs i genomsnitt varje december i Sverige?', options: ['1.2 miljoner', '4 miljoner', '2.7 miljoner'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'Vilken månad träffas världens auktoriserade tomtar på tomtarnas världskongress i Danmark?', options: ['1 April', 'November', 'Juli'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'Ungefär hur mycket julskinka äts det per person till jul i Sverige varje år?', options: ['300 gram', '1 kilo', '580 gram'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'Hur mycket farinsocker gick det åt för att smycka världens störstapepparkakshus, 1100 kubikmeter stort?', options: ['800 kilo', '15 000 ton', '1,3 ton'], correctAnswerIndex: 2 },
+  { id: 5, questionText: 'Vilken är den mest sålda julsingeln någonsin?', options: ['"Blue Christmas", Elvis Presley', '"Last Christmas", Wham', '"White Christmas", Bing Crosby'], correctAnswerIndex: 2 },
+  { id: 6, questionText: 'En speciell katt sägs ha varit involverad när saffransbrödet fick namnet lussekatt. Vem symboliserar katten?', options: ['Djävulen', 'Lucia', 'Staffan stalledräng'], correctAnswerIndex: 0 },
+  { id: 7, questionText: '1941 började Hennes & Mauritz grundare, Erling Persson, att massproducera ett julpynt som blev en storsäljare. Vad var det han tillverkade?', options: ['Adventsstakar', 'Julstjärnor', 'Julgransbelysning'], correctAnswerIndex: 1 },
 ]
 
 const initialState = {
