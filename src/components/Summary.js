@@ -28,19 +28,20 @@ export const Summary = () => {
   return (
     <>
       {quizOver && (
-        <div>
-          <img src={image} alt="heflöekfelkfe" />
+        <section className="summary">
+          <img src={image} alt="Chirstmas tree" className="summary__image" />
           <p>
             You scored:
             {answer.length} / {questionArray.length}
           </p>
 
           <button
+            className="summary__restart--button"
             type="button"
             onClick={() => dispatch(quiz.actions.restart())}>
             Restart
           </button>
-        </div>
+        </section>
       )}
     </>
   );
