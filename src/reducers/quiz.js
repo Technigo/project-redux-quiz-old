@@ -2,8 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Monica briefly dates billionaire Pete Becker. Which country does he take her for their first date?', options: ['France', 'England', 'Italy', 'Canada', 'Spain'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'Rachel was popular in high school. Her prom date Chip ditched her for which girl at school?', options: ['Janine Lecroix', 'Amy Welsh', 'Janice Litman-Goralnik', 'Phoebe Buffay', 'Emily Waltham'], correctAnswerIndex: 1 }
+  { id: 3, questionText: 'What’s the name of the 1950s-themed diner where Monica worked as a waitress?', options: ['Golden Pigeon Diner', 'The Crispy Biscuit', 'Momma’s Kitchen', 'Pinup Paradise Diner', 'The Moondance Diner'], correctAnswerIndex: 4 }
+  { id: 4, questionText: 'Which character has a twin?', options: ['Phoebe Buffay', ' Ross Geller', 'Joey Tribiani', 'Gunther', 'Carol Willick'], correctAnswerIndex: 0 }
+  { id: 5, questionText: 'Who is Estelle?', options: ['Central Perk owner', 'Chandler’s first love', 'Carol’s wife', 'Joey’s acting agent', 'Rachel’s mother'], correctAnswerIndex: 3 }
+  { id: 6, questionText: 'When Ross and Rachel were "on a break," Ross slept with Chloe. Where does she work?', options: ['The grocery store', 'Oracle', 'Central Perk', 'Microsoft', 'Xerox'], correctAnswerIndex: 4 }
+  { id: 7, questionText: 'What fake name does Phoebe use when she wants to remain anonymous?', options: ['Princess Consuela', 'Regina Phalange', 'Miranda Knuckles', 'Rachel Green', 'Amanda Higgins'], correctAnswerIndex: 1 }
+
 ]
 
 const initialState = {
@@ -12,6 +18,7 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false
 }
+//initialState.questions
 
 export const quiz = createSlice({
   name: 'quiz',
