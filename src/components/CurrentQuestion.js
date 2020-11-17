@@ -7,7 +7,10 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((answer) => question.id === answer.questionId)
+  );
+  console.log(answer);
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
@@ -18,7 +21,14 @@ export const CurrentQuestion = () => {
       {question.options.map((option, index) => {
         return (
           <button
-            className="option-button"
+            className={
+              answer &&
+              answer.isCorrect &&
+              index === question.correctAnswerIndex
+                ? "correct-answer option-button"
+                : "option-button"
+            }
+            key={option}
             onClick={() =>
               dispatch(
                 quiz.actions.submitAnswer({
@@ -27,7 +37,6 @@ export const CurrentQuestion = () => {
                 })
               )
             }
-            key={option}
           >
             {option}
           </button>
@@ -39,3 +48,8 @@ export const CurrentQuestion = () => {
     </div>
   );
 };
+
+// (className =
+//   question.correctAnswerIndex === index
+//     ? "correct-answer option-button"
+//     : "option-button")

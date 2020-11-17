@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.option-button {
+width: 200px;
+height: 50px;
+border-radius: 30px;
+}
+
+.correct-answer{
+  background-color: green;
+}
+
+.incorrect-answer{
+  background-color: red;
+}
+
