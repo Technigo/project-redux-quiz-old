@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Status } from 'components/Status'
@@ -12,15 +13,21 @@ export const CurrentQuestion = () => {
   const handleClick = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
+  // const handleAnswer = () => {
+  //   dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+  // }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      <button type="button" onClick={handleClick}>Next</button>
+    <div className="main">
+      <img src={question.image} />
+      {/* <h2 className="question-number">Question {question.id}:</h2> */}
+      <h1>{question.questionText}</h1>
       <Status />
+      {/* <button type="button" onClick={() => handleAnswer(question.id, index)}>{option}{index}</button> */}
+      <button className="button-next" type="button" onClick={handleClick}>Next</button>
     </div>
   )
 }

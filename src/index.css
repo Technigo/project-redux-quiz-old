@@ -1,13 +1,53 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  scroll-behavior: smooth;
 }
 
+body {
+  margin: 0;
+  font-family: "Lora", serif;
+  background-color: #91a6ff;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.button-next {
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  font-size: 25px;
+  width: 50%;
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: #ff5154;
+}
+.button-next:hover {
+  opacity: 0.4;
+  background-color: #ff88dc;
+  text-decoration: none;
+}
+.main {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
+  align-items: center;
+  font-size: 18px;
+}
+.question {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  padding-bottom: 20px;
+  color: #faff7f;
+}
+.question-number {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  padding-bottom: 20px;
+  color: #ff88dc;
+  display: inline-block;
 }

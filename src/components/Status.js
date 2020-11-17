@@ -10,7 +10,7 @@ export const Status = () => {
 
     return (
         <div>
-            <h1>
+            <h1 className="question">
                 Question {question.id}/{questionsArray.length}
             </h1>
         </div>
