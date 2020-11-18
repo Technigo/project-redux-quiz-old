@@ -14,3 +14,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  margin: 34px 26px 50px 0;
+  padding: 8px;
+  font-family: 'VT323', "Courier New", monospace;
+  font-size: 25px;
+  color: #19e619;
+  border: 1px ridge #19e619;
+  background: #191414;
+
+}
+
+button:hover {
+  color: #191414;
+  border: 1px inset #19e619;
+  background: #19e619;
+  
+}
+
+button:focus {
+  color: #191414;
+  border: 1px inset #19e619;
+  background: #19e619;
+  
+}
+
+button:disabled {
+  color: #366336;
+  border: 1px ridge #366336;
+}

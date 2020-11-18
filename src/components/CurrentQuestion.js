@@ -2,7 +2,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { QuestionContainer, QuestionText, ButtonStyled } from 'components/Styles'
+import { QuestionContainer, QuestionText } from 'components/Styles'
 import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = () => {
@@ -30,7 +30,7 @@ export const CurrentQuestion = () => {
     <QuestionContainer>
       <QuestionText>{question.questionText}</QuestionText>
       <div>
-        {question.options.map((option) => <ButtonStyled onClick={() => buttonOnClick(option)} type="button">{option}</ButtonStyled>)}
+        {question.options.map((option) => <button onClick={() => buttonOnClick(option)} type="button">{option}</button>)}
       </div>
     </QuestionContainer>
   )

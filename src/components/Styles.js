@@ -17,20 +17,6 @@ export const QuestionText = styled.text`
   font-size: 35px;
   font-weight: 700;
 `
-
-export const ButtonStyled = styled.button`
-  margin: 34px 26px 50px 0;
-  padding: 8px;
-  font-family: 'VT323', "Courier New", monospace;
-  font-size: 25px;
-  color: #19e619;
-  border: 1px ridge #19e619;
-  background: #191414;
-  &::hover & {
-    border: 2px inset #19e619; 
-  }
-  
-`
 export const Progress = styled.div`
   margin-top: 5px;
 `

@@ -3,7 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { quiz } from 'reducers/quiz'
-import { ButtonStyled, Progress } from './Styles'
+import { Progress } from './Styles'
 
 export const Status = () => {
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ export const Status = () => {
   return (
     <section>
       <Progress>You are on question {currentPage} of 5.</Progress>
-      <ButtonStyled type="button" onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next Question</ButtonStyled>
+      <button type="button" onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next Question</button>
       {/* To be moved to the Summary component */}
       {/* <ButtonStyled type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</ButtonStyled> */}
     </section>
