@@ -11,7 +11,7 @@ export const Status = () => {
     <section>
       <button type="button" onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next Question</button>
       <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</button>
-      <div>{currentPage}</div>
+      <div>You are on question {currentPage} of 5.</div>
     </section>
   )
 }
