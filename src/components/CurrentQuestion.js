@@ -48,25 +48,29 @@ const CurrentQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
   const quizOver = useSelector((state) => state.quiz.quizOver);
-  const [answer, setAnswer] = useState([]);
-  console.log("answer: " + answer);
-  console.log(question.correctAnswerIndex);
+  const [userAnswer, setUserAnswer] = useState("");
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((answer) => answer.questionId === question.id)
+  );
 
+  console.log("userAnswer: " + userAnswer);
+  console.log("answer: " + JSON.stringify(answer));
+
+  const allAnswers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
 
-  const submitAnswer = ({ id, index }) => {
-    console.log("I'm here!");
+  const submitAnswer = (id, index) => {
+    if (parseInt(userAnswer) === question.correctAnswerIndex) {
+      console.log("Rätt svar");
+    } else {
+      console.log("Fel svar");
+    }
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
 
-  if (parseInt(answer) === question.correctAnswerIndex) {
-    console.log("Rätt svar");
-  } else {
-    console.log("Fel svar");
-  }
-
   const nextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion());
+    setUserAnswer("");
   };
 
   const options = question.options;
@@ -81,22 +85,26 @@ const CurrentQuestion = () => {
         <h1>{question.id}/7</h1>
         <QuestionHeader>{question.questionText}</QuestionHeader>
         {options.map((option, index) => (
-          <QuestionText htmlFor={index}>
+          <QuestionText htmlFor={index} key={index}>
             <input
               id={index}
               type="radio"
               name="answer"
               value={index}
-              onChange={(event) => setAnswer(event.target.value)}
-              //checked={answer === index}
-              required
+              onChange={(event) => setUserAnswer(parseInt(event.target.value))}
+              checked={userAnswer === index}
             />
             {option}
           </QuestionText>
         ))}
         <ButtonWrapper>
-          <HolidayButton onClick={submitAnswer}>Submit</HolidayButton>
-          <HolidayButton onClick={nextQuestion}>
+          <HolidayButton
+            disabled={userAnswer === ""}
+            onClick={() => submitAnswer(question.id, userAnswer)}
+          >
+            Submit
+          </HolidayButton>
+          <HolidayButton disabled={answer === undefined} onClick={nextQuestion}>
             {question.id < 7 ? "Next question" : "Show result"}
           </HolidayButton>
         </ButtonWrapper>
