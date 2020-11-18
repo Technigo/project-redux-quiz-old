@@ -10,7 +10,7 @@ code {
     monospace;
 }
 
-.option-button, .next-button, .restart-button, .start-button {
+.option-button, .next-button, .restart-button,  {
 width: 250px;
 height: 50px;
 border-radius: 30px;
