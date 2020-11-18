@@ -25,7 +25,7 @@ export const App = () => {
       <Title>C:\&gt; Nerd Quiz!</Title>
       <CurrentQuestion buttonStatus={buttonStatus} handleNextQuestion={onNextQuestion} />
       <Status handleNextQuestion={onNextQuestion} />
-      <Summary />
+      <Summary handleNextQuestion={onNextQuestion} />
     </Provider>
   )
 }
