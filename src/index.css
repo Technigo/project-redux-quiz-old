@@ -14,7 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.button-next {
+.button-next,
+.restart-button {
   color: black;
   font-family: "Montserrat", sans-serif;
   border-radius: 5px;
