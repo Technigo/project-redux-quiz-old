@@ -4,36 +4,41 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    questionText: "What does Vans alarm require to be turned off ?  ",
+    questionText: "What does Vans alarm require to be turned off?  ",
     options: [
-      "sing a song",
-      "to solve a math problem",
-      "speak french",
-      "throw it aginst the wall",
+      "Sing a song",
+      "To solve a math problem",
+      "Speak french",
+      "Throw it against the wall",
     ],
-    correctAnswerIndex: 0,
+    correctAnswerIndex: 1,
   },
 
   {
     id: 2,
     questionText: "What is one of Matildas superpowers ?",
-    options: ["", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
+    options: ["", "", "she can do a handstand for 10 min", "she can rap"],
+    correctAnswerIndex: 3,
   },
 
   {
     id: 3,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0,
+    questionText: "Who has Poya shaken hands with?",
+    options: [
+      "Zlatan Ibrahimovic",
+      "Barack Obama",
+      "Steve Jobs",
+      "Ingvar Kamprad",
+    ],
+    correctAnswerIndex: 2,
   },
 
   {
     id: 4,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
+      "Of the following Technigo staff, who dreams of traveling the world on a motorcycle?",
+    options: ["Petra", "Sandra", "Maks", "Rebecca"],
+    correctAnswerIndex: 3,
   },
 
   {
@@ -46,7 +51,7 @@ const questions = [
   {
     id: 6,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
+      "Petra is quite adventerous, what of the following did she once do?",
     options: ["2012", "2014", "2016", "2018"],
     correctAnswerIndex: 2,
   },

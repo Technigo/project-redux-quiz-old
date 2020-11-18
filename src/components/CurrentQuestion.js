@@ -22,11 +22,9 @@ export const CurrentQuestion = () => {
         return (
           <button
             className={
-              answer &&
-              answer.isCorrect &&
-              index === question.correctAnswerIndex
+              answer && index === question.correctAnswerIndex
                 ? "correct-answer option-button"
-                : "option-button"
+                : "option-button incorrect-answer"
             }
             key={option}
             onClick={() =>
