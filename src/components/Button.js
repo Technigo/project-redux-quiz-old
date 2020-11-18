@@ -8,7 +8,6 @@ const Button = ({ index, questionId, correctIndex, onClick, option, disabled }) 
   }, [questionId])
 
   const onAnswerClick = () => {
-    console.log(index, correctIndex)
     onClick();
     if (index === correctIndex) {
       setBorderColor('green')
@@ -16,7 +15,6 @@ const Button = ({ index, questionId, correctIndex, onClick, option, disabled }) 
       setBorderColor('red')
     }
   }
-  console.log(borderColor)
   return (
     <button
       disabled={disabled}
