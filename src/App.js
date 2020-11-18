@@ -5,19 +5,18 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import { Status } from 'components/Status'
+import { Title } from 'components/Styles'
 
-// here our reducer is "quiz" (Reducer: publishes to Store)
 const reducer = combineReducers({
   quiz: quiz.reducer
 })
 
-// settting up Store
 const store = configureStore({ reducer })
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <h1>Welcome to the Nerd Quiz!</h1>
+      <Title>C:\&gt; Nerd Quiz!</Title>
       <CurrentQuestion />
       <Status />
     </Provider>
