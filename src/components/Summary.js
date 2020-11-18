@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 
 export const Summary = () => {
-  const quizOver = useSelector((state) => state.quiz.quizOver);
   const dispatch = useDispatch();
+  const quizOver = useSelector((state) => state.quiz.quizOver);
   const answer = useSelector((state) =>
     state.quiz.answers.filter((a) => a.isCorrect)
   );
@@ -23,7 +23,7 @@ export const Summary = () => {
     default:
       image = './assets/santa-tree.jpg';
   }
-  console.log(answer);
+  // console.log(answer);
 
   return (
     <>
@@ -46,13 +46,3 @@ export const Summary = () => {
     </>
   );
 };
-
-/*
-className={
-  !answer
-    ? 'default-options-button'
-    : index === question.correctAnswerIndex
-    ? 'right-option-button'
-    : 'wrong-option-button'
-}
-*/

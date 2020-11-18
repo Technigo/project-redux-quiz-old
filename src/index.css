@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./components/backgroundimage-snowflakes.jpg');
+  background-image: url('/assets/backgroundimage-snowflakes.jpg');
   height: 100vh;
 }
 

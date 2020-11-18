@@ -12,7 +12,8 @@ const questions = [
       'Coca Cola fridge'
     ],
     correctAnswerIndex: 0,
-    image: './assets/NirvanaNevermindalbumcover.jpg'
+    image: './assets/NirvanaNevermindalbumcover.jpg',
+    altText: 'Nirvana cover'
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const questions = [
       'At what year was the Portable Cassette Player Recorder the Christmas gift of the year?',
     options: ['1981', '1979', '1975', '1997'],
     correctAnswerIndex: 2,
-    image: './assets/Portable-Cassette-Player-Recorder.jpg'
+    image: './assets/Portable-Cassette-Player-Recorder.jpg',
+    altText: 'Portable Cassette Player Recorder'
   },
   {
     id: 3,
@@ -32,7 +34,8 @@ const questions = [
       'Lego airport'
     ],
     correctAnswerIndex: 1,
-    image: './assets/christmas1988.jpg'
+    image: './assets/Turtles.jpg',
+    altText: 'Turtles'
   },
   {
     id: 4,
@@ -40,14 +43,16 @@ const questions = [
       'What year was Optimus Prime the most popular Christmas present?',
     options: ['1981', '1984', '1987', '1990'],
     correctAnswerIndex: 1,
-    image: './assets/optimusprime.jpg'
+    image: './assets/optimusprime.jpg',
+    altText: 'Optimus Prime'
   },
   {
     id: 5,
     questionText: 'What was the Christmas gift of the year in 1979?',
     options: ['Monopoly', 'BMX bike', 'The Millennium Falcon', 'The Batmobile'],
     correctAnswerIndex: 2,
-    image: './assets/christmas1979.jpg'
+    image: './assets/christmas1979.jpg',
+    altText: 'Family Christmas 1979'
   }
 ];
 
@@ -128,6 +133,12 @@ export const quiz = createSlice({
     restart: () => {
       return initialState;
     },
+
+    /**
+     * Use this action to progress the quiz to be started.
+     *
+     * This action does not require a payload.
+     */
     startQuiz: (state) => {
       state.quizStarted = true;
     }

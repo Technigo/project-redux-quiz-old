@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+
 import { ProgressBar } from './ProgressBar';
 
 export const CurrentQuestion = () => {
@@ -12,11 +13,7 @@ export const CurrentQuestion = () => {
   const answer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id)
   );
-
   const quizStarted = useSelector((state) => state.quiz.quizStarted);
-
-  // const questions = useSelector((state) => state.quiz.questions);
-  // const answers = useSelector((state) => state.quiz.answers);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -30,7 +27,7 @@ export const CurrentQuestion = () => {
           <h2> {question.questionText}</h2>
           <img
             src={question.image}
-            alt="Question hint"
+            alt={question.altText}
             className="question__image"
           />
           <div className="question__buttons">
