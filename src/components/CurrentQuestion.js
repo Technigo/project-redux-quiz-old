@@ -9,7 +9,8 @@ import { quiz } from '../reducers/quiz'
 export const CurrentQuestion = () => {
   const dispatch = useDispatch()
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-  // const checkAnswer = useSelector((state) => {
+  const checkAnswer = useSelector((state) => state.quiz.answers.isCorrect)
+  console.log(checkAnswer)
   //   const answer = state.quiz.answers.find((questionId) => question.id === questionId)
   //   if (answer) {
   //     return answer
