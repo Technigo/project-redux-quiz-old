@@ -43,17 +43,17 @@ const questions = [
 
   {
     id: 5,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText: "Maks has not always been working with tech, what is one of the things that he has worked as before?",
+    options: ["shepherd", "bartender", "professor", "kindergarden teacher"],
     correctAnswerIndex: 0,
   },
 
   {
     id: 6,
     questionText:
-      "Petra is quite adventerous, what of the following did she once do?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
+      "Petra is quite adventerous, what of the following has she done ?",
+    options: ["competed in parkour", "bungee jumping in a nightclub", "worked as a stuntwoman", "driven a formula 1 car"],
+    correctAnswerIndex: 1,
   },
 ];
 
