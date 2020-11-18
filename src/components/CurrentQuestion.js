@@ -1,7 +1,10 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { quiz } from '../reducers/quiz'
+
+// import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch()
@@ -37,4 +40,3 @@ export const CurrentQuestion = () => {
 /* <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} type="button">
         Next Question
       </button> */
-
