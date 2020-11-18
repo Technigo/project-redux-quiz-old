@@ -8,18 +8,17 @@ export const AnswerList = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
   const answers = question.options
-  
+
   const id = question.id
-  console.log(answers)
   
-  const handleClick = (id, index) => {
+  const handleClick = (index) => {
     dispatch(quiz.actions.submitAnswer({questionId: id, answerIndex: index }))
   }
 
   return (
     <>
       {answers.map((answer,index) =>
-        <button type="button" value={index} onClick={handleClick}>{answer}</button>)}
+        <button type="button" onClick={() => handleClick(index)}>{answer}</button>)}
     </>  
   )
 }
