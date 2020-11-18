@@ -12,7 +12,7 @@ const questions = [
   { 
     id: 2, 
     questionText: 'Vilken månad träffas världens auktoriserade tomtar på tomtarnas världskongress i Danmark?', 
-    options: ['1 April', 'November', 'Juli'], 
+    options: ['April', 'November', 'Juli'], 
     correctAnswerIndex: 2 
   },
   { 
