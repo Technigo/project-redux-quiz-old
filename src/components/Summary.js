@@ -37,7 +37,8 @@ export const Summary = () => {
 
     return (
         <div className="summary">
-            <h1>Thanks for playing!</h1>
+            <h1>Thanks for playing the Friends quiz!</h1>
+            <p>You've got some right, some wrong, but that doesn't matter! Go and re-watch another season of world's best show. </p>
             <button className="restart-button" type="button" onClick={restart}>
                 Play again!
       </button>
