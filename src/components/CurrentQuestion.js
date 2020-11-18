@@ -2,9 +2,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { QuestionContainer, QuestionText } from 'components/Styles'
 import { quiz } from '../reducers/quiz'
-
-// import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch()
@@ -28,12 +27,12 @@ export const CurrentQuestion = () => {
     ))
   }
   return (
-    <div>
-      <h1>{question.questionText}</h1>
+    <QuestionContainer>
+      <QuestionText>{question.questionText}</QuestionText>
       <div>
         {question.options.map((option) => <button onClick={() => buttonOnClick(option)} type="button">{option}</button>)}
       </div>
-    </div>
+    </QuestionContainer>
   )
 }
 

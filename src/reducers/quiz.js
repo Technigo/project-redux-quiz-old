@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
-// Array to hold questions and answer options
 const questions = [
   { id: 0, questionText: 'Do you speak Klingon?', options: ['Ghobe', 'HIja', 'What is Klingon?', 'Ya Ya Ding Dong'], correctAnswerIndex: 1 },
   { id: 1, questionText: 'When was Dungeons & Dragons first published?', options: ['1977', '1988', '2050', '1974'], correctAnswerIndex: 3 },
@@ -9,8 +7,6 @@ const questions = [
   { id: 3, questionText: 'What\'s not an existing translation of Bilbo Baggins', options: ['Bilbo Beutlin', 'Bilbo Secker', 'Bimbo Backlin', 'Bagas Silva'], correctAnswerIndex: 3 },
   { id: 4, questionText: 'What\'s Pluto\'s current classification?', options: ['Planet', 'Dwarf Planet', 'Minor Planet', 'Gas Cloud'], correctAnswerIndex: 1 }
 ]
-
-// comics, STEM, scifi
 
 const initialState = {
   questions,
@@ -60,13 +56,6 @@ export const quiz = createSlice({
       })
     },
 
-    /**
-     * Use this action to progress the quiz to the next question. If there's
-     * no more questions (the user was on the final question), set `quizOver`
-     * to `true`.
-     *
-     * This action does not require a payload.
-     */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
@@ -75,13 +64,6 @@ export const quiz = createSlice({
       }
     },
 
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
     restart: () => {
       return initialState
     }
