@@ -23,7 +23,7 @@ export const Status = ({handleNextQuestion}) => {
     <section>
       <button type="button" onClick={nextButton}>Next Question</button>
       <button type="button" onClick={backButton}>Restart Quiz</button>
-      <div>You are on question {currentPage} of 5.</div>
+      <div>You are on question {currentPage + 1} of 5.</div>
     </section>
   )
 }
