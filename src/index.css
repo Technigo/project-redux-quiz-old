@@ -1,10 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:'VT323', "Courier New", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  background-color: #191414;
+  color: #19e619;
+  font-size: 18px;
 }
 
 code {
@@ -12,6 +15,29 @@ code {
     monospace;
 }
 
-.active {
-  background-color: grey;
+button {
+  margin: 34px 26px 50px 0;
+  padding: 8px;
+  font-family: 'VT323', "Courier New", monospace;
+  font-size: 25px;
+  color: #19e619;
+  border: 1px ridge #19e619;
+  background: #191414;
+}
+
+button:hover {
+  color: #191414;
+  border: 1px inset #19e619;
+  background: #19e619;
+}
+
+button:focus {
+  color: #191414;
+  border: 1px inset #19e619;
+  background: #19e619;
+}
+
+button:disabled {
+  color: #366336;
+  border: 1px ridge #366336;
 }

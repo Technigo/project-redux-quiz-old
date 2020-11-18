@@ -1,7 +1,9 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { quiz } from 'reducers/quiz'
+import { Progress } from './Styles'
 
 export const Status = ({ handleNextQuestion }) => {
   const dispatch = useDispatch()

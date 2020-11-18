@@ -2,10 +2,9 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import { QuestionContainer, QuestionText } from 'components/Styles'
 import { quiz } from '../reducers/quiz'
 import Button from './Button'
-
-// import { quiz } from '../reducers/quiz'
 
 export const CurrentQuestion = ({handleNextQuestion, buttonStatus}) => {
   const dispatch = useDispatch()
@@ -23,8 +22,8 @@ export const CurrentQuestion = ({handleNextQuestion, buttonStatus}) => {
   }
   
   return (
-    <div>
-      <h1>{question.questionText}</h1>
+    <QuestionContainer>
+      <QuestionText>{question.questionText}</QuestionText>
       <div>
         {question.options.map((option, index) => (
           <Button 
@@ -38,6 +37,6 @@ export const CurrentQuestion = ({handleNextQuestion, buttonStatus}) => {
           </Button>
         ))}
       </div>
-    </div>
+    </QuestionContainer>
   )
 }
