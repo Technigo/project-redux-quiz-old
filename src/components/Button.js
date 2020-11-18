@@ -2,30 +2,30 @@
 import React, { useState, useEffect } from 'react';
 
 const Button = ({ index, questionId, correctIndex, onClick, type, option, disabled }) => {
-  const [borderColor, setBorderColor] = useState("grey")
+  const [borderColor, setBorderColor] = useState('grey')
 
   useEffect(() => {
-    setBorderColor("grey")
+    setBorderColor('grey')
   }, [questionId])
-  
+
   const onAnswerClick = () => {
     console.log(index, correctIndex)
     onClick();
     if (index === correctIndex) {
-      setBorderColor("green")
+      setBorderColor('green')
     } else {
-      setBorderColor("red")
+      setBorderColor('red')
     }
   }
   console.log(borderColor)
   return (
     <button
       disabled={disabled}
-      style={{border:`1px solid ${borderColor}`}}
-      onClick={onAnswerClick} 
+      style={{ border: `1px solid ${borderColor}` }}
+      onClick={onAnswerClick}
       type={type}>
       {option}
     </button>
   )
 }
-export default Button 
+export default Button

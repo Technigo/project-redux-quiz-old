@@ -1,10 +1,9 @@
-/* eslint-disable */
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { quiz } from 'reducers/quiz'
 
-export const Status = ({handleNextQuestion}) => {
+export const Status = ({ handleNextQuestion }) => {
   const dispatch = useDispatch()
   const currentPage = useSelector((store) => store.quiz.currentQuestionIndex)
   console.log(quiz.currentQuestionIndex)
