@@ -21,7 +21,7 @@ export const CurrentQuestion = () => {
     state.quiz.answers.find((answer) => question.id === answer.questionId)
   );
 
-  console.log(answer);
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
@@ -53,7 +53,7 @@ export const CurrentQuestion = () => {
           </button>
         );
       })}
-      <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} disabled={!answer ? true : false} >
+      <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} disabled={!answer} >
         Next
       </button>
     </div>
