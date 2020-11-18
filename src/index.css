@@ -1,13 +1,16 @@
 /* BODY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -25,12 +28,10 @@ h1 {
 h2 {
   text-align: center;
   font-size: 20px;
-  margin: 0;
 }
 
 p {
   text-align: center;
-  margin-bottom: 5px;
 }
 
 /* FIRST PAGE */
@@ -40,6 +41,9 @@ p {
 .question,
 .summary,
 .start {
+  height: 90vh;
+  width: 90vw;
+  max-width: 600px;
   background-color: #ffffffcc;
   box-shadow: 10px 10px 20px grey;
   margin: 20px;
@@ -47,14 +51,21 @@ p {
   flex-direction: column;
   padding: 10px;
   border-radius: 5px;
+}
+
+.question {
   justify-content: space-between;
+}
+
+.summary,
+.start {
+  justify-content: space-evenly;
 }
 
 .question__image,
 .summary__image {
   height: 200px;
   object-fit: contain;
-  margin: 5px 0;
 }
 
 .question__buttons {
@@ -67,22 +78,28 @@ p {
 .question__default--button {
   color: #ffffff;
   background-color: #0a1a27;
-  padding: 20px;
-  font-size: 16px;
+  padding: 18px;
+  font-size: 20px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
 
 .question__right--button {
   color: #ffffff;
   background-color: #20d467;
-  padding: 20px;
-  font-size: 16px;
+  padding: 18px;
+  font-size: 20px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
 
 .question__wrong--button {
   color: #ffffff;
   background-color: #da2940;
-  padding: 20px;
-  font-size: 16px;
+  padding: 18px;
+  font-size: 20px;
+  margin-bottom: 2px;
+  font-weight: 700;
 }
 
 /* NEXT BUTTON + SUMMARY BUTTON */
@@ -91,10 +108,10 @@ p {
 .summary__restart--button,
 .start__button {
   padding: 10px;
-  margin-top: 10px;
   border: 2px solid #0a1a27;
   color: #0a1a27;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 700;
   width: 100%;
 }
