@@ -23,21 +23,18 @@ button {
   color: #19e619;
   border: 1px ridge #19e619;
   background: #191414;
-
 }
 
 button:hover {
   color: #191414;
   border: 1px inset #19e619;
   background: #19e619;
-  
 }
 
 button:focus {
   color: #191414;
   border: 1px inset #19e619;
   background: #19e619;
-  
 }
 
 button:disabled {
