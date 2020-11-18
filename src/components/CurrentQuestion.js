@@ -12,7 +12,7 @@ const QuestionContainer = styled.section`
   background-color: #e40010;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const QuestionHeader = styled.legend`
   max-width: 450px;
@@ -20,19 +20,19 @@ const QuestionHeader = styled.legend`
   font-size: 32px;
   color: #000;
   text-align: center;
-`
+`;
 
-const RadioWrapper= styled.div`
+const RadioWrapper = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-`
+`;
 
 const OptionsText = styled.label`
   max-width: 400px;
   padding: 15px;
   font-size: 24px; 
-`
+`;
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -40,16 +40,16 @@ const ButtonWrapper = styled.div`
   align-items: center;
   margin: 30px;
   flex-direction: column;
-`
+`;
 
 const AnswerStyle = styled.div`
   max-width: 100%;
-`
+`;
 
 const RightAnswerStyle = styled.div`
   max-width: 100%;
   margin-bottom: 30px;
-`
+`;
 
 const HolidayButton = styled.button`
   padding: 10px;
@@ -57,7 +57,7 @@ const HolidayButton = styled.button`
   margin: 20px;
   background-color: #0B5E15; 
   border-radius: 10px;
-`
+`;
 
 
 const CurrentQuestion = () => {
@@ -71,7 +71,6 @@ const CurrentQuestion = () => {
     state.quiz.answers.find((answer) => answer.questionId === question.id)
   );
 
-  // const allAnswers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
 
   const submitAnswer = (id, index) => {
@@ -84,7 +83,7 @@ const CurrentQuestion = () => {
     } else {
       return <h2>Sorry, you chose the wrong answer.</h2>;
     }
-  }
+  };
 
   const nextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion());
@@ -100,7 +99,7 @@ const CurrentQuestion = () => {
   } else {
     return (
       <QuestionContainer>
-        <h1>Christmas quiz</h1> 
+        <h1>Christmas quiz</h1>
         <h2>{question.id}/7</h2>
         <QuestionHeader>{question.questionText}</QuestionHeader>
         {options.map((option, index) => (
@@ -119,12 +118,12 @@ const CurrentQuestion = () => {
           </RadioWrapper>
         ))}
         <ButtonWrapper>
-        {answer === undefined &&
-          <HolidayButton
-            disabled={userAnswer === ""}
-            onClick={() => submitAnswer(question.id, userAnswer)}
-          >
-          Submit
+          {answer === undefined &&
+            <HolidayButton
+              disabled={userAnswer === ""}
+              onClick={() => submitAnswer(question.id, userAnswer)}
+            >
+              Submit
           </HolidayButton>
           }
           {answer !== undefined &&
@@ -139,7 +138,7 @@ const CurrentQuestion = () => {
         </ButtonWrapper>
       </QuestionContainer>
     );
-  }
+  };
 };
 
 export default CurrentQuestion;

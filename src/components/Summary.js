@@ -10,23 +10,24 @@ const SummaryContainer = styled.section`
   justify-content: center;
   align-items: center;
   padding: 20px;
-`
+`;
+
 const SummaryTitle = styled.h2`
   font-size: 28px;
   color: #ffffff;
-`
+`;
 
 const Textbox = styled.div`
   width: 350px;
   font-size: 14px;
-`
+`;
 
 const Summarybox = styled.div`
   border: 3px solid #0B5E15;
   font-size: 16px;
   padding: 6px;
   margin: 10px;
-`
+`;
 
 const RestartButton = styled.button`
   padding: 10px;
@@ -34,13 +35,13 @@ const RestartButton = styled.button`
   background-color: #0B5E15; 
   border-radius: 10px;
   color: #ffffff;
-`
+`;
 
 const Messagebox = styled.div`
     width: 350px;
     font-size: 18px;
     color: #ffffff;
-`
+`;
 
 export const Summary = () => {
 
