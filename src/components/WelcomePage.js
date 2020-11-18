@@ -10,7 +10,8 @@ export const WelcomePage = () => {
     <>
       {!quizStarted && (
         <section className="start">
-          <h1>Please take this quiz</h1>
+          <h1>Christmas Quiz</h1>
+          <p className="start__text">What do you know about best selling Christmas gifts?</p>
           <button
             className="start__button"
             type="button"

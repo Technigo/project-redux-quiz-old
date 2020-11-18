@@ -95,6 +95,7 @@ p {
   padding: 14px;
   font-size: 20px;
   margin-bottom: 2px;
+  border-radius: 10px;
   font-weight: 700;
 }
 
@@ -104,6 +105,7 @@ p {
   padding: 14px;
   font-size: 20px;
   margin-bottom: 2px;
+  border-radius: 10px;
   font-weight: 700;
 }
 
@@ -121,6 +123,13 @@ p {
   width: 100%;
   max-width: 400px; /*added*/
   align-self: center;
+}
+
+.start__text,
+.summary__text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0a1a27;
 }
 
 @media (min-width: 768px) {
@@ -156,6 +165,10 @@ p {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
   }
+
+  .start__text {
+    font-size: 24px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -163,5 +176,8 @@ p {
   .summary,
   .start {
     height: 85vh;
+  }
+  .start__text {
+    font-size: 28px;
   }
 }

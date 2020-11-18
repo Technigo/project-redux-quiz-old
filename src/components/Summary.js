@@ -38,12 +38,12 @@ export const Summary = () => {
       {quizOver && (
         <section className="summary">
           <img src={image} alt="Christmas tree" className="summary__image" />
-          <p>
+          <p className="summary__text">
             You answered
             {` ${answer.length}`} out of {questionArray.length} questions correct.
           </p>
 
-          <p>
+          <p className="summary__text">
             Your total points are: {quizScore}
           </p>
 
