@@ -30,6 +30,7 @@ export const Summary = () => {
             </div>
         ))}
         </div>
+        
         <button onClick={restartQuiz}>Restart Quiz</button>
     </div>
  );
