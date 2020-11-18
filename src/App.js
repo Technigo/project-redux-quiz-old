@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
@@ -15,11 +15,16 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 export const App = () => {
+  const [buttonStatus, setButtonStatus] = useState(false)
+  const onNextQuestion = (status) => {
+    setButtonStatus(status)
+  }
+
   return (
     <Provider store={store}>
       <h1>Welcome to the Nerd Quiz!</h1>
-      <CurrentQuestion />
-      <Status />
+      <CurrentQuestion buttonStatus={buttonStatus} handleNextQuestion={onNextQuestion} />
+      <Status handleNextQuestion={onNextQuestion} />
     </Provider>
   )
 }
