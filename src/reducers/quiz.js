@@ -17,7 +17,12 @@ const questions = [
   {
     id: 2,
     questionText: "What is one of Matildas superpowers ?",
-    options: ["she can juggle with 6 balls", "she can yodel", "she can do a handstand for 10 min", "she can rap"],
+    options: [
+      "She can juggle with 6 balls",
+      "She can yodel",
+      "She can do a handstand for 10 min",
+      "She can rap",
+    ],
     correctAnswerIndex: 3,
   },
 
@@ -43,8 +48,9 @@ const questions = [
 
   {
     id: 5,
-    questionText: "Maks has not always been working with tech, what is one of the things that he has worked as before?",
-    options: ["shepherd", "bartender", "professor", "kindergarden teacher"],
+    questionText:
+      "Maks has not always been working with tech, what is one of the things that he has worked as before?",
+    options: ["Shepherd", "Bartender", "Professor", "Kindergarden teacher"],
     correctAnswerIndex: 0,
   },
 
@@ -52,7 +58,12 @@ const questions = [
     id: 6,
     questionText:
       "Petra is quite adventerous, what of the following has she done ?",
-    options: ["competed in parkour", "bungee jumping in a nightclub", "worked as a stuntwoman", "driven a formula 1 car"],
+    options: [
+      "Competed in parkour",
+      "Bungee jumping in a nightclub",
+      "Worked as a stuntwoman",
+      "Driven a formula 1 car",
+    ],
     correctAnswerIndex: 1,
   },
 ];
