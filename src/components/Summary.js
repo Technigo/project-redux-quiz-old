@@ -19,7 +19,7 @@ export const Summary = () => {
 
     const lastImg = () => {
         if (answersCorrect === 7) {
-            return <LastImage />
+            return (<LastImage />)
         }
     }
 
@@ -38,6 +38,7 @@ export const Summary = () => {
     return (
         <div className="summary">
             <h1>Thanks for playing the Friends quiz!</h1>
+            <div><LastImage /></div>
             <p>You've got some right, some wrong, but that doesn't matter! Go and re-watch another season of world's best show. </p>
             <button className="restart-button" type="button" onClick={restart}>
                 Play again!

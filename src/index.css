@@ -38,7 +38,6 @@ code {
   border: 1px solid #faff7f;
   font-family: "Lora", serif;
   font-size: 18px;
-  margin-bottom: 10px;
   margin-top: 15px;
   width: 40%;
   padding: 15px;
@@ -47,7 +46,7 @@ code {
   background-color: #faff7f;
 }
 .main {
-  padding-top: 50px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -62,9 +61,9 @@ code {
   font-family: "Lora", serif;
   font-size: 25px;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   color: #faff7f;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .question-number {
   font-family: "Lora", serif;
@@ -73,19 +72,36 @@ code {
   color: #ff88dc;
   display: inline-block;
 }
+.red {
+  background-color: #fb4d46;
+}
+.green {
+  background-color: #a5d610;
+}
+.disabled {
+  background-color: lightgray;
+}
+.right-wrong {
+  background-color: #dac6d4;
+  width: 30%;
+  padding: 10px;
+  border: 2px solid black;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 10px;
+}
 img {
   width: 500px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 .summary {
   background-color: #ff88dc;
-  padding-top: 150px;
+  margin-top: 150px;
+  margin-left: 350px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
   width: 60%;
   align-items: center;
   justify-content: center;
@@ -135,7 +151,6 @@ img {
     border: 1px solid #faff7f;
     font-family: "Lora", serif;
     font-size: 15px;
-    margin-bottom: 10px;
     margin-top: 2px;
     width: 50%;
     padding: 10px;
