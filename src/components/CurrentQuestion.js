@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import { AnswerList } from './AnswerList';
 import { Status } from "components/Status";
 import { quiz } from "reducers/quiz";
 import { Summary } from "./Summary";
@@ -60,6 +60,7 @@ export const CurrentQuestion = () => {
       {/* <h1 className="question-number">Question {question.id}:</h1> */}
       <img src={imageForQuestion()} alt="Friends Images" />
       <h1>{question.questionText}</h1>
+      <AnswerList />
       {/* <button type="button" onClick={() => handleAnswer(question.id, index)}>{option}{index}</button> */}
       <button className="button-next" type="button" onClick={handleClick}>
         Next
