@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Status } from "components/Status";
 import { quiz } from "reducers/quiz";
 import { Summary } from "./Summary";
-import q1 from "./images/q1.jpg";
+import q1 from './images/q1.jpg';
 import q2 from "./images/q2.png";
 import q3 from "./images/q3.jpg";
 import q4 from "./images/q4.jpg";
