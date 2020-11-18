@@ -26,6 +26,7 @@ export const Summary = () => {
     if (answersCorrect === 6 && answersCorrect === 7) {
         return (
             <p>
+                <div>{lastImg()}</div>
                 {/* <img src={friends} alt="friends"></img> */}
         You must really love Friends! You got all of the questions right! You
         could play again but I guess there is no point. Find something else to
