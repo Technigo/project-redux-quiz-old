@@ -17,7 +17,7 @@ const questions = [
   {
     id: 2,
     questionText: "What is one of Matildas superpowers ?",
-    options: ["", "", "she can do a handstand for 10 min", "she can rap"],
+    options: ["she can juggle with 6 balls", "she can yodel", "she can do a handstand for 10 min", "she can rap"],
     correctAnswerIndex: 3,
   },
 

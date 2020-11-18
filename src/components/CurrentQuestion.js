@@ -24,7 +24,8 @@ export const CurrentQuestion = () => {
             className={
               answer && index === question.correctAnswerIndex
                 ? "correct-answer option-button"
-                : "option-button incorrect-answer"
+                : answer ? "option-button incorrect-answer" 
+                : "option-button"
             }
             key={option}
             onClick={() =>
@@ -47,7 +48,4 @@ export const CurrentQuestion = () => {
   );
 };
 
-// (className =
-//   question.correctAnswerIndex === index
-//     ? "correct-answer option-button"
-//     : "option-button")
+
