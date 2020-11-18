@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const QuestionContainer = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #e40010;
@@ -15,24 +15,40 @@ const QuestionContainer = styled.section`
 `;
 
 const QuestionHeader = styled.legend`
-  width: 450px;
+  max-width: 450px;
   padding: 25px;
   font-size: 32px;
   color: #00b32c;
 `;
 
+const RadioWrapper= styled.div`
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+`;
+
 const QuestionText = styled.label`
-  width: 400px;
+  max-width: 400px;
   padding: 15px;
-  font-size: 24px;
+  font-size: 24px; 
 `;
 
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: space-between;
+  justify-content: center;
+  align-items: center;
   margin: 30px;
+  flex-direction: column;
 `;
+
+const AnswerStyle = styled.div`
+  max-width: 100%;
+`
+
+const RightAnswerStyle = styled.div`
+  max-width: 100%;
+  margin-bottom: 30px;
+`
 
 const HolidayButton = styled.button`
   width: 100px;
@@ -53,20 +69,20 @@ const CurrentQuestion = () => {
     state.quiz.answers.find((answer) => answer.questionId === question.id)
   );
 
-  console.log("userAnswer: " + userAnswer);
-  console.log("answer: " + JSON.stringify(answer));
-
   const allAnswers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
 
   const submitAnswer = (id, index) => {
-    if (parseInt(userAnswer) === question.correctAnswerIndex) {
-      console.log("Rätt svar");
-    } else {
-      console.log("Fel svar");
-    }
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
+
+  const checkAnswer = () => {
+    if (parseInt(userAnswer) === question.correctAnswerIndex) {
+      return <h2>Du svarade rätt!</h2>;
+    } else {
+      return <h2>Fel svar tyvärr.</h2>;
+    }
+  }
 
   const nextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion());
@@ -85,28 +101,38 @@ const CurrentQuestion = () => {
         <h1>{question.id}/7</h1>
         <QuestionHeader>{question.questionText}</QuestionHeader>
         {options.map((option, index) => (
-          <QuestionText htmlFor={index} key={index}>
-            <input
-              id={index}
-              type="radio"
-              name="answer"
-              value={index}
-              onChange={(event) => setUserAnswer(parseInt(event.target.value))}
-              checked={userAnswer === index}
-            />
-            {option}
-          </QuestionText>
+          <RadioWrapper>
+            <QuestionText htmlFor={index} key={index}>
+              <input
+                id={index}
+                type="radio"
+                name="answer"
+                value={index}
+                onChange={(event) => setUserAnswer(parseInt(event.target.value))}
+                checked={userAnswer === index}
+              />
+              {option}
+            </QuestionText>
+          </RadioWrapper>
         ))}
         <ButtonWrapper>
+        {answer === undefined &&
           <HolidayButton
             disabled={userAnswer === ""}
             onClick={() => submitAnswer(question.id, userAnswer)}
           >
             Submit
           </HolidayButton>
-          <HolidayButton disabled={answer === undefined} onClick={nextQuestion}>
-            {question.id < 7 ? "Next question" : "Show result"}
-          </HolidayButton>
+          }
+          {answer !== undefined &&
+            <>
+              <AnswerStyle>{checkAnswer()}</AnswerStyle>
+              <RightAnswerStyle>Rätt svar är {answer.answer}!</RightAnswerStyle>
+              <HolidayButton disabled={answer === undefined} onClick={nextQuestion}>
+                {question.id < 7 ? "Next question" : "Show result"}
+              </HolidayButton>
+            </>
+          }
         </ButtonWrapper>
       </QuestionContainer>
     );
