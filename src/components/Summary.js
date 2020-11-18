@@ -23,16 +23,28 @@ export const Summary = () => {
     default:
       image = './assets/santa-tree.jpg';
   }
-  // console.log(answer);
+
+  let quizScore = 0;
+
+  const calculateQuizScore = (score, quizLength) => {
+    quizScore = ((score) - (quizLength - score))
+    console.log(quizScore);
+    return quizScore;
+  }
+  calculateQuizScore(answer.length, questionArray.length);
 
   return (
     <>
       {quizOver && (
         <section className="summary">
-          <img src={image} alt="Chirstmas tree" className="summary__image" />
+          <img src={image} alt="Christmas tree" className="summary__image" />
           <p>
-            You scored:
-            {answer.length} / {questionArray.length}
+            You answered
+            {` ${answer.length}`} out of {questionArray.length} questions correct.
+          </p>
+
+          <p>
+            Your total points are: {quizScore}
           </p>
 
           <button
