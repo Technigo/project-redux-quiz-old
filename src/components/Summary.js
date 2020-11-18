@@ -28,11 +28,11 @@ export const Summary = () => {
     }
 
     return (
-        <>
+        <div className="summary">
             <h1>Thanks for playing!</h1>
             <button className="restart-button" type="button" onClick={restart}>
                 Play again!
       </button>
-        </>
+        </div>
     );
 };
