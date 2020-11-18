@@ -29,8 +29,7 @@ const Summarybox = styled.div`
 `
 
 const RestartButton = styled.button`
-  width: 100px;
-  height: 100px;
+  padding: 10px;
   margin: 20px;
   background-color: #0B5E15; 
   border-radius: 10px;

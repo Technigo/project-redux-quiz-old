@@ -12,26 +12,27 @@ const QuestionContainer = styled.section`
   background-color: #e40010;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const QuestionHeader = styled.legend`
   max-width: 450px;
   padding: 25px;
   font-size: 32px;
-  color: #00b32c;
-`;
+  color: #000;
+  text-align: center;
+`
 
 const RadioWrapper= styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
-`;
+`
 
-const QuestionText = styled.label`
+const OptionsText = styled.label`
   max-width: 400px;
   padding: 15px;
   font-size: 24px; 
-`;
+`
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -39,7 +40,7 @@ const ButtonWrapper = styled.div`
   align-items: center;
   margin: 30px;
   flex-direction: column;
-`;
+`
 
 const AnswerStyle = styled.div`
   max-width: 100%;
@@ -51,18 +52,19 @@ const RightAnswerStyle = styled.div`
 `
 
 const HolidayButton = styled.button`
-  width: 100px;
-  height: 100px;
-  color: #fffff:
+  padding: 10px;
+  color: #fff;
   margin: 20px;
   background-color: #0B5E15; 
   border-radius: 10px;
-`;
+`
+
 
 const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const [userAnswer, setUserAnswer] = useState("");
   const answer = useSelector((state) =>
@@ -78,9 +80,9 @@ const CurrentQuestion = () => {
 
   const checkAnswer = () => {
     if (parseInt(userAnswer) === question.correctAnswerIndex) {
-      return <h2>Du svarade rätt!</h2>;
+      return <h2>YAY! Correct answer!</h2>;
     } else {
-      return <h2>Fel svar tyvärr.</h2>;
+      return <h2>Sorry, you chose the wrong answer.</h2>;
     }
   }
 
@@ -98,11 +100,12 @@ const CurrentQuestion = () => {
   } else {
     return (
       <QuestionContainer>
-        <h1>{question.id}/7</h1>
+        <h1>Christmas quiz</h1> 
+        <h2>{question.id}/7</h2>
         <QuestionHeader>{question.questionText}</QuestionHeader>
         {options.map((option, index) => (
           <RadioWrapper>
-            <QuestionText htmlFor={index} key={index}>
+            <OptionsText htmlFor={index} key={index}>
               <input
                 id={index}
                 type="radio"
@@ -112,7 +115,7 @@ const CurrentQuestion = () => {
                 checked={userAnswer === index}
               />
               {option}
-            </QuestionText>
+            </OptionsText>
           </RadioWrapper>
         ))}
         <ButtonWrapper>
@@ -121,13 +124,13 @@ const CurrentQuestion = () => {
             disabled={userAnswer === ""}
             onClick={() => submitAnswer(question.id, userAnswer)}
           >
-            Submit
+          Submit
           </HolidayButton>
           }
           {answer !== undefined &&
             <>
               <AnswerStyle>{checkAnswer()}</AnswerStyle>
-              <RightAnswerStyle>Rätt svar är {answer.answer}!</RightAnswerStyle>
+              <RightAnswerStyle>The correct answer is {answer.answer}!</RightAnswerStyle>
               <HolidayButton disabled={answer === undefined} onClick={nextQuestion}>
                 {question.id < 7 ? "Next question" : "Show result"}
               </HolidayButton>

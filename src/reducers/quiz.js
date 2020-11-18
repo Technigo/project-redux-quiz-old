@@ -5,44 +5,44 @@ import  CurrentQuestion  from '../components/CurrentQuestion';
 const questions = [
   { 
     id: 1, 
-    questionText: 'Ungefär hur många askar av den mörka Aladdinchokladen säljs i genomsnitt varje december i Sverige?', 
-    options: ['1.2 miljoner', '4 miljoner', '2.7 miljoner'], 
+    questionText: 'Approximately how many boxes of the dark Aladdin chocolate box are sold on average every December in Sweden?', 
+    options: ['1.2 millions', '4 millions', '2.7 millions'], 
     correctAnswerIndex: 1 
   },
   { 
     id: 2, 
-    questionText: 'Vilken månad träffas världens auktoriserade tomtar på tomtarnas världskongress i Danmark?', 
-    options: ['April', 'November', 'Juli'], 
+    questionText: 'Which month of the year do the Worlds Authorized Santas meet at the Santa Claus World Congress in Denmark?', 
+    options: ['April', 'November', 'July'], 
     correctAnswerIndex: 2 
   },
   { 
     id: 3, 
-    questionText: 'Ungefär hur mycket julskinka äts det per person till jul i Sverige varje år?', 
+    questionText: 'Approximately how much Christmas ham is eaten per person for Christmas in Sweden each year?', 
     options: ['300 gram', '1 kilo', '580 gram'], 
     correctAnswerIndex: 1 
   },
   { 
     id: 4, 
-    questionText: 'Hur mycket farinsocker gick det åt för att smycka världens störstapepparkakshus, 1100 kubikmeter stort?', 
-    options: ['800 kilo', '15 000 ton', '1,3 ton'], 
+    questionText: 'How much brown sugar did it take to decorate the worlds largest gingerbread house, 1100 cubic meters in size?', 
+    options: ['800 kilo', '15 000 tons', '1,3 tons'], 
     correctAnswerIndex: 2 
   },
   { 
     id: 5, 
-    questionText: 'Vilken är den mest sålda julsingeln någonsin?', 
+    questionText: 'Which is the best-selling Christmas single ever?', 
     options: ['"Blue Christmas", Elvis Presley', '"Last Christmas", Wham', '"White Christmas", Bing Crosby'], 
     correctAnswerIndex: 2 
   },
   { 
     id: 6, 
-    questionText: 'En speciell katt sägs ha varit involverad när saffransbrödet fick namnet lussekatt. Vem symboliserar katten?', 
-    options: ['Djävulen', 'Lucia', 'Staffan stalledräng'], 
+    questionText: 'A special cat is said to have been involved when the saffron bread was named lussekatt. Who symbolizes the cat?', 
+    options: ['The Devil', 'Lucia', 'Staffan stalledräng'], 
     correctAnswerIndex: 0 
   },
   { 
     id: 7, 
-    questionText: '1941 började Hennes & Mauritz grundare, Erling Persson, att massproducera ett julpynt som blev en storsäljare. Vad var det han tillverkade?', 
-    options: ['Adventsstakar', 'Julstjärnor', 'Julgransbelysning'], 
+    questionText: 'In 1941, H&M founder, Erling Persson, began mass-producing a Christmas decoration that became a bestseller. What was he making?', 
+    options: ['Advent Candle Stick', 'Christmas Star', 'Christmas Tree Lighting'], 
     correctAnswerIndex: 1 
   },
 ]
