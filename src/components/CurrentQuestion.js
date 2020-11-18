@@ -31,9 +31,9 @@ export const CurrentQuestion = () => {
 
   if (!quizOver) {
   return (
-    <div>
+    <div className="question-container">
       <h2>{questionIndex+1}/{questions.length}</h2>
-      <h1>Question: {question.questionText}</h1>
+      <h1>{question.questionText}</h1>
       {question.options.map((option, index) => {
         return (
           <button
@@ -57,7 +57,7 @@ export const CurrentQuestion = () => {
           </button>
         );
       })}
-      <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} disabled={!answer} >
+      <button onClick={() => dispatch(quiz.actions.goToNextQuestion())} disabled={!answer} className="next-button">
         Next
       </button>
     </div>

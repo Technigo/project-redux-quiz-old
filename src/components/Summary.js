@@ -7,15 +7,15 @@ export const Summary = (state) => {
   const dispatch = useDispatch();
   const checkIfCorrect = useSelector((state) => state.quiz.answers);
 
-  const total = checkIfCorrect.filter((x) => x.isCorrect === true);
+  const total = checkIfCorrect.filter((x) => x.isCorrect);
 
   console.log(checkIfCorrect);
   console.log(total);
   return (
-    <div>
+    <div className="summary">
       <h1>Summary</h1>
       <h2>You got {total.length} /6</h2>
-      <button onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
+      <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
     </div>
   );
 };

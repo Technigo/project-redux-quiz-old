@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,17 +10,54 @@ code {
     monospace;
 }
 
-.option-button {
-width: 200px;
+.option-button, .next-button, .restart-button, .start-button {
+width: 250px;
 height: 50px;
 border-radius: 30px;
+border: none;
+background-color: #ffdfe7;
+margin: 10px;
+font-weight: 700;
+}
+
+button:focus {
+  outline: 0;
 }
 
 .correct-answer{
-  background-color: green;
+  background-color: #051dd2;
+  color: white;
 }
 
 .incorrect-answer{
-  background-color: red;
+  background-color: #FE3525;
+  color: white;
+}
+
+.next-button {
+background-color: #f6a522;
+color: white;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.restart-button {
+  background-color: #f6a522;
+  color: white;
 }
 
