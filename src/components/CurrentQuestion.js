@@ -71,7 +71,7 @@ const CurrentQuestion = () => {
     state.quiz.answers.find((answer) => answer.questionId === question.id)
   );
 
-  const allAnswers = useSelector((state) => state.quiz.answers);
+  // const allAnswers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
 
   const submitAnswer = (id, index) => {
