@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { quiz } from "../reducers/quiz";
+import { LastImage } from './LastImage'
 
 // import friends from "./images/friends.jpg";
 
@@ -15,6 +16,12 @@ export const Summary = () => {
     const restart = () => {
         dispatch(quiz.actions.restart());
     };
+
+    const lastImg = () => {
+        if (answersCorrect === 7) {
+            return <LastImage />
+        }
+    }
 
     if (answersCorrect === 6 && answersCorrect === 7) {
         return (
