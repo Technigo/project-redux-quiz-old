@@ -1,12 +1,11 @@
-/* eslint-disable */
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { QuestionContainer, QuestionText } from 'components/Styles'
 import { quiz } from '../reducers/quiz'
 import Button from './Button'
 
-export const CurrentQuestion = ({handleNextQuestion, buttonStatus}) => {
+export const CurrentQuestion = ({ handleNextQuestion, buttonStatus }) => {
   const dispatch = useDispatch()
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
 
@@ -20,19 +19,19 @@ export const CurrentQuestion = ({handleNextQuestion, buttonStatus}) => {
       { questionId: question.id, answerIndex: question.options.indexOf(option) }
     ))
   }
-  
+
   return (
     <QuestionContainer>
       <QuestionText>{question.questionText}</QuestionText>
       <div>
         {question.options.map((option, index) => (
-          <Button 
+          <Button
             disabled={buttonStatus}
             questionId={question.id}
-            index = {index}
-            option= {option}
-            correctIndex = {question.correctAnswerIndex}
-            onClick={() => onButtonClick(option)} 
+            index={index}
+            option={option}
+            correctIndex={question.correctAnswerIndex}
+            onClick={() => onButtonClick(option)}
             type="button">{option}
           </Button>
         ))}

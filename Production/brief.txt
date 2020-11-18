@@ -1,5 +1,23 @@
-## **Planning**
-- What will the summary screen look like?
+from quiz.js:
+
+
+    /**
+     * Use this action when a user selects an answer to the question.
+     * The answer will be stored in the `quiz.answers` state with the
+     * following values:
+     *
+     *    questionId  - The id of the question being answered.
+     *    answerIndex - The index of the selected answer from the question's options.
+     *    question    - A copy of the entire question object, to make it easier to show
+     *                  details about the question in your UI.
+     *    answer      - The answer string.
+     *    isCorrect   - true/false if the answer was the one which the question says is correct.
+     *
+     * When dispatching this action, you should pass an object as the payload with `questionId`
+     * and `answerIndex` keys. See the readme for more details.
+     */
+
+
 ---
 
 ## **Redux actions**
@@ -65,13 +83,11 @@ Your project should fulfill the **🔵  Blue Level** and all of the **General Re
 
 **🔵  Blue Level (Minimum Requirements)**
 x - Your quiz should have at least 5 questions.
-- When the user selects an answer, it should show if they were correct or not.
+x - When the user selects an answer, it should show if they were correct or not.
 x - While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'.
-- When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect.
+x - When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect.
 x - You should challenge yourself to make use of redux by making small components which interact with the store - don't just go for one big component.
 x - Don't forget CSS! Your quiz should be well styled.
-
-
 
 
 **🔴  Red Level (Intermediary Goals)**

@@ -1,7 +1,6 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 
-const Button = ({ index, questionId, correctIndex, onClick, type, option, disabled }) => {
+const Button = ({ index, questionId, correctIndex, onClick, option, disabled }) => {
   const [borderColor, setBorderColor] = useState('grey')
 
   useEffect(() => {
@@ -23,7 +22,7 @@ const Button = ({ index, questionId, correctIndex, onClick, type, option, disabl
       disabled={disabled}
       style={{ border: `1px solid ${borderColor}` }}
       onClick={onAnswerClick}
-      type={type}>
+      type="button">
       {option}
     </button>
   )

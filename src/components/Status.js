@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -8,7 +7,6 @@ import { Progress } from './Styles'
 export const Status = ({ handleNextQuestion }) => {
   const dispatch = useDispatch()
   const currentPage = useSelector((store) => store.quiz.currentQuestionIndex)
-  console.log(quiz.currentQuestionIndex)
 
   const nextButton = () => {
     handleNextQuestion(false)
