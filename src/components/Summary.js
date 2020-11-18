@@ -27,7 +27,7 @@ export const Summary = () => {
   let quizScore = 0;
 
   const calculateQuizScore = (score, quizLength) => {
-    quizScore = ((score) - (quizLength - score))
+    quizScore = (score - (quizLength - score)) * 100
     console.log(quizScore);
     return quizScore;
   }
