@@ -13,8 +13,6 @@ export const Status = () => {
     <section>
       <Progress>You are on question {currentPage} of 5.</Progress>
       <button type="button" onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next Question</button>
-      {/* To be moved to the Summary component */}
-      {/* <ButtonStyled type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</ButtonStyled> */}
     </section>
   )
 }

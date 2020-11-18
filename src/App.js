@@ -6,6 +6,7 @@ import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import { Status } from 'components/Status'
 import { Title } from 'components/Styles'
+import { Summary } from 'components/Summary'
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -19,6 +20,7 @@ export const App = () => {
       <Title>C:\&gt; Nerd Quiz!</Title>
       <CurrentQuestion />
       <Status />
+      <Summary />
     </Provider>
   )
 }
