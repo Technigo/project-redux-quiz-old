@@ -18,7 +18,7 @@ export const AnswerList = () => {
     return (
         <>
             {answers.map((answer, index) => (
-                <button type="button" onClick={() => handleClick(index)}>
+                <button className="button-options" type="button" onClick={() => handleClick(index)}>
                     {answer}
                 </button>
             ))}
