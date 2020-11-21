@@ -103,8 +103,8 @@ const CurrentQuestion = () => {
         <h2>{question.id}/7</h2>
         <QuestionHeader>{question.questionText}</QuestionHeader>
         {options.map((option, index) => (
-          <RadioWrapper>
-            <OptionsText htmlFor={index} key={index}>
+          <RadioWrapper key={index}>
+            <OptionsText htmlFor={index}>
               <input
                 id={index}
                 type="radio"
@@ -129,7 +129,7 @@ const CurrentQuestion = () => {
           {answer !== undefined &&
             <>
               <AnswerStyle>{checkAnswer()}</AnswerStyle>
-              <RightAnswerStyle>The correct answer is {answer.answer}!</RightAnswerStyle>
+              <RightAnswerStyle>The correct answer is {question.options[question.correctAnswerIndex]}!</RightAnswerStyle>
               <HolidayButton disabled={answer === undefined} onClick={nextQuestion}>
                 {question.id < 7 ? "Next question" : "Show result"}
               </HolidayButton>
