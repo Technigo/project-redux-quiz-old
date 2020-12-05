@@ -1,5 +1,5 @@
 # Redux quiz group project - Overview
-Mob programming project. Over two collaboration days, our team's task was to build a multiple choice quiz using Redux on a topic of our choosing.
+Mob programming project with four others in my group. Over two collaboration days, our team's task was to build a multiple choice quiz using Redux on a topic of our choosing.
 
 Learning objectives:
 - How to interact with the store using selectors or by dispatching actions
@@ -10,10 +10,10 @@ Learning objectives:
 
 
 ## Core Tech
-- HTML5
-- CSS
-- Flexbox
-- Mobile-First approach 
+- Redux
+- React
+- JSX
+- Styled-Components
 
 ## Completed Requirements
 🔵  Blue Level
