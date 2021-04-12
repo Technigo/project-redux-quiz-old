@@ -7,21 +7,21 @@ const questions = [
 ]
 
 const initialState = {
-  questions,
-  answers: [],
-  currentQuestionIndex: 0,
-  quizOver: false
+  questions, //questions:questions
+  answers: [], // this one is going to store our answers
+  currentQuestionIndex: 0, // which question we currently in
+  quizOver: false // Going to transform to true when the quiz ends
 }
 
-export const quiz = createSlice({
+export const quiz = createSlice({ 
   name: 'quiz',
   initialState,
-  reducers: {
+  reducers: { // This is our Reducer
 
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
-     * following values:
+     * following values: quiz.answer{questionID, answerIndex, question}
      *
      *    questionId  - The id of the question being answered.
      *    answerIndex - The index of the selected answer from the question's options.
@@ -36,7 +36,7 @@ export const quiz = createSlice({
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
-
+      console.log()
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
       }
@@ -61,11 +61,11 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    goToNextQuestion: (state) => {
+    goToNextQuestion: (state) => { 
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true // if his is the last question of possible questions then our quizz is over
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1 // if its not last question we just going to add +1 and go to next question
       }
     },
 
