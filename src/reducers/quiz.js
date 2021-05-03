@@ -22,8 +22,7 @@ export const quiz = createSlice({
   reducers: { 
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
-    const question = state.questions.find((q) => q.id === questionId)
-      console.log()
+      const question = state.questions.find((q) => q.id === questionId)
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
       }
@@ -41,17 +40,16 @@ export const quiz = createSlice({
       })
     },
 
-      goToNextQuestion: (state) => { 
+    goToNextQuestion: (state) => { 
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true // if his is the last question of possible questions then our quizz is over
+        state.quizOver = true 
       } else {
-        state.currentQuestionIndex += 1 // if its not last question we just going to add +1 and go to next question
+        state.currentQuestionIndex += 1 
       }
     },
 
     restart: () => {
       return initialState
     }
-
   }
 })
