@@ -68,10 +68,6 @@ code {
   font-weight: bold;
 }
 
-.content {
-  border: 3px solid black;
-}
-
 .QuestionSection {
   display: flex;
   justify-content: center;
