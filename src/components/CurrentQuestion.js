@@ -35,8 +35,9 @@ const CurrentQuestion = () => {
       <h2 className="question-text">{question.questionText}</h2>
       <Options />
       <Button 
-        className="next-button"
+        className="button"
         onClick={() => handleOnClickNextQuestion()}
+        style={{ background: '#c3bef0'}}
         type="button"
         disabled={!questionAnswered()}
         buttonText={currentQuestion === 4 ? 'Summary' : 'Next Question'}

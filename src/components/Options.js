@@ -29,14 +29,14 @@ const Options = () => {
 		<>
 			{question.options.map((option, index) => {
 				return (
-					<div className="optionscontainer" key={option}>
+					<div className="options-container" key={option}>
 						<Button
 							className="option-button"
 							onClick={() => handleOnClickOption(option)}
 							style={{ background: 
-								!answer ? 'white' 
-								: index === question.correctAnswerIndex ? 'green' 
-								: 'red' 
+								!answer ? '#cadefc' 
+								: index === question.correctAnswerIndex ? '#d5ecc2' 
+								: '#ffb6b9' 
 							}}
 							type="button"
 							disabled={disabled}
