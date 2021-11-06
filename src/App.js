@@ -4,6 +4,7 @@ import { CurrentQuestion } from 'components/CurrentQuestion/CurrentQuestion'
 import { store } from './store'
 import { Counter } from './components/Counter'
 import { Score } from './components/Score'
+import { Results } from './components/Results'
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
       <Counter />
       <Score />
       <CurrentQuestion />
+      <Results />
     </Provider>
   )
 }

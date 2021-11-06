@@ -47,7 +47,6 @@
 .form_radio_label{
     margin: 7px auto;
     font-size: 1.2rem;
-  
 }
 
 .form_radio_input{
@@ -55,6 +54,12 @@
     margin: 5px;
 }
 
+.disable{
+    background: rgb(250, 178, 151);
+    border: 2px solid rgb(240, 99, 48);
+    pointer-events: none;
+    color: rgb(240, 99, 48);
+}
 
 @media (min-width: 768px) {
 .form_radio{

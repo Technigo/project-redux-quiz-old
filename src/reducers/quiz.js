@@ -18,7 +18,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  score: 0
 }
 
 export const quiz = createSlice({
@@ -61,6 +62,8 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+
+      state.score = question.correctAnswerIndex === answerIndex ? state.score + 1 : state.score
     },
 
     /**

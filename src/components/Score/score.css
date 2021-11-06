@@ -14,7 +14,7 @@
 }
 
 .score_round{
-    background-color:darkkhaki;
+    background:darkkhaki;
     border-radius: 100%;
     width: 10px;
     height: 10px;
@@ -23,12 +23,20 @@
 }
 
 .score_question_number{
-    background: darksalmon;
     color: white;
     align-items: center;
-     margin: 0 auto;
-     font-size: 0.5rem;
+    margin: 0 auto;
+    font-size: 0.5rem;
 }
+
+.correct{
+    background-color:green;
+}
+
+.incorrect{
+    background: red;
+}
+
 
 @media (min-width: 768px) {
 .score_map{
