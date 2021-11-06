@@ -6,6 +6,8 @@ const questions = [
   { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
 ]
 
+// initial state to store
+// selectors to choose
 const initialState = {
   questions,
   answers: [],
@@ -16,6 +18,7 @@ const initialState = {
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
+  // actions here belongs to state.quiz
   reducers: {
 
     /**
