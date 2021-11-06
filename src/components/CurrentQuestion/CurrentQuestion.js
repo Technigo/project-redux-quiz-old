@@ -4,10 +4,11 @@ import { quiz } from 'reducers/quiz';
 import './currentQuestion.css'
 
 export const CurrentQuestion = () => {
-  const dispatch = useDispatch()
-  const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  const answers = useSelector((store) => store.quiz.answers)
-  const currentQuestionIndex = useSelector((store) => store.quiz.currentQuestionIndex)
+  const dispatch = useDispatch();
+  const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
+  const answers = useSelector((store) => store.quiz.answers);
+  const currentQuestionIndex = useSelector((store) => store.quiz.currentQuestionIndex);
+  const quizOver = useSelector((store) => store.quiz.quizOver);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -22,7 +23,7 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div className="question_container">
+    !quizOver && <div className="question_container">
       <div className="question_title">Animal&apos;s quiz</div>
       <h1 className="question_text">Question: {question.questionText}</h1>
       <form className="form_radio" onSubmit={(event) => event.preventDefault()}>
