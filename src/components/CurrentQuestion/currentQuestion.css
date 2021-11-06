@@ -6,6 +6,19 @@
     border-radius: 23px;
 }
 
+.question_title{
+    background: black;
+    color: rgb(75, 213, 218);
+    text-transform: capitalize;
+    font-size: 1rem;
+    height: 50px;
+    border-radius: 23px 23px 0 0;
+    margin: auto 0;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .question_text{
     color: rgb(238, 229, 177);
     padding: 25px;

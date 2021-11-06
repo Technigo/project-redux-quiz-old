@@ -19,6 +19,7 @@ export const CurrentQuestion = () => {
 
   return (
     <div className="question_container">
+      <div className="question_title">Animal&apos;s quiz</div>
       <h1 className="question_text">Question: {question.questionText}</h1>
       <form className="form_radio" onSubmit={(event) => event.preventDefault()}>
         {question.options.map((option, i) => {

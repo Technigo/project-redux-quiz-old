@@ -2,8 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'What is the smallest mammal in the world?', options: ['bumblebee bat', 'numbat', 'western harvest mouse', 'pigmy marmoset'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'What animal has the highest blood pressure?', options: ['elephant', 'jiraffe', 'blue whale', 'humminbird'], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'What is the name of the fastest animal in the world?', options: ['black marlin', 'peregrine falcon', 'humminbird', 'cheetah'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'What is the gestation period of a blue whale?', options: ['1.2 years', '9 months', '4-6 months', '10-12 months'], correctAnswerIndex: 3 },
+  { id: 5, questionText: 'What is the animal can’t jump?', options: ['penguin', 'lizard', 'elephant', 'pig'], correctAnswerIndex: 2 },
+  { id: 6, questionText: 'What animal has the longest lifespan?', options: ['blue whale', 'giant tortoise', 'elephant', 'panda'], correctAnswerIndex: 1 },
+  { id: 7, questionText: 'What’s the maximum amount of time Alaskan wood frogs can survive being frozen?', options: ['7 months', '2 months', '10 months', '1 year'], correctAnswerIndex: 0 },
+  { id: 8, questionText: 'How many different species of ladybugs are there?', options: ['379', '3,578', '5,000', '200'], correctAnswerIndex: 2 }
 ]
 
 // initial state to store
