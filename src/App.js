@@ -1,16 +1,15 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { CurrentQuestion } from 'components/CurrentQuestion/CurrentQuestion'
+import { CurrentQuestion } from 'components/CurrentQuestion'
+import { SideBar } from './components/SideBar'
 import { store } from './store'
-import { Counter } from './components/Counter'
-import { Score } from './components/Score'
+
 import { Results } from './components/Results'
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <Counter />
-      <Score />
+      <SideBar />
       <CurrentQuestion />
       <Results />
     </Provider>

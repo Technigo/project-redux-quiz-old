@@ -1,0 +1,17 @@
+.sideBar-container{
+    background: rgb(159, 159, 173);
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+.sideBar-container{
+    width: 25%;
+}
+
+}

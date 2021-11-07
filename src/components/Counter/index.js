@@ -11,7 +11,7 @@ export const Counter = () => {
 
   return (
     <section className="counter-container">
-    Question {currentQuestion.id} of {questions.length}
+      <h1 className="counter-text">Question {currentQuestion.id} of {questions.length}</h1>
     </section>
   )
 }

@@ -10,8 +10,10 @@ export const Score = () => {
 
   return (
     <section className="score_container">
-      <h1 className="score_title">Score</h1>
-      <h2 className="score_counter">{score}</h2>
+      <div className="score_text_container">
+        <h1 className="score_title">Score</h1>
+        <h2 className="score_counter">{score}</h2>
+      </div>
       <section className="score_map">
         {questions.map((question, index) => {
           let answerClassName = '';

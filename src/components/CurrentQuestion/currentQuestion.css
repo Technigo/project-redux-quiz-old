@@ -1,9 +1,13 @@
 .question_container{
     background: rgb(83, 157, 160);
-    height: 100%;
-    width: 70%;
-    margin: 0 auto;
+    height: auto;
+    width: 80%;
+    margin-left: 30%;
     border-radius: 23px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    padding-bottom: 5px;
 }
 
 .question_title{
@@ -18,11 +22,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
 }
+
 .question_text{
     color: rgb(238, 229, 177);
     padding: 25px;
     font-size: 1.5rem;
+    text-align: center;
+}
+.option_button{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 10px auto;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    border: 1px solid black;
+    padding: 10px;
+    background: wheat;
 }
 
 .next_question_button{
@@ -31,11 +51,12 @@
     border: coral;
     padding: 10px;
     border-radius: 23px;
-    margin: 30px;
+    margin: 30px auto;
     cursor: pointer;
+    display: flex;
 }
 
-.form_radio{
+/* .form_radio{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,12 +68,27 @@
 .form_radio_label{
     margin: 7px auto;
     font-size: 1.2rem;
+    text-transform: capitalize;
+    border: 1px solid black;
+    padding: 10px;
+    width: 90%;
 }
 
 .form_radio_input{
     cursor: pointer;
     margin: 5px;
+} */
+.option_correct {
+background: green !important;
 }
+
+
+.option_incorrect{
+background: red;
+}
+/* .isIncorrect{
+background: red;
+} */
 
 .disable{
     background: rgb(250, 178, 151);
@@ -62,14 +98,14 @@
 }
 
 @media (min-width: 768px) {
-.form_radio{
-   width: 25%;
+.question_container{
+    width: 60%;
 }
 
 .question_text{
-    font-size: 2rem;
-}
-.form_radio_label{
     font-size: 1.7rem;
+}
+.option_button{
+    font-size: 1.3rem;
 }
 }
