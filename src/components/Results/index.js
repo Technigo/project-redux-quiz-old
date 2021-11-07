@@ -14,13 +14,18 @@ export const Results = () => {
     dispatch(quiz.actions.restart())
   }
 
+  const percentage = (score * 100) / questions.length
+
   return (
     <>
       {quizOver
         ? (<section className="results-container">
-          <h1>Your final result {score} of {questions.length}</h1>
-          <button type="button" onClick={() => handleOnClick()}>Start again</button>
-           </section>)
+          <h1 className="results-text">Your final result is: </h1>
+          <h1 className="results-text">{score} of {questions.length} = {percentage}%</h1>
+
+          <h1 className="results-message"> {percentage <= '50' ? 'Continue studiyng and exploring nature!' : 'You are a great nature fan, congratulations!'}</h1>
+          <button className="results-button" type="button" onClick={() => handleOnClick()}>Start again</button>
+        </section>)
         : ''}
     </>
   )

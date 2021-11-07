@@ -1,3 +1,49 @@
 .results-container{
-    background: red;
+    color: white;
+    background: rgb(83, 157, 160);
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.results-text{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.results-button{
+    color: white;
+    background: coral;
+    border: coral;
+    padding: 10px;
+    border-radius: 23px;
+    margin: 30px auto;
+    cursor: pointer;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.results-message{
+    color: green;
+    font-size: 1.2rem;
+    max-width: 80%;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+.results-text{
+   font-size: 1.2rem;
+}
+
+.results-container{
+    width: 50%;
+    height: 65vh;
+    justify-content: center;
+}
+
+
 }

@@ -7,11 +7,13 @@
     align-items: flex-start;
     box-sizing: border-box;
     border-radius: 20px;
+
 }
 
 @media (min-width: 768px) {
 .sideBar-container{
     width: 25%;
+    height: 65vh;
 }
 
 }
