@@ -2,22 +2,70 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  {
+    id: 1,
+    questionText: 'Which of these  museums do not  exist in Sweden?',
+    options: [
+      'Potato museum',
+      'James Bond Museum',
+      'Fermented herring museum (surströmming),',
+      'Caravan museum',
+    ],
+    correctAnswerIndex: 0,
+    answerText:
+      'Although potatoes have been a core pillar of Swedish culinary history for centuries it does not boast its own museum. BUT! If you felt like that was a bummer you will be happy to hear there is one or several potato museum/s in Poland, Belgium(2), Canada(2), Denmark, France, Germany(3), Italy and The United States of America (2',
+  },
+  {
+    id: 2,
+    questionText: 'Where is the oldest open air museum located?',
+    options: ['Georgia', 'The United States', 'South Africa', 'Sweden'],
+    correctAnswerIndex: 3,
+    answerText: 'Sweden! Skansen was opened in 1891 and 1,3 million people visit it annually.',
+  },
+  {
+    id: 3,
+    questionText: 'Where is this museum located?',
+    options: ['London', 'Athens', 'Rome', 'Paris'],
+    correctAnswerIndex: 0,
+    answerText:
+      'This is the British Museum. The architecture is heavily inspired by ancient Greek architecture.',
+  },
+  {
+    id: 4,
+    questionText:
+      'Museum of modern art (MoMA) is a world famous museum in New York. But since 1993 have a competitor with the acronym MoBA. What does MoBA stand for?',
+    options: [
+      'Museum of Botanical Art',
+      'Museum of Biological Art',
+      'Museum of Bad Art ',
+      'Museum of Badger Art',
+    ],
+    correctAnswerIndex: 2,
+    answerText:
+      'Museum of Bad art is located outside of Boston and has a large collection of what they describe as “The pieces in the MoBA collection range from the work of talented artists that have gone awry to works by (...) artist barely in control of the brush.”',
+  },
+  {
+    id: 5,
+    questionText:
+      'This piece of work is called Ecce Homo and was first painted in 1930. When a woman tried to restore it it swept the world with its “unique look” to say the least. When was this restoration performed? ',
+    options: ['2008', '2012', '2015', '2017'],
+    correctAnswerIndex: 1,
+    answerText:
+      'Even though a lot of people saw a destroyed old mural and were upset,  many flocked to the church in Spain to see the artwork, making it more valuable than it was before.',
+  },
 ]
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
 }
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -35,14 +83,18 @@ export const quiz = createSlice({
      */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const question = state.questions.find(q => q.id === questionId)
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        )
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        )
       }
 
       state.answers.push({
@@ -50,7 +102,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
+        isCorrect: question.correctAnswerIndex === answerIndex,
       })
     },
 
@@ -61,7 +113,7 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    goToNextQuestion: (state) => {
+    goToNextQuestion: state => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
       } else {
@@ -78,7 +130,6 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
-
-  }
+    },
+  },
 })
