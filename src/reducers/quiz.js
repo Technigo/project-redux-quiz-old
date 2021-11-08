@@ -18,10 +18,10 @@ const questions = [
     questionText:
       "When was Michael Phelps last named male World Swimmer of the Year?",
     options: [
-      { answer: "2012" },
-      { answer: "2014" },
-      { answer: "2016" },
-      { answer: "2018" },
+      { id: 1, answer: "2012" },
+      { id: 2, answer: "2014" },
+      { id: 3, answer: "2016" },
+      { id: 4, answer: "2018" },
     ],
     correctAnswerIndex: 2,
   },

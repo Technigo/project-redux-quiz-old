@@ -4,6 +4,7 @@ import { quiz } from "../reducers/quiz"
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const checkAnswer = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect)
   const dispatch = useDispatch()
 
   if (!question) {
@@ -14,6 +15,8 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
   }
 
+  
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
@@ -21,6 +24,7 @@ export const CurrentQuestion = () => {
       <button key={option.id} onClick={() => onAnswerSubmit(question.id, index)}>{option.answer}</button>
       ))
     }
+    {/* {checkAnswer && <p>Correct!</p>} {!checkAnswer && <p>Incorrect!</p>} */}
     </div>
   )
 }
