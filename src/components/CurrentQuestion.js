@@ -22,8 +22,6 @@ export const CurrentQuestion = () => {
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
     {dispatch(quiz.actions.goToNextQuestion())}
-  
-  
    
   }
 
