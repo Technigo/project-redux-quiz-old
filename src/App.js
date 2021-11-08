@@ -18,3 +18,5 @@ export const App = () => {
     </Provider>
   )
 }
+
+// provider comp wrapper all, store exist there
