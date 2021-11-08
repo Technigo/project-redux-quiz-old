@@ -31,7 +31,17 @@
       }
     ],
     "linebreak-style": ["error", "windows"],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "always",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never"
+      }
+    ],
+
     "consistent-return": "off",
     "curly": "error",
     "eol-last": "off",

@@ -10,11 +10,11 @@ const questions = [
       'Potato museum',
       'James Bond Museum',
       'Fermented herring museum (surströmming),',
-      'Caravan museum'
+      'Caravan museum',
     ],
     correctAnswerIndex: 0,
     answerText:
-      'Although potatoes have been a core pillar of Swedish culinary history for centuries it does not boast its own museum. BUT! If you felt like that was a bummer you will be happy to hear there is one or several potato museum/s in Poland, Belgium(2), Canada(2), Denmark, France, Germany(3), Italy and The United States of America (2'
+      'Although potatoes have been a core pillar of Swedish culinary history for centuries it does not boast its own museum. BUT! If you felt like that was a bummer you will be happy to hear there is one or several potato museum/s in Poland, Belgium(2), Canada(2), Denmark, France, Germany(3), Italy and The United States of America (2',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const questions = [
     questionText: 'Where is the oldest open air museum located?',
     options: ['Georgia', 'The United States', 'South Africa', 'Sweden'],
     correctAnswerIndex: 3,
-    answerText: 'Sweden! Skansen was opened in 1891 and 1,3 million people visit it annually.'
+    answerText: 'Sweden! Skansen was opened in 1891 and 1,3 million people visit it annually.',
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const questions = [
     options: ['London', 'Athens', 'Rome', 'Paris'],
     correctAnswerIndex: 0,
     answerText:
-      'This is the British Museum. The architecture is heavily inspired by ancient Greek architecture.'
+      'This is the British Museum. The architecture is heavily inspired by ancient Greek architecture.',
   },
   {
     id: 4,
@@ -42,11 +42,11 @@ const questions = [
       'Museum of Botanical Art',
       'Museum of Biological Art',
       'Museum of Bad Art ',
-      'Museum of Badger Art'
+      'Museum of Badger Art',
     ],
     correctAnswerIndex: 2,
     answerText:
-      'Museum of Bad art is located outside of Boston and has a large collection of what they describe as “The pieces in the MoBA collection range from the work of talented artists that have gone awry to works by (...) artist barely in control of the brush.”'
+      'Museum of Bad art is located outside of Boston and has a large collection of what they describe as “The pieces in the MoBA collection range from the work of talented artists that have gone awry to works by (...) artist barely in control of the brush.”',
   },
   {
     id: 5,
@@ -57,15 +57,15 @@ const questions = [
     options: ['2008', '2012', '2015', '2017'],
     correctAnswerIndex: 1,
     answerText:
-      'Even though a lot of people saw a destroyed old mural and were upset,  many flocked to the church in Spain to see the artwork, making it more valuable than it was before.'
-  }
+      'Even though a lot of people saw a destroyed old mural and were upset,  many flocked to the church in Spain to see the artwork, making it more valuable than it was before.',
+  },
 ]
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
 }
 
 export const quiz = createSlice({
@@ -108,7 +108,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
+        isCorrect: question.correctAnswerIndex === answerIndex,
       })
     },
 
@@ -136,6 +136,6 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
-  }
+    },
+  },
 })
