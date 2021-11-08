@@ -1,5 +1,7 @@
 ## **Planning**
 
+Questions for quiz are from here: https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/
+
 Notes after team meeting 8/11: 
 - 5 question and, 4 options for every question displayd w buttons
 - show true/false answer whit green/red button.
