@@ -20,7 +20,6 @@ export const CurrentQuestion = () => {
 
   return (
     <QuestionsContainer>
-      <Header2>{question.questionText}</Header2>
       <ButtonQuestion question={question} setOnAnswerSubmit={onAnswerSubmit} />
     </QuestionsContainer>
   );

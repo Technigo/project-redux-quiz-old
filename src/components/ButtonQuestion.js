@@ -7,6 +7,7 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
 
   return (
     <QuestionContainer>
+      <Header2>{question.questionText}</Header2>
       <ImageContainer>
         <Image src="./pictures/hogwarts-express.jpg"></Image>
       </ImageContainer>
@@ -14,9 +15,9 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
       <ButtonsContainer>
         {question.options.map((item, index) => (
           <div key={item}>
-            <button onClick={() => setOnAnswerSubmit(question.id, index)}>
+            <Button onClick={() => setOnAnswerSubmit(question.id, index)}>
               {item}
-            </button>
+            </Button>
           </div>
         ))}
       </ButtonsContainer>
@@ -31,15 +32,34 @@ const Image = styled.img`
 
 const ImageContainer = styled.div`
   width: 100%;
+  border: black 1px solid;
 `;
 
 const QuestionContainer = styled.div`
-  display: flex;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
 `;
 
 const ButtonsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+
+  column-gap: 10px;
+`;
+
+const Button = styled.button`
+  background-color: black;
+  color: #b87333;
+  font-weight: 700;
+  width: 100%;
+  padding: 10px;
+`;
+
+const Header2 = styled.h2`
+  margin: 0 0 10px 0;
 `;
