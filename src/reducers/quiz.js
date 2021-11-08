@@ -1,9 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+
+  { id: 1, questionText: 'In what year was the first e-mail ever sent?', options: ['1967', '1971', '1974', '1978'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'Until 2010, carrier pigeons were faster than the internet but what was the first thing sent over the internet?', options: ['lo', 'Hello world', 'LOL', 'Is there anybody out there?'], correctAnswerIndex: 0 },
+  { id: 3, questionText: 'Smalltalk-80 was a programming language that inspired Steve Jobs when he created the first Apple computer. Which famous female researcher was part of the group behind it?', options: ['Grace Hopper', 'Ada Lovelace', 'Adele Goldberg', 'Karen Sparck Jones'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'What is the name of the ancient board game that Googles super computer won in 2017 against the best human Lee Sedol?', options: ['Chess', 'Go', 'Fu', 'Mahjong'], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'What was the name of the worlds first computer virus?', options: ['Sweeper', 'Spanish Flu', 'Covid-19', 'Creeper'], correctAnswerIndex: 3 }
 ]
 
 const initialState = {
@@ -34,6 +37,7 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
+      // console.log(state, action)
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
 
