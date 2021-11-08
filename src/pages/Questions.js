@@ -1,6 +1,10 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { quiz } from "reducers/quiz";
-import { CurrentQuestion } from "components/CurrentQuestion";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { quiz } from 'reducers/quiz'
+import { CurrentQuestion } from 'components/CurrentQuestion'
 
-export const 
+const Questions = () => {
+  return <CurrentQuestion />
+}
+
+export default Questions
