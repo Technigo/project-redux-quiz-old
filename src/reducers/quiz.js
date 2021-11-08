@@ -2,8 +2,32 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, 
+    questionText: 'Where do programmers hangout?', 
+    options: ['Outside', 'At Stack Overflow lounge', 'Google Academy', 'At functions'], 
+    correctAnswerIndex: 1 
+  },
+  { id: 2, 
+    questionText: 'What is the most popular programming problem?', 
+    options: ['The correct amount of curly brackets', 'Wrong class', 'Lowercase/Uppercase', 'Missing a Semicolon.'], 
+    correctAnswerIndex: 3 
+  },
+  { id: 3, 
+    questionText: 'Can you summarize the life of programmers in four words?', 
+    options: ['Learn. Share. Teach. Explore.', 'Vacation. Sunbathe. Surf. Beach.', 'Eat. Sleep. Code. Repeat.', 'Stand. Run. Fall. Repeat.'], 
+    correctAnswerIndex: 2 
+  },
+  { id: 4, 
+    questionText: 'As a programmer, where do you see yourself 10 years from now?', 
+    options: ['Sitting in front of a computer, probably programming.', 'Living on a desert island without technology', 'Nextdoor to Maks', 'Still trying to understand Javascript'], 
+    correctAnswerIndex: 0 
+  },
+  { id: 5, 
+    questionText: 'What is the golden rule in programming?', 
+    options: ['If it works, don’t touch it', 'Everything is an array', 'If it works, don’t touch it', `We're not here because we're free, we're here because we are not free`], 
+    correctAnswerIndex: 3 
+  }
+  
 ]
 
 const initialState = {
