@@ -6,7 +6,7 @@ import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 
 const reducer = combineReducers({
-  quiz: quiz.reducer
+  quiz: quiz.reducer,
 })
 
 const store = configureStore({ reducer })

@@ -2,22 +2,57 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  {
+    id: 1,
+    questionText: 'What is a Bombay Duck?',
+    options: [
+      'A type of duck',
+      'A type of curry',
+      'A basketball term',
+      'A type of fish',
+    ],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 2,
+    questionText:
+      'In New Zealand what is it illegal to fly in a hot air balloon with?',
+    options: ['A dog', 'A bicycle', 'A violin', 'A rooster'],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 3,
+    questionText:
+      'If you dug a hole through the center of the Earth from Wellington, New Zealand, in which European country would you emerge?',
+    options: ['Germany', 'Spain', 'France', 'Poland'],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 4,
+    questionText: 'What are you afraid of if you are Syngenesophobic?',
+    options: ['Syringes', 'Genetically modified crops', 'Relatives', 'Snakes'],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 5,
+    questionText:
+      'The world’s first game of ice hockey was played with a puck made from which material?',
+    options: ['Stone', 'Ice', 'Cow manure', 'Wood'],
+    correctAnswerIndex: 2,
+  },
 ]
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
 }
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -38,11 +73,15 @@ export const quiz = createSlice({
       const question = state.questions.find((q) => q.id === questionId)
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        )
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        )
       }
 
       state.answers.push({
@@ -50,7 +89,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
+        isCorrect: question.correctAnswerIndex === answerIndex,
       })
     },
 
@@ -78,7 +117,6 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
-
-  }
+    },
+  },
 })
