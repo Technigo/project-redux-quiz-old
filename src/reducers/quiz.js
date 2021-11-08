@@ -1,23 +1,74 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-// Change these to your own questions!
-const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  questions,
+  questions: [
+    {
+      id: 1,
+      questionText:
+        "Created in 1959, COBOL is one of the oldest programming languages still in use. The ideas of American computer scientist  ________ were key to the development of this language.",
+      options: [
+        "Ada Lovelace",
+        "Margaret Hamilton",
+        "Grace Hopper",
+        "Eva Galperin",
+      ],
+      correctAnswerIndex: 2,
+    },
+    {
+      id: 2,
+      questionText:
+        "_______ had a key role as a code-breaker in the Enigma-project that decrypted Nazi Germany’s secret communications during World War II. The cryptanalytic process was developed by her friend Alan Turing.",
+      options: [
+        "Maria Mitchell",
+        "Joan Clarke",
+        "Kathleen Antonelli",
+        "Adele Goldstine",
+      ],
+      correctAnswerIndex: 1,
+    },
+    {
+      id: 3,
+      questionText:
+        "Starting as a “human computer” in 1953 doing the calculations that was essential to the many early missions at NASA. Physicist and mathematician _______ had a key role to the success of the project mercury and the Apollo 11 mission.",
+      options: [
+        "Betty Holberton",
+        "Lixia Zhang",
+        "Karen Catlin",
+        "Katherine Johnson",
+      ],
+      correctAnswerIndex: 3,
+    },
+
+    {
+      id: 4,
+      questionText:
+        "_______ is known for being the first computer programmer, and she described her way of work as poetical science.",
+      options: [
+        "Margaret Hamilton",
+        "Ada Lovelace",
+        "Joan Clarke",
+        "Katherine Johnson",
+      ],
+      correctAnswerIndex: 1,
+    },
+
+    {
+      id: 5,
+      questionText:
+        "____ was a woman of all trades. She wasn’t just a Hollywood star, but she also developed a radio guidance system for Allied torpedoes, which helped them in defeating the Axis powers.",
+      options: ["Hedy Lamarr", "Hu Qiheng", "Michelle Simmons", "Emily Chang"],
+      correctAnswerIndex: 0,
+    },
+  ],
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
 }
 
 export const quiz = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -38,11 +89,15 @@ export const quiz = createSlice({
       const question = state.questions.find((q) => q.id === questionId)
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        )
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        )
       }
 
       state.answers.push({
@@ -50,7 +105,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
+        isCorrect: question.correctAnswerIndex === answerIndex,
       })
     },
 
@@ -78,7 +133,6 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
-
-  }
+    },
+  },
 })
