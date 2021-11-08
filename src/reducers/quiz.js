@@ -24,8 +24,8 @@ const questions = [
   },
   { id: 5, 
     questionText: 'What is the golden rule in programming?', 
-    options: ['If it works, don’t touch it', 'Everything is an array', 'If it works, don’t touch it', `We're not here because we're free, we're here because we are not free`], 
-    correctAnswerIndex: 3 
+    options: ['You know nothing Jon Snow', 'Everything is an array', 'If it works, don’t touch it', `We're not here because we're free, we're here because we are not free`], 
+    correctAnswerIndex: 2
   }
   
 ]

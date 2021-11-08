@@ -17,27 +17,35 @@ export const CurrentQuestion = () => {
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
-  
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-    {dispatch(quiz.actions.goToNextQuestion())}
+   
    
   }
-  console.log()
-
-  return (
+  
+  if (!quizOver)
+ 
+   return (
+    
     <div>
       <h1>Question: {question.questionText}</h1>
       {question.options.map((item, index) => (
         <button 
-        key={item} 
+        key={index} 
+        // disabled={answer}
         onClick={() => onAnswerSubmit(question.id, index)}>
         {item}
         </button>
       ))}
-   {/* {currentQuestion === 4 ? <Summary /> : goToNextQuestion ()
-   } */}
-    </div>
+      <button onClick = {() =>  dispatch(quiz.actions.goToNextQuestion())}>NEXT QUESTION</button>
+       
+      </div>
+      
+   )
+  return (
+    <Summary /> 
   )
-}
+  }
+
+// not submitting answer to store on "answer button" but save it and submit with Next question
