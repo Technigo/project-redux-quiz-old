@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+// import { MainContainer } from './StyledComponents';
 import { quiz } from '../reducers/quiz';
 
 export const CurrentQuestion = () => {
