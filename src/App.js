@@ -27,7 +27,7 @@ const ImageContainer = styled.section`
   position: relative;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-position: center center;
   background-size: cover;
   opacity: 0.7;

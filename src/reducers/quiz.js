@@ -8,10 +8,16 @@ export const quiz = createSlice({
     questions: [
       {
         id: 1,
-        imgSrc: "",
-        questionText: "QUESTION 1",
-        options: ["sabrina", "b", "c", "d"],
-        correctAnswerIndex: 0,
+        imgSrc: "../pictures/hogwarts-express.jpg",
+        questionText:
+          "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
+        options: [
+          "5th September",
+          "1st September",
+          "31st August",
+          "3rd September",
+        ],
+        correctAnswerIndex: 1,
       },
       {
         id: 2,

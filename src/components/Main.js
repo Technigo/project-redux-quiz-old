@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { CurrentQuestion } from "components/CurrentQuestion";
 
@@ -10,6 +10,8 @@ export const Main = () => {
       <MainContainer>
         <TextButtonContainer>
           <HeaderText>Harry Potter</HeaderText>
+          <Subtitle>Are you a muggle or a wizard?</Subtitle>
+
           <StartButton
             onClick={() => {
               setStartButtonClick(true);
@@ -32,29 +34,44 @@ const MainContainer = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+`;
+
+const TextButtonContainer = styled.div`
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  margin: 40px 0;
 `;
 
 const HeaderText = styled.h1`
   color: black;
-  font-size: 100px;
+  font-size: 80px;
   text-align: center;
+  margin: 0;
+  font-family: Harry;
+  text-shadow: -1px -1px 0 #b87333, 1px -1px 0 #b87333, -1px 1px 0 #b87333,
+    1px 1px 0 #b87333;
+  letter-spacing: 1px;
 `;
 
 const StartButton = styled.button`
-  padding: 15px;
-  width: 40%;
-  font-weight: 900;
-  background-color: transparent;
-  border: 2px solid black;
-  font-size: 20px;
+  padding: 8px 20px;
+  font-weight: 400;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 2px solid #b87333;
+  font-size: 16px;
   cursor: pointer;
+  letter-spacing: 2px;
 `;
 
-const TextButtonContainer = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const Subtitle = styled.h3`
+  margin: 10px 0;
+  text-align: center;
+  font-family: Harry;
+  font-size: 28px;
+  letter-spacing: 1px;
 `;
