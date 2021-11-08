@@ -1,23 +1,70 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+  {
+    id: 1,
+    questionText: 'What was the color of the umbrella',
+    options: ['red', 'black', 'white', 'grey'],
+    correctAnswerIndex: 2,
+    path: '../assets/visuals/crossing.jpg',
+    type: 'picture',
+  },
+  {
+    id: 2,
+    questionText: 'Was there anyone who was not looking at the phone?',
+    options: ['yes', 'no'],
+    correctAnswerIndex: 0,
+    path: '../assets/visuals/metro.jpg',
+    type: 'picture',
+  },
+  {
+    id: 3,
+    questionText:
+      'There was an advertisement for a broadway show  based on a popular Richard Gere film. Name that film',
+    options: ['Pretty Woman', 'Fugitive', 'Chicago', 'Runaway Bride'],
+    correctAnswerIndex: 0,
+    path: '../assets/visuals/NY-city.mp4',
+    type: 'video',
+  },
+  {
+    id: 4,
+    questionText: 'Which soft drink bottle was visible in the picture ?',
+    options: ['7-Up', 'CocaCola', 'Mountain dew', 'Sprite'],
+    correctAnswerIndex: 3,
+    path: '../assets/visuals/picnic.jpg',
+    type: 'picture',
+  },
+  {
+    id: 5,
+    questionText: 'How many tents are in the picture?',
+    options: ['7', '11', '14', '19'],
+    correctAnswerIndex: 2,
+    path: '../assets/visuals/camping-site.jpg',
+    type: 'picture',
+  },
+  {
+    id: 6,
+    questionText:
+      'You saw a woman with a red purse behind the street vendor. What object did she take out from the red purse?',
+    options: ['Mask', 'Money', 'Phone', 'Water'],
+    correctAnswerIndex: 1,
+    path: '../assets/visuals/bangkok-food.mp4',
+    type: 'video',
+  },
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
-}
+  quizOver: false,
+};
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -34,15 +81,19 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const { questionId, answerIndex } = action.payload;
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -50,8 +101,8 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
-      })
+        isCorrect: question.correctAnswerIndex === answerIndex,
+      });
     },
 
     /**
@@ -63,9 +114,9 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1;
       }
     },
 
@@ -77,8 +128,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
-    }
-
-  }
-})
+      return initialState;
+    },
+  },
+});
