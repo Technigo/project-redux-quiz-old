@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
+import Summary from './Summary'
+import { Link } from 'react-router-dom'
 
 export const CurrentQuestion = () => {
   const question = useSelector(
@@ -9,6 +11,13 @@ export const CurrentQuestion = () => {
   const usersAnswer = useSelector(
     (state) => state.quiz.answers[state.quiz.currentQuestionIndex]
   )
+
+  const numberOfQuestions = useSelector((state) => state.quiz.questions.length)
+
+  const currentQuestionNumber = useSelector(
+    (state) => state.quiz.currentQuestionIndex
+  )
+
   const dispatch = useDispatch()
 
   if (!question) {
@@ -42,8 +51,18 @@ export const CurrentQuestion = () => {
       ))}
       {usersAnswer?.isCorrect && <p>Correct!</p>}
       {usersAnswer?.isCorrect === false && <p>Incorrect!</p>}
-
-      <button onClick={() => onNextQuestionSubmit(question.id)}>Next</button>
+      {numberOfQuestions - 1 === currentQuestionNumber ? (
+        <Link to='/summary'>
+          <button disabled={!usersAnswer}>Finish</button>
+        </Link>
+      ) : (
+        <button
+          disabled={!usersAnswer}
+          onClick={() => onNextQuestionSubmit(question.id)}
+        >
+          Next
+        </button>
+      )}
     </div>
   )
 }
