@@ -57,8 +57,8 @@ const HeaderText = styled.h1`
 
 const StartButton = styled.button`
   padding: 8px 20px;
-  font-weight: 400;
-  color: white;
+  font-weight: 900;
+  color: #b87333;
   background-color: black;
   border: none;
   border-radius: 2px;

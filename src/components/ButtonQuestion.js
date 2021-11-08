@@ -37,8 +37,7 @@ const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify content: flex-end;
- 
+  justify-content: flex-end;
 `;
 
 const ButtonsContainer = styled.div`
