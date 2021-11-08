@@ -24,6 +24,7 @@ export const CurrentQuestion = () => {
     {dispatch(quiz.actions.goToNextQuestion())}
    
   }
+  console.log()
 
   return (
     <div>
