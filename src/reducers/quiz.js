@@ -57,7 +57,8 @@ const questions = [
 const initialState = {
   questions,
   answers: [],
-  currentQuestionIndex: 5,
+  userName: '',
+  currentQuestionIndex: 4,
   quizOver: false,
 };
 
@@ -120,6 +121,9 @@ export const quiz = createSlice({
       }
     },
 
+    addUserName: (state, action) => {
+      state.userName = action.payload.userName;
+    },
     /**
      * Use this action to reset the state to the initial state the page had
      * when it was loaded. Who doesn't like re-doing a quiz when you know the

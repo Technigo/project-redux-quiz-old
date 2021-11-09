@@ -37,7 +37,7 @@ export const CurrentQuestion = () => {
   };
 
   const ticker = () => {
-    setTimeout(showOverlay, 3000);
+    setTimeout(showOverlay, 5000);
   };
 
   useEffect(() => {
