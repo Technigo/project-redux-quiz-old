@@ -1,8 +1,8 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCauldron } from "@fortawesome/pro-solid-svg-icons";
-import { useSelector } from "react-redux";
-import styled from "styled-components";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+/* import { faCauldron } from "@fortawesome/pro-solid-svg-icons"; */
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 export const ProgressBar = () => {
   const questions = useSelector((store) => store.quiz.questions);
@@ -21,14 +21,13 @@ export const ProgressBar = () => {
             <Dot
               style={{
                 backgroundColor:
-                  currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
+                  currentQuestionIndex >= index ? '#638270' : '#f0f0f0',
               }}
             ></Dot>
             <Line
               style={{
                 backgroundColor:
-                  currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
-
+                  currentQuestionIndex >= index ? '#638270' : '#f0f0f0',
               }}
             ></Line>
           </ProgressBarWrapper>
@@ -39,12 +38,11 @@ export const ProgressBar = () => {
         style={{
           backgroundColor:
             currentQuestionIndex === questions.length - 1
-              ? "#638270"
-              : "#f0f0f0",
-
+              ? '#638270'
+              : '#f0f0f0',
         }}
       >
-        <FontAwesomeIcon icon={faCauldron} />
+        {/* <FontAwesomeIcon icon={faCauldron} /> */}
       </IconContainer>
     </ProgressBarContainer>
   );

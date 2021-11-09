@@ -1,56 +1,69 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
 
 export const quiz = createSlice({
-  name: "quiz",
+  name: 'quiz',
   initialState: {
     questions: [
       {
         id: 1,
 
         questionText:
-          "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
+          'On what date does the Hogwarts Express depart the platform to head to Hogwarts?',
         options: [
-          "5th September",
-          "1st September",
-          "31st August",
-          "3rd September",
+          '5th September',
+          '1st September',
+          '31st August',
+          '3rd September',
         ],
         correctAnswerIndex: 1,
       },
       {
         id: 2,
         questionText:
-          "What did Ron call Hermione after Charms class that made her cry?",
+          'What did Ron call Hermione after Charms class that made her cry?',
         options: [
-          "A nightmare",
-          "An insufferable know it all",
-          "A loser",
-          "A try-hard",
+          'A nightmare',
+          'An insufferable know it all',
+          'A loser',
+          'A try-hard',
         ],
         correctAnswerIndex: 0,
       },
       {
         id: 3,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 2,
+        imgSrc: '',
+        questionText:
+          'On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?',
+        options: [
+          'Professor Snape',
+          'Professor Quirrell',
+          'Hagrid',
+          'Draco Malfoy',
+        ],
+        correctAnswerIndex: 1,
       },
       {
         id: 4,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 3,
+        imgSrc: '',
+        questionText:
+          'Which old Hogwarts relic did Harry pull out of the Sorting Hat?',
+        options: [
+          "Ravenclaw's Diadem",
+          "HufflePuff's Cup",
+          'The Sword of Gryffindor',
+          "Slytherin's Locket",
+        ],
+        correctAnswerIndex: 2,
       },
       {
         id: 5,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 4,
+        imgSrc: '',
+        questionText:
+          'What position does Harry play on the Gryffindor Quidditch team?',
+        options: ['Keeper', 'Beater', 'Chaser', 'Seeker'],
+        correctAnswerIndex: 3,
       },
     ],
     answers: [],
@@ -79,7 +92,7 @@ export const quiz = createSlice({
 
       if (!question) {
         throw new Error(
-          "Could not find question! Check to make sure you are passing the question id correctly."
+          'Could not find question! Check to make sure you are passing the question id correctly.'
         );
       }
 

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { CurrentQuestion } from "components/CurrentQuestion";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { CurrentQuestion } from 'components/CurrentQuestion';
 
 export const Main = () => {
   const [startButtonClick, setStartButtonClick] = useState(false);
