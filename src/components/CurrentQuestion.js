@@ -9,9 +9,9 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
     )
-
-    const dispatch = useDispatch()
-    const quizOver = useSelector((state) => state.quiz.quizOver);
+  const answer = useSelector((state) => state.quiz.answers.find((answer) => answer.questionId === question.id))
+  const dispatch = useDispatch()
+  const quizOver = useSelector((state) => state.quiz.quizOver)
   
 
   if (!question) {
@@ -20,8 +20,10 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-   
-   
+  }
+
+  const handleClick = () => {
+    dispatch(quiz.actions.goToNextQuestion({}))
   }
   
   if (!quizOver)
@@ -33,12 +35,16 @@ export const CurrentQuestion = () => {
       {question.options.map((item, index) => (
         <button 
         key={index} 
-        // disabled={answer}
+        disabled={!!answer}
         onClick={() => onAnswerSubmit(question.id, index)}>
         {item}
         </button>
       ))}
-      <button onClick = {() =>  dispatch(quiz.actions.goToNextQuestion())}>NEXT QUESTION</button>
+      <button 
+      onClick = {handleClick}
+      disabled={!answer}>
+        NEXT QUESTION
+        </button>
        
       </div>
       
