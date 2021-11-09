@@ -11,12 +11,16 @@ export const CurrentQuestion = () => {
 
   console.log('question', question)
 
+  const store = useSelector((state) => state.quiz)
+  console.log('store data:', store)
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+    // dispatch(quiz.actions.setButton())
   }
 
   return (
@@ -46,6 +50,7 @@ export const CurrentQuestion = () => {
         {question.options.map((option, index) => (
           <button
             type='button'
+            // className={store.btnActive ? 'active-btn' : 'option-btn'}
             className='option-btn'
             key={option}
             onClick={() => onAnswerSubmit(question.id, index)}

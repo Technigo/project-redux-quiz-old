@@ -47,6 +47,7 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
+  // btnActive: false,
 }
 
 export const quiz = createSlice({
@@ -118,5 +119,9 @@ export const quiz = createSlice({
     restart: () => {
       return initialState
     },
+
+    // setButton: (state) => {
+    //   state.btnActive = true
+    // },
   },
 })

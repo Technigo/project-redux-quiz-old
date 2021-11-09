@@ -56,6 +56,13 @@ h1 {
   cursor: pointer;
 }
 
+.option-btn:hover,
+.next-button:hover,
+.option-btn:focus {
+  background-color: #fedc23;
+  color: black;
+}
+
 .next-button {
   background-color: rgb(47, 47, 47);
   display: block;
