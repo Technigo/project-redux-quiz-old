@@ -1,23 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
 
+
 export const CurrentQuestion = () => {
+
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
   different slices in store, if we had more slices we could see it in the console;
   when writing store.quiz, you are more specific, you are execing only this slice */
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+
+
+
+  /* Here we get the length of the arry(all the questions) */
+ const questionsLength = useSelector( (state) => state.quiz.questions.length)
+
+ /* Here we pass the value from the "questionsLength" so we can decreas the value of questions left */
+ const [questionsCount, setQuestionsCount] = useState(questionsLength);
+
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
+
+
+
 
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
   calls selectors, selectors come to componenets with information -
   please refresh yourself and then lifecycle ends */
+
   const dispatch = useDispatch();
 
   if (!question) {
@@ -34,17 +49,42 @@ export const CurrentQuestion = () => {
     dispatch(
       quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
     );
+
+/* when clicking a btn the value of questionsCount(=Question left) decreses  */
+    setQuestionsCount(questionsCount - 1)
+
     // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
     // because we want to go to the next question directly
     dispatch(
       quiz.actions.goToNextQuestion({ id })
     );
+
+
+
+   
+        
+    
+    
+
+
   };
+
+  
 
   return (
     <div>
+
+{/* Here we display witch question we are at and how many we have left */}
+     <p> Question: {question.id} ({questionsCount} question left)</p>
+    
+    
+
       <h1> {question.questionText} </h1>
       {question.options.map((item, index) => (
+
+
+
+
         <button
           type="button"
           key={item}
@@ -54,6 +94,7 @@ export const CurrentQuestion = () => {
           onClick={() => onSubmitAnswer(question.id, index)}>
           {item}
         </button>
+        
       ))}
     </div>
   );
