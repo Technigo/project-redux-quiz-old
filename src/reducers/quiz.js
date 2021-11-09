@@ -1,13 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
-const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+
 
 const initialState = {
-  questions,
+  questions: [
+    { id: 1, questionText: 'In order of birth, who are the seven Weasley siblings?', 
+      options: ['Percy, Bill, George, Charlie, Fred, Ron, Ginny', 
+                'George, Fred, Percy, Bill, Charlie, Ron, Ginny', 
+                'Bill, Charlie, Percy, Fred, George, Ron, Ginny'], 
+      correctAnswerIndex: 2 },
+    { id: 2, questionText: 'What is the only book in the Harry Potter series that does not feature Lord Voldemort?', 
+      options: ['The Sorceres Stone', 
+                'The Prisoner of Akzaban', 
+                'The Deathly Hallows'], 
+      correctAnswerIndex: 1 }
+  ],
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false
@@ -34,6 +42,9 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
+      console.log('State: ', state);
+			console.log('Action: ', action);
+
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
 
@@ -52,7 +63,9 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+     
     },
+
 
     /**
      * Use this action to progress the quiz to the next question. If there's
