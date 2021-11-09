@@ -1,8 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
-// import Summary from './Summary';
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import NextStepButton from './NextStepButton'
 
@@ -10,6 +8,11 @@ const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 0px 40px 0px;
+`
+const QuestionButton = styled.button`
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
 `
 
 export const CurrentQuestion = ({ numberOfQuestions, question }) => {
@@ -43,13 +46,13 @@ export const CurrentQuestion = ({ numberOfQuestions, question }) => {
       <h1>Question: {question.questionText}</h1>
       <QuestionWrapper>
         {question.options.map((option, index) => (
-          <button
+          <QuestionButton
             disabled={usersAnswer}
             key={option.id}
             onClick={() => onAnswerSubmit(question.id, index)}
           >
             {option.answer}
-          </button>
+          </QuestionButton>
         ))}
       </QuestionWrapper>
       {usersAnswer?.isCorrect && <p>Correct!</p>}
