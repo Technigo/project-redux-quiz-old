@@ -16,4 +16,7 @@ https://jamboard.google.com/d/16byT62qo7XkEXw5rRc-MKNIbKZOHMbUD8WOHzBVmNeo/viewe
 Disable next question
 Counter (see Happy Thoughts)✅
 
-Progress bar: https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
+Progress bar: 
+https://react-bootstrap.github.io/getting-started/introduction/
+npm installation: 
+npm install react-bootstrap bootstrap@5.1.3
