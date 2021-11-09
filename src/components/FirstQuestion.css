@@ -1,7 +1,13 @@
+.question-container {
+    background: #af6b586e;
+    border-radius: 10px;
+    padding: 15px;
+}
+
 .question {
-    color: #4e1507;
+    color: #42180e;
     font-size: 40px;
-    margin: 25px 0 25px 0;
+    margin: 0 0 25px 0;
 }
 
 .moussaka-image {
@@ -11,7 +17,7 @@
     margin-bottom: 25px;
 }
 
-img {
+.food-image {
     border-radius: 10px;
 }
 

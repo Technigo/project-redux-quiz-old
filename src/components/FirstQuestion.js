@@ -28,7 +28,7 @@ export const FirstQuestion = () => {
         <div className="question-container">
             <h1 className="question">Question: {question.questionText}</h1>
             <div className="moussaka-image">
-                <img src={moussaka} alt="moussaka" />
+                <img className="food-image" src={moussaka} alt="moussaka" />
             </div>
             <div className="radio-buttons-container">
                 {question.options.map((item, index) => (

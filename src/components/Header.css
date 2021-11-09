@@ -1,0 +1,28 @@
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4e1d10e1;
+    display: flex;
+}
+
+.quiz-name {
+    font-size: 35px;
+    margin-left: 5px;
+    color: #dfa02b;
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+.logo-icon {
+    margin-top: 5px;
+    width: 45px;
+    height: 45px;
+    animation: rotate 15s infinite linear;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+}
