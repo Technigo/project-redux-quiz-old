@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
-export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
+export const ButtonQuestion = ({
+  question,
+  setOnAnswerSubmit,
+  onGoToNextQuestion,
+}) => {
   const answer = useSelector((state) =>
     state.quiz.answers.find((answer) => question.id === answer.questionId)
   );
@@ -19,13 +23,7 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
           if (answer && answer.answerIndex === index && answer.isCorrect) {
             return (
               <div key={item}>
-                <CorrectButton
-                  onClick={() => {
-                    setOnAnswerSubmit(question.id, index);
-                  }}
-                >
-                  {item}
-                </CorrectButton>
+                <CorrectButton>{item}</CorrectButton>
               </div>
             );
           } else if (
@@ -35,13 +33,7 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
           ) {
             return (
               <div key={item}>
-                <NotCorrectButton
-                  onClick={() => {
-                    setOnAnswerSubmit(question.id, index);
-                  }}
-                >
-                  {item}
-                </NotCorrectButton>
+                <NotCorrectButton>{item}</NotCorrectButton>
               </div>
             );
           } else {
@@ -50,6 +42,11 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
                 <Button
                   onClick={() => {
                     setOnAnswerSubmit(question.id, index);
+                    console.log("SetAnswer");
+                    setTimeout(() => {
+                      console.log("Onwards");
+                      onGoToNextQuestion(question.id);
+                    }, 1000);
                   }}
                 >
                   {item}
@@ -64,19 +61,17 @@ export const ButtonQuestion = ({ question, setOnAnswerSubmit }) => {
 };
 
 const QuestionContainer = styled.div`
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto auto;
+  height: 85vh;
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  grid-template-rows: 1fr auto auto;
   align-items: center;
-  background-color: black;
-  background-image: url(${require(`../pictures/smoke.jpg`)});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 `;
 
 const ButtonsContainer = styled.div`
+  width: 80%;
+  justify-content: center;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -88,7 +83,10 @@ const ButtonsContainer = styled.div`
     grid-template-rows: 1fr;
   }
   @media only screen and (min-width: 1025px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     font-size: 40px;
+    margin: 0 200px;
   }
 `;
 
@@ -106,8 +104,19 @@ const Button = styled.button`
   font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
-`;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 30px;
 
+    &:hover {
+      transition: all 200ms ease-in-out;
+      border-top: 2px solid #638270;
+      border-left: 2px solid #638270;
+    }
+  }
+`;
 const CorrectButton = styled.button`
   padding: 8px 20px;
   height: 100%;
@@ -122,6 +131,12 @@ const CorrectButton = styled.button`
   font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 30px;
+  }
 `;
 
 const NotCorrectButton = styled.button`
@@ -138,10 +153,26 @@ const NotCorrectButton = styled.button`
   font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 30px;
+  }
 `;
 
 const Header3 = styled.h3`
+  padding-top: 150px;
   text-align: center;
   margin: 0 0 10px 0;
   color: #638270;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 35px;
+    padding: 150px 15px 0 15px;
+  }
+  @media only screen and (min-width: 1025px) {
+    font-size: 50px;
+    padding: 150px 150px 0 150px;
+  }
 `;

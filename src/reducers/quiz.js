@@ -8,7 +8,7 @@ export const quiz = createSlice({
     questions: [
       {
         id: 1,
-        imgSrc: "../pictures/hogwarts-express.jpg",
+
         questionText:
           "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
         options: [
@@ -21,10 +21,15 @@ export const quiz = createSlice({
       },
       {
         id: 2,
-        imgSrc: "",
-        questionText: "",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 1,
+        questionText:
+          "What did Ron call Hermione after Charms class that made her cry?",
+        options: [
+          "A nightmare",
+          "An insufferable know it all",
+          "A loser",
+          "A try-hard",
+        ],
+        correctAnswerIndex: 0,
       },
       {
         id: 3,
