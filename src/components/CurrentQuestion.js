@@ -43,6 +43,7 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
+      <p> {question.id} / 5 </p>
       <h1> {question.questionText} </h1>
       {question.options.map((item, index) => (
         <button
@@ -52,6 +53,7 @@ export const CurrentQuestion = () => {
  quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
          answerId is a specific answer of a question */
           onClick={() => onSubmitAnswer(question.id, index)}>
+            
           {item}
         </button>
       ))}
