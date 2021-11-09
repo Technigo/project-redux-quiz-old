@@ -26,6 +26,7 @@ export const CurrentQuestion = () => {
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
 
 
+  /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
 
 
   /* dispatch all of the actions, dispatch some actions,
@@ -74,10 +75,12 @@ export const CurrentQuestion = () => {
   return (
     <div>
 
+
 {/* Here we display witch question we are at and how many we have left */}
      <p> Question: {question.id} ({questionsCount} question left)</p>
     
     
+
 
       <h1> {question.questionText} </h1>
       {question.options.map((item, index) => (

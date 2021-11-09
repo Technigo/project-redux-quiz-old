@@ -13,7 +13,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  rightAnswers: 0 /* new property for the score */
 }
 
 export const quiz = createSlice({
@@ -55,6 +56,8 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+      console.log('Answer correct: ', state.answers.isCorrect)
+      console.log('Answerindex: ', state.answers.answerIndex)
     },
 
     /**
@@ -69,7 +72,7 @@ export const quiz = createSlice({
         state.quizOver = true
       } else {
         state.currentQuestionIndex += 1
-      } 
+      }
     },
 
     /**
@@ -81,12 +84,13 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
+    },
+
+
+    /* new function that raises the score for every correct answer */
+    riseScore: (state) => {
+      state.rightAnswers += 1
     }
-
-   
-
-
-
 
   }
 })
