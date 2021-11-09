@@ -6,14 +6,14 @@ https://jamboard.google.com/d/16byT62qo7XkEXw5rRc-MKNIbKZOHMbUD8WOHzBVmNeo/viewe
 
 - Your quiz should have at least 5 questions.✅
 - When the user selects an answer, it should show if they were correct or not. -> Ida, Maria + Isabel
-- While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'. -> Emelie + Nina
-- When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect. -> Den som blir klar först
-- You should challenge yourself to make use of redux by making small components which interact with the store - don't just go for one big component. // Progress Bar
+- While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'. -> Emelie + Nina ✅
+- When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect. -> Emelie ✅
+- You should challenge yourself to make use of redux by making small components which interact with the store - don't just go for one big component. // Progress Bar, maybe we want images of them too? 👈
 - Don't forget CSS! Your quiz should be well styled.
 
 # Functions
 
 Disable next question
-Counter (see Happy Thoughts)
+Counter (see Happy Thoughts)✅
 
 Progress bar: https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp
