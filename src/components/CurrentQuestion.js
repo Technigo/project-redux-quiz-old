@@ -1,4 +1,5 @@
 import React from 'react'
+// import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 
@@ -25,7 +26,10 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      <div className='color-container'>
+      <div
+        className='color-container'
+        style={{ backgroundColor: question.backgroundColor }}
+      >
         <div className='top-container'>
           <button
             className='restart-btn'
@@ -45,13 +49,13 @@ export const CurrentQuestion = () => {
           <h1>{question.questionText}</h1>
         </div>
       </div>
-
+      {/* className={store.btnActive ? 'active-btn' : 'option-btn'} */}
       <div className='options-container'>
         {question.options.map((option, index) => (
           <button
             type='button'
-            // className={store.btnActive ? 'active-btn' : 'option-btn'}
             className='option-btn'
+            // styla knapparna så att backgrundsfärgen följer med
             key={option}
             onClick={() => onAnswerSubmit(question.id, index)}
           >

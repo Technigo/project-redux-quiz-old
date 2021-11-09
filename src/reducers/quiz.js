@@ -12,6 +12,7 @@ const questions = [
       'A type of fish',
     ],
     correctAnswerIndex: 3,
+    backgroundColor: '#fedc23',
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const questions = [
       'In New Zealand what is it illegal to fly in a hot air balloon with?',
     options: ['A dog', 'A bicycle', 'A violin', 'A rooster'],
     correctAnswerIndex: 3,
+    backgroundColor: 'green',
   },
   {
     id: 3,
@@ -26,12 +28,14 @@ const questions = [
       'If you dug a hole through the center of the Earth from Wellington, New Zealand, in which European country would you emerge?',
     options: ['Germany', 'Spain', 'France', 'Poland'],
     correctAnswerIndex: 1,
+    backgroundColor: 'pink',
   },
   {
     id: 4,
     questionText: 'What are you afraid of if you are Syngenesophobic?',
     options: ['Syringes', 'Genetically modified crops', 'Relatives', 'Snakes'],
     correctAnswerIndex: 2,
+    backgroundColor: 'blue',
   },
   {
     id: 5,
@@ -39,6 +43,7 @@ const questions = [
       'The world’s first game of ice hockey was played with a puck made from which material?',
     options: ['Stone', 'Ice', 'Cow manure', 'Wood'],
     correctAnswerIndex: 2,
+    backgroundColor: 'orange',
   },
 ]
 
