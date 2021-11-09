@@ -1,41 +1,34 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { quiz } from '../reducers/quiz'
-import Summary from './Summary'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { quiz } from '../reducers/quiz';
+// import Summary from './Summary';
+import { Link } from 'react-router-dom';
 
-export const CurrentQuestion = () => {
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  )
+export const CurrentQuestion = ({ numberOfQuestions, question }) => {
+  // const question = useSelector(
+  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
+  // );
   const usersAnswer = useSelector(
     (state) => state.quiz.answers[state.quiz.currentQuestionIndex]
-  )
-
-  const numberOfQuestions = useSelector((state) => state.quiz.questions.length)
+  );
 
   const currentQuestionNumber = useSelector(
     (state) => state.quiz.currentQuestionIndex
-  )
+  );
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+    return <h1>Oh no! I could not find the current question!</h1>;
   }
 
   const onAnswerSubmit = (id, index) => {
-    dispatch(
-      quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
-      // index === question.correctAnswerIndex ? <p>Correct!</p> : <p>Incorrect</p>
-    )
-    console.log('correct answer:', question.correctAnswerIndex)
-    console.log('chosen answer:', index)
-  }
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+  };
 
   const onNextQuestionSubmit = () => {
-    dispatch(quiz.actions.goToNextQuestion())
-  }
+    dispatch(quiz.actions.goToNextQuestion());
+  };
 
   return (
     <div>
@@ -64,5 +57,5 @@ export const CurrentQuestion = () => {
         </button>
       )}
     </div>
-  )
-}
+  );
+};
