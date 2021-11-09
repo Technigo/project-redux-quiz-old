@@ -1,0 +1,10 @@
+.radio-button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.radio-button-label {
+    width: 35%;
+    font-size: 30px;
+}

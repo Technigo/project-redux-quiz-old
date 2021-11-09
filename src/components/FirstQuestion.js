@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable linebreak-style */
 /* eslint-disable indent */
-/* eslint-disable linebreak-style */
 import React from 'react'
+import './FirstQuestion.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 
@@ -24,18 +25,21 @@ export const FirstQuestion = () => {
     }
 
     return (
-        <div>
-            <h1>Question: {question.questionText}</h1>
-            {question.options.map((item, index) => (
-                <div key={item}>
-                    <input
-                        type="radio"
-                        id="options"
-                        name="answer"
-                        onChange={() => onAnswerSubmit(question.id, index)} />
-                    <label htmlFor="options">{item}</label>
-                </div>
-            ))}
+        <div className="question-container">
+            <h1 className="question">Question: {question.questionText}</h1>
+            <div className="radio-button-container">
+                {question.options.map((item, index) => (
+                    <div className="radio-button-label" key={item}>
+                        <input
+                            type="radio"
+                            id={item}
+                            name="answer"
+                            value={item}
+                            onChange={() => onAnswerSubmit(question.id, index)} />
+                        <label htmlFor={item}>{item}</label>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
