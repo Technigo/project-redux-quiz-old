@@ -22,7 +22,7 @@ export const App = () => {
         <Routes>
           <Route path="/" exact element={<Start />} />
           <Route path="/questions" element={<QuestionPage />} />
-          <Route path="/summary" component={<Summary />} />
+          <Route path="/summary" element={<Summary />} />
         </Routes>
       </BrowserRouter>
     </Provider>

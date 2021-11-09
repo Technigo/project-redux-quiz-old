@@ -40,6 +40,7 @@ const ButtonStart = styled.button`
     padding: 20px;
     background-color: #FFC543;
     border-radius: 50px;
+    cursor: pointer;
 `
 const StyledLink = styled(Link)`
     text-decoration:none;
@@ -57,7 +58,7 @@ const Start = () => {
             <StartContainer>
                 <StyledHeadline>Quiz about tech</StyledHeadline>
                 <StyledLink to="/questions">
-                    <ButtonStart type="button">Start quiz!</ButtonStart>
+                    <ButtonStart type="button">Start!</ButtonStart>
                 </StyledLink>
             </StartContainer>
 
