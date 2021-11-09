@@ -23,15 +23,17 @@ export const ThirdQuestion = () => {
 				<label key={item} htmlFor={item}>
 					{/* prettier-ignore */}
 					<input
-								id={item}
-            		type="radio"
-            		value={item}
-            		onChange={() => onAnswerSubmit(question.id, index)}
-            		// checked={item === frameworkInput}
-          		/>
+						id={item}
+						type="radio"
+						value={item}
+						name="third-question"
+						onChange={() => onAnswerSubmit(question.id, index)}
+					/>
 					{item}
 				</label>
 			))}
 		</form>
 	);
 };
+
+// 	const thirdQuestion = useSelector((state) => state.quiz.questions[2]);
