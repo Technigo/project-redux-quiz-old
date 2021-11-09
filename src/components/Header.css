@@ -5,20 +5,30 @@
     right: 0;
     background-color: #4e1d10e1;
     display: flex;
+    align-items: center;
+    height: 90px;
 }
 
 .quiz-name {
-    font-size: 35px;
+    font-size: 40px;
     margin-left: 5px;
     color: #dfa02b;
-    font-family: 'Julius Sans One', sans-serif;
+}
+
+.contact-info {
+    color: #dfa02b;
+}
+
+.contact-link {
+    color: #dfa02b;
 }
 
 .logo-icon {
-    margin-top: 5px;
-    width: 45px;
-    height: 45px;
-    animation: rotate 15s infinite linear;
+    margin-bottom: 15px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.82;
+    animation: rotate 15s infinite;
 }
 
 @keyframes rotate {

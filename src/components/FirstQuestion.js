@@ -5,6 +5,7 @@ import './FirstQuestion.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import moussaka from '../assets/moussaka-image.jpg'
+import Button from './Button'
 
 export const FirstQuestion = () => {
     const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -44,6 +45,7 @@ export const FirstQuestion = () => {
                     </div>
                 ))}
             </div>
+            <Button />
         </div>
     )
 }
