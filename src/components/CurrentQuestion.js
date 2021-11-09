@@ -19,16 +19,12 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <QuestionsContainer>
+    <section>
       <ButtonQuestion question={question} setOnAnswerSubmit={onAnswerSubmit} />
-    </QuestionsContainer>
+    </section>
   );
 };
 
 const Header2 = styled.h2`
   margin: 0 0 10px 0;
-`;
-
-const QuestionsContainer = styled.div`
-  padding: 10px;
 `;

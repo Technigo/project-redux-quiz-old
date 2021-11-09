@@ -7,26 +7,42 @@ export const Main = () => {
 
   if (!startButtonClick) {
     return (
-      <MainContainer>
-        <TextButtonContainer>
-          <HeaderText>Harry Potter</HeaderText>
-          <Subtitle>Are you a muggle or a wizard?</Subtitle>
+      <>
+        <ImageContainer></ImageContainer>
+        <MainContainer>
+          <TextButtonContainer>
+            <HeaderText>Harry Potter</HeaderText>
+            <Subtitle> Are you a muggle or a wizard?</Subtitle>
 
-          <StartButton
-            onClick={() => {
-              setStartButtonClick(true);
-            }}
-          >
-            Take the quiz
-          </StartButton>
-        </TextButtonContainer>
-      </MainContainer>
+            <StartButton
+              onClick={() => {
+                setStartButtonClick(true);
+              }}
+            >
+              Take the quiz
+            </StartButton>
+          </TextButtonContainer>
+        </MainContainer>
+      </>
     );
   }
   if (startButtonClick) {
     return <CurrentQuestion />;
   }
 };
+
+const ImageContainer = styled.section`
+  position: relative;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.9;
+  background-image: url(${require(`../pictures/firstpage-picture.jpg`)});
+  z-index: -1;
+  position: absolute;
+`;
 
 const MainContainer = styled.section`
   position: relative;
@@ -59,16 +75,16 @@ const HeaderText = styled.h1`
   text-align: center;
   margin: 0;
   font-family: Harry;
-  text-shadow: -1px -1px 0 #b87333, 1px -1px 0 #b87333, -1px 1px 0 #b87333,
-    1px 1px 0 #b87333;
+  text-shadow: -1px -1px 0 #638270, 1px -1px 0 #638270, -1px 1px 0 #638270,
+    1px 1px 0 #638270;
   letter-spacing: 1px;
 
   @media (min-width: 668px) and (max-width: 1024px) {
-    font-size: 100px;
-    margin-top: 60px;
+    font-size: 150px;
+    margin-top: 80px;
   }
   @media only screen and (min-width: 1025px) {
-    font-size: 160px;
+    font-size: 200px;
     margin-top: 60px;
   }
 `;
@@ -76,33 +92,35 @@ const HeaderText = styled.h1`
 const StartButton = styled.button`
   padding: 8px 20px;
   font-weight: 900;
-  color: #b87333;
+  color: #638270;
   background-color: black;
   border: none;
   border-radius: 2px;
-  border-bottom: 2px solid #b87333;
+  border-bottom: 2px solid #638270;
   font-size: 16px;
   cursor: pointer;
   letter-spacing: 2px;
   @media (min-width: 668px) and (max-width: 1024px) {
     margin-bottom: 40px;
+    font-size: 25px;
   }
   @media only screen and (min-width: 1025px) {
     margin-bottom: 40px;
+    font-size: 30px;
   }
 `;
 
 const Subtitle = styled.h3`
   margin: 10px 0;
   text-align: center;
-  font-family: Harry;
-  font-size: 28px;
+  font-size: 19px;
   letter-spacing: 1px;
+  color: black;
 
   @media (min-width: 668px) and (max-width: 1024px) {
-    font-size: 50px;
+    font-size: 30px;
   }
   @media only screen and (min-width: 1025px) {
-    font-size: 60px;
+    font-size: 40px;
   }
 `;
