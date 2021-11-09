@@ -1,1 +1,9 @@
-To Do!!!
+To Do!!! ✅
+- restart button "back to basic" (up left corner?) ✅
+- required? Validation !(else it will be error)
+- Summary-page component
+- startpage? component- 
+- ternary operator (? :) if quizOver
+- style with ternary operator (? :) correct or wrong answer in currentQuesion
+- styling/design
+- progressbar
