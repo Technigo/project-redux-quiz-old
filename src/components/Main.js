@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { CurrentQuestion } from "components/CurrentQuestion";
-import { ProgressBar } from "./ProgressBar";
 
 export const Main = () => {
   const [startButtonClick, setStartButtonClick] = useState(false);
@@ -30,7 +29,6 @@ export const Main = () => {
   if (startButtonClick) {
     return (
       <section>
-        <ProgressBar />
         <CurrentQuestion />
       </section>
     );
