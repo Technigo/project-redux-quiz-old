@@ -4,10 +4,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const questions = [
   {
     id: 1,
-    questionText: 'What was the color of the umbrella',
+    questionText: 'What was the color of the umbrella?',
     options: ['red', 'black', 'white', 'grey'],
     correctAnswerIndex: 2,
-    path: '../assets/visuals/crossing.jpg',
+    path: './assets/visuals/crossing.jpg',
     type: 'picture',
   },
   {
@@ -15,16 +15,16 @@ const questions = [
     questionText: 'Was there anyone who was not looking at the phone?',
     options: ['yes', 'no'],
     correctAnswerIndex: 0,
-    path: '../assets/visuals/metro.jpg',
+    path: './assets/visuals/metro.jpg',
     type: 'picture',
   },
   {
     id: 3,
     questionText:
-      'There was an advertisement for a broadway show  based on a popular Richard Gere film. Name that film',
+      'There was an advertisement for a broadway show  based on a popular Richard Gere film. Name that film?',
     options: ['Pretty Woman', 'Fugitive', 'Chicago', 'Runaway Bride'],
     correctAnswerIndex: 0,
-    path: '../assets/visuals/NY-city.mp4',
+    path: './assets/visuals/NY-city.mp4',
     type: 'video',
   },
   {
@@ -32,7 +32,7 @@ const questions = [
     questionText: 'Which soft drink bottle was visible in the picture ?',
     options: ['7-Up', 'CocaCola', 'Mountain dew', 'Sprite'],
     correctAnswerIndex: 3,
-    path: '../assets/visuals/picnic.jpg',
+    path: './assets/visuals/picnic.jpeg',
     type: 'picture',
   },
   {
@@ -40,7 +40,7 @@ const questions = [
     questionText: 'How many tents are in the picture?',
     options: ['7', '11', '14', '19'],
     correctAnswerIndex: 2,
-    path: '../assets/visuals/camping-site.jpg',
+    path: './assets/visuals/camping-site.jpeg',
     type: 'picture',
   },
   {
@@ -49,7 +49,7 @@ const questions = [
       'You saw a woman with a red purse behind the street vendor. What object did she take out from the red purse?',
     options: ['Mask', 'Money', 'Phone', 'Water'],
     correctAnswerIndex: 1,
-    path: '../assets/visuals/bangkok-food.mp4',
+    path: './assets/visuals/bangkok-purse.mp4',
     type: 'video',
   },
 ];
@@ -57,7 +57,7 @@ const questions = [
 const initialState = {
   questions,
   answers: [],
-  currentQuestionIndex: 0,
+  currentQuestionIndex: 5,
   quizOver: false,
 };
 
