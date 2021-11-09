@@ -1,10 +1,9 @@
 import React from 'react'
-import { quiz } from "../reducers/quiz";
-import { useSelector } from "react-redux";
-
+import { useSelector } from 'react-redux';
+import { quiz } from '../reducers/quiz';
 
 export const Summary = () => {
-
+  // asking store to give us anwers from quiz object
   const answers = useSelector((state) => state.quiz.answers)
 
   return (
@@ -12,7 +11,6 @@ export const Summary = () => {
       {answers.map((item) => (
         console.log(item)
       ))}
-     
     </div>
   );
 };
