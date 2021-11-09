@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
+import ProgressBar from "@ramonak/react-progress-bar";
 
 
 export const CurrentQuestion = () => {
@@ -20,6 +21,11 @@ export const CurrentQuestion = () => {
 
  /* Here we pass the value from the "questionsLength" so we can decreas the value of questions left */
  const [questionsCount, setQuestionsCount] = useState(questionsLength);
+
+ /* The progressbar for the question, using npm install --save @ramonak/react-progress-bar (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
+
+ const [completed, setCompleted] = useState(20);
+
 
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
@@ -54,6 +60,11 @@ export const CurrentQuestion = () => {
 /* when clicking a btn the value of questionsCount(=Question left) decreses  */
     setQuestionsCount(questionsCount - 1)
 
+
+   /* Update the progress-bar while clickin with 20% */ 
+
+    setCompleted(completed + 20)
+
     // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
     // because we want to go to the next question directly
     dispatch(
@@ -78,7 +89,10 @@ export const CurrentQuestion = () => {
 
 {/* Here we display witch question we are at and how many we have left */}
      <p> Question: {question.id} ({questionsCount} question left)</p>
-    
+
+
+{/* The progress bar */}
+      <ProgressBar completed={completed} width={250} customLabel={question.id} />
     
 
 
