@@ -69,7 +69,7 @@ export const quiz = createSlice({
         state.quizOver = true
       } else {
         state.currentQuestionIndex += 1
-      }
+      } 
     },
 
     /**
