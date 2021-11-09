@@ -21,6 +21,7 @@ export const FourthQuestion = () => {
 
   return (
     <form className="question-container">
+      <p> Question 4/5</p>
       <h2>{question.questionText}</h2>
       <img
         src="https://st2.depositphotos.com/31984086/46224/v/600/depositphotos_462241918-stock-illustration-semla-is-a-traditional-sweet.jpg"
