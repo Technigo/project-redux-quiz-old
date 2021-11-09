@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { quiz } from '../reducers/quiz';
+import { ProgressStatus } from './ProgressStatus';
 
 export const CurrentQuestion = () => {
 	const question = useSelector(
@@ -19,6 +20,7 @@ export const CurrentQuestion = () => {
 	};
 
 	return (
+		<>
 		<div>
 			<h1>Question: {question.questionText}</h1>
 			{question.options.map((item, index) => (
@@ -27,5 +29,7 @@ export const CurrentQuestion = () => {
 				</button>
 			))}
 		</div>
+		<ProgressStatus />
+		</>
 	);
 };
