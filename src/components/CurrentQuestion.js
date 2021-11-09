@@ -3,40 +3,48 @@ import { useSelector } from "react-redux";
 import { quiz } from "../reducers/quiz";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { ButtonQuestion } from "./ButtonQuestion";
+import { ProgressBar } from "./ProgressBar";
 
 export const CurrentQuestion = () => {
+  const dispatch = useDispatch();
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-
-  const dispatch = useDispatch();
-
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
 
-  // const globalStore = useSelector((store) => store); //useSelector is a callback function and takes 1 predefined thing = store. YOu always ask for store. something to get the information from the store.
-  // console.log("global store", globalStore);
-
-  // const quizSlice = useSelector((store) => store.quiz);
-  // console.log(quizSlice);
+  const onGoToNextQuestion = (id) => {
+    dispatch(quiz.actions.goToNextQuestion({ questionId: id }));
+  };
 
   if (!question) {
     return <Header2>Oh no! I could not find the current question!</Header2>;
   }
 
   return (
-    <div>
-      <Header2>{question.questionText}</Header2>
-      {question.options.map((item, index) => (
-        <button key={item} onClick={() => onAnswerSubmit(question.id, index)}>
-          {item}
-        </button>
-      ))}
-    </div>
+    <WrapperSection>
+      <ProgressBar />
+      <ButtonQuestion
+        onGoToNextQuestion={onGoToNextQuestion}
+        question={question}
+        setOnAnswerSubmit={onAnswerSubmit}
+      />
+    </WrapperSection>
   );
 };
 
 const Header2 = styled.h2`
-  margin: 0;
+  margin: 0 0 10px 0;
+`;
+
+const WrapperSection = styled.section`
+  background-color: black;
+  background-image: url(${require(`../pictures/smoke.jpg`)});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 `;
