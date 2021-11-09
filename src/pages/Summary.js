@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import { useHistory } from 'react-router-dom'
+import { StyledButton } from 'components/StyledButton'
 
 const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers)
@@ -46,9 +47,9 @@ const Summary = () => {
         You got {numberOfCorrectAnswers} / {numberOfQuestions} correct answers
       </p>
 
-      <button onClick={handleRestart}>
+      <StyledButton onClick={handleRestart}>
         Would you like to give it a go again?
-      </button>
+      </StyledButton>
     </section>
   )
 }

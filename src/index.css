@@ -18,9 +18,3 @@ code {
   flex-direction: column;
   text-align: center;
 }
-
-.question-wrapper {
-  display: flex;
-  flex-direction: row;
-  padding: 10px 0px 40px 0px;
-}

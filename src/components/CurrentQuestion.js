@@ -3,6 +3,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 // import Summary from './Summary';
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import NextStepButton from './NextStepButton'
+
+const QuestionWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0px 40px 0px;
+`
 
 export const CurrentQuestion = ({ numberOfQuestions, question }) => {
   // const question = useSelector(
@@ -33,7 +41,7 @@ export const CurrentQuestion = ({ numberOfQuestions, question }) => {
   return (
     <section className='main-container'>
       <h1>Question: {question.questionText}</h1>
-      <div className='question-wrapper'>
+      <QuestionWrapper>
         {question.options.map((option, index) => (
           <button
             disabled={usersAnswer}
@@ -43,21 +51,10 @@ export const CurrentQuestion = ({ numberOfQuestions, question }) => {
             {option.answer}
           </button>
         ))}
-      </div>
+      </QuestionWrapper>
       {usersAnswer?.isCorrect && <p>Correct!</p>}
       {usersAnswer?.isCorrect === false && <p>Incorrect!</p>}
-      {numberOfQuestions - 1 === currentQuestionNumber ? (
-        <Link to='/summary'>
-          <button disabled={!usersAnswer}>Finish</button>
-        </Link>
-      ) : (
-        <button
-          disabled={!usersAnswer}
-          onClick={() => onNextQuestionSubmit(question.id)}
-        >
-          Next
-        </button>
-      )}
+      <NextStepButton />
     </section>
   )
 }

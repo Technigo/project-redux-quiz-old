@@ -31,7 +31,7 @@ const questions = [
     questionText: 'How do Sarah pronounce Router',
     options: [
       { id: 1, answer: 'Router' },
-      { id: 2, answer: 'Root' },
+      { id: 2, answer: 'Rooter' },
       { id: 3, answer: 'Rüter' },
       { id: 4, answer: 'Raooter' },
     ],

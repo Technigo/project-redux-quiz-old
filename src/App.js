@@ -4,9 +4,9 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
 
-import HomePage from 'components/HomePage'
+import HomePage from 'pages/HomePage'
 import Questions from 'pages/Questions'
-import Summary from 'components/Summary'
+import Summary from 'pages/Summary'
 
 const reducer = combineReducers({
   quiz: quiz.reducer,
