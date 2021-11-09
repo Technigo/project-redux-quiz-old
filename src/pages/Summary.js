@@ -8,7 +8,6 @@ const Summary = () => {
     // const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
     const correctAnswers = answers.filter((correct) => correct.isCorrect === true)
 
-
     return (
         <div>
             {answers.map((answer) => (

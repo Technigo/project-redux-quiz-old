@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
 
   { id: 1, questionText: 'In what year was the first e-mail ever sent?', options: ['1967', '1971', '1974', '1978'], correctAnswerIndex: 1 },
-  { id: 2, questionText: 'Until 2010, carrier pigeons were faster than the internet but what was the first thing sent over the internet?', options: ['lo', 'Hello world', 'LOL', 'Is there anybody out there?'], correctAnswerIndex: 0 },
-  { id: 3, questionText: 'Smalltalk-80 was a programming language that inspired Steve Jobs when he created the first Apple computer. Which famous female researcher was part of the group behind it?', options: ['Grace Hopper', 'Ada Lovelace', 'Adele Goldberg', 'Karen Sparck Jones'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'What is the name of the ancient board game that Googles super computer won in 2017 against the best human Lee Sedol?', options: ['Chess', 'Go', 'Fu', 'Mahjong'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'What did the first message sent over the internet say?', options: ['lo', 'Hello world', 'SOS', 'Host to host'], correctAnswerIndex: 0 },
+  { id: 3, questionText: 'Which famous female was one of the scientists behind Smalltalk-80 programming language?', options: ['Grace Hopper', 'Ada Lovelace', 'Adele Goldberg', 'Karen Sparck Jones'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'What was the first computer game?', options: ['Packman', 'Pokemon Go', 'Spacewar!', 'Minesweeper'], correctAnswerIndex: 1 },
   { id: 5, questionText: 'What was the name of the worlds first computer virus?', options: ['Sweeper', 'Spanish Flu', 'Covid-19', 'Creeper'], correctAnswerIndex: 3 }
 ]
 
