@@ -1,10 +1,10 @@
-/* eslint-disable react/jsx-indent-props */
-/* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-indent-props *//* eslint-disable linebreak-style */
 /* eslint-disable indent */
 import React from 'react'
 import './FirstQuestion.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
+import moussaka from '../assets/moussaka-image.jpg'
 
 export const FirstQuestion = () => {
     const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -27,16 +27,20 @@ export const FirstQuestion = () => {
     return (
         <div className="question-container">
             <h1 className="question">Question: {question.questionText}</h1>
-            <div className="radio-button-container">
+            <div className="moussaka-image">
+                <img src={moussaka} alt="moussaka" />
+            </div>
+            <div className="radio-buttons-container">
                 {question.options.map((item, index) => (
-                    <div className="radio-button-label" key={item}>
+                    <div className="radio-buttons-label" key={item}>
                         <input
+                            className="radio-button"
                             type="radio"
                             id={item}
                             name="answer"
                             value={item}
                             onChange={() => onAnswerSubmit(question.id, index)} />
-                        <label htmlFor={item}>{item}</label>
+                        <label className="label-overlay" htmlFor={item}>{item}</label>
                     </div>
                 ))}
             </div>
