@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   return (
-    <div>
-      HomePage
+    <section className='main-container'>
+      <h1>Worlds most amazing quiz</h1>
       <Link to='/quiz'>Start quiz</Link>
-    </div>
+    </section>
   )
 }
 
