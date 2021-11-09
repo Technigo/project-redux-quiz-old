@@ -14,6 +14,8 @@ export const CurrentQuestion = () => {
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
 
+  /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
+
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
   calls selectors, selectors come to componenets with information -
@@ -53,7 +55,6 @@ export const CurrentQuestion = () => {
  quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
          answerId is a specific answer of a question */
           onClick={() => onSubmitAnswer(question.id, index)}>
-            
           {item}
         </button>
       ))}
