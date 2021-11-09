@@ -20,6 +20,17 @@
 
 }
 
+/* For the progressbar text */
+
+.progress-text{
+
+  color: red;
+font-weight: 500;
+
+}
+
+
+
 .question-text {
 	background-color: red;
 	color: white;

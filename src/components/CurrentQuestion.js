@@ -87,7 +87,14 @@ export const CurrentQuestion = () => {
   return (
     <>
       <main className="main-container">
-        <div className="quiz-container">
+      <div className="quiz-container">
+     
+{/* Here we display witch question we are at and how many we have left */}
+<p  className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+
+{/* The progress bar */}
+      <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor={"red"} />
+
           <h1 className="question-text">{question.questionText}</h1>
           <div className="button-container">
             {question.options.map((item, index) => (
@@ -107,32 +114,11 @@ answerId is a specific answer of a question */
 	  <div>
 
 
-{/* Here we display witch question we are at and how many we have left */}
-     <p> Question: {question.id} ({questionsCount} question left)</p>
 
-
-{/* The progress bar */}
-      <ProgressBar completed={completed} width={250} customLabel={question.id} />
     
 
 
-      <h1> {question.questionText} </h1>
-      {question.options.map((item, index) => (
-
-
-
-
-        <button
-          type="button"
-          key={item}
-          /* pass function to the dispatch to update the state, exessing
- quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-         answerId is a specific answer of a question */
-          onClick={() => onSubmitAnswer(question.id, index)}>
-          {item}
-        </button>
-        
-      ))}
+      
     </div>
     </>
 
