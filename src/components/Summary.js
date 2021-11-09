@@ -8,9 +8,7 @@ export const Summary = () => {
 
   return (
     <div>
-      {answers.map((item) => (
-        console.log(item)
-      ))}
+      <h1>Hej from Summary</h1>
     </div>
   );
 };

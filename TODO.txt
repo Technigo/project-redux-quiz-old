@@ -11,6 +11,7 @@ Notes after team meeting 8/11:
 - in CurrentQuestion we split up  img,  buttons, summary(overviwe) in to diffrent componens - BIRGIT
 - Styling using style components - EVERYONE - Darya starting styling 
 
+Styling inspiration: https://www.buzzfeed.com/kasey_002/only-real-marvel-fans-can-answer-all-9-questions-c-alq0tmpru2
 
 
 

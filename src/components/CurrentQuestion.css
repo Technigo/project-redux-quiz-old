@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* add zooming effect on the text ine the button? 
+*/
+
+.main-container {
+	display: flex;
+	justify-content: center;
+}
+
+.quiz-container {
+	padding: 10px;
+
+	/* to center conteiner in the middle of the page */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+
+}
+
+.question-text {
+	background-color: red;
+	color: white;
+	padding: 30px;
+	font-size: 30px;
+	text-align: center;
+}
+
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	/* adding space between buttons */
+	gap: 10px;
+}
+
+.button {
+	background-color: red;
+	color: white;
+	border:none;
+	width: 48%;
+	padding: 30px;
+	font-family: "Roboto";
+	font-size: 30px;
+}
+
+.button:hover {
+	box-shadow: 5px 5px rgb(69, 69, 69);
+}
+
+/* Ipad */ 
+@media (min-width: 768px) and (max-width: 1023px ) {
+	.quiz-container {
+		width: 600px;
+	}
+}
+
+/* Ipad Pro and more */ 
+@media (min-width: 1024px) {
+	.quiz-container {
+		width: 800px;
+	}
+}
+

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
 
+import 'components/CurrentQuestion.css'
+
 export const CurrentQuestion = () => {
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
   different slices in store, if we had more slices we could see it in the console;
@@ -42,21 +44,25 @@ export const CurrentQuestion = () => {
   };
 
   return (
-    <div>
-      <p> {question.id} / 5 </p>
-      <h1> {question.questionText} </h1>
-      {question.options.map((item, index) => (
-        <button
-          type="button"
-          key={item}
-          /* pass function to the dispatch to update the state, exessing
- quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-         answerId is a specific answer of a question */
-          onClick={() => onSubmitAnswer(question.id, index)}>
-            
-          {item}
-        </button>
-      ))}
-    </div>
+    <>
+      <main className="main-container">
+        <div className="quiz-container">
+          <h1 className="question-text">{question.questionText}</h1>
+          <div className="button-container">
+            {question.options.map((item, index) => (
+              <button
+                className="button"
+                type="button"
+                key={item} /* pass function to the dispatch to update the state, exessing
+quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+answerId is a specific answer of a question */
+                onClick={() => onSubmitAnswer(question.id, index)}>
+                <span className="button-text">{item}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </main>
+    </>
   );
 };
