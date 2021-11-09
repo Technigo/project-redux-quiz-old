@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'How many notes are there in a musical scale?', options: ['7', '10', '8', '9'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'What company is also the name of one of the longest rivers in the world?', options: ['Nile', 'Amazon', 'Mississippi', 'Mekong'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'What is the tallest mountain in the world?', options: ['Denali', 'Cerro Aconcagua', 'Mount Everest', 'Kilimanjaro'], correctAnswerIndex: 3 },
-  { id: 4, questionText: 'How many centimetres in a metre?', options: ['10', '1000', '50', '100'], correctAnswerIndex: 4 },
-  { id: 5, questionText: 'Who is next in line to the British throne after Queen Elizabeth II?', options: ['Prince William', 'Prince Charles', 'Prince Edward', 'Prince Richard'], correctAnswerIndex: 2 }
+  { id: 2, questionText: 'What company is also the name of one of the longest rivers in the world?', options: ['Nile', 'Amazon', 'Mississippi', 'Mekong'], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'What is the tallest mountain in the world?', options: ['Denali', 'Cerro Aconcagua', 'Mount Everest', 'Kilimanjaro'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'How many centimetres in a metre?', options: ['10', '1000', '50', '100'], correctAnswerIndex: 3 },
+  { id: 5, questionText: 'Who is next in line to the British throne after Queen Elizabeth II?', options: ['Prince William', 'Prince Charles', 'Prince Edward', 'Prince Richard'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {
