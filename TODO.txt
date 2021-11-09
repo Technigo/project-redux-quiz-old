@@ -3,13 +3,13 @@
 Questions for quiz are from here: https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/
 
 Notes after team meeting 8/11: 
-- 5 question and, 4 options for every question displayd w buttons
-- show true/false answer whit green/red button.
-- A component that showing witch qestion you are at and how many you have left
-- summary-page show correct/wrong answer like "you have 2 /5 answer correct"
-- next questiontion displays automatically without a "next question button"
-- in CurrentQuestion we split up  img,  buttons, summary(overviwe) in to diffrent componens
-- Styling using style components
+- 5 question and, 4 options for every question displayd w buttons -OK! 
+- show true/false answer whit green/red button. (here set a delay so the user se the color of the btn - use setTmeOut on the "nextQuestion - submit") - Aschwin
+- A component that showing witch qestion you are at and how many you have left - JESSICA
+- summary-page show correct/wrong answer like "you have 2 /5 answer correct" - BIRGIT 
+- next questiontion displays automatically without a "next question button" - OK! 
+- in CurrentQuestion we split up  img,  buttons, summary(overviwe) in to diffrent componens - BIRGIT
+- Styling using style components - EVERYONE - Darya starting styling 
 
 
 
