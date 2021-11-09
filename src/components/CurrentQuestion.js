@@ -12,7 +12,12 @@ export const CurrentQuestion = () => {
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
   // console.log(currentQuestionIndex)
 
-  const correctOrNot = answers[currentQuestionIndex] ? answers[currentQuestionIndex].isCorrect : ''
+  //2nd nesting is a limit
+  const correctOrNot = answers[currentQuestionIndex]
+    ? answers[currentQuestionIndex].isCorrect
+      ? 'correct'
+      : 'incorrect'
+    : ''
   console.log(correctOrNot)
 
   const dispatch = useDispatch()
@@ -20,14 +25,14 @@ export const CurrentQuestion = () => {
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
-
+  // it could be event
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   }
   const onNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
-
+  // ((event) => onNewThoughtChange(event)
   return (
     <div>
       <div>

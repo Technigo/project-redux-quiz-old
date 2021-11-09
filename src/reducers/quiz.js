@@ -81,6 +81,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
+      console.log('restart')
       return initialState
     }
 

@@ -12,7 +12,7 @@ const RestartQuiz = () => {
 
     return (
         <Link to='/'>
-            <button onClick={() => onRestartClick}>Restart the quiz</button>
+            <button onClick={onRestartClick}>Restart the quiz</button>
         </Link>
     )
 }
