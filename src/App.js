@@ -3,7 +3,8 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
 import { Main } from "components/Main";
-// import { CurrentQuestion } from "components/CurrentQuestion";
+import styled from "styled-components";
+
 
 const reducer = combineReducers({
   quiz: quiz.reducer,

@@ -28,6 +28,7 @@ export const ProgressBar = () => {
               style={{
                 backgroundColor:
                   currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
+
               }}
             ></Line>
           </ProgressBarWrapper>
@@ -40,6 +41,7 @@ export const ProgressBar = () => {
             currentQuestionIndex === questions.length - 1
               ? "#638270"
               : "#f0f0f0",
+
         }}
       >
         <FontAwesomeIcon icon={faCauldron} />
@@ -83,7 +85,6 @@ const Line = styled.div`
   height: 3px;
   display: inline-block;
   transition: all 500ms ease-in-out;
-
   @media (min-width: 668px) and (max-width: 1024px) {
     width: 100px;
   }
