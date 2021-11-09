@@ -20,23 +20,48 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((option, index) => (
-        <button
-          type='button'
-          key={option}
-          onClick={() => onAnswerSubmit(question.id, index)}
-        >
-          {option}
-        </button>
-      ))}
+    <>
+      <div className='color-container'>
+        <div className='top-container'>
+          <button
+            className='restart-btn'
+            type='button'
+            onClick={() => {
+              dispatch(quiz.actions.restart())
+            }}
+          >
+            <span role='img' aria-label='arrow left emoji'>
+              ⬅
+            </span>
+            &nbsp;&nbsp;Back to basic
+          </button>
+          <div>{question.id}/5</div>
+        </div>
+        <div>
+          <h1>{question.questionText}</h1>
+        </div>
+      </div>
+
+      <div className='options-container'>
+        {question.options.map((option, index) => (
+          <button
+            type='button'
+            className='option-btn'
+            key={option}
+            onClick={() => onAnswerSubmit(question.id, index)}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+
       <button
         type='button'
+        className='next-button'
         onClick={() => dispatch(quiz.actions.goToNextQuestion())}
       >
-        Go to next question
+        Next question
       </button>
-    </div>
+    </>
   )
 }
