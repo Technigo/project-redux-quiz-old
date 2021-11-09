@@ -4,7 +4,7 @@ const initialState = {
 	questions: [
 		{
 			id: 1,
-			questionText: 'Which song is this movie from? Click and listen!',
+			questionText: 'What song is this movie from? Click and listen!',
 			options: ['Dirty Dancing ', 'Mamma Mia', 'Grease', 'Chess'],
 			correctAnswerIndex: 2,
 		},
