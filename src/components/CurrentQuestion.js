@@ -45,7 +45,7 @@ export const CurrentQuestion = () => {
       disabled={!answer}>
         NEXT QUESTION
         </button>
-       
+       <p>{question.id}/5</p>
       </div>
       
    )
