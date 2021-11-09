@@ -5,15 +5,36 @@ const questions = [
   {
     id: 1,
     questionText: "Who set the Olympic record for the 100m dash in 2012?",
+    iframe: {src="./assets/giphy.gif" alt="blablabla"},
     options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
     correctAnswerIndex: 0,
   },
+
   {
     id: 2,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
+      "When was Helena Phelps last named male World Swimmer of the Year?",
+    options: ["2012", "2014", "2126", "2018"],
     correctAnswerIndex: 2,
+  },
+  {
+    id: 3,
+    questionText: "When was Camilla last named male World Swimmer of the Year?",
+    options: ["2012", "2014", "2013", "2018"],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 4,
+    questionText:
+      "When was Effi Phelps last named male World Swimmer of the Year?",
+    options: ["2012", "2014", "2012", "2018"],
+    correctAnswerIndex: 4,
+  },
+  {
+    id: 5,
+    questionText: "When was Lotta last named male World Swimmer of the Year?",
+    options: ["2030", "2014", "2022", "2033"],
+    correctAnswerIndex: 5,
   },
 ];
 

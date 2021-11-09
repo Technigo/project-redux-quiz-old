@@ -1,39 +1,31 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import Summary from "./Summary";
 
 export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const quizOver = useSelector((state) => state.quiz.quizOver);
+  const dispatch = useDispatch();
 
-  const answer = useSelector((state) =>
-    state.quiz.answers.find((a) => a.questionId === question.id)
+  const answers = useSelector((state) =>
+    state.quiz.answers.find(
+      (a) => a.questionId === question.id // question could come from the previous selector in the last example
+    )
   );
+
   const correct = useSelector((state) =>
     state.quiz.answers.find((a) => a.isCorrect === true)
   );
 
-  console.log(answer);
-  console.log(correct);
+  console.log("This is correct", correct);
+
   const quizSlice = useSelector((store) => store.quiz);
-  // console.log(quizSlice);
-
-  const dispatch = useDispatch();
-
-  const onSubmitAnswer = (id, index, answerIndex) => {
-    dispatch(
-      quiz.actions.submitAnswer({
-        questionId: id,
-        answerIndex: index,
-        answer: question.options[answerIndex],
-      })
-    );
-    if (correct) {
-      alert("Yay");
-    } else alert("Noo");
-  };
-
+  console.log(quizSlice);
+  const counter = useSelector((store) => store.quiz.currentQuestionIndex);
+  console.log(counter);
   const nextQuestion = (id) => {
     dispatch(
       quiz.actions.goToNextQuestion({
@@ -42,23 +34,45 @@ export const CurrentQuestion = () => {
     );
   };
 
+  const onSubmitAnswer = (id, index) => {
+    dispatch(
+      quiz.actions.submitAnswer({
+        questionId: id,
+        answerIndex: index,
+      })
+    );
+  };
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
-
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((item, index, answer) => (
-        <button
-          value={answer}
-          key={item}
-          onClick={() => onSubmitAnswer(question.id, index)}
-        >
-          {item}
-        </button>
-      ))}
-      <button onClick={() => nextQuestion()}>Next</button>
-    </div>
+    <>
+      <div>
+        <h1>Question: {question.questionText}</h1>
+        <iframe
+          src={question.iframe.src}
+          width="480"
+          height="360"
+          frameBorder="0"
+          className="giphy-embed"
+          allowFullScreen
+        ></iframe>
+        {/* <p>
+          <a href="https://giphy.com/gifs/gunsnroses-guns-n-roses-welcome-to-the-jungle-26wkBaMFVpVW6rUS4">
+            via GIPHY
+          </a>
+        </p> */}
+
+        {question.options.map((item, index) => (
+          <button key={item} onClick={() => onSubmitAnswer(question.id, index)}>
+            {item}
+          </button>
+        ))}
+        {answers ? nextQuestion() : ""}
+      </div>
+      <div>{counter + 1}/5</div>
+      {quizOver && <Summary />}
+    </>
   );
 };
