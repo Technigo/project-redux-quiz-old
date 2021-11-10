@@ -1,11 +1,34 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 const questions = [
+<<<<<<< HEAD
   { id: 1, questionText: 'What is the main ingredient in greek moussaka?', options: ['Aubergine', 'Feta Cheese', 'Potato', 'Ouzo'], correctAnswerIndex: 0 },
   { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
   { id: 3, questionText: "What is the main ingredient of the dough in the traditional Swedish dish, kroppkakor?", options: ["Flour", "Potato", "Egg"], correctAnswerIndex: 1 },
   {id: 4, questionText: "What is inside the classic swedish semla?", options: ["Cream and rasberry jam", "Vanilla custard and strawberry jam", "Cream and almondpaste", "Vanilla custard and cream"], correctAnswerIndex: 2 },
+=======
+{ id: 1, questionText: 'What is the main ingredient in greek moussaka?', options: ['Aubergine', 'Feta Cheese', 'Potato', 'Ouzo'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  {
+	id: 3,
+	questionText: "What is the main ingredient of the dough in the traditional Swedish dish, kroppkakor?",
+	options: ["Flour", "Potato", "Egg"],
+	correctAnswerIndex: 1,
+},
+
+{
+    id: 4,
+    questionText: "What is inside the classic swedish semla?",
+    options: [
+      "Cream and rasberry jam",
+      "Vanilla custard and strawberry jam",
+      "Cream and almondpaste",
+      "Vanilla custard and cream",
+    ],
+    correctAnswerIndex: 2,
+  },
+>>>>>>> 0172bd5069b842ca42472daf501ad9909341083f
 ]
 
 
