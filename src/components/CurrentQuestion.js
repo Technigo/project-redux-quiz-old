@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { quiz } from "../reducers/quiz";
 
+//Background-image: https://images.unsplash.com/photo-1608371945786-d47d3cdd31da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const question = useSelector(
@@ -50,9 +52,16 @@ export const CurrentQuestion = () => {
       ))}
       {answers.length === question.id && !quizOver && (
         <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
-          Next Question
+          {answers.length + 1 === question.length
+            ? "Show results"
+            : "Next Question"}
         </button>
       )}
+      {/* {quizOver && (
+        <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
+          Show results
+        </button>
+      )} */}
     </div>
   );
 };
