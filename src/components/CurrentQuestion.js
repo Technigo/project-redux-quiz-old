@@ -1,10 +1,12 @@
 /* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import './currentQuestion.css';
 
 import { quiz } from '../reducers/quiz';
 import Audio from '../components/Audio';
+import Summary from './Summary';
+
+import './currentQuestion.css';
 
 export const CurrentQuestion = () => {
 	const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -27,12 +29,20 @@ export const CurrentQuestion = () => {
 	// 	// return state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect;
 	// })
 
+	//We ask store to get updated value (true or false) of isQuizOver
+  	const isQuizOver = useSelector((state) => state.quiz.quizOver);
+
 	const dispatch = useDispatch();
 
 
 	if (!question) {
 		return <h1>Oh no! I could not find the current question!</h1>;
 	}
+
+	 // if isQuizOver is true, then Summary component is returned
+	 if (isQuizOver) {
+		return <Summary />;
+	  }
 
 
 	const onAnswerSubmit = (id, index) => {
