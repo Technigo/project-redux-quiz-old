@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { quiz } from 'reducers/quiz';
-import { Summary } from 'components/Summary'
-import ProgressBar from '@ramonak/react-progress-bar';
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from "reducers/quiz";
+import { Summary } from "components/Summary";
+import ProgressBar from "@ramonak/react-progress-bar";
 
-import 'components/CurrentQuestion.css'
+import "components/CurrentQuestion.css";
 
 export const CurrentQuestion = () => {
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
@@ -15,7 +15,7 @@ export const CurrentQuestion = () => {
   );
 
   /* Here we get the length of the arry(all the questions) */
-  const questionsLength = useSelector((state) => state.quiz.questions.length)
+  const questionsLength = useSelector((state) => state.quiz.questions.length);
   /* Here we pass the value from the "questionsLength" so we can decreas
   the value of questions left */
   const [questionsCount, setQuestionsCount] = useState(questionsLength);
@@ -26,7 +26,7 @@ export const CurrentQuestion = () => {
   const [completed, setCompleted] = useState(20);
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
-  const isQuizOver = useSelector((state) => state.quiz.quizOver)
+  const isQuizOver = useSelector((state) => state.quiz.quizOver);
   /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
@@ -40,19 +40,15 @@ export const CurrentQuestion = () => {
 
   // if isQuizOver is true, we return Summary component
   if (isQuizOver) {
-    return <Summary />
+    return <Summary />;
   }
 
   const onSubmitAnswer = (id, index) => {
     // what exact function we need to call to uppdate the store
-    dispatch(
-      quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
-    );
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
     // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
     // because we want to go to the next question directly
-    dispatch(
-      quiz.actions.goToNextQuestion({ id })
-    );
+    dispatch(quiz.actions.goToNextQuestion({ id }));
 
     /* when clicking a btn the value of questionsCount(=Question left) decreses  */
     setQuestionsCount(questionsCount - 1);
@@ -60,6 +56,43 @@ export const CurrentQuestion = () => {
     /* Update the progress-bar while clickin with 20% */
     setCompleted(completed + 20);
   };
+
+  if (question.id === 5) {
+    return (
+      <>
+        <main className="main-container">
+          <div className="quiz-container">
+            <h1 className="question-text">{question.questionText}</h1>
+            <div className="button-container">
+              {question.options.map((item, index) => (
+                <button
+                  style={{
+                    backgroundImage: `url(${item})`,
+                  }}
+                  className="image-button"
+                  type="button"
+                  key={item}
+                  onClick={() => onSubmitAnswer(question.id, index)}
+                ></button>
+              ))}
+            </div>
+            <div className="progress-bar-container">
+              <p className="progress-text">
+                {" "}
+                Question: {question.id} ({questionsCount} question left)
+              </p>
+              <ProgressBar
+                completed={completed}
+                width={250}
+                customLabel={question.id}
+                bgColor="red"
+              />
+            </div>
+          </div>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
@@ -75,16 +108,25 @@ export const CurrentQuestion = () => {
                 /* pass function to the dispatch to update the state, exessing
 quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
 answerId is a specific answer of a question */
-                onClick={() => onSubmitAnswer(question.id, index)}>
+                onClick={() => onSubmitAnswer(question.id, index)}
+              >
                 <span className="button-text">{item}</span>
               </button>
             ))}
           </div>
           <div className="progress-bar-container">
             {/* Here we display witch question we are at and how many we have left */}
-            <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+            <p className="progress-text">
+              {" "}
+              Question: {question.id} ({questionsCount} question left)
+            </p>
             {/* The progress bar */}
-            <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
+            <ProgressBar
+              completed={completed}
+              width={250}
+              customLabel={question.id}
+              bgColor="red"
+            />
           </div>
         </div>
       </main>
