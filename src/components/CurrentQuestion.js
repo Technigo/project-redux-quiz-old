@@ -11,6 +11,8 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+
+  console.log(question);
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
@@ -19,18 +21,32 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion({ questionId: id }));
   };
 
+  const getQuestionType = (type) => {
+    if (type === 'button') {
+      return (
+        <ButtonQuestion
+          question={question}
+          setOnAnswerSubmit={onAnswerSubmit}
+          onGoToNextQuestion={onGoToNextQuestion}
+        />
+      );
+    } else {
+      return <div>Other</div>;
+    }
+  };
+
   if (!question) {
     return <Header2>Oh no! I could not find the current question!</Header2>;
   }
 
   return (
     <WrapperSection>
-      <ProgressBar />
-      <ButtonQuestion
+      <ProgressBar
         onGoToNextQuestion={onGoToNextQuestion}
         question={question}
         setOnAnswerSubmit={onAnswerSubmit}
       />
+      {getQuestionType(question.type)}
     </WrapperSection>
   );
 };
