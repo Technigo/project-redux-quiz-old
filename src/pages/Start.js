@@ -20,7 +20,7 @@ const StartContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     width: 80%;
     height: 200px;
     padding: 10px;
@@ -31,7 +31,7 @@ const StyledHeadline = styled.h1`
     font-family: 'Righteous';
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
 `
 const ButtonStart = styled.button`
     font-family: 'Righteous';
@@ -46,7 +46,7 @@ const StyledLink = styled(Link)`
     text-decoration:none;
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
 `
 
 const Start = () => {

@@ -23,7 +23,7 @@ const StyledButton = styled.button`
     font-size: 25px;
     display: flex;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
     
 `
 const IconRight = styled(FaArrowRight)`
