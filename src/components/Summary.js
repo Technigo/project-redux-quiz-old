@@ -28,26 +28,31 @@ export const Summary = () => {
 if (score >=4){
 
 return  ( 
-<div width="100vw">
+<main className="SummaryContainer" >
 <Confetti  />
-<h2>Summary</h2>
-      <p>Score: {score}/{answers.length}</p>
-</div> 
+<section className="SummaryTextContent">
+ <div className="SummaryText"> 
+<h2 className="SummaryTextConfetti">Summary</h2>
+<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
+</div>     </section>
+</main> 
 )
 
 } else {
 
   return (
-  <div width="100vw">
+
+
+<main className="SummaryContainer" >
 <FallingEmojis emoji={'💧'} />
-     
-      <h2>Summary</h2>
-      <p>Score: {score}/{answers.length}</p>
-    </div>)
-
+<section className="SummaryTextContent">
+ <div className="SummaryText"> 
+<h2 className="SummaryTextRain">Summary</h2>
+<p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
+</div>     </section>
+</main> 
+  )
 }
-
-
 
 
 };
