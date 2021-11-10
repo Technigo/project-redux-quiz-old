@@ -1,10 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { quiz } from "../reducers/quiz";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { ButtonQuestion } from "./ButtonQuestion";
-import { ProgressBar } from "./ProgressBar";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { quiz } from '../reducers/quiz';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
+import { ButtonQuestion } from './ButtonQuestion';
+import { ProgressBar } from './ProgressBar';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();

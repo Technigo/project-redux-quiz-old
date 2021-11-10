@@ -8,7 +8,7 @@ export const quiz = createSlice({
     questions: [
       {
         id: 1,
-
+        type: 'button',
         questionText:
           'On what date does the Hogwarts Express depart the platform to head to Hogwarts?',
         options: [
@@ -21,6 +21,7 @@ export const quiz = createSlice({
       },
       {
         id: 2,
+        type: 'button',
         questionText:
           'What did Ron call Hermione after Charms class that made her cry?',
         options: [
@@ -34,6 +35,7 @@ export const quiz = createSlice({
       {
         id: 3,
         imgSrc: '',
+        type: 'picture',
         questionText:
           'On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?',
         options: [
@@ -47,6 +49,7 @@ export const quiz = createSlice({
       {
         id: 4,
         imgSrc: '',
+        type: 'picture',
         questionText:
           'Which old Hogwarts relic did Harry pull out of the Sorting Hat?',
         options: [
@@ -60,6 +63,7 @@ export const quiz = createSlice({
       {
         id: 5,
         imgSrc: '',
+        type: 'picture',
         questionText:
           'What position does Harry play on the Gryffindor Quidditch team?',
         options: ['Keeper', 'Beater', 'Chaser', 'Seeker'],
