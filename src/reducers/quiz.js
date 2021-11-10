@@ -1,7 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
+  { id: 1, questionText: 'What is the main ingredient in greek moussaka?', options: ['Aubergine', 'Feta Cheese', 'Potato', 'Ouzo'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
   {
     id: 4,
     questionText: "What is inside the classic swedish semla?",
@@ -13,7 +15,8 @@ const questions = [
     ],
     correctAnswerIndex: 2,
   },
-];
+]
+
 
 const initialState = {
   questions,

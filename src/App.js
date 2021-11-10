@@ -1,11 +1,10 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { quiz } from "reducers/quiz";
-
-import { CurrentQuestion } from "components/CurrentQuestion";
-import { StartPage } from "components/StartPage";
-import { FourthQuestion } from "components/FourthQuestion";
+/* eslint-disable linebreak-style */
+import React from 'react'
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { quiz } from 'reducers/quiz'
+import { FirstQuestion } from 'components/FirstQuestion'
+import Header from 'components/Header'
 
 const reducer = combineReducers({
   quiz: quiz.reducer,
@@ -16,7 +15,8 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <StartPage />
+      <Header />
+      <FirstQuestion />
     </Provider>
   );
 };
