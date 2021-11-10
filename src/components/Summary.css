@@ -1,0 +1,70 @@
+.SummaryContainer{
+
+ height: 100vh;
+
+ min-width: 100vw;
+
+}
+
+.SummaryTextContent{
+display: flex;
+align-items: center;
+justify-content:space-around;
+height: 100%;
+
+
+}
+
+
+.SummaryText {
+
+  min-width: 320px;
+  text-align: center;
+ 
+
+}
+
+.SummaryTextConfetti{
+font-size: 4rem;
+  text-shadow: 1px 1px 0px #eb452b, 
+  1px 1px 0px #efa032, 
+  2px 2px 0px #46b59b, 
+  3px 3px 0px #017e7f, 
+  4px 4px 0px #052939, 
+  5px 5px 0px #c11a2b, 
+  6px 6px 0px #c11a2b, 
+  6.5px 6.5px 0px #c11a2b;
+}
+
+
+.SummaryTextConfetti-p{
+  font-size: 2rem;
+  color: black;
+    text-shadow: 1px 1px 0px #eb452b, 
+    1px 1px 0px #efa032, 
+    1px 2px 0px #46b59b;
+  }
+
+
+.SummaryTextRain{
+font-size: 4rem;
+  text-shadow: 1px 1px 0px #2bc5eb, 
+  1px 1px 0px #1b0e3d, 
+  2px 2px 0px #37b5d4, 
+  3px 3px 0px #017e7f, 
+  4px 4px 0px #052939, 
+  5px 5px 0px #857e7f, 
+  6px 6px 0px #615a5a, 
+  6.5px 6.5px 0px #1a68c1;
+
+}
+
+.SummaryTextRain-p{
+
+  font-size: 2rem;
+  color: black;
+    text-shadow: 1px 1px 0px #135388, 
+    1px 1px 0px #22b1d4,  
+    2px 2px 0px #0fd1eb;
+
+}
