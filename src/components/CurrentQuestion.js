@@ -78,16 +78,16 @@ answerId is a specific answer of a question */
                 onClick={() => onSubmitAnswer(question.id, index)}>
                 <span className="button-text">{item}</span>
               </button>
-
             ))}
           </div>
-          {/* Here we display witch question we are at and how many we have left */}
-          <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
-          {/* The progress bar */}
-          <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
+          <div className="progress-bar-container">
+            {/* Here we display witch question we are at and how many we have left */}
+            <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+            {/* The progress bar */}
+            <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
+          </div>
         </div>
       </main>
     </>
-
   );
 };

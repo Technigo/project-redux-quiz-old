@@ -86,7 +86,6 @@ export const quiz = createSlice({
       return initialState
     },
 
-
     /* new function that raises the score for every correct answer */
     riseScore: (state) => {
       state.rightAnswers += 1

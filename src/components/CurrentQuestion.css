@@ -11,30 +11,18 @@
 .quiz-container {
 	padding: 10px;
 
-	/* to center conteiner in the middle of the page */
+	/* to center container in the middle of the page */
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 90%;
-
 }
-
-/* For the progressbar text */
-
-.progress-text{
-
-  color: red;
-font-weight: 500;
-
-}
-
-
 
 .question-text {
 	background-color: red;
 	color: white;
-	padding: 30px;
+	padding: 50px;
 	font-size: 30px;
 	text-align: center;
 }
@@ -42,7 +30,7 @@ font-weight: 500;
 .button-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	width: 372px;
 	/* adding space between buttons */
 	gap: 10px;
 }
@@ -51,7 +39,7 @@ font-weight: 500;
 	background-color: red;
 	color: white;
 	border:none;
-	width: 48%;
+	width: 181px;
 	padding: 30px;
 	font-family: "Roboto";
 	font-size: 30px;
@@ -61,10 +49,30 @@ font-weight: 500;
 	box-shadow: 5px 5px rgb(69, 69, 69);
 }
 
+/* For the progressbar text */
+.progress-text{
+	color: red;
+	font-weight: 500;
+  }
+
+.progress-bar-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 /* Ipad */ 
 @media (min-width: 768px) and (max-width: 1023px ) {
 	.quiz-container {
 		width: 600px;
+	}
+
+	.button-container {
+		width: 620px;
+	}
+
+	.button {
+		width: 295px;
 	}
 }
 
@@ -72,6 +80,14 @@ font-weight: 500;
 @media (min-width: 1024px) {
 	.quiz-container {
 		width: 800px;
+	}
+
+	.button-container {
+		width: 800px;
+	}
+
+	.button {
+		width: 395px;
 	}
 }
 
