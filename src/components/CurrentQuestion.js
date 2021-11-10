@@ -62,6 +62,7 @@ export const CurrentQuestion = () => {
     setCompleted(completed + 20);
   };
 
+  // for question 5
   if (question.id === 5) {
     return (
       <>
