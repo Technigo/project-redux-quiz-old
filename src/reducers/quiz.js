@@ -5,7 +5,7 @@ const questions = [
   { id: 1, questionText: 'In what year was the first e-mail ever sent?', options: ['1967', '1971', '1974', '1978'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'What did the first message sent over the internet say?', options: ['lo', 'Hello world', 'SOS', 'Host to host'], correctAnswerIndex: 0 },
   { id: 3, questionText: 'Which famous female was one of the scientists behind Smalltalk-80 programming language?', options: ['Grace Hopper', 'Ada Lovelace', 'Adele Goldberg', 'Karen Sparck Jones'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'What was the first computer game?', options: ['Packman', 'Pokemon Go', 'Spacewar!', 'Minesweeper'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'What was the first computer game?', options: ['Packman', 'Pokemon Go', 'Spacewar!', 'Minesweeper'], correctAnswerIndex: 2 },
   { id: 5, questionText: 'What was the name of the worlds first computer virus?', options: ['Sweeper', 'Spanish Flu', 'Covid-19', 'Creeper'], correctAnswerIndex: 3 }
 ]
 
@@ -81,7 +81,6 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      console.log('restart')
       return initialState
     }
 

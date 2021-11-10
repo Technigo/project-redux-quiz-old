@@ -83,7 +83,13 @@ export const CurrentQuestion = () => {
       ? 'Your answer is correct'
       : 'Your answer is incorrect'
     : ''
-  console.log(correctOrNot)
+
+  // const correctAnswer = answers.find((a) => a.isCorrect === true)
+  // console.log(correctAnswer)
+  // const answer = useSelector((state) => state.quiz.answers.find((a) => (a.questionId === question.id // question could come from the previous selector in the last example
+  // )))
+  // console.log(answer)
+
 
   const dispatch = useDispatch()
 
@@ -93,7 +99,6 @@ export const CurrentQuestion = () => {
   // it could be event
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    
   }
 
   const onNextQuestion = () => {
@@ -109,17 +114,17 @@ export const CurrentQuestion = () => {
         </QuestionHeader>
         <QuestionStyled>{question.questionText}</QuestionStyled>
         <ButtonContainer>
-        {question.options.map((option, index) => (
+          {question.options.map((option, index) => (
             <StyledButtons type="button"
               key={option}
               onClick={() => onAnswerSubmit(question.id, index)}
               disabled={answers[currentQuestionIndex]}>
               {option}
             </StyledButtons>
-        ))}
-          </ButtonContainer>
+          ))}
+        </ButtonContainer>
         <CheckAnswer>
-        {correctOrNot.toString()}
+          {correctOrNot.toString()}
         </CheckAnswer>
         <NextQuestionButton answers={answers} currentQuestionIndex={currentQuestionIndex} onNextQuestion={onNextQuestion} />
       </FormWrapper>

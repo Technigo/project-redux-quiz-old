@@ -23,12 +23,13 @@ const StyledButton = styled.button`
     font-size: 25px;
     display: flex;
     align-items: center;
+    cursor:pointer;
     
 `
 const IconRight = styled(FaArrowRight)`
     margin-left: 3px;
 `
-const StyledSummaryLink = styled(Link) `
+const StyledSummaryLink = styled(Link)`
     text-decoration: none;
 `
 
@@ -51,8 +52,8 @@ const NextQuestionButton = ({ onNextQuestion, answers, currentQuestionIndex }) =
         <ContainerStyledButton>
             <StyledButton type="button" disabled={!answers[currentQuestionIndex]} onClick={onNextQuestion}>Next question <IconRight /></StyledButton>
         </ContainerStyledButton>
-        )
-      
+    )
+
 }
 
 export default NextQuestionButton
