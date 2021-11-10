@@ -1,17 +1,34 @@
 ## **Planning**
 
+LINKS!
 Questions for quiz are from here: https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/
 
-Notes after team meeting 8/11: 
-- 5 question and, 4 options for every question displayd w buttons -OK! 
-- show true/false answer whit green/red button. (here set a delay so the user se the color of the btn - use setTmeOut on the "nextQuestion - submit") - Aschwin
-- A component that showing witch qestion you are at and how many you have left - JESSICA
-- summary-page show correct/wrong answer like "you have 2 /5 answer correct" - BIRGIT 
-- next questiontion displays automatically without a "next question button" - OK! 
-- in CurrentQuestion we split up  img,  buttons, summary(overviwe) in to diffrent componens - BIRGIT
-- Styling using style components - EVERYONE - Darya starting styling 
 
-Styling inspiration: https://www.buzzfeed.com/kasey_002/only-real-marvel-fans-can-answer-all-9-questions-c-alq0tmpru2
+DONE! 
+- A component that showing witch qestion you are at and how many you have left - OK! 
+- summary-page show correct/wrong answer like "you have 2 /5 answer correct" - OK!  
+- next questiontion displays automatically without a "next question button" - OK! 
+- 5 question and, 4 options for every question displayd w buttons -OK! 
+
+IN PROGRESS!
+- show true/false answer whit green/red button. 
+(here set a delay so the user se the color of the btn - 
+use setTmeOut on the "nextQuestion - submit") - ASCHWIN
+- in CurrentQuestion we split up  img,  buttons, summary(overviwe) 
+in to diffrent componens - BIRGIT
+- Styling using style components - EVERYONE - Darya starting styling 
+- responsive design
+- Style summary, , add confetti rain when 5 of 5 - JESSICA
+- create restart button - DARYA
+
+MORE TO ADD?
+
+- start page with start button 
+ 
+
+
+- freeze 17.00 11/11, Rebecka joins 17.30 
+
 
 
 
@@ -19,17 +36,17 @@ Styling inspiration: https://www.buzzfeed.com/kasey_002/only-real-marvel-fans-ca
 
 ## **🔵  Blue Level (Minimum Requirements)**
 
-- Your quiz should have at least 5 questions.
-- When the user selects an answer, it should show if they were correct or not.
-- While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'.
-- When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect.
+- Your quiz should have at least 5 questions. OK! 
+- When the user selects an answer, it should show if they were correct or not. - IN PROGRESS
+- While going through the quiz, it should show which question you're on, or how many left - for example 'Question 5 / 15' or '10 questions left'. -OK! 
+- When the user has answered all the questions, they should get to a summary screen which tells them how many they got correct or incorrect. -OK! 
 - You should challenge yourself to make use of redux by making small components which interact with the store - don't just go for one big component.
 - Don't forget CSS! Your quiz should be well styled.
 
 ## **🔴  Red Level (Intermediary Goals)**
 
 - After selecting an answer, highlight the correct answer if they chose incorrectly.
-- Create a visual progress bar showing how many questions are left to be answered.
-- Use images or videos to make your questions and answers look richer.
+- Create a visual progress bar showing how many questions are left to be answered. -OK! 
+- Use images or videos to make your questions and answers look richer. - REBECKA
 - Give a score for correct answers and deduct points for incorrect answers. If the user goes below a certain score, they lose!
 - Enrich the summary with information about what questions they got correct and what questions they should practice more
