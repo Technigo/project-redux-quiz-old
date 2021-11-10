@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 export const BackgroundVideo = () => {
   return (
@@ -19,5 +19,5 @@ export const BackgroundVideo = () => {
         <source src="/Matrix.mp4" type="video/mp4" />
       </video>
     </div>
-  )
-}
+  );
+};

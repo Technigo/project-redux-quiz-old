@@ -1,12 +1,11 @@
-import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { quiz } from "../reducers/quiz"
-import { BackgroundVideo } from "components/BackgroundVideo"
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from "../reducers/quiz";
 
 const Summary = () => {
-  const dispatch = useDispatch()
-  const answers = useSelector((state) => state.quiz.answers)
-  console.log("hello")
+  const dispatch = useDispatch();
+  const answers = useSelector((state) => state.quiz.answers);
+  console.log("hello");
 
   return (
     <div>
@@ -25,7 +24,7 @@ const Summary = () => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default Summary
+export default Summary;
