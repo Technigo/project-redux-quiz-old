@@ -8,8 +8,8 @@ const StartPage = () => {
     return (
 
       <div>
-        <img src="./assets/movie-quiz-background.jpg" alt="movie" />
-        <h1>MOVIE TIME</h1>
+        <h1 className="heading-startpage">MOVIE TIME</h1>
+        <img className="background-startpage" src="./assets/movie-quiz-background.jpg" alt="movie" />
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
         </Link>

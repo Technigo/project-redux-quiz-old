@@ -1,0 +1,7 @@
+
+h1.heading-startpage {
+    display: flex;
+    align-items: flex-end;
+    font-size: 45px;
+    color: rgb(0, 0, 0);
+}
