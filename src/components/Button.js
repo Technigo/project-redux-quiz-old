@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 
 export const Button = () => {
+  // Added selectors
   const dispatch = useDispatch();
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
@@ -21,6 +22,7 @@ export const Button = () => {
   //   onClick,
   // }) => {
   return (
+    // Mapping messing everything up
     <>
       {question.options.map((item, index) => (
         <button
