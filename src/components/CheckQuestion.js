@@ -1,4 +1,5 @@
 import React from 'react';
+import { quiz } from 'reducers/quiz';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -10,11 +11,10 @@ export const CheckQuestion = () => {
 
   const dispatch = useDispatch();
 
-  if (answer) {
-    return <h1>Right answer</h1>;
-  }
-
-  console.log('ANSWER: ', answer);
+  /*   console.log('ANSWER: ', quiz.answers.answer);
+   */ /*   console.log('ANSWER ISCORRECT: ', quiz.answers.isCorrect);
+   */
+  return answer ? <p>Correct!</p> : <p>Wrong</p>;
 };
 
 /* 

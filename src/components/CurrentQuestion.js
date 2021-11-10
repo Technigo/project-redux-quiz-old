@@ -43,13 +43,12 @@ export const CurrentQuestion = () => {
           </button>
         ))}
       </div>
+      {answer && (
+        <div>
+          <button onClick={() => onNextButtonClick()}>Next</button>
+        </div>
+      )}
       <div>
-        <button
-          disabled={quiz.answers ? true : false}
-          onClick={() => onNextButtonClick()}
-        >
-          Next
-        </button>
         <p>This is question {question.id} out of 5 questions</p>
       </div>
     </>
