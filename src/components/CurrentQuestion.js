@@ -5,12 +5,14 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { ButtonQuestion } from './ButtonQuestion';
 import { ProgressBar } from './ProgressBar';
+import { PictureQuestion } from './PictureQuestion';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const image = useSelector((state) => state.quiz.questions[state.quiz.imgSrc]);
 
   console.log(question);
   const onAnswerSubmit = (id, index) => {
@@ -30,6 +32,8 @@ export const CurrentQuestion = () => {
           onGoToNextQuestion={onGoToNextQuestion}
         />
       );
+    } else if (type === 'picture') {
+      return <PictureQuestion question={question} image={image} />;
     } else {
       return <div>Other</div>;
     }
