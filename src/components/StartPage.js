@@ -5,7 +5,7 @@ const StartPage = () => {
     return (
 
       <wrapper>
-        {/* <img src="./images/startimg.gif" alt="movie" /> */}
+        {/* <img src="./xxxxxxxxxxx" alt="movie" /> */}
         <h1>MOVIE TIME</h1>
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
