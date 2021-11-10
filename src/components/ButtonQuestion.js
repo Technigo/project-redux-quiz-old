@@ -89,7 +89,7 @@ const ButtonsContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     font-size: 40px;
@@ -113,7 +113,7 @@ const Button = styled.button`
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 30px;
 
     &:hover {
@@ -139,7 +139,7 @@ const CorrectButton = styled.button`
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 30px;
   }
 `;
@@ -160,7 +160,7 @@ const NotCorrectButton = styled.button`
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 30px;
   }
 `;
@@ -175,7 +175,7 @@ const Header3 = styled.h3`
     font-size: 35px;
     padding: 150px 15px 0 15px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 50px;
     padding: 150px 150px 0 150px;
   }

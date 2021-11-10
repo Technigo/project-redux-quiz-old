@@ -59,7 +59,7 @@ const TextButtonContainer = styled.div`
     grid-template-rows: 1fr auto auto;
     margin: 0;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     grid-template-rows: 1fr auto auto;
     margin: 0;
   }
@@ -79,7 +79,7 @@ const HeaderText = styled.h1`
     font-size: 150px;
     margin-top: 80px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 200px;
     margin-top: 60px;
   }
@@ -101,7 +101,7 @@ const StartButton = styled.button`
     margin-bottom: 40px;
     font-size: 25px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     margin-bottom: 40px;
     margin-top: 2px;
     font-size: 30px;
@@ -124,7 +124,7 @@ const Subtitle = styled.h3`
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 30px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 40px;
   }
 `;

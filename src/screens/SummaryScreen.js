@@ -30,7 +30,7 @@ const SummaryContainer = styled.section`
   @media (min-width: 668px) and (max-width: 1024px) {
     padding: 20px 100px 20px 100px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     font-size: 40px;
     padding: 20px 100px 20px 100px;
   }
@@ -52,7 +52,7 @@ const RestartButton = styled.button`
     margin-bottom: 40px;
     font-size: 25px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     margin-bottom: 40px;
     font-size: 30px;
 

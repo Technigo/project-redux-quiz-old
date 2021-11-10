@@ -67,7 +67,7 @@ const Dot = styled.div`
     height: 20px;
     width: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     height: 30px;
     width: 30px;
   }
@@ -81,7 +81,7 @@ const Line = styled.div`
   @media (min-width: 668px) and (max-width: 1024px) {
     width: 70px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     width: 150px;
     height: 6px;
   }
@@ -101,7 +101,7 @@ const IconContainer = styled.div`
     width: 50px;
     font-size: 30px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     height: 80px;
     width: 80px;
     font-size: 50px;
