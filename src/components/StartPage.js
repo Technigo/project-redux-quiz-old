@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 const StartPage = () => {
     return (
 
-      <wrapper>
+      <div>
         {/* <img src="./xxxxxxxxxxx" alt="movie" /> */}
         <h1>MOVIE TIME</h1>
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
         </Link>
-      </wrapper>
+      </div>
     );
   };
   
