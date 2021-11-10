@@ -1,9 +1,35 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
 import { quiz } from '../reducers/quiz'
 
-//Background-image: https://images.unsplash.com/photo-1608371945786-d47d3cdd31da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80
+const QuestionBackgroundImage = styled.div`
+  background-image: url('https://images.unsplash.com/photo-1535385793343-27dff1413c5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80');
+  background-color: rgb(205, 206, 201);
+  background-size: cover;
+  height: 600px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Helvetica Neue';
+  font-size: 10px;
+`
+
+const QuestionText = styled.div`
+  background-color: rgb(205, 206, 201);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const AnswerButton = styled.button`
+  width: 250px;
+  height: 100px;
+`
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch()
@@ -35,30 +61,35 @@ export const CurrentQuestion = () => {
   // efter ett val så får man reda på om det var rätt/fel samt att knapparna blir disabled + det kommer en "next question" knapp
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((option, index) => (
-        <button
-          key={option}
-          type='button'
-          disabled={answers.length === question.id}
-          className={
-            answers[currentQuestionIndex]?.answerIndex === index
-              ? answers[currentQuestionIndex]?.isCorrect
-                ? 'button correct'
-                : 'button incorrect'
-              : 'button'
-          }
-          onClick={() => onSubmitAnswer(index)}>
-          {option}
-        </button>
-      ))}
-      {answers.length === question.id && !quizOver && (
-        <button type='button' onClick={() => onButtonClick()}>
-          {answers.length !== questions.length ? 'Next Question' : 'Show results'}
-        </button>
-      )}
-    </div>
+    <QuestionBackgroundImage>
+      <div>
+        <QuestionText>
+          <h1> {question.questionText}</h1>
+          {question.options.map((option, index) => (
+            <button
+              key={option}
+              type='button'
+              disabled={answers.length === question.id}
+              className={
+                answers[currentQuestionIndex]?.answerIndex === index
+                  ? answers[currentQuestionIndex]?.isCorrect
+                    ? 'button correct'
+                    : 'button incorrect'
+                  : 'button'
+              }
+              onClick={() => onSubmitAnswer(index)}>
+              {option}
+            </button>
+          ))}
+          {answers.length === question.id && !quizOver && (
+            <button type='button' onClick={() => onButtonClick()}>
+              {answers.length !== questions.length ? 'Next Question' : 'Show results'}
+            </button>
+          )}
+        </QuestionText>
+        <div>{answers[currentQuestionIndex]?.isCorrect && <p>{question.answerText}</p>}</div>
+      </div>
+    </QuestionBackgroundImage>
   )
 }
 // button:focus{background-color:red;}
