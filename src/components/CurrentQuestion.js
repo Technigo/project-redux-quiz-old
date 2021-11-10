@@ -16,22 +16,22 @@ export const CurrentQuestion = () => {
 
   /* Here we get the length of the arry(all the questions) */
   const questionsLength = useSelector((state) => state.quiz.questions.length)
-
-  /* Here we pass the value from the "questionsLength" so we can decreas the value of questions left */
+  /* Here we pass the value from the "questionsLength" so we can decreas
+  the value of questions left */
   const [questionsCount, setQuestionsCount] = useState(questionsLength);
 
-  /* The progressbar for the question, using npm install --save @ramonak/react-progress-bar (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
+  /* The progressbar for the question, using npm install
+  --save @ramonak/react-progress-bar
+  (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
   const [completed, setCompleted] = useState(20);
-
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
-
+  /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
   calls selectors, selectors come to componenets with information -
   please refresh yourself and then lifecycle ends */
-
   const dispatch = useDispatch();
 
   if (!question) {
@@ -48,7 +48,6 @@ export const CurrentQuestion = () => {
     dispatch(
       quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
     );
-
     // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
     // because we want to go to the next question directly
     dispatch(
@@ -59,7 +58,6 @@ export const CurrentQuestion = () => {
     setQuestionsCount(questionsCount - 1);
 
     /* Update the progress-bar while clickin with 20% */
-
     setCompleted(completed + 20);
   };
 
@@ -79,13 +77,18 @@ export const CurrentQuestion = () => {
                 type="button"
                 key={item}
                 /* pass function to the dispatch to update the state, exessing
-                quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-                answerId is a specific answer of a question */
+quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+answerId is a specific answer of a question */
                 onClick={() => onSubmitAnswer(question.id, index)}>
                 <span className="button-text">{item}</span>
               </button>
+
             ))}
           </div>
+          {/* Here we display witch question we are at and how many we have left */}
+          <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+          {/* The progress bar */}
+          <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
         </div>
       </main>
     </>
