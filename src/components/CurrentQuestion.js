@@ -55,23 +55,24 @@ export const CurrentQuestion = () => {
 			<h1>Question: {question.questionText}</h1>
 			{question.options.map((item, index) => (
 				<button 
-        className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"} 
-        key={item} 
-        onClick={() => onAnswerSubmit(question.id, index)}>
+					className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"} 
+					key={item}
+					type="button"
+					disabled={answer}
+					onClick={() => onAnswerSubmit(question.id, index)}>
 					{item}
 				</button>
 			))}
 
-			<button onClick={() => {
-				dispatch(quiz.actions.goToNextQuestion());
-			}}
+			<button 
+			  className="next-question-button"
+			  type="button"
+			  disabled={!answer}
+				onClick={() => dispatch(quiz.actions.goToNextQuestion())}
 			>
 				Next Question
 			</button>
-
 			{question.id === 1 && <Audio></Audio>}
-
-
 		</div>
     
 	);
