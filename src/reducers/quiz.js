@@ -2,58 +2,66 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 
+const questions = [
+  {
+    id: 1,
+    type: "button",
+    questionText:
+      "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
+    options: ["5th September", "1st September", "31st August", "3rd September"],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 2,
+    type: "button",
+    questionText:
+      "What did Ron call Hermione after Charms class that made her cry?",
+    options: [
+      "A nightmare",
+      "An insufferable know it all",
+      "A loser",
+      "A try-hard",
+    ],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 3,
+    type: "button",
+    imgSrc: "",
+    questionText: "In what Hogwarts year do the students learn to Apparate?",
+    options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 4,
+    type: "button",
+    imgSrc: "",
+    questionText: "Which Hogwarts subject is taught in North Tower?",
+    options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 5,
+    type: "button",
+    imgSrc: "",
+    questionText:
+      "What is the name of Aunt Marge’s dog that she brings round to the Dursleys’?",
+    options: ["Axel", "Ripper", "Brutu", "Chomper"],
+    correctAnswerIndex: 1,
+  },
+];
+
+const initialState = {
+  questions,
+  answers: [],
+  currentQuestionIndex: 0,
+  quizOver: false,
+};
+
 export const quiz = createSlice({
   name: "quiz",
   initialState: {
-    questions: [
-      {
-        id: 1,
-        type: "button",
-        questionText:
-          "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
-        options: [
-          "5th September",
-          "1st September",
-          "31st August",
-          "3rd September",
-        ],
-        correctAnswerIndex: 1,
-      },
-      {
-        id: 2,
-        type: "button",
-        questionText:
-          "What did Ron call Hermione after Charms class that made her cry?",
-        options: [
-          "A nightmare",
-          "An insufferable know it all",
-          "A loser",
-          "A try-hard",
-        ],
-        correctAnswerIndex: 0,
-      },
-      {
-        id: 3,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 2,
-      },
-      {
-        id: 4,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 3,
-      },
-      {
-        id: 5,
-        imgSrc: "",
-        questionText: "Picture question",
-        options: ["a", "b", "c", "d"],
-        correctAnswerIndex: 4,
-      },
-    ],
+    questions: questions,
     answers: [],
     currentQuestionIndex: 0,
     quizOver: false,
@@ -122,7 +130,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return quiz.initialState;
+      return initialState;
     },
   },
 });
