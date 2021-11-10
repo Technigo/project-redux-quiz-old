@@ -143,6 +143,6 @@ export const CurrentQuestion = () => {
           <NextQuestionButton answers={answers} currentQuestionIndex={currentQuestionIndex} onNextQuestion={onNextQuestion} />
         </ContentContainerStyled>
       </FormWrapper>
-    </MainWrapper>
+    </MainWrapper >
   )
 }

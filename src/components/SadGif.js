@@ -9,10 +9,9 @@ const StyledGif = styled.iframe`
 
 
 const SadGif = () => {
-    return(
+    return (
         <>
-        <StyledGif src="https://giphy.com/embed/BgBf6pW9qOgQU" width="480" height="363" frameBorder="0" class="giphy-embed" allowFullScreen></StyledGif><p>
-        <a href="https://giphy.com/gifs/funny-cute-fail-BgBf6pW9qOgQU"></a></p>
+            <StyledGif src="https://giphy.com/embed/BgBf6pW9qOgQU" width="480" height="363" frameBorder="0" class="giphy-embed" allowFullScreen></StyledGif>
         </>
     )
 }
