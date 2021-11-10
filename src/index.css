@@ -20,7 +20,24 @@ code {
   text-align: center;
 }
 
+.question-container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(191, 103, 26, 0.557);
+}
+
+/*These are the classes for the element HTML that changes on our category props*/
 .sport {
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(./assets/sport.jpg);
+  background-size: auto;
+
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+.food {
   width: 80%;
   margin: 0 auto;
   background-color: rgba(200, 232, 39, 0.3);
