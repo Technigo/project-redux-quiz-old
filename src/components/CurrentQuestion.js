@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import './currentQuestion.css';
+
 import { quiz } from '../reducers/quiz';
 import  Audio  from '../components/Audio';
 
@@ -12,6 +14,8 @@ export const CurrentQuestion = () => {
 	const answer = useSelector((state) => state.quiz.answers.find((a) => (
 		a.questionId === question.id 
 	)));
+
+	const isCorrect = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect);
 
 	const dispatch = useDispatch();
 
@@ -33,7 +37,7 @@ export const CurrentQuestion = () => {
 		<div>
 			<h1>Question: {question.questionText}</h1>
 			{question.options.map((item, index) => (
-				<button key={item} onClick={() => onAnswerSubmit(question.id, index)}>
+				<button className={!answer ? "defaultbtn" : isCorrect ? "correct" : "wrong"} key={item} onClick={() => onAnswerSubmit(question.id, index)}>
 					{item}
 				</button>
 			))}
