@@ -4,8 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import StartPage from 'components/StartPage';
-import { Button } from 'components/Buttons';
-import { SubmitButton } from 'components/Buttons';
+// import { Button } from 'components/Buttons';
+// import { SubmitButton } from 'components/Buttons';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
 
