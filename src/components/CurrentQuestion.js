@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 
 // We want this overlay to take 100% of the div that will hold image or video. After setTimout it will be displayed blacking out the image/video
 let Overlay = styled.div`
@@ -31,7 +30,7 @@ export const CurrentQuestion = () => {
       top: 0;
       background: rgba(0, 0, 0, 1);
       z-index: 2;
-      display: block;
+      display: none;
     `;
     setDisplayOverlay(true);
     clearTimeout();
@@ -63,7 +62,7 @@ export const CurrentQuestion = () => {
       <div className="image-wrapper">
         <Overlay />
         {question.type === 'picture' ? (
-          <img style={{ width: '600px' }} src={question.path} alt="image" />
+          <img style={{ width: '600px' }} src={question.path} alt="Quizimage" />
         ) : (
           <video autoPlay muted>
             <source src={question.path} type="video/mp4" />

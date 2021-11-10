@@ -60,6 +60,7 @@ const initialState = {
   userName: '',
   currentQuestionIndex: 0,
   quizOver: false,
+
 };
 
 export const quiz = createSlice({
@@ -135,4 +136,5 @@ export const quiz = createSlice({
       return initialState;
     },
   },
+
 });
