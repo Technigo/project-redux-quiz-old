@@ -10,7 +10,7 @@ export const EntryPage = () => {
   };
   return (
     <>
-      <h2>This is the landing page </h2>
+      <h2>Are you a foodie? Test your knowledge</h2>
       <button className="submit-button" type="submit" onClick={toNextQ}>
         Start the quiz
       </button>

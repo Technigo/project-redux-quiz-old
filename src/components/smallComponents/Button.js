@@ -7,7 +7,11 @@ const Button = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-  
+
+  const answer = useSelector(
+    (state) => state.quiz.answers
+    );
+
   const dispatch = useDispatch()
 
   const toNextQ = () => {
@@ -16,9 +20,14 @@ const Button = () => {
 
   return (
     <div className="submit-button-container">
-     <button className="submit-button" type="submit" onClick={toNextQ}>{question.id === 5 ? "See Score" : "Next"}</button>
+     <button className="submit-button" type="submit" disabled={question.id !== answer.length} onClick={toNextQ}
+    >{question.id === 5 ? "See Score" : "Next"}</button>
     </div>
   )
 }
 
 export default Button
+
+// onClick={question.id === (question.quanswers.length) +1 ? {toNextQ}} : disabled}
+
+
