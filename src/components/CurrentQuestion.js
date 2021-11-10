@@ -1,7 +1,6 @@
 /* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import './currentQuestion.css';
 
 import { quiz } from '../reducers/quiz';
@@ -35,6 +34,7 @@ export const CurrentQuestion = () => {
 		return <h1>Oh no! I could not find the current question!</h1>;
 	}
 
+
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 	};
@@ -63,6 +63,7 @@ export const CurrentQuestion = () => {
 
 
 		</div>
+    
 	);
 };
 

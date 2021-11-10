@@ -21,7 +21,7 @@ const initialState = {
 			questionText:
 				'Name the ship that StarLord & Gamora travels on?',
 			options: ['The Milano', 'The Dark Aster', 'Sanctuary II', 'American Eagle'],
-			correctAnswerIndex: 1,
+			correctAnswerIndex: 0,
 		},
     {
 			id: 4,
@@ -34,7 +34,7 @@ const initialState = {
 			id: 5,
 			questionText:
 				'What is the name of John Travoltas and Uma Thurmans characters in Pulp Fiction?',
-			options: ['Bonnie & Clyde', 'Thelma & Louise', 'Kirk and Spock', 'Mia and Vincent'],
+			options: ['Bonnie & Clyde', 'Thelma & Louise', 'Kirk & Spock', 'Mia & Vincent'],
 			correctAnswerIndex: 3,
 		},
 	],
