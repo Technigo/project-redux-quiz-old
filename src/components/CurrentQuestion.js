@@ -51,6 +51,8 @@ export const CurrentQuestion = () => {
   }
 
   const onButtonClick = () => {
+    // if not all questions are answered dispatch goToNextQuestion
+    // if all questions are answered navigate to summary
     if (answers.length !== questions.length) {
       dispatch(quiz.actions.goToNextQuestion())
     } else {
@@ -71,6 +73,8 @@ export const CurrentQuestion = () => {
               type='button'
               disabled={answers.length === question.id}
               className={
+                // check if answerIndex matches button index if ok => check if answer is correct
+                // if correct style with correct otherwise incorrect classes
                 answers[currentQuestionIndex]?.answerIndex === index
                   ? answers[currentQuestionIndex]?.isCorrect
                     ? 'button correct'
@@ -81,6 +85,10 @@ export const CurrentQuestion = () => {
               {option}
             </button>
           ))}
+          {/* conditionally show button only when an option is selected then
+              conditionally set the button text  based on if the quiz is still going or in the end
+              maybe not the most elegant way.
+              the click is handled in the onButtonClick function */}
           {answers.length === question.id && !quizOver && (
             <button type='button' onClick={() => onButtonClick()}>
               {answers.length !== questions.length ? 'Next Question' : 'Show results'}
