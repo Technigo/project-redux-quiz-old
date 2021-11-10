@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import Summary from "./Summary";
+import Counter from "./Counter";
+import AnswerButtons from "./AnswerButtons";
+// import Questions from "./Questions";
 
 export const CurrentQuestion = () => {
   const question = useSelector(
@@ -15,30 +18,24 @@ export const CurrentQuestion = () => {
       (a) => a.questionId === question.id // question could come from the previous selector in the last example
     )
   );
+  const rightIndex = useSelector(
+    (state) => state.quiz.questions[state.quiz.correctAnswerIndex]
+  );
+  console.log("testin right index", rightIndex);
 
   const correct = useSelector((state) =>
     state.quiz.answers.find((a) => a.isCorrect === true)
   );
 
-  console.log("This is correct", correct);
+  // console.log("This is correct", correct);
 
   const quizSlice = useSelector((store) => store.quiz);
-  console.log(quizSlice);
-  const counter = useSelector((store) => store.quiz.currentQuestionIndex);
-  console.log(counter);
+  // console.log(quizSlice);
+
   const nextQuestion = (id) => {
     dispatch(
       quiz.actions.goToNextQuestion({
         questionId: id,
-      })
-    );
-  };
-
-  const onSubmitAnswer = (id, index) => {
-    dispatch(
-      quiz.actions.submitAnswer({
-        questionId: id,
-        answerIndex: index,
       })
     );
   };
@@ -48,31 +45,18 @@ export const CurrentQuestion = () => {
   }
   return (
     <>
-      <div>
-        <h1>Question: {question.questionText}</h1>
-        <iframe
-          src={question.iframe.src}
-          width="480"
-          height="360"
-          frameBorder="0"
-          className="giphy-embed"
-          allowFullScreen
-        ></iframe>
-        {/* <p>
-          <a href="https://giphy.com/gifs/gunsnroses-guns-n-roses-welcome-to-the-jungle-26wkBaMFVpVW6rUS4">
-            via GIPHY
-          </a>
-        </p> */}
+      {quizOver ? (
+        <Summary />
+      ) : (
+        <div>
+          <h1>{question.questionText}</h1>
+          <img src={question.img} alt="coverImage" />
 
-        {question.options.map((item, index) => (
-          <button key={item} onClick={() => onSubmitAnswer(question.id, index)}>
-            {item}
-          </button>
-        ))}
-        {answers ? nextQuestion() : ""}
-      </div>
-      <div>{counter + 1}/5</div>
-      {quizOver && <Summary />}
+          <AnswerButtons />
+          <Counter />
+          {answers ? nextQuestion() : ""}
+        </div>
+      )}
     </>
   );
 };

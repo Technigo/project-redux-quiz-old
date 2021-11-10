@@ -4,37 +4,48 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    iframe: {src="./assets/giphy.gif" alt="blablabla"},
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+    questionText:
+      "Intergalactic is a song by American band Beastie Boys.Intergalactic was released as the first single from their fifth studio album, Hello Nasty. The single reached number 28 on the US Billboard Hot 100. We like to kow witch GENRE Beastie Boys belongs to. ",
+    img: require("../assets/giphy.gif"),
+    options: ["Hip Hop", "Classic", "Rock", "K-pop"],
     correctAnswerIndex: 0,
   },
 
   {
     id: 2,
-    questionText:
-      "When was Helena Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2126", "2018"],
+    questionText: "This flat beat is something to remember! Who is the artist?",
+    img: require("../assets/Mrozo.gif"),
+    options: ["Todd Terje", "Paul Kalkbrenner", "Mr. Oizo", "Moby"],
     correctAnswerIndex: 2,
   },
   {
     id: 3,
-    questionText: "When was Camilla last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2013", "2018"],
+    questionText:
+      "Somethimes all you need is to spice up your life! Which year did the Spice Girls journey start?",
+    img: require("../assets/spicegirls.gif"),
+    options: ["1901", "1999", "2001", "1994"],
     correctAnswerIndex: 3,
   },
   {
     id: 4,
     questionText:
-      "When was Effi Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2012", "2018"],
-    correctAnswerIndex: 4,
+      "Welcome to the Jungle is a song by American rock band Guns'N Roses? It reached number seven on the Billboard Hot 100, But who wrote the lyrics ",
+    img: require("../assets/guns.gif"),
+    options: ["Axl Rose ", "Slash", "Duff McKagan", "Izzy Stradlin"],
+    correctAnswerIndex: 1,
   },
   {
     id: 5,
-    questionText: "When was Lotta last named male World Swimmer of the Year?",
-    options: ["2030", "2014", "2022", "2033"],
-    correctAnswerIndex: 5,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 1,
   },
 ];
 
@@ -67,9 +78,6 @@ export const quiz = createSlice({
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;
       const question = state.questions.find((q) => q.id === questionId);
-
-      console.log("State", state);
-      console.log("Action", action);
 
       if (!question) {
         throw new Error(
