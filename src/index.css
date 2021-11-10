@@ -57,9 +57,8 @@ h1 {
 }
 
 .option-btn:hover,
-.next-button:hover,
-.option-btn:focus {
-  background-color: #fedc23;
+.next-button:hover {
+  background-color: #939392;
   color: black;
 }
 

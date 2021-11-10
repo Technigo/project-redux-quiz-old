@@ -14,13 +14,29 @@ export const CurrentQuestion = () => {
   const store = useSelector((state) => state.quiz)
   console.log('store data:', store)
 
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((a) => a.questionId === question.id)
+  )
+  console.log('answer: ', answer)
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+    if (question.correctAnswerIndex === index) {
+      console.log('correct answer')
+      document.getElementById(`${index}`).style.background = 'green'
+      // document
+      //   .getElementByClassName('option-btn')
+      //   .setAttribute('disabled', 'disabled')
+    } else {
+      console.log('not correct answer')
+      document.getElementById(`${index}`).style.background = 'red'
+    }
     // dispatch(quiz.actions.setButton())
+    // const idAnswer = question.id - 1
   }
 
   return (
@@ -54,11 +70,15 @@ export const CurrentQuestion = () => {
           <div className='options-container'>
             {question.options.map((option, index) => (
               <button
+                disabled={answer}
                 type='button'
                 className='option-btn'
+                id={index}
                 // styla knapparna så att backgrundsfärgen följer med
                 key={option}
-                onClick={() => onAnswerSubmit(question.id, index)}
+                onClick={() => {
+                  onAnswerSubmit(question.id, index)
+                }}
               >
                 {option}
               </button>
@@ -68,7 +88,10 @@ export const CurrentQuestion = () => {
           <button
             type='button'
             className='next-button'
-            onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+            onClick={() => {
+              dispatch(quiz.actions.goToNextQuestion())
+              console.log('Right answer?:', store.answers[0].isCorrect)
+            }}
           >
             Next question
           </button>
