@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NextQuestionButton } from './NextQuestionButton';
 // import { MainContainer } from './StyledComponents';
 import { quiz } from '../reducers/quiz';
 
@@ -13,7 +14,7 @@ export const CurrentQuestion = () => {
   }
 
   const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerId: index }));
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
 
   return (
@@ -24,6 +25,7 @@ export const CurrentQuestion = () => {
           {item}
         </button>
       ))}
+      <NextQuestionButton />
     </div>
   );
 };
