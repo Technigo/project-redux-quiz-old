@@ -2,7 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
-import Audio from 'components/Audio';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import StartPage from 'components/StartPage';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
 
@@ -12,11 +14,24 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer });
 
+
+
+//Had to use these links to make startpage wortk
+//https://reactrouter.com/docs/en/v6/getting-started/tutorial#nested-routes
+
+//https://reactrouter.com/docs/en/v6/upgrading/v5#upgrade-all-switch-elements-to-routes
+
 export const App = () => {
 	return (
 		<Provider store={store}>
-			<CurrentQuestion />
-      <Audio></Audio>
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<StartPage></StartPage>}>
+					</Route>
+					<Route path="/quiz" element={<CurrentQuestion></CurrentQuestion>}>
+					</Route>
+				</Routes>
+			</BrowserRouter>
 		</Provider>
 	);
 };

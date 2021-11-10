@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { quiz } from '../reducers/quiz';
+import  Audio  from '../components/Audio';
 
 export const CurrentQuestion = () => {
 	const question = useSelector(
@@ -26,6 +27,8 @@ export const CurrentQuestion = () => {
 					{item}
 				</button>
 			))}
+<Audio></Audio>
+
 		</div>
 	);
 };
