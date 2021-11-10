@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
+import { Loader } from "../components/Loader"
 
 import { quiz } from '../reducers/quiz';
 
@@ -8,6 +9,11 @@ export const Summary = () => {
 
   // asking store to give us anwers from quiz object
   const answers = useSelector((state) => state.quiz.answers)
+
+  const loading = useSelector((state) => state.quiz.loading)
+  console.log(loading)
+
+
 
   // created this function to take restart function from the store
   const restartQuiz = () => {
@@ -25,6 +31,7 @@ export const Summary = () => {
 
   return (
     <div>
+	  {/*{loading && <Loader />}*/}
       <h2>Summary</h2>
       <p>Score: {score}/{answers.length}</p>
       <button

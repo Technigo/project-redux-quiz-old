@@ -5,6 +5,7 @@ import { Summary } from "components/Summary";
 import ProgressBar from "@ramonak/react-progress-bar";
 import AnswerButton from "./AnswerButton";
 
+
 import "components/CurrentQuestion.css";
 
 export const CurrentQuestion = () => {
