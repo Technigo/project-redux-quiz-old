@@ -2,17 +2,90 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
-export const PictureQuestion = ({ question }) => {
+export const PictureQuestion = ({
+  question,
+  setOnAnswerSubmit,
+  onGoToNextQuestion,
+}) => {
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((answer) => question.id === answer.questionId)
+  );
+
   return (
     <QuestionContainer>
       <Header3>{question.questionText}</Header3>
       <ButtonsContainer>
-        <Header3>{question.imgSrc}</Header3>
-        <Header3>{question.options}</Header3>
+        {question.options.map((option, index) => {
+          if (answer && answer.answerIndex === index && answer.isCorrect) {
+            return (
+              <div key={option.name}>
+                <CorrectOptionImage imgSrc={option.imgSrc}>
+                  {option.name}
+                </CorrectOptionImage>
+              </div>
+            );
+          } else if (
+            answer &&
+            answer.answerIndex === index &&
+            !answer.isCorrect
+          ) {
+            return (
+              <div key={option.name}>
+                <WrongOptionImage imgSrc={option.imgSrc}>
+                  {option.name}
+                </WrongOptionImage>
+              </div>
+            );
+          } else {
+            return (
+              <div key={option.name}>
+                <OptionImage
+                  imgSrc={option.imgSrc}
+                  onClick={() => {
+                    setOnAnswerSubmit(question.id, index);
+
+                    setTimeout(() => {
+                      onGoToNextQuestion(question.id);
+                    }, 1000);
+                  }}
+                >
+                  {option.name}
+                </OptionImage>
+              </div>
+            );
+          }
+        })}
       </ButtonsContainer>
     </QuestionContainer>
   );
 };
+
+const OptionImage = styled.div`
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(${(props) => props.imgSrc});
+  background-size: cover;
+  color: #638270;
+  text-align: center;
+  font-size: 3em;
+  border-radius: 2px;
+  border-bottom: 2px solid #638270;
+  border-right: 2px solid #638270;
+`;
+
+const WrongOptionImage = styled(OptionImage)`
+  border-color: #460000;
+  color: #460000;
+  background-color: black;
+  background-image: none;
+`;
+
+const CorrectOptionImage = styled(OptionImage)`
+  background-image: none;
+  background-color: #638270;
+  color: black;
+`;
 
 const QuestionContainer = styled.div`
   height: 85vh;

@@ -6,7 +6,7 @@ export const quiz = createSlice({
   name: 'quiz',
   initialState: {
     questions: [
-      /* {
+      {
         id: 1,
         type: 'button',
         questionText:
@@ -31,23 +31,17 @@ export const quiz = createSlice({
           'A try-hard',
         ],
         correctAnswerIndex: 0,
-      }, */
+      },
       {
         id: 3,
-        imgSrc: [
-          '../pictures/castle.jpg',
-          '../pictures/castle.jpg',
-          '../pictures/castle.jpg',
-          '../pictures/castle.jpg',
-        ],
         type: 'picture',
         questionText:
           'On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?',
         options: [
-          'Professor Snape',
-          'Professor Quirrell',
-          'Hagrid',
-          'Draco Malfoy',
+          { name: 'Professor Snape', imgSrc: './pictures/castle.jpg' },
+          { name: 'Professor Quirrell', imgSrc: './pictures/castle.jpg' },
+          { name: 'Hagrid', imgSrc: './pictures/castle.jpg' },
+          { name: 'Draco Malfoy', imgSrc: './pictures/castle.jpg' },
         ],
         correctAnswerIndex: 1,
       },

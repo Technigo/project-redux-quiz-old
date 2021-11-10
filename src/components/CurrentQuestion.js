@@ -12,7 +12,6 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-  const image = useSelector((state) => state.quiz.questions[state.quiz.imgSrc]);
 
   console.log(question);
   const onAnswerSubmit = (id, index) => {
@@ -33,7 +32,13 @@ export const CurrentQuestion = () => {
         />
       );
     } else if (type === 'picture') {
-      return <PictureQuestion question={question} image={image} />;
+      return (
+        <PictureQuestion
+          question={question}
+          setOnAnswerSubmit={onAnswerSubmit}
+          onGoToNextQuestion={onGoToNextQuestion}
+        />
+      );
     } else {
       return <div>Other</div>;
     }
