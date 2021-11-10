@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { Button } from '../components/Buttons'
 import { quiz } from '../reducers/quiz';
 import  Audio  from '../components/Audio';
 
@@ -28,6 +28,7 @@ export const CurrentQuestion = () => {
 				</button>
 			))}
 <Audio></Audio>
+<Button />
 
 		</div>
 	);
