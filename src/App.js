@@ -7,10 +7,10 @@ import { FirstQuestion } from 'components/FirstQuestion'
 import Header from 'components/Header'
 
 const reducer = combineReducers({
-  quiz: quiz.reducer
-})
+  quiz: quiz.reducer,
+});
 
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
@@ -18,5 +18,5 @@ export const App = () => {
       <Header />
       <FirstQuestion />
     </Provider>
-  )
-}
+  );
+};
