@@ -5,18 +5,31 @@ import styled from "styled-components";
 import { quiz } from "../reducers/quiz";
 
 const QuestionBackgroundImage = styled.div`
-  background-image: url("https://i.imgur.com/b8dSvDi.png");
+  background-image: url("https://images.unsplash.com/photo-1535385793343-27dff1413c5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80");
   background-color: rgb(205, 206, 201);
   background-size: cover;
-  width: 300px;
+  height: 600px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Helvetica Neue";
+  font-size: 10px;
+`;
+
+const QuestionText = styled.div`
+  background-color: rgb(205, 206, 201);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-const ButtonContainer = styled.div``;
+const AnswerButton = styled.button`
+  width: 250px;
+  height: 100px;
+`;
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -46,33 +59,34 @@ export const CurrentQuestion = () => {
   return (
     <QuestionBackgroundImage>
       <div>
-        {/* <QuestionText>  ändra lol */}
-        <h1>Question: {question.questionText}</h1>
-        {question.options.map((option, index) => (
-          <button
-            key={option}
-            disabled={answers.length === question.id}
-            className={
-              answers[currentQuestionIndex]?.isCorrect &&
-              answers[currentQuestionIndex]?.answerIndex === index
-                ? "button correct"
-                : answers.length !== question.id
-                ? "button"
-                : "button incorrect"
-            }
-            onClick={() => onSubmitAnswer(index)}
-          >
-            {option}
-          </button>
-        ))}
-        {answers.length === question.id && !quizOver && (
-          <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
-            {answers.length + 1 === question.length
-              ? "Show results"
-              : "Next Question"}
-          </button>
-        )}
-        {/* </QuestionText> */}
+        <QuestionText>
+          <h1> {question.questionText}</h1>
+          {question.options.map((option, index) => (
+            <button
+              key={option}
+              disabled={answers.length === question.id}
+              className={
+                ("AnswerButton",
+                answers[currentQuestionIndex]?.isCorrect &&
+                answers[currentQuestionIndex]?.answerIndex === index
+                  ? "button correct"
+                  : answers.length !== question.id
+                  ? "button"
+                  : "button incorrect")
+              }
+              onClick={() => onSubmitAnswer(index)}
+            >
+              {option}
+            </button>
+          ))}
+          {answers.length === question.id && !quizOver && (
+            <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
+              {answers.length + 1 === question.length
+                ? "Show results"
+                : "Next Question"}
+            </button>
+          )}
+        </QuestionText>
         {/* {quizOver && (
         <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
           Show results
