@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
-import { CurrentQuestion } from './CurrentQuestion'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
 
 const SiteContainerDiv = styled.div`
   height: 100vh;
@@ -11,12 +10,10 @@ const SiteContainerDiv = styled.div`
 `
 
 const StartPage = () => {
-  /* const [start, setStart] = useState(false) */
   const history = useHistory()
 
   return (
     <>
-      {/* {start && <CurrentQuestion />} */}
       <SiteContainerDiv>
         Hello friends
         <button type="button" onClick={() => history.push('/game')}>Start</button>

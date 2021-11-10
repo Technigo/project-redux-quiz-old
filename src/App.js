@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
@@ -15,14 +15,12 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Switch>
-        <Route exact path="/">
-          <StartPage />
-        </Route>
-        <Route path="/game">
-          <CurrentQuestion />
-        </Route>
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={StartPage} />
+          <Route path="/game" component={CurrentQuestion} />
+        </Switch>
+      </BrowserRouter>
     </Provider>
   )
 }
