@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -15,7 +16,8 @@ export const CurrentQuestion = () => {
 		a.questionId === question.id 
 	)));
 
-	const isCorrect = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect);
+	const isCorrect = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
+
 
 	const dispatch = useDispatch();
 
@@ -30,14 +32,14 @@ export const CurrentQuestion = () => {
 
 
 
-
-	
-
 	return (
 		<div>
 			<h1>Question: {question.questionText}</h1>
 			{question.options.map((item, index) => (
-				<button className={!answer ? "defaultbtn" : isCorrect ? "correct" : "wrong"} key={item} onClick={() => onAnswerSubmit(question.id, index)}>
+				<button 
+        className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"} 
+        key={item} 
+        onClick={() => onAnswerSubmit(question.id, index)}>
 					{item}
 				</button>
 			))}

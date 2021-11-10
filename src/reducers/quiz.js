@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -6,35 +7,35 @@ const initialState = {
 			id: 1,
 			questionText: 'This song is from what movie? Click and listen!',
 			options: ['Dirty Dancing ', 'Mamma Mia', 'Grease', 'Chess'],
-			correctAnswerIndex: 2
+			correctAnswerIndex: 2,
 		},
 		{
 			id: 2,
 			questionText:
 				'Richard Gere and Julia Roberts played in Pretty Woman together, what was the name of the second movie they made together?',
 			options: ['Shall We Dance?', 'Runaway Bride', 'Notting Hill', 'Dying Young'],
-			correctAnswerIndex: 1
+			correctAnswerIndex: 1,
 		},
     {
 			id: 3,
 			questionText:
 				'Name the ship that StarLord & Gamora travels on?',
 			options: ['The Milano', 'The Dark Aster', 'Sanctuary II', 'American Eagle'],
-			correctAnswerIndex: 1
+			correctAnswerIndex: 1,
 		},
     {
 			id: 4,
 			questionText:
 				'In Brokeback Mountain, Jack and Ennis fell in love whilst herding what livestock?',
 			options: ['Horses', 'Cows', 'Sheep', 'Alpacas'],
-			correctAnswerIndex: 2
+			correctAnswerIndex: 2,
 		},
     {
 			id: 5,
 			questionText:
 				'What is the name of John Travoltas and Uma Thurmans characters in Pulp Fiction?',
 			options: ['Bonnie & Clyde', 'Thelma & Louise', 'Kirk and Spock', 'Mia and Vincent'],
-			correctAnswerIndex: 3
+			correctAnswerIndex: 3,
 		},
 	],
 	answers: [],
