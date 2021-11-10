@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
@@ -16,11 +16,11 @@ export const CurrentQuestion = () => {
 
   /* Here we get the length of the arry(all the questions) */
   const questionsLength = useSelector((state) => state.quiz.questions.length)
-  /* Here we pass the value from the "questionsLength" so we can decreas 
+  /* Here we pass the value from the "questionsLength" so we can decreas
   the value of questions left */
   const [questionsCount, setQuestionsCount] = useState(questionsLength);
 
-  /* The progressbar for the question, using npm install 
+  /* The progressbar for the question, using npm install
   --save @ramonak/react-progress-bar
   (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
   const [completed, setCompleted] = useState(20);
