@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
 import hamburgerIcon from '../assets/hamburger-icon.png'
+import './Header.css'
 
 const Hamburger = () => {
-    return (
-        <div>
-        <div className="hamburger">
-            <img className="hamburger-icon" src={hamburgerIcon} alt="navigation" />
-        </div>
+  return (
+    <div>
+      <div className="hamburger">
+        <img className="hamburger-icon" src={hamburgerIcon} alt="navigation" />
+      </div>
 
-        <style jsx>{`
+      <style jsx>{`
         .hamburger{
             position: absolute;
             top: 10px;
@@ -20,9 +21,10 @@ const Hamburger = () => {
             height: 50px;
             cursor: pointer;
         }
-        `}</style>
-        </div>
-    )
+        `}
+      </style>
+    </div>
+  )
 }
 
 export default Hamburger

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react'
 import Hamburger from './Hamburger';
-import { useState } from 'react';
+
+import './Header.css'
 
 const Navigation = () => {
-  const [hamburgerOpen, setHamburgerOpen] = useState(true)
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
@@ -11,7 +12,7 @@ const Navigation = () => {
 
   return (
     <>
-    <div className="navigation-container">
+      <div className="navigation-container">
         <h2 className="contact-info">Contact Us</h2>
         <a className="contact-link" href="https://github.com/anndimi" target="_blank" rel="noopener noreferrer">Anna Dimitrakopoulos</a>
         <a className="contact-link" href="https://github.com/madeleinesvensson" target="_blank" rel="noopener noreferrer">Madeleine Svensson</a>
@@ -39,10 +40,8 @@ const Navigation = () => {
                   font-size: 18px;
                   text-decoration: none;
                 }
-                .contact-link:hover{
-                  text-decoration: initial;
-                }
-            `}</style>
+            `}
+      </style>
     </>
   )
 }
