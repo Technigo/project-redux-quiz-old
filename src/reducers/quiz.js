@@ -12,8 +12,8 @@ const initialState = {
 			id: 2,
 			questionText:
 				'Richard Gere and Julia Roberts played in Pretty Woman together, what was the name of the second movie they made together?',
-			options: ['x', 'x', 'x', 'x'],
-			correctAnswerIndex: 2,
+			options: ['Shall We Dance?', 'Runaway Bride', 'Notting Hill', 'Dying Young'],
+			correctAnswerIndex: 1,
 		},
     {
 			id: 3,
@@ -25,7 +25,7 @@ const initialState = {
     {
 			id: 4,
 			questionText:
-				'What occupation does Ennis and Jack has in Brokeback Mountain? ',
+				'What occupation do Ennis and Jack have in Brokeback Mountain? ',
 			options: ['x', 'x', 'x', 'x'],
 			correctAnswerIndex: 2,
 		},
