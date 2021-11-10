@@ -15,8 +15,10 @@ see the oficial documentation of [Redux](https://react-redux.js.org/introduction
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week, I started watching the videos and reading the articles to understand better the react-redux approach. Then I decided to go for the basic steps. I just displayed the options and called the dispatch hook to send the answers and go to the next question to update the store.
+Once I achieve that level, I decided to go over the counter of the number of questions and to the score. Then I realized that I needed to disable the options when the question was answered and also disable the button to the next question when there was no answer for that question. That was a challenge for me. 
+I also played with some CSS classes to show whether the answer was correct or not. Finally, I added CSS classes to show the user the correct answer every time and if was clicked the incorrect one, showing colors green and red. That part was also hard.  As normally at the end I cleaned the code.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View live here: https://project-redux-quiz-priscilaalfaro.netlify.app/

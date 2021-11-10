@@ -11,7 +11,7 @@ body {
   justify-content: center;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
 }
 
 code {
@@ -31,5 +31,8 @@ code {
     width: 90%;
     gap: 0.5rem;
     align-items: center;
+  }
+  body {
+    min-height: 100vh;
   }
 }

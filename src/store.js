@@ -6,5 +6,3 @@ const reducer = combineReducers({
 });
 
 export const store = configureStore({ reducer }); // it's the same as reducer :reducer
-
-// creating an empty Redux store

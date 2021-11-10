@@ -25,7 +25,7 @@ export const CurrentQuestion = () => {
   return (
     !quizOver && <section className="question_container">
       <div className="question_title">Animal&apos;s quiz</div>
-      <h1 className="question_text">Question: {question.questionText}</h1>
+      <h1 className="question_text">{question.questionText}</h1>
 
       {question.options.map((option, index) => {
         let isCorrect = '';
@@ -54,6 +54,6 @@ export const CurrentQuestion = () => {
         onClick={() => handleOnClick()}>
           Next Question
       </button>
-                 </section>
+    </section>
   )
 }
