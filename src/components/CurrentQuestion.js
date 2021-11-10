@@ -42,6 +42,9 @@ export const CurrentQuestion = () => {
   const dispatch = useDispatch()
   //const nextQuestion = useSelector((state) => state.quiz.goToNextQuestion)
 
+  const percentage = ({questionId}) => {
+   return (({questionId}/8)* 100)}
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
@@ -75,8 +78,12 @@ export const CurrentQuestion = () => {
           :<p>Waiting for the answer</p>}
         </div>
 
-      
+        <div>Question {question.id} / 8</div> 
+          
+        <div>Question: (8-{question.id})</div> 
+        {/*<div>Question: (({question.id}/8)* 100)</div> 
+        <div>(`${percentage}`)</div>*/}
     </Main>
   )
- 
+
 }
