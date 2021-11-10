@@ -1,8 +1,6 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import { quiz } from '../reducers/quiz'
 
 const Progressbar = ({ numberOfQuestions, question }) => {
   const progress = ((question.id - 1) / numberOfQuestions) * 100
@@ -43,10 +41,3 @@ const Progressbar = ({ numberOfQuestions, question }) => {
 }
 
 export default Progressbar
-
-{
-  /* <label htmlFor='quiz'>Progress</label>
-<progress value={question.id} max={numberOfQuestions}></progress> */
-}
-
-// style={{ width: `${progress}%` }}

@@ -3,20 +3,10 @@ import { quiz } from 'reducers/quiz'
 import { useSelector, useDispatch } from 'react-redux'
 import { StyledButton, StyledLink } from './StyledButton'
 
-const NextStepButton = () => {
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  )
+const NextStepButton = ({usersAnswer}) => {
 
-  const numberOfQuestions = useSelector((state) => state.quiz.questions.length)
-
-  const usersAnswer = useSelector(
-    (state) => state.quiz.answers[state.quiz.currentQuestionIndex]
-  )
-
-  const currentQuestionNumber = useSelector(
-    (state) => state.quiz.currentQuestionIndex
-  )
+  const isQuizFinished = useSelector((state) => 
+  state.quiz.questions.length === (state.quiz.currentQuestionIndex + 1))
 
   const dispatch = useDispatch()
 
@@ -26,14 +16,14 @@ const NextStepButton = () => {
 
   return (
     <>
-      {numberOfQuestions - 1 === currentQuestionNumber ? (
+      {isQuizFinished ? (
         <StyledButton disabled={!usersAnswer}>
           <StyledLink to='/summary'>Finish</StyledLink>
         </StyledButton>
       ) : (
         <StyledButton
           disabled={!usersAnswer}
-          onClick={() => onNextQuestionSubmit(question.id)}
+          onClick={() => onNextQuestionSubmit()}
         >
           Next
         </StyledButton>

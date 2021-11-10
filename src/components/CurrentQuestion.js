@@ -1,31 +1,20 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import styled from 'styled-components'
-import NextStepButton from './NextStepButton'
 
-const QuestionWrapper = styled.div`
+const AnswerWrapper = styled.div`
   display: flex;
   flex-direction: row;
   padding: 10px 0px 40px 0px;
 `
-const QuestionButton = styled.button`
+const AnswerButton = styled.button`
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
 `
 
-export const CurrentQuestion = ({ numberOfQuestions, question }) => {
-  // const question = useSelector(
-  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  // );
-  const usersAnswer = useSelector(
-    (state) => state.quiz.answers[state.quiz.currentQuestionIndex]
-  )
-
-  const currentQuestionNumber = useSelector(
-    (state) => state.quiz.currentQuestionIndex
-  )
+export const CurrentQuestion = ({ question, usersAnswer }) => {
 
   const dispatch = useDispatch()
 
@@ -37,27 +26,24 @@ export const CurrentQuestion = ({ numberOfQuestions, question }) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
   }
 
-  const onNextQuestionSubmit = () => {
-    dispatch(quiz.actions.goToNextQuestion())
-  }
-
   return (
     <section className='main-container'>
-      <h1>Question: {question.questionText}</h1>
-      <QuestionWrapper>
+      <h1>Category: {question.category}</h1>
+      <h2>Question {question.id}: {question.questionText}</h2>
+      
+      <AnswerWrapper>
         {question.options.map((option, index) => (
-          <QuestionButton
+          <AnswerButton
             disabled={usersAnswer}
             key={option.id}
             onClick={() => onAnswerSubmit(question.id, index)}
           >
             {option.answer}
-          </QuestionButton>
+          </AnswerButton>
         ))}
-      </QuestionWrapper>
+      </AnswerWrapper>
       {usersAnswer?.isCorrect && <p>Correct!</p>}
       {usersAnswer?.isCorrect === false && <p>Incorrect!</p>}
-      <NextStepButton />
     </section>
   )
 }
