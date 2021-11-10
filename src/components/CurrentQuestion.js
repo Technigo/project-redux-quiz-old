@@ -1,13 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
-import ProgressBar from "@ramonak/react-progress-bar";
+import ProgressBar from '@ramonak/react-progress-bar';
 
 import 'components/CurrentQuestion.css'
 
 export const CurrentQuestion = () => {
-
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
   different slices in store, if we had more slices we could see it in the console;
   when writing store.quiz, you are more specific, you are execing only this slice */
@@ -16,22 +15,17 @@ export const CurrentQuestion = () => {
   );
 
   /* Here we get the length of the arry(all the questions) */
- const questionsLength = useSelector((state) => state.quiz.questions.length)
+  const questionsLength = useSelector((state) => state.quiz.questions.length)
 
- /* Here we pass the value from the "questionsLength" so we can decreas the value of questions left */
- const [questionsCount, setQuestionsCount] = useState(questionsLength);
+  /* Here we pass the value from the "questionsLength" so we can decreas the value of questions left */
+  const [questionsCount, setQuestionsCount] = useState(questionsLength);
 
- /* The progressbar for the question, using npm install --save @ramonak/react-progress-bar (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
- const [completed, setCompleted] = useState(20);
-
+  /* The progressbar for the question, using npm install --save @ramonak/react-progress-bar (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
+  const [completed, setCompleted] = useState(20);
 
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver)
-
-
-  /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
-
 
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
@@ -49,14 +43,11 @@ export const CurrentQuestion = () => {
     return <Summary />
   }
 
-
-
   const onSubmitAnswer = (id, index) => {
     // what exact function we need to call to uppdate the store
     dispatch(
       quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
     );
-
 
     // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
     // because we want to go to the next question directly
@@ -64,36 +55,22 @@ export const CurrentQuestion = () => {
       quiz.actions.goToNextQuestion({ id })
     );
 
+    /* when clicking a btn the value of questionsCount(=Question left) decreses  */
+    setQuestionsCount(questionsCount - 1);
 
-/* when clicking a btn the value of questionsCount(=Question left) decreses  */
-setQuestionsCount(questionsCount - 1);
+    /* Update the progress-bar while clickin with 20% */
 
-
-/* Update the progress-bar while clickin with 20% */ 
-
- setCompleted(completed + 20);
-
-   
-        
-    
-    
-
-
+    setCompleted(completed + 20);
   };
-
-  
 
   return (
     <>
       <main className="main-container">
-      <div className="quiz-container">
-     
-{/* Here we display witch question we are at and how many we have left */}
-<p  className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
-
-{/* The progress bar */}
-      <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor={"red"} />
-
+        <div className="quiz-container">
+          {/* Here we display witch question we are at and how many we have left */}
+          <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+          {/* The progress bar */}
+          <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
           <h1 className="question-text">{question.questionText}</h1>
           <div className="button-container">
             {question.options.map((item, index) => (
@@ -101,28 +78,16 @@ setQuestionsCount(questionsCount - 1);
                 className="button"
                 type="button"
                 key={item}
-                
-                
-/* pass function to the dispatch to update the state, exessing
-quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-answerId is a specific answer of a question */
-                onClick={()=> onSubmitAnswer(question.id, index)}>
+                /* pass function to the dispatch to update the state, exessing
+                quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+                answerId is a specific answer of a question */
+                onClick={() => onSubmitAnswer(question.id, index)}>
                 <span className="button-text">{item}</span>
               </button>
             ))}
           </div>
         </div>
       </main>
-	  <div>
-
-
-
-    
-
-
-      
-    </div>
     </>
-
   );
 };
