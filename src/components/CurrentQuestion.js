@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 
+// We want this overlay to take 100% of the div that will hold image or video. After setTimout it will be displayed blacking out the image/video
 let Overlay = styled.div`
   position: absolute;
   right: 0;
@@ -20,8 +21,8 @@ export const CurrentQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
 
+  // function that changes the display property of Overlay from none to block
   const showOverlay = () => {
-    console.log('We are clicking');
     Overlay = styled.div`
       position: absolute;
       right: 0;
@@ -36,14 +37,17 @@ export const CurrentQuestion = () => {
     clearTimeout();
   };
 
+  //Timer to blackout picture/video
   const ticker = () => {
     setTimeout(showOverlay, 5000);
   };
 
+  // we used useEffect to call the ticker function when component is mounted
   useEffect(() => {
     ticker();
   }, []);
 
+  //this use effect is called when component is unmounted and removes the timer
   useEffect(() => {
     return () => {
       clearTimeout(ticker);

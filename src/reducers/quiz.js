@@ -58,7 +58,7 @@ const initialState = {
   questions,
   answers: [],
   userName: '',
-  currentQuestionIndex: 4,
+  currentQuestionIndex: 0,
   quizOver: false,
 };
 

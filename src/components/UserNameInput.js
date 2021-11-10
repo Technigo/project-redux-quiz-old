@@ -9,6 +9,8 @@ const UserNameInput = () => {
   const dispatch = useDispatch();
   const userNameGlobal = useSelector((state) => state.quiz.userName);
 
+  // If user is empty we want display a name input that takes the whole screen. We store the value in the Redux state userName property.
+  // If the user name is already there this component is not shown
   if (userNameGlobal === '') {
     return (
       <form
