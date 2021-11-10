@@ -1,7 +1,22 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import { quiz } from "../reducers/quiz";
+
+const QuestionBackgroundImage = styled.div`
+  background-image: url("https://i.imgur.com/b8dSvDi.png");
+  background-color: rgb(205, 206, 201);
+  background-size: cover;
+  width: 300px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ButtonContainer = styled.div``;
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -29,31 +44,47 @@ export const CurrentQuestion = () => {
   // efter ett val så får man reda på om det var rätt/fel samt att knapparna blir disabled + det kommer en "next question" knapp
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((option, index) => (
-        <button
-          key={option}
-          disabled={answers.length === question.id}
-          className={
-            answers[currentQuestionIndex]?.isCorrect &&
-            answers[currentQuestionIndex]?.answerIndex === index
-              ? "button correct"
-              : answers.length !== question.id
-              ? "button"
-              : "button incorrect"
-          }
-          onClick={() => onSubmitAnswer(index)}
-        >
-          {option}
-        </button>
-      ))}
-      {answers.length === question.id && !quizOver && (
+    <QuestionBackgroundImage>
+      <div>
+        {/* <QuestionText>  ändra lol */}
+        <h1>Question: {question.questionText}</h1>
+        {question.options.map((option, index) => (
+          <button
+            key={option}
+            disabled={answers.length === question.id}
+            className={
+              answers[currentQuestionIndex]?.isCorrect &&
+              answers[currentQuestionIndex]?.answerIndex === index
+                ? "button correct"
+                : answers.length !== question.id
+                ? "button"
+                : "button incorrect"
+            }
+            onClick={() => onSubmitAnswer(index)}
+          >
+            {option}
+          </button>
+        ))}
+        {answers.length === question.id && !quizOver && (
+          <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
+            {answers.length + 1 === question.length
+              ? "Show results"
+              : "Next Question"}
+          </button>
+        )}
+        {/* </QuestionText> */}
+        {/* {quizOver && (
         <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
-          Next Question
+          Show results
         </button>
-      )}
-    </div>
+      )} */}
+        <div>
+          {answers[currentQuestionIndex]?.isCorrect && (
+            <p>{question.answerText}</p>
+          )}
+        </div>
+      </div>
+    </QuestionBackgroundImage>
   );
 };
 // button:focus{background-color:red;}
