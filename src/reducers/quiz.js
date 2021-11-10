@@ -94,10 +94,6 @@ export const quiz = createSlice({
         );
       }
 
-      /*    if (question.options[answerIndex] !== answer.isCorrect) {
-        throw new Error(`Wrong answer `);
-      } */
-
       if (question.options[answerIndex] === undefined) {
         throw new Error(
           `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`

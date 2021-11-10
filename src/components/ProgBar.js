@@ -7,7 +7,6 @@ export const ProgBar = () => {
   const question = useSelector(
     (store) => store.quiz.questions[store.quiz.currentQuestionIndex]
   );
-  // console.log('QUESTION', question);
 
   const now = (question.id / 5) * 100;
   const progressInstance = (
@@ -16,5 +15,3 @@ export const ProgBar = () => {
 
   return progressInstance;
 };
-
-// followed this: https://react-bootstrap.github.io/components/progress/

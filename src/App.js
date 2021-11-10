@@ -5,7 +5,6 @@ import { quiz } from 'reducers/quiz';
 import { ProgBar } from 'components/ProgBar';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
-import { CheckQuestion } from 'components/CheckQuestion';
 
 const reducer = combineReducers({
   quiz: quiz.reducer,
@@ -18,7 +17,6 @@ export const App = () => {
     <>
       <Provider store={store}>
         <CurrentQuestion />
-        {/* <CheckQuestion /> */}
         <ProgBar />
       </Provider>
     </>

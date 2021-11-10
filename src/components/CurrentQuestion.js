@@ -45,29 +45,14 @@ export const CurrentQuestion = () => {
       </div>
       {answer && (
         <div>
+          <p>{`This is ${answer.isCorrect ? 'correct!' : 'wrong'}!`}</p>
           <button onClick={() => onNextButtonClick()}>Next</button>
         </div>
       )}
+
       <div>
         <p>This is question {question.id} out of 5 questions</p>
       </div>
     </>
   );
 };
-/// ON LINE: 53 IS WHERE I PUT THE QUESTION COUNTER 👆
-
-/*
-buttonNext === false
-
-if array.length !== 0 
-ProgressBar +1 
-<p>You're right!</p> else <p>Nope sorry, wrong answer</p> 
-
-buttonNext === true
-
-onClick -> state.currentQuestionIndex + 1
-
-(skickar till nästa sida)
-
-
-*/
