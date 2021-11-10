@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'components/Summary'
 import ProgressBar from '@ramonak/react-progress-bar';
+import Button from './AnswerButton'
 
 import 'components/CurrentQuestion.css'
 
@@ -68,16 +69,13 @@ export const CurrentQuestion = () => {
           <h1 className="question-text">{question.questionText}</h1>
           <div className="button-container">
             {question.options.map((item, index) => (
-              <button
-                className="button"
-                type="button"
+              <Button
                 key={item}
                 /* pass function to the dispatch to update the state, exessing
-quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-answerId is a specific answer of a question */
-                onClick={() => onSubmitAnswer(question.id, index)}>
-                <span className="button-text">{item}</span>
-              </button>
+                quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+                answerId is a specific answer of a question */
+                onClick={() => onSubmitAnswer(question.id, index)}
+                text={item} />
             ))}
           </div>
           <div className="progress-bar-container">
