@@ -1,8 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCauldron } from "@fortawesome/pro-solid-svg-icons";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagic } from "@fortawesome/free-solid-svg-icons";
 
 export const ProgressBar = () => {
   const questions = useSelector((store) => store.quiz.questions);
@@ -28,7 +28,6 @@ export const ProgressBar = () => {
               style={{
                 backgroundColor:
                   currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
-
               }}
             ></Line>
           </ProgressBarWrapper>
@@ -41,10 +40,9 @@ export const ProgressBar = () => {
             currentQuestionIndex === questions.length - 1
               ? "#638270"
               : "#f0f0f0",
-
         }}
       >
-        <FontAwesomeIcon icon={faCauldron} />
+        <FontAwesomeIcon icon={faMagic} />
       </IconContainer>
     </ProgressBarContainer>
   );

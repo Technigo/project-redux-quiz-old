@@ -8,7 +8,7 @@ export const quiz = createSlice({
     questions: [
       {
         id: 1,
-
+        type: "button",
         questionText:
           "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
         options: [
@@ -21,6 +21,7 @@ export const quiz = createSlice({
       },
       {
         id: 2,
+        type: "button",
         questionText:
           "What did Ron call Hermione after Charms class that made her cry?",
         options: [
