@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
@@ -7,6 +7,7 @@ export const ButtonQuestion = ({
   setOnAnswerSubmit,
   onGoToNextQuestion,
 }) => {
+  const [hasClicked, setHasClicked] = useState(false);
   const answer = useSelector((state) =>
     state.quiz.answers.find((answer) => question.id === answer.questionId)
   );
@@ -41,12 +42,16 @@ export const ButtonQuestion = ({
               <div key={item}>
                 <Button
                   onClick={() => {
-                    setOnAnswerSubmit(question.id, index);
-                    console.log("SetAnswer");
-                    setTimeout(() => {
-                      console.log("Onwards");
-                      onGoToNextQuestion(question.id);
-                    }, 1000);
+                    if (!hasClicked) {
+                      setHasClicked(true);
+                      setOnAnswerSubmit(question.id, index);
+                      console.log("SetAnswer");
+                      setTimeout(() => {
+                        console.log("Onwards");
+                        onGoToNextQuestion(question.id);
+                        setHasClicked(false);
+                      }, 1000);
+                    }
                   }}
                 >
                   {item}
@@ -74,6 +79,7 @@ const ButtonsContainer = styled.div`
   justify-content: center;
   display: grid;
   width: 100%;
+  font-size: 12px;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   row-gap: 10px;
@@ -102,7 +108,6 @@ const Button = styled.button`
   border-radius: 2px;
   border-bottom: 2px solid #638270;
   border-right: 2px solid #638270;
-  font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
   @media (min-width: 668px) and (max-width: 1024px) {
@@ -122,14 +127,13 @@ const CorrectButton = styled.button`
   padding: 8px 20px;
   height: 100%;
   width: 100%;
-  font-weight: 900;
+  font-weight: 700;
   color: black;
   background-color: #638270;
   border: none;
   border-radius: 2px;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
-  font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
   @media (min-width: 668px) and (max-width: 1024px) {
@@ -144,14 +148,13 @@ const NotCorrectButton = styled.button`
   padding: 8px 20px;
   height: 100%;
   width: 100%;
-  font-weight: 900;
+  font-weight: 700;
   color: #7d0000;
   background-color: black;
   border: none;
   border-radius: 2px;
   border-bottom: 2px solid #460000;
   border-right: 2px solid #460000;
-  font-size: 15px;
   cursor: pointer;
   letter-spacing: 2px;
   @media (min-width: 668px) and (max-width: 1024px) {

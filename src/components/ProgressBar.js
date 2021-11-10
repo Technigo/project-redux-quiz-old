@@ -9,9 +9,7 @@ export const ProgressBar = () => {
   const currentQuestionIndex = useSelector(
     (store) => store.quiz.currentQuestionIndex
   );
-
-  console.log(currentQuestionIndex);
-  console.log(questions);
+  const isQuizOver = useSelector((store) => store.quiz.quizOver);
 
   return (
     <ProgressBarContainer>
@@ -36,10 +34,7 @@ export const ProgressBar = () => {
 
       <IconContainer
         style={{
-          backgroundColor:
-            currentQuestionIndex === questions.length - 1
-              ? "#638270"
-              : "#f0f0f0",
+          backgroundColor: isQuizOver ? "#638270" : "#f0f0f0",
         }}
       >
         <FontAwesomeIcon icon={faMagic} />
@@ -79,7 +74,7 @@ const Dot = styled.div`
 `;
 
 const Line = styled.div`
-  width: 40px;
+  width: 30px;
   height: 3px;
   display: inline-block;
   transition: all 500ms ease-in-out;

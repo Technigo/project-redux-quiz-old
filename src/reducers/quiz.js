@@ -16,12 +16,7 @@ const questions = [
     type: "button",
     questionText:
       "What did Ron call Hermione after Charms class that made her cry?",
-    options: [
-      "A nightmare",
-      "An insufferable know it all",
-      "A loser",
-      "A try-hard",
-    ],
+    options: ["A nightmare", "A know it all", "A loser", "A try-hard"],
     correctAnswerIndex: 0,
   },
   {

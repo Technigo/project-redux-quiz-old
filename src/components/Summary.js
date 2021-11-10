@@ -42,9 +42,11 @@ export const Summary = () => {
 };
 
 const SummaryAnswer = styled.section`
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6px;
   display: flex;
   flex-direction: column;
-  margin: 15px;
+  margin: 0 15px;
 `;
 
 const Question = styled.span`

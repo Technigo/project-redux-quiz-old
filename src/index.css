@@ -10,9 +10,13 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-width: 375px;
+  min-width: 320px;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-image: url("./pictures/smoke.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
