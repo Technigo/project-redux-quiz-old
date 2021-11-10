@@ -32,7 +32,15 @@
 }
 
 .hamburger-icon:hover {
-    transform: scale(1.1);
+    animation: 1s jump infinite ease-in-out;
+}
+
+@keyframes jump{
+    0%  {height: 40px;}
+    20% {height: 50px;}
+    50% {transform: translateY(-35%);}
+    95% {height: 50px;}
+    100%{height: 40px;}
 }
 
 @keyframes rotate {

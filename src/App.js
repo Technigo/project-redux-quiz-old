@@ -3,8 +3,9 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
-import { FirstQuestion } from 'components/FirstQuestion'
-import Header from 'components/Header'
+import Header from 'components/smallComponents/Header'
+import { ContentSwitcher } from 'components/switcher/ContentSwitcher'
+
 
 const reducer = combineReducers({
   quiz: quiz.reducer,
@@ -16,7 +17,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <FirstQuestion />
+     
+      <ContentSwitcher />
     </Provider>
   );
 };

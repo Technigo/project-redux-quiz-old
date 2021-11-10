@@ -1,5 +1,5 @@
 import React from 'react';
-import hamburgerIcon from '../assets/hamburger-icon.png'
+import hamburgerIcon from 'assets/hamburger-icon.png'
 import './Header.css'
 
 const Hamburger = () => {

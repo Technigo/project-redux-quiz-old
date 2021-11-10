@@ -3,13 +3,13 @@
 import React from 'react'
 import './FirstQuestion.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { quiz } from '../reducers/quiz'
-import moussaka from '../assets/moussaka-image.jpg'
-import Button from './Button'
+import { quiz } from '../../reducers/quiz'
+import moussaka from 'assets/moussaka-image.jpg'
+import Button from '../smallComponents/Button'
 
 export const FirstQuestion = () => {
     const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-
+console.log('question', question)
     const dispatch = useDispatch()
 
     if (!question) {
@@ -27,7 +27,7 @@ export const FirstQuestion = () => {
 
     return (
         <div className="question-container">
-            <h1 className="question">Question: {question.questionText}</h1>
+            <h1 className="question">Question {question.id}: {question.questionText}</h1>
             <div className="moussaka-image">
                 <img className="food-image" src={moussaka} alt="moussaka" />
             </div>

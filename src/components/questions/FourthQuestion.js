@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "../reducers/quiz";
+import { quiz } from "../../reducers/quiz";
 import "./FourthQuestion.css";
+import Button from "components/smallComponents/Button";
 
 export const FourthQuestion = () => {
   const question = useSelector(
@@ -20,10 +21,9 @@ export const FourthQuestion = () => {
   };
 
   return (
-    <form className="question-container">
-      <p> Question 4/5</p>
-      <h2>{question.questionText}</h2>
-      <img
+    <div className="question-container">
+      <h1 className="question">Question {question.id}: {question.questionText}</h1>
+      <img className="moussaka-image"
         src="https://st2.depositphotos.com/31984086/46224/v/600/depositphotos_462241918-stock-illustration-semla-is-a-traditional-sweet.jpg"
         alt="semla"
       />
@@ -39,6 +39,7 @@ export const FourthQuestion = () => {
           </option>
         ))}
       </select>
-    </form>
+      <Button/>
+    </div>
   );
 };

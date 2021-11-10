@@ -2,6 +2,7 @@
     background: #a37c48c0;
     border-radius: 10px;
     padding: 15px;
+    width: 40vw;
 }
 
 .question {
@@ -28,10 +29,11 @@
     flex-wrap: wrap;
     row-gap: 8px;
     column-gap: 8px;
+    width: 100%;
 }
 
 .radio-buttons-label {
-    width: 35%;
+    width: 300px;
     font-size: 30px;
     background: #4e1d10de;
     border-radius: 50px;
@@ -56,7 +58,7 @@
     box-shadow: inset 0 0 0 2.5px #cc9837;
     appearance: none;
     transition: box-shadow 150ms cubic-bezier(.95, .15, .5, 1.25);
-    pointer-events: none;
+    cursor: pointer;
     margin: 5px 10px 0 0;
     align-self: center;
 }

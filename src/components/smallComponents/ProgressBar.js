@@ -4,17 +4,16 @@ import { useSelector } from "react-redux";
 export const ProgressBar = () => {
   const questionCompleted = useSelector((state) => state.quiz.currentQuestionIndex);
   const questionsTotal = useSelector((state) => state.quiz.questions.length);
-  const quizStatus = useSelector((state) => state.quiz.quizOver);
   console.log("qqq", questionCompleted, questionsTotal);
   let completed = Math.round((questionCompleted / questionsTotal) * 100);
 
-  if (quizStatus === true) {
+  if (questionCompleted === 5) {
     completed = 100;
   }
 
   const containerStyles = {
     height: 20,
-    width: "100%",
+    width: "80%",
     backgroundColor: "#e0e0de",
     borderRadius: 50,
     margin: 50,
@@ -23,7 +22,7 @@ export const ProgressBar = () => {
   const fillerStyles = {
     height: "100%",
     width: `${completed}%`,
-    backgroundColor: "goldenrod",
+    backgroundColor: "red",
     borderRadius: "inherit",
     textAlign: "right",
   };
@@ -35,12 +34,12 @@ export const ProgressBar = () => {
   };
 
   return (
-    <>
+    <div className="align-progress-bar">
       <div style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>
         </div>
       </div>
-    </>
+    </div>
   );
 };

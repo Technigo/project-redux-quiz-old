@@ -15,10 +15,10 @@ const Navigation = () => {
       <div className="navigation-container">
         <h2 className="contact-info">Contact Us</h2>
         <a className="contact-link" href="https://github.com/anndimi" target="_blank" rel="noopener noreferrer">Anna Dimitrakopoulos</a>
+        <a className="contact-link" href="https://github.com/loulunds" target="_blank" rel="noopener noreferrer">Lousanne Lundström</a>
         <a className="contact-link" href="https://github.com/madeleinesvensson" target="_blank" rel="noopener noreferrer">Madeleine Svensson</a>
         <a className="contact-link" href="https://github.com/MarySnopok" target="_blank" rel="noopener noreferrer">Mariia Snopok</a>
-        <a className="contact-link" href="https://github.com/ebbadelsol" target="_blank" rel="noopener noreferrer">Ebba Delsol</a>
-        <a className="contact-link" href="https://github.com/loulunds" target="_blank" rel="noopener noreferrer">Lousanne Lundström</a>
+        <a className="contact-link" href="https://github.com/ebbadelsol" target="_blank" rel="noopener noreferrer">Ebba Delsol</a> 
       </div>
       <div className="hamburger" onClick={toggleHamburger}>
         <Hamburger />

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import styled from "styled-components";
+import Button from "components/smallComponents/Button";
 
 const IMAGE_URL_KROPPKAKA = "https://img.koket.se/standard-mega/kroppkakor-med-lingon-och-brynt-smor.jpg";
 
@@ -27,7 +28,6 @@ const ImageContainer = styled.div`
 const Image = styled.img`
 	border-radius: 10px;
 	opacity: 0.85;
-	height: 360px;
 `;
 
 const RadioButtonsContainer = styled.div`
@@ -64,9 +64,9 @@ const RadioButton = styled.input`
 	box-shadow: inset 0 0 0 2.5px #cc9837;
 	appearance: none;
 	transition: box-shadow 150ms cubic-bezier(0.95, 0.15, 0.5, 1.25);
-	pointer-events: none;
 	margin: 5px 10px 0 0;
 	align-self: center;
+	cursor: pointer;
 	&:focus {
 		outline: none;
 	}
@@ -90,7 +90,7 @@ export const ThirdQuestion = () => {
 
 	return (
 		<Form>
-			<QuestionTitle>Question: {question.questionText}</QuestionTitle>
+			<QuestionTitle>Question {question.id}: {question.questionText}</QuestionTitle>
 			<ImageContainer>
 				<Image src={IMAGE_URL_KROPPKAKA} alt="kroppkaka"></Image>
 			</ImageContainer>
@@ -109,6 +109,7 @@ export const ThirdQuestion = () => {
 					</InputLabelContainer>
 				))}
 			</RadioButtonsContainer>
+			<Button/>
 		</Form>
 	);
 };

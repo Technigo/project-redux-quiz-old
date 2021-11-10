@@ -1,18 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "../reducers/quiz";
+import { quiz } from "../../reducers/quiz";
+import Button from "components/smallComponents/Button";
 
-export const GenericQuestion = () => {
+export const FifthQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
   const dispatch = useDispatch();
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  };
-
-  const toNextQ = () => {
-    dispatch(quiz.actions.goToNextQuestion());
   };
 
   return (
@@ -28,13 +25,13 @@ export const GenericQuestion = () => {
               type="radio"
               onChange={() => {
                 onAnswerSubmit(question.id, index);
-                toNextQ();
               }}
             />
             {item}
           </label>
         ))}
       </>
+      <Button/>
     </div>
   );
 };
