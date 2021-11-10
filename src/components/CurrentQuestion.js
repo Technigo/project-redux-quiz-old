@@ -1,10 +1,31 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import styled from "styled-components";
+
 import Summary from "./Summary";
 import Counter from "./Counter";
 import AnswerButtons from "./AnswerButtons";
-// import Questions from "./Questions";
+
+const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+`;
+
+const QuestionText = styled.h1`
+  font-size: 15px;
+  text-align: center;
+`;
+
+const NextButton = styled.button`
+  padding: 20px;
+  border-radius: 20px;
+  background-color: pink;
+  &:hover {
+    background-color: red;
+  }
+`;
 
 export const CurrentQuestion = () => {
   const question = useSelector(
@@ -12,25 +33,6 @@ export const CurrentQuestion = () => {
   );
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const dispatch = useDispatch();
-
-  const answers = useSelector((state) =>
-    state.quiz.answers.find(
-      (a) => a.questionId === question.id // question could come from the previous selector in the last example
-    )
-  );
-  const rightIndex = useSelector(
-    (state) => state.quiz.questions[state.quiz.correctAnswerIndex]
-  );
-  console.log("testin right index", rightIndex);
-
-  const correct = useSelector((state) =>
-    state.quiz.answers.find((a) => a.isCorrect === true)
-  );
-
-  // console.log("This is correct", correct);
-
-  const quizSlice = useSelector((store) => store.quiz);
-  // console.log(quizSlice);
 
   const nextQuestion = (id) => {
     dispatch(
@@ -48,14 +50,15 @@ export const CurrentQuestion = () => {
       {quizOver ? (
         <Summary />
       ) : (
-        <div>
-          <h1>{question.questionText}</h1>
+        <QuestionContainer>
+          <QuestionText>{question.questionText}</QuestionText>
           <img src={question.img} alt="coverImage" />
-
           <AnswerButtons />
           <Counter />
-          {answers ? nextQuestion() : ""}
-        </div>
+          <NextButton onClick={() => nextQuestion()}>
+            Go to next Question
+          </NextButton>
+        </QuestionContainer>
       )}
     </>
   );

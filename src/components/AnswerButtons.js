@@ -1,6 +1,22 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import styled from "styled-components";
+
+const QuestionButtonWrapper = styled.div`
+  display: flex;
+
+  justify-content: center;
+  padding: 10px;
+  width: 100%;
+`;
+
+const QuestionButton = styled.button`
+  border-radius: 20px;
+  background-color: pink;
+  width: 47%;
+  padding: 20px;
+`;
 
 const AnswerButtons = () => {
   const question = useSelector(
@@ -14,6 +30,7 @@ const AnswerButtons = () => {
   );
 
   const dispatch = useDispatch();
+
   const onSubmitAnswer = (id, index) => {
     dispatch(
       quiz.actions.submitAnswer({
@@ -26,19 +43,21 @@ const AnswerButtons = () => {
   return (
     <>
       {question.options.map((item, index) => (
-        <button
-          key={index}
-          onClick={() => onSubmitAnswer(question.id, index)}
-          style={{
-            background: !answers
-              ? "white"
-              : question.correctAnswerIndex === index
-              ? "green"
-              : "red",
-          }}
-        >
-          {item}
-        </button>
+        <QuestionButtonWrapper>
+          <QuestionButton
+            key={index}
+            onClick={() => onSubmitAnswer(question.id, index)}
+            style={{
+              background: !answers
+                ? "white"
+                : question.correctAnswerIndex === index
+                ? "green"
+                : "red",
+            }}
+          >
+            {item}
+          </QuestionButton>
+        </QuestionButtonWrapper>
       ))}
     </>
   );
