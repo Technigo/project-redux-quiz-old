@@ -1,38 +1,42 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Summary from "components/Summary";
-import { Button } from "components/Button";
-
-import { quiz } from "../reducers/quiz";
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import Summary from "components/Summary"
+import { Button } from "components/Button"
+import { BackgroundVideo } from "components/BackgroundVideo"
+// import Matrix from "BackgroundVideo/Matrix.mp4"
+import { quiz } from "../reducers/quiz"
 
 export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  )
   const answer = useSelector((state) =>
     state.quiz.answers.find((answer) => answer.questionId === question.id)
-  );
-  const dispatch = useDispatch();
-  const quizOver = useSelector((state) => state.quiz.quizOver);
+  )
+  const dispatch = useDispatch()
+  const quizOver = useSelector((state) => state.quiz.quizOver)
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>;
+    return <h1>Oh no! I could not find the current question!</h1>
   }
 
   const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  };
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+  }
 
   const handleClick = () => {
-    dispatch(quiz.actions.goToNextQuestion({}));
-  };
+    dispatch(quiz.actions.goToNextQuestion({}))
+  }
 
   if (!quizOver)
     return (
-      <div>
+      <div className="main-container">
+        <BackgroundVideo />
         <h1>Question: {question.questionText}</h1>
         {question.options.map((item, index) => (
-          <div key={index}>
+          <div className="button-container" key={index}>
+            {" "}
+            <img src="/pill.png" />
             <Button
               questionId={question.id}
               correctAnswerIndex={question.correctAnswerIndex}
@@ -44,27 +48,32 @@ export const CurrentQuestion = () => {
               item={item}
               question={question}
               answer={answer}
-            >
-              {" "}
-            </Button>
+            ></Button>
           </div>
         ))}
-        {/* {question.options.map((item, index) => (
-          <button
-            key={index}
-            disabled={!!answer}
-            onClick={() => onAnswerSubmit(question.id, index)}
-          >
-            {item}
-          </button>
-        ))} */}
+
+        {/* <img src="/matrix-image.jpeg" alt="matrix" /> */}
+        {/* <video autoPlay muted loop>
+          <source src="/Matrix.mp4" type="video/mp4" />
+        </video> */}
         <button onClick={handleClick} disabled={!answer}>
           NEXT QUESTION
         </button>
-        <p>{question.id}/5</p>
+        <p
+          style={{
+            color: "white",
+          }}
+        >
+          {question.id}/5
+        </p>
       </div>
-    );
-  return <Summary />;
-};
+    )
+  return (
+    <div>
+      <BackgroundVideo />
+      <Summary />
+    </div>
+  )
+}
 
 // not submitting answer to store on "answer button" but save it and submit with Next question

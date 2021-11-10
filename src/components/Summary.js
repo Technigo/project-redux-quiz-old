@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { quiz } from "../reducers/quiz"
+import { BackgroundVideo } from "components/BackgroundVideo"
 
 const Summary = () => {
   const dispatch = useDispatch()
