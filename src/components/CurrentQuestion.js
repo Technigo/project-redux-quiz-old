@@ -5,6 +5,9 @@ import styled from 'styled-components'
 
 const AnswerWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
   flex-direction: row;
   padding: 10px 0px 40px 0px;
 `
@@ -12,10 +15,12 @@ const AnswerButton = styled.button`
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
 `
 
 export const CurrentQuestion = ({ question, usersAnswer }) => {
-
   const dispatch = useDispatch()
 
   if (!question) {
@@ -28,9 +33,11 @@ export const CurrentQuestion = ({ question, usersAnswer }) => {
 
   return (
     <section className='main-container'>
-      <h1>Category: {question.category}</h1>
-      <h2>Question {question.id}: {question.questionText}</h2>
-      
+      <h1 className='category-label'> Category: {question.category}</h1>
+      <h2>
+        Question {question.id}: {question.questionText}
+      </h2>
+
       <AnswerWrapper>
         {question.options.map((option, index) => (
           <AnswerButton

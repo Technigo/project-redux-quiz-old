@@ -4,8 +4,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
   {
     id: 1,
-    category: "Sport",
-    questionText: 'What is the largest overall prize pool in an E-Sport tournament?',
+    category: 'Sport',
+    questionText:
+      'What is the largest overall prize pool in an E-Sport tournament?',
     options: [
       { id: 1, answer: '$94,687,919.00' },
       { id: 2, answer: '$24,687,919.00' },
@@ -16,7 +17,7 @@ const questions = [
   },
   {
     id: 2,
-    category: "Sport",
+    category: 'Sport',
     questionText: 'What are the Olympic Medals predominantly made of?',
     options: [
       { id: 1, answer: 'Iron' },
@@ -28,7 +29,7 @@ const questions = [
   },
   {
     id: 3,
-    category: "General",
+    category: 'General',
     questionText: 'How does Sarah pronounce Router?',
     options: [
       { id: 1, answer: 'Router' },
@@ -40,7 +41,7 @@ const questions = [
   },
   {
     id: 4,
-    category: "Food",
+    category: 'Food',
     questionText: 'What is the rarest M&M colour?',
     options: [
       { id: 1, answer: 'Blue' },
@@ -52,7 +53,7 @@ const questions = [
   },
   {
     id: 5,
-    category: "Food",
+    category: 'Food',
     questionText: 'What was the first soft drink in space?',
     options: [
       { id: 1, answer: 'Pepsi' },
@@ -64,7 +65,7 @@ const questions = [
   },
   {
     id: 6,
-    category: "Food",
+    category: 'Food',
     questionText: 'What is the hotest part of a chili?',
     options: [
       { id: 1, answer: 'The flesh at the tip' },
@@ -76,7 +77,7 @@ const questions = [
   },
   {
     id: 7,
-    category: "Innovation",
+    category: 'Innovation',
     questionText: 'Which country invented ice-cream?',
     options: [
       { id: 1, answer: 'Japan' },
@@ -88,7 +89,7 @@ const questions = [
   },
   {
     id: 8,
-    category: "Entertainment",
+    category: 'Entertainment',
     questionText: 'Which famous US festival hosted over 350,000 fans in 1969?',
     options: [
       { id: 1, answer: 'Coachella' },
@@ -100,7 +101,7 @@ const questions = [
   },
   {
     id: 9,
-    category: "Innovation",
+    category: 'Innovation',
     questionText: 'Which country created Wi-Fi?',
     options: [
       { id: 1, answer: 'Australia' },
@@ -112,7 +113,7 @@ const questions = [
   },
   {
     id: 10,
-    category: "Entertainment",
+    category: 'Entertainment',
     questionText: 'In which year was the first Friends episode launched?',
     options: [
       { id: 1, answer: '1992' },
@@ -124,7 +125,7 @@ const questions = [
   },
   {
     id: 11,
-    category: "Geography",
+    category: 'Geography',
     questionText: 'What is the current height of Mount Everest?',
     options: [
       { id: 1, answer: '8848 meters' },
@@ -136,8 +137,9 @@ const questions = [
   },
   {
     id: 12,
-    category: "General",
-    questionText: 'What is the name of the main antagonist in the Shakespeare play "Othello"?',
+    category: 'General',
+    questionText:
+      'What is the name of the main antagonist in the Shakespeare play "Othello"?',
     options: [
       { id: 1, answer: 'Iago' },
       { id: 2, answer: 'King Lear' },
@@ -148,7 +150,7 @@ const questions = [
   },
   {
     id: 13,
-    category: "Geography",
+    category: 'Geography',
     questionText: 'Which US state has the most active volcanoes?',
     options: [
       { id: 1, answer: 'California' },
@@ -158,7 +160,18 @@ const questions = [
     ],
     correctAnswerIndex: 1,
   },
- 
+  {
+    id: 14,
+    category: 'Last',
+    questionText: 'Which language was used to build this app?',
+    options: [
+      { id: 1, answer: 'JSX' },
+      { id: 2, answer: 'React' },
+      { id: 3, answer: 'Python' },
+      { id: 4, answer: 'HTML' },
+    ],
+    correctAnswerIndex: 1,
+  },
 ]
 
 const initialState = {

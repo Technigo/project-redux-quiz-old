@@ -1,17 +1,25 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Noto Serif', serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Noto Serif', serif;
 }
 
+p {
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(40, 26, 26);
+  text-shadow: 2px 2px 3px white;
+}
+
+h5 {
+  margin-top: 10em;
+}
 .main-container {
   margin-top: 5em;
   display: flex;
@@ -23,23 +31,61 @@ code {
 .question-container {
   width: 80%;
   margin: 0 auto;
-  background-color: rgba(191, 103, 26, 0.557);
+  background-color: rgba(191, 103, 26, 0.6);
+  border-radius: 5%;
 }
 
 /*These are the classes for the element HTML that changes on our category props*/
 .sport {
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   background-image: url(./assets/sport.jpg);
-  background-size: auto;
-
-  object-fit: cover;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .food {
-  width: 80%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  background-color: rgba(200, 232, 39, 0.3);
-  /* background-image: url(./assets/sport.jpg); */
+  background-image: url(./assets/food.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.entertainment {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url(./assets/entertainment.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.general {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url(./assets/general.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.geography {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url(./assets/geography.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.innovation {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-image: url(./assets/innovation.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }

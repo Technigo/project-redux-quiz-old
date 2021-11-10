@@ -1,32 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const Progressbar = ({ numberOfQuestions, question }) => {
   const progress = ((question.id - 1) / numberOfQuestions) * 100
 
   //We put the styled components inside the Progressbar component so that we were able to style the width
   //with the help of our progress variable
   const ProgressBarContainer = styled.div`
-    height: 20px;
-    width: 200px;
-    background-color: silver;
+    height: 30px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     margin: 1em auto;
-    align-self: end;
+    align-self: center;
   `
   const CurrentProgress = styled.div`
     display: flex;
     justify-content: right;
     align-items: center;
     margin: 0;
-    background-color: #03a700;
+    background-image: -webkit-linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
+    background-image: linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
     height: 100%;
     border-radius: 10px;
     width: ${progress}%;
   `
   const Progress = styled.span`
     margin: 3px;
+    color: white;
   `
 
   return (
