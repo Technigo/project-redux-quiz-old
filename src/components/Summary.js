@@ -11,7 +11,7 @@ export const Summary = () => {
     <div className="summary">
       <h2>This is your summary</h2>
       <p>You got {answerIndex} questions correct!</p>
-      <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</button>
+      <button className="btn" type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</button>
     </div>
   );
 };

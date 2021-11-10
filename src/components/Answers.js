@@ -23,17 +23,19 @@ export const Answers = () => {
     return <Summary />;
   } else {
     return (
-      <div>
-
-        {question.options.map((item, index) => (
-          <button
-            className="btn option"
-            type="submit"
-            key={item}
-            onClick={() => onAnswerSubmit(question.id, index)}>
-            {item}
-          </button>
-        ))}
+      <div className="buttons">
+        <div className="options">
+          {question.options.map((item, index) => (
+            <button
+              className="btn option"
+              type="submit"
+              key={item}
+              onClick={() => onAnswerSubmit(question.id, index)}
+            >
+              {item}
+            </button>
+          ))}
+        </div>
         <NextQuestionButton />
       </div>
     );

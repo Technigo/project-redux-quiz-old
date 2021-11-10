@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { Answers } from './Answers';
 
 // We want this overlay to take 100% of the div that will hold image or video. After setTimout it will be displayed blacking out the image/video
 let Overlay = styled.div`
@@ -9,16 +10,14 @@ let Overlay = styled.div`
   bottom: 0;
   left: 0;
   top: 0;
-  background: rgba(0, 0, 0, 1);
+  background: #212121;
   z-index: 2;
   display: none;
 `;
 
 export const CurrentQuestion = () => {
   const [displayOverlay, setDisplayOverlay] = useState(false);
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
   // function that changes the display property of Overlay from none to block
   const showOverlay = () => {
@@ -28,15 +27,18 @@ export const CurrentQuestion = () => {
       bottom: 0;
       left: 0;
       top: 0;
-      background: rgba(0, 0, 0, 1);
+      background: #212121;
       z-index: 2;
-      display: none;
+      display: block;
+      color: white;
+      padding: 40px;
+      text-align: center;
     `;
     setDisplayOverlay(true);
     clearTimeout();
   };
 
-  //Timer to blackout picture/video
+  // Timer to blackout picture/video
   const ticker = () => {
     setTimeout(showOverlay, 5000);
   };
@@ -46,7 +48,7 @@ export const CurrentQuestion = () => {
     ticker();
   }, []);
 
-  //this use effect is called when component is unmounted and removes the timer
+  // this use effect is called when component is unmounted and removes the timer
   useEffect(() => {
     return () => {
       clearTimeout(ticker);
@@ -58,18 +60,18 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <div className="image-wrapper">
-        <Overlay />
-        {question.type === 'picture' ? (
-          <img style={{ width: '600px' }} src={question.path} alt="Quizimage" />
-        ) : (
-          <video autoPlay muted>
-            <source src={question.path} type="video/mp4" />
-          </video>
-        )}
-      </div>
-      <h1>Question: {question.questionText}</h1>
+    <div className="image-wrapper">
+      <Overlay>
+        <h2>{question.questionText}</h2>
+        <Answers />
+      </Overlay>
+      {question.type === 'picture' ? (
+        <img src={question.path} alt="Quizimage" />
+      ) : (
+        <video autoPlay muted>
+          <source src={question.path} type="video/mp4" />
+        </video>
+      )}
     </div>
   );
 };

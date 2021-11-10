@@ -8,7 +8,7 @@ const questions = [
     options: ['red', 'black', 'white', 'grey'],
     correctAnswerIndex: 2,
     path: './assets/visuals/crossing.jpg',
-    type: 'picture',
+    type: 'picture'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const questions = [
     options: ['yes', 'no'],
     correctAnswerIndex: 0,
     path: './assets/visuals/metro.jpg',
-    type: 'picture',
+    type: 'picture'
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const questions = [
     options: ['Pretty Woman', 'Fugitive', 'Chicago', 'Runaway Bride'],
     correctAnswerIndex: 0,
     path: './assets/visuals/NY-city.mp4',
-    type: 'video',
+    type: 'video'
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const questions = [
     options: ['7-Up', 'CocaCola', 'Mountain dew', 'Sprite'],
     correctAnswerIndex: 3,
     path: './assets/visuals/picnic.jpeg',
-    type: 'picture',
+    type: 'picture'
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const questions = [
     options: ['7', '11', '14', '19'],
     correctAnswerIndex: 2,
     path: './assets/visuals/camping-site.jpeg',
-    type: 'picture',
+    type: 'picture'
   },
   {
     id: 6,
@@ -50,8 +50,8 @@ const questions = [
     options: ['Mask', 'Money', 'Phone', 'Water'],
     correctAnswerIndex: 1,
     path: './assets/visuals/bangkok-purse.mp4',
-    type: 'video',
-  },
+    type: 'video'
+  }
 ];
 
 const initialState = {
@@ -59,8 +59,7 @@ const initialState = {
   answers: [],
   userName: '',
   currentQuestionIndex: 0,
-  quizOver: false,
-
+  quizOver: false
 };
 
 export const quiz = createSlice({
@@ -103,7 +102,7 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex,
+        isCorrect: question.correctAnswerIndex === answerIndex
       });
     },
 
@@ -134,7 +133,7 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState;
-    },
-  },
+    }
+  }
 
 });

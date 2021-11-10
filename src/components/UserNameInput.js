@@ -13,20 +13,22 @@ const UserNameInput = () => {
   if (userNameGlobal === '') {
     return (
       <form
+        className="user-input-form"
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(quiz.actions.addUserName({ userName: userName }));
         }}
       >
-        <label>
-          Put your username
-          <input
-            type="text"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-        </label>
-        <button type="submit">PLAY</button>
+        <h2>What is your name?</h2>
+        <input
+          className="name-input"
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <button className="btn" type="submit">
+          PLAY
+        </button>
       </form>
     );
   } else {
