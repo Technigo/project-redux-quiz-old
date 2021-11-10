@@ -1,4 +1,5 @@
 body {
+  color: #fff;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -70,5 +71,13 @@ h1 {
 }
 
 .summary-text {
+  color: #fff;
+}
+
+.question-title {
+  color: #fff;
+}
+
+.your-answer {
   color: #fff;
 }
