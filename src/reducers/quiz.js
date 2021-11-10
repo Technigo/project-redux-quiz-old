@@ -5,7 +5,7 @@ const questions = [
   { id: 1, questionText: 'How many notes are there in a musical scale?', options: ['7', '10', '8', '9'], correctAnswerIndex: 0 },
   { id: 2, questionText: 'What company is also the name of one of the longest rivers in the world?', options: ['Nile', 'Amazon', 'Mississippi', 'Mekong'], correctAnswerIndex: 1 },
   { id: 3, questionText: 'What is the tallest mountain in the world?', options: ['Denali', 'Cerro Aconcagua', 'Mount Everest', 'Kilimanjaro'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'How many centimetres in a metre?', options: ['10', '1000', '50', '100'], correctAnswerIndex: 3 },
+  { id: 4, questionText: 'How many centimetres are in a meter?', options: ['10', '50', '100', '1000'], correctAnswerIndex: 2 },
   { id: 5, questionText: 'Who is next in line to the British throne after Queen Elizabeth II?', options: ['Prince William', 'Prince Charles', 'Prince Edward', 'Prince Richard'], correctAnswerIndex: 1 }
 ]
 
@@ -14,7 +14,7 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  rightAnswers: 0 /* new property for the score */
+  score: 0 /* new property for keeping count of correct answers */
 }
 
 export const quiz = createSlice({
@@ -56,8 +56,6 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
-      console.log('Answer correct: ', state.answers.isCorrect)
-      console.log('Answerindex: ', state.answers.answerIndex)
     },
 
     /**
@@ -88,8 +86,7 @@ export const quiz = createSlice({
 
     /* new function that raises the score for every correct answer */
     riseScore: (state) => {
-      state.rightAnswers += 1
+      state.score += 1
     }
-
   }
 })

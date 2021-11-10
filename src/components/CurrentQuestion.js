@@ -65,6 +65,10 @@ export const CurrentQuestion = () => {
     <>
       <main className="main-container">
         <div className="quiz-container">
+          {/* Here we display witch question we are at and how many we have left */}
+          <p className="progress-text"> Question: {question.id} ({questionsCount} question left)</p>
+          {/* The progress bar */}
+          <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
           <h1 className="question-text">{question.questionText}</h1>
           <div className="button-container">
             {question.options.map((item, index) => (

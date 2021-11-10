@@ -9,13 +9,13 @@ export const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers)
 
   /* for every correct answer, the score gets rised */
-  answers.map((item) => {
+  answers.forEach((item) => {
     if (item.isCorrect) {
       dispatch(quiz.actions.riseScore())
     }
   })
 
-  const score = useSelector((state) => state.quiz.rightAnswers)
+  const score = useSelector((state) => state.quiz.score)
 
   return (
     <div>
