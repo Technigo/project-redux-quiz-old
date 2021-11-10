@@ -15,6 +15,10 @@ const BackgroundStyled = styled.div`
     position: fixed;
     z-index: -1;
     display: flex;
+    justify-content: center;
+    @media (min-width: 768px) {
+        min-width: 100vw;
+    }
 `
 const StartContainer = styled.div`
     display: flex;
@@ -24,7 +28,11 @@ const StartContainer = styled.div`
     width: 80%;
     height: 200px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
+    @media (min-width: 768px) {
+        max-width: 600px;
+        height: 450px;
+    }
 `
 
 const StyledHeadline = styled.h1`
@@ -32,6 +40,9 @@ const StyledHeadline = styled.h1`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: 768px) {
+        font-size: 50px;
+    }
 `
 const ButtonStart = styled.button`
     font-family: 'Righteous';
@@ -41,6 +52,9 @@ const ButtonStart = styled.button`
     background-color: #FFC543;
     border-radius: 50px;
     cursor: pointer;
+    @media (min-width: 768px) {
+        font-size: 30px;
+    }
 `
 const StyledLink = styled(Link)`
     text-decoration:none;
@@ -58,7 +72,7 @@ const Start = () => {
             <StartContainer>
                 <StyledHeadline>Quiz about tech</StyledHeadline>
                 <StyledLink to="/questions">
-                    <ButtonStart type="button">Start!</ButtonStart>
+                    <ButtonStart type="button">Start</ButtonStart>
                 </StyledLink>
             </StartContainer>
 

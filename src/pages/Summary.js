@@ -22,10 +22,15 @@ const BackgroundStyled = styled.div`
     z-index: -1;
     display: flex;
 `
+
 const FormWrapper = styled.div`
   width: 90vw;
-  margin-top: 40px;
   background-color: #FEE8DA;
+  margin-top: 35px;
+  @media (min-width: 768px) {
+    max-width: 600px;
+    height: 600px;
+  }
 `
 const QuestionHeader = styled.div`
   height: 50px;
@@ -46,14 +51,23 @@ const StyledAnswers = styled.div`
     padding: 10px;
     font-weight: 600;
     margin: 0;
+    @media (min-width: 768px) {
+        text-align: center;
+    }
 `
 const StyledAnswer = styled.p`
     margin: 0;
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
 `
 const StyledHeadline = styled.h1`
     font-size: 20px;
     padding: 20px 15px 0 15px;
     margin: 0;
+    @media (min-width: 768px) {
+        text-align: center;
+    }
 `
 const StyledHappyGifs = styled(HappyGif)`
     width: 100%;
@@ -64,8 +78,12 @@ const StyledSadGifs = styled(SadGif)`
 `
 const StyledGifs = styled.div`
     width: 100%;
-    height: 300px;
+    height: 200px;
     overflow: hidden;
+    display: flex;
+`
+const StyledBackground = styled(MyBackground)`
+    height: 100%;
 `
 
 const Summary = () => {
@@ -73,12 +91,11 @@ const Summary = () => {
     const answers = useSelector((state) => state.quiz.answers)
     // const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
     const correctAnswers = answers.filter((correct) => correct.isCorrect === true)
-    const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
 
     return (
         <MainWrapper>
             <BackgroundStyled>
-                <MyBackground />
+                <StyledBackground />
             </BackgroundStyled>
             <FormWrapper>
                 <QuestionHeader>

@@ -18,6 +18,10 @@ const FormWrapper = styled.div`
   width: 90vw;
   height: 80vh;
   background-color: #FEE8DA;
+  @media (min-width: 768px) {
+    max-width: 600px;
+    height: 450px;
+  }
 `
 const QuestionHeader = styled.div`
   height: 50px;
@@ -35,9 +39,10 @@ const ProgressHeader = styled.p`
 `
 const QuestionStyled = styled.h1`
   padding: 15px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
+  margin: 0;
 `
 const ButtonContainer = styled.section`
   display: flex;
@@ -47,14 +52,14 @@ const ButtonContainer = styled.section`
 `
 const StyledButtons = styled.button`
   font-family: 'Poppins', sans-serif;
-  padding: 8px;
+  padding: 5px;
   width: 75%;
-  margin: 5px 0;
+  margin: 4px 0;
   background-color: transparent;
   border: black 2px solid;
   border-radius: 8px;
   color: black;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   &:hover {
     background-color: #FFC543;
@@ -66,6 +71,14 @@ const CheckAnswer = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+const ContentContainerStyled = styled.div`
+  @media (min-width: 768px){
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    height: 400px;
+  }
 `
 
 export const CurrentQuestion = () => {
@@ -112,21 +125,23 @@ export const CurrentQuestion = () => {
           <ProgressHeader>Question {currentQuestionIndex + 1}/{questions.length} </ProgressHeader>
           <ProgressBar />
         </QuestionHeader>
-        <QuestionStyled>{question.questionText}</QuestionStyled>
-        <ButtonContainer>
-          {question.options.map((option, index) => (
-            <StyledButtons type="button"
-              key={option}
-              onClick={() => onAnswerSubmit(question.id, index)}
-              disabled={answers[currentQuestionIndex]}>
-              {option}
-            </StyledButtons>
-          ))}
-        </ButtonContainer>
-        <CheckAnswer>
-          {correctOrNot.toString()}
-        </CheckAnswer>
-        <NextQuestionButton answers={answers} currentQuestionIndex={currentQuestionIndex} onNextQuestion={onNextQuestion} />
+        <ContentContainerStyled>
+          <QuestionStyled>{question.questionText}</QuestionStyled>
+          <ButtonContainer>
+            {question.options.map((option, index) => (
+              <StyledButtons type="button"
+                key={option}
+                onClick={() => onAnswerSubmit(question.id, index)}
+                disabled={answers[currentQuestionIndex]}>
+                {option}
+              </StyledButtons>
+            ))}
+          </ButtonContainer>
+          <CheckAnswer>
+            {correctOrNot.toString()}
+          </CheckAnswer>
+          <NextQuestionButton answers={answers} currentQuestionIndex={currentQuestionIndex} onNextQuestion={onNextQuestion} />
+        </ContentContainerStyled>
       </FormWrapper>
     </MainWrapper>
   )

@@ -14,6 +14,9 @@ const ButtonStart = styled.button`
     border-radius: 50px;
     cursor: pointer;
     margin: 20px;
+    @media (min-width: 768px) {
+    font-size: 25px;
+    }
 `
 
 const StyledLink = styled(Link)`

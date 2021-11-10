@@ -13,6 +13,15 @@ const ContainerStyledButton = styled.div`
     display: flex;
     justify-content: flex-end;
     text-decoration: none;
+    @media (min-width: 768px) {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        height: 50px;
+        padding: 0;
+        right: 0;
+        bottom: 0;
+    }
 `
 
 const StyledButton = styled.button`
@@ -20,10 +29,13 @@ const StyledButton = styled.button`
     border: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 23px;
     display: flex;
     align-items: center;
     cursor: pointer;
+    @media (min-width: 768px) {
+        margin-right: 10px;
+    }
     
 `
 const IconRight = styled(FaArrowRight)`
