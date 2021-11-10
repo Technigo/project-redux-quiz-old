@@ -84,7 +84,7 @@ const Line = styled.div`
   display: inline-block;
   transition: all 500ms ease-in-out;
   @media (min-width: 668px) and (max-width: 1024px) {
-    width: 100px;
+    width: 70px;
   }
   @media only screen and (min-width: 1025px) {
     width: 150px;

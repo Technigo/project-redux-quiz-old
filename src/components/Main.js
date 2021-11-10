@@ -1,14 +1,39 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { CurrentQuestion } from "components/CurrentQuestion";
+import { Summary } from "components/Summary";
+import { ProgressBar } from "./ProgressBar";
+import { quiz } from "../reducers/quiz";
 
 export const Main = () => {
   const [startButtonClick, setStartButtonClick] = useState(false);
+  const isQuizOver = useSelector((state) => state.quiz.quizOver);
+  const dispatch = useDispatch();
+
+  const onRestart = () => {
+    console.log("hej", quiz);
+    setStartButtonClick(false);
+    dispatch(quiz.actions.restart());
+  };
+
+  if (isQuizOver) {
+    return (
+      <SummaryContainer>
+        <ProgressBar />
+        <QuizHeader>Quiz Summary</QuizHeader>
+        <Summary />
+        <RestartButtonContainer>
+          <RestartButton onClick={onRestart}>Restart</RestartButton>
+        </RestartButtonContainer>
+      </SummaryContainer>
+    );
+  }
 
   if (!startButtonClick) {
     return (
       <>
-        <ImageContainer></ImageContainer>
+        <ImageContainer />
         <MainContainer>
           <TextButtonContainer>
             <HeaderText>Harry Potter</HeaderText>
@@ -28,9 +53,10 @@ export const Main = () => {
   }
   if (startButtonClick) {
     return (
-      <section>
+      <QuestionsSection>
+        <ProgressBar />
         <CurrentQuestion />
-      </section>
+      </QuestionsSection>
     );
   }
 };
@@ -127,4 +153,69 @@ const Subtitle = styled.h3`
   @media only screen and (min-width: 1025px) {
     font-size: 40px;
   }
+`;
+
+const QuizHeader = styled.h2`
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+`;
+
+const SummaryContainer = styled.section`
+  height: 100%;
+  background-color: black;
+  background-image: url(${require(`../pictures/smoke.jpg`)});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  color: #638270;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    padding: 20px 100px 20px 100px;
+    height: 100vh;
+  }
+  @media only screen and (min-width: 1025px) {
+    height: 100vh;
+    font-size: 40px;
+    padding: 20px 100px 20px 100px;
+  }
+`;
+
+const RestartButton = styled.button`
+  padding: 8px 20px;
+  font-weight: 900;
+  color: #638270;
+  background-color: black;
+  border: none;
+  border-radius: 2px;
+  border-bottom: 2px solid #638270;
+  border-left: 2px solid #638270;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    margin-bottom: 40px;
+    font-size: 25px;
+  }
+  @media only screen and (min-width: 1025px) {
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+`;
+
+const RestartButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const QuestionsSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: black;
+  background-image: url(${require(`../pictures/smoke.jpg`)});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
