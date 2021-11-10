@@ -44,6 +44,7 @@ const questions = [
     options: ['Stone', 'Ice', 'Cow manure', 'Wood'],
     correctAnswerIndex: 2,
     backgroundColor: 'orange',
+    // quizOver: 'true',
   },
 ]
 
