@@ -14,15 +14,18 @@ DONE!
 IN PROGRESS!
 - show true/false answer whit green/red button. 
 (here set a delay so the user se the color of the btn - 
-use setTmeOut on the "nextQuestion - submit") - Aschwin
+use setTmeOut on the "nextQuestion - submit") - ASCHWIN
 - in CurrentQuestion we split up  img,  buttons, summary(overviwe) 
 in to diffrent componens - BIRGIT
 - Styling using style components - EVERYONE - Darya starting styling 
+- responsive design
+- Style summary, , add confetti rain when 5 of 5 - JESSICA
+- create restart button - DARYA
 
 MORE TO ADD?
-- Style summary, create restart button, add confetti rain when 5 of 5 
+
 - start page with start button 
-- responsive design 
+ 
 
 
 - freeze 17.00 11/11, Rebecka joins 17.30 

@@ -14,7 +14,8 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  score: 0 /* new property for keeping count of correct answers */
+  score: 0, /* new property for keeping count of correct answers */
+  loading: true
 }
 
 export const quiz = createSlice({
@@ -81,6 +82,9 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
+    /* for progress bar, because when page reaload progress bar continued to
+increase amount of questions */
+      window.location.reload(false);
       return initialState
     },
 
