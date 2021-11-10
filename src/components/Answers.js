@@ -5,7 +5,7 @@ import { Summary } from './Summary';
 // import { MainContainer } from './StyledComponents';
 import { quiz } from '../reducers/quiz';
 
-export const CurrentQuestion = () => {
+export const Answers = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
