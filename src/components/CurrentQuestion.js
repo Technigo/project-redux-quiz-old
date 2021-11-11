@@ -85,15 +85,17 @@ export const CurrentQuestion = () => {
             <h1 className="question-text">{question.questionText}</h1>
             <div className="button-container">
               {question.options.map((item, index) => (
-                <button
+                <div className="ImgContainer">
+                <button className="buttonImg"
                   style={{
                     backgroundImage: `url(${item})`,
                   }}
-                  className="image-button"
+                
                   type="button"
                   key={item}
                   onClick={() => onSubmitAnswer(question.id, index)}
                 ></button>
+                </div>
               ))}
 			<p>{`The answer is ${showCorrectAnswer(answers)}, please go to the next question`}</p>
             </div>
