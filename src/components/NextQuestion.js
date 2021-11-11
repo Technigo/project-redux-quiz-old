@@ -17,17 +17,20 @@ const NextQuestion = () => {
   const NextButton = styled.button`
     padding: 20px;
     border-radius: 20px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
     &:hover {
-      background-color: black;
-      color: white;
+      background-color: white;
+      color: black;
     }
   `;
 
   return (
-    <NextButton onClick={() => nextQuestion()}>Go to next Question</NextButton>
+    <NextButton disabled={""} onClick={() => nextQuestion()}>
+      Next Question
+    </NextButton>
   );
 };
 
 export default NextQuestion;
+// {!answer && disabled}

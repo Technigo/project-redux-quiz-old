@@ -7,6 +7,7 @@ const CounterWrapper = styled.div`
   display: flex;
   text-align: center;
   justify-content: center;
+  min-width: 50px;
   height: 30px;
   background-color: black;
   align-items: center;
@@ -22,7 +23,7 @@ const Counter = () => {
 
   return (
     <CounterWrapper style={{ width: `${(question - counter) * 10}%` }}>
-      {(question - counter) * 10}%
+      {counter + 1}/ {question}
     </CounterWrapper>
   );
 };

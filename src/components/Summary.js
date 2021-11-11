@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from "reducers/quiz";
 import styled from "styled-components";
 
 const SummaryContainer = styled.div`
@@ -23,10 +24,32 @@ const SummaryText = styled.div`
   font-size: 20px;
 `;
 
+const RestartButton = styled.button`
+  border-radius: 20px;
+  width: 70px;
+  height: 30px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 60px;
+  background-color: black;
+`;
 const Summary = () => {
   const question = useSelector((state) => state.quiz.questions);
   const answer = useSelector((store) => store.quiz.answers);
   const rightAnswers = answer.filter((item) => item.isCorrect === true);
+  const initialState = useSelector((state) => state.quiz.initialState);
+
+  const dispatch = useDispatch();
+
+  const onRestart = () => {
+    dispatch(
+      quiz.actions.restart({
+        initialState,
+      })
+    );
+  };
 
   return (
     <SummaryContainer>
@@ -39,6 +62,7 @@ const Summary = () => {
           (rightAnswers.length <= 8 && <p>You rock!</p>) ||
           (rightAnswers.length >= 9 && <p>You are a legend!</p>)}
       </SummaryText>
+      <RestartButton onClick={() => onRestart()}>Restart</RestartButton>
     </SummaryContainer>
   );
 };
