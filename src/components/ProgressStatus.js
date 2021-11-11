@@ -1,15 +1,24 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+
+import './ProgressStatus.css'
 
 export const ProgressStatus = () => {
-    const questionCurrent = useSelector((state) => state.quiz.currentQuestionIndex + 1)
-    const questionLast = useSelector((state) => state.quiz.questions.length)
+    const questionCurrent = useSelector(
+        (state) => state.quiz.currentQuestionIndex + 1)
+    const questionLast = useSelector(
+        (state) => state.quiz.questions.length)
 
     return (
-        <div className="progress-text">
-            <p>
+        <section className="progress-status">
+            <label htmlFor="progress">
                 Question: {questionCurrent} out of {questionLast}.
-            </p>
-        </div>
+            </label>
+            <progress
+                id="progress"
+                value={questionCurrent}
+                max={questionLast}>
+            </progress>
+        </section>
     )
 }
