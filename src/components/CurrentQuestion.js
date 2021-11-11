@@ -26,6 +26,8 @@ export const CurrentQuestion = () => {
 
   const questionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
 
+  const quizOver = useSelector((state) => state.quiz.quizOver);
+
   // function that changes the display property of Overlay from none to block
   const showOverlay = () => {
     setDisplayOverlay(true);
@@ -33,7 +35,7 @@ export const CurrentQuestion = () => {
 
   // Timer to blackout picture/video
   const ticker = () => {
-    setTimeout(() => showOverlay(), 5000);
+    setTimeout(() => showOverlay(), 1000);
   };
 
   // we used useEffect to call the ticker function when component is mounted
@@ -50,7 +52,7 @@ export const CurrentQuestion = () => {
     <div className="image-wrapper">
       {displayOverlay && (
         <Overlay>
-          <h2>{question.questionText}</h2>
+          {!quizOver && <h2>{question.questionText}</h2>}
           <Answers />
         </Overlay>
       )}
