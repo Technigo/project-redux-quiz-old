@@ -13,6 +13,11 @@ const QuestionButtonWrapper = styled.div`
   height: 150px;
   gap: 15px;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    height: 100px;
+    align-items: center;
+  }
 `;
 
 const QuestionButton = styled.button`
@@ -26,6 +31,7 @@ const QuestionButton = styled.button`
   color: white;
   height: 60px;
   background-color: black;
+  font-weight: bold;
 
   &:active {
     top: 0.5em;

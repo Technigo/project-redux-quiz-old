@@ -14,6 +14,10 @@ const QuestionContainer = styled.div`
   padding: 10px;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 50px;
+  }
 `;
 
 export const CurrentQuestion = () => {

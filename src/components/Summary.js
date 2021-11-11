@@ -9,7 +9,8 @@ const SummaryContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   margin: 80px auto;
 `;
 
@@ -27,13 +28,18 @@ const SummaryText = styled.div`
 const RestartButton = styled.button`
   border-radius: 20px;
   width: 70px;
-  height: 30px;
-  padding: 15px;
+  height: 40px;
+  padding: 10x;
   justify-content: center;
   align-items: center;
   color: white;
-  height: 60px;
   background-color: black;
+  margin-bottom: 15px;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `;
 const Summary = () => {
   const question = useSelector((state) => state.quiz.questions);
@@ -57,7 +63,7 @@ const Summary = () => {
         You got {rightAnswers.length} out of {question.length}
       </SummaryScore>
       <SummaryText>
-        {(rightAnswers.length <= 2 && <p>You suck!</p>) ||
+        {(rightAnswers.length <= 2 && <p>Are you a f@cking millenial?</p>) ||
           (rightAnswers.length <= 5 && <p>You are mediocre!</p>) ||
           (rightAnswers.length <= 8 && <p>You rock!</p>) ||
           (rightAnswers.length >= 9 && <p>You are a legend!</p>)}

@@ -5,7 +5,7 @@ const questions = [
   {
     id: 1,
     questionText:
-      "Intergalactic is a song by American band Beastie Boys. Intergalactic was released as the first single from their fifth studio album, Hello Nasty.The single reached number 28 on the US Billboard Hot 100.",
+      "Intergalactic is a song by American band Beastie Boys. Intergalactic was released as the first single from their fifth studio album, Hello Nasty. The single reached number 28 on the US Billboard Hot 100.",
     questionText1: "We like to kow witch GENRE Beastie Boys belongs to?",
     img: require("../assets/giphy.gif"),
     options: ["Hip Hop", "Classic", "Rock", "K-pop"],
@@ -40,9 +40,9 @@ const questions = [
   {
     id: 5,
     questionText:
-      "Soundgarden was an American rock band formed in Seattle, Washington, in 1984 by singer and rhythm guitarist Chris Cornell.Soundgarden achieved its biggest success with the 1994 album Superunknown, which debuted at number one on the Billboard 200. They yielded the Grammy Award-winning singles for this song and music video.",
+      "Soundgarden was an American rock band formed in Washington 1984. They achieved its biggest success with the 1994 album Superunknown, They yielded the Grammy Award-winning singles for this song and music video.",
     questionText1: "What was the name of the song? ",
-    img: require("../assets/soundgarden.gif"),
+    img: require("../assets/busta.gif"),
     options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
   },
@@ -59,7 +59,7 @@ const questions = [
   {
     id: 7,
     questionText:
-      "Hanson boys was a boy band In the early to mid-1990.There song Mmmbop was nominated for two Grammys at the 40th Annual Grammy Awards and is the band's most successful single to date. ",
+      "Hanson boys was a boy band In the early to mid-1990. There song Mmmbop was nominated for two Grammys at the 40th Annual Grammy Awards and is the band's most successful single to date. ",
     questionText1: "But do you know the rest of the chorus, of Mmmbop?",
     img: require("../assets/hanson.gif"),
     options: ["ba dop duba", "ba duba dop", "duba dop ba", "duba duba pop"],

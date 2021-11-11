@@ -15,6 +15,14 @@ const CounterWrapper = styled.div`
   border-radius: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    max-width: 450px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 550px;
+  }
 `;
 
 const Counter = () => {
