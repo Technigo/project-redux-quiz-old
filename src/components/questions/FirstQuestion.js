@@ -9,9 +9,15 @@ import moussaka from 'assets/moussaka-image.jpg'
 import Button from '../smallComponents/Button'
 
 export const FirstQuestion = () => {
-    const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+// const [radioAnswer, setRadioAnswer] = useState('');
+//     const onRadioAnswerChange = (event) => {
+//         setRadioAnswer(event.target.value);
+//       };
 
-    const answer = useSelector((state) => state.quiz.answers)
+    //   console.log(radioAnswer)
+   
+
+    const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
 
     const dispatch = useDispatch()
 
@@ -27,6 +33,15 @@ export const FirstQuestion = () => {
             })
         )
     }
+
+    // const onAnswerSubmit = (id, radioAnswer) => {
+    //     dispatch(
+    //         quiz.actions.submitAnswer({
+    //             questionId: id,
+    //             answer: radioAnswer,
+    //         })
+    //     )
+    // }
 
     return (
         <div className="question-container">

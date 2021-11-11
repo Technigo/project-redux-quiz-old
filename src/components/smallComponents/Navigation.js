@@ -5,43 +5,42 @@ import './Header.css'
 const Navigation = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
+  const NavStyle = {
+  display: `${hamburgerOpen ? 'flex' : 'none'}`,
+  flexDirection: "column",
+  right: 0,
+  top: "90px",
+  height: "85vh",
+  width: "200px",
+  position: "absolute",
+  backgroundColor: "#4e1d10",
+  textAlign: "center",
+  zIndex: 1,
+  };
+
+  const ContactLink = {
+    fontSize: "18px",
+    textDecoration: "none",
+    color: "#dfa02b",
+  }
+
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
 
   return (
     <>
-      <div className="navigation-container">
+      <div style={NavStyle}>
         <h2 className="contact-info">Contact Us</h2>
-        <a className="contact-link" href="https://github.com/anndimi" target="_blank" rel="noopener noreferrer">Anna Dimitrakopoulos</a>
-        <a className="contact-link" href="https://github.com/loulunds" target="_blank" rel="noopener noreferrer">Lousanne Lundström</a>
-        <a className="contact-link" href="https://github.com/madeleinesvensson" target="_blank" rel="noopener noreferrer">Madeleine Svensson</a>
-        <a className="contact-link" href="https://github.com/MarySnopok" target="_blank" rel="noopener noreferrer">Mariia Snopok</a>
-        <a className="contact-link" href="https://github.com/ebbadelsol" target="_blank" rel="noopener noreferrer">Ebba Delsol</a> 
+        <a style={ContactLink} href="https://github.com/anndimi" target="_blank" rel="noopener noreferrer">Anna Dimitrakopoulos</a>
+        <a style={ContactLink} href="https://github.com/loulunds" target="_blank" rel="noopener noreferrer">Lousanne Lundström</a>
+        <a style={ContactLink} href="https://github.com/madeleinesvensson" target="_blank" rel="noopener noreferrer">Madeleine Svensson</a>
+        <a style={ContactLink} href="https://github.com/MarySnopok" target="_blank" rel="noopener noreferrer">Mariia Snopok</a>
+        <a style={ContactLink} href="https://github.com/ebbadelsol" target="_blank" rel="noopener noreferrer">Ebba Delsol</a> 
       </div>
       <div className="hamburger" onClick={toggleHamburger}>
         <Hamburger />
       </div>
-
-      <style jsx>{`
-              .navigation-container {
-                display: ${hamburgerOpen ? 'flex' : 'none'};
-                flex-direction: column;
-                right: 0;
-                top: 90px;
-                height: 85vh;
-                width: 200px;
-                position: absolute;
-                background-color: #4e1d10;
-                text-align: center;
-                z-index: 1;
-                }
-                .contact-link{
-                  font-size: 18px;
-                  text-decoration: none;
-                }
-            `}
-      </style>
     </>
   )
 }

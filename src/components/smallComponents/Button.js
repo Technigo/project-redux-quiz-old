@@ -29,7 +29,7 @@ const Button = () => {
   return (
     <div className="submit-button-container">
       <span className="countdown">Time left: {countdown} sec</span>
-      <button className="submit-button" type="submit" disabled={!answered} onClick={toNextQ}>
+      <button className="submit-button" type="submit"  onClick={toNextQ}>
         {question.id === 5 ? "See Score" : "Next"}
       </button>
     </div>
@@ -37,3 +37,4 @@ const Button = () => {
 };
 
 export default Button;
+// disabled={!answered}

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
-import styled from "styled-components";
 import Button from "components/smallComponents/Button";
 
 const IMAGE_URL_KROPPKAKA = "https://img.koket.se/standard-mega/kroppkakor-med-lingon-och-brynt-smor.jpg";
@@ -20,7 +19,7 @@ export const ThirdQuestion = () => {
 	};
 
 	return (
-		<form className="question-container">
+		<div className="question-container">
 			<h1 className="question">Question {question.id}: {question.questionText}</h1>
 			<div className="food-image">
 				<img className="food-image" src={IMAGE_URL_KROPPKAKA} alt="kroppkaka"></img>
@@ -42,7 +41,7 @@ export const ThirdQuestion = () => {
 				))}
 			</div>
 			<Button/>
-		</form>
+		</div>
 	);
 };
 

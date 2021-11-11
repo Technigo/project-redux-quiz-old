@@ -2,15 +2,30 @@ import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { quiz } from "../../reducers/quiz";
 import 'components/questions/Questions.css'
+import styled from "styled-components";
+
+const SummaryPage = styled.div`
+margin-top: 100px;
+`;
 
 export const Summary = () => {
-  const questions = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
-
+  // const questions = useSelector(
+  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
+  // );
+  
   const answers = useSelector((state) => state.quiz.answers);
-
+  
   const dispatch = useDispatch();
+
+  const finalAnswers = answers.reduceRight((acc, val) => {
+    if (!acc.find(v => v.questionId === val.questionId)) {
+      return [...acc, val];
+    }
+    return acc;
+  }, []).reverse();
+
+
+  // const allQuestions = useSelector(state => state.quiz.questions);
 
   const anotherTry = () => {
     dispatch(quiz.actions.restart());
@@ -23,13 +38,14 @@ export const Summary = () => {
   }, [answers]);
 
   return (
+    <SummaryPage>
     <div className="question-container">
       <h1 className="question">Summary</h1>
       <p className="question">
-        {`You got ${correctAnswersAmount} out of ${answers.length} correct!`}
+        {`You got ${correctAnswersAmount} out of 5 correct!`}
       </p>
 
-      {answers.map((item) => (
+        {finalAnswers.map((item) => (
         <div key={item.questionId}>
           <h2 className="question">
             {`Question ${item.questionId} is ${
@@ -37,6 +53,7 @@ export const Summary = () => {
             }`}
           </h2>
           <p className="question">{`You guessed: ${item.answer}`}</p>
+         
           <p className="question">
             {`The correct one is:
                 ${item.question.options[item.question.correctAnswerIndex]}`}
@@ -46,6 +63,7 @@ export const Summary = () => {
       <button className="submit-button" type="submit" onClick={anotherTry}>
         Try Again
       </button>
-    </div>
+      </div>
+    </SummaryPage>
   );
 };
