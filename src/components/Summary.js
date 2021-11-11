@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Loader } from "../components/Loader"
+import { Link } from 'react-router-dom'
 
 import { quiz } from '../reducers/quiz';
 import Confetti from 'react-confetti' 
@@ -20,11 +20,16 @@ export const Summary = () => {
 
 
   /* for every correct answer, the score gets rised */
-  answers.forEach((item) => {
-    if (item.isCorrect) {
-      dispatch(quiz.actions.riseScore())
-    }
-  })
+	answers.forEach((item) => {
+		if (item.isCorrect) {
+		  dispatch(quiz.actions.riseScore())
+		  return "correct"
+		} else {
+			return "wrong"
+		}
+	  })
+
+
 
 
   const score = useSelector((state) => state.quiz.score)
@@ -33,20 +38,20 @@ export const Summary = () => {
 if (score >=4){
 
 return  ( 
+       <main className="SummaryContainer" >
+			<Confetti  />
+			<section className="SummaryTextContent">
+			<div className="SummaryText"> 
+				<h2 className="SummaryTextConfetti">Summary</h2>
+				<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
 
-<main className="SummaryContainer" >
-<Confetti  />
-<section className="SummaryTextContent">
- <div className="SummaryText"> 
-<h2 className="SummaryTextConfetti">Summary</h2>
-<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
-    <button className="SummaryTextConfetti-btn"
-        type="submit"
-        onClick={() => restartQuiz()}>Restart the quiz
-      </button>
-</div>     </section>
-</main> 
-
+				<button
+					type="submit"
+					onClick={() => restartQuiz()}><Link to="/">Restart the quiz</Link>
+				</button>
+			</div>     
+			</section>
+		</main> 
 )
 
 } else {

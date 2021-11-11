@@ -66,7 +66,7 @@
 .image-button {
   background-size: cover;
   border: none;
-  width: 181px;
+  width: 100%;
 }
 
 .image-button:hover {
@@ -92,7 +92,7 @@
   }
 
   .image-button {
-    width: 295px;
+    width: 100%;
   }
 }
 
@@ -112,6 +112,6 @@
   }
 
   .image-button {
-    width: 395px;
+    width: 100%;
   }
 }
