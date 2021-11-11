@@ -9,23 +9,18 @@ margin-top: 100px;
 `;
 
 export const Summary = () => {
-  // const questions = useSelector(
-  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  // );
-  
   const answers = useSelector((state) => state.quiz.answers);
   
   const dispatch = useDispatch();
 
-  const finalAnswers = answers.reduceRight((acc, val) => {
-    if (!acc.find(v => v.questionId === val.questionId)) {
-      return [...acc, val];
+  const finalAnswers = answers.reduceRight((previousResult, val) => {
+    if (previousResult.find(v => v.questionId === val.questionId)) {
+      return previousResult;
+    } else {
+      previousResult.push(val);
+      return previousResult
     }
-    return acc;
   }, []).reverse();
-
-
-  // const allQuestions = useSelector(state => state.quiz.questions);
 
   const anotherTry = () => {
     dispatch(quiz.actions.restart());

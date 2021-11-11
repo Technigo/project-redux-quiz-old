@@ -19,7 +19,7 @@ const Hamburger = () => {
   return (
     <div>
       <div style={Hamburger}>
-        <img style={HamburgerIcon} src={hamburgerIcon} alt="navigation" />
+        <img style={HamburgerIcon} className= "hamburger-icon" src={hamburgerIcon} alt="navigation" />
       </div>
     </div>
   )
