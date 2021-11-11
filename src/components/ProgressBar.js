@@ -82,7 +82,7 @@ const Line = styled.div`
     width: 40px;
   }
   @media (min-width: 1025px) {
-    width: 100px;
+    width: 80px;
     height: 6px;
   }
 `;
@@ -102,8 +102,8 @@ const IconContainer = styled.div`
     font-size: 30px;
   }
   @media (min-width: 1025px) {
-    height: 80px;
-    width: 80px;
-    font-size: 50px;
+    height: 70px;
+    width: 70px;
+    font-size: 35px;
   }
 `;

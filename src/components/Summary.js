@@ -54,11 +54,16 @@ const SummaryAnswer = styled.section`
   display: flex;
   flex-direction: column;
   margin: 0 15px;
+
+  @media (min-width: 1025px) {
+    font-size: 24px;
+  }
 `;
 
 const Question = styled.span`
   font-weight: bold;
   margin: 4px 0 10px 0;
+
 `;
 
 const AnswerWrapper = styled.div`
