@@ -1,26 +1,32 @@
 .question-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: #a37c48c0;
     border-radius: 10px;
     padding: 15px;
-    width: 40vw;
+    width: 76vw;
+    margin-top: 10px;
 }
 
 .question {
     color: #42180e;
-    font-size: 38px;
-    margin: 0 0 25px 0;
-}
-
-.moussaka-image {
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
 }
 
 .food-image {
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin: 5px;
     opacity: 0.85;
+    width: 230px;
+    height: 200px;
+    background-size: cover;
 }
 
 .radio-buttons-container {
@@ -30,11 +36,12 @@
     row-gap: 8px;
     column-gap: 8px;
     width: 100%;
+    margin-top: 5px;
 }
 
 .radio-buttons-label {
     width: 300px;
-    font-size: 30px;
+    font-size: 20px;
     background: #4e1d10de;
     border-radius: 50px;
     color: #cc9837;
@@ -70,3 +77,28 @@
 .radio-button:checked {
     box-shadow: inset 0 0 0 8px #ffcd6f;
 }
+
+.question-select {
+    -webkit-appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='white'><polygon points='0,0 100,0 50,50'/></svg>")
+      no-repeat;
+    background-size: 12px;
+    background-position: bottom 40% right 15px;
+    background-repeat: no-repeat;
+    font-family: 'Zen Kurenaido', sans-serif;
+    padding: 10px;
+    width: 300px;
+    border-radius: 35px;
+    border: 2px solid #ffcd6f;
+    margin: 20px 0px;
+    font-size: 15px;
+    background-color: #42180e;
+    color: white;
+  }
+  .question-select:hover {
+    box-shadow: 1px 1px 5px #ffcd6f;
+  }
+
+  select:focus {
+    outline: none;
+  }

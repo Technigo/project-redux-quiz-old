@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../../reducers/quiz";
-import "./FourthQuestion.css";
+import './Questions.css'
 import Button from "components/smallComponents/Button";
 
 export const FourthQuestion = () => {
@@ -23,7 +23,7 @@ export const FourthQuestion = () => {
   return (
     <div className="question-container">
       <h1 className="question">Question {question.id}: {question.questionText}</h1>
-      <img className="moussaka-image"
+      <img className="food-image"
         src="https://st2.depositphotos.com/31984086/46224/v/600/depositphotos_462241918-stock-illustration-semla-is-a-traditional-sweet.jpg"
         alt="semla"
       />

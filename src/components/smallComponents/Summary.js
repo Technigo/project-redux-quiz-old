@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { quiz } from "../../reducers/quiz";
+import 'components/questions/Questions.css'
 
 export const Summary = () => {
   const questions = useSelector(
@@ -23,21 +23,21 @@ export const Summary = () => {
   }, [answers]);
 
   return (
-    <div>
-      <h1>Summary</h1>
-      <p>
+    <div className="question-container">
+      <h1 className="question">Summary</h1>
+      <p className="question">
         {`You got ${correctAnswersAmount} out of ${answers.length} correct!`}
       </p>
 
       {answers.map((item) => (
         <div key={item.questionId}>
-          <h2>
+          <h2 className="question">
             {`Question ${item.questionId} is ${
               item.isCorrect ? "correct" : "wrong"
             }`}
           </h2>
-          <p>{`You guessed: ${item.answer}`}</p>
-          <p>
+          <p className="question">{`You guessed: ${item.answer}`}</p>
+          <p className="question">
             {`The correct one is:
                 ${item.question.options[item.question.correctAnswerIndex]}`}
           </p>

@@ -11,9 +11,10 @@ const Hamburger = () => {
 
       <style jsx>{`
         .hamburger{
-            position: absolute;
-            top: 10px;
+            position: fixed;
+            top: 20px;
             right: 10px;
+            z-index: 10;
         }
 
         .hamburger-icon{

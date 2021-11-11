@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-  height: 100vh;
+  margin: 10px;
+  height: 115vh;
   font-family: 'Zen Kurenaido', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8,12 +8,15 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
 }
 
 code {
   font-family: 'Zen Kurenaido', sans-serif;
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
 }

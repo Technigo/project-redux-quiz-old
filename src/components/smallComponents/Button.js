@@ -1,33 +1,39 @@
-import React from 'react';
-import './Button.css'
-import { useDispatch, useSelector } from 'react-redux';
-import { quiz } from 'reducers/quiz';
+import React, { useEffect } from "react";
+import "./Button.css";
+import { useDispatch, useSelector } from "react-redux";
+import { quiz } from "reducers/quiz";
+import { useCountDown } from "./useCountdown";
 
 const Button = () => {
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
-  const answer = useSelector(
-    (state) => state.quiz.answers
-    );
+  const [countdown] = useCountDown(30);
 
-  const dispatch = useDispatch()
+  const answer = useSelector((state) => state.quiz.answers);
+  console.log("answers", answer);
+  const dispatch = useDispatch();
 
   const toNextQ = () => {
     dispatch(quiz.actions.goToNextQuestion());
   };
 
+  useEffect(() => {
+    if (countdown <= 0) {
+      dispatch(quiz.actions.goToNextQuestion());
+    }
+  }, [countdown, dispatch]);
+
+  const answered = answer.find((a) => a.questionId === question.id);
+  console.log("answered", answered);
+
   return (
     <div className="submit-button-container">
-     <button className="submit-button" type="submit" disabled={question.id !== answer.length} onClick={toNextQ}
-    >{question.id === 5 ? "See Score" : "Next"}</button>
+      <span className="countdown">Time left: {countdown} sec</span>
+      <button className="submit-button" type="submit" disabled={!answered} onClick={toNextQ}>
+        {question.id === 5 ? "See Score" : "Next"}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Button
-
-// onClick={question.id === (question.quanswers.length) +1 ? {toNextQ}} : disabled}
-
-
+export default Button;

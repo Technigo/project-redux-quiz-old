@@ -1,12 +1,18 @@
 import React from 'react'
-import './FirstQuestion.css'
+import './Questions.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../../reducers/quiz'
 import adobo from 'assets/adobo.png'
 import Button from '../smallComponents/Button'
 
 export const SecondQuestion = () => {
+    // const [radioAnswer, setRadioAnswer] = useState('');
+
     const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+
+    // const onRadioAnswerChange = (event, index) => {
+    //     setRadioAnswer(event.target.value);
+    //   };
 
     const dispatch = useDispatch()
 
@@ -23,6 +29,7 @@ export const SecondQuestion = () => {
         )
     }
 
+
     return (
         <div className="question-container">
             <h1 className="question">Question {question.id}: {question.questionText}</h1>
@@ -38,7 +45,9 @@ export const SecondQuestion = () => {
                             id={item}
                             name="answer"
                             value={item}
+                            
                             onChange={() => onAnswerSubmit(question.id, index)} />
+                            {/* // onChange={onRadioAnswerChange(index)} /> */}
                         <label className="label-overlay" htmlFor={item}>{item}</label>
                     </div>
                 ))}

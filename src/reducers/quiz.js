@@ -7,7 +7,7 @@ const questions = [
   { id: 2, questionText: `What is Philippines' national dish?`, options: ['Sinigang', 'Lechon', 'Adobo', 'Diningding'], correctAnswerIndex: 2},
   { id: 3, questionText: "What is the main ingredient of the dough in the traditional Swedish dish, kroppkakor?", options: ["Flour", "Potato", "Egg", "Banana"], correctAnswerIndex: 1 },
   {id: 4, questionText: "What is inside the classic swedish semla?", options: ["Cream and rasberry jam", "Vanilla custard and strawberry jam", "Cream and almondpaste", "Vanilla custard and cream"], correctAnswerIndex: 2 },
-  {id: 5, questionText: "How many beetroots do you need to cook 4 portions of Borsh?", options: ["One is OK", "Two is ideal", "Three or more", "The more the better"], correctAnswerIndex: 2 },
+  {id: 5, questionText: "How many beetroots do you need to cook 4 portions of Borsh?", options: ["One is OK", "Two is ideal", "Three or more", "The more the better"], correctAnswerIndex: 1 },
 ]
 
 

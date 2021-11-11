@@ -11,30 +11,33 @@ export const ProgressBar = () => {
     completed = 100;
   }
 
-  const containerStyles = {
-    height: 20,
+  const alignmentStyles = {
     width: "80%",
-    backgroundColor: "#e0e0de",
+  };
+
+  const containerStyles = {
+    height: 25,
+    backgroundColor: "#a37c48c0",
     borderRadius: 50,
-    margin: 50,
+    marginTop: 90,
   };
 
   const fillerStyles = {
     height: "100%",
     width: `${completed}%`,
-    backgroundColor: "red",
+    backgroundColor: "#4e1d10",
     borderRadius: "inherit",
     textAlign: "right",
   };
 
   const labelStyles = {
     padding: 5,
-    color: "white",
+    color: "#dfa02b",
     fontWeight: "bold",
   };
 
   return (
-    <div className="align-progress-bar">
+    <div style={alignmentStyles}>
       <div style={containerStyles}>
         <div style={fillerStyles}>
           <span style={labelStyles}>{`${completed}%`}</span>

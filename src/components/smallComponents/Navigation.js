@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Hamburger from './Hamburger';
-
 import './Header.css'
 
 const Navigation = () => {
@@ -30,11 +29,12 @@ const Navigation = () => {
                 flex-direction: column;
                 right: 0;
                 top: 90px;
-                height: 90vh;
+                height: 85vh;
                 width: 200px;
                 position: absolute;
-                background-color: #4e1d10e1;
+                background-color: #4e1d10;
                 text-align: center;
+                z-index: 1;
                 }
                 .contact-link{
                   font-size: 18px;

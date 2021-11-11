@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-indent-props *//* eslint-disable linebreak-style */
 /* eslint-disable indent */
 import React from 'react'
-import './FirstQuestion.css'
+// import { useState } from 'react'
+import './Questions.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../../reducers/quiz'
 import moussaka from 'assets/moussaka-image.jpg'
@@ -9,7 +10,9 @@ import Button from '../smallComponents/Button'
 
 export const FirstQuestion = () => {
     const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-console.log('question', question)
+
+    const answer = useSelector((state) => state.quiz.answers)
+
     const dispatch = useDispatch()
 
     if (!question) {
@@ -28,7 +31,7 @@ console.log('question', question)
     return (
         <div className="question-container">
             <h1 className="question">Question {question.id}: {question.questionText}</h1>
-            <div className="moussaka-image">
+            <div className="food-image">
                 <img className="food-image" src={moussaka} alt="moussaka" />
             </div>
             <div className="radio-buttons-container">
@@ -49,3 +52,5 @@ console.log('question', question)
         </div>
     )
 }
+
+// onClick={() => onAnswerSubmit(question.id, radioAnswer)}
