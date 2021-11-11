@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import styled from "styled-components";
 
 const Questions = () => {
   return (
     <>
-      <h1>{question.questionText}</h1>
-      <img src={question.img} alt="coverImage" />
+      <QuestionText>{question.questionText}</QuestionText>
+      <img src={question.img} alt="cover" />
     </>
   );
 };
