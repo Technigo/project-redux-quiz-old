@@ -12,7 +12,7 @@ export const Summary = () => {
   return answers.map((answer) => {
     return (
       <SummaryAnswer key={answer.questionId}>
-        <Question>{answer.question.questionText} </Question>
+        <Question>{answer.question.questionText}</Question>
         <AnswerWrapper>
           {answer.isCorrect && (
             <CheckIcon>
@@ -27,13 +27,19 @@ export const Summary = () => {
             </CrossIcon>
           )}
 
-          <span>{answer.answer}</span>
+          <span>
+            {typeof answer.answer === "object"
+              ? answer.answer.name
+              : answer.answer}
+          </span>
           <CheckIcon>
             <FontAwesomeIcon icon={faCheck} /> <span>Correct answer:</span>
           </CheckIcon>
 
           <span>
-            {answer.question.options[answer.question.correctAnswerIndex]}
+            {typeof answer.answer === "object"
+              ? answer.question.options[answer.question.correctAnswerIndex].name
+              : answer.question.options[answer.question.correctAnswerIndex]}
           </span>
         </AnswerWrapper>
       </SummaryAnswer>
