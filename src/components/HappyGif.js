@@ -9,7 +9,7 @@ const StyledGif = styled.iframe`
 
 const HappyGif = () => {
     return (
-        <StyledGif title="gif" src="https://giphy.com/embed/RbDKaczqWovIugyJmW" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen>
+        <StyledGif title="gif" src="https://giphy.com/embed/RbDKaczqWovIugyJmW" width="480" height="270" frameBorder="0" className="giphy-embed" allowFullScreen>
         </StyledGif>
     )
 }

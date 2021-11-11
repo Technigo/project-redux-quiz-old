@@ -20,6 +20,10 @@ const BackgroundStyled = styled.div`
         min-width: 100vw;
     }
 `
+const StyledBackground = styled(MyBackground)`
+    height: 100%;
+`
+
 const StartContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -67,7 +71,7 @@ const Start = () => {
     return (
         <MainWrapper>
             <BackgroundStyled>
-                <MyBackground />
+                <StyledBackground />
             </BackgroundStyled>
             <StartContainer>
                 <StyledHeadline>Quiz about tech</StyledHeadline>

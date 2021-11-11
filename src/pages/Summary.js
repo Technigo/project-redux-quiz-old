@@ -1,10 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import styled from 'styled-components'
+import { useSelector } from "react-redux";
 import RestartQuiz from "components/RestartQuiz";
 import { ReactComponent as MyBackground } from '../assets/retro_bg.svg'
 import HappyGif from '../components/HappyGif'
 import SadGif from '../components/SadGif'
+import AnswersSummary from "components/AnswersSummary";
 
 
 const MainWrapper = styled.div`
@@ -46,29 +47,6 @@ const ProgressHeader = styled.p`
   font-size: 18px;
   font-weight: 800;
 `
-const StyledAnswers = styled.div`
-    font-size: 15px;
-    padding: 10px;
-    font-weight: 600;
-    margin: 0;
-    @media (min-width: 768px) {
-        text-align: center;
-    }
-`
-const StyledAnswer = styled.p`
-    margin: 0;
-    @media (min-width: 768px) {
-        font-size: 20px;
-    }
-`
-const StyledHeadline = styled.h1`
-    font-size: 20px;
-    padding: 20px 15px 0 15px;
-    margin: 0;
-    @media (min-width: 768px) {
-        text-align: center;
-    }
-`
 const StyledHappyGifs = styled(HappyGif)`
     width: 100%;
 `
@@ -89,8 +67,8 @@ const StyledBackground = styled(MyBackground)`
 const Summary = () => {
 
     const answers = useSelector((state) => state.quiz.answers)
-    // const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
     const correctAnswers = answers.filter((correct) => correct.isCorrect === true)
+
 
     return (
         <MainWrapper>
@@ -109,18 +87,9 @@ const Summary = () => {
                         <StyledSadGifs />
                     )}
                 </StyledGifs>
-                
-                <StyledHeadline>Your answers:</StyledHeadline>
-                <StyledAnswers>
-                {answers.map((answer) => (
-                        <StyledAnswer key={answer.questionId}>{answer.questionId}. <span className={answer.answer === answer.question.options[answer.question.correctAnswerIndex] ? 'green' : 'red'}>{answer.answer} </span>
-                        (correct is {answer.question.options[answer.question.correctAnswerIndex]})
-                        </StyledAnswer>
-                ))}
-                </StyledAnswers>
+                <AnswersSummary />
                 <RestartQuiz />
             </FormWrapper>
-            
         </MainWrapper>
     )
 }

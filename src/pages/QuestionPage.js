@@ -16,12 +16,15 @@ const BackgroundStyled = styled.div`
     z-index: -1;
     display: flex;
 `
+const StyledBackground = styled(MyBackground)`
+    height: 100%;
+`
 
 const QuestionPage = () => {
     return (
         <MainWrapper>
             <BackgroundStyled>
-                <MyBackground />
+                <StyledBackground />
             </BackgroundStyled>
             <CurrentQuestion />
         </MainWrapper>

@@ -17,3 +17,12 @@ code {
 .red{
   color: red;
 }
+.correctAnswer{
+  background-color: green;
+}
+.wrongAnswer{
+  background-color: red;
+}
+.transparent{
+  background-color: transparent;
+}

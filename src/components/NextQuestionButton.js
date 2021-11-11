@@ -1,5 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from '../reducers/quiz'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from "react-icons/fa";
 import styled from 'styled-components'
@@ -45,11 +46,15 @@ const StyledSummaryLink = styled(Link)`
     text-decoration: none;
 `
 
-const NextQuestionButton = ({ onNextQuestion, answers, currentQuestionIndex }) => {
+const NextQuestionButton = ({ answers, currentQuestionIndex }) => {
 
     const quizOver = useSelector((state) => state.quiz.quizOver)
     const questions = useSelector((state) => state.quiz.questions)
 
+    const onNextQuestion = () => {
+        dispatch(quiz.actions.goToNextQuestion())
+    }
+    const dispatch = useDispatch()
 
     if (!quizOver && currentQuestionIndex + 1 === questions.length) {
         return (

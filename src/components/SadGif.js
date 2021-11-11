@@ -11,7 +11,7 @@ const StyledGif = styled.iframe`
 const SadGif = () => {
     return (
         <>
-            <StyledGif src="https://giphy.com/embed/BgBf6pW9qOgQU" width="480" height="363" frameBorder="0" class="giphy-embed" allowFullScreen></StyledGif>
+            <StyledGif src="https://giphy.com/embed/BgBf6pW9qOgQU" width="480" height="363" frameBorder="0" className="giphy-embed" allowFullScreen></StyledGif>
         </>
     )
 }
