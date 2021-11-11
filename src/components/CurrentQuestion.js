@@ -16,15 +16,6 @@ const QuestionContainer = styled.div`
   align-items: center;
 `;
 
-const NextButton = styled.button`
-  padding: 20px;
-  border-radius: 20px;
-  background-color: pink;
-  &:hover {
-    background-color: red;
-  }
-`;
-
 export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
@@ -35,8 +26,8 @@ export const CurrentQuestion = () => {
       ) : (
         <QuestionContainer>
           <Questions />
-          <AnswerButtons />
           <Counter />
+          <AnswerButtons />
           <NextQuestion />
         </QuestionContainer>
       )}
