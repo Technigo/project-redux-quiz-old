@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
@@ -20,13 +19,12 @@ export const ProgressBar = () => {
             <Dot
               style={{
                 backgroundColor:
-                  currentQuestionIndex >= index ? '#638270' : '#f0f0f0',
+                  currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
               }}
             ></Dot>
             <Line
               style={{
                 backgroundColor:
-
                   currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
               }}
             ></Line>
@@ -36,7 +34,6 @@ export const ProgressBar = () => {
 
       <IconContainer
         style={{
-
           backgroundColor: isQuizOver ? "#638270" : "#f0f0f0",
         }}
       >
@@ -61,31 +58,31 @@ const ProgressBarContainer = styled.section`
 
 const Dot = styled.div`
   position: relative;
-  height: 14px;
-  width: 14px;
+  height: 10px;
+  width: 10px;
   border-radius: 50%;
   display: inline-block;
   transition: all 500ms ease-in-out;
   @media (min-width: 668px) and (max-width: 1024px) {
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
   }
   @media (min-width: 1025px) {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
   }
 `;
 
 const Line = styled.div`
-  width: 30px;
+  width: 20px;
   height: 3px;
   display: inline-block;
   transition: all 500ms ease-in-out;
   @media (min-width: 668px) and (max-width: 1024px) {
-    width: 70px;
+    width: 40px;
   }
   @media (min-width: 1025px) {
-    width: 150px;
+    width: 100px;
     height: 6px;
   }
 `;
