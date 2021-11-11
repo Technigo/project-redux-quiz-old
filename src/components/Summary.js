@@ -4,10 +4,17 @@ import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
 
 const Main = styled.div`
-	width: 90%;
-	margin: 0 auto;
 	align-items: center;
-	background-color: #9ad3bc;
+	background-image: url(./assets/Mischief2.jpg);
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin-bottom: 20px;
 `; // This will style everything in this component
 
 const Questiontext = styled.h1`
@@ -34,14 +41,12 @@ export const Summary = () => {
 
 	return (
 		<Main>
-			<div>
-				<Questiontext>
-					<h1>Summary</h1>
-					<p>
-						You scored: {score}/{answers.length}
-					</p>
-				</Questiontext>
-			</div>
+			<Questiontext>
+				<h1>Summary</h1>
+				<p>
+					You scored: {score}/{answers.length}
+				</p>
+			</Questiontext>
 		</Main>
 	);
 };
