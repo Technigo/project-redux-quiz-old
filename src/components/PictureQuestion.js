@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { useSelector } from "react-redux";
+import React from 'react';
+import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 export const PictureQuestion = ({
   question,
@@ -16,7 +16,7 @@ export const PictureQuestion = ({
       <Header3>{question.questionText}</Header3>
       <ButtonsContainer>
         {question.options.map((option, index) => {
-          console.log("opt", option);
+          console.log('opt', option);
           if (answer && answer.answerIndex === index && answer.isCorrect) {
             return (
               <div key={option.name}>
@@ -69,10 +69,16 @@ const OptionImage = styled.div`
   background-size: cover;
   color: #638270;
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
   border-radius: 2px;
   border-bottom: 2px solid #638270;
   border-right: 2px solid #638270;
+
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+      url(${(props) => props.imgSrc});
+    background-size: cover;
+  }
 `;
 
 const WrongOptionImage = styled(OptionImage)`
@@ -80,12 +86,22 @@ const WrongOptionImage = styled(OptionImage)`
   color: #460000;
   background-color: black;
   background-image: none;
+
+  &:hover {
+    background-color: black;
+    background-image: none;
+  }
 `;
 
 const CorrectOptionImage = styled(OptionImage)`
   background-image: none;
   background-color: #638270;
   color: black;
+
+  &:hover {
+    background-color: #638270;
+    background-image: none;
+  }
 `;
 
 const QuestionContainer = styled.div`
@@ -101,19 +117,18 @@ const ButtonsContainer = styled.div`
   width: 80%;
   justify-content: center;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 10px;
-  column-gap: 10px;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
   margin: 10px;
-  @media (min-width: 668px) and (max-width: 1024px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media only screen and (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    font-size: 40px;
+    grid-gap: 20px;
     margin: 0 200px;
   }
 `;
@@ -121,7 +136,7 @@ const ButtonsContainer = styled.div`
 const Header3 = styled.h3`
   padding-top: 150px;
   text-align: center;
-  margin: 0 0 10px 0;
+  margin: 10px;
   color: #638270;
 
   @media (min-width: 668px) and (max-width: 1024px) {

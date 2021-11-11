@@ -1,93 +1,92 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
 
 const questions = [
   {
     id: 1,
-    type: "checkbox",
+    type: 'checkbox',
     questionText:
-      "What position does Harry play on the Gryffindor Quidditch team?",
-    options: ["Keeper", "Beater", "Chaser", "Seeker"],
+      'What position does Harry play on the Gryffindor Quidditch team?',
+    options: ['Keeper', 'Beater', 'Chaser', 'Seeker'],
     correctAnswerIndex: 3,
   },
   {
     id: 2,
-    type: "button",
+    type: 'button',
     questionText:
-      "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
-    options: ["5th September", "1st September", "31st August", "3rd September"],
+      'On what date does the Hogwarts Express depart the platform to head to Hogwarts?',
+    options: ['5th September', '1st September', '31st August', '3rd September'],
     correctAnswerIndex: 1,
   },
   {
     id: 3,
-    type: "button",
+    type: 'button',
     questionText:
-      "What did Ron call Hermione after Charms class that made her cry?",
-    options: ["A nightmare", "A know it all", "A loser", "A try-hard"],
+      'What did Ron call Hermione after Charms class that made her cry?',
+    options: ['A nightmare', 'A know it all', 'A loser', 'A try-hard'],
     correctAnswerIndex: 0,
   },
   {
     id: 4,
-    type: "button",
-    questionText: "In what Hogwarts year do the students learn to Apparate?",
-    options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
+    type: 'button',
+    questionText: 'In what Hogwarts year do the students learn to Apparate?',
+    options: ['Sixth year', 'Fourth year', 'Fifth year', 'Seventh year'],
     correctAnswerIndex: 0,
   },
   {
     id: 5,
-    type: "button",
-    questionText: "Which Hogwarts subject is taught in North Tower?",
-    options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
+    type: 'button',
+    questionText: 'Which Hogwarts subject is taught in North Tower?',
+    options: ['Arithmancy', 'Ancient Runes', 'Divination', 'Astronomy'],
     correctAnswerIndex: 2,
   },
   {
     id: 6,
-    type: "button",
-    imgSrc: "",
+    type: 'button',
+    imgSrc: '',
     questionText:
-      "What is the name of Aunt Marge’s dog that she brings round to the Dursleys’?",
-    options: ["Axel", "Ripper", "Brutu", "Chomper"],
+      'What is the name of Aunt Marge’s dog that she brings round to the Dursleys’?',
+    options: ['Axel', 'Ripper', 'Brutu', 'Chomper'],
     correctAnswerIndex: 1,
   },
   {
     id: 7,
-    type: "picture",
+    type: 'picture',
     questionText:
-      "On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?",
+      'On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?',
     options: [
-      { name: "Professor Snape", imgSrc: "./pictures/castle.jpg" },
-      { name: "Professor Quirrell", imgSrc: "./pictures/castle.jpg" },
-      { name: "Hagrid", imgSrc: "./pictures/castle.jpg" },
-      { name: "Draco Malfoy", imgSrc: "./pictures/castle.jpg" },
+      { name: 'Professor Dumbledore', imgSrc: './pictures/dumbledore.jpg' },
+      { name: 'Professor Quirrell', imgSrc: './pictures/quirrell.jpg' },
+      { name: 'Hagrid', imgSrc: './pictures/hagrid.jpg' },
+      { name: 'Draco Malfoy', imgSrc: './pictures/draco.jpg' },
     ],
     correctAnswerIndex: 1,
   },
   {
     id: 8,
-    type: "picture",
+    type: 'picture',
     questionText:
-      "Which old Hogwarts relic did Harry pull out of the Sorting Hat?",
+      "Which of these professors delivered Harry Potter to his aunt's doorstep when his parents died?",
     options: [
-      { name: "Ravenclaw's Diadem", imgSrc: "./pictures/castle.jpg" },
-      { name: "HufflePuff's Cup", imgSrc: "./pictures/castle.jpg" },
-      { name: "The Sword of Gryffindor", imgSrc: "./pictures/castle.jpg" },
-      { name: "Slytherin's Locket", imgSrc: "./pictures/castle.jpg" },
+      { name: 'Professor Quirrell', imgSrc: './pictures/quirrell.jpg' },
+      { name: 'Professor Dumbledore', imgSrc: './pictures/dumbledore.jpg' },
+      { name: 'Professor Hagrid', imgSrc: './pictures/hagrid.jpg' },
+      { name: 'Professor McGonagall', imgSrc: './pictures/mcgonagall.jpg' },
     ],
     correctAnswerIndex: 2,
   },
   {
     id: 9,
-    type: "picture",
-    questionText:
-      "What position does Harry play on the Gryffindor Quidditch team?",
+    type: 'picture',
+    questionText: 'Which of these wizards is an animagus?',
     options: [
-      { name: "Keeper", imgSrc: "./pictures/castle.jpg" },
-      { name: "Beater", imgSrc: "./pictures/castle.jpg" },
-      { name: "Chaser", imgSrc: "./pictures/castle.jpg" },
-      { name: "Seeker", imgSrc: "./pictures/castle.jpg" },
+      { name: 'Professor McGonagall', imgSrc: './pictures/mcgonagall.jpg' },
+      { name: 'Professor Quirrell', imgSrc: './pictures/quirell.jpg' },
+      { name: 'Draco Malfoy', imgSrc: './pictures/draco.jpg' },
+      { name: 'Professor Dumbledore', imgSrc: './pictures/dumbledore.jpg' },
     ],
-    correctAnswerIndex: 3,
+    correctAnswerIndex: 0,
   },
 ];
 
@@ -99,7 +98,7 @@ const initialState = {
 };
 
 export const quiz = createSlice({
-  name: "quiz",
+  name: 'quiz',
   initialState,
   reducers: {
     /**
@@ -123,7 +122,7 @@ export const quiz = createSlice({
 
       if (!question) {
         throw new Error(
-          "Could not find question! Check to make sure you are passing the question id correctly."
+          'Could not find question! Check to make sure you are passing the question id correctly.'
         );
       }
 
