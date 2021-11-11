@@ -29,6 +29,9 @@ export const CurrentQuestion = () => {
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
+  const correctAnswer = useSelector((state) => state.quiz.questions);
+
+  console.log(correctAnswer)
   /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,

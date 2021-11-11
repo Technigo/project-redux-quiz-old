@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Loader } from "../components/Loader"
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 
 import { quiz } from '../reducers/quiz';
 import Confetti from 'react-confetti' 
@@ -39,9 +39,10 @@ return  (
 			<div className="SummaryText"> 
 				<h2 className="SummaryTextConfetti">Summary</h2>
 				<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
+
 				<button
-				type="submit"
-				onClick={() => restartQuiz()}>Restart the quiz
+					type="submit"
+					onClick={() => restartQuiz()}><Link to="/">Restart the quiz</Link>
 				</button>
 			</div>     
 			</section>

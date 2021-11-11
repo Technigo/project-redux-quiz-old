@@ -29,6 +29,10 @@ MORE TO ADD?
 
 - freeze 17.00 11/11, Rebecka joins 17.30 
 
+Notes: 
+JESSICA - responsive of image-buttons. confetti - change to emojier due to responsivness issue, 
+ASHCHWIN - style start page
+Darya - display text/display when clicking the button 
 
 
 
