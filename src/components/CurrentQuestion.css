@@ -1,0 +1,52 @@
+h2,
+p {
+  font-family: ‘Source Serif Pro’;
+  text-align: center;
+  /* padding: 0 20px; */
+}
+
+h2 {
+  padding: 0 20px;
+}
+
+p {
+  font-size: 25px;
+}
+
+.button-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 20px;
+}
+
+.option-buttons {
+  border: 2px solid orange;
+  background-color: white;
+  padding: 8% 0%;
+}
+
+.option-buttons:focus {
+  background-color: orange;
+}
+
+.counter {
+  font-size: 20px;
+}
+
+.isCorrect-Next {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.next-button {
+  border: none;
+  background-color: transparent;
+  align-self: center;
+  margin-left: 10px;
+}
+
+i {
+  font-size: 40px;
+}

@@ -8,7 +8,8 @@
 
 .progress {
   background-color: #ffff;
-  max-width: 300px;
+  max-width: 100vw;
   border-radius: 8px;
   border: 1px solid black;
+  margin: 0 15%;
 }

@@ -1,0 +1,10 @@
+header {
+  text-align: center;
+  height: 30%;
+  padding-top: 10px;
+  font-family: ‘Source Serif Pro’;
+  font-size: 25px;
+  padding: 0 10px;
+  border-bottom: 1px solid black;
+  margin: 0 2%;
+}

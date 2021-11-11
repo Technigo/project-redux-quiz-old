@@ -1,26 +1,30 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
 
-import { quiz } from 'reducers/quiz';
+import { quiz } from "reducers/quiz"
+
+import "./Summary.css"
 
 export const Summary = () => {
   const CheckAnswers = useSelector(
     (store) =>
       store.quiz.answers.filter((answer) => answer.isCorrect === true).length
-  );
+  )
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  // Picked up the restart function from Quiz.js and put it in a button onClick -> see line: 23! 👇
+  // Picked up the restart function from Quiz.js and put it in a button onClick -> see line: 25! 👇
   const restart = () => {
-    dispatch(quiz.actions.restart());
-  };
+    dispatch(quiz.actions.restart())
+  }
 
   return (
-    <section>
-      <h1>yay! you completed the quiz!</h1>{' '}
-      {`you had ${CheckAnswers} out of 5 correct answers! Good job!`}
-      <button onClick={restart}>Restart</button>
+    <section className="summary">
+      <h3>You completed the quiz!</h3>
+      <p>{`you scored ${CheckAnswers} out of 5 correct answers`}</p>
+      <button className="restart-button" onClick={restart}>
+        Restart quiz
+      </button>
     </section>
-  );
-};
+  )
+}
