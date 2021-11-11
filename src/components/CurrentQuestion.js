@@ -62,35 +62,37 @@ export const CurrentQuestion = () => {
             </div>
           </div>
           {/* className={answer ? 'disable-btn' : 'option-btn'} */}
-          <div className='options-container'>
-            {question.options.map((option, index) => (
-              <button
-                disabled={answer}
-                type='button'
-                className={answer ? 'disable-btn' : 'option-btn'}
-                id={index}
-                // styla knapparna så att backgrundsfärgen följer med
-                key={option}
-                onClick={() => {
-                  onAnswerSubmit(question.id, index)
-                }}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
+          <div className='button-container'>
+            <div className='options-container'>
+              {question.options.map((option, index) => (
+                <button
+                  disabled={answer}
+                  type='button'
+                  className={answer ? 'disable-btn' : 'option-btn'}
+                  id={index}
+                  // styla knapparna så att backgrundsfärgen följer med
+                  key={option}
+                  onClick={() => {
+                    onAnswerSubmit(question.id, index)
+                  }}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
 
-          <button
-            disabled={!answer}
-            type='button'
-            className={!answer ? 'disable-btn' : 'next-button'}
-            onClick={() => {
-              dispatch(quiz.actions.goToNextQuestion())
-              console.log('Right answer?:', store.answers[0].isCorrect)
-            }}
-          >
-            Next question
-          </button>
+            <button
+              disabled={!answer}
+              type='button'
+              className={!answer ? 'disable-btn' : 'next-button'}
+              onClick={() => {
+                dispatch(quiz.actions.goToNextQuestion())
+                console.log('Right answer?:', store.answers[0].isCorrect)
+              }}
+            >
+              Next question
+            </button>
+          </div>
         </>
       ) : (
         <>

@@ -16,7 +16,7 @@ code {
 
 .color-container {
   background-color: #fedc23;
-  padding-bottom: 50px;
+  height: 50vh;
 }
 
 .top-container {
@@ -29,6 +29,8 @@ code {
 h1 {
   text-align: center;
   margin: 40px 0;
+  color: #1a1a1a;
+  padding: 20px;
 }
 
 .restart-btn {
@@ -55,6 +57,10 @@ h1 {
   grid-template-columns: repeat(2, 1fr);
   margin: 40px auto;
   justify-items: center;
+}
+
+.button-container {
+  height: 50vh;
 }
 
 .option-btn,
