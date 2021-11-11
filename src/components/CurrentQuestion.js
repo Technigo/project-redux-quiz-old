@@ -1,7 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "reducers/quiz";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+
 import Summary from "./Summary";
 import Counter from "./Counter";
 import AnswerButtons from "./AnswerButtons";
@@ -11,7 +11,7 @@ import NextQuestion from "./NextQuestion";
 const QuestionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
 `;

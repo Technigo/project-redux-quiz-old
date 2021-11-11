@@ -17,9 +17,11 @@ const NextQuestion = () => {
   const NextButton = styled.button`
     padding: 20px;
     border-radius: 20px;
-    background-color: pink;
+    background-color: white;
+    color: black;
     &:hover {
-      background-color: red;
+      background-color: black;
+      color: white;
     }
   `;
 

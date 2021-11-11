@@ -7,6 +7,7 @@ const QuestionButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-top: 5px;
+  margin-bottom: 20px;
   padding: 10px;
   width: 100%;
   height: 150px;
@@ -18,10 +19,17 @@ const QuestionButton = styled.button`
   display: flex;
   flex-wrap: wrap;
   border-radius: 20px;
-  background-color: pink;
   width: 130px;
-  padding: 20px;
+  padding: 15px;
   justify-content: center;
+  align-items: center;
+  color: white;
+  height: 60px;
+  background-color: black;
+
+  &:active {
+    top: 0.5em;
+  }
 `;
 
 const AnswerButtons = () => {
@@ -54,11 +62,17 @@ const AnswerButtons = () => {
             <QuestionButton
               onClick={() => onSubmitAnswer(question.id, index)}
               style={{
-                background: !answers
+                borderColor: !answers
                   ? "white"
                   : question.correctAnswerIndex === index
-                  ? "green"
-                  : "red",
+                  ? "lightgreen"
+                  : "#800000",
+
+                color: !answers
+                  ? "white"
+                  : question.correctAnswerIndex === index
+                  ? "lightgreen"
+                  : "#800000",
               }}
             >
               {item}

@@ -8,12 +8,12 @@ const CounterWrapper = styled.div`
   text-align: center;
   justify-content: center;
   height: 30px;
-  background-color: red;
-`;
-
-const Pragraph = styled.p`
-  margin: 0;
-  text-align: center;
+  background-color: black;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
 const Counter = () => {
@@ -21,12 +21,9 @@ const Counter = () => {
   const question = useSelector((state) => state.quiz.questions.length);
 
   return (
-    <>
-      <CounterWrapper style={{ width: `${(question - counter) * 10}%` }}>
-        {(question - counter) * 10}%
-      </CounterWrapper>
-      <Pragraph>You have {question - counter} questions to finish!</Pragraph>
-    </>
+    <CounterWrapper style={{ width: `${(question - counter) * 10}%` }}>
+      {(question - counter) * 10}%
+    </CounterWrapper>
   );
 };
 

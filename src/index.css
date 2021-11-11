@@ -7,9 +7,18 @@ body {
   -moz-osx-font-smoothing: grayscale; */
   font-family: "Aclonica", sans-serif;
   font-family: "Nunito", sans-serif;
+  background-image: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 130vh;
+  background-position: center;
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.highlight {
+  color: green;
 }
