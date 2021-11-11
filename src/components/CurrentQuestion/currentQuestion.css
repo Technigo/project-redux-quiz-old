@@ -2,7 +2,6 @@
     background: rgb(83, 157, 160);
     height: auto;
     width: 80%;
-    /* margin-left: 30%; */
     border-radius: 23px;
     align-items: center;
     justify-content: center;
@@ -63,13 +62,11 @@
     background: linear-gradient(180deg, rgb(196 244 81 / 20%) 0%, rgb(70 162 30 / 58%) 51%);
 }
 
-
 .option_incorrect{
     border: 3px solid red;
     color:linen;
     background: linear-gradient(180deg, rgb(192 20 20 / 53%) 0%, rgb(247 13 13 / 58%) 51%);
 }
-
 
 .disable{
     background: rgb(250, 178, 151);

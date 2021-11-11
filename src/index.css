@@ -32,7 +32,8 @@ code {
     gap: 0.5rem;
     align-items: center;
   }
-  body {
+
+  body{
     min-height: 100vh;
   }
 }

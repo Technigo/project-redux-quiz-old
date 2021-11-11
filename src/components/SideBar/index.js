@@ -1,6 +1,7 @@
 import React from 'react'
 import { Counter } from '../Counter'
 import { Score } from '../Score'
+
 import './sideBar.css'
 
 export const SideBar = () => {

@@ -22,10 +22,9 @@ export const Results = () => {
         ? (<section className="results-container">
           <h1 className="results-text">Your final result is: </h1>
           <h1 className="results-text">{score} of {questions.length} = {percentage}%</h1>
-
           <h1 className="results-message"> {percentage <= '50' ? 'Continue studiyng and exploring nature!' : 'You are a great nature fan, congratulations!'}</h1>
           <button className="results-button" type="button" onClick={() => handleOnClick()}>Start again</button>
-        </section>)
+           </section>)
         : ''}
     </>
   )

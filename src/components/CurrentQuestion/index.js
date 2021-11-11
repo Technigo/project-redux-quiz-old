@@ -47,6 +47,7 @@ export const CurrentQuestion = () => {
             {option}
           </button>)
       })}
+
       <button
         type="button"
         disabled={!answers[currentQuestionIndex]}
