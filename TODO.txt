@@ -30,9 +30,12 @@ MORE TO ADD?
 - freeze 17.00 11/11, Rebecka joins 17.30 
 
 Notes: 
-JESSICA - responsive of image-buttons. confetti - change to emojier due to responsivness issue, 
+Notes after morning meeting at 09.00: 
+JESSICA - responsive of image-buttons
 ASHCHWIN - style start page
-Darya - display text/display when clicking the button 
+DARYA - switched tasks with Ashchwin, focus on display text "wrong" or "correct" when clicking the button
+
+See you at 14.00 
 
 
 

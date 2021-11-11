@@ -29,9 +29,19 @@ export const CurrentQuestion = () => {
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
-  const correctAnswer = useSelector((state) => state.quiz.questions);
+  const answers = useSelector((state) => state.quiz.answers)
+  console.log(answers)
 
-  console.log(correctAnswer)
+  const showCorrectAnswer = (answers) => {
+	answers.forEach((item) => {
+		if (item.isCorrect) {
+		  return "correct"
+		} else {
+			return "wrong"
+		}
+	  })
+  }  
+  showCorrectAnswer(answers)
   /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
@@ -85,6 +95,7 @@ export const CurrentQuestion = () => {
                   onClick={() => onSubmitAnswer(question.id, index)}
                 ></button>
               ))}
+			<p>{`The answer is ${showCorrectAnswer(answers)}, please go to the next question`}</p>
             </div>
             <div className="progress-bar-container">
               <p className="progress-text">

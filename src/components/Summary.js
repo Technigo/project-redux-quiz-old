@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { quiz } from '../reducers/quiz';
 import Confetti from 'react-confetti' 
@@ -20,11 +20,16 @@ export const Summary = () => {
 
 
   /* for every correct answer, the score gets rised */
-  answers.forEach((item) => {
-    if (item.isCorrect) {
-      dispatch(quiz.actions.riseScore())
-    }
-  })
+	answers.forEach((item) => {
+		if (item.isCorrect) {
+		  dispatch(quiz.actions.riseScore())
+		  return "correct"
+		} else {
+			return "wrong"
+		}
+	  })
+
+
 
 
   const score = useSelector((state) => state.quiz.score)
@@ -52,19 +57,26 @@ return  (
 } else {
 
   return (
-		<main className="SummaryContainer">
-			<FallingEmojis emoji={'💧'} />
-			<section className="SummaryTextContent">
- 				<div className="SummaryText"> 
-					<h2 className="SummaryTextRain">Summary</h2>
-						<p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
-    				<button
-        				type="submit"
-        				onClick={() => restartQuiz()}>Restart the quiz
-      				</button>
-				</div>     
-			</section>
-		</main> 
-  		)
-	}
+
+
+
+
+<main className="SummaryContainer" >
+<FallingEmojis emoji={'💧'} />
+<section className="SummaryTextContent">
+ <div className="SummaryText"> 
+<h2 className="SummaryTextRain">Summary</h2>
+<p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
+    <button className="SummaryTextRain-btn"
+        type="submit"
+        onClick={() => restartQuiz()}>Restart the quiz
+      </button>
+</div>     </section>
+</main> 
+  )
+}
+
+
+
+
 };
