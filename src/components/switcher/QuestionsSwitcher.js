@@ -31,7 +31,7 @@ export const QuestionsSwitcher = () => {
       </PageStyling>
     );
   }
-  if (questionIndex === 2) {
+  if (questionIndex === 2 && quizStatus === false) {
     return (
       <PageStyling>
         <ProgressBar />
@@ -39,7 +39,7 @@ export const QuestionsSwitcher = () => {
       </PageStyling>
     );
   }
-  if (questionIndex === 3) {
+  if (questionIndex === 3 && quizStatus === false) {
     return (
       <PageStyling>
         <ProgressBar />
@@ -47,7 +47,7 @@ export const QuestionsSwitcher = () => {
       </PageStyling>
     );
   }
-  if (questionIndex === 4) {
+  if (questionIndex === 4 && quizStatus === false) {
     return (
       <PageStyling>
         <ProgressBar />
@@ -55,7 +55,7 @@ export const QuestionsSwitcher = () => {
       </PageStyling>
     );
   }
-  if (questionIndex === 5) {
+  if (questionIndex === 5 && quizStatus === true) {
     quizStatus = true;
     return (
       <PageStyling>
