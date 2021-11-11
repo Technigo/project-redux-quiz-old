@@ -31,13 +31,10 @@ const Options = () => {
     const answers = useSelector((state) => state.quiz.answers)
     const answer = useSelector((state) => state.quiz.answers.find((a) => (a.questionId === question.id // question could come from the previous selector in the last example
     )))
-    // console.log(answer)
     const answerIndex = answer ? answer.answerIndex : ''
-    console.log(answerIndex)
     const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
 
     const dispatch = useDispatch()
-
 
     const setOptionColor = (index) => {
         if (answerIndex === index) {
@@ -54,11 +51,6 @@ const Options = () => {
     const onAnswerSubmit = (id, index) => {
         dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
     }
-    // const test = question.options.map((option, index) => {
-    //     console.log(index)
-    //     console.log(typeof index)
-    // })
-    //index is just a number for each option
 
     return (
         <ButtonContainer>

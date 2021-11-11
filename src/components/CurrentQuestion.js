@@ -65,10 +65,7 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const answers = useSelector((state) => state.quiz.answers)
   const questions = useSelector((state) => state.quiz.questions)
-  // console.log(answers)
-
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
-  // console.log(currentQuestionIndex)
 
   const correctOrNot = answers[currentQuestionIndex]
     ? answers[currentQuestionIndex].isCorrect
@@ -77,7 +74,6 @@ export const CurrentQuestion = () => {
     : ''
 
   // const correctAnswer = answers.find((a) => a.isCorrect === true)
-  // console.log(correctAnswer)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>

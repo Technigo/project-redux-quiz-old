@@ -18,10 +18,10 @@ code {
   color: red;
 }
 .correctAnswer{
-  background-color: green;
+  background-color: #33CC66;
 }
 .wrongAnswer{
-  background-color: red;
+  background-color: #FA4616;
 }
 .transparent{
   background-color: transparent;
