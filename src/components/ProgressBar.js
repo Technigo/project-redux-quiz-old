@@ -14,11 +14,11 @@ const Progress = styled.div`
     border-radius: 50px;
     width: 80%;
     background-color: #FEE8DA;
+    overflow: hidden;
 `
 const ProgressBarStyled = styled.div`
     background-color: #0BFFBE;
     height: 100%;
-    border-radius: 50px;
 `
 
 const ProgressBar = () => {

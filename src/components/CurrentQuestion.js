@@ -47,6 +47,7 @@ const QuestionStyled = styled.h1`
   margin: 0;
 `
 const CheckAnswer = styled.h1`
+  height: 45px;
   font-size: 15px;
   display: flex;
   justify-content: center;
