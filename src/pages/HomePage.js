@@ -24,12 +24,12 @@ const HomePage = () => {
     <HomepageBackground>
       <section className='main-container'>
         <HomepageTitle>
-          <h1>Worlds most amazing quiz</h1>
+          <h1>World's most amazing quiz</h1>
           <StyledButton>
             <StyledLink to='/quiz'>Start quiz</StyledLink>
           </StyledButton>
           <h5>Developed and designed by</h5>
-          <h6>Lovisa, Sarah, Ru, Jakob, Johanna</h6>
+          <h6>Lovisa, Sarah, Ru, Jakob, Johanna, Maria</h6>
         </HomepageTitle>
       </section>
     </HomepageBackground>

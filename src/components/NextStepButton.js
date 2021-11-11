@@ -1,7 +1,8 @@
 import React from 'react'
 import { quiz } from 'reducers/quiz'
 import { useSelector, useDispatch } from 'react-redux'
-import { StyledButton, StyledLink } from './StyledButton'
+import { StyledButton } from './StyledButton'
+import { useHistory } from 'react-router-dom'
 
 const NextStepButton = ({ usersAnswer }) => {
   const isQuizFinished = useSelector(
@@ -10,6 +11,11 @@ const NextStepButton = ({ usersAnswer }) => {
   )
 
   const dispatch = useDispatch()
+  const history = useHistory()
+
+  const handleFinish = () => {
+    history.push('/summary')
+  }
 
   const onNextQuestionSubmit = () => {
     dispatch(quiz.actions.goToNextQuestion())
@@ -18,8 +24,8 @@ const NextStepButton = ({ usersAnswer }) => {
   return (
     <>
       {isQuizFinished ? (
-        <StyledButton disabled={!usersAnswer}>
-          <StyledLink to='/summary'>Finish</StyledLink>
+        <StyledButton onClick={handleFinish} disabled={!usersAnswer}>
+            Finish
         </StyledButton>
       ) : (
         <StyledButton
