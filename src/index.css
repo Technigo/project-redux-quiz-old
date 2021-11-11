@@ -10,13 +10,6 @@ code {
   font-family: 'Noto Serif', serif;
 }
 
-/* p {
-  font-size: 25px;
-  font-weight: 700;
-  color: rgb(40, 26, 26);
-  text-shadow: 2px 2px 3px white;
-} */
-
 h5 {
   margin-top: 10em;
 }
@@ -89,33 +82,3 @@ h5 {
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* 
-.correct {
-  margin: 10px;
-  padding: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: rgba(41, 155, 56, 0.7);
-  color: white;
-  border: 2px solid green;
-}
-
-.incorrect {
-  margin: 10px;
-  padding: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: rgba(192, 59, 59, 0.7);
-  color: white;
-  border: 2px solid red;
-}
-
-.default {
-  margin: 10px;
-  padding: 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  border: 0;
-} */
