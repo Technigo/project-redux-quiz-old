@@ -23,7 +23,7 @@ export const Summary = () => {
             </p>
             <p>
             <span> Your answer: {answer.answer}</span>
-            {answer.isCorrect ? "✅" : "❌"}
+            {answer.isCorrect ? " ✔" : " ✖"}
             </p>
             <p>
             Correct answer: {!answer.isCorrect ? answer.question.options[answer.question.correctAnswerIndex]: ""}
