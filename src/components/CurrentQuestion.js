@@ -2,6 +2,7 @@ import React from 'react'
 // import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz'
+import { RestartBtn } from './RestartBtn'
 import { Summary } from './Summary'
 
 export const CurrentQuestion = () => {
@@ -48,31 +49,20 @@ export const CurrentQuestion = () => {
             style={{ backgroundColor: question.backgroundColor }}
           >
             <div className='top-container'>
-              <button
-                className='restart-btn'
-                type='button'
-                onClick={() => {
-                  dispatch(quiz.actions.restart())
-                }}
-              >
-                <span role='img' aria-label='arrow left emoji'>
-                  ⬅
-                </span>
-                &nbsp;&nbsp;Back to basic
-              </button>
+              <RestartBtn />
               <div>{question.id}/5</div>
             </div>
             <div>
               <h1>{question.questionText}</h1>
             </div>
           </div>
-          {/* className={store.btnActive ? 'active-btn' : 'option-btn'} */}
+          {/* className={answer ? 'disable-btn' : 'option-btn'} */}
           <div className='options-container'>
             {question.options.map((option, index) => (
               <button
                 disabled={answer}
                 type='button'
-                className='option-btn'
+                className={answer ? 'disable-btn' : 'option-btn'}
                 id={index}
                 // styla knapparna så att backgrundsfärgen följer med
                 key={option}
@@ -97,7 +87,9 @@ export const CurrentQuestion = () => {
           </button>
         </>
       ) : (
-        <Summary />
+        <>
+          <Summary />
+        </>
       )}
     </>
   )

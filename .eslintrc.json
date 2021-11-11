@@ -108,6 +108,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "semi": "off",
-    "jsx-quotes": "off"
+    "jsx-quotes": "off",
+    "function-paren-newline": "off",
+    "implicit-arrow-linebreak": "off"
   }
 }

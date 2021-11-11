@@ -30,7 +30,7 @@ const questions = [
     correctAnswerIndex: 1,
     backgroundColor: 'pink',
   },
-/*   {
+  /*   {
     id: 4,
     questionText: 'What are you afraid of if you are Syngenesophobic?',
     options: ['Syringes', 'Genetically modified crops', 'Relatives', 'Snakes'],
