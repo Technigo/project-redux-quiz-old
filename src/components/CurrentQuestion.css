@@ -30,8 +30,9 @@ padding: 15px;
 }
 
 .question-text {
-  background-color: red;
-  color: white;
+  background-color: rgb(241, 235, 235);
+  color: rgb(61, 61, 61);
+  border-radius: 5px;
   font-size: 28px;
 display: flex;
 align-items: center;
@@ -39,7 +40,9 @@ justify-content: center;
 padding: 4px;
 text-align: center;
 height: 155px;
-
+box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+ 
   
 }
 
@@ -90,8 +93,9 @@ opacity: 50%;
 
 
 .button {
-  background-color: red;
-  color: white;
+  background-color: rgb(241, 235, 235);
+  color: rgb(61, 61, 61);
+  border-radius: 5px;
   border: none;
   font-family: "Roboto";
   font-size: 20px;
@@ -100,22 +104,31 @@ opacity: 50%;
 justify-content: center;
 align-content: center;
   text-align: center;
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+
+animation: glow 1.5s linear infinite;
 }
 
 .button:hover {
+  background-color: rgb(224, 218, 218);
   box-shadow: 5px 5px rgb(69, 69, 69);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* For the progressbar text */
 .progress-text {
-  color: red;
+  color: rgb(46, 45, 45);
   font-weight: 500;
+  
 }
 
 .progress-bar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 /* For the image button (question 5) */
@@ -249,5 +262,11 @@ min-height: 350px;
   .image-button {
     width: 100%;
   }
+
+}
+
+div progress{
+
+background-color: dimgray;
 
 }
