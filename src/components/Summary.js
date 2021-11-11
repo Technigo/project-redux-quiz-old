@@ -1,10 +1,9 @@
 /* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { quiz } from '../reducers/quiz';
 import './Summary.css';
-import './StartPage';
+
 
 export const Summary = () => {
   const dispatch = useDispatch()
@@ -21,11 +20,14 @@ export const Summary = () => {
         <div className="" key={answer.question.questionText}>
           <p>
             {answer.question.questionText}
-            <span>{answer.answer}</span>
+            </p>
+            <p>
+            <span> Your answer: {answer.answer}</span>
             {answer.isCorrect ? "✅" : "❌"}
+            </p>
+            <p>
+            Correct answer: {!answer.isCorrect ? answer.question.options[answer.question.correctAnswerIndex]: ""}
           </p>
-            {!answer.isCorrect ? answer.question.options[answer.question.correctAnswerIndex]: ""}
-          
         </div>
         
         ))}
@@ -38,7 +40,7 @@ export const Summary = () => {
       </div> 
       <div>
         
-      <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>RESTART</button> 
+      <button to="StartPage"className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>RESTART</button> 
    
       </div>
     </main>

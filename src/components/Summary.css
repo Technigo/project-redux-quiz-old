@@ -27,7 +27,7 @@ h2 {
 }
 p {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .correct-answers {
@@ -45,7 +45,7 @@ p {
 .restart-button {
   font-family: 'Limelight', cursive;
   position: absolute;
-  top: 85%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
