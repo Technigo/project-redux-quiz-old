@@ -51,8 +51,12 @@ export const CurrentQuestion = () => {
 
 
 	return (
-		<div>
-			<h1>Question: {question.questionText}</h1>
+    <main className="current-question-main">
+		<div className="question-section">
+      <h1>Question:</h1>
+			<h3>{question.questionText}</h3>
+      {question.id === 1 && <Audio></Audio>}
+      <div className="btn-section">
 			{question.options.map((item, index) => (
 				<button 
 					className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"} 
@@ -63,7 +67,8 @@ export const CurrentQuestion = () => {
 					{item}
 				</button>
 			))}
-
+</div>
+<div>
 			<button 
 			  className="next-question-button"
 			  type="button"
@@ -72,8 +77,10 @@ export const CurrentQuestion = () => {
 			>
 				Next Question
 			</button>
-			{question.id === 1 && <Audio></Audio>}
+     </div> 
+			
 		</div>
+    </main>
     
 	);
 };
