@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
 import { StartPage } from "components/StartPage";
 import { Summary } from "components/Summary";
+import { PrgsB } from "components/PrgsB";
 
 import { CurrentQuestion } from "components/CurrentQuestion";
 
@@ -22,6 +23,7 @@ export const App = () => {
           <Route path="/" exact element={<StartPage />} />
           <Route path="/quiz" element={<CurrentQuestion />} />
           <Route path="/summary" element={<Summary />} />
+          <PrgsB></PrgsB>
         </Routes>
       </Provider>
     </BrowserRouter>

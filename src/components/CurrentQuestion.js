@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
@@ -43,6 +43,9 @@ export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
   console.log(answers);
 
+  // Detect if question is answered or not
+  const [isAnswered, setAnswered] = useState(false);
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
@@ -51,7 +54,13 @@ export const CurrentQuestion = () => {
     dispatch(
       quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index })
     );
-    console.log("click");
+    console.log(`clicked ${index}`);
+    setAnswered(true);
+  };
+
+  const onNextClick = () => {
+    dispatch(quiz.actions.goToNextQuestion());
+    setAnswered(false);
   };
 
   // efter ett val så får man reda på om det var rätt/fel samt att knapparna blir disabled + det kommer en "next question" knapp
@@ -80,7 +89,7 @@ export const CurrentQuestion = () => {
             </button>
           ))}
           {answers.length === question.id && !quizOver && (
-            <button onClick={() => dispatch(quiz.actions.goToNextQuestion())}>
+            <button onClick={() => onNextClick()}>
               {answers.length + 1 === question.length
                 ? "Show results"
                 : "Next Question"}
@@ -92,32 +101,17 @@ export const CurrentQuestion = () => {
           Show results
         </button>
       )} */}
-        <div>
-          {answers[currentQuestionIndex]?.isCorrect && (
-            <p>{question.answerText}</p>
-          )}
-          {!answers[currentQuestionIndex]?.isCorrect && <p>Wrong</p>}
-        </div>
-        ;
+        {isAnswered && (
+          <div>
+            {answers[currentQuestionIndex]?.isCorrect && (
+              <p>{question.answerText}</p>
+            )}
+            {!answers[currentQuestionIndex]?.isCorrect && (
+              <p>Sorry, not quite right!</p>
+            )}
+          </div>
+        )}
       </div>
     </QuestionBackgroundImage>
   );
 };
-// button:focus{background-color:red;}
-// export const Square = ({ value, index }) => {
-//   const dispatch = useDispatch();
-
-//   const handleClick = () => {
-//     dispatch(game.actions.captureSquare({ index }));
-//   };
-
-//   return (
-//     <button
-//       className={value === null ? "square clickable" : "square"}
-//       type="button"
-//       onClick={handleClick}
-//     >
-//       <Player value={value} />
-//     </button>
-//   );
-// };
