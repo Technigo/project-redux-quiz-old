@@ -5,17 +5,23 @@ import styled from "styled-components";
 
 const QuestionButtonWrapper = styled.div`
   display: flex;
-
-  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
   padding: 10px;
   width: 100%;
+  height: 150px;
+  gap: 15px;
+  justify-content: center;
 `;
 
 const QuestionButton = styled.button`
+  display: flex;
+  flex-wrap: wrap;
   border-radius: 20px;
   background-color: pink;
-  width: 47%;
+  width: 130px;
   padding: 20px;
+  justify-content: center;
 `;
 
 const AnswerButtons = () => {
@@ -42,22 +48,24 @@ const AnswerButtons = () => {
 
   return (
     <>
-      {question.options.map((item, index) => (
-        <QuestionButtonWrapper key={item}>
-          <QuestionButton
-            onClick={() => onSubmitAnswer(question.id, index)}
-            style={{
-              background: !answers
-                ? "white"
-                : question.correctAnswerIndex === index
-                ? "green"
-                : "red",
-            }}
-          >
-            {item}
-          </QuestionButton>
-        </QuestionButtonWrapper>
-      ))}
+      <QuestionButtonWrapper>
+        {question.options.map((item, index) => (
+          <div key={item}>
+            <QuestionButton
+              onClick={() => onSubmitAnswer(question.id, index)}
+              style={{
+                background: !answers
+                  ? "white"
+                  : question.correctAnswerIndex === index
+                  ? "green"
+                  : "red",
+              }}
+            >
+              {item}
+            </QuestionButton>
+          </div>
+        ))}
+      </QuestionButtonWrapper>
     </>
   );
 };

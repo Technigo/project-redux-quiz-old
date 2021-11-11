@@ -14,7 +14,7 @@ const questions = [
   {
     id: 2,
     questionText: "This flat beat is something to remember! Who is the artist?",
-    img: require("../assets/Mrozo.gif"),
+    img: require("../assets/mrozo.gif"),
     options: ["Todd Terje", "Paul Kalkbrenner", "Mr. Oizo", "Moby"],
     correctAnswerIndex: 2,
   },
@@ -37,52 +37,37 @@ const questions = [
   {
     id: 5,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
-    options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
-      "Brain splash in the aquarium",
-    ],
+      "Soundgarden was an American rock band formed in Seattle, Washington, in 1984 by singer and rhythm guitarist Chris Cornell,Soundgarden achieved its biggest success with the 1994 album Superunknown, which debuted at number one on the Billboard 200. They yielded the Grammy Award-winning singles for this song and music video. What was the name? ",
+    img: require("../assets/soundgarden.gif"),
+    options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
   },
 
   {
     id: 6,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
-    options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
-      "Brain splash in the aquarium",
-    ],
-    correctAnswerIndex: 3,
+      "Eminem  was the first rapper in history to win an Oscar for Best Original song in 8 mile, what song was it?",
+    img: require("../assets/Eminem.gif"),
+    options: ["The Real Slim Shady", "Stan", "Lose Your Self", "May name is"],
+    correctAnswerIndex: 2,
   },
   {
     id: 7,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
-    options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
-      "Brain splash in the aquarium",
-    ],
+      "Hanson boys was a boy band In the early to mid-1990.There song Mmmbop was nominated for two Grammys at the 40th Annual Grammy Awards and is the band's most successful single to date. But do you know the rest of the chorus?",
+    img: require("../assets/hanson.gif"),
+    options: ["ba dop duba", "ba duba dop", "duba dop ba", "duba duba pop"],
     correctAnswerIndex: 1,
   },
   {
     id: 8,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
+      "No Doubt is an American rock band from Anaheim, California, formed in 1986. They have sold over 33 million records worldwide. Do you know the lead singers name?",
+    img: require("../assets/nodoubt.gif"),
     options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
+      "Allison Wolfe",
+      "Courtney Love ",
+      "Gwen Stefani",
       "Brain splash in the aquarium",
     ],
     correctAnswerIndex: 2,
@@ -90,26 +75,21 @@ const questions = [
   {
     id: 9,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
-    options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
-      "Brain splash in the aquarium",
-    ],
-    correctAnswerIndex: 4,
+      "Even to this day, Aerosmith is the best-selling American rock band of all time. They’ve sold more than 70 million albums in the US. Can you guess how many they have sold worldwide ",
+    img: require("../assets/areosmith.gif"),
+    options: ["100 million", "900 million", "200 million", "150 million"],
+    correctAnswerIndex: 3,
   },
   {
     id: 10,
     questionText:
-      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
-    img: require("../assets/busta.gif"),
+      "Frontman Kurt Cobain from Nirvana and Hole frontwoman Courtney Love (Hole) had one Child. Do you know it´s name?",
+    img: require("../assets/nirvana.gif"),
     options: [
-      "Red eyes poppin'",
-      "Gimme some more",
-      "PMW",
-      "Brain splash in the aquarium",
+      "Frances Bean Cobain",
+      "Franca Bean Cobain",
+      "France Cobain Bean",
+      "France Cobain Blackbean",
     ],
     correctAnswerIndex: 0,
   },
