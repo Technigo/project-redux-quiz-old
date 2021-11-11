@@ -1,28 +1,58 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'How many notes are there in a musical scale?', options: ['7', '10', '8', '9'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'What company is also the name of one of the longest rivers in the world?', options: ['Nile', 'Amazon', 'Mississippi', 'Mekong'], correctAnswerIndex: 1 },
-  { id: 3, questionText: 'What is the tallest mountain in the world?', options: ['Denali', 'Cerro Aconcagua', 'Mount Everest', 'Kilimanjaro'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'How many centimetres are in a meter?', options: ['10', '50', '100', '1000'], correctAnswerIndex: 2 },
-  { id: 5, questionText: 'Who is next in line to the British throne after Queen Elizabeth II?', options: ['Prince William', 'Prince Charles', 'Prince Edward', 'Prince Richard'], correctAnswerIndex: 1 }
-]
+  {
+    id: 1,
+    questionText: "How many notes are there in a musical scale?",
+    options: ["7", "10", "8", "9"],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 2,
+    questionText:
+      "What company is also the name of one of the longest rivers in the world?",
+    options: ["Nile", "Amazon", "Mississippi", "Mekong"],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 3,
+    questionText: "What is the tallest mountain in the world?",
+    options: ["Denali", "Cerro Aconcagua", "Mount Everest", "Kilimanjaro"],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 4,
+    questionText: "How many centimetres are in a meter?",
+    options: ["10", "50", "100", "1000"],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 5,
+    questionText:
+      "Who is next in line to the British throne after Queen Elizabeth II?",
+    options: [
+      "./assets/princewilliam.jpeg",
+      "./assets/princecharles.jpg",
+      "./assets/princeedward.jpg",
+      "./assets/princerichard.jpg",
+    ],
+    correctAnswerIndex: 1,
+  },
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  score: 0, /* new property for keeping count of correct answers */
-  loading: true
-}
+  score: 0 /* new property for keeping count of correct answers */,
+};
 
 export const quiz = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -39,15 +69,19 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const { questionId, answerIndex } = action.payload;
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -55,8 +89,8 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
-      })
+        isCorrect: question.correctAnswerIndex === answerIndex,
+      });
     },
 
     /**
@@ -68,9 +102,9 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1;
       }
     },
 
@@ -82,15 +116,15 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-    /* for progress bar, because when page reaload progress bar continued to
+      /* for progress bar, because when page reaload progress bar continued to
 increase amount of questions */
       window.location.reload(false);
-      return initialState
+      return initialState;
     },
 
     /* new function that raises the score for every correct answer */
     riseScore: (state) => {
-      state.score += 1
-    }
-  }
-})
+      state.score += 1;
+    },
+  },
+});

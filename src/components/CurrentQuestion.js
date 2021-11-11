@@ -5,13 +5,16 @@ import { Summary } from "components/Summary";
 import ProgressBar from "@ramonak/react-progress-bar";
 import AnswerButton from "./AnswerButton";
 
+
 import "components/CurrentQuestion.css";
 
 export const CurrentQuestion = () => {
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
   different slices in store, if we had more slices we could see it in the console;
   when writing store.quiz, you are more specific, you are execing only this slice */
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
+  const question = useSelector(
+    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
+  );
 
   /* Here we get the length of the arry(all the questions) */
   const questionsLength = useSelector((state) => state.quiz.questions.length);
@@ -45,7 +48,9 @@ export const CurrentQuestion = () => {
   const onSubmitAnswer = (id, index) => {
     setTimeout(() => {
       // what exact function we need to call to uppdate the store
-      dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+      dispatch(
+        quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
+      );
       // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
       // because we want to go to the next question directly
       dispatch(quiz.actions.goToNextQuestion({ id }));
@@ -57,6 +62,44 @@ export const CurrentQuestion = () => {
     /* Update the progress-bar while clickin with 20% */
     setCompleted(completed + 20);
   };
+
+  // for question 5
+  if (question.id === 5) {
+    return (
+      <>
+        <main className="main-container">
+          <div className="quiz-container">
+            <h1 className="question-text">{question.questionText}</h1>
+            <div className="button-container">
+              {question.options.map((item, index) => (
+                <button
+                  style={{
+                    backgroundImage: `url(${item})`,
+                  }}
+                  className="image-button"
+                  type="button"
+                  key={item}
+                  onClick={() => onSubmitAnswer(question.id, index)}
+                ></button>
+              ))}
+            </div>
+            <div className="progress-bar-container">
+              <p className="progress-text">
+                {" "}
+                Question: {question.id} ({questionsCount} question left)
+              </p>
+              <ProgressBar
+                completed={completed}
+                width={250}
+                customLabel={question.id}
+                bgColor="red"
+              />
+            </div>
+          </div>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
@@ -82,7 +125,12 @@ export const CurrentQuestion = () => {
               Question: {question.id} ({questionsCount} question left)
             </p>
             {/* The progress bar */}
-            <ProgressBar completed={completed} width={250} customLabel={question.id} bgColor="red" />
+            <ProgressBar
+              completed={completed}
+              width={250}
+              customLabel={question.id}
+              bgColor="red"
+            />
           </div>
         </div>
       </main>
