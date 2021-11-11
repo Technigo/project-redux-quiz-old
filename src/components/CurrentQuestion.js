@@ -8,7 +8,9 @@ const QuestionBackgroundImage = styled.div`
   background-image: url('https://images.unsplash.com/photo-1535385793343-27dff1413c5a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80');
   background-color: rgb(205, 206, 201);
   background-size: cover;
-  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;

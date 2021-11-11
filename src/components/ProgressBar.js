@@ -7,7 +7,7 @@ export const ProgressBar = () => {
   const questions = useSelector(state => state.quiz.questions)
   const ProgressBarWrapper = styled.div`
     width: 100%;
-    height: 50px;
+    height: 10px;
     display: flex;
     position: absolute;
     z-index: 1;
