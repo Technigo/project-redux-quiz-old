@@ -1,17 +1,16 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-/* import { faCauldron } from "@fortawesome/pro-solid-svg-icons"; */
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+
+import React from "react";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagic } from "@fortawesome/free-solid-svg-icons";
 
 export const ProgressBar = () => {
   const questions = useSelector((store) => store.quiz.questions);
   const currentQuestionIndex = useSelector(
     (store) => store.quiz.currentQuestionIndex
   );
-
-  console.log(currentQuestionIndex);
-  console.log(questions);
+  const isQuizOver = useSelector((store) => store.quiz.quizOver);
 
   return (
     <ProgressBarContainer>
@@ -27,7 +26,8 @@ export const ProgressBar = () => {
             <Line
               style={{
                 backgroundColor:
-                  currentQuestionIndex >= index ? '#638270' : '#f0f0f0',
+
+                  currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
               }}
             ></Line>
           </ProgressBarWrapper>
@@ -36,13 +36,11 @@ export const ProgressBar = () => {
 
       <IconContainer
         style={{
-          backgroundColor:
-            currentQuestionIndex === questions.length - 1
-              ? '#638270'
-              : '#f0f0f0',
+
+          backgroundColor: isQuizOver ? "#638270" : "#f0f0f0",
         }}
       >
-        {/* <FontAwesomeIcon icon={faCauldron} /> */}
+        <FontAwesomeIcon icon={faMagic} />
       </IconContainer>
     </ProgressBarContainer>
   );
@@ -72,21 +70,21 @@ const Dot = styled.div`
     height: 20px;
     width: 20px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     height: 30px;
     width: 30px;
   }
 `;
 
 const Line = styled.div`
-  width: 40px;
+  width: 30px;
   height: 3px;
   display: inline-block;
   transition: all 500ms ease-in-out;
   @media (min-width: 668px) and (max-width: 1024px) {
-    width: 100px;
+    width: 70px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     width: 150px;
     height: 6px;
   }
@@ -106,7 +104,7 @@ const IconContainer = styled.div`
     width: 50px;
     font-size: 30px;
   }
-  @media only screen and (min-width: 1025px) {
+  @media (min-width: 1025px) {
     height: 80px;
     width: 80px;
     font-size: 50px;

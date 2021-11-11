@@ -1,11 +1,11 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { quiz } from '../reducers/quiz';
-import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import { ButtonQuestion } from './ButtonQuestion';
-import { ProgressBar } from './ProgressBar';
+import React from "react";
+import { useSelector } from "react-redux";
+import { quiz } from "../reducers/quiz";
+import { useDispatch } from "react-redux";
+import styled from "styled-components";
+import { ButtonQuestion } from "./ButtonQuestion";
 import { PictureQuestion } from './PictureQuestion';
+
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -23,7 +23,8 @@ export const CurrentQuestion = () => {
   };
 
   const getQuestionType = (type) => {
-    if (type === 'button') {
+
+    if (type === "button") {
       return (
         <ButtonQuestion
           question={question}
@@ -31,6 +32,7 @@ export const CurrentQuestion = () => {
           onGoToNextQuestion={onGoToNextQuestion}
         />
       );
+
     } else if (type === 'picture') {
       return (
         <PictureQuestion
@@ -39,6 +41,7 @@ export const CurrentQuestion = () => {
           onGoToNextQuestion={onGoToNextQuestion}
         />
       );
+
     } else {
       return <div>Other</div>;
     }
@@ -48,28 +51,9 @@ export const CurrentQuestion = () => {
     return <Header2>Oh no! I could not find the current question!</Header2>;
   }
 
-  return (
-    <WrapperSection>
-      <ProgressBar
-        onGoToNextQuestion={onGoToNextQuestion}
-        question={question}
-        setOnAnswerSubmit={onAnswerSubmit}
-      />
-      {getQuestionType(question.type)}
-    </WrapperSection>
-  );
+  return getQuestionType(question.type);
 };
 
 const Header2 = styled.h2`
   margin: 0 0 10px 0;
-`;
-
-const WrapperSection = styled.section`
-  background-color: black;
-  background-image: url(${require(`../pictures/smoke.jpg`)});
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
 `;
