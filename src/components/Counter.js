@@ -10,7 +10,7 @@ export const Counter = () => {
 
   return (
     <div className='summary-result'>
-      {correctAnswers.length} correct answers out of {storeAnswer.length}
+      You got {correctAnswers.length} out of {storeAnswer.length}!
     </div>
   )
 }

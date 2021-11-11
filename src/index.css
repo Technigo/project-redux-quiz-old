@@ -9,8 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d3d3d3;
-  color: black;
+  /* background-color: #d3d3d3; */
+  background-color: #1a1a1a;
+  color: #1a1a1a;
 }
 
 code {
@@ -45,8 +46,7 @@ h1 {
 }
 
 .restart-btn-container {
-  background-color: #ffff;
-  /* padding: 12px; */
+  background-color: #dedede;
   height: 48px;
   display: inline-block;
   border: none;
@@ -62,9 +62,9 @@ h1 {
 .options-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin: 40px auto;
-  justify-items: center;
+  gap: 2rem;
+  margin: 0 auto;
+  padding-top: 2rem;
 }
 
 .button-container {
@@ -73,8 +73,8 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   background-color: #1a1a1a;
 
 }
@@ -134,7 +134,13 @@ h1 {
 
 span {
   font-size: 14px;
-  margin-left: 1rem;
+}
+
+.question-text {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  margin-top: 0;
 }
 
 .summary-answer {
@@ -153,11 +159,12 @@ span {
 
 .question-title {
   font-size: 25px;
-  margin-top: 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .your-answer {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -177,5 +184,7 @@ span {
 
 .summary-result {
   width: 100%;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  font-size: 1.5rem;
+  color: #fff;
 }

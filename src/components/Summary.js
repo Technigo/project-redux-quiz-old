@@ -22,17 +22,19 @@ export const Summary = () => {
           className='summary-answer'
         >        
           <div className='text'>
-            <h3 className='question-title'>{results.questionId}<span>{results.question.questionText}</span></h3>      
-            <div className='answer-container'>
-              <p className='your-answer'>Your answer: {results.answer}</p>
-                {results.isCorrect ? (
-                  <i className='fas fa-check' />
-                ) : (
-                  <i className='fas fa-times' />
-              )}
+            <h3 className='question-title'>{results.questionId}</h3>    
+            <div>
+              <h4 className='question-text'>{results.question.questionText}</h4>  
+              <div className='answer-container'>
+                <p className='your-answer'>{results.answer}</p>
+                  {results.isCorrect ? (
+                    <i className='fas fa-check' />
+                  ) : (
+                    <i className='fas fa-times' />
+                )}
+              </div>
+            </div>
           </div>
-          </div>
-
         </div>
       ))}
       <div className='restart-btn-container'>
