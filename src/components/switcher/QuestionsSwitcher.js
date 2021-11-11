@@ -56,7 +56,6 @@ export const QuestionsSwitcher = () => {
     );
   }
   if (questionIndex === 5 && quizStatus === false) {
-    quizStatus = true;
     return (
       <PageStyling>
         <ProgressBar />
