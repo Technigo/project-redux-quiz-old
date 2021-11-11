@@ -8,7 +8,6 @@ const StartPage = () => {
     return (
 
       <main className="background-startpage">
-        {/* <h1 className="heading-startpage">MOVIE TIME</h1> */}
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
         </Link>

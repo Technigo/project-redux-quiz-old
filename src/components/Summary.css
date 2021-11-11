@@ -45,7 +45,7 @@ p {
 .restart-button {
   font-family: 'Limelight', cursive;
   position: absolute;
-  top: 100%;
+  top: 87%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
