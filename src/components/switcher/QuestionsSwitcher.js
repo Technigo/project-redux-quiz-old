@@ -23,7 +23,7 @@ export const QuestionsSwitcher = () => {
   if (!questionIndex) {
     return <EntryPage />;
   }
-  if (questionIndex === 1) {
+  if (questionIndex === 1 && quizStatus === false) {
     return (
       <PageStyling>
         <ProgressBar />
