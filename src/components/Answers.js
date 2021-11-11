@@ -6,7 +6,9 @@ import { Summary } from './Summary';
 import { quiz } from '../reducers/quiz';
 
 export const Answers = () => {
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
+  const question = useSelector(
+    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
+  );
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
