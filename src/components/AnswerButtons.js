@@ -43,9 +43,8 @@ const AnswerButtons = () => {
   return (
     <>
       {question.options.map((item, index) => (
-        <QuestionButtonWrapper>
+        <QuestionButtonWrapper key={item}>
           <QuestionButton
-            key={index}
             onClick={() => onSubmitAnswer(question.id, index)}
             style={{
               background: !answers

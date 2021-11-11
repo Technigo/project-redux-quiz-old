@@ -32,7 +32,7 @@ const questions = [
       "Welcome to the Jungle is a song by American rock band Guns'N Roses? It reached number seven on the Billboard Hot 100, But who wrote the lyrics ",
     img: require("../assets/guns.gif"),
     options: ["Axl Rose ", "Slash", "Duff McKagan", "Izzy Stradlin"],
-    correctAnswerIndex: 1,
+    correctAnswerIndex: 0,
   },
   {
     id: 5,
@@ -46,6 +46,72 @@ const questions = [
       "Brain splash in the aquarium",
     ],
     correctAnswerIndex: 1,
+  },
+
+  {
+    id: 6,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 7,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 8,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 9,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 4,
+  },
+  {
+    id: 10,
+    questionText:
+      "This trippy video really brings you back to childhood! What is the song of this awsome Busta Rhymes video?",
+    img: require("../assets/busta.gif"),
+    options: [
+      "Red eyes poppin'",
+      "Gimme some more",
+      "PMW",
+      "Brain splash in the aquarium",
+    ],
+    correctAnswerIndex: 0,
   },
 ];
 
