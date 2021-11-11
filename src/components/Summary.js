@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { Loader } from "../components/Loader"
+
 
 import { quiz } from '../reducers/quiz';
 import Confetti from 'react-confetti' 
@@ -35,7 +35,7 @@ if (score >=4){
 return  ( 
 
 <main className="SummaryContainer" >
-<Confetti  />
+<FallingEmojis emoji={'🎉'} />
 <section className="SummaryTextContent">
  <div className="SummaryText"> 
 <h2 className="SummaryTextConfetti">Summary</h2>
