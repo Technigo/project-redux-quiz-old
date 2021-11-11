@@ -21,28 +21,26 @@ export const Summary = () => {
         <div className="" key={answer.question.questionText}>
           <p>
             {answer.question.questionText}
-            </p>
-            <p>
+          </p>
+          <p>
             <span> Your answer: {answer.answer}</span>
             {answer.isCorrect ? " ✔" : " ✖"}
-            </p>
-            <p>
+          </p>
+          <p>
             Correct answer: {!answer.isCorrect ? answer.question.options[answer.question.correctAnswerIndex]: ""}
           </p>
         </div>
-        
         ))}
         <div className="summary-bottom" >
           <p className="correct-answers">
             You answered {`${correctAnswer.length}`}/{questionArray.length} questions correct
           </p>
-        
         </div>  
       </div> 
       <div>
       <Link onClick={() => dispatch(quiz.actions.restart())} to="/">
           <button className="restart-button">RESTART QUIZ!</button>
-        </Link>   
+      </Link>   
       </div>
     </main>
     

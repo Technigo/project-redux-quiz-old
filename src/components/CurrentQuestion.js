@@ -52,9 +52,7 @@ export const CurrentQuestion = () => {
 
 
 	return (
-		<>
-		<div>
-			<h1>Question: {question.questionText}</h1>
+		<>		
     <main className="current-question-main">
 		<div className="question-section">
       <h1>Question</h1>
@@ -71,7 +69,7 @@ export const CurrentQuestion = () => {
 					{item}
 				</button>
 			))}
-    </div>
+    	</div>
     <div>
 			<button 
 			  className="next-question-button"
@@ -81,13 +79,11 @@ export const CurrentQuestion = () => {
 			>
 				Next Question
 			</button>
-    </div> 
-			
-		</div>
-		<ProgressStatus />
-		</>
+    </div>
+		</div> 
+		<ProgressStatus />	
     </main>
-    
+  	</>
 	);
 };
 
