@@ -24,7 +24,7 @@ const Counter = () => {
       <CounterWrapper style={{ width: `${(question - counter) * 10}%` }}>
         {(question - counter) * 10}%
       </CounterWrapper>
-      <Pragraph>You have {question - counter} questions to finish</Pragraph>
+      <Pragraph>You have {question - counter} questions to finish!</Pragraph>
     </>
   );
 };
