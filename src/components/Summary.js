@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
 import './Summary.css';
+import { Link } from 'react-router-dom';
 
 
 export const Summary = () => {
@@ -39,9 +40,9 @@ export const Summary = () => {
         </div>  
       </div> 
       <div>
-        
-      <button to="StartPage"className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>RESTART</button> 
-   
+      <Link onClick={() => dispatch(quiz.actions.restart())} to="/">
+          <button className="restart-button">RESTART QUIZ!</button>
+        </Link>   
       </div>
     </main>
     
