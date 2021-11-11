@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 
@@ -44,42 +44,42 @@ const questions = [
     options: ["Axel", "Ripper", "Brutu", "Chomper"],
     correctAnswerIndex: 1,
   },
-   {
-        id: 6,
-        type: 'picture',
-        questionText:
-          'On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?',
-        options: [
-          { name: 'Professor Snape', imgSrc: './pictures/castle.jpg' },
-          { name: 'Professor Quirrell', imgSrc: './pictures/castle.jpg' },
-          { name: 'Hagrid', imgSrc: './pictures/castle.jpg' },
-          { name: 'Draco Malfoy', imgSrc: './pictures/castle.jpg' },
-        ],
-        correctAnswerIndex: 1,
-      },
-      {
-        id: 7,
-        imgSrc: '',
-        type: 'picture',
-        questionText:
-          'Which old Hogwarts relic did Harry pull out of the Sorting Hat?',
-        options: [
-          "Ravenclaw's Diadem",
-          "HufflePuff's Cup",
-          'The Sword of Gryffindor',
-          "Slytherin's Locket",
-        ],
-        correctAnswerIndex: 2,
-      },
-      {
-        id: 8,
-        imgSrc: '',
-        type: 'picture',
-        questionText:
-          'What position does Harry play on the Gryffindor Quidditch team?',
-        options: ['Keeper', 'Beater', 'Chaser', 'Seeker'],
-        correctAnswerIndex: 3,
-      },
+  {
+    id: 6,
+    type: "picture",
+    questionText:
+      "On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?",
+    options: [
+      { name: "Professor Snape", imgSrc: "./pictures/castle.jpg" },
+      { name: "Professor Quirrell", imgSrc: "./pictures/castle.jpg" },
+      { name: "Hagrid", imgSrc: "./pictures/castle.jpg" },
+      { name: "Draco Malfoy", imgSrc: "./pictures/castle.jpg" },
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 7,
+    imgSrc: "",
+    type: "picture",
+    questionText:
+      "Which old Hogwarts relic did Harry pull out of the Sorting Hat?",
+    options: [
+      "Ravenclaw's Diadem",
+      "HufflePuff's Cup",
+      "The Sword of Gryffindor",
+      "Slytherin's Locket",
+    ],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 8,
+    imgSrc: "",
+    type: "picture",
+    questionText:
+      "What position does Harry play on the Gryffindor Quidditch team?",
+    options: ["Keeper", "Beater", "Chaser", "Seeker"],
+    correctAnswerIndex: 3,
+  },
 ];
 
 const initialState = {
@@ -90,12 +90,8 @@ const initialState = {
 };
 
 export const quiz = createSlice({
-  name: 'quiz',
-  initialState: {
-    answers: [],
-    currentQuestionIndex: 0,
-    quizOver: false,
-  },
+  name: "quiz",
+  initialState,
   reducers: {
     /**
      * Use this action when a user selects an answer to the question.
@@ -118,7 +114,7 @@ export const quiz = createSlice({
 
       if (!question) {
         throw new Error(
-          'Could not find question! Check to make sure you are passing the question id correctly.'
+          "Could not find question! Check to make sure you are passing the question id correctly."
         );
       }
 
