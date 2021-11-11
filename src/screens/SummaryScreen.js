@@ -32,7 +32,7 @@ const SummaryContainer = styled.section`
   }
   @media (min-width: 1025px) {
     font-size: 40px;
-    padding: 20px 100px 20px 100px;
+    padding: 20px 420px 20px 420px;
   }
 `;
 
@@ -48,6 +48,7 @@ const RestartButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   letter-spacing: 2px;
+  margin-bottom: 20px;
   @media (min-width: 668px) and (max-width: 1024px) {
     margin-bottom: 40px;
     font-size: 25px;
