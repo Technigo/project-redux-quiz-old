@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { NextQuestionButton } from './NextQuestionButton';
 import { Summary } from './Summary';
 // import { MainContainer } from './StyledComponents';
@@ -9,9 +10,21 @@ export const Answers = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+
+  const answer = useSelector((state) => state.quiz.answers.find((a) => ( a.questionId === question.id // question could come from the previous selector in the last example
+    )))
+
+  const playerAnswer = useSelector((state) => state.quiz.answerIndex)
+
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
+
+  
+  
+  
+
+  // const playerName = useSelector((state) => state.quiz.userName);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;

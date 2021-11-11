@@ -22,7 +22,6 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main className="mainContainer">
-        <UserNameInput />
         <UserInfo />
         <CurrentQuestion />
         <ProgressBar />
