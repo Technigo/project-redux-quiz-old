@@ -19,13 +19,15 @@
   background-color: #ffffff10;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  /* box-shadow: 10px 10px 20px #6b6363; */
   margin: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 30px;
-  border-radius: 5px;
+}
+
+h1 {
+  font-family: 'Limelight', cursive;
 }
 
 .h3 {
@@ -63,8 +65,6 @@ display: flex;
   margin-bottom: 20px;
   padding: 10px;
 }
-
-
 
 .next-question-button, .defaultbtn, .wrong, .correct {
   font-family: 'Fjalla One', sans-serif;

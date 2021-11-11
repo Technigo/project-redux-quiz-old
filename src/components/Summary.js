@@ -1,8 +1,10 @@
 /* eslint-disable */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { quiz } from '../reducers/quiz';
 import './Summary.css';
+import './StartPage';
 
 export const Summary = () => {
   const dispatch = useDispatch()
@@ -13,8 +15,8 @@ export const Summary = () => {
 
   return (
     <main className="summary-container">
-      <section className="summary">
-        <h2>Summary</h2>
+      <div className="summary">
+        <h1>Summary</h1>
         {answers.map((answer) => (
         <div className="" key={answer.question.questionText}>
           <p>
@@ -31,11 +33,16 @@ export const Summary = () => {
           <p className="correct-answers">
             You answered {`${correctAnswer.length}`}/{questionArray.length} questions correct
           </p>
-       
-        <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>RESTART</button>
-        </div>
-      </section>
+        
+        </div>  
+      </div> 
+      <div>
+        
+      <button className="restart-button" onClick={() => dispatch(quiz.actions.restart())}>RESTART</button> 
+   
+      </div>
     </main>
+    
   )
 }
 

@@ -53,7 +53,7 @@ export const CurrentQuestion = () => {
 	return (
     <main className="current-question-main">
 		<div className="question-section">
-      <h1>Question:</h1>
+      <h1>Question</h1>
 			<h3>{question.questionText}</h3>
       {question.id === 1 && <Audio></Audio>}
       <div className="btn-section">
@@ -67,8 +67,8 @@ export const CurrentQuestion = () => {
 					{item}
 				</button>
 			))}
-</div>
-<div>
+    </div>
+    <div>
 			<button 
 			  className="next-question-button"
 			  type="button"
@@ -77,7 +77,7 @@ export const CurrentQuestion = () => {
 			>
 				Next Question
 			</button>
-     </div> 
+    </div> 
 			
 		</div>
     </main>
