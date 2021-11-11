@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "reducers/quiz";
 import styled from "styled-components";
+
+import { quiz } from "reducers/quiz";
 
 const QuestionButtonWrapper = styled.div`
   display: flex;
@@ -44,9 +45,7 @@ const AnswerButtons = () => {
   );
 
   const answers = useSelector((state) =>
-    state.quiz.answers.find(
-      (a) => a.questionId === question.id // question could come from the previous selector in the last example
-    )
+    state.quiz.answers.find((a) => a.questionId === question.id)
   );
 
   const dispatch = useDispatch();

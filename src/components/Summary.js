@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "reducers/quiz";
 import styled from "styled-components";
+
+import { quiz } from "reducers/quiz";
 
 const SummaryContainer = styled.div`
   width: 300px;
@@ -12,6 +13,11 @@ const SummaryContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   margin: 80px auto;
+
+  @media (min-width: 768px) {
+    margin: 120px auto;
+    width: 350px;
+  }
 `;
 
 const SummaryScore = styled.h2`
@@ -41,11 +47,15 @@ const RestartButton = styled.button`
     color: black;
   }
 `;
+
 const Summary = () => {
   const question = useSelector((state) => state.quiz.questions);
   const answer = useSelector((store) => store.quiz.answers);
   const rightAnswers = answer.filter((item) => item.isCorrect === true);
   const initialState = useSelector((state) => state.quiz.initialState);
+  // const answerText = useSelector((store) => store.quiz.answers.answer);
+
+  console.log(answer);
 
   const dispatch = useDispatch();
 
@@ -56,6 +66,7 @@ const Summary = () => {
       })
     );
   };
+  console.log(question);
 
   return (
     <SummaryContainer>
@@ -68,6 +79,13 @@ const Summary = () => {
           (rightAnswers.length <= 8 && <p>You rock!</p>) ||
           (rightAnswers.length >= 9 && <p>You are a legend!</p>)}
       </SummaryText>
+      <div>
+        {question.map((item) => (
+          <div>
+            for question{item.id} you clicked {answer.map((a) => a.answer)}
+          </div>
+        ))}
+      </div>
       <RestartButton onClick={() => onRestart()}>Restart</RestartButton>
     </SummaryContainer>
   );

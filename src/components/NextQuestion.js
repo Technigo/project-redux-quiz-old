@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+
 import { quiz } from "reducers/quiz";
 
 const NextQuestion = () => {
@@ -11,9 +12,7 @@ const NextQuestion = () => {
   );
 
   const answers = useSelector((state) =>
-    state.quiz.answers.find(
-      (a) => a.questionId === question.id // question could come from the previous selector in the last example
-    )
+    state.quiz.answers.find((a) => a.questionId === question.id)
   );
 
   const nextQuestion = (id) => {
@@ -44,4 +43,3 @@ const NextQuestion = () => {
 };
 
 export default NextQuestion;
-// {!answer && disabled}

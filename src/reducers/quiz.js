@@ -16,7 +16,7 @@ const questions = [
     id: 2,
     questionText: "This flat beat is something to remember! ",
     questionText1: "Who is the artist?",
-    img: require("../assets/mrozo.gif"),
+    img: require("../assets/Mrozo.gif"),
     options: ["Todd Terje", "Paul Kalkbrenner", "Mr. Oizo", "Moby"],
     correctAnswerIndex: 2,
   },
@@ -42,7 +42,7 @@ const questions = [
     questionText:
       "Soundgarden was an American rock band formed in Washington 1984. They achieved its biggest success with the 1994 album Superunknown, They yielded the Grammy Award-winning singles for this song and music video.",
     questionText1: "What was the name of the song? ",
-    img: require("../assets/busta.gif"),
+    img: require("../assets/soundgarden.gif"),
     options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
   },
@@ -52,7 +52,7 @@ const questions = [
     questionText:
       "Eminem  was the first rapper in history to win an Oscar for Best Original song in 8 mile.",
     questionText1: "What song was it, won the price?",
-    img: require("../assets/eminem.gif"),
+    img: require("../assets/Eminem.gif"),
     options: ["The Real Slim Shady", "Stan", "Lose Your Self", "May name is"],
     correctAnswerIndex: 2,
   },
@@ -71,12 +71,7 @@ const questions = [
       "No Doubt is an American rock band from Anaheim, California, formed in 1986. They have sold over 33 million records worldwide.",
     questionText1: "Do you know the lead singers name?",
     img: require("../assets/nodoubt.gif"),
-    options: [
-      "Allison Wolfe",
-      "Courtney Love ",
-      "Gwen Stefani",
-      "Brain splash in the aquarium",
-    ],
+    options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
     correctAnswerIndex: 2,
   },
   {
