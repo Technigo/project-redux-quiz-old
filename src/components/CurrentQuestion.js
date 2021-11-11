@@ -22,26 +22,23 @@ export const CurrentQuestion = () => {
   const [questionsCount, setQuestionsCount] = useState(questionsLength);
   /* The progressbar for the question, using npm install
   --save @ramonak/react-progress-bar
-  (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
+  (read more here; c) */
   const [completed, setCompleted] = useState(20);
   /* in order to show summary.js we need to ask store to get uppdated value,
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
-  const answers = useSelector((state) => state.quiz.answers)
 
-  const [correct, setCorrect] = useState(false)
+  const answer = useSelector((state) => state.quiz.answers.find((answer) => answer.questionId === question.id))
+  console.log(answer)
 
-
-  const showCorrectAnswer = (answers) => {
-	answers.forEach((item) => {
-		console.log(item)
-		if (item.isCorrect) {
-		  return "correct"
-		} else {
-			return "wrong"
-		}
-	  })
-  }  
+  const showAnswer = () => {
+    if (answer.isCorrect) {
+      return 'YAY! Correct answer! :)'
+    } else {
+      return 'Sorry, wrong answer :('
+    }
+  }
+  
   /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
@@ -59,22 +56,22 @@ export const CurrentQuestion = () => {
   }
 
   const onSubmitAnswer = (id, index) => {
-    setTimeout(() => {
       // what exact function we need to call to uppdate the store
-      dispatch(
-        quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
-      );
+    dispatch(
+    	quiz.actions.submitAnswer({ questionId: id, answerIndex: index })
+    );
+	setTimeout(() => {
       // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
       // because we want to go to the next question directly
       dispatch(quiz.actions.goToNextQuestion({ id }));
-    }, 1000);
-
+    }, 2000);
     /* when clicking a btn the value of questionsCount(=Question left) decreses  */
     setQuestionsCount(questionsCount - 1);
-
     /* Update the progress-bar while clickin with 20% */
-    setCompleted(completed + 20);
+    setCompleted(completed + 20)
   };
+
+ 
 
   // for question 5
   if (question.id === 5) {
@@ -96,7 +93,11 @@ export const CurrentQuestion = () => {
                 ></button>
                 </div>
               ))}
-			<p>{`The answer is ${showCorrectAnswer(answers)}, please go to the next question`}</p>
+
+			{answer && 
+				<h2>{showAnswer()}</h2>
+			}
+
             </div>
             <div className="progress-bar-container">
               <p className="progress-text">
@@ -132,6 +133,9 @@ export const CurrentQuestion = () => {
                 text={item}
               />
             ))}
+			{answer && 
+			<h2>{showAnswer()}</h2>
+			}
           </div>
           <div className="progress-bar-container">
             {/* Here we display witch question we are at and how many we have left */}
