@@ -30,6 +30,7 @@ export const CurrentQuestion = () => {
   that why using useSelector */
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
   const answers = useSelector((state) => state.quiz.answers)
+
   console.log(answers)
 
   const showCorrectAnswer = (answers) => {

@@ -1,6 +1,5 @@
 import React from "react";
 //import { useSelector } from "react-redux";
-import { CurrentQuestion } from "./CurrentQuestion";
 
 //const isCorrect = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect);
 
