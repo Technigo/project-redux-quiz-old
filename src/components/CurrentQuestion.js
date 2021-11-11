@@ -1,5 +1,4 @@
 import React from 'react'
-import { quiz } from '../reducers/quiz'
 import styled from 'styled-components'
 
 import AnswerButton from './AnswerButton'
@@ -28,6 +27,7 @@ export const CurrentQuestion = ({ question, usersAnswer }) => {
       <AnswerWrapper>
         {question.options.map((option, index) => (
           <AnswerButton
+            key={option.id}
             question={question}
             option={option}
             index={index}

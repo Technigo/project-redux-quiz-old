@@ -160,18 +160,6 @@ const questions = [
     ],
     correctAnswerIndex: 1,
   },
-  {
-    id: 14,
-    category: 'Last',
-    questionText: 'Which language was used to build this app?',
-    options: [
-      { id: 1, answer: 'JSX' },
-      { id: 2, answer: 'React' },
-      { id: 3, answer: 'Python' },
-      { id: 4, answer: 'HTML' },
-    ],
-    correctAnswerIndex: 1,
-  },
 ]
 
 const initialState = {

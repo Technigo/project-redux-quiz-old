@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom'
 
 import { StyledButton } from 'components/StyledButton'
 import styled from 'styled-components'
-import Header from 'components/Header'
 
 export const SummaryBackground = styled.div`
   position: absolute;

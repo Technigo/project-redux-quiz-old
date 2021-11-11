@@ -5,7 +5,6 @@ import NextStepButton from '../components/NextStepButton'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 
 import Progressbar from '../components/Progressbar'
-import Header from 'components/Header'
 
 const Questions = () => {
   const numberOfQuestions = useSelector((state) => state.quiz.questions.length)

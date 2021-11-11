@@ -3,16 +3,14 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { quiz } from '../reducers/quiz'
 
-const StyledAnswerButton = styled.button.attrs({})`
-  &.default {
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: 0;
-  }
+const StyledAnswerButton = styled.button`
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 0;
   &.correct {
     margin: 10px;
     padding: 20px;
@@ -53,7 +51,6 @@ const AnswerButton = ({ question, option, index, usersAnswer }) => {
           : 'default'
       }
       disabled={usersAnswer}
-      key={option.id}
       onClick={() => onAnswerSubmit(question.id, index)}
     >
       {option.answer}

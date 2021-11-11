@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-// import { App } from 'App'
 import { StyledLink } from './StyledButton'
 
 const StyledHeader = styled.header`

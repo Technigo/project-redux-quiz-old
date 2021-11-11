@@ -1,9 +1,7 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { StyledButton, StyledLink } from 'components/StyledButton'
-import Header from 'components/Header'
 
 const HomepageBackground = styled.div`
   position: absolute;
