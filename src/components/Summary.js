@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 
 import { quiz } from "../reducers/quiz";
+
 import { FallingEmojis } from "falling-emojis";
 
 export const Summary = () => {
@@ -29,6 +30,7 @@ export const Summary = () => {
 
   const score = useSelector((state) => state.quiz.score)
 
+
   /* Here We use a if-statment w the score-value to get confetti or raindrops, install npm install --save falling-emojis and https://www.npmjs.com/package/react-confetti */
   return  ( 
     <main className="SummaryContainer" >
@@ -44,5 +46,6 @@ export const Summary = () => {
         </div>     
       </section>
     </main> 
+
   )
 };

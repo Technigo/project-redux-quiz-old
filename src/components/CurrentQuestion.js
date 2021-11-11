@@ -108,7 +108,7 @@ export const CurrentQuestion = () => {
                 completed={completed}
                 width={250}
                 customLabel={question.id}
-                bgColor="red"
+                bgColor={"Gray"}
               />
             </div>
           </div>
@@ -148,7 +148,7 @@ export const CurrentQuestion = () => {
               completed={completed}
               width={250}
               customLabel={question.id}
-              bgColor="red"
+              bgColor={"Gray"}
             />
           </div>
         </div>
