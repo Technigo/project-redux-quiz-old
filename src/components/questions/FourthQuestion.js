@@ -1,8 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../../reducers/quiz";
-import './Questions.css'
+import "./Questions.css";
 import Button from "components/smallComponents/Button";
+
+const semlaImg =
+  "https://st2.depositphotos.com/31984086/46224/v/600/depositphotos_462241918-stock-illustration-semla-is-a-traditional-sweet.jpg";
 
 export const FourthQuestion = () => {
   const question = useSelector(
@@ -10,6 +13,10 @@ export const FourthQuestion = () => {
   );
 
   const Dispatch = useDispatch();
+
+  if (!question) {
+    return <h1>Oh no! I could not find the current question!</h1>;
+  }
 
   const onAnswerSubmit = (id, index) => {
     Dispatch(
@@ -22,11 +29,10 @@ export const FourthQuestion = () => {
 
   return (
     <div className="question-container">
-      <h1 className="question">Question {question.id}: {question.questionText}</h1>
-      <img className="food-image"
-        src="https://st2.depositphotos.com/31984086/46224/v/600/depositphotos_462241918-stock-illustration-semla-is-a-traditional-sweet.jpg"
-        alt="semla"
-      />
+      <h1 className="question">
+        Question {question.id}: {question.questionText}
+      </h1>
+      <img className="food-image" src={semlaImg} alt="semla" />
       <select
         className="question-select"
         onChange={(event) =>
@@ -39,7 +45,7 @@ export const FourthQuestion = () => {
           </option>
         ))}
       </select>
-      <Button/>
+      <Button />
     </div>
   );
 };
