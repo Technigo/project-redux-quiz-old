@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { quiz } from '../reducers/quiz';
+import { ProgressStatus } from './ProgressStatus';
 import Audio from '../components/Audio';
 import Summary from './Summary';
 
@@ -51,6 +52,9 @@ export const CurrentQuestion = () => {
 
 
 	return (
+		<>
+		<div>
+			<h1>Question: {question.questionText}</h1>
     <main className="current-question-main">
 		<div className="question-section">
       <h1>Question</h1>
@@ -80,6 +84,8 @@ export const CurrentQuestion = () => {
     </div> 
 			
 		</div>
+		<ProgressStatus />
+		</>
     </main>
     
 	);
