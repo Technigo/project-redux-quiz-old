@@ -69,20 +69,24 @@ const questions = [
     questionText:
       "Which old Hogwarts relic did Harry pull out of the Sorting Hat?",
     options: [
-      "Ravenclaw's Diadem",
-      "HufflePuff's Cup",
-      "The Sword of Gryffindor",
-      "Slytherin's Locket",
+      { name: "Ravenclaw's Diadem", imgSrc: "./pictures/castle.jpg" },
+      { name: "HufflePuff's Cup", imgSrc: "./pictures/castle.jpg" },
+      { name: "The Sword of Gryffindor", imgSrc: "./pictures/castle.jpg" },
+      { name: "Slytherin's Locket", imgSrc: "./pictures/castle.jpg" },
     ],
     correctAnswerIndex: 2,
   },
   {
     id: 9,
-    imgSrc: "",
     type: "picture",
     questionText:
       "What position does Harry play on the Gryffindor Quidditch team?",
-    options: ["Keeper", "Beater", "Chaser", "Seeker"],
+    options: [
+      { name: "Keeper", imgSrc: "./pictures/castle.jpg" },
+      { name: "Beater", imgSrc: "./pictures/castle.jpg" },
+      { name: "Chaser", imgSrc: "./pictures/castle.jpg" },
+      { name: "Seeker", imgSrc: "./pictures/castle.jpg" },
+    ],
     correctAnswerIndex: 3,
   },
 ];

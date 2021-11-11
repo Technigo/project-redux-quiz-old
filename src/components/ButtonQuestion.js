@@ -48,8 +48,8 @@ export const ButtonQuestion = ({
                       console.log("SetAnswer");
                       setTimeout(() => {
                         console.log("Onwards");
-                        onGoToNextQuestion(question.id);
                         setHasClicked(false);
+                        onGoToNextQuestion(question.id);
                       }, 1000);
                     }
                   }}

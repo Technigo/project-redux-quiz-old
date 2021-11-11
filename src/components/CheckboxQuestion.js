@@ -20,7 +20,7 @@ export const CheckboxQuestion = ({
         return (
           <LabelContainer key={item}>
             <label htmlFor="checkboxOption" />
-            <span>{item}</span>
+            <span style={{ textAlign: "right" }}>{item}</span>
             <RadioInput
               style={{ backgroundColor: checked ? "red" : "white" }}
               id="checkboxOption"
@@ -43,8 +43,8 @@ export const CheckboxQuestion = ({
             console.log("SetAnswer");
             setTimeout(() => {
               console.log("Onwards");
-              onGoToNextQuestion(question.id);
               setHasClicked(false);
+              onGoToNextQuestion(question.id);
             }, 1000);
           }
         }}
@@ -71,8 +71,10 @@ const Header3 = styled.h3`
 `;
 
 const LabelContainer = styled.div`
+  display: grid;
+  grid-template-columns: 0px auto auto;
   padding-top: 10px;
-  text-align: center;
+
   margin: 10px;
   color: #638270;
 `;
