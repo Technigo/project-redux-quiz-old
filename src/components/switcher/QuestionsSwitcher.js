@@ -55,7 +55,7 @@ export const QuestionsSwitcher = () => {
       </PageStyling>
     );
   }
-  if (questionIndex === 5 && quizStatus === true) {
+  if (questionIndex === 5 && quizStatus === false) {
     quizStatus = true;
     return (
       <PageStyling>
