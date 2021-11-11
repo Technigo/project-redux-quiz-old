@@ -20,7 +20,7 @@ export const Summary = () => {
 	/* dispatch-forgot it */
 	const dispatch = useDispatch();
 
-	// asking for anwers from quiz
+	// asking for answers from quiz
 	const answers = useSelector((state) => state.quiz.answers);
 
 	/* map over every correct answer; dispatch the new score */
