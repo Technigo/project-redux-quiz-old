@@ -27,20 +27,12 @@ export const CurrentQuestion = () => {
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
     if (question.correctAnswerIndex === index) {
-      console.log('correct answer')
       document.getElementById(`${index}`).style.background = '#66DE93'
       document.getElementById(`${index}`).style.opacity = '1'
-
-      // document
-      //   .getElementByClassName('option-btn')
-      //   .setAttribute('disabled', 'disabled')
     } else {
-      console.log('not correct answer')
       document.getElementById(`${index}`).style.background = '#D83A56'
       document.getElementById(`${index}`).style.opacity = '1'
     }
-    // dispatch(quiz.actions.setButton())
-    // const idAnswer = question.id - 1
   }
 
   return (
