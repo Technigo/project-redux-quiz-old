@@ -83,7 +83,7 @@ export const CurrentQuestion = () => {
         <div>Question {question.id} out of 8</div> 
           
         <div>Question: (8-{question.id})</div> 
-        
+        <div></div>
         
         {/*<div>Question: (({question.id}/8)* 100)</div> 
         <div>(`${percentage}`)</div>*/}
