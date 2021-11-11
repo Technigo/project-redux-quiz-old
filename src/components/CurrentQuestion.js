@@ -8,7 +8,6 @@ import { Summary } from "./Summary";
 import { Button } from "./Button";
 import { BackgroundVideo } from "./BackgroundVideo";
 import { Counter } from "./Counter";
-// import Matrix from "BackgroundVideo/Matrix.mp4"
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -28,9 +27,6 @@ export const CurrentQuestion = () => {
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
-  // const onAnswerSubmit = (id, index) => {
-  //   dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  // };
 
   if (!quizOver) {
     return (
@@ -46,10 +42,6 @@ export const CurrentQuestion = () => {
               </div>
             ))}
 
-            {/* <img src="/matrix-image.jpeg" alt="matrix" /> */}
-            {/* <video autoPlay muted loop>
-    <source src="/Matrix.mp4" type="video/mp4" />
-  </video> */}
             <button
               className="re-start-button"
               onClick={handleClick}
@@ -57,15 +49,8 @@ export const CurrentQuestion = () => {
             >
               NEXT QUESTION
             </button>
-            {/* Added counter component */}
+
             <Counter />
-            {/* <p
-              style={{
-                color: "white",
-              }}
-            >
-              {question.id}/5
-            </p> */}
           </div>
         </main>
       </>
