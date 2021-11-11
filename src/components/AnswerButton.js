@@ -5,7 +5,7 @@ import React from "react";
 
 const AnswerButton = (props) => {
   return (
-    <button type="button" key={props.key} onClick={props.onClick}>
+    <button className="button" type="button" key={props.key} onClick={props.onClick}>
       <span className="button-text">{props.text}</span>
     </button>
   );

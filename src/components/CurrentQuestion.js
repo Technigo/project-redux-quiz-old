@@ -90,7 +90,6 @@ export const CurrentQuestion = () => {
                   style={{
                     backgroundImage: `url(${item})`,
                   }}
-                
                   type="button"
                   key={item}
                   onClick={() => onSubmitAnswer(question.id, index)}
