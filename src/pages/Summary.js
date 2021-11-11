@@ -2,8 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from '../reducers/quiz'
 import { useHistory } from 'react-router-dom'
+
 import { StyledButton } from 'components/StyledButton'
 import styled from 'styled-components'
+import Header from 'components/Header';
 
 const SummaryBackground = styled.div`
   position: absolute;
@@ -40,6 +42,8 @@ const Summary = () => {
   const numberOfQuestions = answers.length
 
   return (
+    <>
+    <Header />
     <SummaryBackground>
       <section className='main-container'>
         <h1>
@@ -73,6 +77,7 @@ const Summary = () => {
         <StyledButton onClick={handleRestart}>Try again</StyledButton>
       </section>
     </SummaryBackground>
+    </>
   )
 }
 

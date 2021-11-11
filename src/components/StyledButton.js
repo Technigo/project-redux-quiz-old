@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StyledButton = styled.button`
   font-family: 'Noto Serif', serif;
@@ -24,9 +24,9 @@ export const StyledButton = styled.button`
     background-image: -webkit-linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
     background-image: linear-gradient(45deg, #ffc107 0%, #f76a35 100%);
   }
-`
+`;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
-`
+`;
