@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 import { quiz } from "../reducers/quiz";
-import Confetti from "react-confetti";
+
 import { FallingEmojis } from "falling-emojis";
 
 export const Summary = () => {
@@ -46,7 +46,7 @@ return  (
 <p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
     <button className="SummaryTextConfetti-btn"
         type="submit"
-        onClick={() => restartQuiz()}>Restart the quiz
+        onClick={() => restartQuiz()}> <Link to="/"> Restart the quiz </Link>
       </button>
 </div>     </section>
 </main> 
@@ -68,7 +68,7 @@ return  (
 <p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
     <button className="SummaryTextRain-btn"
         type="submit"
-        onClick={() => restartQuiz()}>Restart the quiz
+        onClick={() => restartQuiz()}><Link to="/"> Restart the quiz </Link>
       </button>
 </div>     </section>
 </main> 

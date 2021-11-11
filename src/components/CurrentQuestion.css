@@ -3,6 +3,12 @@
 /* add zooming effect on the text ine the button? 
 */
 
+body{
+background-color: white;
+  
+ }
+
+
 .main-container {
 height: 100%;
 display: flex;
