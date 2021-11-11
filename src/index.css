@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: #d3d3d3;
   color: black;
 }
 
@@ -28,9 +32,10 @@ code {
 
 h1 {
   text-align: center;
-  margin: 40px 0;
+  margin: 1rem 0;
   color: #1a1a1a;
   padding: 20px;
+  font-size: 1.5rem;
 }
 
 .restart-btn {
@@ -40,27 +45,38 @@ h1 {
 }
 
 .restart-btn-container {
-  background-color: rgb(216, 216, 216);
-  padding: 12px;
+  background-color: #ffff;
+  /* padding: 12px; */
+  height: 48px;
   display: inline-block;
   border: none;
-  border-radius: 20px;
-  width: 150px;
+  border-radius: 24px;
+  width: 343px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  align-self: center;
+  margin: 1rem 0; 
 }
 
 .options-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
   margin: 40px auto;
   justify-items: center;
 }
 
 .button-container {
   height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #1a1a1a;
+
 }
 
 .option-btn,
@@ -70,10 +86,9 @@ h1 {
   color: #fff;
   font-weight: 700;
   border: none;
-  border-radius: 20px;
-  padding: 16px 10px;
+  border-radius: 24px;
+  height: 48px;
   width: 150px;
-  margin: 10px;
   cursor: pointer;
 }
 
@@ -88,50 +103,79 @@ h1 {
   cursor: not-allowed;
 }
 
+.disable-next-btn {
+  opacity: 50%;
+  cursor: not-allowed;
+  background-color: rgb(47, 47, 47);
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  font-weight: 700;
+  border: none;
+  border-radius: 24px;
+  height: 48px;
+  /* padding: 16px 10px; */
+
+}
+
 .next-button {
   background-color: rgb(47, 47, 47);
   display: block;
   margin: 0 auto;
-  width: 200px;
+  width: 100%;
 }
 
 .summary-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+}
+
+span {
+  font-size: 14px;
+  margin-left: 1rem;
 }
 
 .summary-answer {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  padding: 1rem;
 }
 
 .text {
-  width: 80%;
-  display: flex;
+  width: 100%;
+  /* display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 1000px; */
 }
 
 .question-title {
-  padding: 20px 20px 20px 0;
   font-size: 25px;
+  margin-top: 0;
 }
 
 .your-answer {
-  font-size: 18;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
-.i-container {
+.answer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* .i-container {
   font-size: 25px;
   display: flex;
   align-items: flex-end;
   margin-bottom: 16px;
-}
+} */
 
 .summary-result {
-  background-color: lightgrey;
   width: 100%;
+  padding: 1rem;
 }

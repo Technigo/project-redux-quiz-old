@@ -76,7 +76,7 @@ export const CurrentQuestion = () => {
             <button
               disabled={!answer}
               type='button'
-              className={!answer ? 'disable-btn' : 'next-button'}
+              className={!answer ? 'disable-next-btn' : 'next-button'}
               onClick={() => {
                 dispatch(quiz.actions.goToNextQuestion())
                 console.log('Right answer?:', store.answers[0].isCorrect)

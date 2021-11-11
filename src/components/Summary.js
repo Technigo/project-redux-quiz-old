@@ -9,8 +9,8 @@ export const Summary = () => {
   const storeAnswer = useSelector((state) => state.quiz.answers)
   console.log('summary:', storeAnswer)
 
-  const sQuestion = useSelector((state) => state.quiz.questions)
-  console.log('question;', sQuestion)
+  const storeQuestion = useSelector((state) => state.quiz.questions)
+  console.log('question;', storeQuestion)
 
   return (
     <section className='summary-section'>
@@ -18,24 +18,24 @@ export const Summary = () => {
       {storeAnswer.map((results, index) => (
         <div
           key={results.questionId}
-          style={{ backgroundColor: sQuestion[index].backgroundColor }}
+          style={{ backgroundColor: storeQuestion[index].backgroundColor }}
           className='summary-answer'
-        >
-          <h3 className='question-title'>{results.questionId}</h3>
+        >        
           <div className='text'>
-            <p>{results.question.questionText}</p>
-            <p className='your-answer'>Your answer: {results.answer}</p>
+            <h3 className='question-title'>{results.questionId}<span>{results.question.questionText}</span></h3>      
+            <div className='answer-container'>
+              <p className='your-answer'>Your answer: {results.answer}</p>
+                {results.isCorrect ? (
+                  <i className='fas fa-check' />
+                ) : (
+                  <i className='fas fa-times' />
+              )}
           </div>
-          <div className='i-container'>
-            {results.isCorrect ? (
-              <i className='fas fa-check' />
-            ) : (
-              <i className='fas fa-times' />
-            )}
           </div>
+
         </div>
       ))}
-      <div className='restart-button-container'>
+      <div className='restart-btn-container'>
         <RestartBtn />
       </div>
     </section>
