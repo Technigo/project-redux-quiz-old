@@ -31,7 +31,9 @@ const AnswerButton = styled.button`
   height: 100px;
 `
 
-const QuestionImage = styled.div``
+const QuestionImage = styled.img`
+  height: 200px;
+`
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch()
@@ -76,7 +78,7 @@ export const CurrentQuestion = () => {
       <div>
         <QuestionText>
           <h1> {question.questionText}</h1>
-          <QuestionImage>{question.imgURL} </QuestionImage>
+          {question.imgUrl !== '' && <QuestionImage src={question.imgUrl} alt='#' />}
           {/* Trying on line 77 to thet the image to show at the appropriate question */}
           {question.options.map((option, index) => (
             <button
