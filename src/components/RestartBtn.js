@@ -15,7 +15,7 @@ export const RestartBtn = () => {
       <span role='img' aria-label='arrow left emoji'>
         ⬅
       </span>
-      &nbsp;&nbsp;Back to basic
+      &nbsp;&nbsp;Back to start
     </button>
   )
 }

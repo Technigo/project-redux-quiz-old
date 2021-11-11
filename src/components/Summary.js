@@ -8,17 +8,15 @@ export const Summary = () => {
   const storeAnswer = useSelector((state) => state.quiz.answers)
   console.log('summary:', storeAnswer)
 
-  const storeQuestion = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  )
+  const storeQuestion = useSelector((state) => state.quiz.questions)
   console.log('question;', storeQuestion)
 
   return (
     <section className='summary-section'>
-      {storeAnswer.map((results) => (
+      {storeAnswer.map((results, index) => (
         <div
           key={results.questionId}
-          style={{ backgroundColor: storeQuestion.backgroundColor }}
+          style={{ backgroundColor: storeQuestion[index].backgroundColor }}
           className='summary-answer'
         >
           <h3 className='question-title'>{results.questionId}</h3>

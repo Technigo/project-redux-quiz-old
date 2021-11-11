@@ -78,6 +78,7 @@ h1 {
 
 .disable-btn {
   opacity: 50%;
+  cursor: not-allowed;
 }
 
 .next-button {
