@@ -16,7 +16,7 @@ const questions = [
     id: 2,
     questionText: "This flat beat is something to remember! ",
     questionText1: "Who is the artist?",
-    img: require("../assets/mrozo.gif"),
+    img: require("../assets/giphy.gif"),
     options: ["Todd Terje", "Paul Kalkbrenner", "Mr. Oizo", "Moby"],
     correctAnswerIndex: 2,
   },
