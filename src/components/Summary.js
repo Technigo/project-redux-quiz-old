@@ -40,7 +40,7 @@ return  (
  <div className="SummaryText"> 
 <h2 className="SummaryTextConfetti">Summary</h2>
 <p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
-    <button
+    <button className="SummaryTextConfetti-btn"
         type="submit"
         onClick={() => restartQuiz()}>Restart the quiz
       </button>
@@ -60,7 +60,7 @@ return  (
  <div className="SummaryText"> 
 <h2 className="SummaryTextRain">Summary</h2>
 <p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
-    <button
+    <button className="SummaryTextRain-btn"
         type="submit"
         onClick={() => restartQuiz()}>Restart the quiz
       </button>
