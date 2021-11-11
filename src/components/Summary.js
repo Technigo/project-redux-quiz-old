@@ -33,37 +33,45 @@ export const Summary = () => {
 if (score >=4){
 
 return  ( 
-       <main className="SummaryContainer" >
-			<Confetti  />
-			<section className="SummaryTextContent">
-			<div className="SummaryText"> 
-				<h2 className="SummaryTextConfetti">Summary</h2>
-				<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
-				<button
-				type="submit"
-				onClick={() => restartQuiz()}>Restart the quiz
-				</button>
-			</div>     
-			</section>
-		</main> 
+
+<main className="SummaryContainer" >
+<Confetti  />
+<section className="SummaryTextContent">
+ <div className="SummaryText"> 
+<h2 className="SummaryTextConfetti">Summary</h2>
+<p className="SummaryTextConfetti-p">Score: {score}/{answers.length}</p>
+    <button className="SummaryTextConfetti-btn"
+        type="submit"
+        onClick={() => restartQuiz()}>Restart the quiz
+      </button>
+</div>     </section>
+</main> 
+
 )
 
 } else {
 
   return (
-		<main className="SummaryContainer">
-			<FallingEmojis emoji={'💧'} />
-			<section className="SummaryTextContent">
- 				<div className="SummaryText"> 
-					<h2 className="SummaryTextRain">Summary</h2>
-						<p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
-    				<button
-        				type="submit"
-        				onClick={() => restartQuiz()}>Restart the quiz
-      				</button>
-				</div>     
-			</section>
-		</main> 
-  		)
-	}
+
+
+
+
+<main className="SummaryContainer" >
+<FallingEmojis emoji={'💧'} />
+<section className="SummaryTextContent">
+ <div className="SummaryText"> 
+<h2 className="SummaryTextRain">Summary</h2>
+<p className="SummaryTextRain-p">Score: {score}/{answers.length}</p>
+    <button className="SummaryTextRain-btn"
+        type="submit"
+        onClick={() => restartQuiz()}>Restart the quiz
+      </button>
+</div>     </section>
+</main> 
+  )
+}
+
+
+
+
 };

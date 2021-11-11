@@ -2,7 +2,7 @@
 
  height: 100vh;
 
- min-width: 100vw;
+max-width: 100vw;
 
 }
 
@@ -24,6 +24,10 @@ height: 100%;
 
 }
 
+
+/* If confetti */
+
+
 .SummaryTextConfetti{
 font-size: 4rem;
   text-shadow: 1px 1px 0px #eb452b, 
@@ -44,6 +48,28 @@ font-size: 4rem;
     1px 1px 0px #efa032, 
     1px 2px 0px #46b59b;
   }
+
+.SummaryTextConfetti-btn{
+  height: 35px;
+  width: 130px;
+border-radius: 5px;
+color: black;
+background-color: #f79f92;
+
+
+}
+
+.SummaryTextConfetti-btn:hover{
+
+  background-color: #da8072;
+
+
+
+}
+
+
+
+  /* If rain */
 
 
 .SummaryTextRain{
@@ -68,3 +94,25 @@ font-size: 4rem;
     2px 2px 0px #0fd1eb;
 
 }
+
+
+.SummaryTextRain-btn{
+
+  height: 35px;
+  width: 130px;
+border-radius: 5px;
+color: black;
+background-color: #c3e6eb;
+
+}
+
+.SummaryTextRain-btn:hover{
+
+background-color: #b9c4ce;
+
+
+}
+
+
+
+
