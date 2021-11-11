@@ -28,13 +28,16 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
     if (question.correctAnswerIndex === index) {
       console.log('correct answer')
-      document.getElementById(`${index}`).style.background = 'green'
+      document.getElementById(`${index}`).style.background = '#66DE93'
+      document.getElementById(`${index}`).style.opacity = '1'
+
       // document
       //   .getElementByClassName('option-btn')
       //   .setAttribute('disabled', 'disabled')
     } else {
       console.log('not correct answer')
-      document.getElementById(`${index}`).style.background = 'red'
+      document.getElementById(`${index}`).style.background = '#D83A56'
+      document.getElementById(`${index}`).style.opacity = '1'
     }
     // dispatch(quiz.actions.setButton())
     // const idAnswer = question.id - 1
@@ -50,7 +53,9 @@ export const CurrentQuestion = () => {
           >
             <div className='top-container'>
               <RestartBtn />
-              <div>{question.id}/5</div>
+              <div>
+                {question.id}/{store.questions.length}
+              </div>
             </div>
             <div>
               <h1>{question.questionText}</h1>
@@ -76,8 +81,9 @@ export const CurrentQuestion = () => {
           </div>
 
           <button
+            disabled={!answer}
             type='button'
-            className='next-button'
+            className={!answer ? 'disable-btn' : 'next-button'}
             onClick={() => {
               dispatch(quiz.actions.goToNextQuestion())
               console.log('Right answer?:', store.answers[0].isCorrect)
