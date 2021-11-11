@@ -17,7 +17,7 @@ const questions = [
   },
   {
     id: 3,
-    questionText: "What is the tallest mountain in the world?",
+    questionText: "What is the highest mountain in the world?",
     options: ["Denali", "Cerro Aconcagua", "Mount Everest", "Kilimanjaro"],
     correctAnswerIndex: 2,
   },

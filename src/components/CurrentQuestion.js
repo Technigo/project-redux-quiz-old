@@ -15,13 +15,11 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-
   /* Here we get the length of the arry(all the questions) */
   const questionsLength = useSelector((state) => state.quiz.questions.length);
   /* Here we pass the value from the "questionsLength" so we can decreas
   the value of questions left */
   const [questionsCount, setQuestionsCount] = useState(questionsLength);
-
   /* The progressbar for the question, using npm install
   --save @ramonak/react-progress-bar
   (read more here; https://www.npmjs.com/package/@ramonak/react-progress-bar#examples) */
@@ -31,10 +29,12 @@ export const CurrentQuestion = () => {
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
   const answers = useSelector((state) => state.quiz.answers)
 
-  console.log(answers)
+  const [correct, setCorrect] = useState(false)
+
 
   const showCorrectAnswer = (answers) => {
 	answers.forEach((item) => {
+		console.log(item)
 		if (item.isCorrect) {
 		  return "correct"
 		} else {
@@ -42,7 +42,6 @@ export const CurrentQuestion = () => {
 		}
 	  })
   }  
-  showCorrectAnswer(answers)
   /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
@@ -91,7 +90,6 @@ export const CurrentQuestion = () => {
                   style={{
                     backgroundImage: `url(${item})`,
                   }}
-                
                   type="button"
                   key={item}
                   onClick={() => onSubmitAnswer(question.id, index)}
