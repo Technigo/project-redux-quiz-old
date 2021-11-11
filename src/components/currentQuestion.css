@@ -1,11 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.current-question-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/movie-quiz-background.jpg");
+  background-size: cover;
+  font-family: 'Fjalla One', sans-serif;
+  
+  /* color: white; */
+}
+
+.question-section {
+  height: 55vh;
+  width: 70vw;
+  max-width: 800px;
+  background-color: #ffffff10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  /* box-shadow: 10px 10px 20px #6b6363; */
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.h3 {
+  font-size: 16px;
+}
+
+
+.btn-section {
+display: flex;
+}
+
 .correct {
-    background-color: green;
+    background-color: #9af39a;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 .wrong {
-    background-color: red;
+    background-color: #ec7171;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px;
 }
 
 .defaultbtn {
-    background-color: grey;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.next-question-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+
+
+.next-question-button, .defaultbtn, .wrong, .correct {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 14px;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.next-question-button:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+@media (min-width: 768px) {
+  .next-question-button {
+    padding: 0.25em 0.75em;
+  }
 }
