@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 import { useHistory } from "react-router-dom";
 
 const SiteContainerDiv = styled.div`
@@ -10,10 +10,8 @@ const SiteContainerDiv = styled.div`
 `;
 
 const Main = styled.main`
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 3.5em;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -31,6 +29,23 @@ const Button = styled.button`
   }
 `;
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Rotate = styled.div`
+  display: flex;
+  animation: ${rotate} 2s linear;
+  padding: 2rem 1rem;
+  font-size: 3.5rem;
+  flex-direction: column;
+`;
+
 const StartPage = () => {
   const history = useHistory();
 
@@ -38,10 +53,12 @@ const StartPage = () => {
     <>
       <SiteContainerDiv>
         <Main>
-          Hello friends
-          <Button type="button" onClick={() => history.push("/game")}>
-            Start
-          </Button>
+          <Rotate>
+            Hello friends
+            <Button type="button" onClick={() => history.push("/game")}>
+              Start
+            </Button>
+          </Rotate>
         </Main>
       </SiteContainerDiv>
     </>
