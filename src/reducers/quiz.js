@@ -5,6 +5,14 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
+    type: "checkbox",
+    questionText:
+      "What position does Harry play on the Gryffindor Quidditch team?",
+    options: ["Keeper", "Beater", "Chaser", "Seeker"],
+    correctAnswerIndex: 3,
+  },
+  {
+    id: 2,
     type: "button",
     questionText:
       "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
@@ -12,7 +20,7 @@ const questions = [
     correctAnswerIndex: 1,
   },
   {
-    id: 2,
+    id: 3,
     type: "button",
     questionText:
       "What did Ron call Hermione after Charms class that made her cry?",
@@ -20,23 +28,21 @@ const questions = [
     correctAnswerIndex: 0,
   },
   {
-    id: 3,
+    id: 4,
     type: "button",
-    imgSrc: "",
     questionText: "In what Hogwarts year do the students learn to Apparate?",
     options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
     correctAnswerIndex: 0,
   },
   {
-    id: 4,
+    id: 5,
     type: "button",
-    imgSrc: "",
     questionText: "Which Hogwarts subject is taught in North Tower?",
     options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
     correctAnswerIndex: 2,
   },
   {
-    id: 5,
+    id: 6,
     type: "button",
     imgSrc: "",
     questionText:
@@ -45,7 +51,7 @@ const questions = [
     correctAnswerIndex: 1,
   },
   {
-    id: 6,
+    id: 7,
     type: "picture",
     questionText:
       "On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?",
@@ -58,8 +64,7 @@ const questions = [
     correctAnswerIndex: 1,
   },
   {
-    id: 7,
-    imgSrc: "",
+    id: 8,
     type: "picture",
     questionText:
       "Which old Hogwarts relic did Harry pull out of the Sorting Hat?",
@@ -72,7 +77,7 @@ const questions = [
     correctAnswerIndex: 2,
   },
   {
-    id: 8,
+    id: 9,
     imgSrc: "",
     type: "picture",
     questionText:
