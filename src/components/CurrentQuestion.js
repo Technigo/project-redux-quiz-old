@@ -28,11 +28,6 @@ const QuestionText = styled.div`
   align-items: center;
 `
 
-const AnswerButton = styled.button`
-  width: 250px;
-  height: 100px;
-`
-
 const QuestionImage = styled.img`
   height: 200px;
 `
