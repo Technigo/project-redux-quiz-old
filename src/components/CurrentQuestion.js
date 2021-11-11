@@ -93,7 +93,7 @@ export const CurrentQuestion = () => {
               ))}
 
 			{answer && 
-				<h2>{showAnswer()}</h2>
+				<h2 className="answer-text">{showAnswer()}</h2>
 			}
 
             </div>
@@ -133,7 +133,7 @@ export const CurrentQuestion = () => {
               />
             ))}
 			{answer && 
-			<h2>{showAnswer()}</h2>
+			<h2 className="answer-text">{showAnswer()}</h2>
 			}
           </div>
           <div className="progress-bar-container">
