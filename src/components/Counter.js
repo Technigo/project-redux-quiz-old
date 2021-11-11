@@ -9,9 +9,9 @@ export const Counter = () => {
 
   return (
     <section className="counter-container">
-      <h2 className="counter-text">
+      <p className="counter-text">
         Question {currentQuestion.id} of {questions.length}
-      </h2>
+      </p>
     </section>
   );
 };

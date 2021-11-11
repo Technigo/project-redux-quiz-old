@@ -8,16 +8,22 @@ export const Summary = () => {
 
   return (
     <div className="summary-container">
-      <h1>TEST</h1>
+      <h1>SUMMARY</h1>
       {answers.map((answer) => (
-        <div key={answer.question.questionText}>
-          <p>
-            {answer.question.questionText} <span>&nbsp;{answer.answer}</span>
-            {answer.isCorrect ? "✅" : "❌"}
+        <div className="answer-container" key={answer.question.questionText}>
+          <p className="user-answer">{answer.question.questionText}</p>
+          <span className="answer">
+            {answer.answer}
+            {answer.isCorrect ? "✔️" : "❌"}
+          </span>
+
+          <p className="correct-answer">
+            {" "}
+            {answer.isCorrect ? "" : "Correct answer: "}
+            {!answer.isCorrect
+              ? answer.question.options[answer.question.correctAnswerIndex]
+              : "CORRECT"}
           </p>
-          {!answer.isCorrect
-            ? answer.question.options[answer.question.correctAnswerIndex]
-            : ""}
         </div>
       ))}
       <button

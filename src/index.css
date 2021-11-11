@@ -1,7 +1,6 @@
 body {
   margin: 0;
   font-family: "Orbitron", Verdana, sans-serif;
-  /* font-family: 'Matrix', sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
@@ -14,14 +13,25 @@ code {
 }
 
 h1 {
-  margin: 0;
+  margin: 10px;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  font-size: 38px;
   text-align: center;
-  padding: 40px;
+}
+
+h2 {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 20px;
 }
 
 button {
   font-family: "Orbitron", Verdana, sans-serif;
-  /* font-family: 'Matrix', sans-serif; */
   font-size: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -61,28 +71,16 @@ button {
 
 .button-container {
   display: flex;
-  /* border: 2px solid red; */
   cursor: pointer;
   margin: 0 auto;
 }
 
-/* .main-container {
- 
-  border: 2px solid red;
-} */
-
 .wrapper {
-  /* display: flex;
-  height: 500px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* border: 2px solid yellow; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(26, 25, 25, 0.808);
+  background: rgba(26, 25, 25, 0.938);
   border-radius: 10%;
   padding: 10px;
 }
@@ -91,48 +89,56 @@ button {
   width: auto;
   height: 20px;
   filter: invert(100%);
+  margin: auto;
 }
 
 .start-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 25, 25, 0.808);
+  border-radius: 10%;
+  padding: 10%;
   text-align: center;
   font-family: "Matrix", sans-serif;
 }
 
 .start-image {
-  height: 500px;
+  height: 200px;
 }
 
+.next-button,
 .re-start-button {
   font-family: "Matrix", sans-serif;
   cursor: pointer;
-  align-self: center;
   width: 300px;
   height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0 0 40px 40px #0fa inset, 0 0 0 0 #0fa;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 
-.next-button {
-  font-family: "Matrix", sans-serif;
-  cursor: pointer;
-  align-items: center;
-  align-self: center;
-  width: 300px;
-  height: 40px;
-  text-align: center;
-  display: flex;
+.next-button:hover,
+.re-start-button:hover {
+  box-shadow: 0 0 10px 0 #0fa inset, 0 0 10px 4px #0fa;
 }
 
 .counter-container {
-  color: rgb(255, 255, 255);
-  width: 50%;
+  color: #0fa;
   margin: 0 auto;
+  width: 40%;
   display: flex;
   justify-content: center;
-  background: rgb(14, 255, 170);
   border-radius: 5px;
-  height: 65px;
+}
+
+.counter-text {
+  margin: 10;
 }
 
 /* summary css*/
@@ -142,11 +148,41 @@ button {
   flex-direction: column;
   justify-content: center;
   background: rgba(26, 25, 25, 0.808);
-  /* border: 2px solid yellow; */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  border-radius: 10%;
+  border-radius: 10px;
+}
+
+.rabbit-text {
+  font-family: "Orbitron", Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+}
+
+.correct-answer {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #0fa;
+}
+
+.answer {
+  display: block;
+  margin-top: 10px;
+}
+
+.answer-container {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  letter-spacing: 1.7px;
+}
+
+.user-answer {
+  font-weight: bold;
 }

@@ -4,12 +4,11 @@ import React from "react";
 const StartPage = ({ start }) => {
   return (
     <div className="start-container">
-      <h1>Technigo Team Quiz</h1>
-      <div className="start-image">
-        <img src="/rabbit.jpg" alt="rabbit" />
-      </div>
-      <button className="re-start-button" onClick={() => start(true)}>
-        Start
+      <h1>KNOCK KNOCK...</h1>
+      {/* <img className="start-image" src="/rabbit.jpg" alt="rabbit" /> */}
+      <p className="rabbit-text">follow the white rabbit</p>
+      <button className="next-button" onClick={() => start(true)}>
+        START
       </button>
     </div>
   );

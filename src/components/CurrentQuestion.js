@@ -38,7 +38,7 @@ export const CurrentQuestion = () => {
         <main className="main-container">
           <BackgroundVideo />
           <div className="wrapper">
-            <h1>Question: {question.questionText}</h1>
+            <h2>{question.questionText}</h2>
             {question.options.map((item, index) => (
               <div className="button-container" key={index}>
                 <img className="pill-image" src="/pill.png" />
