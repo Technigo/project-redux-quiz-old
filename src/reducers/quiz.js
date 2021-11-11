@@ -16,11 +16,7 @@ const questions = [
     id: 2,
     questionText: "This flat beat is something to remember! ",
     questionText1: "Who is the artist?",
-<<<<<<< HEAD
-    img: require("../assets/Mrozo.gif"),
-=======
     img: require("./assets/mrozo.gif"),
->>>>>>> dca930fde17dc27e45a98bc44fdd9d34c4d74fbe
     options: ["Todd Terje", "Paul Kalkbrenner", "Mr. Oizo", "Moby"],
     correctAnswerIndex: 2,
   },
@@ -46,11 +42,7 @@ const questions = [
     questionText:
       "Soundgarden was an American rock band formed in Washington 1984. They achieved its biggest success with the 1994 album Superunknown, They yielded the Grammy Award-winning singles for this song and music video.",
     questionText1: "What was the name of the song? ",
-<<<<<<< HEAD
-    img: require("../assets/soundgarden.gif"),
-=======
-    img: require("./assets/busta.gif"),
->>>>>>> dca930fde17dc27e45a98bc44fdd9d34c4d74fbe
+    img: require("./assets/soundgarden.gif"),
     options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
   },
@@ -60,11 +52,7 @@ const questions = [
     questionText:
       "Eminem  was the first rapper in history to win an Oscar for Best Original song in 8 mile.",
     questionText1: "What song was it, won the price?",
-<<<<<<< HEAD
-    img: require("../assets/Eminem.gif"),
-=======
     img: require("./assets/eminem.gif"),
->>>>>>> dca930fde17dc27e45a98bc44fdd9d34c4d74fbe
     options: ["The Real Slim Shady", "Stan", "Lose Your Self", "May name is"],
     correctAnswerIndex: 2,
   },
@@ -82,18 +70,9 @@ const questions = [
     questionText:
       "No Doubt is an American rock band from Anaheim, California, formed in 1986. They have sold over 33 million records worldwide.",
     questionText1: "Do you know the lead singers name?",
-<<<<<<< HEAD
-    img: require("../assets/nodoubt.gif"),
     options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
-=======
     img: require("./assets/nodoubt.gif"),
-    options: [
-      "Allison Wolfe",
-      "Courtney Love ",
-      "Gwen Stefani",
-      "Brain splash in the aquarium",
-    ],
->>>>>>> dca930fde17dc27e45a98bc44fdd9d34c4d74fbe
+    options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
     correctAnswerIndex: 2,
   },
   {

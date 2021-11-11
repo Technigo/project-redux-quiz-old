@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { quiz } from "reducers/quiz";
+import { Answers } from "./Answers";
 
 const SummaryContainer = styled.div`
   width: 300px;
@@ -79,13 +80,7 @@ const Summary = () => {
           (rightAnswers.length <= 8 && <p>You rock!</p>) ||
           (rightAnswers.length >= 9 && <p>You are a legend!</p>)}
       </SummaryText>
-      <div>
-        {question.map((item) => (
-          <div>
-            for question{item.id} you clicked {answer.map((a) => a.answer)}
-          </div>
-        ))}
-      </div>
+      <Answers />
       <RestartButton onClick={() => onRestart()}>Restart</RestartButton>
     </SummaryContainer>
   );
