@@ -1,6 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "reducers/quiz";
+import { useSelector } from "react-redux";
 
 const Counter = () => {
   const counter = useSelector((store) => store.quiz.currentQuestionIndex);
