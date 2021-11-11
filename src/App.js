@@ -2,17 +2,25 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import { SideBar } from './components/SideBar'
+import { Footer } from './components/Footer'
+import { Header } from './components/Header'
 import { store } from './store'
 
 import { Results } from './components/Results'
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <SideBar />
-      <CurrentQuestion />
-      <Results />
-    </Provider>
+    <>
+      <Header />
+      <div className="main-container">
+        <Provider store={store}>
+          <SideBar />
+          <CurrentQuestion />
+          <Results />
+        </Provider>
+      </div>
+      <Footer />
+    </>
   )
 }
 
