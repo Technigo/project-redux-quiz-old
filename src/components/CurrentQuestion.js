@@ -29,7 +29,6 @@ export const CurrentQuestion = () => {
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
 
   const answer = useSelector((state) => state.quiz.answers.find((answer) => answer.questionId === question.id))
-  console.log(answer)
 
   const showAnswer = () => {
     if (answer.isCorrect) {
@@ -39,7 +38,6 @@ export const CurrentQuestion = () => {
     }
   }
   
-  /* const questionIsTrue = useSelector((state) => state.quiz.answers.isCorrect) */
   /* dispatch all of the actions, dispatch some actions,
   that call reducers and reducers update the store, store detect that it was updated,
   calls selectors, selectors come to componenets with information -
