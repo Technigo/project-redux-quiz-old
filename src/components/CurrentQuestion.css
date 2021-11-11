@@ -177,6 +177,10 @@ align-content: center;
   } 
   
 
+  .image-button {
+    width: 100%;
+  }
+
 }
 
 @media (min-width:1024px) {
@@ -225,6 +229,7 @@ align-content: center;
   }
 
 
+
 .ImgContainer{
 
   max-width: 500px;
@@ -233,5 +238,10 @@ min-height: 350px;
 
 }  
   
+
+
+  .image-button {
+    width: 100%;
+  }
 
 }
