@@ -126,6 +126,7 @@ export const CurrentQuestion = () => {
             {question.options.map((item, index) => (
               <AnswerButton
                 key={item}
+                keyID={item}
                 /* pass function to the dispatch to update the state, exessing
                 quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
                 answerId is a specific answer of a question */
