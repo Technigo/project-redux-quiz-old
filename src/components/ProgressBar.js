@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
@@ -19,12 +20,13 @@ export const ProgressBar = () => {
             <Dot
               style={{
                 backgroundColor:
-                  currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
+                  currentQuestionIndex >= index ? '#638270' : '#f0f0f0',
               }}
             ></Dot>
             <Line
               style={{
                 backgroundColor:
+
                   currentQuestionIndex >= index ? "#638270" : "#f0f0f0",
               }}
             ></Line>
@@ -34,6 +36,7 @@ export const ProgressBar = () => {
 
       <IconContainer
         style={{
+
           backgroundColor: isQuizOver ? "#638270" : "#f0f0f0",
         }}
       >

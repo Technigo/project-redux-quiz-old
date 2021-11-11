@@ -4,6 +4,8 @@ import { quiz } from "../reducers/quiz";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { ButtonQuestion } from "./ButtonQuestion";
+import { PictureQuestion } from './PictureQuestion';
+
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -21,6 +23,7 @@ export const CurrentQuestion = () => {
   };
 
   const getQuestionType = (type) => {
+
     if (type === "button") {
       return (
         <ButtonQuestion
@@ -29,6 +32,16 @@ export const CurrentQuestion = () => {
           onGoToNextQuestion={onGoToNextQuestion}
         />
       );
+
+    } else if (type === 'picture') {
+      return (
+        <PictureQuestion
+          question={question}
+          setOnAnswerSubmit={onAnswerSubmit}
+          onGoToNextQuestion={onGoToNextQuestion}
+        />
+      );
+
     } else {
       return <div>Other</div>;
     }
