@@ -28,30 +28,32 @@ const Nextbutton = styled.button `
   width: 30%;
   margin: 15px;
   padding: 15px;` // Styles the next button
-
 const Chosenanswer = styled.span `
   color: white;
   font-size: 25px; 
   font-family: 'Redressed', cursive;
 `// Styles the text on choice button
+const Feedback = styled.div ``
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const answers = useSelector((state) => state.quiz.answers)
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
   const dispatch = useDispatch()
+  
+ 
   //const nextQuestion = useSelector((state) => state.quiz.goToNextQuestion)
-
-  const percentage = ({questionId}) => {
-   return (({questionId}/8)* 100)}
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
   const onAnswerSubmit = (id, index) => {dispatch(quiz.actions.submitAnswer({questionId:id, answerIndex: index}))}
   
+
   return (
+    
     <Main>
+      
       {/*{answers[currentQuestionIndex] ? answers[currentQuestionIndex].isCorrect : 'no answer'}*/}
       <Questiontext>Question: {question.questionText}</Questiontext>
       <Buttonssection>
@@ -70,17 +72,19 @@ export const CurrentQuestion = () => {
         
       </Buttonssection>
       
-       <div>
+       <Feedback>
         {answers[currentQuestionIndex]  
           ? answers[currentQuestionIndex].isCorrect 
             ? <p>Woohoo! It's Correct</p>
             : <p>Oh no.... It's not correct</p>
           :<p>Waiting for the answer</p>}
-        </div>
+        </Feedback>
 
-        <div>Question {question.id} / 8</div> 
+        <div>Question {question.id} out of 8</div> 
           
         <div>Question: (8-{question.id})</div> 
+        
+        
         {/*<div>Question: (({question.id}/8)* 100)</div> 
         <div>(`${percentage}`)</div>*/}
     </Main>
