@@ -7,7 +7,7 @@ export const Summary = (CurrentQuestion) => {
     <div>
       Summary
       <Link to="/quiz">
-        <button onClick={CurrentQuestion}>Wanna play again?</button>
+        <button>Wanna play again?</button>
       </Link>
     </div>
   );
