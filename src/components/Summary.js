@@ -30,8 +30,6 @@ export const Summary = () => {
   const score = useSelector((state) => state.quiz.score)
 
 /* Here We use a if-statment w the score-value to get confetti or raindrops, install npm install --save falling-emojis and https://www.npmjs.com/package/react-confetti */
-
-
 if (score >=4){
 
 return  ( 

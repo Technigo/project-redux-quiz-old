@@ -47,7 +47,6 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   score: 0 /* new property for keeping count of correct answers */,
-  loading: true,
 };
 
 export const quiz = createSlice({
