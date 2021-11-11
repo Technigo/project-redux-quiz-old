@@ -8,7 +8,7 @@ body {
   box-sizing: border-box;
   font-family: "Aclonica", sans-serif;
   font-family: "Nunito", sans-serif;
-  background-image: url("./assets/background.jpg");
+  background-image: url("./reducers/assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 130vh;
