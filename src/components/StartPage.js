@@ -7,13 +7,12 @@ import './StartPage.css';
 const StartPage = () => {
     return (
 
-      <div>
-        <h1 className="heading-startpage">MOVIE TIME</h1>
-        <img className="background-startpage" src="./assets/movie-quiz-background.jpg" alt="movie" />
+      <main className="background-startpage">
+        {/* <h1 className="heading-startpage">MOVIE TIME</h1> */}
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
         </Link>
-      </div>
+      </main>
     );
   };
   
