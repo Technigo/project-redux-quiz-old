@@ -48,7 +48,8 @@ const initialState = {
   ],
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  correctAnswers: 0 /* for the score */
 }
 
 export const quiz = createSlice({
@@ -119,8 +120,12 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    restart: () => {
+     restart: () => {
       return initialState
+    },
+    /* raise the score for every correct answer */
+    addScore: (state) => {
+      state.correctAnswers += 1
     }
 
   }
