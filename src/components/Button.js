@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 
-export const Button = () => {
+export const Button = ({ item, index }) => {
   // Added selectors
   const dispatch = useDispatch();
   const question = useSelector(
@@ -14,30 +14,21 @@ export const Button = () => {
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
-  //   disabled,
-  //   item,
-  //   answer,
-  //   index,
-  //   question,
-  //   onClick,
-  // }) => {
+
   return (
-    // Mapping messing everything up
-    <>
-      {question.options.map((item, index) => (
-        <button
-          disabled={!!answer}
-          type="button"
-          className={
-            !answer
-              ? "default-button"
-              : index === question.correctAnswerIndex
-              ? "right-button"
-              : "wrong-button"
-          }
-          onClick={() => onAnswerSubmit(question.id, index)}
-        ></button>
-      ))}
-    </>
+    <button
+      disabled={!!answer}
+      type="button"
+      className={
+        !answer
+          ? "default-button"
+          : index === question.correctAnswerIndex
+          ? "right-button"
+          : "wrong-button"
+      }
+      onClick={() => onAnswerSubmit(question.id, index)}
+    >
+      {item}
+    </button>
   );
 };

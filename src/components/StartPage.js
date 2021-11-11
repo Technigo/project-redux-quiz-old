@@ -5,7 +5,10 @@ const StartPage = ({ start }) => {
   return (
     <div className="start-container">
       <h1>Technigo Team Quiz</h1>
-      <button className="next-button" onClick={() => start(true)}>
+      <div className="start-image">
+        <img src="/rabbit.jpg" alt="rabbit" />
+      </div>
+      <button className="re-start-button" onClick={() => start(true)}>
         Start
       </button>
     </div>

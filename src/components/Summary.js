@@ -2,20 +2,17 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "../reducers/quiz";
 
-const Summary = () => {
+export const Summary = () => {
   const dispatch = useDispatch();
   const answers = useSelector((state) => state.quiz.answers);
-  console.log("hello");
 
   return (
-    <div>
+    <div className="summary-container">
       <h1>TEST</h1>
-      <button onClick={() => dispatch(quiz.actions.restart())}>RESTART</button>
       {answers.map((answer) => (
         <div key={answer.question.questionText}>
           <p>
-            {answer.question.questionText}
-            <span>{answer.answer}</span>
+            {answer.question.questionText} <span>&nbsp;{answer.answer}</span>
             {answer.isCorrect ? "✅" : "❌"}
           </p>
           {!answer.isCorrect
@@ -23,8 +20,12 @@ const Summary = () => {
             : ""}
         </div>
       ))}
+      <button
+        className="re-start-button"
+        onClick={() => dispatch(quiz.actions.restart())}
+      >
+        RESTART
+      </button>
     </div>
   );
 };
-
-export default Summary;
