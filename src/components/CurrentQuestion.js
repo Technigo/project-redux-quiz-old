@@ -13,6 +13,9 @@ let Overlay = styled.div`
   background: #212121;
   z-index: 2;
   display: block;
+  color: white;
+  padding: 40px;
+  text-align: center;
 `;
 
 export const CurrentQuestion = () => {
@@ -52,7 +55,7 @@ export const CurrentQuestion = () => {
         </Overlay>
       )}
       {question.type === 'picture' ? (
-        <img src={question.path} alt="Quizimage" />
+        <img src={question.path} alt="QuizImage" />
       ) : (
         <video autoPlay muted>
           <source src={question.path} type="video/mp4" />
