@@ -61,18 +61,18 @@ const Summary = () => {
 
   const numberOfQuestions = answers.length
 
-  const noOfSportQus = answers.filter((answer) => answer.question.category === "Sport").length
-  const correctSportQus = answers.filter((answer) => answer.question.category === "Sport" && answer.isCorrect).length
-  const noOfEntQus = answers.filter((answer) => answer.question.category === "Entertainment").length
-  const correctEntQus = answers.filter((answer) => answer.question.category === "Entertainment" && answer.isCorrect).length
-  const noOfFoodQus = answers.filter((answer) => answer.question.category === "Food").length
-  const correctFoodQus = answers.filter((answer) => answer.question.category === "Food" && answer.isCorrect).length
-  const noOfGeneralQus = answers.filter((answer) => answer.question.category === "General").length
-  const correctGeneralQus = answers.filter((answer) => answer.question.category === "General" && answer.isCorrect).length
-  const noOfGeoQus = answers.filter((answer) => answer.question.category === "Geography").length
-  const correctGeoQus = answers.filter((answer) => answer.question.category === "Geography" && answer.isCorrect).length
-  const noOfInoQus = answers.filter((answer) => answer.question.category === "Innovation").length
-  const correctInoQus = answers.filter((answer) => answer.question.category === "Innovation" && answer.isCorrect).length
+  // const noOfSportQus = answers.filter((answer) => answer.question.category === "Sport").length
+  // const correctSportQus = answers.filter((answer) => answer.question.category === "Sport" && answer.isCorrect).length
+  // const noOfEntQus = answers.filter((answer) => answer.question.category === "Entertainment").length
+  // const correctEntQus = answers.filter((answer) => answer.question.category === "Entertainment" && answer.isCorrect).length
+  // const noOfFoodQus = answers.filter((answer) => answer.question.category === "Food").length
+  // const correctFoodQus = answers.filter((answer) => answer.question.category === "Food" && answer.isCorrect).length
+  // const noOfGeneralQus = answers.filter((answer) => answer.question.category === "General").length
+  // const correctGeneralQus = answers.filter((answer) => answer.question.category === "General" && answer.isCorrect).length
+  // const noOfGeoQus = answers.filter((answer) => answer.question.category === "Geography").length
+  // const correctGeoQus = answers.filter((answer) => answer.question.category === "Geography" && answer.isCorrect).length
+  // const noOfInoQus = answers.filter((answer) => answer.question.category === "Innovation").length
+  // const correctInoQus = answers.filter((answer) => answer.question.category === "Innovation" && answer.isCorrect).length
   
   return (
     <SummaryBackground>

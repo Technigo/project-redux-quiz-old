@@ -15,7 +15,6 @@ const AnswerWrapper = styled.div`
 
 export const CurrentQuestion = ({ question, usersAnswer }) => {
   const points = useSelector((state) => state.quiz.points)
-  console.log(points)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
