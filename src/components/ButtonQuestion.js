@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 // A function which checks if the person has clicked a button and then returns different
 // styled buttons depending on if the selected answer by the user was correct or incorrect.
+// It also renders the buttons when it maps over question.options array.
 export const ButtonQuestion = ({
   question,
   setOnAnswerSubmit,
@@ -144,17 +145,17 @@ const NotCorrectButton = styled(Button)`
 `;
 
 const Header3 = styled.h3`
-  padding-top: 150px;
+  padding-top: 15px;
   text-align: center;
   margin: 0 0 10px 0;
   color: #638270;
 
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 35px;
-    padding: 150px 15px 0 15px;
+    padding: 15px 15px 0 15px;
   }
   @media (min-width: 1025px) {
     font-size: 50px;
-    padding: 150px 150px 0 150px;
+    padding: 15px 150px 0 150px;
   }
 `;

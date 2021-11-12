@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+// When the start button gets clicked it sends information to the parent about what will happen. ++´
 export const StartScreen = ({ onStartButtonClick }) => {
   return (
     <Wrapper>
@@ -22,6 +23,8 @@ export const StartScreen = ({ onStartButtonClick }) => {
     </Wrapper>
   );
 };
+
+// ----------------------------- Styled component ----------------------------------------
 
 const Wrapper = styled.div`
   height: 100vh;

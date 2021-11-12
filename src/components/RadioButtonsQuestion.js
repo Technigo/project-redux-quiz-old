@@ -61,17 +61,17 @@ export const RadioButtonsQuestion = ({
 // -------------------------- Styled component ---------------------------------
 
 const Header3 = styled.h3`
-  padding-top: 150px;
+  padding-top: 15px;
   text-align: center;
   margin: 50px auto;
   color: #638270;
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 35px;
-    padding: 150px 15px 0 15px;
+    padding: 15px 15px 0 15px;
   }
   @media only screen and (min-width: 1025px) {
     font-size: 50px;
-    padding: 150px 150px 0 150px;
+    padding: 15px 150px 0 150px;
   }
 `;
 

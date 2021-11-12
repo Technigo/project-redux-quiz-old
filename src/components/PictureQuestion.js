@@ -38,20 +38,19 @@ export const PictureQuestion = ({
             );
           } else {
             return (
-              <div key={option.name}>
-                <OptionImage
-                  imgSrc={option.imgSrc}
-                  onClick={() => {
-                    setOnAnswerSubmit(question.id, index);
+              <OptionImage
+                key={option.name}
+                imgSrc={option.imgSrc}
+                onClick={() => {
+                  setOnAnswerSubmit(question.id, index);
 
-                    setTimeout(() => {
-                      onGoToNextQuestion(question.id);
-                    }, 1000);
-                  }}
-                >
-                  {option.name}
-                </OptionImage>
-              </div>
+                  setTimeout(() => {
+                    onGoToNextQuestion(question.id);
+                  }, 1000);
+                }}
+              >
+                {option.name}
+              </OptionImage>
             );
           }
         })}
@@ -61,18 +60,20 @@ export const PictureQuestion = ({
 };
 
 const OptionImage = styled.div`
-  width: 250px;
+  width: 100%;
+  max-width: 200px;
   height: 200px;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url(${(props) => props.imgSrc});
   background-size: cover;
   color: #638270;
   text-align: center;
-  font-size: 2em;
+  font-size: 20px;
   border-radius: 2px;
   border-bottom: 2px solid #638270;
   border-right: 2px solid #638270;
   cursor: pointer;
+  padding: 10px 0;
 
   &:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
@@ -105,7 +106,6 @@ const CorrectOptionImage = styled(OptionImage)`
 `;
 
 const QuestionContainer = styled.div`
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -116,8 +116,10 @@ const QuestionContainer = styled.div`
 const ButtonsContainer = styled.div`
   width: 80%;
   justify-content: center;
+  justify-items: center;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-gap: 10px;
   margin: 10px;
 
@@ -129,12 +131,12 @@ const ButtonsContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-gap: 20px;
-    margin: 0 200px;
+    width: 60%;
   }
 `;
 
 const Header3 = styled.h3`
-  padding-top: 150px;
+  padding-top: 15px;
   text-align: center;
   margin: 10px;
   color: #638270;
@@ -145,6 +147,6 @@ const Header3 = styled.h3`
   }
   @media only screen and (min-width: 1025px) {
     font-size: 50px;
-    padding: 150px 150px 0 150px;
+    padding: 15px 150px 0 150px;
   }
 `;
