@@ -1,13 +1,14 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project by Elin Elmvik Diczfalusy, Jessica Nygren Walhed, Daniel Vestin, Kriss Stockhaus & Katie Wu.
+For making a Quiz with React Redux practicing global states, store, useSelector, dispatch, reducers etc.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First we plan the project together what the Quiz would be about also making a design sketch to follow. We proceeded to work as much as we could as a group but also split up during day/evening. We tried to use the techniques that's associated with react redux as much as possible but also mixed up some 'old' techniques.
+
+If we had more time we would've wanted to try implement more functions like a timer and counter. We also would've wanted to try out styled components a bit more.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://common-knowledge.netlify.app/

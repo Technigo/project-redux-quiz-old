@@ -1,9 +1,12 @@
 To Do!!! ✅
 - restart button "back to basic" (up left corner?) ✅
-- required? Validation !(else it will be error) 
+- required? Validation !(else it will be error) ✅
 - Summary-page component ✅
 - startpage? component- 
 - ternary operator (? :) if quizOver ✅
-- style with ternary operator (? :) correct or wrong answer in currentQuesion
+- style with ternary operator (? :) correct or wrong answer in currentQuesion ✅
 - styling/design
 - progressbar with numbers ✅
+
+- Summary restart button looks like it have a different font?
+- Green check mark for correct answer, red checker for incorrect?

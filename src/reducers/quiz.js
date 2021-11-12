@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
 const questions = [
   {
     id: 1,
@@ -12,6 +11,7 @@ const questions = [
       'A type of fish',
     ],
     correctAnswerIndex: 3,
+    // different color values for each question. Using it to style the background-color.
     backgroundColor: '#FFDD40',
   },
   {
@@ -45,6 +45,20 @@ const questions = [
     correctAnswerIndex: 2,
     backgroundColor: '#FFE5E5',
   },
+  {
+    id: 6,
+    questionText: 'What is the term for a group of owls?',
+    options: ['Blessing', 'Terror', 'Confusion', 'Parliament'],
+    correctAnswerIndex: 3,
+    backgroundColor: '#FFDD40',
+  },
+  {
+    id: 7,
+    questionText: 'The average person in the US opens what 13 times per day?',
+    options: ['Front door', 'A can of soda', 'Refrigerator', 'A window'],
+    correctAnswerIndex: 2,
+    backgroundColor: '#BAE5A3',
+  },
 ]
 
 const initialState = {
@@ -52,7 +66,6 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  // counter: 0,
 }
 
 export const quiz = createSlice({
@@ -124,9 +137,5 @@ export const quiz = createSlice({
     restart: () => {
       return initialState
     },
-
-    // setButton: (state) => {
-    //   state.btnActive = true
-    // },
   },
 })
