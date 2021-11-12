@@ -45,7 +45,7 @@ export const CurrentQuestion = () => {
           >
             <div className='top-container'>
               <RestartBtn />
-              <div>
+              <div className='counter'>
                 {question.id}/{store.questions.length}
               </div>
             </div>
