@@ -23,9 +23,13 @@ const ButtonImage = styled.button`
   width: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  pointer: cursor;
 
   &:hover {
-    opacity: 50%;
+    background-color: rgb(224, 218, 218);
+    box-shadow: 5px 5px rgb(69, 69, 69);
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+      inset 4px 4px 6px rgba(0, 0, 0, 0.2);
   }
 `;
 
