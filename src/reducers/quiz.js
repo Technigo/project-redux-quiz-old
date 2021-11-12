@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useHistory } from 'react-router-dom'
+
 
 // Change these to your own questions!
 const questions = [
@@ -117,8 +119,9 @@ export const quiz = createSlice({
      */
     restart: () => {
       /* for progress bar, because when page reaload progress bar continued to
-increase amount of questions */
+increase amount o f questions */
       window.location.reload(false);
+
       return initialState;
     },
 

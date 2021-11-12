@@ -4,10 +4,12 @@ import { quiz } from "reducers/quiz";
 import { Summary } from "components/Summary";
 import ProgressBar from "@ramonak/react-progress-bar";
 import AnswerButton from "./AnswerButton";
-import "components/CurrentQuestion.css";
 import styled from "styled-components";
+import ImageButton from "./ImageButton";
+import "components/CurrentQuestion.css";
 
 // styles components for current question
+
 const MainContainer = styled.main`
   height: 100%;
   display: flex;
@@ -90,12 +92,19 @@ const ButtonContainer = styled.div`
 const ProgressBarContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const ProgressText = styled.p`
   color: rgb(46, 45, 45);
   font-weight: 500;
+`;
+
+const ProgressAnswerContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80px;
+  margin-left: 5px;
 `;
 
 export const CurrentQuestion = () => {
@@ -159,48 +168,6 @@ export const CurrentQuestion = () => {
     setCompleted(completed + 20);
   };
 
-  // for question 5
-  if (question.id === 5) {
-    return (
-      <>
-        <MainContainer>
-          <QuizContainer>
-            <QuestionText>{question.questionText}</QuestionText>
-            <ButtonContainer>
-              {question.options.map((item, index) => (
-                <div className="ImgContainer">
-                  <button
-                    className="buttonImg"
-                    style={{
-                      backgroundImage: `url(${item})`,
-                    }}
-                    type="button"
-                    key={item}
-                    onClick={() => onSubmitAnswer(question.id, index)}
-                  ></button>
-                </div>
-              ))}
-
-              {answer && <AnswerText>{showAnswer()}</AnswerText>}
-            </ButtonContainer>
-            <ProgressBarContainer>
-              <ProgressText>
-                {" "}
-                Question: {question.id} ({questionsCount} question left)
-              </ProgressText>
-              <ProgressBar
-                completed={completed}
-                width={250}
-                customLabel={question.id}
-                bgColor={"Gray"}
-              />
-            </ProgressBarContainer>
-          </QuizContainer>
-        </MainContainer>
-      </>
-    );
-  }
-
   return (
     <>
       <MainContainer>
@@ -208,32 +175,44 @@ export const CurrentQuestion = () => {
           <QuestionText>{question.questionText}</QuestionText>
           <ButtonContainer>
             {question.options.map((item, index) => (
-              <AnswerButton
-                key={item}
-                keyID={item}
-                /* pass function to the dispatch to update the state, exessing
-                quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-                answerId is a specific answer of a question */
-                onClick={() => onSubmitAnswer(question.id, index)}
-                text={item}
-              />
+              <>
+                {question.id === 5 ? (
+                  <ImageButton
+                    item={item}
+                    onSubmitAnswer={() => onSubmitAnswer(question.id, index)}
+                  />
+                ) : (
+                  <AnswerButton
+                    key={item}
+                    keyID={item}
+                    /* pass function to the dispatch to update the state, exessing
+                    quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+                    answerId is a specific answer of a question */
+                    onClick={() => onSubmitAnswer(question.id, index)}
+                    text={item}
+                  />
+                )}
+              </>
             ))}
-            {answer && <AnswerText>{showAnswer()}</AnswerText>}
           </ButtonContainer>
-          <ProgressBarContainer>
+          <ProgressAnswerContainer>
             {/* Here we display witch question we are at and how many we have left */}
-            <ProgressText>
-              {" "}
-              Question: {question.id} ({questionsCount} question left)
-            </ProgressText>
-            {/* The progress bar */}
-            <ProgressBar
-              completed={completed}
-              width={250}
-              customLabel={question.id}
-              bgColor={"Gray"}
-            />
-          </ProgressBarContainer>
+            <ProgressBarContainer>
+              <ProgressText>
+                {" "}
+                Question: {question.id} ({questionsCount} question left)
+              </ProgressText>
+              {/* The progress bar */}
+              <ProgressBar
+                completed={completed}
+                width={250}
+                customLabel={question.id}
+                bgColor={"Gray"}
+              />
+            </ProgressBarContainer>
+
+            {answer && <AnswerText>{showAnswer()}</AnswerText>}
+          </ProgressAnswerContainer>
         </QuizContainer>
       </MainContainer>
     </>
