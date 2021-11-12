@@ -16,18 +16,18 @@ export const Summary = () => {
       <div className="summary">
         <h1>Summary</h1>
         {answers.map((answer) => (
-        <div className="" key={answer.question.questionText}>
-          <p>
-            {answer.question.questionText}
-          </p>
-          <p>
-            <span> Your answer: {answer.answer}</span>
-            {answer.isCorrect ? " ✔" : " ✖"}
-          </p>
-          <p>
-            {!answer.isCorrect ? "Correct answer: " + answer.question.options[answer.question.correctAnswerIndex] : ""}
-          </p>
-        </div>
+          <div className="summary-text" key={answer.question.questionText}>
+            <p>
+              {answer.question.questionText}
+            </p>
+            <p className="your-answer">
+              <span> Your answer: {answer.answer}</span>
+              {answer.isCorrect ? " ✔" : " ✖"}
+            </p>
+            <p className="correct-ans">
+              {!answer.isCorrect ? "Correct answer: " + answer.question.options[answer.question.correctAnswerIndex] : ""}
+            </p>
+          </div>
         ))}
           <p className="correct-answers">
             You answered {`${correctAnswer.length}`}/{questionArray.length} questions correct

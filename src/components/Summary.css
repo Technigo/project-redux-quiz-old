@@ -5,6 +5,7 @@
   height: 100vh;
   background-image: url("/assets/background-summary.jpg");
   background-size: cover;
+  background-position: center center; 
 }
 
 .summary {
@@ -12,7 +13,7 @@
   width: 70vw;
   max-width: 800px;
   background-color: #ffffff10;
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(12px);
   margin: 20px;
   display: flex;
@@ -21,6 +22,7 @@
   padding: 30px;
 }
 
+
 h2 {
   font-family: 'Limelight', cursive;
 
@@ -28,6 +30,14 @@ h2 {
 p {
   font-family: 'Fjalla One', sans-serif;
   font-size: 16px;
+}
+
+.your-answer {
+  font-weight: 700;
+}
+
+.correct-ans {
+  font-weight: 700;
 }
 
 .correct-answers {
