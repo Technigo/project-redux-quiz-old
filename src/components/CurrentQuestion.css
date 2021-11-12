@@ -50,7 +50,13 @@ animation: glow 1.5s linear infinite;
 }
 
 .answer-text {
-	text-align:center;
+	text-align:end;
+  color: dimgray;
+  font-size: 20px;
+  margin-left: 15px;
+  padding-top: 43px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 
@@ -131,10 +137,19 @@ animation: glow 1.5s linear infinite;
   
 }
 
+.progress-Answer-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+height: 80px;
+margin-left: 5px;
+
+}
+
 .progress-bar-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  
   
 }
 

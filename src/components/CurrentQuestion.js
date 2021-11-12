@@ -92,12 +92,13 @@ export const CurrentQuestion = () => {
                 </div>
               ))}
 
-			{answer && 
-				<h2 className="answer-text">{showAnswer()}</h2>
-			}
+			
 
             </div>
-            <div className="progress-bar-container">
+            
+            <div className="progress-Answer-container">
+            
+<div className="progress-bar-container">
               <p className="progress-text">
                 {" "}
                 Question: {question.id} ({questionsCount} question left)
@@ -108,6 +109,11 @@ export const CurrentQuestion = () => {
                 customLabel={question.id}
                 bgColor={"Gray"}
               />
+              
+            </div>
+            {answer && 
+				<h2 className="answer-text">{showAnswer()}</h2>
+			}
             </div>
           </div>
         </main>
@@ -132,12 +138,14 @@ export const CurrentQuestion = () => {
                 text={item}
               />
             ))}
-			{answer && 
-			<h2 className="answer-text">{showAnswer()}</h2>
-			}
+			
           </div>
-          <div className="progress-bar-container">
+          <div className="progress-Answer-container">
             {/* Here we display witch question we are at and how many we have left */}
+
+            
+<div className="progress-bar-container">
+
             <p className="progress-text">
               {" "}
               Question: {question.id} ({questionsCount} question left)
@@ -149,6 +157,12 @@ export const CurrentQuestion = () => {
               customLabel={question.id}
               bgColor={"Gray"}
             />
+          </div>
+
+          {answer && 
+			<h2 className="answer-text">{showAnswer()}</h2>
+			}
+
           </div>
         </div>
       </main>
