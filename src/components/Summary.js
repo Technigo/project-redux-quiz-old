@@ -1,30 +1,60 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { quiz } from "reducers/quiz"
+import { quiz } from 'reducers/quiz';
 
-import "./Summary.css"
+import './Summary.css';
 
 export const Summary = () => {
   const CheckAnswers = useSelector(
     (store) =>
       store.quiz.answers.filter((answer) => answer.isCorrect === true).length
-  )
+  );
 
-  const dispatch = useDispatch()
+  const questions = useSelector((store) => store.quiz.answers);
 
-  // Picked up the restart function from Quiz.js and put it in a button onClick -> see line: 25! 👇
+  // DENNA FILTRERAR UT ENDAST FEL SVAR
+  // const questions = useSelector((store) =>
+  //   store.quiz.answers.filter((answer) => answer.isCorrect === false)
+  // );
+  // console.log('QUESTION', question);
+
+  const dispatch = useDispatch();
+
   const restart = () => {
-    dispatch(quiz.actions.restart())
-  }
+    dispatch(quiz.actions.restart());
+  };
 
   return (
     <section className="summary">
-      <h3>You completed the quiz!</h3>
-      <p>{`you scored ${CheckAnswers} out of 5 correct answers`}</p>
+      <h2>YOU COMPLETED THE QUIZ!</h2>
+
+      <h3>Question summary</h3>
+
+      {questions.map((questions) => (
+        <div className="summary-data" key={questions.question.questionText}>
+          <p>
+            <span className="bold">{`#${questions.questionId} `}</span>
+            {`${questions.question.questionText} `}
+          </p>
+          <p>{`Correct answer: ${questions.answer}`}</p>
+          {questions.isCorrect && (
+            <span role="img" aria-label="correct">
+              ✔️
+            </span>
+          )}
+          {!questions.isCorrect && (
+            <span role="img" aria-label="wrong">
+              ✖️
+            </span>
+          )}
+        </div>
+      ))}
+      <p>{`You scored ${CheckAnswers} correct answers out of 5 and hopefullt you learned a bit more about women in tech history.`}</p>
+
       <button className="restart-button" onClick={restart}>
         Restart quiz
       </button>
     </section>
-  )
-}
+  );
+};
