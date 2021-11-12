@@ -10,4 +10,11 @@ This quiz is using React and Redux to get the store to show the questions and st
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://foodie-quiz.netlify.app/
+
+This project was created by:
+Anna Dimitrakopoulos
+Lousanne Lundström
+Madeleine Svensson
+Mariia Snopok
+Ebba Delsol
