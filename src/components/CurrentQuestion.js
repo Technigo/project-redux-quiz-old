@@ -40,7 +40,7 @@ export const CurrentQuestion = () => {
 		<div className="question-section">
       <h1>Question</h1>
 			<h3>{question.questionText}</h3>
-      {question.id === 1 && <Audio></Audio>};
+      {question.id === 1 && <Audio></Audio>}
       <div className="btn-section">
 			{question.options.map((item, index) => (
 				<button 
@@ -51,7 +51,7 @@ export const CurrentQuestion = () => {
 					onClick={() => onAnswerSubmit(question.id, index)}>
 					{item}
 				</button>
-			))};
+			))}
     	</div>
     <div>
 			<button 
