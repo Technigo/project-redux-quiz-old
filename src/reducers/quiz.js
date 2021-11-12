@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useHistory } from 'react-router-dom'
 
 // Change these to your own questions!
 const questions = [
