@@ -1,13 +1,136 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  margin: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: rgb(252, 182, 182);
+  background-image: url("http://revolverwarholgallery.com/wp-content/uploads/2015/07/picture4-6.png");
+  display: flex;
+  justify-content: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.questionBox,
+.summary,
+.firstPageBox {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgb(247, 236, 236);
+  border-radius: 20px;
+  min-width: 80vw;
+  max-height: fit-content;
+  padding: 20px;
+}
+
+.firstPageBox h1 {
+  color: white;
+  text-shadow: 2px 2px #ea4aaa;
+}
+
+.firstPageBox h3 {
+  color: rgb(249, 112, 205);
+  font-style: italic;
+}
+
+.questionBox h1 {
+  color: rgb(113, 47, 174);
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.questionBox h2 {
+  font-style: italic;
+}
+
+.answerBox {
+  display: flex;
+}
+
+.answerBox button {
+  margin: 10px;
+  margin-top: 40px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.answerBox button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.correctAnswer {
+  background: rgb(126, 237, 126);
+}
+
+.wrongAnswer {
+  background: rgb(245, 109, 109);
+}
+
+.noAnswer {
+  background: pink;
+}
+
+.summary button,
+.restart-btn {
+  margin: 10px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  background: pink;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  color: white;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+progress {
+  -webkit-appearance: none;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+::-webkit-progress-value {
+  border-radius: 25px;
+  background-color: #ea4aaa;
+}
+
+::-webkit-progress-bar {
+  border-radius: 25px;
+  background: #e1e4e8;
+}
+::-moz-progress-bar {
+  background-color: #ea4aaa;
+}
+
+@media only screen and (min-width: 992px) {
+  .questionBox,
+  .summary,
+  .firstPageBox {
+    min-width: 920px;
+}  
 }

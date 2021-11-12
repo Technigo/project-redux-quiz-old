@@ -1,23 +1,59 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-// Change these to your own questions!
-const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+/* eslint-disable */
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  questions,
+  questions: [
+    {
+      id: 1,
+      imgUrl:
+        "https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Running/How+Far/Carousel.jpg",
+      questionText: "Who set the Olympic record for the 100m dash in 2012?",
+      options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+      correctAnswerIndex: 0,
+      answerText: "yes, he is fast!",
+    },
+    {
+      id: 2,
+      imgUrl: "./pictures/housewives.jpg",
+      questionText: "Which Housewives franchise was the first to air in 2006?",
+      options: ["New York", "Atlanta", "Orange County", "New Jersey"],
+      correctAnswerIndex: 2,
+    },
+    {
+      id: 3,
+      imgUrl: "./pictures/ryans.png",
+      questionText: "Pick the right Ryan? Who is Ryan Reynolds?",
+      options: ["Ryan 1", "Ryan 2", "Ryan 3", "Ryan 4"],
+      correctAnswerIndex: 2,
+    },
+    {
+      id: 4,
+      imgUrl:
+        "https://i.etsystatic.com/21146347/r/il/5310da/3424626039/il_340x270.3424626039_kq8p.jpg",
+      questionText: "Squidtime! Which one do you choose?",
+      options: ["Circle", "Triangle", "Star", "Umbrella"],
+      correctAnswerIndex: 1,
+    },
+    {
+      id: 5,
+      imgUrl: "./pictures/free-hugs.png",
+      questionText: "Which bear is this?",
+      options: ["Care bear", "Winnie the Pooh", "Björne", "Paddington"],
+      correctAnswerIndex: 0,
+    },
+  ],
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
-}
+  quizOver: false,
+  quizStart: true,
+};
+
+// Change these to your own questions!
 
 export const quiz = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -38,11 +74,15 @@ export const quiz = createSlice({
       const question = state.questions.find((q) => q.id === questionId)
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -50,8 +90,8 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
-      })
+        isCorrect: question.correctAnswerIndex === answerIndex,
+      });
     },
 
     /**
@@ -78,7 +118,13 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
+    },
 
-  }
-})
+    /**
+     * Use this action to progress from the starting-page of the quiz (action added by team elephants group 1, not part of the starting code)
+     */
+    start: (state) => {
+      state.quizStart = false
+    }
+  },
+});
