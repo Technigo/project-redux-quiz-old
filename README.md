@@ -8,7 +8,7 @@ The goal of this project was to learn about Redux and global state and how to in
 
 ## The problem
 
-We worked with the project together as a group as well as in pairs and individually (in smaller branches) and the collaboration worked out very well. One of the major challenges we faced was the planning of the project. Since it was our first time working with Redux we needed to take one step at the time and explore the outcome of the new chunks of code before moving to the next task. Therefore it was hard to plan a lot of the work in advance. If we would start all over again we would focus more on the funcionality and less on the styling for the project.
+We worked with the project together as a group as well as in pairs and individually (in smaller branches) and the collaboration worked out very well. One of the major challenges we faced was the planning of the project. Since it was our first time working with Redux we needed to take one step at the time and explore the outcome of the new chunks of code before moving to the next task. Therefore it was hard to plan a lot of the work in advance. If we would start all over again we would focus more on the functionality and less on the styling for the project.
 
 ## View it live
 
