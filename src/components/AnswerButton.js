@@ -16,7 +16,7 @@ const Button = styled.button`
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
     inset 4px 4px 6px rgba(0, 0, 0, 0.2);
   animation: glow 1.5s linear infinite;
-  pointer: cursor;
+  cursor: pointer;
 
   &:hover {
     background-color: rgb(224, 218, 218);

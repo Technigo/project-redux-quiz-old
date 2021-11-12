@@ -23,7 +23,7 @@ const ButtonImage = styled.button`
   width: 100%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  pointer: cursor;
+  cursor: pointer;
 
   &:hover {
     background-color: rgb(224, 218, 218);
