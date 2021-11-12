@@ -11,3 +11,4 @@ If we had more time, we would like to conditionally render images on the Summary
 We found this project challenging due to the specific syntax required for Redux, but together as a team we overcame the difficulties and completed the project.
 
 ## View it live
+https://redux-hippo-1.netlify.app
