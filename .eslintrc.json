@@ -1,6 +1,12 @@
 {
   "parser": "babel-eslint",
+<<<<<<< HEAD
   "extends": ["airbnb"],
+=======
+  "extends": [
+    "airbnb"
+  ],
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718
   "globals": {
     "document": true,
     "window": true,
@@ -19,7 +25,13 @@
       "modules": true
     }
   },
+<<<<<<< HEAD
   "plugins": ["react-hooks"],
+=======
+  "plugins": [
+    "react-hooks"
+  ],
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718
   "rules": {
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
@@ -30,6 +42,7 @@
         "allowSingleLine": true
       }
     ],
+<<<<<<< HEAD
     "linebreak-style": ["error", "windows"],
     "comma-dangle": [
       "error",
@@ -42,6 +55,12 @@
       }
     ],
 
+=======
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718
     "consistent-return": "off",
     "curly": "error",
     "eol-last": "off",

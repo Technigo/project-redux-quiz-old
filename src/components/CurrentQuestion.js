@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -153,3 +154,21 @@ export const CurrentQuestion = () => {
 		</QuestionBackgroundImage>
 	);
 };
+=======
+import React from 'react'
+import { useSelector } from 'react-redux'
+
+export const CurrentQuestion = () => {
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+
+  if (!question) {
+    return <h1>Oh no! I could not find the current question!</h1>
+  }
+
+  return (
+    <div>
+      <h1>Question: {question.questionText}</h1>
+    </div>
+  )
+}
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718

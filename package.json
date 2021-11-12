@@ -5,8 +5,11 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.2.1",
     "babel-eslint": "^10.0.3",
+<<<<<<< HEAD
     "bootstrap": "^5.1.3",
     "bootstrap-progress-bar": "^1.1.3",
+=======
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.19.1",
@@ -14,12 +17,18 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "react": "^16.12.0",
+<<<<<<< HEAD
     "react-bootstrap": "^2.0.2",
     "react-dom": "^16.12.0",
     "react-redux": "^7.1.3",
     "react-router-dom": "^6.0.2",
     "react-scripts": "^3.3.0",
     "styled-components": "^5.3.3"
+=======
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-scripts": "^3.3.0"
+>>>>>>> e76723f93eac0f39b09bf10b614c0787990e1718
   },
   "scripts": {
     "start": "react-scripts start",
