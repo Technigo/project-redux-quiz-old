@@ -33,18 +33,18 @@ export const Summary = () => {
                   {results.isCorrect ? (
                     <i className='fas fa-check' />
                   ) : (
-                    <i className='fas fa-times' />
+                    <i className='fa fa-times' />
                   )}
                 </div>
                 {!results.isCorrect && (
-                  <p className='your-answer'>
-                    Right answer:
+                  <p className='correct-answer'>
+                    (Next time answer -  
                     {
                       results.question.options[
                         results.question.correctAnswerIndex
                       ]
                     }
-                  </p>
+                    )</p>
                 )}
               </div>
             </div>

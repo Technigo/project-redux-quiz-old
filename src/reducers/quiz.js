@@ -12,7 +12,7 @@ const questions = [
     ],
     correctAnswerIndex: 3,
     // different color values for each question. Using it to style the background-color.
-    backgroundColor: '#FFDD40',
+    backgroundColor: '#FADD57',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const questions = [
       'In New Zealand what is it illegal to fly in a hot air balloon with?',
     options: ['A dog', 'A bicycle', 'A violin', 'A rooster'],
     correctAnswerIndex: 3,
-    backgroundColor: '#BAE5A3',
+    backgroundColor: '#C0E5AC',
   },
   {
     id: 3,
@@ -28,14 +28,14 @@ const questions = [
       'If you dug a hole through the center of the Earth from Wellington, New Zealand, in which European country would you emerge?',
     options: ['Germany', 'Spain', 'France', 'Poland'],
     correctAnswerIndex: 1,
-    backgroundColor: '#F8D6F2',
+    backgroundColor: '#C3EEEE',
   },
   {
     id: 4,
     questionText: 'What are you afraid of if you are Syngenesophobic?',
     options: ['Syringes', 'Genetically modified crops', 'Relatives', 'Snakes'],
     correctAnswerIndex: 2,
-    backgroundColor: '#C1F2F2',
+    backgroundColor: '#F0D5EB',
   },
   {
     id: 5,
@@ -43,21 +43,29 @@ const questions = [
       'The world’s first game of ice hockey was played with a puck made from which material?',
     options: ['Stone', 'Ice', 'Cow manure', 'Wood'],
     correctAnswerIndex: 2,
-    backgroundColor: '#FFE5E5',
+    backgroundColor: '#BCC5A3',
+
   },
   {
     id: 6,
     questionText: 'What is the term for a group of owls?',
     options: ['Blessing', 'Terror', 'Confusion', 'Parliament'],
     correctAnswerIndex: 3,
-    backgroundColor: '#FFDD40',
+    backgroundColor: '#C0D0EE',
   },
   {
     id: 7,
     questionText: 'The average person in the US opens what 13 times per day?',
     options: ['Front door', 'A can of soda', 'Refrigerator', 'A window'],
     correctAnswerIndex: 2,
-    backgroundColor: '#BAE5A3',
+    backgroundColor: '#EAC082',
+  },
+  {
+    id: 8,
+    questionText: 'Roughly what percentage of people in the world can wiggle their ears?',
+    options: ['50 %', '40 %', '30 %', '20 %'],
+    correctAnswerIndex: 3,
+    backgroundColor: '#EBD4D4',
   },
 ]
 

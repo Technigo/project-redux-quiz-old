@@ -9,8 +9,10 @@ export const Counter = () => {
   )
 
   return (
-    <div className='summary-result'>
-      You got {correctAnswers.length} out of {storeAnswer.length}!
-    </div>
+    <section className='summary-result'>
+      <h1>
+        You got {correctAnswers.length} out of {storeAnswer.length}!
+      </h1>
+    </section>
   )
 }
