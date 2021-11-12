@@ -3,10 +3,8 @@ import { useSelector } from 'react-redux';
 
 import styled from 'styled-components';
 import { Answers } from './Answers';
-import UserNameInput from './UserNameInput';
 
-// We want this overlay to take 100% of the div that will hold image or video. After setTimout it will be displayed blacking out the image/video
-let Overlay = styled.div`
+const Overlay = styled.div`
   position: absolute;
   right: 0;
   bottom: 0;
@@ -26,21 +24,19 @@ export const CurrentQuestion = () => {
 
   const questionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
   const quizOver = useSelector((state) => state.quiz.quizOver);
-  const userName = useSelector((state) => state.quiz.userName);
 
   // function that changes the display property of Overlay from none to block
   const showOverlay = () => {
     setDisplayOverlay(true);
   };
 
-  // Timer to blackout picture/video
-  const ticker = () => {
-    setTimeout(() => showOverlay(), 1000);
-    
-  };
-
   // we used useEffect to call the ticker function when component is mounted
   useEffect(() => {
+    // Timer to blackout picture/video
+    const ticker = () => {
+      setTimeout(() => showOverlay(), 1000);
+    };
+
     setDisplayOverlay(false);
     ticker();
   }, [questionIndex]);
@@ -64,8 +60,6 @@ export const CurrentQuestion = () => {
           <source src={question.path} type="video/mp4" />
         </video>
       )}
-      {/* <h2>{question.questionText}</h2>
-      <Answers /> */}
     </div>
   );
 };

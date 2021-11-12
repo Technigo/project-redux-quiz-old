@@ -16,8 +16,7 @@ export const ProgressBar = () => {
         className="progress-bar"
         id="file"
         value={questions[currentQuestionIndex].id}
-        max={questions.length}
-      />
+        max={questions.length} />
     </div>
   );
 };
