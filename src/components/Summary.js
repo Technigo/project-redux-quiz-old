@@ -9,7 +9,7 @@ const Main = styled.div`
 	align-items: center;
 	background-image: url(./assets/Mischeif2.jpg);
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -18,26 +18,40 @@ const Main = styled.div`
 	justify-content: flex-end;
 `; // This will style everything in this component
 
+const Heightsetter = styled.div`
+	height: 750px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 350px;
+`
+
 const Restartbutton = styled.button`
 	padding: 20px;
 	border-radius: 30px;
 	background-color: #800000;
 	color: white;
-	width: 100%;
+	width: auto;
 	font-size: 40px;
 	font-family: 'Fredericka the Great', cursive;
+	margin-bottom: 50px;
 `;
 
-const Questiontext = styled.div`
-	font-size: 50px;
+const Textwrapper = styled.div`
 	text-align: center;
 	color: #800000;
 	background-color: white;
+	border-radius:15px;
+	padding:0;
+	margin:0;
+	
 `; //This styles the H1
 
 const Summarytext = styled.h1`
 	border-radius: 2px solid #800000;
 	font-family: 'Euphoria Script', cursive;
+	font-size: 40px;
+	padding: 0 15px;
 `;
 
 export const Summary = () => {
@@ -58,9 +72,10 @@ export const Summary = () => {
 	const { width } = useWindowSize();
 	return (
 		<Main>
+			
 			<Confetti
 				width={width}
-				height={3000}
+				height={1000}
 				colors={[
 					'#740001',
 					'#AE0001',
@@ -72,19 +87,22 @@ export const Summary = () => {
 				gravity={0.08}
 				numberOfPieces={350}
 			/>
-			<Questiontext>
+			<Heightsetter>
+			<Textwrapper>
 				<Summarytext>
-					Summary You scored: {score}/{answers.length}
+					You scored: {score}/{answers.length}
 				</Summarytext>
-			</Questiontext>
+			
 
 			<Restartbutton onClick={() => dispatch(quiz.actions.restart())}>
 				{' '}
-				Obliviate
+				Obliviate!
 			</Restartbutton>
+			</Textwrapper>
 			{/* <Link to="/">
 				<Restartbutton onClick={IntroPage}>Obliviate</Restartbutton>
 			</Link> */}
+		</Heightsetter>
 		</Main>
 	);
 };

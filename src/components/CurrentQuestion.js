@@ -56,11 +56,11 @@ const Choicebutton = styled.button`
 	border-radius: 20px;
 	background-color: #d4af37;
 	text-align: center;
+	letter-spacing: 2px;
 `; // The actual answer buttons
 
 const Nextbuttonwrapper = styled.div`
-	margin: 0 auto;
-	margin-top: 60px;
+	margin: 15px auto 15px auto;
 `;
 const Nextbutton = styled.button`
 	width: auto;
@@ -76,16 +76,26 @@ const Nextbutton = styled.button`
 const Chosenanswer = styled.span`
 	color: white;
 	font-size: 25px;
-	font-family: 'Redressed', cursive;
+	font-family: 'Calligraffitti', cursive;
+	font-weight: bold;
 `; // Styles the text on choice button
 const Feedback = styled.div`
 	color: white;
 	text-shadow: 0 0 4px #d4af37, 0 0 6px #800000;
-	font-size: 20px;
+	font-size: 30px;
+	font-family: 'Calligraffitti', cursive;
+	font-weight: bold;
+	letter-spacing: 3px;
+	margin: 20px 0 0 0;
+	padding: 0;
 `;
 
 const Progressbar = styled.div`
 	color: white;
+	font-weight:bold;
+	font-size:20px;
+	font-family: 'Calligraffitti', cursive;
+	letter-spacing: 2px;
 `;
 
 export const CurrentQuestion = () => {
@@ -138,16 +148,6 @@ export const CurrentQuestion = () => {
 						</Choice>
 					))}
 				</Buttonssection>
-				<Nextbuttonwrapper>
-					<Nextbutton
-						disabled={!answers[currentQuestionIndex]}
-						onClick={() => dispatch(quiz.actions.goToNextQuestion())}
-					>
-						{' '}
-						Next Question
-					</Nextbutton>
-				</Nextbuttonwrapper>
-
 				<Feedback>
 					{answers[currentQuestionIndex] ? (
 						answers[currentQuestionIndex].isCorrect ? (
@@ -159,6 +159,19 @@ export const CurrentQuestion = () => {
 						<p>Waiting for your answer...</p>
 					)}
 				</Feedback>
+
+				
+				<Nextbuttonwrapper>
+					<Nextbutton
+						disabled={!answers[currentQuestionIndex]}
+						onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+					>
+						{' '}
+						Next Question
+					</Nextbutton>
+				</Nextbuttonwrapper>
+
+				
 
 				<Progressbar>Question {question.id} out of 8</Progressbar>
 				{/* Question: (8-{question.id}) */}
