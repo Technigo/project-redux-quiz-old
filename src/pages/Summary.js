@@ -28,12 +28,14 @@ export const SummaryBackground = styled.div`
 const SummaryContainer = styled.section`
   display: flex;
   justify-content: space-evenly;
+  font-weight: bold;
 `
 
 const SummaryText = styled.div`
   width: 50%;
   height: 250px;
   overflow-y: scroll;
+  font-weight: bold;
 `
 
 const SummaryTotal = styled.div`
@@ -45,9 +47,16 @@ const SummaryTotal = styled.div`
 const SummaryTitle = styled.h1`
   margin-top: 4em;
 `
+const SummaryParagraphs = styled.p`
+  font-size: 15px;
+  font-style: italic;
+  margin: 0;
+`
+
 const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers)
-  console.log(answers)
+  const points = useSelector((state) => state.quiz.points)
+
   const dispatch = useDispatch()
 
   const history = useHistory()
@@ -73,7 +82,7 @@ const Summary = () => {
   // const correctGeoQus = answers.filter((answer) => answer.question.category === "Geography" && answer.isCorrect).length
   // const noOfInoQus = answers.filter((answer) => answer.question.category === "Innovation").length
   // const correctInoQus = answers.filter((answer) => answer.question.category === "Innovation" && answer.isCorrect).length
-  
+
   return (
     <SummaryBackground>
       <SummaryTitle>
@@ -94,11 +103,13 @@ const Summary = () => {
                 <p>
                   {questionNumber}. {questionText}
                 </p>
-                <p>Your answer was {usersAnswer}</p>
-                <p>
+                <SummaryParagraphs>
+                  Your answer was {usersAnswer}
+                </SummaryParagraphs>
+                <SummaryParagraphs>
                   The correct answer is:
                   {correctAnswer}
-                </p>
+                </SummaryParagraphs>
               </div>
             )
           })}
@@ -108,6 +119,7 @@ const Summary = () => {
             You got {numberOfCorrectAnswers} / {numberOfQuestions} total correct
             answers
           </p>
+          <p>You got {points} out of 65 points</p>
           {/* <p>
             You got {correctSportQus} / {noOfSportQus} correct sport
             answers

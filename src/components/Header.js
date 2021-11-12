@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { StyledLink } from './StyledButton';
+import { StyledLink } from './StyledButton'
 
 const StyledHeader = styled.header`
   background-color: #90620e;
@@ -13,13 +13,13 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   padding: 0 5vw;
-`;
+`
 
 const StyledHeaderLeft = styled.div`
   display: flex;
-  width: 100px;
+  width: 120px;
   justify-content: space-between;
-`;
+`
 
 const Header = () => {
   return (
@@ -38,7 +38,7 @@ const Header = () => {
         <p>About</p>
       </StyledLink>
     </StyledHeader>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
