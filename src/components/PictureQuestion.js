@@ -72,6 +72,7 @@ const OptionImage = styled.div`
   border-radius: 2px;
   border-bottom: 2px solid #638270;
   border-right: 2px solid #638270;
+  cursor: pointer;
 
   &:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
@@ -110,7 +111,6 @@ const QuestionContainer = styled.div`
   justify-content: space-between;
   grid-template-rows: 1fr auto auto;
   align-items: center;
-  cursor: pointer;
 `;
 
 const ButtonsContainer = styled.div`

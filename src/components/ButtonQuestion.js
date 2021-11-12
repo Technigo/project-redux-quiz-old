@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 
+// A function which checks if the person has clicked a button and then returns different
+// styled buttons depending on if the selected answer by the user was correct or incorrect.
 export const ButtonQuestion = ({
   question,
   setOnAnswerSubmit,
@@ -38,6 +40,7 @@ export const ButtonQuestion = ({
             return (
               <div key={item}>
                 <Button
+                  // A condination to prevent a button to be pressed multipel times.
                   onClick={() => {
                     if (!hasClicked) {
                       setHasClicked(true);

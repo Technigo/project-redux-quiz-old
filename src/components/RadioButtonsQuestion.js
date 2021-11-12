@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export const CheckboxQuestion = ({
+// A function that controls the radiobuttons and their functionality.
+export const RadioButtonsQuestion = ({
   question,
   setOnAnswerSubmit,
   onGoToNextQuestion,
@@ -18,7 +19,7 @@ export const CheckboxQuestion = ({
           <Wrapper key={item}>
             <Item>
               <RadioInput
-                id={`checkboxOption-${index}`}
+                id={`RadioButtonOption-${index}`}
                 type="radio"
                 onChange={(e) => {
                   setChecked(true);
@@ -30,7 +31,7 @@ export const CheckboxQuestion = ({
               <LabelContainer></LabelContainer>
               <label
                 style={{ color: "white" }}
-                htmlFor={`checkboxOption-${index}`}
+                htmlFor={`RadioButtonOption-${index}`}
               >
                 {item}
               </label>
@@ -38,15 +39,16 @@ export const CheckboxQuestion = ({
           </Wrapper>
         );
       })}
+
+      {/* if the radiobutton is checked and the user has not clicked the submit button we update states with information
+      about the chosen option and send the user to the next question. */}
       <SubmitButton
         onClick={() => {
           if (checked && !hasClicked) {
             setHasClicked(true);
             setOnAnswerSubmit(question.id, index);
-            setTimeout(() => {
-              setHasClicked(false);
-              onGoToNextQuestion(question.id);
-            }, 1000);
+            onGoToNextQuestion(question.id);
+            setHasClicked(false);
           }
         }}
       >
@@ -55,6 +57,8 @@ export const CheckboxQuestion = ({
     </div>
   );
 };
+
+// -------------------------- Styled component ---------------------------------
 
 const Header3 = styled.h3`
   padding-top: 150px;
@@ -111,16 +115,6 @@ const RadioInput = styled.input`
 
   &:hover ~ ${LabelContainer} {
     background: darkgray;
-    /* &::after {
-      content: "";
-      display: block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 0 6px;
-      padding: 0;
-      background: lightgrey;
-    } */
   }
   &:checked + ${LabelContainer} {
     background: #638270;
@@ -131,7 +125,6 @@ const RadioInput = styled.input`
       border-radius: 50%;
       width: 12px;
       height: 12px;
-      /* margin: 6px; */
       box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
     }
   }

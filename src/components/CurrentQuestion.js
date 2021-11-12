@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { ButtonQuestion } from "./ButtonQuestion";
 import { PictureQuestion } from "./PictureQuestion";
-import { CheckboxQuestion } from "./CheckboxQuestion";
+import { RadioButtonsQuestion } from "./RadioButtonsQuestion";
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,6 @@ export const CurrentQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
 
-  console.log(question);
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
   };
@@ -39,9 +38,9 @@ export const CurrentQuestion = () => {
           onGoToNextQuestion={onGoToNextQuestion}
         />
       );
-    } else if (type === "checkbox") {
+    } else if (type === "radio") {
       return (
-        <CheckboxQuestion
+        <RadioButtonsQuestion
           question={question}
           setOnAnswerSubmit={onAnswerSubmit}
           onGoToNextQuestion={onGoToNextQuestion}

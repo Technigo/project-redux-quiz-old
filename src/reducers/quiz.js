@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    type: "checkbox",
+    type: "radio",
     questionText:
       "What position does Harry play on the Gryffindor Quidditch team?",
     options: ["Keeper", "Beater", "Chaser", "Seeker"],
@@ -60,7 +60,7 @@ const questions = [
 
   {
     id: 6,
-    type: "checkbox",
+    type: "radio",
     questionText:
       "What type of Muggle car did Mr Weasley tinker with in his shed and turn into a flying car?",
     options: ["Ford Galaxy", "Ford Fiesta", "Ford Focus", "Ford Anglia"],

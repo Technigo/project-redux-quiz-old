@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
+// A function in which we present the users answer and the correct answer. If the user has
+// the correct answer we render a green check icon and if not a red cross will appear.
 export const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
 
@@ -27,6 +29,7 @@ export const Summary = () => {
           )}
 
           <span>
+            {/* Here we check if the typeof answer.answer is a object and then adapt the answer so that it works for objects aswell. */}
             {typeof answer.answer === "object"
               ? answer.answer.name
               : answer.answer}
@@ -45,6 +48,8 @@ export const Summary = () => {
     );
   });
 };
+
+// --------------------------------Styled component------------------------------------
 
 const SummaryAnswer = styled.section`
   background-color: rgba(0, 0, 0, 0.6);

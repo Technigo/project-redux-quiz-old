@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Summary } from "../components/Summary";
 import { ProgressBar } from "../components/ProgressBar";
 
+// Function that returns the Progressbar, and a Summary Container with the Summary and the restart button.
 export const SummaryScreen = ({ onRestartClicked }) => {
   return (
     <>
@@ -17,6 +18,8 @@ export const SummaryScreen = ({ onRestartClicked }) => {
     </>
   );
 };
+
+// ---------------------------Styled components--------------------------------
 
 const QuizHeader = styled.h2`
   text-align: center;

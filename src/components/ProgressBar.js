@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagic } from "@fortawesome/free-solid-svg-icons";
 
+// A progressbar in which we use the global state to render a dot and a line per answered question.
+// If the quis is over we change the background color of the icon container to green.
+//This will then finish off the progress at the summary page.
 export const ProgressBar = () => {
   const questions = useSelector((store) => store.quiz.questions);
   const currentQuestionIndex = useSelector(
@@ -42,6 +45,8 @@ export const ProgressBar = () => {
     </ProgressBarContainer>
   );
 };
+
+// ------------------------------Styled component ------------------------------------
 
 const ProgressBarWrapper = styled.section`
   display: flex;
