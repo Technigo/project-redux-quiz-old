@@ -34,7 +34,7 @@ export const Summary = () => {
       {questions.map((questions) => (
         <div>
           <p key={questions.questionId}>
-            <span classname="bold">{`#${questions.questionId} `}</span>
+            <span className="bold">{`#${questions.questionId} `}</span>
             {`${questions.question.questionText} `}
           </p>
           <p>{`Correct answer: ${questions.answer}`}</p>
