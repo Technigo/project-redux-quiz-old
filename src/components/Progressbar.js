@@ -25,8 +25,8 @@ const Progress = styled.span`
   color: white;
 `
 
-const Progressbar = ({ numberOfQuestions, question }) => {
-  const progress = ((question.id - 1) / numberOfQuestions) * 100
+const Progressbar = ({ progress }) => {
+  // const progress = ((question.id - 1) / numberOfQuestions) * 100
 
   return (
     <section className='main-container'>

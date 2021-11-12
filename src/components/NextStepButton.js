@@ -25,7 +25,7 @@ const NextStepButton = ({ usersAnswer }) => {
     <>
       {isQuizFinished ? (
         <StyledButton onClick={handleFinish} disabled={!usersAnswer}>
-            Finish
+          Finish
         </StyledButton>
       ) : (
         <StyledButton

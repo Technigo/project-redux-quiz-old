@@ -16,12 +16,13 @@ const Questions = () => {
   )
 
   document.getElementById('html').className = question.category.toLowerCase()
+  const progress = ((question.id - 1) / numberOfQuestions) * 100
 
   return (
     <div className='question-container'>
       <CurrentQuestion question={question} usersAnswer={usersAnswer} />
       <NextStepButton usersAnswer={usersAnswer} />
-      <Progressbar numberOfQuestions={numberOfQuestions} question={question} />
+      <Progressbar progress={progress} />
     </div>
   )
 }

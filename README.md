@@ -1,12 +1,18 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was a group project to build a quiz using Redux and React.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We planned initially using Mural and discussed our quiz design, how the quiz might be broken down into different components, and what the content would be. We then began by getting the questions and answers to be displayed using the useSelector hook. Once we had this we added the functionality for changing the state by dispatching actions to Redux. UseSelector was used to display the results from the quiz in the summary page, and once we had the main functionalitites of the quiz in place we added questions and styled using styled components.
+
+Developers of the quiz:
+Sarah Mottram
+Lovisa Carling
+Johanna Mannestål
+Jakob Lindström
+Haru Ahn
+Maria Bergman
 
 ## View it live
 

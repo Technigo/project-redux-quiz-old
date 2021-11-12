@@ -5,13 +5,14 @@ import { useHistory } from 'react-router-dom'
 
 import { StyledButton } from 'components/StyledButton'
 import styled from 'styled-components'
+import Chart from '../components/Chart'
+// import Progressbar from 'components/Progressbar'
 
 export const SummaryBackground = styled.div`
   position: absolute;
   text-align: center;
   margin: 0;
   width: 100%;
-  height: 100%;
   /* opacity: 0.85; */
   background: #e65c00; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -24,6 +25,9 @@ export const SummaryBackground = styled.div`
     #f9d423,
     #e65c00
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  @media (min-width: 531px) {
+    height: 100%;
+  }
 `
 const SummaryContainer = styled.section`
   display: flex;
@@ -53,6 +57,15 @@ const SummaryParagraphs = styled.p`
   margin: 0;
 `
 
+const ChartWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 5em;
+`
+
 const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers)
   const points = useSelector((state) => state.quiz.points)
@@ -70,24 +83,27 @@ const Summary = () => {
 
   const numberOfQuestions = answers.length
 
-  // const noOfSportQus = answers.filter((answer) => answer.question.category === "Sport").length
-  // const correctSportQus = answers.filter((answer) => answer.question.category === "Sport" && answer.isCorrect).length
-  // const noOfEntQus = answers.filter((answer) => answer.question.category === "Entertainment").length
-  // const correctEntQus = answers.filter((answer) => answer.question.category === "Entertainment" && answer.isCorrect).length
-  // const noOfFoodQus = answers.filter((answer) => answer.question.category === "Food").length
-  // const correctFoodQus = answers.filter((answer) => answer.question.category === "Food" && answer.isCorrect).length
-  // const noOfGeneralQus = answers.filter((answer) => answer.question.category === "General").length
-  // const correctGeneralQus = answers.filter((answer) => answer.question.category === "General" && answer.isCorrect).length
-  // const noOfGeoQus = answers.filter((answer) => answer.question.category === "Geography").length
-  // const correctGeoQus = answers.filter((answer) => answer.question.category === "Geography" && answer.isCorrect).length
-  // const noOfInoQus = answers.filter((answer) => answer.question.category === "Innovation").length
-  // const correctInoQus = answers.filter((answer) => answer.question.category === "Innovation" && answer.isCorrect).length
+  const categories = [
+    ...new Set(answers.map((answer) => answer.question.category)),
+  ]
+
+  const summary = categories.map((category) => {
+    const questionsInCategory = answers.filter(
+      (answer) => answer.question.category === category
+    )
+    const noOfQus = questionsInCategory.length
+    const correctQus = questionsInCategory.filter(
+      (answer) => answer.isCorrect
+    ).length
+
+    return { category, noOfQus, correctQus }
+  })
 
   return (
     <SummaryBackground>
       <SummaryTitle>
         {' '}
-        Great work you managed to answer all the questions in our quiz!{' '}
+        Great work, you managed to answer all the questions in our quiz!{' '}
       </SummaryTitle>
       <SummaryContainer>
         <SummaryText>
@@ -120,34 +136,15 @@ const Summary = () => {
             answers
           </p>
           <p>You got {points} out of 65 points</p>
-          {/* <p>
-            You got {correctSportQus} / {noOfSportQus} correct sport
-            answers
-          </p>
-          <p>
-            You got {correctEntQus} / {noOfEntQus} correct entertainment
-            answers
-          </p>
-          <p>
-            You got {correctFoodQus} / {noOfFoodQus} correct food
-            answers
-          </p>
-          <p>
-            You got {correctGeneralQus} / {noOfGeneralQus} correct general knowledge
-            answers
-          </p>
-          <p>
-            You got {correctGeoQus} / {noOfGeoQus} correct geography
-            answers
-          </p>
-          <p>
-            You got {correctInoQus} / {noOfInoQus} correct innovation
-            answers
-          </p> */}
 
           <StyledButton onClick={handleRestart}>Try again</StyledButton>
         </SummaryTotal>
       </SummaryContainer>
+      <ChartWrapper>
+        {summary.map((item) => (
+          <Chart key={item.category} data={item} />
+        ))}
+      </ChartWrapper>
     </SummaryBackground>
   )
 }
