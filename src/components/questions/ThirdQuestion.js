@@ -10,6 +10,9 @@ export const ThirdQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((a) => a.questionId === question.id)
+  );
 
   const dispatch = useDispatch();
 
@@ -38,11 +41,12 @@ export const ThirdQuestion = () => {
           <div className="radio-buttons-label" key={item}>
             {/* prettier-ignore */}
             <input
-                            className="radio-button"
+              className="radio-button"
 							type="radio"
 							id={item}
 							name="third-question"
 							value={item}
+              disabled={answer}
 							onChange={() => onAnswerSubmit(question.id, index)}
 						/>
             <label className="label-overlay" htmlFor={item}>
@@ -51,6 +55,14 @@ export const ThirdQuestion = () => {
           </div>
         ))}
       </div>
+      {answer && (
+        <h1>
+          {" "}
+          {answer.isCorrect
+            ? "You are correct"
+            : "That's wrong! Practice more."}
+        </h1>
+      )}
       <Button />
     </div>
   );

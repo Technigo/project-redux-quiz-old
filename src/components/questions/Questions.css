@@ -10,7 +10,41 @@
   margin-top: 10px;
 }
 
+.answers {
+  color: #42180e;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
 .question {
+  color: #42180e;
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+}
+
+.summery {
+  color: #42180e;
+  font-size: 22px;
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+}
+
+.question-heading {
+  color: #42180e;
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+.question-small {
+  color: #42180e;
+  font-size: 17px;
+  margin: 0;
+  text-align: center;
+}
+h1 {
   color: #42180e;
   font-size: 22px;
   margin: 0;
@@ -106,18 +140,18 @@ select:focus {
 }
 
 @media (min-width: 768px) {
-    .question-container {
-        width: 40vw;
-    }
-    .question {
-        font-size: 32px;
-      }
-      .food-image {
-        width: 330px;
-        height: 260px;
-        margin: 10px;
-      }
-      .radio-buttons-container {
-          margin: 10px;
-      }
+  .question-container {
+    width: 40vw;
+  }
+  .question {
+    font-size: 32px;
+  }
+  .food-image {
+    width: 330px;
+    height: 260px;
+    margin: 10px;
+  }
+  .radio-buttons-container {
+    margin: 10px;
+  }
 }

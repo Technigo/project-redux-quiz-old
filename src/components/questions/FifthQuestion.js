@@ -10,6 +10,9 @@ export const FifthQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((a) => a.questionId === question.id)
+  );
 
   const dispatch = useDispatch();
 
@@ -34,6 +37,7 @@ export const FifthQuestion = () => {
               type="radio"
               id={item}
               value={item}
+              disabled={answer}
               onChange={() => {
                 onAnswerSubmit(question.id, index);
               }}
@@ -44,6 +48,14 @@ export const FifthQuestion = () => {
           </div>
         ))}
       </div>
+      {answer && (
+        <h1>
+          {" "}
+          {answer.isCorrect
+            ? "You are correct"
+            : "That's wrong! Practice more."}
+        </h1>
+      )}
       <Button />
     </div>
   );

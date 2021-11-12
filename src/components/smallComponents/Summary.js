@@ -29,27 +29,27 @@ export const Summary = () => {
   };
 
   const correctAnswersAmount = useMemo(() => {
-    return answers.filter((answer) => answer.isCorrect).length-1;
+    return answers.filter((answer) => answer.isCorrect).length;
   }, [answers]);
 
   return (
     <SummaryPage>
       <div className="question-container">
-        <h1 className="question">Summary</h1>
-        <p className="question">
+        <h1 className="summery">Summary</h1>
+        <h2 className="answers">
           {`You got ${correctAnswersAmount} out of 5 correct!`}
-        </p>
+        </h2>
 
         {finalAnswers.map((item) => (
           <div key={item.questionId}>
-            <h2 className="question">
+            <h3 className="question-heading">
               {`Question ${item.questionId} is ${
                 item.isCorrect ? "correct" : "wrong"
               }`}
-            </h2>
-            <p className="question">{`You guessed: ${item.answer}`}</p>
+            </h3>
+            <p className="question-small">{`You guessed: ${item.answer}`}</p>
 
-            <p className="question">
+            <p className="question-small">
               {`The correct one is:
                 ${item.question.options[item.question.correctAnswerIndex]}`}
             </p>

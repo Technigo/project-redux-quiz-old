@@ -10,6 +10,9 @@ export const SecondQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
 
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((a) => a.questionId === question.id)
+  );
   const dispatch = useDispatch();
 
   if (!question) {
@@ -42,6 +45,7 @@ export const SecondQuestion = () => {
               id={item}
               name="answer"
               value={item}
+              disabled={answer}
               onChange={() => onAnswerSubmit(question.id, index)}
             />
             <label className="label-overlay" htmlFor={item}>
@@ -50,6 +54,14 @@ export const SecondQuestion = () => {
           </div>
         ))}
       </div>
+      {answer && (
+        <h1>
+          {" "}
+          {answer.isCorrect
+            ? "You are correct"
+            : "That's wrong! Practice more."}
+        </h1>
+      )}
       <Button />
     </div>
   );

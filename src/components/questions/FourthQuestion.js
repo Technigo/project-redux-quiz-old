@@ -11,6 +11,9 @@ export const FourthQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((a) => a.questionId === question.id)
+  );
 
   const Dispatch = useDispatch();
 
@@ -34,6 +37,7 @@ export const FourthQuestion = () => {
       </h1>
       <img className="food-image" src={semlaImg} alt="semla" />
       <select
+        disabled={answer}
         className="question-select"
         onChange={(event) =>
           onAnswerSubmit(question.id, parseInt(event.target.value))
@@ -45,6 +49,14 @@ export const FourthQuestion = () => {
           </option>
         ))}
       </select>
+      {answer && (
+        <h1>
+          {" "}
+          {answer.isCorrect
+            ? "You are correct"
+            : "That's wrong! Practice more."}
+        </h1>
+      )}
       <Button />
     </div>
   );
