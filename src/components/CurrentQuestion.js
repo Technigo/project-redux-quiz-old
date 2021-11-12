@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 import AnswerButton from './AnswerButton'
 
@@ -13,6 +14,9 @@ const AnswerWrapper = styled.div`
 `
 
 export const CurrentQuestion = ({ question, usersAnswer }) => {
+  const points = useSelector((state) => state.quiz.points)
+  console.log(points)
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
@@ -37,6 +41,7 @@ export const CurrentQuestion = ({ question, usersAnswer }) => {
       </AnswerWrapper>
       {usersAnswer?.isCorrect && <p>Correct!</p>}
       {usersAnswer?.isCorrect === false && <p>Incorrect!</p>}
+      <p>{points} points</p>
     </section>
   )
 }
