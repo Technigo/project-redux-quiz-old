@@ -1,11 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import useWindowSize from 'react-use-window-size';
 import Confetti from 'react-confetti';
 import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
-import { IntroPage } from './IntroPage';
 
 const Main = styled.div`
 	align-items: center;
@@ -50,7 +48,7 @@ export const Summary = () => {
 	const answers = useSelector((state) => state.quiz.answers);
 
 	/* map over every correct answer; dispatch the new score */
-	answers.map(function (item) {
+	answers.forEach((item) => {
 		if (item.isCorrect) {
 			dispatch(quiz.actions.addScore());
 		}
