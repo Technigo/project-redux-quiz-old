@@ -7,6 +7,7 @@ import { ButtonQuestion } from "./ButtonQuestion";
 import { PictureQuestion } from "./PictureQuestion";
 import { RadioButtonsQuestion } from "./RadioButtonsQuestion";
 
+// A function from where we choose what component to render depending on the questiontype from the global state.
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const question = useSelector(

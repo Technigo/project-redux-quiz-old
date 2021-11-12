@@ -1,6 +1,6 @@
 # Redux Harry Potter quiz
 
-A quiz developed with Redux.
+A quiz developed with React Redux.
 
 ## The problem
 
