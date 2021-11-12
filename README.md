@@ -8,4 +8,4 @@ The project was built by a team of five. We used mob programming as a developmen
 
 ## View it live
 
-https://popculture-quiz.netlify.app/
+https://the-pop-culture-quiz.netlify.app 
