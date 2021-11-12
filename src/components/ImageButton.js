@@ -1,14 +1,14 @@
 import React from 'react'
 
-const ImageButton = (props) => {
+const ImageButton = ({ item, onSubmitAnswer }) => {
   return (
     <div className="ImgContainer">
       <button 
         className="buttonImg"
-        style={props.style}
+        style={{backgroundImage: `url(${item})`}}
         type="button"
-        key={props.key}
-        onClick={props.onClick}
+        key={item}
+        onClick={() => onSubmitAnswer()}
       ></button>
     </div>
   )

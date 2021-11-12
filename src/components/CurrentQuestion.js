@@ -7,6 +7,7 @@ import AnswerButton from "./AnswerButton";
 
 
 import "components/CurrentQuestion.css";
+import ImageButton from "./ImageButton";
 
 export const CurrentQuestion = () => {
   /* useSelector is another hook, useSelector takes one argument,with this you can excess
@@ -69,53 +70,6 @@ export const CurrentQuestion = () => {
     setCompleted(completed + 20)
   };
 
- 
-
-  // for question 5
-  if (question.id === 5) {
-    return (
-      <>
-        <main className="main-container">
-          <div className="quiz-container">
-            <h1 className="question-text">{question.questionText}</h1>
-            <div className="button-container">
-              {question.options.map((item, index) => (
-                <div className="ImgContainer">
-                <button className="buttonImg"
-                  style={{
-                    backgroundImage: `url(${item})`,
-                  }}
-                  type="button"
-                  key={item}
-                  onClick={() => onSubmitAnswer(question.id, index)}
-                ></button>
-                </div>
-              ))}
-            </div>
-            
-			<div className="progress-Answer-container">
-				<div className="progress-bar-container">
-				<p className="progress-text">
-					{" "}
-					Question: {question.id} ({questionsCount} question left)
-				</p>
-				<ProgressBar
-					completed={completed}
-					width={250}
-					customLabel={question.id}
-					bgColor={"Gray"}
-				/>
-				</div>
-				{answer && 
-					<h2 className="answer-text">{showAnswer()}</h2>
-				}
-			</div>
-          </div>
-        </main>
-      </>
-    );
-  }
-
   return (
     <>
       <main className="main-container">
@@ -123,15 +77,22 @@ export const CurrentQuestion = () => {
           <h1 className="question-text">{question.questionText}</h1>
           <div className="button-container">
             {question.options.map((item, index) => (
-              <AnswerButton
-                key={item}
-                keyID={item}
-                /* pass function to the dispatch to update the state, exessing
-                quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
-                answerId is a specific answer of a question */
-                onClick={() => onSubmitAnswer(question.id, index)}
-                text={item}
-              />
+              <>
+                {question.id === 5 ? 
+                  <ImageButton 
+                    item={item}
+                    onSubmitAnswer={() => onSubmitAnswer(question.id, index)}
+                  /> :
+                  <AnswerButton
+                    key={item}
+                    keyID={item}
+                    /* pass function to the dispatch to update the state, exessing
+                    quiz object: quiz.actions.submitAnwer(), then we need to pass argument to our submit function
+                    answerId is a specific answer of a question */
+                    onClick={() => onSubmitAnswer(question.id, index)}
+                    text={item}
+                />}
+              </>
             ))}
           </div>
           <div className="progress-Answer-container">
