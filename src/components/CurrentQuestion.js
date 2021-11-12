@@ -91,32 +91,25 @@ export const CurrentQuestion = () => {
                 ></button>
                 </div>
               ))}
-
-
-		
-
-
             </div>
             
-            <div className="progress-Answer-container">
-            
-<div className="progress-bar-container">
-              <p className="progress-text">
-                {" "}
-                Question: {question.id} ({questionsCount} question left)
-              </p>
-              <ProgressBar
-                completed={completed}
-                width={250}
-                customLabel={question.id}
-                bgColor={"Gray"}
-              />
-              
-            </div>
-            {answer && 
-				<h2 className="answer-text">{showAnswer()}</h2>
-			}
-            </div>
+			<div className="progress-Answer-container">
+				<div className="progress-bar-container">
+				<p className="progress-text">
+					{" "}
+					Question: {question.id} ({questionsCount} question left)
+				</p>
+				<ProgressBar
+					completed={completed}
+					width={250}
+					customLabel={question.id}
+					bgColor={"Gray"}
+				/>
+				</div>
+				{answer && 
+					<h2 className="answer-text">{showAnswer()}</h2>
+				}
+			</div>
           </div>
         </main>
       </>
@@ -140,27 +133,21 @@ export const CurrentQuestion = () => {
                 text={item}
               />
             ))}
-
-			
-
           </div>
           <div className="progress-Answer-container">
             {/* Here we display witch question we are at and how many we have left */}
-
-            
-<div className="progress-bar-container">
-
-            <p className="progress-text">
-              {" "}
-              Question: {question.id} ({questionsCount} question left)
-            </p>
-            {/* The progress bar */}
-            <ProgressBar
-              completed={completed}
-              width={250}
-              customLabel={question.id}
-              bgColor={"Gray"}
-            />
+		        <div className="progress-bar-container"> 
+				<p className="progress-text">
+				{" "}
+				Question: {question.id} ({questionsCount} question left)
+				</p>
+				{/* The progress bar */}
+				<ProgressBar
+				completed={completed}
+				width={250}
+				customLabel={question.id}
+				bgColor={"Gray"}
+				/>
           </div>
 
           {answer && 
