@@ -19,8 +19,8 @@ const StyledChartText = styled.p`
 `
 
 const Chart = ({ data }) => {
-  const correctPercent = (data.correctQus / data.noOfQus) * 100
-  const incorrectPercent = 100 - (data.correctQus / data.noOfQus) * 100
+  const incorrectPercent = (data.correctQus / data.noOfQus) * 100
+  const correctPercent = 100 - (data.correctQus / data.noOfQus) * 100
   return (
     <>
       <StyledChart
