@@ -27,17 +27,6 @@
   width: 230px;
   height: 200px;
   background-size: cover;
-}
-.borch-image {
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 25px;
-  margin: 5px;
-  opacity: 0.85;
-  width: 230px;
-  height: 200px;
-  background-size: cover;
   object-fit: cover;
 }
 
@@ -101,11 +90,12 @@
   padding: 10px;
   width: 300px;
   border-radius: 35px;
-  border: 2px solid #ffcd6f;
+  border: 2px transparent;
   margin: 20px 0px;
   font-size: 15px;
-  background-color: #42180e;
-  color: white;
+  background-color: #4e1d10de;
+  color: #ffcd6f;
+  cursor: pointer;
 }
 .question-select:hover {
   box-shadow: 1px 1px 5px #ffcd6f;
@@ -113,4 +103,21 @@
 
 select:focus {
   outline: none;
+}
+
+@media (min-width: 768px) {
+    .question-container {
+        width: 40vw;
+    }
+    .question {
+        font-size: 32px;
+      }
+      .food-image {
+        width: 330px;
+        height: 260px;
+        margin: 10px;
+      }
+      .radio-buttons-container {
+          margin: 10px;
+      }
 }

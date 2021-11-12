@@ -41,19 +41,11 @@ export const QuestionsSwitcher = () => {
   }
   if (questionIndex === 3 && quizStatus === false) {
     return (
-<<<<<<< HEAD
-    <PageStyling>
-      <ProgressBar />
-      <ThirdQuestion />
-    </PageStyling>
-    )
-=======
       <PageStyling>
         <ProgressBar />
         <ThirdQuestion />
       </PageStyling>
     );
->>>>>>> 78dc7e05800035b7768ab57ca25cee54baf99531
   }
   if (questionIndex === 4 && quizStatus === false) {
     return (
@@ -68,11 +60,7 @@ export const QuestionsSwitcher = () => {
     return (
       <PageStyling>
         <ProgressBar />
-<<<<<<< HEAD
-        <FifthQuestion/>
-=======
         <FifthQuestion />
->>>>>>> 78dc7e05800035b7768ab57ca25cee54baf99531
       </PageStyling>
     );
   }

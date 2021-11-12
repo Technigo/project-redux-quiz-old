@@ -29,7 +29,7 @@ export const Summary = () => {
   };
 
   const correctAnswersAmount = useMemo(() => {
-    return answers.filter((answer) => answer.isCorrect).length;
+    return answers.filter((answer) => answer.isCorrect).length-1;
   }, [answers]);
 
   return (
