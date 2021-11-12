@@ -40,7 +40,7 @@ export const CurrentQuestion = () => {
   // Timer to blackout picture/video
   const ticker = () => {
     // if (userName === true) {
-      setTimeout(() => showOverlay(), 2000);
+      setTimeout(() => showOverlay(), 10000);
     // }
   };
 
@@ -54,16 +54,6 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
 
-
-
-    if (userName === '') {
-      return (
-     
-      <UserNameInput />
-   
-      )
-
-    } else {
       return (
         <div className="image-wrapper">
       {displayOverlay && (
@@ -82,12 +72,12 @@ export const CurrentQuestion = () => {
     </div>
 
       )
-    }
+}
 
   
 
     
-};
+;
 
 
 

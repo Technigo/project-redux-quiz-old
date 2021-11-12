@@ -20,10 +20,6 @@ export const Answers = () => {
 
   const dispatch = useDispatch();
 
-  
-  
-  
-
   // const playerName = useSelector((state) => state.quiz.userName);
 
   if (!question) {
