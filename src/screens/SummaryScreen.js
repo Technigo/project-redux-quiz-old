@@ -36,7 +36,7 @@ const SummaryContainer = styled.section`
   }
   @media (min-width: 1025px) {
     font-size: 40px;
-    padding: 20px 420px 20px 420px;
+    padding: 20px 150px 20px 150px;
   }
 `;
 
