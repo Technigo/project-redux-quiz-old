@@ -13,58 +13,6 @@ const questions = [
   },
   {
     id: 2,
-    type: "button",
-    questionText:
-      "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
-    options: ["5th September", "1st September", "31st August", "3rd September"],
-    correctAnswerIndex: 1,
-  },
-  {
-    id: 3,
-    type: "button",
-    questionText:
-      "What did Ron call Hermione after Charms class that made her cry?",
-    options: ["A nightmare", "A know it all", "A loser", "A try-hard"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 4,
-    type: "button",
-    questionText: "In what Hogwarts year do the students learn to Apparate?",
-    options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: 5,
-    type: "button",
-    questionText: "Which Hogwarts subject is taught in North Tower?",
-    options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
-    correctAnswerIndex: 2,
-  },
-  {
-    id: 6,
-    type: "button",
-    imgSrc: "",
-    questionText:
-      "What is the name of Aunt Marge’s dog that she brings round to the Dursleys’?",
-    options: ["Axel", "Ripper", "Brutu", "Chomper"],
-    correctAnswerIndex: 1,
-  },
-  {
-    id: 7,
-    type: "picture",
-    questionText:
-      "On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?",
-    options: [
-      { name: "Professor Dumbledore", imgSrc: "./pictures/dumbledore.jpg" },
-      { name: "Professor Quirrell", imgSrc: "./pictures/quirrell.jpg" },
-      { name: "Hagrid", imgSrc: "./pictures/hagrid.jpg" },
-      { name: "Draco Malfoy", imgSrc: "./pictures/draco.jpg" },
-    ],
-    correctAnswerIndex: 1,
-  },
-  {
-    id: 8,
     type: "picture",
     questionText:
       "Which of these professors delivered Harry Potter to his aunt's doorstep when his parents died?",
@@ -77,12 +25,66 @@ const questions = [
     correctAnswerIndex: 2,
   },
   {
+    id: 3,
+    type: "button",
+    questionText:
+      "On what date does the Hogwarts Express depart the platform to head to Hogwarts?",
+    options: ["5th September", "1st September", "31st August", "3rd September"],
+    correctAnswerIndex: 1,
+  },
+  {
+    id: 4,
+    type: "button",
+    questionText:
+      "What did Ron call Hermione after Charms class that made her cry?",
+    options: ["A nightmare", "A know it all", "A loser", "A try-hard"],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 5,
+    type: "picture",
+    questionText:
+      "On Harry’s first Hallowe’en at Hogwarts, who was responsible for the troll in the dungeon?",
+    options: [
+      { name: "Professor Dumbledore", imgSrc: "./pictures/dumbledore.jpg" },
+      { name: "Professor Quirrell", imgSrc: "./pictures/quirrell.jpg" },
+      { name: "Hagrid", imgSrc: "./pictures/hagrid.jpg" },
+      { name: "Draco Malfoy", imgSrc: "./pictures/draco.jpg" },
+    ],
+    correctAnswerIndex: 1,
+  },
+
+  {
+    id: 6,
+    type: "button",
+    questionText: "In what Hogwarts year do the students learn to Apparate?",
+    options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
+    correctAnswerIndex: 0,
+  },
+  {
+    id: 7,
+    type: "button",
+    questionText: "Which Hogwarts subject is taught in North Tower?",
+    options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
+    correctAnswerIndex: 2,
+  },
+  {
+    id: 8,
+    type: "button",
+    imgSrc: "",
+    questionText:
+      "What is the name of Aunt Marge’s dog that she brings round to the Dursleys’?",
+    options: ["Axel", "Ripper", "Brutu", "Chomper"],
+    correctAnswerIndex: 1,
+  },
+
+  {
     id: 9,
     type: "picture",
     questionText: "Which of these wizards is an animagus?",
     options: [
       { name: "Professor McGonagall", imgSrc: "./pictures/mcgonagall.jpg" },
-      { name: "Professor Quirrell", imgSrc: "./pictures/quirell.jpg" },
+      { name: "Professor Quirrell", imgSrc: "./pictures/quirrell.jpg" },
       { name: "Draco Malfoy", imgSrc: "./pictures/draco.jpg" },
       { name: "Professor Dumbledore", imgSrc: "./pictures/dumbledore.jpg" },
     ],

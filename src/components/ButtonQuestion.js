@@ -12,9 +12,6 @@ export const ButtonQuestion = ({
     state.quiz.answers.find((answer) => question.id === answer.questionId)
   );
 
-  console.log(answer);
-  // console.log(question);
-
   return (
     <QuestionContainer>
       <Header3>{question.questionText}</Header3>
@@ -45,9 +42,8 @@ export const ButtonQuestion = ({
                     if (!hasClicked) {
                       setHasClicked(true);
                       setOnAnswerSubmit(question.id, index);
-                      console.log("SetAnswer");
+
                       setTimeout(() => {
-                        console.log("Onwards");
                         setHasClicked(false);
                         onGoToNextQuestion(question.id);
                       }, 1000);

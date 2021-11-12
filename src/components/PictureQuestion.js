@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import React from "react";
+import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 export const PictureQuestion = ({
   question,
@@ -16,7 +16,6 @@ export const PictureQuestion = ({
       <Header3>{question.questionText}</Header3>
       <ButtonsContainer>
         {question.options.map((option, index) => {
-          console.log('opt', option);
           if (answer && answer.answerIndex === index && answer.isCorrect) {
             return (
               <div key={option.name}>
@@ -105,7 +104,7 @@ const CorrectOptionImage = styled(OptionImage)`
 `;
 
 const QuestionContainer = styled.div`
-  height: 85vh;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

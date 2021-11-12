@@ -7,10 +7,8 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 export const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
-  console.log("SUMMARY", answers);
 
   return answers.map((answer) => {
-    console.log("answer", answer);
     return (
       <SummaryAnswer key={answer.questionId}>
         <Question>{answer.question.questionText}</Question>
@@ -63,7 +61,6 @@ const SummaryAnswer = styled.section`
 const Question = styled.span`
   font-weight: bold;
   margin: 4px 0 10px 0;
-
 `;
 
 const AnswerWrapper = styled.div`

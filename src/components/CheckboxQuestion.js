@@ -10,9 +10,6 @@ export const CheckboxQuestion = ({
   const [checked, setChecked] = useState(false);
   const [index, setIndex] = useState(false);
 
-  console.log(checked);
-  console.log(question);
-
   return (
     <div>
       <Header3>{question.questionText}</Header3>
@@ -40,9 +37,7 @@ export const CheckboxQuestion = ({
           if (checked && !hasClicked) {
             setHasClicked(true);
             setOnAnswerSubmit(question.id, index);
-            console.log("SetAnswer");
             setTimeout(() => {
-              console.log("Onwards");
               setHasClicked(false);
               onGoToNextQuestion(question.id);
             }, 1000);
