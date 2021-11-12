@@ -1,9 +1,10 @@
 progress {
-    width: 100%;
+    width: 20%;
     height: 1rem;
     display: block;
     appearance: none;
     border: none;
+    margin-top: 5px;
 }
 
 progress::-webkit-progress-bar {

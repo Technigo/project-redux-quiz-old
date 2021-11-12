@@ -7,6 +7,7 @@ import { ProgressStatus } from './ProgressStatus';
 import Audio from '../components/Audio';
 import Summary from './Summary';
 
+import './ProgressStatus.css';
 import './currentQuestion.css';
 
 export const CurrentQuestion = () => {
@@ -80,8 +81,8 @@ export const CurrentQuestion = () => {
 				Next Question
 			</button>
     </div>
+    <ProgressStatus />
 		</div> 
-		<ProgressStatus />	
     </main>
   	</>
 	);
