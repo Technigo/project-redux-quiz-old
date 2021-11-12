@@ -20,15 +20,17 @@ const UserNameInput = () => {
         }}
       >
         <h2>What is your name?</h2>
-        <input
-          className="name-input"
-          type="text"
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <button className="btn" type="submit">
-          PLAY
-        </button>
+        <div>
+          <input
+            className="name-input"
+            type="text"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <button className="btn name-btn" type="submit">
+            PLAY
+          </button>
+        </div>
       </form>
     );
   } else {

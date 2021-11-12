@@ -7,8 +7,8 @@ const UserInfo = () => {
   // Redux store to find out the current question index in questions array
   // displaying the information that the user sees at every question
   return (
-    <div>
-      <p> Name:{playerName}</p>
+    <div className="user-info">
+      <p>So grab your controller {playerName} and stay aware, lets go!</p>
     </div>
   );
 };
