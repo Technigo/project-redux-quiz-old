@@ -58,8 +58,8 @@ const ProgressBarContainer = styled.section`
 
 const Dot = styled.div`
   position: relative;
-  height: 10px;
-  width: 10px;
+  height: 8px;
+  width: 8px;
   border-radius: 50%;
   display: inline-block;
   transition: all 500ms ease-in-out;
@@ -74,7 +74,7 @@ const Dot = styled.div`
 `;
 
 const Line = styled.div`
-  width: 20px;
+  width: 15px;
   height: 3px;
   display: inline-block;
   transition: all 500ms ease-in-out;

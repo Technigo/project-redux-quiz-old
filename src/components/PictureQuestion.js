@@ -110,6 +110,7 @@ const QuestionContainer = styled.div`
   justify-content: space-between;
   grid-template-rows: 1fr auto auto;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ButtonsContainer = styled.div`

@@ -11,6 +11,7 @@ const questions = [
     options: ["Keeper", "Beater", "Chaser", "Seeker"],
     correctAnswerIndex: 3,
   },
+
   {
     id: 2,
     type: "picture",
@@ -24,6 +25,7 @@ const questions = [
     ],
     correctAnswerIndex: 2,
   },
+
   {
     id: 3,
     type: "button",
@@ -32,6 +34,7 @@ const questions = [
     options: ["5th September", "1st September", "31st August", "3rd September"],
     correctAnswerIndex: 1,
   },
+
   {
     id: 4,
     type: "button",
@@ -40,6 +43,7 @@ const questions = [
     options: ["A nightmare", "A know it all", "A loser", "A try-hard"],
     correctAnswerIndex: 0,
   },
+
   {
     id: 5,
     type: "picture",
@@ -56,20 +60,31 @@ const questions = [
 
   {
     id: 6,
+    type: "checkbox",
+    questionText:
+      "What type of Muggle car did Mr Weasley tinker with in his shed and turn into a flying car?",
+    options: ["Ford Galaxy", "Ford Fiesta", "Ford Focus", "Ford Anglia"],
+    correctAnswerIndex: 3,
+  },
+
+  {
+    id: 7,
     type: "button",
     questionText: "In what Hogwarts year do the students learn to Apparate?",
     options: ["Sixth year", "Fourth year", "Fifth year", "Seventh year"],
     correctAnswerIndex: 0,
   },
+
   {
-    id: 7,
+    id: 8,
     type: "button",
     questionText: "Which Hogwarts subject is taught in North Tower?",
     options: ["Arithmancy", "Ancient Runes", "Divination", "Astronomy"],
     correctAnswerIndex: 2,
   },
+
   {
-    id: 8,
+    id: 9,
     type: "button",
     imgSrc: "",
     questionText:
@@ -79,7 +94,7 @@ const questions = [
   },
 
   {
-    id: 9,
+    id: 10,
     type: "picture",
     questionText: "Which of these wizards is an animagus?",
     options: [

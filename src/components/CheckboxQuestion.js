@@ -15,11 +15,10 @@ export const CheckboxQuestion = ({
       <Header3>{question.questionText}</Header3>
       {question.options.map((item, index) => {
         return (
-          <Wrapper>
+          <Wrapper key={item}>
             <Item>
               <RadioInput
-                style={{ backgroundColor: checked ? "red" : "white" }}
-                id="checkboxOption"
+                id={`checkboxOption-${index}`}
                 type="radio"
                 onChange={(e) => {
                   setChecked(true);
@@ -28,10 +27,13 @@ export const CheckboxQuestion = ({
                 name="checked"
                 required="required"
               />
-              <LabelContainer key={item}>
-                <label htmlFor="checkboxOption" />
-                <span style={{ textAlign: "right" }}>{item}</span>
-              </LabelContainer>
+              <LabelContainer></LabelContainer>
+              <label
+                style={{ color: "white" }}
+                htmlFor={`checkboxOption-${index}`}
+              >
+                {item}
+              </label>
             </Item>
           </Wrapper>
         );

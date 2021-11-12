@@ -5,14 +5,16 @@ import { ProgressBar } from "../components/ProgressBar";
 
 export const SummaryScreen = ({ onRestartClicked }) => {
   return (
-    <SummaryContainer>
+    <>
       <ProgressBar />
-      <QuizHeader>Quiz Summary</QuizHeader>
-      <Summary />
-      <RestartButtonContainer>
-        <RestartButton onClick={onRestartClicked}>Restart</RestartButton>
-      </RestartButtonContainer>
-    </SummaryContainer>
+      <SummaryContainer>
+        <QuizHeader>Quiz Summary</QuizHeader>
+        <Summary />
+        <RestartButtonContainer>
+          <RestartButton onClick={onRestartClicked}>Restart</RestartButton>
+        </RestartButtonContainer>
+      </SummaryContainer>
+    </>
   );
 };
 
@@ -26,7 +28,6 @@ const SummaryContainer = styled.section`
   height: 100%;
   width: 100%;
   color: #638270;
-
   @media (min-width: 668px) and (max-width: 1024px) {
     padding: 20px 100px 20px 100px;
   }

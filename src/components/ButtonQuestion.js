@@ -42,7 +42,6 @@ export const ButtonQuestion = ({
                     if (!hasClicked) {
                       setHasClicked(true);
                       setOnAnswerSubmit(question.id, index);
-
                       setTimeout(() => {
                         setHasClicked(false);
                         onGoToNextQuestion(question.id);
@@ -60,6 +59,8 @@ export const ButtonQuestion = ({
     </QuestionContainer>
   );
 };
+
+// ---------------------------Styled components--------------------------------
 
 const QuestionContainer = styled.div`
   height: 100%;
@@ -119,45 +120,23 @@ const Button = styled.button`
     }
   }
 `;
-const CorrectButton = styled.button`
-  padding: 8px 20px;
-  height: 100%;
-  width: 100%;
-  font-weight: 700;
+
+const CorrectButton = styled(Button)`
   color: black;
   background-color: #638270;
-  border: none;
-  border-radius: 2px;
   border-bottom: 2px solid black;
   border-right: 2px solid black;
-  cursor: pointer;
-  letter-spacing: 2px;
-  @media (min-width: 668px) and (max-width: 1024px) {
-    font-size: 20px;
-  }
-  @media (min-width: 1025px) {
-    font-size: 30px;
-  }
 `;
 
-const NotCorrectButton = styled.button`
-  padding: 8px 20px;
-  height: 100%;
-  width: 100%;
-  font-weight: 700;
+const NotCorrectButton = styled(Button)`
   color: #7d0000;
   background-color: black;
-  border: none;
-  border-radius: 2px;
   border-bottom: 2px solid #460000;
   border-right: 2px solid #460000;
-  cursor: pointer;
-  letter-spacing: 2px;
-  @media (min-width: 668px) and (max-width: 1024px) {
-    font-size: 20px;
-  }
-  @media (min-width: 1025px) {
-    font-size: 30px;
+  &:hover {
+    transition: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
   }
 `;
 
