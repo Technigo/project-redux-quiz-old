@@ -2,67 +2,78 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { EntryPage } from "../smallComponents/EntryPage";
 import { FirstQuestion } from "components/questions/FirstQuestion";
-import { SecondQuestion } from "components/questions/SecondQuestion"
+import { SecondQuestion } from "components/questions/SecondQuestion";
 import { ThirdQuestion } from "components/questions/ThirdQuestion";
 import { FourthQuestion } from "components/questions/FourthQuestion";
 import { FifthQuestion } from "components/questions/FifthQuestion";
 import { ProgressBar } from "components/smallComponents/ProgressBar";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const PageStyling = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const QuestionsSwitcher = () => {
   const questionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
   let quizStatus = useSelector((state) => state.quiz.quizOver);
-  console.log('quizStatus question switcher', quizStatus)
 
   if (!questionIndex) {
     return <EntryPage />;
   }
-  if (questionIndex === 1) {
+  if (questionIndex === 1 && quizStatus === false) {
     return (
-    <PageStyling>
-      <ProgressBar />
-      <FirstQuestion />
-    </PageStyling>
-    )
+      <PageStyling>
+        <ProgressBar />
+        <FirstQuestion />
+      </PageStyling>
+    );
   }
-  if (questionIndex === 2) {
+  if (questionIndex === 2 && quizStatus === false) {
     return (
-    <PageStyling>
-      <ProgressBar />
-      <SecondQuestion/>
-    </PageStyling>
-    )
+      <PageStyling>
+        <ProgressBar />
+        <SecondQuestion />
+      </PageStyling>
+    );
   }
-  if (questionIndex === 3) {
+  if (questionIndex === 3 && quizStatus === false) {
     return (
+<<<<<<< HEAD
     <PageStyling>
       <ProgressBar />
       <ThirdQuestion />
     </PageStyling>
     )
+=======
+      <PageStyling>
+        <ProgressBar />
+        <ThirdQuestion />
+      </PageStyling>
+    );
+>>>>>>> 78dc7e05800035b7768ab57ca25cee54baf99531
   }
-  if (questionIndex === 4) {
+  if (questionIndex === 4 && quizStatus === false) {
     return (
       <PageStyling>
         <ProgressBar />
         <FourthQuestion />
       </PageStyling>
-      )
+    );
   }
-  if (questionIndex === 5) {
+  if (questionIndex === 5 && quizStatus === false) {
     quizStatus = true;
     return (
       <PageStyling>
         <ProgressBar />
+<<<<<<< HEAD
         <FifthQuestion/>
+=======
+        <FifthQuestion />
+>>>>>>> 78dc7e05800035b7768ab57ca25cee54baf99531
       </PageStyling>
-      );
+    );
   }
 };

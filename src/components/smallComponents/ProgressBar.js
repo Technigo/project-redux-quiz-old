@@ -2,9 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 export const ProgressBar = () => {
-  const questionCompleted = useSelector((state) => state.quiz.currentQuestionIndex);
+  const questionCompleted = useSelector(
+    (state) => state.quiz.currentQuestionIndex
+  );
   const questionsTotal = useSelector((state) => state.quiz.questions.length);
-  console.log("qqq", questionCompleted, questionsTotal);
   let completed = Math.round((questionCompleted / questionsTotal) * 100);
 
   if (questionCompleted === 5) {
