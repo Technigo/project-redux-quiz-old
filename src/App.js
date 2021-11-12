@@ -45,6 +45,7 @@ export const App = () => {
     width:700px;
     position:absolute;
     margin-top:100px;
+    height:auto;
   `;
   return (
     <Provider store={store}>

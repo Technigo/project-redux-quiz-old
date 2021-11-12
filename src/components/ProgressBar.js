@@ -7,7 +7,7 @@ export const ProgressBar = () => {
   const startingState = useSelector((state) => state.quiz);
 
   return (
-    <div className="progress-bar">
+    <div className="progress-bar-container">
       <p>
         You are on question nr. {startingState.questions[currentQuestionIndex].id} out of{' '}
         {startingState.questions.length}
