@@ -12,7 +12,7 @@ export const RadioButtonsQuestion = ({
   const [index, setIndex] = useState(false);
 
   return (
-    <div>
+    <ContainerRadiobuttonsSubmitButton>
       <Header3>{question.questionText}</Header3>
       {question.options.map((item, index) => {
         return (
@@ -54,16 +54,22 @@ export const RadioButtonsQuestion = ({
       >
         Submit
       </SubmitButton>
-    </div>
+    </ContainerRadiobuttonsSubmitButton>
   );
 };
 
 // -------------------------- Styled component ---------------------------------
 
+const ContainerRadiobuttonsSubmitButton = styled.div`
+  height: 100%auto;
+  display: grid;
+  grid-template-rows: 1fr auto auto auto auto 1fr;
+`;
+
 const Header3 = styled.h3`
   padding-top: 15px;
   text-align: center;
-  margin: 50px auto;
+  grid-template-rows: 1fr;
   color: #638270;
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 35px;
@@ -71,14 +77,12 @@ const Header3 = styled.h3`
   }
   @media only screen and (min-width: 1025px) {
     font-size: 50px;
-    padding: 15px 150px 0 150px;
+    padding: 0 200px 0 200px;
   }
 `;
 
 const Wrapper = styled.div`
-  height: auto;
   width: 100%;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
 `;
@@ -86,6 +90,7 @@ const Wrapper = styled.div`
 const Item = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   height: 48px;
   position: relative;
 `;
@@ -132,7 +137,7 @@ const RadioInput = styled.input`
 
 const SubmitButton = styled.button`
   display: flex;
-  margin: 10% auto 0;
+  margin: auto;
   padding: 8px 20px;
   font-weight: 700;
   color: #638270;
@@ -143,13 +148,14 @@ const SubmitButton = styled.button`
   border-right: 2px solid #638270;
   cursor: pointer;
   letter-spacing: 2px;
+
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 20px;
-    margin: 60px auto 0;
+    margin: auto;
   }
+
   @media (min-width: 1025px) {
     font-size: 30px;
-
     &:hover {
       border-top: 2px solid #638270;
       border-left: 2px solid #638270;

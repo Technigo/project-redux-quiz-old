@@ -60,9 +60,8 @@ export const PictureQuestion = ({
 };
 
 const OptionImage = styled.div`
-  width: 100%;
-  max-width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url(${(props) => props.imgSrc});
   background-size: cover;
@@ -74,6 +73,15 @@ const OptionImage = styled.div`
   border-right: 2px solid #638270;
   cursor: pointer;
   padding: 10px 0;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    width: 215px;
+    height: 200px;
+  }
+  @media only screen and (min-width: 1025px) {
+    width: 215px;
+    height: 200px;
+  }
 
   &:hover {
     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
@@ -121,7 +129,6 @@ const ButtonsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 10px;
-  margin: 10px;
 
   @media (min-width: 768px) and (max-width: 991px) {
     grid-template-columns: 1fr 1fr;
@@ -143,10 +150,10 @@ const Header3 = styled.h3`
 
   @media (min-width: 668px) and (max-width: 1024px) {
     font-size: 35px;
-    padding: 150px 15px 0 15px;
+    padding: 150px 15px 150px 15px;
   }
   @media only screen and (min-width: 1025px) {
     font-size: 50px;
-    padding: 15px 150px 0 150px;
+    padding: 15px 150px 150px 150px;
   }
 `;
