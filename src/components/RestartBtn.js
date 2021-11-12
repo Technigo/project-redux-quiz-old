@@ -10,6 +10,7 @@ export const RestartBtn = () => {
       type='button'
       onClick={() => {
         dispatch(quiz.actions.restart())
+       
       }}
     >
       <span role='img' aria-label='arrow left emoji'>
