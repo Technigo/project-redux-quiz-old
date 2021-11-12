@@ -92,7 +92,11 @@ export const CurrentQuestion = () => {
                 </div>
               ))}
 
-			
+
+			{answer && 
+				<h2 className="answer-text">{showAnswer()}</h2>
+			}
+
 
             </div>
             
@@ -138,7 +142,11 @@ export const CurrentQuestion = () => {
                 text={item}
               />
             ))}
-			
+
+			{answer && 
+			<h2 className="answer-text">{showAnswer()}</h2>
+			}
+
           </div>
           <div className="progress-Answer-container">
             {/* Here we display witch question we are at and how many we have left */}
