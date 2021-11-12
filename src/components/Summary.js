@@ -56,6 +56,7 @@ const SummaryAnswer = styled.section`
   padding: 6px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 0 15px;
 
   @media (min-width: 1025px) {
