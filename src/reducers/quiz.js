@@ -32,7 +32,7 @@ const questions = [
 		options: ["London", "Athens", "Rome", "Paris"],
 		correctAnswerIndex: 0,
 		answerText:
-			"This is the British Museum. The architecture is heavily inspired by ancient Greek architecture.",
+			"This is the British Museum. The architecture is heavily inspired by ancient Greek architecture. This museum is older than the USA.",
 	},
 	{
 		id: 4,

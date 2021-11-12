@@ -13,11 +13,13 @@ code {
 }
 
 .correct {
-	background-color: green;
+	background-color: rgba(46, 199, 72, 0.5);
+	color: black;
 }
 
 .incorrect {
-	background-color: red;
+	background-color: rgba(194, 12, 51, 0.5);
+	color: black;
 }
 
 button {

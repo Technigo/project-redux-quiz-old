@@ -19,10 +19,11 @@ const QuestionBackgroundImage = styled.div`
 	font-family: "Yuji Syuku", serif;
 	font-size: 10px;
 	overflow: scroll;
+	padding: 30px;
 `;
 
 const QuestionText = styled.div`
-	background-color: rgba(205, 206, 201, 0.5);
+	background-color: rgba(205, 206, 201, 0.7);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -36,10 +37,12 @@ const QuestionText = styled.div`
 
 const QuestionImage = styled.img`
 	height: 200px;
+	margin-bottom: 10px;
+	border-radius: 2px;
 `;
 
 const AnswerTextContainer = styled.div`
-	background-color: rgba(205, 206, 201, 0.5);
+	background-color: rgba(205, 206, 201, 0.7);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -106,7 +109,6 @@ export const CurrentQuestion = () => {
 			return "button";
 		}
 	};
-	// efter ett val så får man reda på om det var rätt/fel samt att knapparna blir disabled + det kommer en "next question" knapp
 
 	return (
 		<QuestionBackgroundImage>
@@ -115,7 +117,6 @@ export const CurrentQuestion = () => {
 				{question.imgUrl !== "" && (
 					<QuestionImage src={question.imgUrl} alt="#" />
 				)}
-				{/* Trying on line 77 to thet the image to show at the appropriate question */}
 				{question.options.map((option, index) => (
 					<QuizButton
 						key={option}
