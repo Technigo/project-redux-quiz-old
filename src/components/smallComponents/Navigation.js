@@ -15,7 +15,8 @@ const Navigation = () => {
   position: "absolute",
   backgroundColor: "#4e1d10",
   textAlign: "center",
-  zIndex: 1,
+    zIndex: 1,
+  borderRadius: "3px",
   };
 
   const ContactLink = {

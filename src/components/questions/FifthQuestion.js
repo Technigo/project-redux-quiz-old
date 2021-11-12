@@ -23,7 +23,7 @@ export const FifthQuestion = () => {
         Question {question.id}: {question.questionText}
       </h1>
       <div className="food-image">
-        <img className="borch-image" src={borchImg} alt="Borch" />
+        <img className="food-image" src={borchImg} alt="Borch" />
       </div>
       <div className="radio-buttons-container">
         {question.options.map((item, index) => (

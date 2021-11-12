@@ -17,7 +17,7 @@ const Button = () => {
 		dispatch(quiz.actions.goToNextQuestion());
 	};
 
-	useEffect(() => {
+  useEffect(() => {
 		if (countdown <= 0) {
 			dispatch(quiz.actions.goToNextQuestion());
 		}
@@ -29,7 +29,7 @@ const Button = () => {
 		if (question.id > 0) {
 			alert(answers[answers.length - 1].isCorrect);
 		}
-		toNextQ();
+		toNextQ(window.scrollTo(0, 0));
 	};
 
 	return (
