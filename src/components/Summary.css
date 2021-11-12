@@ -1,118 +1,73 @@
-.SummaryContainer{
+/* .SummaryContainer{
 
- height: 100vh;
+  height: 100vh;
+ 
+ max-width: 100vw;
+ 
+ } */
 
-max-width: 100vw;
+/* .SummaryTextContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+} */
 
-}
-
-.SummaryTextContent{
-display: flex;
-align-items: center;
-justify-content:space-around;
-height: 100%;
-
-
-}
-
-
-.SummaryText {
-
+/* .SummaryText {
   min-width: 320px;
   text-align: center;
- 
-
-}
-
+} */
 
 /* If confetti */
 
+/* .SummaryTextConfetti {
+  font-size: 4rem;
+  text-shadow: 1px 1px 0px #eb452b, 1px 1px 0px #efa032, 2px 2px 0px #46b59b,
+    3px 3px 0px #017e7f, 4px 4px 0px #052939, 5px 5px 0px #c11a2b,
+    6px 6px 0px #c11a2b, 6.5px 6.5px 0px #c11a2b;
+} */
 
-.SummaryTextConfetti{
-font-size: 4rem;
-  text-shadow: 1px 1px 0px #eb452b, 
-  1px 1px 0px #efa032, 
-  2px 2px 0px #46b59b, 
-  3px 3px 0px #017e7f, 
-  4px 4px 0px #052939, 
-  5px 5px 0px #c11a2b, 
-  6px 6px 0px #c11a2b, 
-  6.5px 6.5px 0px #c11a2b;
-}
-
-
-.SummaryTextConfetti-p{
+/* .SummaryTextConfetti-p {
   font-size: 2rem;
   color: black;
-    text-shadow: 1px 1px 0px #eb452b, 
-    1px 1px 0px #efa032, 
-    1px 2px 0px #46b59b;
-  }
+  text-shadow: 1px 1px 0px #eb452b, 1px 1px 0px #efa032, 1px 2px 0px #46b59b;
+} */
 
-.SummaryTextConfetti-btn{
+/* .SummaryTextConfetti-btn {
   height: 35px;
   width: 130px;
-border-radius: 5px;
-color: black;
-background-color: #f79f92;
-
-
+  border-radius: 5px;
+  color: black;
+  background-color: #f79f92;
 }
 
-.SummaryTextConfetti-btn:hover{
-
+.SummaryTextConfetti-btn:hover {
   background-color: #da8072;
-
-
-
 }
 
+/* If rain */
 
-
-  /* If rain */
-
-
-.SummaryTextRain{
-font-size: 4rem;
-  text-shadow: 1px 1px 0px #2bc5eb, 
-  1px 1px 0px #1b0e3d, 
-  2px 2px 0px #37b5d4, 
-  3px 3px 0px #017e7f, 
-  4px 4px 0px #052939, 
-  5px 5px 0px #857e7f, 
-  6px 6px 0px #615a5a, 
-  6.5px 6.5px 0px #1a68c1;
-
+/* .SummaryTextRain {
+  font-size: 4rem;
+  text-shadow: 1px 1px 0px #2bc5eb, 1px 1px 0px #1b0e3d, 2px 2px 0px #37b5d4,
+    3px 3px 0px #017e7f, 4px 4px 0px #052939, 5px 5px 0px #857e7f,
+    6px 6px 0px #615a5a, 6.5px 6.5px 0px #1a68c1;
 }
 
-.SummaryTextRain-p{
-
+.SummaryTextRain-p {
   font-size: 2rem;
   color: black;
-    text-shadow: 1px 1px 0px #135388, 
-    1px 1px 0px #22b1d4,  
-    2px 2px 0px #0fd1eb;
-
+  text-shadow: 1px 1px 0px #135388, 1px 1px 0px #22b1d4, 2px 2px 0px #0fd1eb;
 }
 
-
-.SummaryTextRain-btn{
-
+.SummaryTextRain-btn {
   height: 35px;
   width: 130px;
-border-radius: 5px;
-color: black;
-background-color: #c3e6eb;
-
+  border-radius: 5px;
+  color: black;
+  background-color: #c3e6eb;
 }
 
-.SummaryTextRain-btn:hover{
-
-background-color: #b9c4ce;
-
-
-}
-
-
-
-
+.SummaryTextRain-btn:hover {
+  background-color: #b9c4ce;
+} */
