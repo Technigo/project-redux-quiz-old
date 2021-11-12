@@ -18,10 +18,9 @@ code {
 }
 
 .mainContainer {
-  max-width:1200px;
-  width:60vw;
+  width:100vw;
   margin:0 auto;
-  padding:40px;
+  padding:20px;
 }
 
 .image-wrapper img, .image-wrapper video {
@@ -89,4 +88,13 @@ code {
   border:none;
   padding:5px;
   min-width:150px;
+}
+
+@media only screen and (min-width:599px) {
+  .mainContainer {
+    max-width:1200px;
+    width:60vw;
+    margin:0 auto;
+    padding:40px;
+  }
 }

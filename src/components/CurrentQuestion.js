@@ -29,7 +29,7 @@ export const CurrentQuestion = () => {
       top: 0;
       background: #212121;
       z-index: 2;
-      display: block;
+      display: none;
       color: white;
       padding: 40px;
       text-align: center;
@@ -72,6 +72,8 @@ export const CurrentQuestion = () => {
           <source src={question.path} type="video/mp4" />
         </video>
       )}
+      <h2>{question.questionText}</h2>
+      <Answers />
     </div>
   );
 };
