@@ -63,9 +63,13 @@ h1 {
   border:2px solid #6D9886;
 }
 
+.options button:focus {
+  background:#C0D5CC;
+  border:2px solid #C0D5CC;
+}
+
 .options button:hover {
   background:#212121;
-  
 }
 
 .next-question {

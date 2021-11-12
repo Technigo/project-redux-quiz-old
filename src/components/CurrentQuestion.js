@@ -30,27 +30,13 @@ export const CurrentQuestion = () => {
 
   // function that changes the display property of Overlay from none to block
   const showOverlay = () => {
-    Overlay = styled.div`
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      top: 0;
-      background: #212121;
-      z-index: 2;
-      display: none;
-      color: white;
-      padding: 40px;
-      text-align: center;
-    `;
     setDisplayOverlay(true);
   };
 
   // Timer to blackout picture/video
   const ticker = () => {
-    // if (userName === true) {
-    setTimeout(() => showOverlay(), 10000);
-    // }
+    setTimeout(() => showOverlay(), 1000);
+    
   };
 
   // we used useEffect to call the ticker function when component is mounted

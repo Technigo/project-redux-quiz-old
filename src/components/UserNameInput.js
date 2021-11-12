@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { quiz } from 'reducers/quiz';
 
-const UserNameInput = () => {
+const UserNameInput = ({setDisplayQuestion}) => {
   const [userName, setUserName] = useState('');
   const dispatch = useDispatch();
   const userNameGlobal = useSelector((state) => state.quiz.userName);
@@ -17,6 +17,7 @@ const UserNameInput = () => {
         onSubmit={(e) => {
           e.preventDefault();
           dispatch(quiz.actions.addUserName({ userName: userName }));
+          setDisplayQuestion(true);
         }}
       >
         <h2>What is your name?</h2>
@@ -26,6 +27,7 @@ const UserNameInput = () => {
             type="text"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
+            required
           />
           <button className="btn name-btn" type="submit">
             PLAY

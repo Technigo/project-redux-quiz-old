@@ -1,5 +1,5 @@
 // importing React components
-import React from 'react';
+import React, {useState} from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import styled from 'styled-components';
@@ -21,11 +21,12 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 export const App = () => {
+  const [displayQuestion, setDisplayQuestion] = useState(false);
   const MainContainer = styled.main`
     width: 100vw;
     margin: 0 auto;
-    position:relative;
-    height:100vh;
+    position: relative;
+    height: 100vh;
 
     @media (min-width: 599px) {
       width: 700px;
@@ -38,24 +39,33 @@ export const App = () => {
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 5;
-    top:-10px;
-    right:0;
-    left:0;
-    bottom:0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 700px;
+    position: absolute;
+    height: auto;
+  `;
+
+  const TvQuestionContainer = styled.div`
     width:700px;
-    position:absolute;
     margin-top:100px;
-    height:auto;
   `;
   return (
     <Provider store={store}>
       <MainContainer>
         <h1>Welcome to our Awareness quiz!</h1>
-        <UserNameInput />
+        <UserNameInput setDisplayQuestion={setDisplayQuestion}/>
         <UserInfo />
-        <TvContainer />
-        <CurrentQuestion />
-        <ProgressBar />
+        {displayQuestion &&
+        <>
+          <TvQuestionContainer>
+            {/* <TvContainer /> */}
+            <CurrentQuestion />
+          </TvQuestionContainer>
+          <ProgressBar />
+          </>}
       </MainContainer>
     </Provider>
   );

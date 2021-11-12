@@ -22,13 +22,15 @@ export const Answers = () => {
 
   // const playerName = useSelector((state) => state.quiz.userName);
 
+  const [currentQuestion, setCurrentQuestion] = useState([0, 0]);
+  const [buttonClickedTimes, setButtonClickedTimes] = useState(0);
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
 
-  const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  };
+  // const onCheckAnswer = (id, index) => {
+  //   setCurrentQuestion([id, index])
+  // };
 
   if (quizOver === true) {
     return <Summary />;
@@ -41,13 +43,15 @@ export const Answers = () => {
               className="btn option"
               type="submit"
               key={item}
-              onClick={() => onAnswerSubmit(question.id, index)}
+              onClick={() => {
+                setButtonClickedTimes(1);
+                setCurrentQuestion([question.id, index])}}
             >
               {item}
             </button>
           ))}
         </div>
-        <NextQuestionButton />
+        <NextQuestionButton currentQuestion={currentQuestion} buttonClickedTimes={buttonClickedTimes} />
       </div>
     );
   }

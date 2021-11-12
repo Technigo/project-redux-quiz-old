@@ -132,7 +132,8 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState;
+      const newInitialState = { ...initialState, userName: 'try again' }
+      return newInitialState;
     }
   }
 
