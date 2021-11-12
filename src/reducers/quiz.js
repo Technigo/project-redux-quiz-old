@@ -20,41 +20,41 @@ const initialState = {
 				'What is the only book in the Harry Potter series that does not feature Lord Voldemort?',
 			options: [
 				'The Sorceres Stone',
-				'The Prisoner of Akzaban',
 				'The Deathly Hallows',
+				'The Prisoner of Akzaban',
 			],
 			correctAnswerIndex: 1,
 		},
 		{
 			id: 3,
 			questionText: 'Who is Scabbers the Rat?',
-			options: ['Peter Pettigrew', 'Remus Lupin', 'Sirius Black'],
+			options: ['Remus Lupin', 'Sirius Black', 'Peter Pettigrew'],
 			correctAnswerIndex: 0,
 		},
 		{
 			id: 4,
 			questionText:
 				'Which Harry Potter word is now in the Oxford English Dictionary?',
-			options: ['Voldemort', 'Hogwarts', 'Muggle'],
+			options: ['Muggle', 'Hogwarts', 'Voldemort'],
 			correctAnswerIndex: 2,
 		},
 		{
 			id: 5,
 			questionText:
 				'Which of these Hogwarts Professors teaches Transfiguration?',
-			options: ['Professor Snape', 'Professor McGonagall', 'Professor Sprout'],
+			options: ['Professor Snape', 'Professor Sprout', 'Professor McGonagall'],
 			correctAnswerIndex: 1,
 		},
 		{
 			id: 6,
 			questionText: 'Who invented the spell Sectumsempra?',
-			options: ['Professor Snape', 'Miranda Goshawk', 'Lord Voldemort'],
+			options: ['Professor Snape', 'Lord Voldemort', 'Miranda Goshawk'],
 			correctAnswerIndex: 0,
 		},
 		{
 			id: 7,
 			questionText: 'Who is Nagini?',
-			options: ["Hermione's Cat", "Ron's Owl", "Lord Voldemort's Snake"],
+			options: ["Ron's Owl", "Hermione's Cat", "Lord Voldemort's Snake"],
 			correctAnswerIndex: 2,
 		},
 		{

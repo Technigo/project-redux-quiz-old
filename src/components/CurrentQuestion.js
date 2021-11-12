@@ -8,7 +8,8 @@ const Main = styled.div`
 	width: 100%;
 	height: 100vh;
 	margin: 0 auto;
-	background-image: url(./assets/black-night.jpg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
+		url(./assets/Train.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: left;
@@ -17,32 +18,60 @@ const Main = styled.div`
 	justify-content: center;
 	align-items: center;
 `; // This will style everything in this component
+
+const Questioncontainer = styled.div`
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	text-align: center;
+`;
+
+//This styles the H1 question
 const Questiontext = styled.h1`
 	font-family: 'Calligraffitti', cursive;
-	font-size: 50px;
-	text-align: centre;
+	font-size: 40px;
+	text-align: center;
 	color: white;
 	margin: 0 20px 30px;
-	text-shadow: 2px #ffe227;
 	text-shadow: 0 0 4px #d4af37, 0 0 6px #800000;
-`; //This styles the H1 question
+	word-wrap: wrap;
+`;
+// Styles the button container, add display: inline for desktop
 const Buttonssection = styled.section`
-	justify-items: centre;
-`; // Styles the button container, add display: inline for desktop
+	justify-items: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+`;
 const Choice = styled.div`
-	justify-content: centre;
+	justify-content: center;
 `; // styles the choice buttons
 const Choicebutton = styled.button`
-	width: 75%;
+	width: auto;
 	margin: 15px;
 	padding: 15px;
 	border-radius: 20px;
+	background-color: #d4af37;
+	text-align: center;
 `; // The actual answer buttons
+
+const Nextbuttonwrapper = styled.div`
+	margin: 0 auto;
+	margin-top: 60px;
+`;
 const Nextbutton = styled.button`
-	width: 30%;
+	width: auto;
 	margin: 15px;
 	padding: 15px;
 	border-radius: 20px;
+	background-color: #800000;
+	font-weight: 500;
+	font-size: 25px;
+	font-family: 'Fredericka the Great', cursive;
+	color: white;
 `; // Styles the next button
 const Chosenanswer = styled.span`
 	color: white;
@@ -51,9 +80,12 @@ const Chosenanswer = styled.span`
 `; // Styles the text on choice button
 const Feedback = styled.div`
 	color: white;
+	text-shadow: 0 0 4px #d4af37, 0 0 6px #800000;
+	font-size: 20px;
 `;
-const Questioncontainer = styled.div`
-	margin: 0 auto;
+
+const Progressbar = styled.div`
+	color: white;
 `;
 
 export const CurrentQuestion = () => {
@@ -86,25 +118,27 @@ export const CurrentQuestion = () => {
 		<Main>
 			<Questioncontainer>
 				{/*{answers[currentQuestionIndex] ? answers[currentQuestionIndex].isCorrect : 'no answer'}*/}
-				<Questiontext>Question: {question.questionText}</Questiontext>
+				<Questiontext>{question.questionText}</Questiontext>
 				<Buttonssection>
 					{question.options.map((item, index) => (
 						<Choice>
 							<Choicebutton
 								key={item}
 								onClick={() => onAnswerSubmit(question.id, index)}
-								style={{
-									backgroundColor: !answers
-										? '#EADCA6'
-										: index === question.correctAnswerIndex
-										? '#17D7A0'
-										: '#B91646',
-								}}
+								// style={{
+								// 	backgroundColor: !answers
+								// 		? '#EADCA6'
+								// 		: index === question.correctAnswerIndex
+								// 		? '#17D7A0'
+								// 		: '#B91646',
+								// }}
 							>
 								<Chosenanswer>{item}</Chosenanswer>{' '}
 							</Choicebutton>
 						</Choice>
 					))}
+				</Buttonssection>
+				<Nextbuttonwrapper>
 					<Nextbutton
 						disabled={!answers[currentQuestionIndex]}
 						onClick={() => dispatch(quiz.actions.goToNextQuestion())}
@@ -112,7 +146,7 @@ export const CurrentQuestion = () => {
 						{' '}
 						Next Question
 					</Nextbutton>
-				</Buttonssection>
+				</Nextbuttonwrapper>
 
 				<Feedback>
 					{answers[currentQuestionIndex] ? (
@@ -122,15 +156,14 @@ export const CurrentQuestion = () => {
 							<p>Oh no.... It's not correct</p>
 						)
 					) : (
-						<p>Waiting for the answer</p>
+						<p>Waiting for your answer...</p>
 					)}
 				</Feedback>
 
-				<div>Question {question.id} out of 8</div>
+				<Progressbar>Question {question.id} out of 8</Progressbar>
+				{/* Question: (8-{question.id}) */}
 
-				<div>Question: (8-{question.id})</div>
-
-				{/*<div>Question: (({question.id}/8)* 100)</div> 
+				{/*<div>Question: (({question.id}/8)* 100)</div>
         <div>(`${percentage}`)</div>*/}
 			</Questioncontainer>
 		</Main>

@@ -5,6 +5,7 @@ import { quiz } from 'reducers/quiz';
 import { IntroPage } from 'components/IntroPage';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import { CurrentQuestion } from 'components/CurrentQuestion';
+import { Summary } from 'components/Summary';
 
 const reducer = combineReducers({
 	quiz: quiz.reducer,
@@ -19,6 +20,7 @@ export const App = () => {
 				<Switch>
 					<Route exact path="/" component={IntroPage} />
 					<Route path="/CurrentQuestion" component={CurrentQuestion} />
+					<Route path="/Summary" component={Summary} />
 				</Switch>
 			</BrowserRouter>
 		</Provider>
