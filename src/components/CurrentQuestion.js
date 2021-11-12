@@ -4,53 +4,35 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { quiz } from '../reducers/quiz';
 import { ProgressStatus } from './ProgressStatus';
-import Audio from '../components/Audio';
-import Summary from './Summary';
+import { Audio } from '../components/Audio';
+import { Summary } from './Summary';
 
 import './ProgressStatus.css';
 import './currentQuestion.css';
 
 export const CurrentQuestion = () => {
 	const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
-
 	const answer = useSelector((state) => state.quiz.answers.find((a) => (
 		a.questionId === question.id
 	)));
 
-	// const isCorrect = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
-
-	// const isCorrect = useSelector((state) => {
-
-	// 	const answer = state.quiz.answers[state.quiz.currentQuestionIndex];
-
-	// 	console.log(answer);
-	// 	if (answer === undefined)
-	// 		return false;
-
-	// 	return answer.isCorrect;
-	// 	// return state.quiz.answers[state.quiz.currentQuestionIndex].isCorrect;
-	// })
-
 	//We ask store to get updated value (true or false) of isQuizOver
-  	const isQuizOver = useSelector((state) => state.quiz.quizOver);
-
+  const isQuizOver = useSelector((state) => state.quiz.quizOver);
 	const dispatch = useDispatch();
-
 
 	if (!question) {
 		return <h1>Oh no! I could not find the current question!</h1>;
-	}
+	};
 
-	 // if isQuizOver is true, then Summary component is returned
-	 if (isQuizOver) {
+	// if isQuizOver is true, then Summary component is returned
+	if (isQuizOver) {
 		return <Summary />;
-	  }
+	};
 
-
+	// collects the specific id and answer for each question on submit
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 	};
-
 
 	return (
 		<>		
@@ -58,7 +40,7 @@ export const CurrentQuestion = () => {
 		<div className="question-section">
       <h1>Question</h1>
 			<h3>{question.questionText}</h3>
-      {question.id === 1 && <Audio></Audio>}
+      {question.id === 1 && <Audio></Audio>};
       <div className="btn-section">
 			{question.options.map((item, index) => (
 				<button 
@@ -69,7 +51,7 @@ export const CurrentQuestion = () => {
 					onClick={() => onAnswerSubmit(question.id, index)}>
 					{item}
 				</button>
-			))}
+			))};
     	</div>
     <div>
 			<button 

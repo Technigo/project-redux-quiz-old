@@ -3,10 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './StartPage.css';
 
-
-const StartPage = () => {
+export const StartPage = () => {
     return (
-
       <main className="background-startpage">
         <Link to="/quiz">
           <button className="start-button">START QUIZ HERE!</button>
@@ -14,5 +12,3 @@ const StartPage = () => {
       </main>
     );
   };
-  
-  export default StartPage;

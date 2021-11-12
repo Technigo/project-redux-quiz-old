@@ -2,14 +2,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
-import './Summary.css';
 import { Link } from 'react-router-dom';
+import './Summary.css';
 
 export const Summary = () => {
-  const dispatch = useDispatch()
-  const answers = useSelector((state) => state.quiz.answers) // asking store to give us answers from quiz object
+  const dispatch = useDispatch();
+  const answers = useSelector((state) => state.quiz.answers); // asking store to give us answers from quiz object
   const questionArray = useSelector((state) => state.quiz.questions);
-  const correctAnswer = useSelector((state) => state.quiz.answers.filter((a) => a.isCorrect)) //filtering out correct answers
+  const correctAnswer = useSelector((state) => state.quiz.answers.filter((a) => a.isCorrect)); //filtering out correct answers
 
   return (
     <main className="summary-container">
@@ -35,14 +35,12 @@ export const Summary = () => {
       </div> 
       <div>
       <Link onClick={() => dispatch(quiz.actions.restart())} to="/">
-          <button className="restart-button">RESTART QUIZ!</button>
+        <button className="restart-button">RESTART QUIZ!</button>
       </Link>   
       </div>
     </main>
-  )
-}
-
-export default Summary;
+  );
+};
 
             
             
