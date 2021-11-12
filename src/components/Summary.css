@@ -1,4 +1,5 @@
-h3 {
+h3,
+h4 {
   text-align: center;
   font-family: ‘Source Serif Pro’;
 }
@@ -9,15 +10,71 @@ h3 {
   align-items: center;
   justify-content: center;
   margin: 40px 0;
+  padding: 0 10%;
 }
 
 .summary p {
   font-size: 20px;
+  margin-bottom: 0;
+}
+
+.summary h2 {
+  font-size: 35px;
+}
+
+.summary h3 {
+  font-size: 26px;
+  text-decoration: underline;
+}
+
+.summary h4 {
+  font-size: 22px;
+}
+
+.summary-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.answer-emoji {
+  align-self: center;
 }
 
 .restart-button {
+  margin-top: 5%;
   border: none;
   background-color: white;
+  border: 2px solid black;
   width: 30%;
   padding: 2%;
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 992px) {
+  .summary h2 {
+    font-size: 38px;
+  }
+
+  .summary h3 {
+    font-size: 30px;
+    text-decoration: underline;
+  }
+
+  .summary p {
+    font-size: 25px;
+  }
+
+  .summary h4 {
+    font-size: 28px;
+  }
+
+  button {
+    font-size: 25px;
+  }
 }
