@@ -43,16 +43,16 @@ export const QuestionsSwitcher = () => {
   if (questionIndex === 3) {
     return (
     <PageStyling>
-    <ProgressBar />
-    <ThirdQuestion />
+      <ProgressBar />
+      <ThirdQuestion />
     </PageStyling>
     )
   }
   if (questionIndex === 4) {
     return (
       <PageStyling>
-      <ProgressBar />
-      <FourthQuestion />
+        <ProgressBar />
+        <FourthQuestion />
       </PageStyling>
       )
   }
@@ -60,8 +60,8 @@ export const QuestionsSwitcher = () => {
     quizStatus = true;
     return (
       <PageStyling>
-      <ProgressBar />
-      <FifthQuestion/>
+        <ProgressBar />
+        <FifthQuestion/>
       </PageStyling>
       );
   }
