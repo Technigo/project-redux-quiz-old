@@ -24,7 +24,7 @@ export const App = () => {
           <Route path='/' element={<StartPage />} />
           <Route path='/quiz' element={<CurrentQuestion />} />
           <Route path='/summary' element={<Summary />} />
-          <Route path='/*' element={<NotFound />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Provider>
     </BrowserRouter>
