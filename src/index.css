@@ -30,19 +30,46 @@ h2 {
   padding: 0 20px;
 }
 
+.start-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 25, 25, 0.808);
+  border-radius: 10%;
+  padding: 10%;
+  text-align: center;
+  font-family: "Matrix", sans-serif;
+}
+
+.rabbit-text {
+  font-family: "Orbitron", Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+}
+.pill-image {
+  width: auto;
+  height: 20px;
+  filter: invert(100%);
+  margin: auto;
+}
+
 button {
   font-family: "Orbitron", Verdana, sans-serif;
   font-size: 15px;
   padding: 10px;
   border-radius: 5px;
   width: 520px;
-  height: 40px;
+  height: auto;
   margin: 5px;
   text-align: left;
 }
-
-.default-button:hover {
-  background-color: rgb(71, 70, 70);
+.button-container {
+  display: flex;
+  cursor: pointer;
+  margin: 0 auto;
 }
 
 .default-button {
@@ -52,7 +79,9 @@ button {
   background-color: black;
   color: white;
 }
-
+.default-button:hover {
+  background-color: rgb(71, 70, 70);
+}
 .right-button {
   background-color: rgba(4, 179, 83, 0.314);
   border: 2px solid rgb(4, 179, 83);
@@ -69,12 +98,6 @@ button {
   color: white;
 }
 
-.button-container {
-  display: flex;
-  cursor: pointer;
-  margin: 0 auto;
-}
-
 .wrapper {
   position: absolute;
   top: 50%;
@@ -83,29 +106,6 @@ button {
   background: rgba(26, 25, 25, 0.938);
   border-radius: 10%;
   padding: 10px;
-}
-
-.pill-image {
-  width: auto;
-  height: 20px;
-  filter: invert(100%);
-  margin: auto;
-}
-
-.start-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(26, 25, 25, 0.808);
-  border-radius: 10%;
-  padding: 10%;
-  text-align: center;
-  font-family: "Matrix", sans-serif;
-}
-
-.start-image {
-  height: 200px;
 }
 
 .next-button,
@@ -152,29 +152,10 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: 2%;
   padding: 20px;
   border-radius: 10px;
 }
-
-.rabbit-text {
-  font-family: "Orbitron", Verdana, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  color: white;
-}
-
-.correct-answer {
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #0fa;
-}
-
-.answer {
-  display: block;
-  margin-top: 10px;
-}
-
 .answer-container {
   border: 2px solid black;
   padding: 10px;
@@ -182,7 +163,80 @@ button {
   border-radius: 5px;
   letter-spacing: 1.7px;
 }
-
-.user-answer {
+.correct-answer {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #0fa;
+}
+.question {
   font-weight: bold;
+}
+.user-answer {
+  display: block;
+  margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+  video {
+    display: none;
+  }
+
+  .main-container {
+    background-image: url(/matrix-image.jpeg);
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .start-container {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  .next-button {
+    width: 200px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    width: 85%;
+  }
+
+  .re-start-button {
+    width: 200px;
+  }
+
+  .counter-container {
+    width: 100%;
+  }
+
+  .default-button,
+  .wrong-button,
+  .right-button {
+    height: 100%;
+  }
+
+  .summary-container {
+    position: relative;
+    margin: 2%;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-image: url(/matrix-image.jpeg);
+    background-size: cover;
+  }
+
+  .answer-container {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    width: 60%;
+  }
+
+  .summary-container {
+    width: 70%;
+  }
 }

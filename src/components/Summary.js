@@ -11,14 +11,13 @@ export const Summary = () => {
       <h1>SUMMARY</h1>
       {answers.map((answer) => (
         <div className="answer-container" key={answer.question.questionText}>
-          <p className="user-answer">{answer.question.questionText}</p>
-          <span className="answer">
+          <p className="question">{answer.question.questionText}</p>
+          <span className="user-answer">
             {answer.answer}
             {answer.isCorrect ? "✔️" : "❌"}
           </span>
 
           <p className="correct-answer">
-            {" "}
             {answer.isCorrect ? "" : "Correct answer: "}
             {!answer.isCorrect
               ? answer.question.options[answer.question.correctAnswerIndex]
