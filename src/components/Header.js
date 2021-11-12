@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import { StyledLink } from './StyledButton'
+import { StyledLink } from './StyledButton';
 
 const StyledHeader = styled.header`
   background-color: #90620e;
@@ -11,25 +11,34 @@ const StyledHeader = styled.header`
   right: 0;
   z-index: 1;
   display: flex;
-  justify-content: space-around;
-`
+  justify-content: space-between;
+  padding: 0 5vw;
+`;
+
+const StyledHeaderLeft = styled.div`
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+`;
 
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledLink to='/'>
-        <p>Home</p>
-      </StyledLink>
+      <StyledHeaderLeft>
+        <StyledLink to='/'>
+          <p>Home</p>
+        </StyledLink>
 
-      <StyledLink to='/quiz'>
-        <p>Quiz</p>
-      </StyledLink>
+        <StyledLink to='/quiz'>
+          <p>Quiz</p>
+        </StyledLink>
+      </StyledHeaderLeft>
 
       <StyledLink to='/about'>
         <p>About</p>
       </StyledLink>
     </StyledHeader>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
