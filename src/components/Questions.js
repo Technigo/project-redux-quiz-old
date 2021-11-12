@@ -3,15 +3,17 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const QuestionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 700px;
   height: 200px;
+  justify-content: center;
 `;
 
 const QuestionText = styled.h1`
   font-size: 16px;
   text-align: center;
-  align-self: center;
-  margin-bottom: 0;
+
   @media (min-width: 768px) {
     font-size: 22px;
   }

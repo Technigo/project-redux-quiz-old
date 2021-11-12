@@ -7,6 +7,7 @@ import Counter from "./Counter";
 import AnswerButtons from "./AnswerButtons";
 import Questions from "./Questions";
 import NextQuestion from "./NextQuestion";
+import { StartPage } from "./StartPage";
 
 const QuestionContainer = styled.div`
   display: flex;
@@ -22,6 +23,10 @@ const QuestionContainer = styled.div`
 
 export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
+  let play = false;
+  const playOn = () => {
+    play = true;
+  };
 
   return (
     <>
@@ -35,6 +40,17 @@ export const CurrentQuestion = () => {
           <NextQuestion />
         </QuestionContainer>
       )}
+
+      {/* // {quizOver ? (
+      //   <Summary />
+      // ) : (
+      //   <QuestionContainer>
+      //     <Questions />
+      //     <Counter />
+      //     <AnswerButtons />
+      //     <NextQuestion />
+      //   </QuestionContainer>
+      // )} */}
     </>
   );
 };

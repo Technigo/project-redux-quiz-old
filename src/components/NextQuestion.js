@@ -32,6 +32,7 @@ const NextQuestion = () => {
     &:hover {
       background-color: white;
       color: black;
+      cursor: pointer;
     }
   `;
 

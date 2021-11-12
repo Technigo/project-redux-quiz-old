@@ -33,6 +33,7 @@ const QuestionButton = styled.button`
   height: 60px;
   background-color: black;
   font-weight: bold;
+  cursor: pointer;
 
   &:active {
     top: 0.5em;

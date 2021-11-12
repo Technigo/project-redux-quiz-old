@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { quiz } from "reducers/quiz";
+import { Answers } from "./Answers";
 
 const Summary = () => {
   const SummaryContainer = styled.div`
@@ -81,7 +82,7 @@ const Summary = () => {
           (rightAnswers.length <= 8 && <p>You rock!</p>) ||
           (rightAnswers.length >= 9 && <p>You are a legend!</p>)}
       </SummaryText>
-      <div></div>
+      <Answers />
       <RestartButton onClick={() => onRestart()}>Restart</RestartButton>
     </SummaryContainer>
   );

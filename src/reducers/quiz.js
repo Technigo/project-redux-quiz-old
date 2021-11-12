@@ -3,6 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 // Change these to your own questions!
 const questions = [
   {
+    id: 0,
+    questionText: "This  is the Technigo house band, The Turtles",
+    questionText1: "What is the name of the member in the technigo band?",
+    img: require("./assets/the_turtles.jpg"),
+    options: [
+      "Helena, Effi, Camilla, Lotta",
+      "Lehna, Alfy, RadZilla, Potta",
+      "Milena, Erri, Zamilla, Lozza",
+      "Hilena, Etti, Zomilla, Lorra",
+    ],
+    correctAnswerIndex: 0,
+  },
+
+  {
     id: 1,
     questionText:
       "Intergalactic is a song by American band Beastie Boys. Intergalactic was released as the first single from their fifth studio album, Hello Nasty. The single reached number 28 on the US Billboard Hot 100.",
@@ -42,7 +56,8 @@ const questions = [
     questionText:
       "Soundgarden was an American rock band formed in Washington 1984. They achieved its biggest success with the 1994 album Superunknown, They yielded the Grammy Award-winning singles for this song and music video.",
     questionText1: "What was the name of the song? ",
-    img: require("./assets/busta.gif"),
+    // img: require("./assets/busta.gif"),
+    img: require("./assets/soundgarden.gif"),
     options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
   },
@@ -78,6 +93,7 @@ const questions = [
       "Gwen Stefani",
       "Brain splash in the aquarium",
     ],
+    options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
     correctAnswerIndex: 2,
   },
   {
@@ -85,7 +101,7 @@ const questions = [
     questionText:
       "Even to this day, Aerosmith is the best-selling American rock band of all time. They’ve sold more than 70 million albums in the US.",
     questionText1: "Can you guess how many they have sold worldwide",
-    img: require("./assets/areosmith.gif"),
+    img: require("./assets/busta.gif"),
     options: ["100 million", "900 million", "200 million", "150 million"],
     correctAnswerIndex: 3,
   },
