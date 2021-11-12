@@ -61,7 +61,7 @@ export const PictureQuestion = ({
 };
 
 const OptionImage = styled.div`
-  width: 100%;
+  width: 250px;
   height: 200px;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
     url(${(props) => props.imgSrc});
