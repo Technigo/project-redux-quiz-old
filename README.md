@@ -1,13 +1,17 @@
-# Redux quiz group project
+# Redux Harry Potter quiz
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A quiz developed with Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- Used selectors to access redux state and dispatch to trigger redux actions.
+- Used selectors and dispatches to interact with our Redux store
+- We have an intro page to start the quiz.
+- We built three different question-components that are renedered depending on the  
+  question type, making a total of ten questions.
+- The summary page displays the users answers and the correct answers. The user can  
+  re-take the quiz with a restart-button.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+reduxquizliongroup1.netlify.app
