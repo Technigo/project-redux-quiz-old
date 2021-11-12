@@ -7,7 +7,6 @@ import Counter from "./Counter";
 import AnswerButtons from "./AnswerButtons";
 import Questions from "./Questions";
 import NextQuestion from "./NextQuestion";
-import { StartPage } from "./StartPage";
 import { Timer } from "./Timer";
 
 const QuestionContainer = styled.div`
@@ -48,23 +47,11 @@ export const CurrentQuestion = () => {
             <Questions />
             <Timer />
             <Counter />
-
             <AnswerButtons />
             <NextQuestion />
           </QuestionWrapper>
         </QuestionContainer>
       )}
-
-      {/* // {quizOver ? (
-      //   <Summary />
-      // ) : (
-      //   <QuestionContainer>
-      //     <Questions />
-      //     <Counter />
-      //     <AnswerButtons />
-      //     <NextQuestion />
-      //   </QuestionContainer>
-      // )} */}
     </>
   );
 };

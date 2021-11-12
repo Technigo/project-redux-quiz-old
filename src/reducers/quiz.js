@@ -1,21 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Change these to your own questions!
 const questions = [
-  // {
-  //   id: 0,
-  //   questionText: "This  is the Technigo house band, The Turtles",
-  //   questionText1: "What is the name of the member in the technigo band?",
-  //   img: require("./assets/the_turtles.jpg"),
-  //   options: [
-  //     "Helena, Effi, Camilla, Lotta",
-  //     "Lehna, Alfy, RadZilla, Potta",
-  //     "Milena, Erri, Zamilla, Lozza",
-  //     "Hilena, Etti, Zomilla, Lorra",
-  //   ],
-  //   correctAnswerIndex: 0,
-  // },
-
   {
     id: 1,
     questionText:
@@ -56,7 +41,6 @@ const questions = [
     questionText:
       "Soundgarden was an American rock band formed in Washington 1984. They achieved its biggest success with the 1994 album Superunknown, They yielded the Grammy Award-winning singles for this song and music video.",
     questionText1: "What was the name of the song? ",
-    // img: require("./assets/busta.gif"),
     img: require("./assets/soundgarden.gif"),
     options: ["Black or sun", "Black hole sun", "Slack or fun", "Sun or fun"],
     correctAnswerIndex: 1,
@@ -98,11 +82,15 @@ const questions = [
   },
   {
     id: 9,
-    questionText:
-      "Even to this day, Aerosmith is the best-selling American rock band of all time. They’ve sold more than 70 million albums in the US.",
-    questionText1: "Can you guess how many they have sold worldwide",
+    questionText: "This trippy video really brings back some good memories.",
+    questionText1: "What's the name of the song?",
     img: require("./assets/busta.gif"),
-    options: ["100 million", "900 million", "200 million", "150 million"],
+    options: [
+      "Fla$ing Your Money",
+      "PMW",
+      "Brain Splash At The Aquarium",
+      "Gimme Some More",
+    ],
     correctAnswerIndex: 3,
   },
   {
@@ -132,21 +120,6 @@ export const quiz = createSlice({
   name: "quiz",
   initialState,
   reducers: {
-    /**
-     * Use this action when a user selects an answer to the question.
-     * The answer will be stored in the `quiz.answers` state with the
-     * following values:
-     *
-     *    questionId  - The id of the question being answered.
-     *    answerIndex - The index of the selected answer from the question's options.
-     *    question    - A copy of the entire question object, to make it easier to show
-     *                  details about the question in your UI.
-     *    answer      - The answer string.
-     *    isCorrect   - true/false if the answer was the one which the question says is correct.
-     *
-     * When dispatching this action, you should pass an object as the payload with `questionId`
-     * and `answerIndex` keys. See the readme for more details.
-     */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;
       const question = state.questions.find((q) => q.id === questionId);
@@ -172,13 +145,6 @@ export const quiz = createSlice({
       });
     },
 
-    /**
-     * Use this action to progress the quiz to the next question. If there's
-     * no more questions (the user was on the final question), set `quizOver`
-     * to `true`.
-     *
-     * This action does not require a payload.
-     */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;
@@ -187,13 +153,6 @@ export const quiz = createSlice({
       }
     },
 
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
     restart: () => {
       return initialState;
     },

@@ -6,6 +6,10 @@ import styled from "styled-components";
 const TimerStyle = styled.p`
   display: inline-block;
   margin: 0;
+
+  @media (min-width: 768px) {
+    margin: 20px;
+  }
 `;
 
 export const Timer = () => {
@@ -30,17 +34,3 @@ export const Timer = () => {
     </TimerStyle>
   );
 };
-
-// import React from "react";
-
-// import styled from "styled-components";
-
-// import { quiz } from "reducers/quiz";
-
-// const Timer = () => {
-//   let totalSeconds = 0;
-//   let timeStart = setInterval(setTime, 1000);
-
-//   return <p></p>;
-// };
-// export default Timer;

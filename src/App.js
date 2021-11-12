@@ -4,8 +4,8 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
 import { CurrentQuestion } from "components/CurrentQuestion";
 import { StartPage } from "components/StartPage";
-import { Timer } from "components/Timer";
 import { timerSlice } from "./reducers/timer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const reducer = combineReducers({
   quiz: quiz.reducer,
@@ -17,7 +17,12 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <CurrentQuestion />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/quiz" element={<CurrentQuestion />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   );
 };

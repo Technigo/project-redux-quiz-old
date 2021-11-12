@@ -49,6 +49,7 @@ const TextQuestion = styled.h2`
   text-align: center;
   align-self: center;
   margin-top: 0;
+  font-family: "Righteous", cursive;
   @media (min-width: 768px) {
     font-size: 22px;
   }

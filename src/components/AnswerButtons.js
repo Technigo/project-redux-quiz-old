@@ -7,11 +7,9 @@ import { quiz } from "reducers/quiz";
 const QuestionButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-
-  margin-bottom: 5px;
   padding: 10px;
   width: 100%;
-  height: 120px;
+  height: 110px;
   gap: 5px;
   justify-content: center;
 
@@ -31,12 +29,17 @@ const QuestionButton = styled.button`
   align-items: center;
   color: white;
   height: 45px;
-  background-color: black;
+  background-color: transparent;
   font-weight: bold;
   cursor: pointer;
-
   &:active {
     top: 0.5em;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+    height: 55px;
+    width: 150px;
   }
 `;
 

@@ -7,8 +7,8 @@ const CounterWrapper = styled.div`
   text-align: center;
   justify-content: center;
   min-width: 50px;
-  height: 18px;
-  background-color: black;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   border: 1px solid black;
   border-radius: 20px;

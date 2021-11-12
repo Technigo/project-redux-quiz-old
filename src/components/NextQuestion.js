@@ -7,7 +7,7 @@ import { quiz } from "reducers/quiz";
 const NextButton = styled.button`
   padding: 10px;
   border-radius: 20px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: 2px solid white;
   &:hover {

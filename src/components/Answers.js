@@ -9,24 +9,20 @@ const AnswerWrap = styled.div`
 const AnswerHeadline = styled.div`
   display: flex;
   text-align: center;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 const HeadlineOne = styled.h2`
   font-size: 18px;
-  margin-left: 5%;
 `;
 
 const HeadlineTwo = styled.h2`
   font-size: 18px;
-  margin-right: 5%;
 `;
 
 const AnswerSection = styled.div`
   display: flex;
   justify-content: space-between;
-  // margin-left: 30px;
-  // margin-right: 30px;
   text-align: center;
 `;
 
@@ -34,12 +30,19 @@ const YourAnswer = styled.p`
   color: white;
   margin-top: 0;
   font-size: 15px;
+  @media (min-width: 768px) {
+    margin-right: 50px;
+  }
 `;
 const QuizAnswer = styled.p`
   color: white;
   margin-top: 0;
   font-size: 15px;
+  @media (min-width: 768px) {
+    margin-left: 50px;
+  }
 `;
+
 export const Answers = () => {
   const answer = useSelector((store) => store.quiz.answers);
   return (
