@@ -1,13 +1,23 @@
 # Redux quiz group project
+Group project by: Maria Thomasson, Karoline Mann, Rosanna Dahlberg, Jenny Quach, Christoffer Torninger
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
+This week our team's task was to build a quiz game using Redux. It's a multiple choice quiz, so we had to define our own questions and a bunch of possible answers to present to our users.
 ## The problem
+We got a project with quite a lot of code to begin with, including a Redux store. We used the state to render the quiz questions one at a time and also the possible answers. One of the problems we encountered was showing the correct colour of the button depending on the users submit answer. Our solution for this was to create an if else statement within the class name, using three different coloured buttons in the same class name. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+What we have learnt:
+- Work in a group in a more advanced way
+- What is global state
+- What is redux
+- How to use selectors to access redux state
+- How to use dispatch to trigger redux actions
+- How to interact with your store using selectors or by dispatching actions
 
+## Tech
+Redux
+React
+Javascript
+CSS
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://movie-quiz-app.netlify.app/
