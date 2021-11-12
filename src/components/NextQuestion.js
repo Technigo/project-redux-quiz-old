@@ -4,6 +4,19 @@ import styled from "styled-components";
 
 import { quiz } from "reducers/quiz";
 
+const NextButton = styled.button`
+  padding: 10px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  &:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
+`;
+
 const NextQuestion = () => {
   const dispatch = useDispatch();
 
@@ -22,19 +35,6 @@ const NextQuestion = () => {
       })
     );
   };
-
-  const NextButton = styled.button`
-    padding: 20px;
-    border-radius: 20px;
-    background-color: black;
-    color: white;
-    border: 2px solid white;
-    &:hover {
-      background-color: white;
-      color: black;
-      cursor: pointer;
-    }
-  `;
 
   return (
     <NextButton disabled={!answers} onClick={() => nextQuestion()}>

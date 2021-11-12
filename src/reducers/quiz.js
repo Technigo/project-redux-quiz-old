@@ -2,19 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 const questions = [
-  {
-    id: 0,
-    questionText: "This  is the Technigo house band, The Turtles",
-    questionText1: "What is the name of the member in the technigo band?",
-    img: require("./assets/the_turtles.jpg"),
-    options: [
-      "Helena, Effi, Camilla, Lotta",
-      "Lehna, Alfy, RadZilla, Potta",
-      "Milena, Erri, Zamilla, Lozza",
-      "Hilena, Etti, Zomilla, Lorra",
-    ],
-    correctAnswerIndex: 0,
-  },
+  // {
+  //   id: 0,
+  //   questionText: "This  is the Technigo house band, The Turtles",
+  //   questionText1: "What is the name of the member in the technigo band?",
+  //   img: require("./assets/the_turtles.jpg"),
+  //   options: [
+  //     "Helena, Effi, Camilla, Lotta",
+  //     "Lehna, Alfy, RadZilla, Potta",
+  //     "Milena, Erri, Zamilla, Lozza",
+  //     "Hilena, Etti, Zomilla, Lorra",
+  //   ],
+  //   correctAnswerIndex: 0,
+  // },
 
   {
     id: 1,

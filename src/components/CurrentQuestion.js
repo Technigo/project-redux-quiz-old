@@ -8,6 +8,7 @@ import AnswerButtons from "./AnswerButtons";
 import Questions from "./Questions";
 import NextQuestion from "./NextQuestion";
 import { StartPage } from "./StartPage";
+import { Timer } from "./Timer";
 
 const QuestionContainer = styled.div`
   display: flex;
@@ -19,6 +20,15 @@ const QuestionContainer = styled.div`
   @media (min-width: 768px) {
     padding: 50px;
   }
+`;
+
+const QuestionWrapper = styled.div`
+  // background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CurrentQuestion = () => {
@@ -34,10 +44,14 @@ export const CurrentQuestion = () => {
         <Summary />
       ) : (
         <QuestionContainer>
-          <Questions />
-          <Counter />
-          <AnswerButtons />
-          <NextQuestion />
+          <QuestionWrapper>
+            <Questions />
+            <Timer />
+            <Counter />
+
+            <AnswerButtons />
+            <NextQuestion />
+          </QuestionWrapper>
         </QuestionContainer>
       )}
 

@@ -3,17 +3,18 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 const CounterWrapper = styled.div`
-  display: flex;
+  display: inline-block;
   text-align: center;
   justify-content: center;
   min-width: 50px;
-  height: 30px;
+  height: 18px;
   background-color: black;
   align-items: center;
   border: 1px solid black;
   border-radius: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 0;
 
   @media (min-width: 768px) {
     max-width: 450px;

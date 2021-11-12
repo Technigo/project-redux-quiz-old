@@ -6,8 +6,14 @@ const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 700px;
-  height: 200px;
+  height: 180px;
   justify-content: center;
+`;
+
+const TextWrapper = styled.div`
+  // background-color: rgba(0, 0, 0, 0.5);
+  // border-radius: 20px;
+  // margin-bottom: 5px;
 `;
 
 const QuestionText = styled.h1`
@@ -29,7 +35,7 @@ const ImageContainer = styled.div`
 
 const ImageStyled = styled.img`
   width: 100%;
-  max-height: 150px;
+  max-height: 130px;
   border-radius: 10px;
 
   @media (min-width: 768px) {
@@ -38,10 +44,11 @@ const ImageStyled = styled.img`
 `;
 
 const TextQuestion = styled.h2`
-  color: black;
+  color: white;
   font-size: 16px;
   text-align: center;
   align-self: center;
+  margin-top: 0;
   @media (min-width: 768px) {
     font-size: 22px;
   }
@@ -59,8 +66,10 @@ const Questions = () => {
   return (
     <>
       <QuestionWrapper>
-        <QuestionText>{question.questionText}</QuestionText>
-        <TextQuestion> {question.questionText1}</TextQuestion>
+        <TextWrapper>
+          <QuestionText>{question.questionText}</QuestionText>
+          <TextQuestion> {question.questionText1}</TextQuestion>
+        </TextWrapper>
       </QuestionWrapper>
       <ImageContainer>
         <ImageStyled src={question.img} alt="cover" />

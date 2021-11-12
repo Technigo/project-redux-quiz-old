@@ -7,12 +7,12 @@ import { quiz } from "reducers/quiz";
 const QuestionButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5px;
-  margin-bottom: 20px;
+
+  margin-bottom: 5px;
   padding: 10px;
   width: 100%;
-  height: 150px;
-  gap: 15px;
+  height: 120px;
+  gap: 5px;
   justify-content: center;
 
   @media (min-width: 768px) {
@@ -26,11 +26,11 @@ const QuestionButton = styled.button`
   flex-wrap: wrap;
   border-radius: 20px;
   width: 130px;
-  padding: 15px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   color: white;
-  height: 60px;
+  height: 45px;
   background-color: black;
   font-weight: bold;
   cursor: pointer;
@@ -67,6 +67,7 @@ const AnswerButtons = () => {
           <div key={item}>
             <QuestionButton
               onClick={() => onSubmitAnswer(question.id, index)}
+              disabled={answers}
               style={{
                 borderColor: !answers
                   ? "white"
