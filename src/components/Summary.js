@@ -20,7 +20,7 @@ export const Summary = () => {
           </p>
         </>
       ))}
-      <button className="btn" type="button" onClick={() => dispatch(quiz.actions.restart())}>
+      <button className="btn restart" type="button" onClick={() => dispatch(quiz.actions.restart())}>
         Restart Quiz
       </button>
     </div>

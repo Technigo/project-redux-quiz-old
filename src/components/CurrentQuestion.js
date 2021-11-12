@@ -6,16 +6,25 @@ import { Answers } from './Answers';
 
 const Overlay = styled.div`
   position: absolute;
-  right: 0;
-  bottom: 0;
   left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
   background: #212121;
-  z-index: 2;
+  z-index: 5;
   display: block;
   color: white;
-  padding: 40px;
+  padding: 20px;
+  padding-top:50px;
   text-align: center;
+
+  @media (min-width: 599px) {
+    padding: 40px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom:0;
+  }
 `;
 
 export const CurrentQuestion = () => {
@@ -34,7 +43,7 @@ export const CurrentQuestion = () => {
   useEffect(() => {
     // Timer to blackout picture/video
     const ticker = () => {
-      setTimeout(() => showOverlay(), 1000);
+      setTimeout(() => showOverlay(), 10000);
     };
 
     setDisplayOverlay(false);
@@ -46,20 +55,22 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div className="image-wrapper">
+    <>
       {displayOverlay && (
         <Overlay>
-          {!quizOver && <h2>{question.questionText}</h2>}
+          {!quizOver && <h2 className="question">{question.questionText}</h2>}
           <Answers />
         </Overlay>
       )}
-      {question.type === 'picture' ? (
-        <img src={question.path} alt="QuizImage" />
-      ) : (
-        <video autoPlay muted>
-          <source src={question.path} type="video/mp4" />
-        </video>
-      )}
-    </div>
+      <div className="image-wrapper">
+        {question.type === 'picture' ? (
+          <img src={question.path} alt="QuizImage" />
+        ) : (
+          <video autoPlay muted>
+            <source src={question.path} type="video/mp4" />
+          </video>
+        )}
+      </div>
+    </>
   );
 };

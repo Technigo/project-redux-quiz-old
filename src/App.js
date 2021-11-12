@@ -12,7 +12,7 @@ import UserInfo from 'components/UserInfo';
 import UserNameInput from 'components/UserNameInput';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import { ProgressBar } from './components/ProgressBar';
-import tv from './assets/tv.png';
+// import tv from './assets/tv.png';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -25,33 +25,28 @@ export const App = () => {
   const MainContainer = styled.main`
     width: 100vw;
     margin: 0 auto;
-    position: relative;
     height: 100vh;
 
     @media (min-width: 599px) {
-      width: 700px;
+      width: 100%;
+      max-width: 800px;
       margin: 0 auto;
     }
   `;
 
-  const TvContainer = styled.div`
-    background-image: url(${tv});
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 700px;
-    position: absolute;
-    height: auto;
+  const QuestionAndProgress = styled.div`
+    width: 100%;
+    height: 50vh;
+    margin-top: 40px;
+    position: relative;
+
+    @media (min-width: 599px) {
+      width: 100%;
+      height:600px;
+      position: relative;
+    }
   `;
 
-  const TvQuestionContainer = styled.div`
-    width: 700px;
-    margin-top: 100px;
-  `;
   return (
     <Provider store={store}>
       <MainContainer>
@@ -60,10 +55,9 @@ export const App = () => {
         <UserInfo />
         {displayQuestion && (
           <>
-            <TvQuestionContainer>
-              <TvContainer />
+            <QuestionAndProgress>
               <CurrentQuestion />
-            </TvQuestionContainer>
+            </QuestionAndProgress>
             <ProgressBar />
           </>
         )}
