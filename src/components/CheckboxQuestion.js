@@ -15,21 +15,25 @@ export const CheckboxQuestion = ({
       <Header3>{question.questionText}</Header3>
       {question.options.map((item, index) => {
         return (
-          <LabelContainer key={item}>
-            <label htmlFor="checkboxOption" />
-            <span style={{ textAlign: "right" }}>{item}</span>
-            <RadioInput
-              style={{ backgroundColor: checked ? "red" : "white" }}
-              id="checkboxOption"
-              type="radio"
-              onChange={(e) => {
-                setChecked(true);
-                setIndex(index);
-              }}
-              name="checked"
-              required="required"
-            />
-          </LabelContainer>
+          <Wrapper>
+            <Item>
+              <RadioInput
+                style={{ backgroundColor: checked ? "red" : "white" }}
+                id="checkboxOption"
+                type="radio"
+                onChange={(e) => {
+                  setChecked(true);
+                  setIndex(index);
+                }}
+                name="checked"
+                required="required"
+              />
+              <LabelContainer key={item}>
+                <label htmlFor="checkboxOption" />
+                <span style={{ textAlign: "right" }}>{item}</span>
+              </LabelContainer>
+            </Item>
+          </Wrapper>
         );
       })}
       <SubmitButton
@@ -65,22 +69,75 @@ const Header3 = styled.h3`
   }
 `;
 
-const LabelContainer = styled.div`
-  display: grid;
-  grid-template-columns: 0px auto auto;
-  padding-top: 10px;
+const Wrapper = styled.div`
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+`;
 
-  margin: 10px;
-  color: #638270;
+const Item = styled.div`
+  display: flex;
+  align-items: center;
+  height: 48px;
+  position: relative;
+`;
+
+const LabelContainer = styled.div`
+  position: absolute;
+  top: 25%;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: lightgrey;
+  border: 1px solid gray;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
 `;
 
 const RadioInput = styled.input`
-  background-color: green;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+
+  &:hover ~ ${LabelContainer} {
+    background: darkgray;
+    /* &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      padding: 0;
+      background: lightgrey;
+    } */
+  }
+  &:checked + ${LabelContainer} {
+    background: #638270;
+    border: 1px solid darkgray;
+    &::after {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      /* margin: 6px; */
+      box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+    }
+  }
 `;
 
 const SubmitButton = styled.button`
   display: flex;
-  margin: 30px auto 0;
+  margin: 10% auto 0;
   padding: 8px 20px;
   font-weight: 700;
   color: #638270;
