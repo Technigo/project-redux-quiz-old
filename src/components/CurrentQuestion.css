@@ -3,101 +3,77 @@
 /* add zooming effect on the text ine the button? 
 */
 
-body{
+/* body{
 background-color: white;
   
- }
+ } */
 
+/* .main-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+} */
 
-.main-container {
-height: 100%;
-display: flex;
-justify-content: center;
-align-content: center;
-
-
-}
-
-.quiz-container {
-height: 100%;
+/* .quiz-container {
+  height: 100%;
   width: 700px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-content: center;
-padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 15px;
+} */
 
-}
-
-.question-text {
+/* .question-text {
   background-color: rgb(241, 235, 235);
   color: rgb(61, 61, 61);
   border-radius: 5px;
   font-size: 28px;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 4px;
-text-align: center;
-height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  text-align: center;
+  height: 155px;
 
-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
-inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
 
-animation: glow 1.5s linear infinite;
- 
-  
-}
+  animation: glow 1.5s linear infinite;
+} */
 
-.answer-text {
-	text-align:center;
-}
+/* .answer-text {
+  text-align: center;
+} */
 
-
-
-
-.button-container {
+/* .button-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-area: repeat(4, 1fr) ;
- grid-gap: 10px;
- place-items: center;
+  grid-area: repeat(4, 1fr);
+  grid-gap: 10px;
+  place-items: center;
+} */
 
-}
+.ImgContainer {
+  width: 100%;
+  height: 100%;
 
-
-
-
-.ImgContainer{
-width: 100%;
-height: 100%;
-  
   min-width: 150px;
-min-height: 300px;
-
-
-
-} 
-
-.buttonImg{
-
-height: 100%;
-width: 100%;
-
-background-size: 100% 100%;
-  background-repeat: no-repeat;
-
-
+  min-height: 300px;
 }
 
-.buttonImg:hover{
+.buttonImg {
+  height: 100%;
+  width: 100%;
 
-opacity: 50%;
-  
-  }
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
 
-
-
+.buttonImg:hover {
+  opacity: 50%;
+}
 
 .button {
   background-color: rgb(241, 235, 235);
@@ -108,38 +84,35 @@ opacity: 50%;
   font-size: 20px;
   width: 100%;
   height: 100px;
-justify-content: center;
-align-content: center;
+  justify-content: center;
+  align-content: center;
   text-align: center;
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
-  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
 
-animation: glow 1.5s linear infinite;
+  animation: glow 1.5s linear infinite;
 }
 
 .button:hover {
   background-color: rgb(224, 218, 218);
   box-shadow: 5px 5px rgb(69, 69, 69);
   box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
-  inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* For the progressbar text */
-.progress-text {
+/* .progress-text {
   color: rgb(46, 45, 45);
   font-weight: 500;
-  
 }
 
 .progress-bar-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-}
+} */
 
 /* For the image button (question 5) */
-
 
 .image-button {
   background-size: cover;
@@ -147,133 +120,79 @@ animation: glow 1.5s linear infinite;
   width: 100%;
 }
 
-
 .image-button:hover {
   box-shadow: 5px 5px rgb(69, 69, 69);
 }
 
-@media (min-width:768px) {
-  
- 
-
-  .quiz-container {
-
+@media (min-width: 768px) {
+  /* .quiz-container {
     width: 760px;
-  padding: 25px;
-  
-  }
-  
+    padding: 25px;
+  } */
 
-  .question-text {
-   
+  /* .question-text {
     font-size: 40px;
-  height: 200px;
-  
-    
-  }
+    height: 200px;
+  } */
 
-
-  .button-container {
+  /* .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-area: repeat(2, 1fr) ;
-   grid-gap: 10px;
-   place-items: center;
-  
-  }
-
-
-
+    grid-area: repeat(2, 1fr);
+    grid-gap: 10px;
+    place-items: center;
+  } */
 
   .button {
-    
     font-size: 25px;
     width: 100%;
     height: 80px;
- 
   }
 
-  .ImgContainer{
-
-
+  .ImgContainer {
     max-width: 370px;
-  min-height: 150px;
-  
-  
-  } 
-  
+    min-height: 150px;
+  }
 
   .image-button {
     width: 100%;
   }
-
 }
 
-@media (min-width:1024px) {
-
-
-
-
-
-
-  .quiz-container {
-
+@media (min-width: 1024px) {
+  /* .quiz-container {
     width: 1000px;
+  } */
 
-    
-    }
-  
+  /* .question-text {
+    height: 200px;
+    font-size: 45px;
+  } */
 
-
-  .question-text {
-   
-  
-  height: 200px;
-  font-size: 45px;
-    
-  }
-
-
-  .button-container {
+  /* .button-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-area: repeat(2, 1fr) ;
-   grid-gap: 10px;
-   place-items: center;
-  
-  }
-
-
-
+    grid-area: repeat(2, 1fr);
+    grid-gap: 10px;
+    place-items: center;
+  } */
 
   .button {
-    
     font-size: 35px;
     width: 100%;
     height: 200px;
- 
   }
 
-
-
-.ImgContainer{
-
-  max-width: 500px;
-min-height: 350px;
-
-
-}  
-  
-
+  .ImgContainer {
+    max-width: 500px;
+    min-height: 350px;
+  }
 
   .image-button {
     width: 100%;
   }
-
 }
 
-div progress{
-
-background-color: dimgray;
-
-}
+/* div progress {
+  background-color: dimgray;
+} */

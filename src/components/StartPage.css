@@ -1,5 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap");
 
+input[type="checkbox"]:checked ~ div {
+  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+  color: yellow;
+  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+  animation: glow 1.5s linear infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
 /* .StartPageContainer {
   width: 100%;
   height: 100vh;
@@ -58,7 +75,7 @@
   list-style: none;
 } */
 
-label {
+/* label {
   position: relative;
 }
 
@@ -69,9 +86,9 @@ input[type="checkbox"] {
   height: 50px;
   width: 50px;
   z-index: 100;
-}
+} */
 
-.startText {
+/* .startText {
   height: 60px;
   width: 60px;
   background-color: rgb(241, 235, 235);
@@ -87,7 +104,7 @@ input[type="checkbox"] {
     4px 4px 6px rgba(0, 0, 0, 0.2),
     inset -1px -1px 4px rgba(255, 255, 255, 0.05),
     inset 1px 1px 1px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* div:before {
   content: "";
@@ -101,37 +118,20 @@ input[type="checkbox"] {
   background: rgba(255, 255, 255, 0.05);
 } */
 
-input[type="checkbox"]:checked ~ div {
-  box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
-    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
-  color: yellow;
-  text-shadow: 0 0 15px yellow, 0 0 25px yellow;
-  animation: glow 1.5s linear infinite;
-}
-
-@keyframes glow {
-  0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-}
-
-@media (min-width: 768px) {
-  .startBtn {
+/* @media (min-width: 768px) { */
+/* .startBtn {
     margin-top: 50px;
 
     width: 100%;
     height: 30px;
-  }
+  } */
 
-  .startText-btn {
+/* .startText-btn {
     height: 70px;
     width: 250px;
-  }
+  } */
 
-  input[type="checkbox"] {
+/* input[type="checkbox"] {
     height: 100px;
     width: 100px;
   }
@@ -140,4 +140,4 @@ input[type="checkbox"]:checked ~ div {
     height: 100px;
     width: 100px;
   }
-}
+} */
