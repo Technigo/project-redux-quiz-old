@@ -55,7 +55,7 @@ export const Summary = () => {
 	});
 
 	const score = useSelector((state) => state.quiz.correctAnswers);
-	const { width, height } = useWindowSize();
+	const { width } = useWindowSize();
 	return (
 		<Main>
 			<Confetti
