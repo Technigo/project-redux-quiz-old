@@ -10,7 +10,7 @@ const TimerStyle = styled.p`
   @media (min-width: 768px) {
     margin: 20px;
   }
-`;
+npm start`;
 
 export const Timer = () => {
   const timerValue = useSelector((store) => store.timer.value);
