@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 // styled components for the start page
 
@@ -34,6 +34,15 @@ const StartButton = styled.button`
   }
 `;
 
+const Glow = keyframes`
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+`
+
 const StartButtonText = styled.div`
   height: 55px;
   width: 150px;
@@ -48,7 +57,7 @@ const StartButtonText = styled.div`
     inset 4px 4px 6px rgba(0, 0, 0, 0.2);
   color: yellow;
   text-shadow: 0 0 2px rgb(78, 77, 77), 0 0 15px yellow, 0 0 25px yellow;
-  animation: glow 1.5s linear infinite;
+  animation: ${Glow} 1.5s linear infinite;
   cursor: pointer;
 
   @media (min-width: 768px) {
@@ -108,7 +117,7 @@ const Letter = styled.div`
       inset 4px 4px 6px rgba(0, 0, 0, 0.2);
     color: yellow;
     text-shadow: 0 0 15px yellow, 0 0 25px yellow;
-    animation: glow 1.5s linear infinite;
+    animation: ${Glow} 1.5s linear infinite;
   }
 
   @media (min-width: 768px) {
