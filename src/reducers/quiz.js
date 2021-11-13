@@ -69,14 +69,7 @@ const questions = [
     questionText:
       "No Doubt is an American rock band from Anaheim, California, formed in 1986. They have sold over 33 million records worldwide.",
     questionText1: "Do you know the lead singers name?",
-    options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
     img: require("./assets/nodoubt.gif"),
-    options: [
-      "Allison Wolfe",
-      "Courtney Love ",
-      "Gwen Stefani",
-      "Brain splash in the aquarium",
-    ],
     options: ["Allison Wolfe", "Courtney Love ", "Gwen Stefani", "Cher"],
     correctAnswerIndex: 2,
   },

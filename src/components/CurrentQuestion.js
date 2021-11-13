@@ -32,10 +32,6 @@ const QuestionWrapper = styled.div`
 
 export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
-  let play = false;
-  const playOn = () => {
-    play = true;
-  };
 
   return (
     <>

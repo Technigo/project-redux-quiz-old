@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import the_turtles from "reducers/assets/the_turtles.jpg";
 
 const StartContainer = styled.div`
@@ -15,11 +15,13 @@ const StartContainer = styled.div`
   @media (min-width: 768px) {
     width: 400px;
     height: 400px;
+    font-size: 20px;
   }
 
   @media (min-width: 992px) {
     width: 550px;
     height: 550px;
+    font-size: 30px;
   }
 `;
 const StyleImage = styled.img`
@@ -43,6 +45,9 @@ const LinkStyled = styled(Link)`
     background-color: white;
     color: rgb(67, 160, 146);
     border-color: rgb(67, 160, 146);
+  }
+  @media (min-width: 768px) {
+    margin-top: 50px;
   }
 `;
 

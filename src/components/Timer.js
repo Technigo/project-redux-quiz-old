@@ -23,7 +23,7 @@ export const Timer = () => {
     return () => {
       clearInterval(timer);
     };
-  }, []);
+  }, [dispatch]);
 
   return (
     <TimerStyle>
