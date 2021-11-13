@@ -39,6 +39,9 @@ h4 {
 .bold {
   font-weight: bold;
 }
+.underline {
+  text-decoration: underline;
+}
 
 .answer-emoji {
   align-self: center;
@@ -47,10 +50,16 @@ h4 {
 .restart-button {
   margin-top: 5%;
   border: none;
-  background-color: white;
+  background-color: transparent;
   border: 2px solid black;
   width: 30%;
   padding: 2%;
+  border-radius: 8px;
+}
+
+.restart-button:hover {
+  background: black;
+  color: #ffff;
 }
 
 @media screen and (min-width: 768px) {
