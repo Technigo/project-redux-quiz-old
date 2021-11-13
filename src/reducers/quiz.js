@@ -5,12 +5,10 @@ const initialState = {
   questions: [
     {
       id: 1,
-      imgUrl:
-        "https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Running/How+Far/Carousel.jpg",
-      questionText: "Who set the Olympic record for the 100m dash in 2012?",
-      options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
+      imgUrl: "./pictures/neo.jpg",
+      questionText: "Which colour pill does Neo swallow in The Matrix?",
+      options: ["Red", "Yellow", "Green", "Blue"],
       correctAnswerIndex: 0,
-      answerText: "yes, he is fast!",
     },
     {
       id: 2,
