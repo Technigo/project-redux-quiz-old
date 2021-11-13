@@ -11,7 +11,7 @@ export const Counter = () => {
   return (
     <section className='summary-result'>
       <h1>
-        You got {correctAnswers.length} out of {storeAnswer.length}!
+        You got <span className='numberofcorrect'>{correctAnswers.length}</span> out of {storeAnswer.length}!
       </h1>
     </section>
   )

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-
-import { RestartBtn } from './RestartBtn'
+import { RestartBtn2 } from './RestartBtn2'
 import { Counter } from './Counter'
+import stripes from '../stripes.png'
 
 export const Summary = () => {
   const storeAnswer = useSelector((state) => state.quiz.answers)
@@ -10,6 +10,8 @@ export const Summary = () => {
 
   return (
     <>
+    <div className='background-stripes' style={{ backgroundImage: `url(${stripes})` }}>
+    <section className='summery-container'>
       <Counter />
       <section className='summary-section'>
         {/* map through each answer och display the question, */}
@@ -51,9 +53,11 @@ export const Summary = () => {
           </div>
         ))}
       </section>
-      <div className='restart-btn-container'>
-        <RestartBtn />
+    </section>
+    <div className='restart-btn-container'>
+        <RestartBtn2 />
       </div>
-    </>
+    </div>
+    </>              
   )
 }

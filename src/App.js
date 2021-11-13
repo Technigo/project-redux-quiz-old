@@ -13,8 +13,10 @@ const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <CurrentQuestion />
-    </Provider>
+    <>
+        <Provider store={store}>
+          <CurrentQuestion />
+        </Provider>
+    </>
   )
-}
+} 

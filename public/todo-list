@@ -1,5 +1,6 @@
 To Do!!! ✅
 - restart button "back to basic" (up left corner?) ✅
+- Play again button on summery page (bottom) ✅
 - required? Validation !(else it will be error) ✅
 - Summary-page component ✅
 - startpage? component- 
@@ -8,7 +9,8 @@ To Do!!! ✅
 - styling/design
 - progressbar with numbers ✅
 
-- Summary restart button looks like it have a different font?
-- Green check mark for correct answer, red checker for incorrect?
-- added OG/Meta tags (https://www.opengraph.xyz/), change picture? ✅
+- Summary restart button looks like it have a different font? ✅
+- Green check mark for correct answer, red checker for incorrect? ✅
+- added OG/Meta tags (https://www.opengraph.xyz/), change picture? 
 - added Favicon, change picturer? ✅
+- change colour on green right and red wrong answer button for readability ✅

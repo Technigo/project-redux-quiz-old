@@ -11,7 +11,6 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   )
-
   const store = useSelector((state) => state.quiz)
 
   const answer = useSelector((state) =>
@@ -27,10 +26,10 @@ export const CurrentQuestion = () => {
     // if user answered correct the option-button will change to green background and have opacity 1
     // if wrong answer -> background to red and opacity 1
     if (question.correctAnswerIndex === index) {
-      document.getElementById(`${index}`).style.background = '#66DE93'
+      document.getElementById(`${index}`).style.background = '#35A55F'
       document.getElementById(`${index}`).style.opacity = '1'
     } else {
-      document.getElementById(`${index}`).style.background = '#D83A56'
+      document.getElementById(`${index}`).style.background = '#C93650'
       document.getElementById(`${index}`).style.opacity = '1'
     }
   }
