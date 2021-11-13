@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
+
+import styled from "styled-components/macro";
 
 import { quiz } from "../reducers/quiz";
-
 import { FallingEmojis } from "falling-emojis";
 
 // styled components for summary
@@ -64,9 +64,7 @@ export const Summary = () => {
   answers.forEach((item) => {
     if (item.isCorrect) {
       dispatch(quiz.actions.riseScore());
-      return "correct";
     } else {
-      return "wrong";
     }
   });
 

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+
+import styled from "styled-components/macro";
+
 import { quiz } from "reducers/quiz";
 import { Summary } from "components/Summary";
 import ProgressBar from "@ramonak/react-progress-bar";
 import AnswerButton from "./AnswerButton";
-import styled from "styled-components";
 import ImageButton from "./ImageButton";
 import "components/CurrentQuestion.css";
 
@@ -61,8 +63,9 @@ const QuestionText = styled.h1`
   }
 `;
 
-const AnswerText = styled.h2`
+const AnswerText = styled.div`
   text-align: center;
+  margin:0;
 `;
 
 const ButtonContainer = styled.div`
@@ -161,7 +164,7 @@ export const CurrentQuestion = () => {
       // first dispatch is to call submitAnswer, and another one is to call goToNextQuestion function
       // because we want to go to the next question directly
       dispatch(quiz.actions.goToNextQuestion({ id }));
-    }, 2000);
+    }, 10000);
     /* when clicking a btn the value of questionsCount(=Question left) decreses  */
     setQuestionsCount(questionsCount - 1);
     /* Update the progress-bar while clickin with 20% */
@@ -178,6 +181,7 @@ export const CurrentQuestion = () => {
               <>
                 {question.id === 5 ? (
                   <ImageButton
+					key={item}
                     item={item}
                     onSubmitAnswer={() => onSubmitAnswer(question.id, index)}
                   />
