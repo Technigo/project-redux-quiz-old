@@ -48,8 +48,9 @@ export const CurrentQuestion = () => {
                 {question.id}/{store.questions.length}
               </div>
             </div>
-            <div>
+            <div className='questionandicon'>
               <h1>{question.questionText}</h1>
+              <img className='question-icon' src={question.imgUrl} alt="pic"/>
             </div>
           </div>
           <div className='button-container'>

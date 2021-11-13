@@ -1,4 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
+import balloon from '../balloon.svg'
+import duck from '../duck.svg'
+import dig from '../dig.svg'
+import afraid from '../afraid.svg'
+import hockey from '../hockey.svg'
+import owl from '../owl.svg'
+import usa from '../usa.svg'
+import ear from '../ear.svg'
 
 const questions = [
   {
@@ -13,6 +21,7 @@ const questions = [
     correctAnswerIndex: 3,
     // different color values for each question. Using it to style the background-color.
     backgroundColor: '#FADD57',
+    imgUrl: `${duck}`
   },
   {
     id: 2,
@@ -21,6 +30,7 @@ const questions = [
     options: ['A dog', 'A bicycle', 'A violin', 'A rooster'],
     correctAnswerIndex: 3,
     backgroundColor: '#C0E5AC',
+    imgUrl: `${balloon}`
   },
   {
     id: 3,
@@ -29,6 +39,7 @@ const questions = [
     options: ['Germany', 'Spain', 'France', 'Poland'],
     correctAnswerIndex: 1,
     backgroundColor: '#C3EEEE',
+    imgUrl: `${dig}`
   },
   {
     id: 4,
@@ -36,6 +47,7 @@ const questions = [
     options: ['Syringes', 'Genetically modified crops', 'Relatives', 'Snakes'],
     correctAnswerIndex: 2,
     backgroundColor: '#F0D5EB',
+    imgUrl: `${afraid}`
   },
   {
     id: 5,
@@ -44,6 +56,7 @@ const questions = [
     options: ['Stone', 'Ice', 'Cow manure', 'Wood'],
     correctAnswerIndex: 2,
     backgroundColor: '#BCC5A3',
+    imgUrl: `${hockey}`
 
   },
   {
@@ -52,6 +65,7 @@ const questions = [
     options: ['Blessing', 'Terror', 'Confusion', 'Parliament'],
     correctAnswerIndex: 3,
     backgroundColor: '#C0D0EE',
+    imgUrl: `${owl}`
   },
   {
     id: 7,
@@ -59,6 +73,7 @@ const questions = [
     options: ['Front door', 'A can of soda', 'Refrigerator', 'A window'],
     correctAnswerIndex: 2,
     backgroundColor: '#EAC082',
+    imgUrl: `${usa}`
   },
   {
     id: 8,
@@ -66,6 +81,7 @@ const questions = [
     options: ['50 %', '40 %', '30 %', '20 %'],
     correctAnswerIndex: 3,
     backgroundColor: '#EBD4D4',
+    imgUrl: `${ear}`
   },
 ]
 

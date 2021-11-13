@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  font-family: merriweather, merriweather sans, -apple-system,
+  font-family: poppins, merriweather, merriweather sans, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -32,28 +32,36 @@ code {
 
 .counter {
   font-size: 2rem;
-  font-family: merriweather sans;
 }
 
-.counter span {
+/* .counter span {
   color: #66DE93;
-}
+} */
 
 h1 {
   text-align: center;
   margin: auto 1rem;
-  color: #1a1a1a;
-  font-size: 1.5rem;
-  line-height: 2.3rem;
-  padding-top: 3rem;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
+  font-weight: 600;
+  padding-top: 1rem;
+}
+
+.questionandicon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-icon {
+  width: 56px;
+  padding-top: 2rem;
 }
 
 .restart-btn {
-  letter-spacing: 0.1rem;
   display: flex;
   align-items: center;
-  font-family: merriweather sans;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
   border: none;
   background-color: transparent;
@@ -66,7 +74,6 @@ h1 {
   letter-spacing: 0.1rem;
   display: flex;
   align-items: center;
-  font-family: merriweather sans;
   background-color: transparent;
   border: none;
   color: #fff;
@@ -86,7 +93,6 @@ h1 {
 }
 
 .restart-btn-container {
-  font-family: merriweather sans;
   font-weight: 400;
   background-color: #1a1a1a;
   height: 48px;
@@ -119,13 +125,10 @@ h1 {
   margin: 0 auto;
 }
 
-/* .option-btn, */
-/* .disable-btn, */
 .next-button {
   background-color: rgb(75, 74, 74);
   color: #fff;
-  font-family: merriweather sans;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   border: none;
   border-radius: 8px;
@@ -135,12 +138,10 @@ h1 {
 
 .option-btn,
 .disable-btn {
-  /* background-color: rgb(75, 74, 74); */
   background-color: #333;
   color: #fff;
   font-size: 14px;
-  font-family: merriweather sans;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   height: 80px;
@@ -150,7 +151,6 @@ h1 {
 .option-btn:hover,
 .next-button:hover {
   background-color: #222;
-  /* color: black; */
 }
 
 .disable-btn {
@@ -169,14 +169,12 @@ h1 {
   display: block;
   margin: 0 auto;
   width: 100%;
-  font-family: merriweather sans;
   letter-spacing: 0.1rem;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   border: none;
   border-radius: 8px;
   height: 48px;
-  /* padding: 16px 10px; */
 }
 
 .next-button {
@@ -207,7 +205,6 @@ h1 {
   padding: 0 1rem 2rem 1rem;
   max-width: 700px;
   margin: 0 auto;
-  /* align-items: center; */
 }
 
 /* span {
@@ -215,9 +212,8 @@ h1 {
 } */
 
 .question-text {
-  font-family: merriweather;
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 1.5rem;
   margin-top: 0;
 }
@@ -238,9 +234,8 @@ h1 {
 
 .question-title {
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: 800;
   margin: 0 0 0.5rem 0;
-  font-family: merriweather;
 }
 
 .your-answer {
@@ -267,7 +262,6 @@ h1 {
   color: #D83A56;
   width: 48px;
   height: 48px;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   background-color: #1a1a1a;
   border-radius: 50%;
   display: flex;
@@ -280,7 +274,6 @@ h1 {
   color: #66DE93;
   width: 48px;
   height: 48px;
-  /* background-color: rgba(255, 255, 255, 0.5); */
   background-color: #1a1a1a;
   border-radius: 50%;
   display: flex;
@@ -294,9 +287,8 @@ h1 {
 }
 
 .summary-result h1 {
-  font-family: merriweather sans;
   font-size: 1.5rem;
-  font-weight: 900;
+  font-weight: 800;
   text-shadow: 3px 1px #fcfcfc;
   color: #1a1a1a;
   padding: 1rem;
@@ -318,6 +310,7 @@ h1 {
 }
 
 
+/* MEDIA QUERIES  */
 
 @media (min-width: 767px) {
 
@@ -326,12 +319,25 @@ h1 {
     margin: 0 auto;
     font-size: 2rem;
     line-height: 3rem;
-    padding-top: 6rem;
+    padding-top: 2rem;
     max-width: 700px;
   }
 
   .top-container {
     padding: 2rem;
+  }
+
+  .fa-arrow-circle-left {
+    font-size: 2.5rem;
+  }
+
+  .counter {
+    font-size: 3rem;
+  }
+
+  .question-icon {
+    width: 72px;
+    padding-top: 2rem;
   }
 
   .button-container {
@@ -340,7 +346,6 @@ h1 {
 
   .options-container {
     grid-gap: 2rem;
-    /* padding-top: 2rem; */
   }
 
   .next-button {
@@ -379,13 +384,23 @@ h1 {
     font-size: 4rem;
   }
 
+  .restart-btn {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .restart-btn2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
   .restart-btn-container {
-    /* margin: 3rem auto; */
     max-width: 900px;
     height: 56px;
   }
 
-  
   .summary-result h1 {
     font-size: 40px;
     text-shadow: 3px 1px #fcfcfc;
@@ -395,10 +410,19 @@ h1 {
 
   .question-text {
     min-height: 70px;
+    font-size: 1.125rem;
+  }
+
+  .correct-answer {
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 1080px) {
+
+  h1 {
+    padding-top: 1rem;
+  }
 
   .summary-result h1 {
     font-size: 48px;
