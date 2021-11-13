@@ -103,6 +103,14 @@ const Letter = styled.div`
     inset -1px -1px 4px rgba(255, 255, 255, 0.05),
     inset 1px 1px 1px rgba(0, 0, 0, 0.1);
 
+  ${LetterCheckbox}:checked + & {
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.05),
+      inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+    animation: glow 1.5s linear infinite;
+  }
+
   @media (min-width: 768px) {
     height: 100px;
     width: 100px;
