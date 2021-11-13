@@ -46,8 +46,6 @@ const initialState = {
   quizStart: true,
 };
 
-// Change these to your own questions!
-
 export const quiz = createSlice({
   name: "quiz",
   initialState,
