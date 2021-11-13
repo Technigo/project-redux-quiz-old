@@ -43,6 +43,7 @@ const RestartButton = styled.button`
   border-radius: 5px;
   color: black;
   background-color: #f79f92;
+  cursor: pointer;
 
   &:hover {
     background-color: #da8072;

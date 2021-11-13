@@ -40,12 +40,7 @@ const Button = styled.button`
 
 const AnswerButton = (props) => {
   return (
-    <Button
-      className="button"
-      type="button"
-      key={props.keyID}
-      onClick={props.onClick}
-    >
+    <Button type="button" key={props.keyID} onClick={props.onClick}>
       <span>{props.text}</span>
     </Button>
   );
