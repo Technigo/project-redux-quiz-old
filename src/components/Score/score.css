@@ -8,6 +8,8 @@
     align-items: center;
     padding: 10px;
     border: 1px solid rgb(163, 193, 196);
+    background: rgba(255, 255, 255, 0.664);
+    border-radius: 10px;
 }
 
 .score_text_container{
@@ -36,7 +38,8 @@
 }
 
 .score_round{
-    background:darkkhaki;
+    background:wheat;
+    border: 1px solid white;
     border-radius: 100%;
     width: 20px;
     height: 20px;
@@ -45,7 +48,7 @@
 }
 
 .score_question_number{
-    color: white;
+    color: black;
     align-items: center;
     text-align: center;
     margin: 0 auto;

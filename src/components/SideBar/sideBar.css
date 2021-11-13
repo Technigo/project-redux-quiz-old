@@ -1,5 +1,5 @@
 .sideBar-container{
-    background: rgb(159, 159, 173);
+    background: rgba(92, 146, 148, 0.842);
     width: 80%;
     margin: 20px auto;
     display: flex;
@@ -7,11 +7,11 @@
     align-items: flex-start;
     box-sizing: border-box;
     border-radius: 20px;
+    height: auto;
 }
 
 @media (min-width: 768px) {
 .sideBar-container{
     width: 25%;
-    height: 60vh;
 }
 }

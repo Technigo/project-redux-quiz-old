@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: rgb(2,0,36);
-  background: linear-gradient(150deg, rgba(2,0,36,1) 0%, rgba(152,121,173,1) 100%, rgba(0,212,255,1) 100%);
+  background-image: url("https://images.unsplash.com/photo-1548190652-0f2ebf1677e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   margin: 0;
