@@ -8,7 +8,6 @@ import { Summary } from "components/Summary";
 import ProgressBar from "@ramonak/react-progress-bar";
 import AnswerButton from "./AnswerButton";
 import ImageButton from "./ImageButton";
-import "components/CurrentQuestion.css";
 
 // styles components for current question
 

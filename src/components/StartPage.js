@@ -117,7 +117,7 @@ const Letter = styled.div`
       inset 4px 4px 6px rgba(0, 0, 0, 0.2);
     color: yellow;
     text-shadow: 0 0 15px yellow, 0 0 25px yellow;
-    animation: ${Glow} 1.5s linear infinite;
+    animation: glow 1.5s linear infinite;
   }
 
   @media (min-width: 768px) {
