@@ -65,7 +65,7 @@ const QuestionText = styled.h1`
 
 const AnswerText = styled.div`
   text-align: center;
-  margin:0;
+  margin:50px 0 0 45px;
 `;
 
 const ButtonContainer = styled.div`
@@ -95,11 +95,14 @@ const ButtonContainer = styled.div`
 const ProgressBarContainer = styled.div`
   display: flex;
   flex-direction: column;
+  height: 75px;
 `;
 
 const ProgressText = styled.p`
   color: rgb(46, 45, 45);
   font-weight: 500;
+ 
+  
 `;
 
 const ProgressAnswerContainer = styled.div`
