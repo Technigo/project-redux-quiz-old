@@ -522,6 +522,7 @@ h1 {
 
   h1 {
     padding-top: 1rem;
+    max-width: 900px;
   }
 
   .summary-result h1 {
