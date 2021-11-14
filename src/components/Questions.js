@@ -65,7 +65,7 @@ const Questions = () => {
   }
 
   return (
-    <>
+    <div>
       <QuestionWrapper>
         <TextWrapper>
           <QuestionText>{question.questionText}</QuestionText>
@@ -75,7 +75,7 @@ const Questions = () => {
       <ImageContainer>
         <ImageStyled src={question.img} alt="cover" />
       </ImageContainer>
-    </>
+    </div>
   );
 };
 

@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
-import { quiz } from "reducers/quiz";
+import { quiz } from "../reducers/quiz";
 import { Answers } from "./Answers";
-import { timerSlice } from "reducers/timer";
+import { timerSlice } from "../reducers/timer";
 
 const MainSummaryContainer = styled.div`
   display: flex;

@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { quiz } from "reducers/quiz";
+import { quiz } from "../reducers/quiz";
 
 const QuestionButtonWrapper = styled.div`
   display: flex;
@@ -64,7 +64,7 @@ const AnswerButtons = () => {
   };
 
   return (
-    <>
+    <div>
       <QuestionButtonWrapper>
         {question.options.map((item, index) => (
           <div key={item}>
@@ -90,7 +90,7 @@ const AnswerButtons = () => {
           </div>
         ))}
       </QuestionButtonWrapper>
-    </>
+    </div>
   );
 };
 

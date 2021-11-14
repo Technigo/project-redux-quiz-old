@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { quiz } from "reducers/quiz";
+import { quiz } from "../reducers/quiz";
 
 const NextButton = styled.button`
   padding: 10px;

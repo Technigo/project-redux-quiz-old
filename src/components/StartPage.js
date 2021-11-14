@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import the_turtles from "reducers/assets/the_turtles.jpg";
+import the_turtles from "../reducers/assets/the_turtles.jpg";
 
 const StartContainer = styled.div`
   display: flex;

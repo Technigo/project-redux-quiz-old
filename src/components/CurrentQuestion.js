@@ -34,7 +34,7 @@ export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
   return (
-    <>
+    <div>
       {quizOver ? (
         <Summary />
       ) : (
@@ -48,6 +48,6 @@ export const CurrentQuestion = () => {
           </QuestionWrapper>
         </QuestionContainer>
       )}
-    </>
+    </div>
   );
 };
