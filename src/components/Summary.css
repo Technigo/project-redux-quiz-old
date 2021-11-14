@@ -9,9 +9,6 @@
 }
 
 .summary {
-  height: 60vh;
-  width: 70vw;
-  max-width: 800px;
   background-color: #ffffff10;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(12px);
@@ -22,14 +19,12 @@
   padding: 30px;
 }
 
-
-h2 {
+h1 {
   font-family: 'Limelight', cursive;
-
 }
+
 p {
   font-family: 'Fjalla One', sans-serif;
-  font-size: 16px;
 }
 
 .your-answer {
@@ -50,15 +45,12 @@ p {
 .restart-button {
   font-family: 'Limelight', cursive;
   position: absolute;
-  top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: #D3A13B;
   color: rgb(0, 0, 0);
   text-shadow: 1px 1px #ffffff;
-  font-size: 18px;
-  padding: 12px 24px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
@@ -91,6 +83,138 @@ p {
   100% {
       -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* mobile view */
+@media (max-width: 667px) {
+  .summary-container {
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .summary {
+    height: 100vh;
+    margin: 5px;
+    width: 100vw;
+    padding: 0;
+  }
+
+  .correct-answers {
+    padding-top: 0;
+    font-size: 15px;
+  }
+
+  .your-answer {
+   margin-top: 0;
+  }
+
+  .correct-ans {
+    margin-top: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .restart-button {
+    font-size: 12px;
+    top: 97%;
+    padding: 8px 18px;
+  }
+}
+
+/* tablet */
+@media (min-width: 668px) and (max-width: 1023px) {
+  .summary {
+    height: 85vh;
+  }
+
+  .correct-answers {
+    padding-top: 0;
+  }
+}
+
+/* laptop */
+@media (min-width: 992px) {
+  .summary {
+    height: 68vh;
+    width: 63vw;
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+
+  .correct-answers {
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 14px;
+  }
+
+  .your-answer {
+   margin-top: 0;
+  }
+
+  .correct-ans {
+    margin-top: 0;
+  }
+
+  .restart-button {
+    font-size: 12px;
+    top: 94%;
+    padding: 6px 16px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+  
+  .summary {
+    height: 60vh;
+    width: 70vw;
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 26px;
+    padding-bottom: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .your-answer {
+    padding-top: 7px;
+  }
+  
+  .correct-ans {
+    padding-top: 7px;
+  }
+  
+  .correct-answers {
+    padding-top: 40px;
+    font-size: 20px;
+  }
+
+  .restart-button {
+    top: 90%;
+    font-size: 18px;
+    padding: 12px 24px;
   }
 }
 
