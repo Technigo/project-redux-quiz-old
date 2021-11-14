@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Aclonica", sans-serif;
+  font-family: "Nunito", sans-serif;
+  background-image: linear-gradient(rgb(3, 3, 3), rgba(168, 231, 231, 0.568)),
+    url("./reducers/assets/singer.jpg");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 105vh;
+  background-position: center;
+  color: white;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.highlight {
+  color: green;
+}

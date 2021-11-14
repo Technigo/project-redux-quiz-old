@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.74b70fec.chunk.css",
+    "main.js": "/static/js/main.86d893a4.chunk.js",
+    "main.js.map": "/static/js/main.86d893a4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.221c7e6b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.221c7e6b.js.map",
+    "static/js/2.37f14580.chunk.js": "/static/js/2.37f14580.chunk.js",
+    "static/js/2.37f14580.chunk.js.map": "/static/js/2.37f14580.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.95821b1837b39aaac0d69e0d7fa8391a.js": "/precache-manifest.95821b1837b39aaac0d69e0d7fa8391a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.74b70fec.chunk.css.map": "/static/css/main.74b70fec.chunk.css.map",
+    "static/js/2.37f14580.chunk.js.LICENSE.txt": "/static/js/2.37f14580.chunk.js.LICENSE.txt",
+    "static/media/busta.gif": "/static/media/busta.36c49d23.gif",
+    "static/media/eminem.gif": "/static/media/eminem.ec8094a2.gif",
+    "static/media/giphy.gif": "/static/media/giphy.6d9eec03.gif",
+    "static/media/guns.gif": "/static/media/guns.f3d3e552.gif",
+    "static/media/hanson.gif": "/static/media/hanson.a26d317b.gif",
+    "static/media/mrozo.gif": "/static/media/mrozo.64a830ef.gif",
+    "static/media/nirvana.gif": "/static/media/nirvana.01d6fc2e.gif",
+    "static/media/nodoubt.gif": "/static/media/nodoubt.2fc4bde9.gif",
+    "static/media/index.css": "/static/media/singer.60a3ec9f.jpg",
+    "static/media/soundgarden.gif": "/static/media/soundgarden.10f4a5be.gif",
+    "static/media/spicegirls.gif": "/static/media/spicegirls.06fc57bd.gif",
+    "static/media/the_turtles.jpg": "/static/media/the_turtles.fc5cb72f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.221c7e6b.js",
+    "static/js/2.37f14580.chunk.js",
+    "static/css/main.74b70fec.chunk.css",
+    "static/js/main.86d893a4.chunk.js"
+  ]
+}
