@@ -518,7 +518,7 @@ h1 {
   }
 }
 
-@media (min-width: 1080px) {
+@media (min-width: 1025px) {
 
   h1 {
     padding-top: 1rem;
