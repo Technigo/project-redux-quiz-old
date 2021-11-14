@@ -1,13 +1,14 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+In this project we created an awareness quiz using Redux and React. The aim of the quiz is to memorise the image or video and then answer a question.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was made as a group project by Linnea Isebrink, Rebecca Blixt, Fatima Gamero Romero, Lena Simma, Reinis Kalvins & Naushin Malik. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This was our first time working with Redux and the majority of the teammates were confused and found it difficult to grasp the concept. Through teamwork and the generosity of the teammates that understood the basics enough to figure out how to use Redux, we were able to complete the project. We also had some issues with the styling due to an overambitious plan with the limited time we had for the project. This was solved by changing our design.
+If we had more time we would have focused on the styling.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://fervent-ardinghelli-57c7d6.netlify.app/
