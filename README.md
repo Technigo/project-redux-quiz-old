@@ -8,4 +8,4 @@ This project is a two page app music quiz. It is built with React Router and Red
 
 ## View it live
 
-https://stupefied-keller-4e9b9b.netlify.app/quiz
+https://stupefied-keller-4e9b9b.netlify.app
