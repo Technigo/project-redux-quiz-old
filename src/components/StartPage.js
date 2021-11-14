@@ -1,28 +1,39 @@
 import React from  'react'
 import { useDispatch, useSelector } from "react-redux"
 import { quiz } from "reducers/quiz"
-import { BackgroundImage } from './BackgroundImage'
+import { CurrentQuestion } from './CurrentQuestion'
+import stripes from '../stripes.png'
 
 
 export const StartPage = () => {
     const dispatch = useDispatch()
-    const quizStart = useSelector((state) => state.quiz.quizStart)
-
-    if (quizStart) {
-        return (
+    const stateQuiz = useSelector((state) => state.quiz)
+    
+    return (
+        <>
+        {!stateQuiz.quizStart ? (
             <>
-                <BackgroundImage />
-                <section className='Firstpage-container'>
-                    <p>8 questions</p>
-                    <h1>About random stuff</h1>
-                    <button
-                        className="restart-btn"
-                        onClick={() => dispatch(quiz.actions.start())}
-                        > Let's get started!
-            </button>
-                </section>
+                <div className='background-stripes' style={{ backgroundImage: `url(${stripes})` }}>
+                    <section className='firstpage-container'>
+                    <div className='startpage-circle'>
+                        <div className='firstpage-text'>
+                            <p>8 questions</p>
+                            <h1>About random stuff</h1>
+                            <button
+                                className="start-btn"
+                                onClick={() => dispatch(quiz.actions.startTheQuiz())}
+                                > Let&apos;s get started!
+                            </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </>
-        )
-    } else return null
-
+        ) : (
+            <>
+                <CurrentQuestion />
+            </>
+        )}
+        </>
+    )
 }
