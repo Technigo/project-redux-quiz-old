@@ -4,59 +4,59 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	questions: [
-		// {
-		// 	id: 1,
-		// 	questionText: 'In order of birth, who are the seven Weasley siblings?',
-		// 	options: [
-		// 		'Percy, Bill, George, Charlie, Fred, Ron, Ginny',
-		// 		'George, Fred, Percy, Bill, Charlie, Ron, Ginny',
-		// 		'Bill, Charlie, Percy, Fred, George, Ron, Ginny',
-		// 	],
-		// 	correctAnswerIndex: 2,
-		// },
-		// {
-		// 	id: 2,
-		// 	questionText:
-		// 		'What is the only book in the Harry Potter series that does not feature Lord Voldemort?',
-		// 	options: [
-		// 		'The Sorceres Stone',
-		// 		'The Deathly Hallows',
-		// 		'The Prisoner of Akzaban',
-		// 	],
-		// 	correctAnswerIndex: 1,
-		// },
-		// {
-		// 	id: 3,
-		// 	questionText: 'Who is Scabbers the Rat?',
-		// 	options: ['Remus Lupin', 'Sirius Black', 'Peter Pettigrew'],
-		// 	correctAnswerIndex: 0,
-		// },
-		// {
-		// 	id: 4,
-		// 	questionText:
-		// 		'Which Harry Potter word is now in the Oxford English Dictionary?',
-		// 	options: ['Muggle', 'Hogwarts', 'Voldemort'],
-		// 	correctAnswerIndex: 2,
-		// },
-		// {
-		// 	id: 5,
-		// 	questionText:
-		// 		'Which of these Hogwarts Professors teaches Transfiguration?',
-		// 	options: ['Professor Snape', 'Professor Sprout', 'Professor McGonagall'],
-		// 	correctAnswerIndex: 1,
-		// },
-		// {
-		// 	id: 6,
-		// 	questionText: 'Who invented the spell Sectumsempra?',
-		// 	options: ['Professor Snape', 'Lord Voldemort', 'Miranda Goshawk'],
-		// 	correctAnswerIndex: 0,
-		// },
-		// {
-		// 	id: 7,
-		// 	questionText: 'Who is Nagini?',
-		// 	options: ["Ron's Owl", "Hermione's Cat", "Lord Voldemort's Snake"],
-		// 	correctAnswerIndex: 2,
-		// },
+		{
+			id: 1,
+			questionText: 'In order of birth, who are the seven Weasley siblings?',
+			options: [
+				'Percy, Bill, George, Charlie, Fred, Ron, Ginny',
+				'George, Fred, Percy, Bill, Charlie, Ron, Ginny',
+				'Bill, Charlie, Percy, Fred, George, Ron, Ginny',
+			],
+			correctAnswerIndex: 2,
+		},
+		{
+			id: 2,
+			questionText:
+				'What is the only book in the Harry Potter series that does not feature Lord Voldemort?',
+				options: [
+				'The Sorceres Stone',
+				'The Deathly Hallows',
+				'The Prisoner of Akzaban',
+		],
+			correctAnswerIndex: 1,
+		},
+		{
+			id: 3,
+			questionText: 'Who is Scabbers the Rat?',
+			options: ['Remus Lupin', 'Sirius Black', 'Peter Pettigrew'],
+			correctAnswerIndex: 0,
+		},
+		{
+			id: 4,
+			questionText:
+				'Which Harry Potter word is now in the Oxford English Dictionary?',
+			options: ['Muggle', 'Hogwarts', 'Voldemort'],
+			correctAnswerIndex: 2,
+		},
+		{
+			id: 5,
+			questionText:
+				'Which of these Hogwarts Professors teaches Transfiguration?',
+			options: ['Professor Snape', 'Professor Sprout', 'Professor McGonagall'],
+			correctAnswerIndex: 1,
+		},
+		{
+			id: 6,
+			questionText: 'Who invented the spell Sectumsempra?',
+			options: ['Professor Snape', 'Lord Voldemort', 'Miranda Goshawk'],
+			correctAnswerIndex: 0,
+		},
+		{
+			id: 7,
+			questionText: 'Who is Nagini?',
+			options: ["Ron's Owl", "Hermione's Cat", "Lord Voldemort's Snake"],
+			correctAnswerIndex: 2,
+		},
 		{
 			id: 8,
 			questionText: 'How many players are there in a Quidditch team?',
