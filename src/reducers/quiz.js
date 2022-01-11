@@ -49,8 +49,6 @@ export const quiz = createSlice({
 	reducers: {
 		
 		submitAnswer: (state, action) => {
-			console.log('State: ', state);
-			console.log('Action: ', action);
 
 			const { questionId, answerIndex } = action.payload;
 			const question = state.questions.find((q) => q.id === questionId);
