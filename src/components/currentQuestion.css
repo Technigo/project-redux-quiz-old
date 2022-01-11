@@ -40,24 +40,24 @@ display: flex;
 }
 
 .correct {
-    background-color: #9af39a;
-    margin-right: 10px;
-    margin-top: 20px;
-    padding: 10px;
+  background-color: #9af39a;
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .wrong {
-    background-color: #ec7171;
-    margin-right: 10px;
-    margin-top: 20px;
-    padding: 10px;
+  background-color: #ec7171;
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .defaultbtn {
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-top: 20px;
-    padding: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .next-question-button {
