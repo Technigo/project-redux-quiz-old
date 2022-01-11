@@ -1,31 +1,31 @@
 .background-startpage {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: 1fr;
-    height: 100vh;
-    background-image: url("/assets/background-start-page-mobile.jpg");
-    background-size: cover;
-    background-position: center center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: 1fr;
+  height: 100vh;
+  background-image: url("/assets/background-start-page-mobile.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .start-button {
-    font-family: 'Limelight', cursive;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color: #D3A13B;
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px #ffffff;
-    font-size: 18px;
-    padding: 12px 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0.9);
-    animation: pulse 2s infinite;
+  font-family: 'Limelight', cursive;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #D3A13B;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px #ffffff;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0.9);
+  animation: pulse 2s infinite;
 }
 
 @-webkit-keyframes pulse {
@@ -58,15 +58,15 @@
 /* tablet */
 
 @media (min-width: 768px) {
-    .background-startpage {
-        grid-template-columns: repeat(2, 1fr);
-        background-image: url("/assets/background-start-page-tablet.jpg");
+  .background-startpage {
+    grid-template-columns: repeat(2, 1fr);
+    background-image: url("/assets/background-start-page-tablet.jpg");
     }
-    .start-button {
-        left: 50%;
-        top: 54%;
-        text-shadow: 1px 1px #ffffff;
-        font-size: 22px;
+  .start-button {
+    left: 50%;
+    top: 54%;
+    text-shadow: 1px 1px #ffffff;
+    font-size: 22px;
     }
     @-webkit-keyframes pulse {
         0% {
@@ -79,7 +79,6 @@
             -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
         }
     }
-    
     @keyframes pulse {
         0% {
             -moz-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
@@ -99,15 +98,14 @@
 /* desktop */
 
 @media (min-width: 1024px) {
-    .background-startpage {
-        grid-template-columns: repeat(4, 1fr);
-        background-image: url("/assets/background-start-page.jpg");
+  .background-startpage {
+    grid-template-columns: repeat(4, 1fr);
+    background-image: url("/assets/background-start-page.jpg");
     }
-    .start-button {
-        left: 49%;
-        top: 78%;
-        text-shadow: 1px 1px #ffffff;
-        font-size: 22px;
-        }
-
+  .start-button {
+    left: 49%;
+    top: 78%;
+    text-shadow: 1px 1px #ffffff;
+    font-size: 22px;
+    }
 }
