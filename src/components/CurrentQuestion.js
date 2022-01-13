@@ -37,7 +37,7 @@ export const CurrentQuestion = () => {
             <h2>{question.questionText}</h2>
             {question.options.map((item, index) => (
               <div className="button-container" key={index}>
-                <img className="pill-image" src="/pill.png" />
+                <img className="pill-image" src="/pill.png" alt="icon" />
                 <Button index={index} item={item}></Button>
               </div>
             ))}
