@@ -105,7 +105,7 @@ button {
   transform: translate(-50%, -50%);
   background: rgba(26, 25, 25, 0.938);
   border-radius: 10%;
-  padding: 10px;
+  padding: 40px;
 }
 
 .next-button,
@@ -149,7 +149,7 @@ button {
   justify-content: center;
   background: rgba(26, 25, 25, 0.808);
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 2%;
