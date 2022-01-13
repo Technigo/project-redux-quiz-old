@@ -1,30 +1,31 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
 
-import { quiz } from "../reducers/quiz";
+import { quiz } from "../reducers/quiz"
 
-import { Summary } from "./Summary";
-import { Button } from "./Button";
-import { BackgroundVideo } from "./BackgroundVideo";
-import { Counter } from "./Counter";
+import { Summary } from "./Summary"
+import { Button } from "./Button"
+import { BackgroundVideo } from "./BackgroundVideo"
+import { Counter } from "./Counter"
 
 export const CurrentQuestion = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   // Selectors
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  )
   const answer = useSelector((state) =>
     state.quiz.answers.find((answer) => answer.questionId === question.id)
-  );
-  const quizOver = useSelector((state) => state.quiz.quizOver);
+  )
+  const quizOver = useSelector((state) => state.quiz.quizOver)
 
+  // if not all questions are answered dispatch goToNextQuestion
   const handleClick = () => {
-    dispatch(quiz.actions.goToNextQuestion({}));
-  };
+    dispatch(quiz.actions.goToNextQuestion({}))
+  }
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>;
+    return <h1>Oh no! I could not find the current question!</h1>
   }
 
   if (!quizOver) {
@@ -53,12 +54,12 @@ export const CurrentQuestion = () => {
           </div>
         </main>
       </>
-    );
+    )
   }
   return (
     <div>
       <BackgroundVideo />
       <Summary />
     </div>
-  );
-};
+  )
+}
