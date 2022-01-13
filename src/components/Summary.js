@@ -1,10 +1,11 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "../reducers/quiz";
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { quiz } from "../reducers/quiz"
 
+//
 export const Summary = () => {
-  const dispatch = useDispatch();
-  const answers = useSelector((state) => state.quiz.answers);
+  const dispatch = useDispatch()
+  const answers = useSelector((state) => state.quiz.answers)
 
   return (
     <div className="summary-container">
@@ -32,5 +33,5 @@ export const Summary = () => {
         RESTART
       </button>
     </div>
-  );
-};
+  )
+}
