@@ -9,5 +9,5 @@ export const Audio = (props) => {
     Your browser does not support the audio element.
     </audio>
     </div>
-	);
+  );
 };

@@ -8,22 +8,22 @@ import { StartPage } from 'components/StartPage';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 
 const reducer = combineReducers({
-	quiz: quiz.reducer,
+  quiz: quiz.reducer,
 });
 
 const store = configureStore({ reducer });
 
 export const App = () => {
-	return (
-		<Provider store={store}>
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<StartPage></StartPage>}>
-					</Route>
-					<Route path="/quiz" element={<CurrentQuestion></CurrentQuestion>}>
-					</Route>
-				</Routes>
-			</BrowserRouter>
-		</Provider>
-	);
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<StartPage></StartPage>}>
+          </Route>
+          <Route path="/quiz" element={<CurrentQuestion></CurrentQuestion>}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  );
 };
