@@ -35,15 +35,16 @@ export const CurrentQuestion = ({ setQuizDone }) => {
       <h1>Question: {question.questionText}</h1>
       {question.options.map((item, index) => {
         return (
-          <button disabled={hasAnswered} onClick={() => onAnswerSubmit(question.id, index)} key={item}>
+          <button
+            disabled={hasAnswered}
+            onClick={() => onAnswerSubmit(question.id, index)}
+            key={item}
+          >
             {item}
           </button>
         );
       })}
-      {hasAnswered && (
-          <button onClick={handleNextButton}>Next</button>
-        )
-      }
+      {hasAnswered && <button onClick={handleNextButton}>Next</button>}
     </>
   );
 };
