@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'How many muscles are there in an elephant trunk?', options: ['500-1000', '30.000-50.000', '70.000-100.000', '300.000-500.000'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'How much water can an elephant drink in a day?', options: ['200 l', '300 l', '400 l', '500 l'], correctAnswerIndex: 0 },
+  { id: 3, questionText: 'How much can an elephant tooth weight?', options: ['1kg', '2kg', '3kg', '4kg'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'Who is the genetic closest relative to the elephant? ', options: ['rock rabbit', 'hippo', 'rhinoceros', 'armadillos'], correctAnswerIndex: 0 },
+  { id: 5, questionText: 'How does the elephants communicate in the distance?', options: ['Singing', 'Stomping with their feet', 'They dont', 'whistling'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {
