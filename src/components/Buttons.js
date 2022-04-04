@@ -6,20 +6,20 @@ import { quiz } from 'reducers/quiz'
 export const NextButton = () => {
   const dispatch = useDispatch()
 
-    // code given in notion
-    const onClickNext = () => {
-      dispatch(quiz.actions.goToNextQuestion())
-    }
-    return (
+  // code given in notion
+  const onClickNext = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
+  return (
     <button
       type="button"
       onClick={onClickNext}>
-        Next question
-    </button> 
+      Next question
+    </button>
   )
-};
-  
-  
+}
+
+
 export const SubmitButton = () => {
   const dispatch = useDispatch()
 
@@ -37,5 +37,21 @@ export const SubmitButton = () => {
   )
 }
 
-    
+export const RestartButton = () => {
+  const dispatch = useDispatch()
+
+  // code given in notion
+  const onClickRestart = () => {
+    dispatch(quiz.actions.restart())
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={onClickRestart}>
+      Restart
+    </button>
+  )
+}
+
 
