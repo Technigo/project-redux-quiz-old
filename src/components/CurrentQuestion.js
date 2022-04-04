@@ -1,5 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Summary } from './Summary'
+import { ProgressBar } from './ProgressBar'
+import { Header } from './Header'
+import { Footer } from './Footer'
+
+
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
