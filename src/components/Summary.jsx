@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const Summary = () => {
   const answers = useSelector((store) => store.quiz.answers);
 
-  console.log(answers);
+  // console.log(answers);
   return (
     <>
       <h1>Quiz is done!</h1>
