@@ -2,8 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'What fake name does Joey go by?', options: ['Ken Adams', 'John Tribbiani', 'Ted Phalange', 'Sam Adams'], correctAnswerIndex: 0 },
+
+  { id: 2, questionText: 'What name does Rachel´s sister Amy keep mistakenly calling Emma?', options: ['Ellie', 'Ella', 'Emmy', 'Erica'], correctAnswerIndex: 1 },
+
+  { id: 3, questionText: 'Where does Chandler tell Janice he is moving?', options: ['Russia', 'Yemen', 'Yukon', 'Switzerland'], correctAnswerIndex: 1 },
+
+  { id: 4, questionText: 'What´s the name of the grumpy man who lived below Monica´s apartment?', options: ['Mr. Heekler', 'Mr. Hickles', 'Mr. Finches', 'Mr. Heckles'], correctAnswerIndex: 3 },
+
+  { id: 5, questionText: 'Which of Monica´s beauty items caused Joey to figure out that Chandler and Monica were hooking up?', options: ['An eyelash curler', 'Hair straightener', 'Hairbrush', 'Mascara'], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
