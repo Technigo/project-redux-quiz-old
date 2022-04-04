@@ -1,30 +1,30 @@
 const questions = [
   {
     id: "01",
-    question_text: "Surgical face masks",
-    input_type: "radio",
+    question: "Surgical face masks",
+    image: "./images/mask-2.jpg",
     options: [
-			{ value: "Recyling station", label: "Recyling station" },
-			{ value: "Plastic", label: "Plastic" },
-      { value: "Household trash", label: "Household trash" },
-    ],
-    correctAnswerIndex: 0,
-  },
-  {
-    id: "02",
-    question_text: "Styrafoam",
-    input_type: "radio",
-    options: [
-			{ value: "Carton and cardboard", label: "Carton and cardboard" },
+      { value: "Recyling station", label: "Recyling station" },
       { value: "Plastic", label: "Plastic" },
       { value: "Household garbage", label: "Household garbage" },
     ],
-    correctAnswerIndex: 3,
+    correctAnswerIndex: 2,
+  },
+  {
+    id: "02",
+    question: "Styrafoam",
+    image: "./images/frigolit-1.jpeg",
+    options: [
+      { value: "Carton and cardboard", label: "Carton and cardboard" },
+      { value: "Plastic", label: "Plastic" },
+      { value: "Household garbage", label: "Household garbage" },
+    ],
+    correctAnswerIndex: 1,
   },
   {
     id: "03",
-    question_text: "Baking paper",
-    input_type: "radio",
+    question: "Baking paper",
+    image: "./images/baking-paper-1.jpeg",
     options: [
       { value: "Paper", label: "Paper" },
       { value: "Plastic", label: "Plastic" },
@@ -34,8 +34,8 @@ const questions = [
   },
   {
     id: "04",
-    question_text: "Chip bags",
-    input_type: "radio",
+    question: "Chip bags",
+    image: "./images/chipsbags-2.png",
     options: [
       { value: "Paper", label: "Paper" },
       { value: "Plastic", label: "Plastic" },
@@ -45,13 +45,13 @@ const questions = [
   },
   {
     id: "05",
-    question_text: "Coffee filters",
-    input_type: "text",
+    question: "Coffee filters",
+    image: "./images/coffee-filter-2.png",
     options: [
       { value: "Paper", label: "Paper" },
       { value: "Plastic", label: "Plastic" },
       { value: "Household garbage", label: "Household garbage" },
     ],
-    correctAnswerIndex: 3,
+    correctAnswerIndex: 2,
   },
 ];
