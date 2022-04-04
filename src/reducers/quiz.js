@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Who is Carries long time love interest?', options: ['Mr Big', 'Mr Magnum', 'Mr Large', 'Mr Huge'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'What is Charlottes husbands name?', options: ['Henry', 'Hank', 'Harry', 'Hunk'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'What is Carries favorite drink?', options: ['Champagne', 'Sex on the beach', 'Coffe', 'Cosmopolitan'], correctAnswerIndex: 3 },
+  { id: 4, questionText: 'Samantha cant get through the guest list at Soho House club, which has service and a pool. Whos card does she use to get in?', options: ['Stanford Blatch', 'Smith Jerrod', 'Annabelle Bronstein', 'Lucy Liu'], correctAnswerIndex: 2 },
+  { id: 5, questionText: 'How was Carrie dumped on season 6?', options: ['By a text message', 'Getting ghosted', 'With a post-it note', 'By voicemail'], correctAnswerIndex: 2 }
 ]
 
 const initialState = {
