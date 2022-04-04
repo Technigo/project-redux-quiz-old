@@ -1,4 +1,4 @@
-# Redux quiz group project
+# Week 13: Redux quiz
 
 Replace this readme with your own information about your project.
 
@@ -10,4 +10,6 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Project deployed here: [Name of our project](link)
+
+Group project: Joanna Ringqvist, Laura Sjölander, Mauricio Urra, Nadia Lefebvre, Rijad Ilijazagic
