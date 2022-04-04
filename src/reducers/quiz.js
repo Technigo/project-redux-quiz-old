@@ -2,8 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Question 1', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0, img: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png' },
+  { id: 2, questionText: 'Question 2', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'Question 3', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'Question 4', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 5, questionText: 'Question 5', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 6, questionText: 'Question 6', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+
+
 ]
 
 const initialState = {
@@ -35,6 +41,7 @@ export const quiz = createSlice({
      */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
+
       const question = state.questions.find((q) => q.id === questionId)
 
       if (!question) {
@@ -45,6 +52,8 @@ export const quiz = createSlice({
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
 
+      //state.nextQuestion = true
+
       state.answers.push({
         questionId,
         answerIndex,
@@ -52,6 +61,7 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+
     },
 
     /**
@@ -66,6 +76,7 @@ export const quiz = createSlice({
         state.quizOver = true
       } else {
         state.currentQuestionIndex += 1
+        state.nextQuestion = false
       }
     },
 
