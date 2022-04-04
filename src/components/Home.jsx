@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
 import { Main } from "components_styled/StyledElements";
 import Summary from "./Summary";
+import ProgressBar from "./ProgressBar";
 
 import { CurrentQuestion } from "components/CurrentQuestion";
 
@@ -20,6 +21,7 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <Main>
+      <ProgressBar />
         {quizDone ? <Summary /> : <CurrentQuestion setQuizDone={setQuizDone} />}
       </Main>
       {/* <Main>
