@@ -16,7 +16,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  counter: 0
 }
 
 export const quiz = createSlice({
@@ -74,6 +75,7 @@ export const quiz = createSlice({
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
+        
       } else {
         state.currentQuestionIndex += 1
         state.nextQuestion = false

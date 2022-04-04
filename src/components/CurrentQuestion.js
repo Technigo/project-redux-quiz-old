@@ -8,7 +8,10 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const dispatch = useDispatch();
   const gameOver = useSelector((state) => state.quiz.quizOver);
+  const selectedAnswer = useSelector((state) => state.quiz.answers);
+  //const questions = useSelector()
 
+  console.log(selectedAnswer, 'select answer')
 
   console.log(question, 'question')
   //console.log(gameOver, 'gameOver')
@@ -20,7 +23,7 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({questionId: id, answerIndex: index}))
-    
+    console.log(index)
   }
 
   const onNextQuestionClick = () => {
@@ -28,7 +31,11 @@ export const CurrentQuestion = () => {
 
   }
 
-  
+  const onRestartClick = () => {
+    dispatch(quiz.actions.restart())
+  }
+
+
     
     if (!gameOver) {
 
@@ -42,7 +49,15 @@ export const CurrentQuestion = () => {
     </div>
     }
 
-      return <p>Game over</p>
+    return <div>
+      <p>Game Over</p>
+      {selectedAnswer.map(item => (
+       
+        <p>{item.isCorrect? item.answer + 'correct' : item.answer + 'incorrect'}</p>
+      ))}
+      
+      <button onClick={onRestartClick}>Restart</button>
+    </div>
     
     
 
