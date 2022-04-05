@@ -2,87 +2,67 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-// import { quiz } from 'reducers/quiz'
 import { Option } from './Option'
 import { NextButton, SubmitButton } from './Buttons'
 
 // ----- STYLED COMPONENTS -----
-const Main = styled.main`
-display: flex;
-flex-direction: column;
-align-items: center;
-/* justify-content: center; */
-`
-
 const QuestionH1 = styled.h1`
   text-align: center;
-  font-size: 20px;
+  font-size: 1.5rem;
   height: 100px;
 `
 
-const ImageContainer = styled.div`
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & img {
-    max-height: 200px;
-    min-width: 100px;
-  }
-`
-
 const OptionsContainer = styled.div`
-  padding-top: 20px;
+  padding-top: 2rem;
   width: 400px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 1rem;
   justify-content: center;
 `
 
 const ScoreH2 = styled.h2`
-  /* code here */
+  font-size: 1rem;
 `
 // ----- STYLED COMPONENTS -----
 
 export const CurrentQuestion = () => {
 
-  /* 
-  // question could come from the previous selector in the last example
-  const answer = useSelector((state) => state.quiz.answers.find((a) => ( a.questionId === question.id ))) 
-  */
-
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questions = useSelector((state) => state.quiz.questions)
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
   const quizOver = useSelector((state) => state.quiz.quizOver)
 
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(null)
+  // DISABLING BUTTONS STEP 1: create states as 'false' for option and 'true' for next
+  const [isOptionDisabled, setIsOptionDisabled] = useState(false)
+  const [isNextDisabled, setIsNextDisabled] = useState(true)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  // DISABLING BUTTONS STEP 2: pass these states as props in buttons below
   return (
-    <Main>
-      <QuestionH1>Question: {question.questionText}</QuestionH1>
-      <ImageContainer>
-        <img src={question.img} alt="" />
-      </ImageContainer>
+    <>
+      <QuestionH1>{question.questionText}</QuestionH1>
+      <img src={question.img} alt="" />
       <OptionsContainer>
         {question.options.map((option, answerIndex) => (
           <Option
             key={answerIndex}
             option={option}
             answerIndex={answerIndex}
+            setIsNextDisabled={setIsNextDisabled}
+            isOptionDisabled={isOptionDisabled}
+            setIsOptionDisabled={setIsOptionDisabled}
             isCorrectAnswer={isCorrectAnswer}
             setIsCorrectAnswer={setIsCorrectAnswer} />
         ))}
       </OptionsContainer>
-      {!quizOver && questionIndex === questions.length - 1 ? <SubmitButton /> : <NextButton setIsCorrectAnswer={setIsCorrectAnswer} />}
+      {!quizOver && questionIndex === questions.length - 1 ? <SubmitButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} /> : <NextButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} isOptionDisabled={isOptionDisabled} setIsOptionDisabled={setIsOptionDisabled} setIsCorrectAnswer={setIsCorrectAnswer} />}
       <ScoreH2>Question {questionIndex + 1} out of {questions.length}</ScoreH2>
-    </Main>
+    </>
   )
 }
 

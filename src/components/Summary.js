@@ -32,39 +32,37 @@ const AnswerContainer = styled.div`
 const NoAnswerContainer = styled.div`
   /* code here */
 `
-
 // ----- STYLED COMPONENTS -----
-
 
 export const Summary = () => {
 
   const answers = useSelector((state) => state.quiz.answers)
 
   const correctAnswers = answers.filter(item => item.isCorrect)
+
   const scorePercent = correctAnswers.length * 100 / answers.length
 
   const grade = () => {
-    return scorePercent > 90 ? "Wow, you were fantastic, you got an A!"
-      : scorePercent > 80 ? "You did great and and can be proud of getting a B!"
+    return scorePercent > 90 ? "You were fantastic so here's an A!"
+      : scorePercent > 80 ? "Be proud of yourself and enjoy your B!"
         : scorePercent > 70 ? "You did very well and deserve a C!"
-          : scorePercent > 60 ? "You got some good answers and deserve a D!"
-            : scorePercent > 50 ? "It could have been better, but at least you didn't fail: an E for you!"
-              : "Your grade is F as in FAIL"
+          : scorePercent > 60 ? "You got some good answers: a D for you"
+            : scorePercent > 50 ? "At least you didn't fail... You get an E!"
+              : <span>Shame! Your grade is F as in <span style={{ color: "red" }}>FAIL</span></span>
   }
 
-  console.log(answers)
-
   return (
-    <main>
-      <SummaryH1>Summary</SummaryH1>
-      <SummaryH2>{grade()}</SummaryH2>
+    <>
+      <SummaryH1>{grade()}</SummaryH1>
       <AllAnswersContainer>
         {answers.map((item) => (
           <AnswerContainer key={item.answer}>
             <h3>Question {item.questionId} "{item.question.questionText}"</h3>
             <p>
               You answered "{item.answer}"
-              {item.isCorrect ? ` and you were right, the answer was indeed ${item.answer}!` : `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}`}
+              {item.isCorrect ?
+              ` and you were right, the answer was indeed ${item.answer}!` :
+              `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}`}
             </p>
           </AnswerContainer>
         ))}
@@ -74,6 +72,6 @@ export const Summary = () => {
       )}
       <SummaryH2>Score: {correctAnswers.length}/{answers.length}</SummaryH2>
       <RestartButton />
-    </main>
+    </>
   )
 }

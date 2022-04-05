@@ -6,15 +6,20 @@ import { quiz } from 'reducers/quiz'
 
 // ----- STYLED COMPONENTS -----
 const OptionButton = styled.button`
-  width: 150px;
+  width: 10rem;
+  background-color: black;
+  color: white;
+  border-width: 4px;
 `
 // ----- STYLED COMPONENTS -----
-
 
 export const Option = ({
   option,
   answerIndex,
-  // isCorrectAnswer,
+  isOptionDisabled,
+  setIsOptionDisabled,
+  setIsNextDisabled,
+  isCorrectAnswer,
   setIsCorrectAnswer }) => {
 
   const dispatch = useDispatch()
@@ -30,6 +35,14 @@ export const Option = ({
     setBorderColor({ borderColor: "transparent" })
   }, [questionId])
 
+  // DISABLING BUTTONS STEP 3: reverse the states ('true' for option and 'false' for next) when one option is clicked
+  useEffect(() => {
+    if (isCorrectAnswer !== null) {
+      setIsOptionDisabled(true)
+      setIsNextDisabled(false)
+    }
+  }, [isCorrectAnswer, setIsOptionDisabled, setIsNextDisabled])
+
   const onAnswerSubmit = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     if (answerIndex === correctAnswer) {
@@ -41,12 +54,14 @@ export const Option = ({
     }
   }
 
+  // DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for option
   return (
-      <OptionButton 
-        key={answerIndex} 
-        type="button" 
-        style={borderColor} 
-        onClick={onAnswerSubmit}>{option}
-      </OptionButton>
+    <OptionButton
+      type="button"
+      style={borderColor}
+      onClick={onAnswerSubmit}
+      disabled={isOptionDisabled}>
+      {option}
+    </OptionButton>
   )
 }

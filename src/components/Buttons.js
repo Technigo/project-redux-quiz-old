@@ -6,53 +6,66 @@ import { quiz } from 'reducers/quiz'
 
 // ----- STYLED COMPONENTS -----
 const Start = styled.button`
-  /* code here */
+  margin-top: 2rem;
+  width: 10rem;
+  background-color: black;
+  color: white;
+  border: none;
+  text-transform: uppercase;
 `
 
 const ProgressButton = styled.button`
-  margin-top: 20px;
-`
-
-const Restart = styled.button`
-  /* code here */
+  margin-top: 2rem;
+  width: 5rem;
+  background-color: #666666;
+  color: white;
+  border: none;
+  text-transform: uppercase;
 `
 // ----- STYLED COMPONENTS -----
 
 export const StartButton = () => {
   return (
-    <Start>Start here!</Start>
+    <Start>Start</Start>
   )
 }
 
-export const NextButton = () => {
+export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisabled, setIsCorrectAnswer }) => {
   const dispatch = useDispatch()
 
-  // code given in notion
-  const onClickNext = () => {
+  // DISABLING BUTTONS STEP 5: reset the disabled states as they are at first, so 'false' for option and 'true' for next
+  const onQuizNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
+    setIsCorrectAnswer(null)
+    setIsOptionDisabled(false)
+    setIsNextDisabled(true)
   }
+
+  // DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for next
   return (
     <ProgressButton
       type="button"
-      onClick={onClickNext}>
-      Next question
+      disabled={isNextDisabled}
+      onClick={onQuizNext}>
+      Next
     </ProgressButton>
   )
 }
 
-
-export const SubmitButton = () => {
+// DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for submit
+export const SubmitButton = ({ isNextDisabled, setIsNextDisabled }) => {
   const dispatch = useDispatch()
 
-  // code given in notion
-  const onClickSubmit = () => {
+  const onQuizSubmit = () => {
     dispatch(quiz.actions.goToNextQuestion())
+    setIsNextDisabled(true)
   }
 
   return (
     <ProgressButton
       type="button"
-      onClick={onClickSubmit}>
+      disabled={isNextDisabled}
+      onClick={onQuizSubmit}>
       Submit
     </ProgressButton>
   )
@@ -61,18 +74,15 @@ export const SubmitButton = () => {
 export const RestartButton = () => {
   const dispatch = useDispatch()
 
-  // code given in notion
-  const onClickRestart = () => {
+  const onQuizRestart = () => {
     dispatch(quiz.actions.restart())
   }
 
   return (
-    <Restart
+    <Start
       type="button"
-      onClick={onClickRestart}>
+      onClick={onQuizRestart}>
       Restart
-    </Restart>
+    </Start>
   )
 }
-
-
