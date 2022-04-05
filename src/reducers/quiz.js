@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Question 1', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0, img: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png' },
-  { id: 2, questionText: 'Question 2', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'Question 3', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 1 },
-  { id: 4, questionText: 'Question 4', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 5, questionText: 'Question 5', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 6, questionText: 'Question 6', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 1, options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0, img: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png', img_alt: 'elephant' },
+  { id: 2, options: ['1', '2', '3', '4'], correctAnswerIndex: 2, img_alt: 'elephant' },
+  { id: 3,  options: ['5', '6', '7', '2018'], correctAnswerIndex: 1, img_alt: 'elephant' },
+  { id: 4,  options: ['9', '10', '11', '12'], correctAnswerIndex: 2, img_alt: 'elephant' },
+  { id: 5, options: ['13', '14', '2016', '2018'], correctAnswerIndex: 2, img_alt: 'elephant' },
+  { id: 6, options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2, img_alt: 'elephant' },
 
 
 ]
