@@ -1,0 +1,9 @@
+5/4/22
+- Display questions and answers(buttons)
+- Create buttons
+
+Components: 
+1. Start
+2. CurrentQustion
+3. Summary
+4. Button
