@@ -1,55 +1,53 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions! CHECK
 const questions = [
   {
     id: 1,
     questionText: 'Who was the first woman to win a Nobel prize?',
-    options: [
-      'Selma Lagerlöf',
-      'Marie Curie',
-      'Moder Terese'
-    ],
-    correctAnswerIndex: 1
+    options: ['Selma Lagerlöf', 'Marie Curie', 'Moder Terese'],
+    correctAnswerIndex: 1,
   },
   {
     id: 2,
-    questionText: 'Who was the first woman to, in 1932, fly nonstop and alone over the Atlantic?',
+    questionText:
+      'Who was the first woman to, in 1932, fly nonstop and alone over the Atlantic?',
     options: ['Kathrine Switzer', 'Amelia Earhart', 'Gertrude Ederle'],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
   },
   {
     id: 3,
     questionText: 'Who was the first woman in space?',
     options: ['Valentina Tereshkova', 'Sally Ride', 'Mae Jemison'],
-    correctAnswerIndex: 0
+    correctAnswerIndex: 0,
   },
   {
     id: 4,
-    questionText: 'Which woman, who lived 1815-1852, is described as the first programmer in history??',
+    questionText:
+      'Which woman, who lived 1815-1852, is described as the first programmer in history??',
     options: ['Grace Hopper', 'Mae Jemison', 'Ada Lovelace'],
-    correctAnswerIndex: 2
+    correctAnswerIndex: 2,
   },
   {
     id: 5,
-    questionText: 'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post??',
+    questionText:
+      'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post??',
     options: ['Angela Merkel', 'Ursula con der Leyen', 'Christine Lagarde'],
-    correctAnswerIndex: 1
-  }
-]
+    correctAnswerIndex: 1,
+  },
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
-}
+  quizOver: false,
+};
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -66,15 +64,19 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const { questionId, answerIndex } = action.payload;
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -82,8 +84,8 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
-      })
+        isCorrect: question.correctAnswerIndex === answerIndex,
+      });
     },
 
     /**
@@ -95,9 +97,9 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1;
       }
     },
 
@@ -109,8 +111,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
-    }
-
-  }
-})
+      return initialState;
+    },
+  },
+});
