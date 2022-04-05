@@ -28,14 +28,18 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
+      <img src={question.img} alt=""/>
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, answerIndex) => (
-        <Option key={answerIndex} option={option} answerIndex={answerIndex} isCorrectAnswer={isCorrectAnswer}
-        setIsCorrectAnswer={setIsCorrectAnswer} />
+        <Option 
+          key={answerIndex} 
+          option={option} 
+          answerIndex={answerIndex} 
+          isCorrectAnswer={isCorrectAnswer}
+          setIsCorrectAnswer={setIsCorrectAnswer} />
       ))}
-      {/* <NextButton /> */}
       {!quizOver && questionIndex === questions.length - 1 ? <SubmitButton /> : <NextButton setIsCorrectAnswer={setIsCorrectAnswer} />}
-
+      <p>Question {questionIndex + 1}  / {questions.length} </p>
     </div>
   )
 }

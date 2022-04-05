@@ -1,30 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 
-export const Option = ({ option, answerIndex, isCorrectAnswer, setIsCorrectAnswer }) => {
+export const Option = ({
+  option,
+  answerIndex,
+  isCorrectAnswer,
+  setIsCorrectAnswer }) => {
+
   const dispatch = useDispatch()
 
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const questionId = question.id
   const correctAnswer = question.correctAnswerIndex
 
-  // const [isCorrectAnswer, setIsCorrectAnswer] = useState(null)
+  const [borderColor, setBorderColor] = useState({ borderColor: "transparent" })
+
+  // necessary for the other questions to keep transparent border for their options buttons
+  useEffect(() => {
+    setBorderColor({ borderColor: "transparent" })
+  }, [questionId])
 
   const onAnswerSubmit = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     if (answerIndex === correctAnswer) {
       setIsCorrectAnswer(true)
+      setBorderColor({ borderColor: "green" })
     } else {
       setIsCorrectAnswer(false)
+      setBorderColor({ borderColor: "red" })
     }
-    console.log(isCorrectAnswer)
   }
 
   return (
     <div>
-      <button onClick={onAnswerSubmit} key={answerIndex}>{option}</button>
-
+      <button 
+        key={answerIndex} 
+        type="button" 
+        style={borderColor} 
+        onClick={onAnswerSubmit}>{option}
+      </button>
     </div>
   )
 }
