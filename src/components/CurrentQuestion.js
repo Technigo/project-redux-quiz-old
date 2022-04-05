@@ -24,6 +24,7 @@ const currentQuestionIndex = styled.h1`
 
 
 export const CurrentQuestion = () => {
+  // Getting data from the store
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const quizOver = useSelector((state) => state.quiz.quizOver) 
   const store = useSelector((state) => state) 
@@ -38,6 +39,7 @@ export const CurrentQuestion = () => {
   if (!question) {
     return <div>Oh no! I could not find the current question!</div>
   }
+
 
   return (
 <>
