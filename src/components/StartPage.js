@@ -21,11 +21,11 @@ const H1 = styled.h1`
 export const StartPage = () => {
 
   return (
-    <>
+    <main>
       <H1>QUIZ</H1>
       <Link to="/quiz">
         <StartButton />
       </Link>
-    </>
+    </main>
   )
 }

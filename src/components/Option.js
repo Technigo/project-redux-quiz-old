@@ -6,7 +6,7 @@ import { quiz } from 'reducers/quiz'
 
 // ----- STYLED COMPONENTS -----
 const OptionButton = styled.button`
-  /* code here */
+  width: 150px;
 `
 // ----- STYLED COMPONENTS -----
 

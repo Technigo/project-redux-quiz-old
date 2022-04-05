@@ -55,7 +55,7 @@ export const Summary = () => {
   console.log(answers)
 
   return (
-    <>
+    <main>
       <SummaryH1>Summary</SummaryH1>
       <SummaryH2>{grade()}</SummaryH2>
       <AllAnswersContainer>
@@ -74,6 +74,6 @@ export const Summary = () => {
       )}
       <SummaryH2>Score: {correctAnswers.length}/{answers.length}</SummaryH2>
       <RestartButton />
-    </>
+    </main>
   )
 }

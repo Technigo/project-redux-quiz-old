@@ -7,23 +7,38 @@ import { Option } from './Option'
 import { NextButton, SubmitButton } from './Buttons'
 
 // ----- STYLED COMPONENTS -----
+const Main = styled.main`
+display: flex;
+flex-direction: column;
+align-items: center;
+/* justify-content: center; */
+`
+
 const QuestionH1 = styled.h1`
-  /* code here */
+  text-align: center;
+  font-size: 20px;
+  height: 100px;
 `
 
 const ImageContainer = styled.div`
-  border: 5px solid red;
-  width: fit-content;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & img {
-    /* code here */
+    max-height: 200px;
+    min-width: 100px;
   }
 `
 
 const OptionsContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px;
+  padding-top: 20px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 `
 
 const ScoreH2 = styled.h2`
@@ -50,7 +65,7 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <>
+    <Main>
       <QuestionH1>Question: {question.questionText}</QuestionH1>
       <ImageContainer>
         <img src={question.img} alt="" />
@@ -67,7 +82,7 @@ export const CurrentQuestion = () => {
       </OptionsContainer>
       {!quizOver && questionIndex === questions.length - 1 ? <SubmitButton /> : <NextButton setIsCorrectAnswer={setIsCorrectAnswer} />}
       <ScoreH2>Question {questionIndex + 1} out of {questions.length}</ScoreH2>
-    </>
+    </Main>
   )
 }
 

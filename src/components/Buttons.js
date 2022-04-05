@@ -9,12 +9,8 @@ const Start = styled.button`
   /* code here */
 `
 
-const Next = styled.button`
-  /* code here */
-`
-
-const Submit = styled.button`
-  /* code here */
+const ProgressButton = styled.button`
+  margin-top: 20px;
 `
 
 const Restart = styled.button`
@@ -36,11 +32,11 @@ export const NextButton = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
   return (
-    <Next
+    <ProgressButton
       type="button"
       onClick={onClickNext}>
       Next question
-    </Next>
+    </ProgressButton>
   )
 }
 
@@ -54,11 +50,11 @@ export const SubmitButton = () => {
   }
 
   return (
-    <Submit
+    <ProgressButton
       type="button"
       onClick={onClickSubmit}>
       Submit
-    </Submit>
+    </ProgressButton>
   )
 }
 
