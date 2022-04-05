@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 
 const ProgressBar = () => {
-  const completed = `${
-    (useSelector((store) => store.quiz.currentQuestionIndex) * 100) / 5
-  }%`;
+  console.log(useSelector((store) => store));
+  const completed = `${useSelector(
+    (store) =>
+      (store.quiz.currentQuestionIndex * 100) / store.quiz.questions.length
+  )}%`;
   // console.log(completed)
   // console.log(typeof completed)
 
