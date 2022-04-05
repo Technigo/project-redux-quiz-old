@@ -1,30 +1,58 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0, img: 'https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png', img_alt: 'elephant' },
-  { id: 2, options: ['1', '2', '3', '4'], correctAnswerIndex: 2, img_alt: 'elephant' },
-  { id: 3,  options: ['5', '6', '7', '2018'], correctAnswerIndex: 1, img_alt: 'elephant' },
-  { id: 4,  options: ['9', '10', '11', '12'], correctAnswerIndex: 2, img_alt: 'elephant' },
-  { id: 5, options: ['13', '14', '2016', '2018'], correctAnswerIndex: 2, img_alt: 'elephant' },
-  { id: 6, options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2, img_alt: 'elephant' },
-
-
-]
+  {
+    id: 1,
+    options: ["Hippo", "Elephant", "Seal", "Rhino"],
+    correctAnswerIndex: 1,
+    img: "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+    img_alt: "elephant",
+  },
+  {
+    id: 2,
+    options: ["Tiger", "Zebra", "Hyena", "Cheetah"],
+    correctAnswerIndex: 0,
+    img_alt: "Tiger",
+  },
+  {
+    id: 3,
+    options: ["Wolf", "Hyena", "Coyote", "Fox"],
+    correctAnswerIndex: 3,
+    img_alt: "Fox",
+  },
+  {
+    id: 4,
+    options: ["Puma", "Jaguar", "Lion", "Tiger"],
+    correctAnswerIndex: 2,
+    img_alt: "Lion",
+  },
+  {
+    id: 5,
+    options: ["Turtle", "Snake", "Crocodile", "Lizard"],
+    correctAnswerIndex: 0,
+    img_alt: "Turtle",
+  },
+  {
+    id: 6,
+    options: ["Bear", "elephant", "Mamut", "Hippo"],
+    correctAnswerIndex: 3,
+    img_alt: "Hippo",
+  },
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  counter: 0
-}
+  counter: 0,
+};
 
 export const quiz = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -41,16 +69,20 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
+      const { questionId, answerIndex } = action.payload;
 
-      const question = state.questions.find((q) => q.id === questionId)
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       //state.nextQuestion = true
@@ -60,9 +92,8 @@ export const quiz = createSlice({
         answerIndex,
         question,
         answer: question.options[answerIndex],
-        isCorrect: question.correctAnswerIndex === answerIndex
-      })
-
+        isCorrect: question.correctAnswerIndex === answerIndex,
+      });
     },
 
     /**
@@ -74,11 +105,10 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
-        
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
-        state.nextQuestion = false
+        state.currentQuestionIndex += 1;
+        state.nextQuestion = false;
       }
     },
 
@@ -90,8 +120,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
-    }
-
-  }
-})
+      return initialState;
+    },
+  },
+});
