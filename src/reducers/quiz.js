@@ -5,7 +5,7 @@ const questions = [
   {
     id: 1,
     questionText: 'Who was the first woman to win a Nobel prize?',
-    options: ['Selma Lagerlöf', 'Marie Curie', 'Moder Terese'],
+    options: ['Selma Lagerlöf', 'Marie Curie', 'Mother Teresa'],
     correctAnswerIndex: 1,
   },
   {
@@ -24,15 +24,15 @@ const questions = [
   {
     id: 4,
     questionText:
-      'Which woman, who lived 1815-1852, is described as the first programmer in history??',
+      'Which woman, who lived 1815-1852, is described as the first programmer in history?',
     options: ['Grace Hopper', 'Mae Jemison', 'Ada Lovelace'],
     correctAnswerIndex: 2,
   },
   {
     id: 5,
     questionText:
-      'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post??',
-    options: ['Angela Merkel', 'Ursula con der Leyen', 'Christine Lagarde'],
+      'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post?',
+    options: ['Angela Merkel', 'Ursula von der Leyen', 'Christine Lagarde'],
     correctAnswerIndex: 1,
   },
 ];
