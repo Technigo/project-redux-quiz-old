@@ -3,6 +3,10 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 
+import { ButtonContainer } from "components_styled/StyledElements";
+import { Button } from "components_styled/StyledElements";
+import { Title } from "components_styled/StyledElements";
+
 export const CurrentQuestion = ({ setQuizDone }) => {
   const [hasAnswered, setHasAnswered] = useState(false);
   const dispatch = useDispatch();
@@ -31,16 +35,18 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   }
 
   return (
-    <>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((item, index) => {
-        return (
-          <button onClick={() => onAnswerSubmit(question.id, index)} key={item}>
-            {item}
-          </button>
-        );
-      })}
-      {hasAnswered && <button onClick={handleNextButton}>Next</button>}
-    </>
+      <>
+      <Title>Question: {question.questionText}</Title>
+        <ButtonContainer>
+          {question.options.map((item, index) => {
+            return (
+                <Button onClick={() => onAnswerSubmit(question.id, index)} key={item}>
+                  {item}
+                </Button>
+            );
+          })}
+          {hasAnswered && <button onClick={handleNextButton}>Next</button>}
+        </ButtonContainer>
+      </>
   );
 };
