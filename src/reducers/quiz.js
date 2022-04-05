@@ -1,9 +1,41 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
+// Change these to your own questions! CHECK
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  {
+    id: 1,
+    questionText: 'Who was the first woman to win a Nobel prize?',
+    options: [
+      'Selma Lagerlöf',
+      'Marie Curie',
+      'Moder Terese'
+    ],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 2,
+    questionText: 'Who was the first woman to, in 1932, fly nonstop and alone over the Atlantic?',
+    options: ['Kathrine Switzer', 'Amelia Earhart', 'Gertrude Ederle'],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 3,
+    questionText: 'Who was the first woman in space?',
+    options: ['Valentina Tereshkova', 'Sally Ride', 'Mae Jemison'],
+    correctAnswerIndex: 0
+  },
+  {
+    id: 4,
+    questionText: 'Which woman, who lived 1815-1852, is described as the first programmer in history??',
+    options: ['Grace Hopper', 'Mae Jemison', 'Ada Lovelace'],
+    correctAnswerIndex: 2
+  },
+  {
+    id: 5,
+    questionText: 'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post??',
+    options: ['Angela Merkel', 'Ursula con der Leyen', 'Christine Lagarde'],
+    correctAnswerIndex: 1
+  }
 ]
 
 const initialState = {
