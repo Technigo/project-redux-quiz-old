@@ -9,9 +9,7 @@ export const Main = () => {
 
   return (
     <>
-          {quizOver ? <Summary /> : <CurrentQuestion />}
-
-      {/* {!quizOver ? <CurrentQuestion /> : <Summary />} */}
+      {!quizOver ? <CurrentQuestion /> : <Summary />}
     </>
   )
 }

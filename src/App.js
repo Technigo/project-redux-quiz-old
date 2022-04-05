@@ -8,8 +8,6 @@ import { StartPage } from 'components/StartPage'
 import { Main } from './components/Main'
 
 
-// import { CurrentQuestion } from 'components/CurrentQuestion'
-
 const reducer = combineReducers({
   quiz: quiz.reducer
 })

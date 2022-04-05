@@ -1,10 +1,30 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import styled from 'styled-components'
+
 import { quiz } from 'reducers/quiz'
+
+// ----- STYLED COMPONENTS -----
+const Start = styled.button`
+  /* code here */
+`
+
+const Next = styled.button`
+  /* code here */
+`
+
+const Submit = styled.button`
+  /* code here */
+`
+
+const Restart = styled.button`
+  /* code here */
+`
+// ----- STYLED COMPONENTS -----
 
 export const StartButton = () => {
   return (
-    <button>Start here!</button>
+    <Start>Start here!</Start>
   )
 }
 
@@ -16,11 +36,11 @@ export const NextButton = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
   return (
-    <button
+    <Next
       type="button"
       onClick={onClickNext}>
       Next question
-    </button>
+    </Next>
   )
 }
 
@@ -34,11 +54,11 @@ export const SubmitButton = () => {
   }
 
   return (
-    <button
+    <Submit
       type="button"
       onClick={onClickSubmit}>
       Submit
-    </button>
+    </Submit>
   )
 }
 
@@ -51,11 +71,11 @@ export const RestartButton = () => {
   }
 
   return (
-    <button
+    <Restart
       type="button"
       onClick={onClickRestart}>
       Restart
-    </button>
+    </Restart>
   )
 }
 

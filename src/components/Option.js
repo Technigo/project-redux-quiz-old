@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components'
+
 import { quiz } from 'reducers/quiz'
+
+// ----- STYLED COMPONENTS -----
+const OptionButton = styled.button`
+  /* code here */
+`
+// ----- STYLED COMPONENTS -----
+
 
 export const Option = ({
   option,
   answerIndex,
-  isCorrectAnswer,
+  // isCorrectAnswer,
   setIsCorrectAnswer }) => {
 
   const dispatch = useDispatch()
@@ -33,14 +42,11 @@ export const Option = ({
   }
 
   return (
-    <div>
-      <button 
+      <OptionButton 
         key={answerIndex} 
         type="button" 
         style={borderColor} 
         onClick={onAnswerSubmit}>{option}
-      </button>
-    </div>
+      </OptionButton>
   )
 }
-
