@@ -1,6 +1,8 @@
 5/4/22
 - Display questions and answers(buttons)
 - Create buttons
+- Check if the answer index is the same as the correct answer index
+
 
 Components: 
 1. Start
