@@ -47,6 +47,8 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   counter: 0,
+  color: '',
+
 };
 
 export const quiz = createSlice({
@@ -86,7 +88,14 @@ export const quiz = createSlice({
       }
 
       //state.nextQuestion = true
+       
+      if (question.correctAnswerIndex !== answerIndex) {
+         state.color = 'red'
+      } else {
+         state.color = 'green'
 
+      }
+    
       state.answers.push({
         questionId,
         answerIndex,
@@ -94,6 +103,7 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex,
       });
+
     },
 
     /**
