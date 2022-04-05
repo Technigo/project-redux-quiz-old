@@ -1,7 +1,7 @@
-const questions = [
+export const questions = [
   {
     id: "01",
-    question: "Surgical face masks",
+    questionText: "Surgical face masks",
     image: "./images/mask-2.jpg",
     options: [
       { value: "Recyling station", label: "Recyling station" },
@@ -12,7 +12,7 @@ const questions = [
   },
   {
     id: "02",
-    question: "Styrafoam",
+    questionText: "Styrafoam",
     image: "./images/frigolit-1.jpeg",
     options: [
       { value: "Carton and cardboard", label: "Carton and cardboard" },
@@ -23,7 +23,7 @@ const questions = [
   },
   {
     id: "03",
-    question: "Baking paper",
+    questionText: "Baking paper",
     image: "./images/baking-paper-1.jpeg",
     options: [
       { value: "Paper", label: "Paper" },
@@ -34,7 +34,7 @@ const questions = [
   },
   {
     id: "04",
-    question: "Chip bags",
+    questionText: "Chip bags",
     image: "./images/chipsbags-2.png",
     options: [
       { value: "Paper", label: "Paper" },
@@ -45,7 +45,7 @@ const questions = [
   },
   {
     id: "05",
-    question: "Coffee filters",
+    questionText: "Coffee filters",
     image: "./images/coffee-filter-2.png",
     options: [
       { value: "Paper", label: "Paper" },
