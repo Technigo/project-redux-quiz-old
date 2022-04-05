@@ -3,16 +3,22 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import styled, { keyframes } from 'styled-components'
 
-const BtnAnimation = keyframes`
-   70% {  background: ${(props) => props.background}}
-   100% { background: 'pink'}
 
-`
 const AnswerSubmitBtn = styled.button`
-	&:active {
-		background: ${(props) => props.background};
-	}
-`
+  align-self: center;
+  background: #fef8d8;
+  color: #000;
+  border: solid #000 3px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  width: 10em;
+  margin-bottom: 1em;
+  &:active {
+    background: ${(props) => props.background};
+  }
+
+`;
 
 const QuestionPage = () => {
 	const dispatch = useDispatch()
@@ -24,16 +30,30 @@ const QuestionPage = () => {
 		state.quiz.answers.find((a) => a.questionId === question.id)
 	)
 
-	const color = useSelector((state) => state.quiz.color)
-
+  
+	//const color = useSelector((state) => state.quiz.color)
+  let color = '';
 	const answerArray = useSelector((state) => state.quiz.answers)
 
 	console.log(answerArray)
 
+  for (let i = 0; i < answerArray.length; i++) {
+
+    if (answerArray[i].isCorrect === true) {
+      color = 'green'
+      console.log('i am true', color)
+    } else {
+      color = 'red'
+      console.log('i am false', color)
+    }
+  }
+
+  
+
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-
-		setTimeout(displayNextQuestion, 2000)
+     displayNextQuestion();
+		//setTimeout(displayNextQuestion, 2000)
 	}
 	const displayNextQuestion = () => {
 		dispatch(quiz.actions.goToNextQuestion())
@@ -55,11 +75,12 @@ const QuestionPage = () => {
 						<AnswerSubmitBtn
 							type='submit'
 							onClick={() => onAnswerSubmit(question.id, index)}
-							background={color}
 							key={item}
+             				background= 'red'
 						>
 							{item}
-						</AnswerSubmitBtn>
+            </AnswerSubmitBtn>
+          
 					))}
 				</div>
 			</div>

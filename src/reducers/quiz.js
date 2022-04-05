@@ -1,4 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import elephanImg from '../components/assets/elephant.png'
+import tigerImg from '../components/assets/tiger.png'
+import foxImg from '../components/assets/fox.png'
+import lionImg from '../components/assets/lion.png'
+import turtleImg from '../components/assets/turtle.png'
+import hippoImg from '../components/assets/hippo.png'
 
 // Change these to your own questions!
 const questions = [
@@ -6,38 +12,43 @@ const questions = [
     id: 1,
     options: ["Hippo", "Elephant", "Seal", "Rhino"],
     correctAnswerIndex: 1,
-    img: "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
     img_alt: "elephant",
+    sticker: elephanImg
   },
   {
     id: 2,
     options: ["Tiger", "Zebra", "Hyena", "Cheetah"],
     correctAnswerIndex: 0,
     img_alt: "Tiger",
+    sticker: tigerImg
   },
   {
     id: 3,
     options: ["Wolf", "Hyena", "Coyote", "Fox"],
     correctAnswerIndex: 3,
     img_alt: "Fox",
+    sticker: foxImg
   },
   {
     id: 4,
     options: ["Puma", "Jaguar", "Lion", "Tiger"],
     correctAnswerIndex: 2,
     img_alt: "Lion",
+    sticker: lionImg
   },
   {
     id: 5,
     options: ["Turtle", "Snake", "Crocodile", "Lizard"],
     correctAnswerIndex: 0,
     img_alt: "Turtle",
+    sticker: turtleImg
   },
   {
     id: 6,
     options: ["Bear", "elephant", "Mamut", "Hippo"],
     correctAnswerIndex: 3,
     img_alt: "Hippo",
+    sticker: hippoImg
   },
 ];
 
@@ -47,7 +58,6 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   counter: 0,
-  color: '',
 
 };
 
@@ -89,12 +99,12 @@ export const quiz = createSlice({
 
       //state.nextQuestion = true
        
-      if (question.correctAnswerIndex !== answerIndex) {
-         state.color = 'red'
-      } else {
-         state.color = 'green'
+     // if (question.correctAnswerIndex !== answerIndex) {
+      //   state.color = 'red'
+      //} else {
+       //  state.color = 'green'
 
-      }
+      //}
     
       state.answers.push({
         questionId,
