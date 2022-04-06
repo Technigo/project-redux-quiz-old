@@ -36,28 +36,40 @@ const QuestionPage = () => {
   
 	//const color = useSelector((state) => state.quiz.color)
 	const answerArray = useSelector((state) => state.quiz.answers)
-    const animation = useSelector((state) => state.quiz.animation)
 	console.log(answerArray, 'selected Answer array')
-    //const rightAnswer = answerArray.map(item => iteminitem.isCorrect);
+	console.log(question.id, ' question array')
 
-	//console.log(rightAnswer)
   
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
         displayNextQuestion();
    
-	//	setTimeout(displayNextQuestion, 2000)
+		setTimeout(displayNextQuestion, 5000)
 	}
 	const displayNextQuestion = () => {
 		dispatch(quiz.actions.goToNextQuestion())
 	}
 
-	//Check the answer state - correct or incorrect
+	const count = () => {
+
+		if (answerArray[question.id - 1]?.isCorrect) {
+
+			return 'true'
+		} return 'false'
+	}
+
 
 	return (
 		<>
 			<h1>Guess Whose Butt</h1>
+
+				<p>{count()} Hi</p>
+
+			{/* ADD PROGRESS BAR */}
+			<p>Question {question.id} /6</p>
+			{/* *************** */}
+
 		<section className='question-section'>
 			<div className='question-container'>
 				<img
@@ -72,7 +84,7 @@ const QuestionPage = () => {
 						  type='submit'
 						  onClick={() => onAnswerSubmit(question.id, index)}
 						  key={item}
-					  >
+					     >
 						  {item}
 		  </button>
           

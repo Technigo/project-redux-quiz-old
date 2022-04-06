@@ -23,7 +23,6 @@ export const WelcomePage = () => {
 	const onStartButtonclick = () => {
 
 	    dispatch(quiz.actions.startGame())
-		//setStartGame(true)
 	}
 
 	return (
