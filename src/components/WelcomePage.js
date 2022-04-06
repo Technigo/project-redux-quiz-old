@@ -1,21 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { quiz } from 'reducers/quiz'
 const StartBtn = styled.button`
+	align-self: center;
 	background: #fef8d8;
-	border: 3px solid #45413c;
-	border-radius: 14px;
+	color: #000;
+	border: solid #000 3px;
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 18px;
+	width: 10em;
+	margin-bottom: 1em;
 `
-let click = false
 export const WelcomePage = () => {
 	const dispatch = useDispatch()
+	const start = useSelector((state) => state.quiz.start)
 	const onStartButtonclick = () => {
 		dispatch(quiz.actions.startGame())
-		//find a way to return this page first (In app? and then call the CurrentQuestion?)
 	}
-
 	return (
 		<>
 			{!start ? (
