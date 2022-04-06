@@ -13,10 +13,13 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer })
 
+let start = false;
 export const App = () => {
+
+
 	return (
 		<Provider store={store}>
-			<CurrentQuestion />
+			<WelcomePage />
 		</Provider>
 	)
 }

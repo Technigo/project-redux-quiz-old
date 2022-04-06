@@ -20,14 +20,17 @@ const AnswerSubmitBtn = styled.button`
 
 `;
 
+
+
 const QuestionPage = () => {
 	const dispatch = useDispatch()
+	const text =''
 
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	)
 	const answer = useSelector((state) =>
-		state.quiz.answers.find((a) => a.questionId === question.id)
+		state.quiz.answers.filter((a) => a.questionId === question.id)
 	)
 
   
@@ -44,8 +47,9 @@ const QuestionPage = () => {
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
         displayNextQuestion();
-
-		//setTimeout(displayNextQuestion, 2000)
+       color = answerArray[0]?.isCorrect;
+	   console.log(color)
+	//	setTimeout(displayNextQuestion, 2000)
 	}
 	const displayNextQuestion = () => {
 		dispatch(quiz.actions.goToNextQuestion())
@@ -64,7 +68,9 @@ const QuestionPage = () => {
 					alt={question.img_alt}
 				/>
 				<div className='answer-btn-container'>
+			        <p>{color}</p>
 					{question.options.map((item, index) => (
+						
 				  		<button
 						  type='submit'
 						  onClick={() => onAnswerSubmit(question.id, index)}

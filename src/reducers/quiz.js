@@ -14,6 +14,7 @@ import hippoImg from '../components/assets/hippo.png'
 
 // Change these to your own questions!
 const questions = [
+  
   {
     id: 1,
     options: ["Hippo", "Elephant", "Seal", "Rhino"],
@@ -34,7 +35,7 @@ const questions = [
   {
     id: 3,
     options: ["Wolf", "Hyena", "Coyote", "Fox"],
-    correctAnswerIn: 3,
+    correctAnswerIndex: 3,
     img: FoxButt,
     img_alt: "Fox",
     img: FoxButt,
@@ -75,7 +76,7 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   counter: 0,
-  animation: false
+  start: false,
 
 };
 
@@ -98,6 +99,11 @@ export const quiz = createSlice({
      * When dispatching this action, you should pass an object as the payload with `questionId`
      * and `answerIndex` keys. See the readme for more details.
      */
+
+    startGame: (state) => {
+      state.start = true;
+    },
+
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;
 
@@ -135,6 +141,7 @@ export const quiz = createSlice({
 
     },
 
+
     /**
      * Use this action to progress the quiz to the next question. If there's
      * no more questions (the user was on the final question), set `quizOver`
@@ -158,8 +165,8 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    restart: () => {
-      return initialState;
+    restart: (state) => {
+      return initialState
     },
   },
 });

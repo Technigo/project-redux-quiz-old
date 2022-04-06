@@ -1,32 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
+import { useSelector, useDispatch } from 'react-redux'
+import { quiz } from 'reducers/quiz'
 
 const StartBtn = styled.button`
-	background: #fef8d8;
-	border: 3px solid #45413c;
-	border-radius: 14px;
+align-self: center;
+  background: #fef8d8;
+  color: #000;
+  border: solid #000 3px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  width: 10em;
+  margin-bottom: 1em;
 `
-let click = false;
 export const WelcomePage = () => {
+	const dispatch = useDispatch();
+	//const [startGame, setStartGame] = useState(false)
+	const start = useSelector(state => state.quiz.start);
 	const onStartButtonclick = () => {
-        click = true;
-		//find a way to return this page first (In app? and then call the CurrentQuestion?)
+	    dispatch(quiz.actions.startGame())
+		//setStartGame(true)
 	}
 
 	return (
+		<>
+	{ !start ?	<main>
+				<h1>Guess Whose Butt</h1>
+				<section className='question-section summary'>
+					<div className='answer-btn-container'>
+						<h2 className='welcome-text'>Let’s see if you know your animal butts!</h2>
+						<StartBtn onClick={onStartButtonclick}> Let's play! </StartBtn>)
 		
 
-		<main>
-			<section className='question-section'>
-				<h1>Guess Whose Butt</h1>
-				<div className='answer-btn-container'>
-					<h2>Let’s see if you know your animal butts!</h2>
-					<button onClick={onStartButtonclick}> Let's play! </button>)
-				</div>
-			</section>
+					</div>
+				</section>
 
-		</main>
+			</main> : <CurrentQuestion />}
+		
+		
+		</>
+
+	
 
 	)
 }

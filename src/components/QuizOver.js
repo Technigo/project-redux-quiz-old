@@ -17,8 +17,9 @@ const QuizOver = () => {
 	}
 
 	return (
-			<section className='question-section summary-section'> 
+			<div>
 			<h1 className='summary-h1'>Guess Whose Butt</h1>
+			<section className='question-section summary-section'> 
 			<p className='summary-text'>
 				{correctAnwser.length <= 3 
 				? 'Oh sorry, look at more butts and try again' 
@@ -40,6 +41,7 @@ const QuizOver = () => {
 
 			<button className='restart-btn' onClick={onRestartClick}>Restart</button>
 			</section>
+			</div>
 	)
 }
 
