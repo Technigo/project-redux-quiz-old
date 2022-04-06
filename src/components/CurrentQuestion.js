@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import { Summary } from "./Summary";
-import { ProgressBar } from "./ProgressBar";
+import { ProgBar } from "./ProgressBar";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import styled from "styled-components";
@@ -20,7 +20,7 @@ const Main = styled.section`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  min-width: 500px;
+  min-width: 800px;
 `;
 
 const QuestionContainer = styled.div`
@@ -104,7 +104,8 @@ export const CurrentQuestion = (option, index, userAnswer) => {
             {/* {checkAnswer()} */}
           </QuestionContainer>
         )}
-        <ProgressBar />
+        
+        <ProgBar />
         <Footer />
       </Main>
     </Wrapper>
