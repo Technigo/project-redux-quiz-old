@@ -1,8 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components'
+
 import { quiz } from 'reducers/quiz'
 import { Summary } from 'components/Summary'
-import styled from 'styled-components'
+import { ProgressBar } from 'components/ProgressBar'
 
 export const QuestionBackground = styled.body`
   margin: 0;
@@ -150,9 +152,10 @@ export const CurrentQuestion = () => {
               disabled={!userAnswer}
               className="next-btn"
             >
-              next
+              Next question
             </button>
           </div>
+          <ProgressBar />
         </div>
       </QuestionContainer>
     </QuestionBackground>

@@ -1,12 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
-const ProgressBar = () => {
+const ProgressBarWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  margin-top: 50px;
+`
+
+const Progress = styled.div`
+  background-color: #b58526;
+  -webkit-appearence: none;
+  padding: 3px 6px; 
+`
+
+export const ProgressBar = () => {
+  const quizSlice = useSelector(state => state)
+  const questions = quizSlice.quiz.questions
+  const answers = quizSlice.quiz.answers
+
   return (
-    <section>
-      <p>testar progress bar</p>
-    </section>
+    <ProgressBarWrapper>
+        <Progress>
+          <progress value={answers.length} max={questions.length} />
+        </Progress>
+        <p>{(answers.length/questions.length)*100}%</p>
+    </ProgressBarWrapper>
   )
 }
 
-export default ProgressBar
