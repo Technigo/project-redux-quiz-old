@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
-import { Main, Container } from "components_styled/StyledElements";
+import { Main, Container, WhiteBorder } from "components_styled/StyledElements";
 import { CurrentQuestion } from "components/CurrentQuestion";
-import ProgressBar from "./ProgressBar";
+// import ProgressBar from "./ProgressBar";
 import Summary from "./Summary";
 
 const reducer = combineReducers({
@@ -18,19 +18,21 @@ export const Home = () => {
 
   return (
     <Provider store={store}>
-      <Main>
-        <Container>
-          <ProgressBar />
-          {quizDone ? (
-            <Summary />
-          ) : (
-            <CurrentQuestion setQuizDone={setQuizDone} />
-          )}
-        </Container>
-      </Main>
-      {/* <Main>
-        <CurrentQuestion setQuizOver={setQuizOver} />
-      </Main> */}
+            <Main>
+              <WhiteBorder>
+                <Container>
+                      {/* <ProgressBar /> */}
+                      {quizDone ? (
+                        <Summary setQuizDone={setQuizDone} />
+                      ) : (
+                        <CurrentQuestion setQuizDone={setQuizDone} />
+                      )}
+                </Container>
+              </WhiteBorder>
+            </Main>
+            {/* <Main>
+              <CurrentQuestion setQuizOver={setQuizOver} />
+            </Main> */}
     </Provider>
   );
 };

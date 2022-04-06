@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-    height: 100vh;/
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 
@@ -13,22 +13,32 @@ export const Title = styled.h1`
   text-align: center;
   color: white;
   // width: 70vw;
+  
+  @media (min-width: 1024px) {
+      width: 75vw; 
+    }
 `;
-
+    
 export const Container = styled.div`
   width: 325px;
   margin: 0 auto;
+  padding: 20px;
+
+  @media (min-width: 667px) {
+    width: 600px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 950px;
+  }
 `;
 
-export const SpanBorder = styled.span`
-  border: 1px solid white;
-  position: absolute;
-  top: 3%;
-  left: 3.5%;
-  z-index: -5;
-  width: 350px;
-  padding: 100px 0px 520px 0px;
-`;
+
+export const WhiteBorder = styled.span `
+    border: 1px solid white;
+    margin: 2vw;
+`
+
 
 export const ButtonContainer = styled.section`
     display: grid;
@@ -41,16 +51,16 @@ export const ButtonContainer = styled.section`
 
     @media (min-width: 667px) {
     
-      }
+    }
     
     @media (min-width: 1024px) {
         width: 800px;
         margin: 0 auto; 
         display: flex; 
-        flex-direction: row;
-        justify-content: center; 
-        align-items; center;
-        justify-content: space-between;  
+        // flex-direction: row;
+        // justify-content: center; 
+        // align-items; center;
+        // justify-content: space-between;  
     }
 
 `;
@@ -74,13 +84,42 @@ export const Button = styled.button`
 
     }
 
+
+
     @media (min-width: 768px) {
         
       }
 
     @media (min-width: 1024px) {
-        width
+        
        
     }
-
 `;
+
+export const NextButton = styled.button`
+    width: 100px;
+    border-radius: 8px;
+    padding: 17px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    font-weight: bold;
+
+
+    &:hover {
+      // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
+      background-color: rgba(255,255,255,0.7);
+      cursor: pointer;
+      color: rgba(0,0,0,0.9);
+      transition: 0.3s ease;
+
+      }
+    
+    @media (min-width: 1024px) {
+          
+        
+    }
+  
+  `;
+
