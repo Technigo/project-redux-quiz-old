@@ -40,7 +40,7 @@ const Button = styled.button`
   border-radius: 10px;
   font-size: 17px;
   padding: 10px;
-  border: ${prop => prop.border};
+  border: none;
   margin: 10px;
   width: 70%;
 
@@ -48,39 +48,45 @@ const Button = styled.button`
     background-color: gray;
   }
 
+  border: solid 3px ${(props) => props.border};
     `;
 
-export const CurrentQuestion = (option, index, userAnswer) => {
+export const CurrentQuestion = () => {
   // Getting data from the store
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const store = useSelector((state) => state);
-  // const currentQ = useSelector((state) => state.quiz.currentQuestionIndex);
+  const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
   const answersArray = useSelector((state) => state.quiz.answers);
   console.log(store);
 
   const dispatch = useDispatch();
+
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    dispatch(quiz.actions.goToNextQuestion());
+    setTimeout(displayNextQuestion, 2000)
   };
+
+  const displayNextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion());
+  }
 
   if (!question) {
     return <div>Oh no! I could not find the current question!</div>;
   }
 
-  //FROM TOWNHALL
+  //If-statement to change colors on button borders if right/wrong answers
 
-//   const changeBorderColor = (indexOption) => {
-//     if (answersArray.length === currentQuestionIndex)
-//     return 'none'
-//    else {
-//     if (question.correctAnswerIndex === indexOption ) 
-//     return 'green'
-//    else 
-//     return 'red'
-//   } 
-// }
+  const changeBorderColor = (indexOption) => {
+    if (answersArray.length === currentQuestionIndex) {
+      return 'none'
+  } else {
+      if (question.correctAnswerIndex === indexOption ) {
+        return 'greenyellow'
+      } 
+        return 'red'
+  } 
+}
  
   return (
     <Wrapper>
@@ -96,7 +102,7 @@ export const CurrentQuestion = (option, index, userAnswer) => {
               <Button
                 onClick={() => onAnswerSubmit(question.id, index)}
                 key={item}
-                // Put changeBorderColor here
+                border={changeBorderColor(index)}
                 
               >
                 {item}
