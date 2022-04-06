@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import { StartButton } from './Buttons'
 
-// ----- STYLED COMPONENTS -----
 const StartH1 = styled.h1`
   text-transform: uppercase;
   text-align: center;
@@ -19,10 +18,10 @@ const StartImg = styled.img`
   width: 300px;
   padding: 20px 0;
 `
+
 const StartButtonDiv = styled.div`
   padding-top: 20px;
 `
-// ----- STYLED COMPONENTS -----
 
 export const StartPage = () => {
 
@@ -32,9 +31,9 @@ export const StartPage = () => {
       <StartP>How meaningless is your knowledge?<br />Press START if you dare take our quiz!</StartP>
       <StartImg src='./assets/brain.png' alt="" />
       <StartButtonDiv>
-      <Link to="/quiz">
-        <StartButton />
-      </Link>
+        <Link to="/quiz">
+          <StartButton />
+        </Link>
       </StartButtonDiv>
     </>
   )

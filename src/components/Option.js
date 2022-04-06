@@ -4,14 +4,12 @@ import styled from 'styled-components'
 
 import { quiz } from 'reducers/quiz'
 
-// ----- STYLED COMPONENTS -----
 const OptionButton = styled.button`
   width: 10rem;
   background-color: #393d3f;
   color: white;
   border-width: 6px;
 `
-// ----- STYLED COMPONENTS -----
 
 export const Option = ({
   option,
@@ -21,21 +19,19 @@ export const Option = ({
   setIsNextDisabled,
   isCorrectAnswer,
   setIsCorrectAnswer }) => {
-
   const dispatch = useDispatch()
 
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+
   const questionId = question.id
   const correctAnswer = question.correctAnswerIndex
 
   const [borderColor, setBorderColor] = useState({ borderColor: "transparent" })
 
-  // necessary for the other questions to keep transparent border for their options buttons
   useEffect(() => {
     setBorderColor({ borderColor: "transparent" })
   }, [questionId])
 
-  // DISABLING BUTTONS STEP 3: reverse the states ('true' for option and 'false' for next) when one option is clicked
   useEffect(() => {
     if (isCorrectAnswer !== null) {
       setIsOptionDisabled(true)
@@ -54,7 +50,6 @@ export const Option = ({
     }
   }
 
-  // DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for option
   return (
     <OptionButton
       type="button"

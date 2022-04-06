@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import { Option } from './Option'
 import { NextButton, SubmitButton } from './Buttons'
 
-// ----- STYLED COMPONENTS -----
 const QuestionH1 = styled.h1`
   text-align: center;
   font-size: 1.5rem;
@@ -30,7 +29,6 @@ const ScoreH2 = styled.h2`
 const Image = styled.img`
 height: 240px;
 `
-// ----- STYLED COMPONENTS -----
 
 export const CurrentQuestion = () => {
 
@@ -40,7 +38,6 @@ export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver)
 
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(null)
-  // DISABLING BUTTONS STEP 1: create states as 'false' for option and 'true' for next
   const [isOptionDisabled, setIsOptionDisabled] = useState(false)
   const [isNextDisabled, setIsNextDisabled] = useState(true)
 
@@ -48,7 +45,6 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
-  // DISABLING BUTTONS STEP 2: pass these states as props in buttons below
   return (
     <>
       <QuestionH1>{question.questionText}</QuestionH1>

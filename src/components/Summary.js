@@ -4,9 +4,8 @@ import styled from 'styled-components'
 
 import { RestartButton } from './Buttons'
 
-// ----- STYLED COMPONENTS -----
 const SummaryH1 = styled.h1`
-text-align: center;
+  text-align: center;
   margin: 2rem 1rem 1rem 1rem; 
 `
 
@@ -21,7 +20,13 @@ const AllAnswersContainer = styled.div`
 const AnswerContainer = styled.div`
   border-bottom: 2px solid #62929e;
 `
-// ----- STYLED COMPONENTS -----
+
+const Copyright = styled.p`
+  text-align: center;
+  font-size: 0.75rem;
+  color: #62929e;
+  margin-bottom: 1rem;
+`
 
 export const Summary = () => {
 
@@ -58,6 +63,7 @@ export const Summary = () => {
       </AllAnswersContainer>
       <SummaryH2>Score: {correctAnswers.length}/{answers.length}</SummaryH2>
       <RestartButton />
+      <Copyright>Quiz made by Joanna Ringqvist, Laura Sjölander,<br />Mauricio Urra, Nadia Lefebvre and Rijad Ilijazagic</Copyright>
     </>
   )
 }

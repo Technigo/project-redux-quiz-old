@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 import { quiz } from 'reducers/quiz'
 
-// ----- STYLED COMPONENTS -----
 const Start = styled.button`
   margin: 2rem 0;
   width: 10rem;
@@ -22,7 +21,6 @@ const ProgressButton = styled.button`
   border: none;
   text-transform: uppercase;
 `
-// ----- STYLED COMPONENTS -----
 
 export const StartButton = () => {
   return (
@@ -33,7 +31,6 @@ export const StartButton = () => {
 export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisabled, setIsCorrectAnswer }) => {
   const dispatch = useDispatch()
 
-  // DISABLING BUTTONS STEP 5: reset the disabled states as they are at first, so 'false' for option and 'true' for next
   const onQuizNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
     setIsCorrectAnswer(null)
@@ -41,7 +38,6 @@ export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisab
     setIsNextDisabled(true)
   }
 
-  // DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for next
   return (
     <ProgressButton
       type="button"
@@ -52,7 +48,6 @@ export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisab
   )
 }
 
-// DISABLING BUTTONS STEP 4: pass this information as attribute in button tag for submit
 export const SubmitButton = ({ isNextDisabled, setIsNextDisabled }) => {
   const dispatch = useDispatch()
 
