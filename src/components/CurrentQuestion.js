@@ -42,12 +42,26 @@ const Button = styled.button`
   border: none;
   margin: 10px;
   width: 70%;
-
+  &.correct {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgba(41, 155, 56, 0.7);
+    color: white;
+    border: 2px solid green;
+  }
+  &.incorrect {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgba(192, 59, 59, 0.7);
+    color: white;
+    border: 2px solid red;
   &:hover {
     background-color: gray;
     `;
-
-const currentQuestionIndex = styled.h1``;
 
 export const CurrentQuestion = () => {
   // Getting data from the store
