@@ -10,12 +10,9 @@ export const CurrentQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   )
 
-  const store = useSelector((state) => state)
   const quizOver = useSelector((store) => store.quiz.quizOver)
 
   const dispatch = useDispatch()
-
-  // const onAnswerSubmit = (id, index) => {}
 
   const goToNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
@@ -41,7 +38,8 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h1>Question: {question.questionText}</h1>
+      <h1>{question.questionText}</h1>
+      <h2>{0 + question.id}/5</h2>
 
       {
         // example of optional rendering
@@ -61,7 +59,7 @@ export const CurrentQuestion = () => {
           )
         })}
       <button className='next-btn' onClick={() => goToNextQuestion()}>
-        Next question
+        Submit Answer
       </button>
     </div>
   )
