@@ -9,22 +9,22 @@ const questions = [
   },
   { id: 2, 
     questionText: 'How much water can an elephant drink in a day?', 
-    options: ['200 l', '300 l', '400 l', '500 l'], 
+    options: ['200L', '300L', '400L', '500L'], 
     correctAnswerIndex: 0 
   },
   { id: 3, 
-    questionText: 'How much can an elephant tooth weight?', 
+    questionText: 'Up to how much can an elephant tooth weight?', 
     options: ['1kg', '2kg', '3kg', '4kg'], 
     correctAnswerIndex: 2 
   },
   { id: 4, 
     questionText: 'Who is the genetic closest relative to the elephant? ', 
-    options: ['rock rabbit', 'hippo', 'rhinoceros', 'armadillos'], 
+    options: ['Rock rabbit', 'Hippo', 'Rhinoceros', 'Armadillos'], 
     correctAnswerIndex: 0 
   },
   { id: 5, 
     questionText: 'How does the elephants communicate in the distance?', 
-    options: ['Singing', 'Stomping with their feet', 'They dont', 'whistling'], 
+    options: ['By singing', 'Stomping with their feet', 'They just dont', 'Whistling with the trunk'], 
     correctAnswerIndex: 1 
   }
 ]

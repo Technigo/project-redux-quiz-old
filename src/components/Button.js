@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { useState, useEffect } from 'react'
-import 'CSS/Button.css';
+
 
 export const RestartButton = () => {
 const dispatch = useDispatch()
@@ -12,14 +12,12 @@ const clickRestart = () => {
 
 }
 
-    return(
-        <button className='btn-restart' type='button' onClick={clickRestart}>
+    return (
+      <button className='btn-restart' type='button' onClick={clickRestart}>
         Restart Quiz
       </button>
     )
-
 }
-
 
 
 export const AnswerButton = ({item, index, questionId, question, answer}) => {
@@ -46,9 +44,11 @@ export const NextQuestion = () => {
     }
     
     return (
-    <button 
-    type="submit" 
-      onClick={()=>nextQuestion ()}>Next question</button>
+      <button 
+        className='next'
+        type="submit" 
+        onClick={()=>nextQuestion ()}>
+        Next question</button>
     )
 }
   

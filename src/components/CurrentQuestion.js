@@ -3,7 +3,7 @@ import { useSelector} from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import Summary from 'components/Summary'
 import { AnswerButton, NextQuestion } from './Button'
-import 'CSS/Button.css';
+
 
 
 //Variable for the answer
@@ -13,10 +13,6 @@ export const CurrentQuestion = () => {
   const userAnswer = useSelector((state) => state.quiz.answers.find((a) => (
     a.questionId === question.id
   )));
-  
-
-
-  
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -26,18 +22,17 @@ export const CurrentQuestion = () => {
   }
 
    return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.id} / 5
+    <div className="question">
+      <h1>{question.questionText}</h1>
+      <p> Question {question.id} / 5</p>
       {question.options.map((item, index) => (
       <AnswerButton
-      key={item}
-      item={item}
-      index={index}
-      questionId={question.id}
-      question={question}
-      answer={userAnswer}
-
+        key={item}
+        item={item}
+        index={index}
+        questionId={question.id}
+        question={question}
+        answer={userAnswer}
        />
       ))}
       <NextQuestion />
