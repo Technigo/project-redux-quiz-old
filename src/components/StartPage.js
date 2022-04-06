@@ -1,20 +1,23 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { CurrentQuestion } from "./CurrentQuestion";
 
 const StartPage = () => {
-
-return (
-
-    <div>
+  const [start, setStart] = React.useState(false);
+  const onButtonClick = () => {
+    setStart(true);
+  };
+  if (start) {
+    return <CurrentQuestion />;
+  } else {
+    return (
+      <div>
         <h1>Welcome to FRIENDS Trivia quiz!</h1>
-        <Link to="/quiz">
-        <button>Let's start the game!</button>
-        </Link>
-    </div>
+        <button type="button" onClick={onButtonClick}>
+          Let's start the game!
+        </button>
+      </div>
+    );
+  }
+};
 
-)
-
-}
-
-
-export default StartPage
+export default StartPage;

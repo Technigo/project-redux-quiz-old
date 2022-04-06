@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import Summary from "./Summary";
 export const CurrentQuestion = () => {
   //getting data from the store
   const question = useSelector(
@@ -11,9 +12,8 @@ export const CurrentQuestion = () => {
     state.quiz.answers.find((answer) => answer.questionId === question.id)
   );
   //
-  const store = useSelector((state) => state);
-  console.log(store);
-  console.log(question);
+  const currState = useSelector((state) => state.quiz);
+  console.log("answers", currState.answers);
   //
 
   //forwarding data to the store
@@ -30,23 +30,30 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
 
-  return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((item, index) => {
-        return (
-          <button onClick={() => onAnswersubmit(question.id, index)} key={item}>
-            {item}
-          </button>
-        );
-      })}
-      <button
-        className="next-que-button"
-        onClick={nextQueclick}
-        disabled={!answer}
-      >
-        NEXT QUESTION
-      </button>
-    </div>
-  );
+  if (currState.answers.length === 5) {
+    return <Summary />;
+  } else {
+    return (
+      <div>
+        <h1>Question: {question.questionText}</h1>
+        {question.options.map((item, index) => {
+          return (
+            <button
+              onClick={() => onAnswersubmit(question.id, index)}
+              key={item}
+            >
+              {item}
+            </button>
+          );
+        })}
+        <button
+          className="next-que-button"
+          onClick={nextQueclick}
+          disabled={!answer}
+        >
+          NEXT QUESTION
+        </button>
+      </div>
+    );
+  }
 };
