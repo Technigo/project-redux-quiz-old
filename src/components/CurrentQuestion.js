@@ -2,6 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import {
+  ButtonContainer,
+  SpanBorder,
+  Button,
+  Title,
+} from "components_styled/StyledElements";
 import party from "party-js";
 import howcouldthishappen from "../assets/howcouldthishappentome.mp3";
 import howdareyou from "../assets/howdareyou.mp3";
@@ -63,19 +69,22 @@ export const CurrentQuestion = ({ setQuizDone }) => {
 
   return (
     <>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((item, index) => {
-        return (
-          <button
-            disabled={hasAnswered}
-            onClick={() => onAnswerSubmit(question.id, index)}
-            key={item}
-          >
-            {item}
-          </button>
-        );
-      })}
-      {hasAnswered && <button onClick={handleNextButton}>Next</button>}
+      <Title>Question: {question.questionText}</Title>
+      <ButtonContainer>
+        <SpanBorder></SpanBorder>
+        {question.options.map((item, index) => {
+          return (
+            <Button
+              disabled={hasAnswered}
+              onClick={() => onAnswerSubmit(question.id, index)}
+              key={item}
+            >
+              {item}
+            </Button>
+          );
+        })}
+        {hasAnswered && <button onClick={handleNextButton}>Next</button>}
+      </ButtonContainer>
     </>
   );
 };
