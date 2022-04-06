@@ -11,8 +11,8 @@ const ProgressBarWrapper = styled.div`
 
 const Progress = styled.div`
   background-color: #b58526;
-  -webkit-appearence: none;
   padding: 3px 6px; 
+  -webkit-appearence: none;
 `
 
 export const ProgressBar = () => {

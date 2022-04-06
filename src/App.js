@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
 
 import { CurrentQuestion } from 'components/CurrentQuestion'
+import { Header } from 'components/Header'
 
 //@ida this makes the store, imported above from toolkit
 const reducer = combineReducers({
@@ -15,6 +16,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
+      <Header />
       <CurrentQuestion />
     </Provider>
   )
