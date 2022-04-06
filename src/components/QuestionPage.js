@@ -2,6 +2,66 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import styled, { keyframes } from "styled-components";
+
+const Title = styled.h1`
+  color: #c3471b;
+  font-size: 68px;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #000;
+  margin: 0;
+  text-align: center;
+
+  @media screen and (min-width: 795px) {
+    font-size: 100px;
+  }
+`;
+
+const QuestionSection = styled.section`
+width: 80%;
+max-width: 1000px;
+height: 80%;
+background-color: rgba(1, 120, 93, 0.9);
+border: #000 solid 3px;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin: 1.5em;
+
+@media screen and (min-width: 700px) {
+	  max-width: 700px;
+`;
+
+const QuestionImgContainer = styled.div`
+  padding: 8px 20px;
+  /* max-width: 500px; */
+  height: 200px;
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 700px) {
+    height: 250px;
+  }
+`;
+
+const QuestionImg = styled.img`
+  margin: 1em;
+  object-fit: cover;
+  border: #fef8d8 solid 5px;
+  border-radius: 15px;
+`;
+
+const AnswerBtnContainer = styled.div`
+  display: grid;
+  justify-items: center;
+
+  @media screen and (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+`;
+
 const AnswerSubmitBtn = styled.button`
   align-self: center;
   background: #fef8d8;
@@ -21,6 +81,7 @@ const AnswerSubmitBtn = styled.button`
     background: ${(props) => props.background};
   }
 `;
+
 const QuestionPage = () => {
   const dispatch = useDispatch();
   const question = useSelector(
@@ -47,17 +108,13 @@ const QuestionPage = () => {
   //Check the answer state - correct or incorrect
   return (
     <>
-      <h1>Guess Whose Butt</h1>
-      <section className="question-section">
+      <Title>Guess Whose Butt</Title>
+      <QuestionSection>
         <div className="question-container">
-          <div className="question-img-container">
-            <img
-              className="question-img"
-              src={question.img}
-              alt={question.img_alt}
-            />
-          </div>
-          <div className="answer-btn-container">
+          <QuestionImgContainer>
+            <QuestionImg src={question.img} alt={question.img_alt} />
+          </QuestionImgContainer>
+          <AnswerBtnContainer>
             {question.options.map((item, index) => (
               <AnswerSubmitBtn
                 type="submit"
@@ -68,9 +125,9 @@ const QuestionPage = () => {
                 {item}
               </AnswerSubmitBtn>
             ))}
-          </div>
+          </AnswerBtnContainer>
         </div>
-      </section>
+      </QuestionSection>
     </>
   );
 };
