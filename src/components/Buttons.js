@@ -1,17 +1,22 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React from "react";
+import { useDispatch } from "react-redux";
 
-import { quiz } from 'reducers/quiz'
+import { quiz } from "reducers/quiz";
 
-const Buttons = () => {
+const Buttons = ({ label, disabled }) => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
-
-  return(
+  return (
     <div>
-      <button type="submit" onClick={() => dispatch(quiz.actions.goToNextQuestion())}>Next Question</button>
+      <button
+        type="button"
+        onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+        disabled={disabled}
+      >
+        {label}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Buttons
+export default Buttons;
