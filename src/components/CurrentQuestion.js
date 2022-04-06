@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import QuestionPage from './QuestionPage'
 import QuizOver from './QuizOver'
 
+
 export const CurrentQuestion = () => {
 	const gameOver = useSelector((state) => state.quiz.quizOver)
 	const question = useSelector(
@@ -14,4 +15,5 @@ export const CurrentQuestion = () => {
 	}
 
 	return <main>{!gameOver ? <QuestionPage /> : <QuizOver />}</main>
+
 }

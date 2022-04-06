@@ -1,6 +1,8 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+
 
 const QuizOver = () => {
 	const selectedAnswer = useSelector((state) => state.quiz.answers)
@@ -11,20 +13,7 @@ const QuizOver = () => {
 	}
 
 	return (
-		<div>
-			<p>Game Over</p>
-			{selectedAnswer.map((item) => (
-				<>
-					<p>
-						{item.isCorrect
-							? item.answer + 'correct'
-							: item.answer + 'incorrect'}
-					</p>
-				</>
-			))}
 
-			<button onClick={onRestartClick}>Restart</button>
-		</div>
 	)
 }
 

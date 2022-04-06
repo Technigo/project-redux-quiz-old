@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { CurrentQuestion } from './CurrentQuestion'
+
 
 const StartBtn = styled.button`
 	background: #fef8d8;
@@ -10,8 +10,8 @@ const StartBtn = styled.button`
 
 export const WelcomePage = () => {
 	const onStartButtonclick = () => {
+		click = true
 		//find a way to return this page first (In app? and then call the CurrentQuestion?)
-		// return <CurrentQuestion />
 	}
 
 	return (
