@@ -6,9 +6,9 @@ import { quiz } from 'reducers/quiz'
 
 // ----- STYLED COMPONENTS -----
 const Start = styled.button`
-  margin-top: 2rem;
+  margin: 2rem 0;
   width: 10rem;
-  background-color: black;
+  background-color: #62929e;
   color: white;
   border: none;
   text-transform: uppercase;
@@ -17,7 +17,7 @@ const Start = styled.button`
 const ProgressButton = styled.button`
   margin-top: 2rem;
   width: 5rem;
-  background-color: #666666;
+  background-color: #62929e;
   color: white;
   border: none;
   text-transform: uppercase;

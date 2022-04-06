@@ -9,20 +9,26 @@ import { NextButton, SubmitButton } from './Buttons'
 const QuestionH1 = styled.h1`
   text-align: center;
   font-size: 1.5rem;
-  height: 100px;
+  height: 120px;
+  margin: 2rem 1.5rem;
 `
 
 const OptionsContainer = styled.div`
   padding-top: 2rem;
-  width: 400px;
+  width: 375px;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  margin: 2rem 1.5rem;
 `
 
 const ScoreH2 = styled.h2`
   font-size: 1rem;
+`
+
+const Image = styled.img`
+height: 240px;
 `
 // ----- STYLED COMPONENTS -----
 
@@ -46,7 +52,7 @@ export const CurrentQuestion = () => {
   return (
     <>
       <QuestionH1>{question.questionText}</QuestionH1>
-      <img src={question.img} alt="" />
+      <Image src={question.img} alt="" />
       <OptionsContainer>
         {question.options.map((option, answerIndex) => (
           <Option
@@ -65,4 +71,3 @@ export const CurrentQuestion = () => {
     </>
   )
 }
-

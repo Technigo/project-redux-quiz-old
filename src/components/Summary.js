@@ -6,31 +6,20 @@ import { RestartButton } from './Buttons'
 
 // ----- STYLED COMPONENTS -----
 const SummaryH1 = styled.h1`
-  /* code here */
+text-align: center;
+  margin: 2rem 1rem 1rem 1rem; 
 `
 
 const SummaryH2 = styled.h2`
-  /* code here */
+  margin: 1rem; 
 `
 
 const AllAnswersContainer = styled.div`
-  /* code here */
+  margin: 2rem 1rem 1rem 1rem; 
 `
 
 const AnswerContainer = styled.div`
-  /* code here */
-
-  & h3 {
-  /* code here */
-  }
-
-  & p {
-  /* code here */
-  }
-`
-
-const NoAnswerContainer = styled.div`
-  /* code here */
+  border-bottom: 2px solid #62929e;
 `
 // ----- STYLED COMPONENTS -----
 
@@ -61,15 +50,12 @@ export const Summary = () => {
             <p>
               You answered "{item.answer}"
               {item.isCorrect ?
-              ` and you were right, the answer was indeed ${item.answer}!` :
-              `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}`}
+                ` and you were right, the answer was indeed ${item.answer}!` :
+                `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}`}
             </p>
           </AnswerContainer>
         ))}
       </AllAnswersContainer>
-      {answers.length === 0 && (
-        <NoAnswerContainer>You haven't answered any question!</NoAnswerContainer>
-      )}
       <SummaryH2>Score: {correctAnswers.length}/{answers.length}</SummaryH2>
       <RestartButton />
     </>

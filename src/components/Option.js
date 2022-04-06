@@ -7,9 +7,9 @@ import { quiz } from 'reducers/quiz'
 // ----- STYLED COMPONENTS -----
 const OptionButton = styled.button`
   width: 10rem;
-  background-color: black;
+  background-color: #393d3f;
   color: white;
-  border-width: 4px;
+  border-width: 6px;
 `
 // ----- STYLED COMPONENTS -----
 
