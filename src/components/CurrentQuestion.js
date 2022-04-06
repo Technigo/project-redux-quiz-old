@@ -5,20 +5,16 @@ import { quiz } from "reducers/quiz";
 import Buttons from "./Buttons";
 
 const CurrentQuestion = () => {
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
+  const questions = useSelector((state) => state.quiz.questions);
+  const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
   const dispatch = useDispatch();
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
 
   const onAnswerSubmit = (index) =>
-    dispatch(
-      quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index })
-    );
+    dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }));
 
-  const checkAnswer = (index) => 
-    question.correctAnswerIndex === index 
-      ? console.log('Correct')
-      : console.log('Wrong');
+  const checkAnswer = (index) =>
+    question.correctAnswerIndex === index ? console.log("Correct") : console.log("Wrong");
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -43,6 +39,7 @@ const CurrentQuestion = () => {
         );
       })}
       <Buttons />
+      <p>{currentQuestionIndex + 1}/{questions.length}</p>
     </div>
   );
 };
