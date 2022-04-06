@@ -7,12 +7,48 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import styled from "styled-components";
 
-const QuestionContainer = styled.div``;
-const Question = styled.h1``;
+const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+`;
 
-const Button = styled.button``;
+const Main = styled.section`
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+`;
 
-const currentQuestionIndex = styled.h1``;
+const QuestionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const Question = styled.h1`
+  width: 700px;
+  font-size: 25px;
+  text-align: center;
+`;
+
+const Button = styled.button`
+  font-family: poppins;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 10px;
+  border: none;
+  margin: 10px;
+  width: 70%;
+
+  &:hover {
+    background-color: gray;
+  }
+`;
+
+// const currentQuestionIndex = styled.h1``;
 
 export const CurrentQuestion = () => {
   // Getting data from the store
@@ -34,26 +70,28 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <main>
-      <Header />
+    <Wrapper>
+      <Main>
+        <Header />
 
-      {quizOver ? (
-        <Summary />
-      ) : (
-        <QuestionContainer>
-          <Question>Question: {question.questionText}</Question>
-          {question.options.map((item, index) => (
-            <Button
-              onClick={() => onAnswerSubmit(question.id, index)}
-              key={item}
-            >
-              {item}
-            </Button>
-          ))}
-        </QuestionContainer>
-      )}
-      <ProgressBar />
-      <Footer />
-    </main>
+        {quizOver ? (
+          <Summary />
+        ) : (
+          <QuestionContainer>
+            <Question>Question: {question.questionText}</Question>
+            {question.options.map((item, index) => (
+              <Button
+                onClick={() => onAnswerSubmit(question.id, index)}
+                key={item}
+              >
+                {item}
+              </Button>
+            ))}
+          </QuestionContainer>
+        )}
+        <ProgressBar />
+        <Footer />
+      </Main>
+    </Wrapper>
   );
 };
