@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import styled from "styled-components";
+import giphy from "assets/giphy.gif"
+import g1vY from "assets/g1vY.gif"
 
 const SummaryWrap = styled.div`
   display: flex;
@@ -14,13 +16,14 @@ const Button = styled.button`
   background-color: white;
   border-radius: 10px;
   font-size: 17px;
+  font-weight: bold;
   padding: 10px;
   border: none;
   margin: 10px;
   width: 70%;
 
   &:hover {
-    background-color: gray;
+    color: orange;
     `;
 
 const ButtonWrapper = styled.div`
@@ -40,11 +43,13 @@ export const Summary = () => {
         {correctAnswers < 3 && (
           <>
             <h2>Maybe you should rewatch the show...</h2>
+            <img src={giphy} alt="loser-gif"/>
           </>
         )}
         {correctAnswers >= 3 && (
           <>
             <h2>You are true a fan, great work!</h2>
+            <img src={g1vY} alt="winner-gif"/>
           </>
         )}
 

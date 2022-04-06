@@ -39,13 +39,14 @@ const Button = styled.button`
   background-color: white;
   border-radius: 10px;
   font-size: 17px;
+  font-weight: bold;
   padding: 10px;
   border: none;
   margin: 10px;
   width: 70%;
 
   &:hover {
-    background-color: gray;
+    color: orange;
   }
 
   border: solid 3px ${(props) => props.border};
@@ -64,7 +65,7 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    setTimeout(displayNextQuestion, 2000)
+    setTimeout(displayNextQuestion, 1700)
   };
 
   const displayNextQuestion = () => {
