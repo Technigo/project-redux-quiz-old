@@ -10,7 +10,16 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url(./assets/laura-vinck-Hyu76loQLdk-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+/* url(./assets/laura-vinck-Hyu76loQLdk-unsplash.jpg)
+url(./assets/fabian-bachli-kihyaH0Z0uM-unsplash.jpg)
+url(./assets/alexander-andrews-yOIT88xWkbg-unsplash.jpg)
+url(./assets/bit-cloud-cGGMB6Vy_uU-unsplash.jpg)
+url(./assets/valentin-salja-vh7RmF-NjMc-unsplash.jpg) */
 
 
 

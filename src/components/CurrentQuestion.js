@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 
-import { ButtonContainer } from "components_styled/StyledElements";
+import { ButtonContainer, SpanBorder } from "components_styled/StyledElements";
 import { Button } from "components_styled/StyledElements";
 import { Title } from "components_styled/StyledElements";
 
@@ -35,9 +35,10 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   }
 
   return (
-      <>
+    <>
       <Title>Question: {question.questionText}</Title>
         <ButtonContainer>
+        <SpanBorder></SpanBorder>
           {question.options.map((item, index) => {
             return (
                 <Button onClick={() => onAnswerSubmit(question.id, index)} key={item}>
@@ -47,6 +48,6 @@ export const CurrentQuestion = ({ setQuizDone }) => {
           })}
           {hasAnswered && <button onClick={handleNextButton}>Next</button>}
         </ButtonContainer>
-      </>
+    </>
   );
 };
