@@ -17,7 +17,7 @@ const questions = [
 	{
 		id: 3,
 		questionText: 'What is Carries favorite drink?',
-		options: ['Champagne', 'Sex on the beach', 'Coffe', 'Cosmopolitan'],
+		options: ['Champagne', 'Sex on the beach', 'Coffee', 'Cosmopolitan'],
 		correctAnswerIndex: 3,
 	},
 	{

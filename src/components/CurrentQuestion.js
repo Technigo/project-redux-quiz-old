@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import Button from './Button';
+
+// import { useNavigate } from 'react-router-dom';
 
 import { quiz } from 'reducers/quiz';
 
@@ -17,12 +19,7 @@ export const CurrentQuestion = () => {
 	const isQuizOver = useSelector((state) => amountOfQuestions === question.id);
 
 	const dispatch = useDispatch();
-	const navigate = useNavigate();
-
-	const onRestartButtonClick = () => {
-		dispatch(quiz.actions.restart());
-		navigate('/');
-	};
+	// const navigate = useNavigate();
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
@@ -42,57 +39,68 @@ export const CurrentQuestion = () => {
 
 	if (!isQuizOver) {
 		button = (
-			<button onClick={() => clickNext()} disabled={!answer}>
+			<Button onClick={() => clickNext()} disabled={!answer}>
 				Next
-			</button>
+			</Button>
 		);
 	} else {
 		button = (
 			<Link to='/summary'>
-				<button>Finish</button>
+				<Button>Finish</Button>
 			</Link>
 		);
 	}
 
-	/*THERE ARE SOME PROBLEMS WITH THE BELOW, IT SHOWS TICK OR X FOR ALL BUTTONS */
+	const showEmoji = (index) => {
+		if (answer) {
+			if (index === question.correctAnswerIndex) {
+				return '              ✔️';
+			} else {
+				return '         ✖️';
+			}
+		}
+		return null;
+	};
+
 	return (
-		<div>
-			<h1>
+		<div className='question-wrapper'>
+			<h1 className='main-title'>
 				Question {question.id}: {question.questionText}
 			</h1>
-			{question.options.map((item, index) => (
-				<button key={item} onClick={() => onAnswerSubmit(question.id, index)}>
-					{item}{' '}
-					<span>
-						{' '}
-						{answer?.isCorrect
-							? '✔️'
-							: answer?.isCorrect === false
-							? '✖️'
-							: ''}{' '}
-					</span>
-				</button>
-			))}
+
+			<div className='questions'>
+				{question.options.map((item, index) => (
+					<button
+						disabled={answer}
+						key={item}
+						className='answer-button'
+						onClick={() => onAnswerSubmit(question.id, index)}>
+						{item}
+						<span>{showEmoji(index)}</span>
+					</button>
+				))}
+			</div>
 
 			{/*TEXT SHOWING IF THE ANSWER WAS RIGHT OR WRONG*/}
-			<p>{answer?.isCorrect && 'Correct answer'}</p>
-			<p>{answer?.isCorrect === false && 'Wrong answer'}</p>
+			<div className='answer-text'>
+				<p>{answer?.isCorrect && 'Correct answer'}</p>
+				<p>{answer?.isCorrect === false && 'Wrong answer'}</p>
+			</div>
 
-			{/*BUTTON TO GO TO NEXT QUESTION*/}
+			{/*RENDERING EITHER THE GO TO NEXT QUESTION BUTTON OR FINISH BUTTON*/}
 			{button}
 
-			{/*RESTART BUTTON*/}
-			<button onClick={onRestartButtonClick}>Restart</button>
-
 			{/*PROGRESS BAR*/}
-			<label htmlFor='Progressbar'>
-				{question.id} / {amountOfQuestions}
-			</label>
-			<progress
-				id='Progressbar'
-				value={amountOfAnswers}
-				min='0'
-				max='5'></progress>
+			<div className='progress'>
+				<label htmlFor='Progressbar'>
+					{question.id} / {amountOfQuestions}
+				</label>
+				<progress
+					id='Progressbar'
+					value={amountOfAnswers}
+					min='0'
+					max='5'></progress>
+			</div>
 		</div>
 	);
 };
