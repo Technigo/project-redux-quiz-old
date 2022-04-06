@@ -13,10 +13,10 @@ export const CurrentQuestion = () => {
 	if (!question) {
 		return <h1>Oh no! I could not find the current question!</h1>
 	}
-    
-	return <>
-	<main>
-		{!gameOver ? <QuestionPage /> : <QuizOver />}
-	</main>
-	</>
+
+	return (
+		<>
+			<main>{!gameOver ? <QuestionPage /> : <QuizOver />}</main>
+		</>
+	)
 }
