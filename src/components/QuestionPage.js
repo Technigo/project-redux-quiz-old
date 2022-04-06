@@ -32,27 +32,19 @@ const QuestionPage = () => {
 
   
 	//const color = useSelector((state) => state.quiz.color)
-  let color = '';
+	let color = '';
 	const answerArray = useSelector((state) => state.quiz.answers)
+    const animation = useSelector((state) => state.quiz.animation)
+	console.log(answerArray, 'selected Answer array')
+    //const rightAnswer = answerArray.map(item => iteminitem.isCorrect);
 
-	console.log(answerArray)
-
-  for (let i = 0; i < answerArray.length; i++) {
-
-    if (answerArray[i].isCorrect === true) {
-      color = 'green'
-      console.log('i am true', color)
-    } else {
-      color = 'red'
-      console.log('i am false', color)
-    }
-  }
-
+	//console.log(rightAnswer)
   
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-     displayNextQuestion();
+        displayNextQuestion();
+
 		//setTimeout(displayNextQuestion, 2000)
 	}
 	const displayNextQuestion = () => {
@@ -62,8 +54,9 @@ const QuestionPage = () => {
 	//Check the answer state - correct or incorrect
 
 	return (
-		<section className='question-section'>
+		<>
 			<h1>Guess Whose Butt</h1>
+		<section className='question-section'>
 			<div className='question-container'>
 				<img
 					className='question-img'
@@ -72,20 +65,22 @@ const QuestionPage = () => {
 				/>
 				<div className='answer-btn-container'>
 					{question.options.map((item, index) => (
-						<AnswerSubmitBtn
-							type='submit'
-							onClick={() => onAnswerSubmit(question.id, index)}
-							key={item}
-             				background= 'red'
-						>
-							{item}
-            </AnswerSubmitBtn>
+				  		<button
+						  type='submit'
+						  onClick={() => onAnswerSubmit(question.id, index)}
+						  key={item}
+						  className={color}
+					  >
+						  {item}
+		  </button>
           
 					))}
 				</div>
 			</div>
 		</section>
+		</>
 	)
 }
 
 export default QuestionPage
+

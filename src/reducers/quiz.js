@@ -1,5 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import elephanImg from '../components/assets/elephant.png'
+import ElephantButt from '../components/assets/elephant_butt.png'
+import TigerButt from '../components/assets/tiger_butt.png'
+import FoxButt from '../components/assets/fox_butt.png'
+import LionButt from '../components/assets/lion_butt.png'
+import TurtleButt from '../components/assets/turtle_butt.png'
+import HippoButt from '../components/assets/hippo_butt.png'
+import elephantImg from '../components/assets/elephant.png'
 import tigerImg from '../components/assets/tiger.png'
 import foxImg from '../components/assets/fox.png'
 import lionImg from '../components/assets/lion.png'
@@ -13,41 +19,52 @@ const questions = [
     options: ["Hippo", "Elephant", "Seal", "Rhino"],
     correctAnswerIndex: 1,
     img_alt: "elephant",
-    sticker: elephanImg
+    img: ElephantButt,
+    sticker: elephantImg,
   },
   {
     id: 2,
     options: ["Tiger", "Zebra", "Hyena", "Cheetah"],
     correctAnswerIndex: 0,
     img_alt: "Tiger",
+    img: TigerButt,
+    img: TigerButt,
     sticker: tigerImg
   },
   {
     id: 3,
     options: ["Wolf", "Hyena", "Coyote", "Fox"],
-    correctAnswerIndex: 3,
+    correctAnswerIn: 3,
+    img: FoxButt,
     img_alt: "Fox",
+    img: FoxButt,
     sticker: foxImg
   },
   {
     id: 4,
-    options: ["Puma", "Jaguar", "Lion", "Tiger"],
+    options: ["Puma","Jaguar", "Lion", "Tiger"],
+    img: LionButt,
     correctAnswerIndex: 2,
     img_alt: "Lion",
+    img: LionButt,
     sticker: lionImg
   },
   {
     id: 5,
+    img: TurtleButt,
     options: ["Turtle", "Snake", "Crocodile", "Lizard"],
     correctAnswerIndex: 0,
     img_alt: "Turtle",
+    img: TurtleButt,
     sticker: turtleImg
   },
   {
+    img: HippoButt,
     id: 6,
     options: ["Bear", "elephant", "Mamut", "Hippo"],
     correctAnswerIndex: 3,
     img_alt: "Hippo",
+    img: HippoButt,
     sticker: hippoImg
   },
 ];
@@ -58,6 +75,7 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false,
   counter: 0,
+  animation: false
 
 };
 
@@ -96,6 +114,7 @@ export const quiz = createSlice({
           `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
         );
       }
+
 
       //state.nextQuestion = true
        
