@@ -15,13 +15,6 @@ export const CurrentQuestion = () => {
 		return <h1>Oh no! I could not find the current question!</h1>
 	}
 
-<<<<<<< HEAD
 	return  <main>{!gameOver ? <QuestionPage /> : <QuizOver />}</main>
-=======
-	return (
-		<>
-			<main>{!gameOver ? <QuestionPage /> : <QuizOver />}</main>
-		</>
-	)
->>>>>>> origin
+
 }

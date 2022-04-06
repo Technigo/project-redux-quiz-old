@@ -72,7 +72,6 @@ const QuestionPage = () => {
 						  type='submit'
 						  onClick={() => onAnswerSubmit(question.id, index)}
 						  key={item}
-						  className={color}
 					  >
 						  {item}
 		  </button>
