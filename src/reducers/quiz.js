@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'Which female tennis player has won the highest number of Grand Slams?', options: ['Venus Williams', 'Steffi Graf', 'Serena Williams', 'Margaret Court'], correctAnswerIndex: 3 },
-  { id: 4, questionText: 'Who is the highest run-scorer of all time in International cricket?', options: ['Sachin Tendulkar', 'Kumar Sangakkara', 'Ricky Ponting', 'Jacques Kallis'], correctAnswerIndex: 0 },
-  { id: 5, questionText: 'In which sport do teams compete to win the Stanley Cup?', options: ['Badmiton', 'Ice hockey', 'Football', 'Cricket'], correctAnswerIndex: 1 }
+  { id: 0, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
+  { id: 1, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'Which female tennis player has won the highest number of Grand Slams?', options: ['Venus Williams', 'Steffi Graf', 'Serena Williams', 'Margaret Court'], correctAnswerIndex: 3 },
+  { id: 3, questionText: 'Who is the highest run-scorer of all time in International cricket?', options: ['Sachin Tendulkar', 'Kumar Sangakkara', 'Ricky Ponting', 'Jacques Kallis'], correctAnswerIndex: 0 },
+  { id: 4, questionText: 'In which sport do teams compete to win the Stanley Cup?', options: ['Badmiton', 'Ice hockey', 'Football', 'Cricket'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {

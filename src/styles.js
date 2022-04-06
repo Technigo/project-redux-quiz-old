@@ -1,17 +1,18 @@
 import styled from "styled-components";
 
-export const ProgressBar = styled.p`
+export const ProgressIcons = styled.p`
   background-color: ${props => props.right
     ? "green"
     : props.wrong
-      ? "red"
-      : "grey" };
+    ? "red"
+    : "grey" 
+  };
   border-radius: 50%;
   width: 50px;
   height: 50px;
 `
 
-export const ButtonWrapper = styled.div`
+export const ProgressIconsWrapper = styled.div`
   display: flex;
 `
 

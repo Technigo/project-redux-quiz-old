@@ -1,17 +1,15 @@
-import React from 'react'
-import { useSelector, useDispatch } from "react-redux"
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-import { quiz } from "reducers/quiz"
+import { quiz } from "reducers/quiz";
 
-import { Background, FlexDiv, RightAnswerDisplay, ResultHeading } from "styles"
+import { Background, FlexDiv, RightAnswerDisplay, ResultHeading } from "styles";
 
 export const Results = () => {
-  const answers = useSelector((state) => state.quiz.answers)
+  const answers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
-  console.log(answers)
 
   return (
-    <>
     <Background>
       <FlexDiv>
       <ResultHeading>Correct answers</ResultHeading>
@@ -24,6 +22,5 @@ export const Results = () => {
       <button onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
       </FlexDiv>
     </Background>
-    </>
   )
-}
+};
