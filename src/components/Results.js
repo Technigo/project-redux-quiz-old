@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { quiz } from "reducers/quiz"
 
+import { Background, FlexDiv, RightAnswerDisplay, ResultHeading } from "styles"
+
 export const Results = () => {
   const answers = useSelector((state) => state.quiz.answers)
   const dispatch = useDispatch();
@@ -10,15 +12,18 @@ export const Results = () => {
 
   return (
     <>
-    <div>
+    <Background>
+      <FlexDiv>
+      <ResultHeading>Correct answers</ResultHeading>
       {answers.map(answer => (
         <div key={answer.question.id}>
-          <h2>Correct Answer: {answer.question.options[answer.question.correctAnswerIndex]}</h2>
+          <RightAnswerDisplay>{answer.question.options[answer.question.correctAnswerIndex]}</RightAnswerDisplay>
           <p>Your Answer: {answer.answer}</p>
         </div>
       ))}
-    </div>
-      <button onClick={() => dispatch(quiz.actions.restart())}></button>
+      <button onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
+      </FlexDiv>
+    </Background>
     </>
   )
 }
