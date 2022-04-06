@@ -37,11 +37,11 @@ export const Summary = () => {
   const scorePercent = correctAnswers.length * 100 / answers.length
 
   const grade = () => {
-    return scorePercent > 90 ? "You were fantastic so here's an A!"
-      : scorePercent > 80 ? "Be proud of yourself and enjoy your B!"
-        : scorePercent > 70 ? "You did very well and deserve a C!"
-          : scorePercent > 60 ? "You got some good answers: a D for you"
-            : scorePercent > 50 ? "At least you didn't fail... You get an E!"
+    return scorePercent >= 90 ? "You were fantastic so here's an A!"
+      : scorePercent >= 80 ? "Be proud of yourself and enjoy your B!"
+        : scorePercent >= 70 ? "You did very well and deserve a C!"
+          : scorePercent >= 60 ? "You got some good answers: a D for you"
+            : scorePercent >= 50 ? "At least you didn't fail... You get an E!"
               : <span>Shame! Your grade is F as in <span style={{ color: "red" }}>FAIL</span></span>
   }
 

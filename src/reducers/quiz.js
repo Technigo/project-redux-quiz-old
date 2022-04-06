@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, img: './assets/thinking.png', questionText: 'How many thoughts do people have in a day on average?', options: ['400', '6 000', '70 000', '12 000'], correctAnswerIndex: 2 },
+  { id: 1, img: './assets/thinking.png', questionText: 'How many thoughts do people have in a normal day on average?', options: ['400', '6 000', '70 000', '12 000'], correctAnswerIndex: 2 },
   { id: 2, img: "./assets/poop.png", questionText: 'How much poop will a flock of 50 Canadian geese deposit each year?', options: ['1 000 kg', '750 kg', '5 000 kg', '2 500 kg'], correctAnswerIndex: 3 },
-  { id: 3, img: "./assets/speed.png", questionText: 'How fast can sneeze particles travel?', options: ['100 km/h', '160 km/h', '70 km/h', '300 km/h'], correctAnswerIndex: 1 },
-  { id: 4, img: "./assets/bone.png", questionText: 'How much meat will a cannibal find on a man weighing 80 kg?', options: ['35 kg', '10 kg', '70 kg', '55 kg'], correctAnswerIndex: 0 },
-  { id: 5, img: "./assets/thinker.png", questionText: 'How many questions does the average 4-year-old ask each day?', options: ['400', '2000', '80', '750'], correctAnswerIndex: 0 },
+  { id: 3, img: "./assets/speed.png", questionText: 'How fast can particles travel when a person is sneezing freely?', options: ['100 km/h', '160 km/h', '70 km/h', '300 km/h'], correctAnswerIndex: 1 },
+  { id: 4, img: "./assets/bone.png", questionText: 'How much meat could a cannibal take out of a man weighing 80 kg?', options: ['35 kg', '10 kg', '70 kg', '55 kg'], correctAnswerIndex: 0 },
+  { id: 5, img: "./assets/thinker.png", questionText: 'How many questions does the average 4-year-old kid ask each day?', options: ['400', '2000', '80', '750'], correctAnswerIndex: 0 },
   { id: 6, img: "./assets/mouth.png", questionText: 'How wide is the mouth of the person with the widest mouth on earth?', options: ['32 cm', '15 cm', '22 cm', '17 cm'], correctAnswerIndex: 3 },
-  { id: 7, img: "./assets/sick.png", questionText: 'Over a lifetime, what is the cumulative amount of time people suffer from colds, the sniffles, and sore throats?', options: ['3 years', '7 months', '18 months', '5.5 years'], correctAnswerIndex: 0 },
-  { id: 8, img: "./assets/slinky.png", questionText: 'How long is a metal Slinky when uncoiled?', options: ['24 m', '4 m', '12.5 m', '20 m'], correctAnswerIndex: 3 },
-  { id: 9, img: "./assets/beetle.png", questionText: 'How many people worldwide eat insects every day?', options: ['5 million', '2 billion', '100 million', '3.5 billion'], correctAnswerIndex: 1 },
-  { id: 10, img: "./assets/kiss.png", questionText: 'How much longer do men who kiss their wife in the morning live, compared to those who do not?', options: ['5 months', '8.5 years', '5 years', '180 days'], correctAnswerIndex: 2 },
+  { id: 7, img: "./assets/sick.png", questionText: 'What is the cumulative time people suffer from colds and sore throat?', options: ['3 years', '7 months', '18 months', '5.5 years'], correctAnswerIndex: 0 },
+  { id: 8, img: "./assets/slinky.png", questionText: 'How long is the popular metal spring toy Slinky when it is uncoiled?', options: ['24 m', '4 m', '12.5 m', '20 m'], correctAnswerIndex: 3 },
+  { id: 9, img: "./assets/beetle.png", questionText: 'How many people worldwide eat insects each and every single day?', options: ['5 million', '2 billion', '100 million', '3.5 billion'], correctAnswerIndex: 1 },
+  { id: 10, img: "./assets/kiss.png", questionText: 'How much longer do men who kiss their wife in the morning live?', options: ['5 months', '8.5 years', '5 years', '180 days'], correctAnswerIndex: 2 },
 ]
 
 const initialState = {
