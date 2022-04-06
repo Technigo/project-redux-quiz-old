@@ -49,3 +49,7 @@ const QuizOver = () => {
 }
 
 export default QuizOver
+
+//git add .
+//git commit
+//git push origin welcomepage
