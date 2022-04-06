@@ -106,27 +106,29 @@ export const NextButton = styled.button`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  ${
-    "" /* width: 100px;
-  border-radius: 8px;
-  padding: 17px;
-  margin-bottom: 20px;
-  font-size: 18px;
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
-  font-weight: bold; */
-  }
+`;
 
-  ${
-    "" /* &:hover {
-    // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
-    background-color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.9);
-    transition: 0.3s ease;
-  }
+export const ProgressContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background-color: rgba(206, 212, 218, 0.6);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-  @media (min-width: 1024px) {
-  } */
-  }
+export const ProgressStatus = styled.div`
+  width: ${(props) => props.width};
+  background: linear-gradient(
+    90deg,
+    rgba(202, 240, 248, 0.2) 0%,
+    rgba(144, 224, 239, 0.2) 100%
+  );
+  transition: width 1s ease-in-out;
+  height: 100%;
+  position: absolute;
+  top: 0;
 `;
