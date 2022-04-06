@@ -12,8 +12,11 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    dispatch(quiz.actions.goToNextQuestion());
   };
+
+  const nextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion());
+  }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -35,8 +38,11 @@ export const CurrentQuestion = () => {
       <h1>Question: {question.questionText}</h1>
       {question.options.map((item, index) => {
        
-      return <button type="submit" onClick={()=>onAnswerSubmit(question.id, index)} key={item}>{item}</button>
+      return <>
+      <button type="submit" onClick={()=>onAnswerSubmit(question.id, index)} key={item}>{item}</button>
+      </>
 })}
+<button type="submit" onClick={()=>nextQuestion ()}>Next question</button>
 </div>
   
   )
