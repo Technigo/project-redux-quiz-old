@@ -13,7 +13,7 @@ const SubmittedView = () => {
       {answers.map((question, index) => {
         return (
           <p key={index}>
-            {question.question.questionText} belongs in {question.answer.value}:{" "}
+            {question.question.material} belongs in {question.answer.value}:{" "}
             {question.isCorrect ? "correct" : "incorrect"}
           </p>
         );

@@ -1,23 +1,25 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { NextButton,
-         BtnText,
-        NextBtnWrapper } from 'styles'
+import React from "react";
+import { useDispatch } from "react-redux";
+import { NextButton, BtnText, NextBtnWrapper } from "styles";
 // import arrow from 'images/arrow.png'
 
-import { quiz } from 'reducers/quiz'
+import { quiz } from "reducers/quiz";
 
-const Buttons = () => {
+const Buttons = ({ label, disabled }) => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  return (
+    <NextBtnWrapper>
+      <NextButton
+        type="button"
+        onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+        disabled={disabled}
+      >
+        <BtnText>{label}</BtnText>
+        <img width={40} src="./images/arrow.png" alt="arrow" />
+      </NextButton>
+    </NextBtnWrapper>
+  );
+};
 
-  return(
-    <div>
-      <NextBtnWrapper>
-      <NextButton type="submit" onClick={() => dispatch(quiz.actions.goToNextQuestion())}><BtnText>Next Question</BtnText><img width={40} src="./images/arrow.png" alt="arrow"/></NextButton>
-      </NextBtnWrapper>
-    </div>
-  )
-}
-
-export default Buttons
+export default Buttons;
