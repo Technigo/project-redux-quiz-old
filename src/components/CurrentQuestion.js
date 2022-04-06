@@ -1,6 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import { QuestionCard, 
+         QuestionCardWrapper,
+         QuestionNumber,
+         Question,
+         Image,
+        OptionBtn } from "styles";
 
 import Buttons from "./Buttons";
 
@@ -22,28 +28,35 @@ const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      <img width={200} src={question.image} alt={question.questionText} />
+    <QuestionCardWrapper>
+        <QuestionCard>
+          <QuestionNumber>
+          <p>Question {currentQuestionIndex + 1}/{questions.length}</p>
+          </QuestionNumber>
+      <div>
+      <Question>{question.questionText}</Question>
+      </div>
+      <Image width={200} src={question.image} alt={question.questionText} />
       {question.options.map((option, index) => {
         return (
-          <button
+          <OptionBtn
             key={option.value}
             type="button"
             onClick={() => {
               onAnswerSubmit(index);
               checkCorrectAnswer(index)
             }}
-          >
+            >
             {option.label}
-          </button>
+          </OptionBtn>
 
-        );
-      })}
-      <Buttons />
+);
+})}
      <p>{checkCorrectAnswer()}</p> 
-      <p>{currentQuestionIndex + 1}/{questions.length}</p>
-    </div>
+      <Buttons />
+</QuestionCard>
+    </QuestionCardWrapper>
+    
   );
 };
 export default CurrentQuestion;
