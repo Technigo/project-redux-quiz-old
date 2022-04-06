@@ -6,7 +6,9 @@ import {
   ButtonContainer,
   Button,
   Title,
+  NextButton,
 } from "components_styled/StyledElements";
+import ProgressBar from './ProgressBar'
 import party from "party-js";
 import howcouldthishappen from "../assets/howcouldthishappentome.mp3";
 import howdareyou from "../assets/howdareyou.mp3";
@@ -77,13 +79,19 @@ export const CurrentQuestion = ({ setQuizDone }) => {
               disabled={hasAnswered}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={item}
-            >
+              >
               {item}
-            </Button>
+            </Button>   
           );
         })}
-        {hasAnswered && <button onClick={handleNextButton}>Next</button>}
-      </ButtonContainer>
+        </ButtonContainer>
+        <ProgressBar/>
+        {hasAnswered && <NextButton onClick={handleNextButton}>Next</NextButton>}
     </>
   );
 };
+
+
+
+
+

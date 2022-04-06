@@ -18,16 +18,18 @@ const ProgressBar = () => {
 export default ProgressBar;
 
 const ProgressContainer = styled.div`
-  width: 200px;
-  height: 20px;
+  width: 80%;
+  margin: 0 auto;
+  height: 30px;
   border-radius: 5px;
-  background-color: white;
-  border: 3px solid black;
+  // background-color: white;
+  border: 2px solid white;
 `;
 
 const ProgressStatus = styled.div`
   width: ${(props) => props.width};
-  background-color: black;
+  background-image: linear-gradient(.25turn, #bd7e7f, #7e7fbd, #7ebdbc);
   transition: width 1s ease-in-out;
   height: 100%;
+
 `;

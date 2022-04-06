@@ -1,8 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from "reducers/quiz"
+import { NextButton } from "components_styled/StyledElements";
 
-const Summary = () => {
+const Summary = ({setQuizDone}) => {
+  const dispatch = useDispatch();
   const answers = useSelector((store) => store.quiz.answers);
+
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+    setQuizDone(false)
+  }
 
   // console.log(answers);
   return (
@@ -23,6 +31,8 @@ const Summary = () => {
           </React.Fragment>
         );
       })}
+       
+        <NextButton onClick={restartQuiz}>RESTART QUIZ!</NextButton>  
     </>
   );
 };
