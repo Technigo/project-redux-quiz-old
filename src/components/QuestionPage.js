@@ -14,6 +14,10 @@ const AnswerSubmitBtn = styled.button`
   font-size: 18px;
   width: 10em;
   margin-bottom: 1em;
+  &:hover {
+	  background-color: #45413C;
+	  color: #fef8d8;
+  }
   &:active {
     background: ${(props) => props.background};
   }
@@ -58,21 +62,23 @@ const QuestionPage = () => {
 			<h1>Guess Whose Butt</h1>
 		<section className='question-section'>
 			<div className='question-container'>
-				<img
-					className='question-img'
-					src={question.img}
-					alt={question.img_alt}
-				/>
+				<div className='question-img-container'>
+					<img
+						className='question-img'
+						src={question.img}
+						alt={question.img_alt}
+					/>
+				</div>
 				<div className='answer-btn-container'>
 					{question.options.map((item, index) => (
-				  		<button
+				  		<AnswerSubmitBtn
 						  type='submit'
 						  onClick={() => onAnswerSubmit(question.id, index)}
 						  key={item}
 						  className={color}
 					  >
 						  {item}
-		  </button>
+		  </AnswerSubmitBtn>
           
 					))}
 				</div>
