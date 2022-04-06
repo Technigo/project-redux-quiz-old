@@ -15,11 +15,13 @@ align-self: center;
   width: 10em;
   margin-bottom: 1em;
 `
+
+
 export const WelcomePage = () => {
 	const dispatch = useDispatch();
-	//const [startGame, setStartGame] = useState(false)
 	const start = useSelector(state => state.quiz.start);
 	const onStartButtonclick = () => {
+
 	    dispatch(quiz.actions.startGame())
 		//setStartGame(true)
 	}
@@ -31,7 +33,7 @@ export const WelcomePage = () => {
 				<section className='question-section summary'>
 					<div className='answer-btn-container'>
 						<h2 className='welcome-text'>Let’s see if you know your animal butts!</h2>
-						<StartBtn onClick={onStartButtonclick}> Let's play! </StartBtn>)
+						<StartBtn onClick={onStartButtonclick}> Let's play! </StartBtn>
 		
 
 					</div>
@@ -43,6 +45,7 @@ export const WelcomePage = () => {
 		</>
 
 	
+
 
 	)
 }

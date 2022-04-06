@@ -21,13 +21,10 @@ const AnswerSubmitBtn = styled.button`
     background: ${(props) => props.background};
   }
 `;
-<<<<<<< HEAD
-
 
 
 const QuestionPage = () => {
 	const dispatch = useDispatch()
-	const text =''
 
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
@@ -38,7 +35,6 @@ const QuestionPage = () => {
 
   
 	//const color = useSelector((state) => state.quiz.color)
-	let color = '';
 	const answerArray = useSelector((state) => state.quiz.answers)
     const animation = useSelector((state) => state.quiz.animation)
 	console.log(answerArray, 'selected Answer array')
@@ -50,8 +46,7 @@ const QuestionPage = () => {
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
         displayNextQuestion();
-       color = answerArray[0]?.isCorrect;
-	   console.log(color)
+   
 	//	setTimeout(displayNextQuestion, 2000)
 	}
 	const displayNextQuestion = () => {
@@ -71,7 +66,6 @@ const QuestionPage = () => {
 					alt={question.img_alt}
 				/>
 				<div className='answer-btn-container'>
-			        <p>{color}</p>
 					{question.options.map((item, index) => (
 						
 				  		<button
@@ -93,59 +87,3 @@ const QuestionPage = () => {
 
 export default QuestionPage
 
-=======
-const QuestionPage = () => {
-  const dispatch = useDispatch();
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
-  const answer = useSelector((state) =>
-    state.quiz.answers.find((a) => a.questionId === question.id)
-  );
-  //const color = useSelector((state) => state.quiz.color)
-  let color = "";
-  const answerArray = useSelector((state) => state.quiz.answers);
-  const animation = useSelector((state) => state.quiz.animation);
-  console.log(answerArray, "selected Answer array");
-  //const rightAnswer = answerArray.map(item => iteminitem.isCorrect);
-  //console.log(rightAnswer)
-  const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    displayNextQuestion();
-    //setTimeout(displayNextQuestion, 2000)
-  };
-  const displayNextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion());
-  };
-  //Check the answer state - correct or incorrect
-  return (
-    <>
-      <h1>Guess Whose Butt</h1>
-      <section className="question-section">
-        <div className="question-container">
-          <div className="question-img-container">
-            <img
-              className="question-img"
-              src={question.img}
-              alt={question.img_alt}
-            />
-          </div>
-          <div className="answer-btn-container">
-            {question.options.map((item, index) => (
-              <AnswerSubmitBtn
-                type="submit"
-                onClick={() => onAnswerSubmit(question.id, index)}
-                key={item}
-                className={color}
-              >
-                {item}
-              </AnswerSubmitBtn>
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
-  );
-};
-export default QuestionPage;
->>>>>>> origin
