@@ -6,6 +6,10 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+
+  const answer = useSelector((state) =>
+    state.quiz.answers.find((answer) => answer.questionId === question.id)
+  );
   //
   const store = useSelector((state) => state);
   console.log(store);
@@ -16,8 +20,11 @@ export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const onAnswersubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    dispatch(quiz.actions.goToNextQuestion());
   };
+  const nextQueclick = () => {
+    dispatch(quiz.actions.goToNextQuestion({}));
+  };
+
   //////
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -33,6 +40,13 @@ export const CurrentQuestion = () => {
           </button>
         );
       })}
+      <button
+        className="next-que-button"
+        onClick={nextQueclick}
+        disabled={!answer}
+      >
+        NEXT QUESTION
+      </button>
     </div>
   );
 };
