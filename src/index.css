@@ -23,18 +23,20 @@ code {
 	box-sizing: border-box;
 }
 
+
+/* PROGRESSBAR */
 .progress-bar {
-  background: linear-gradient(to left, #FEB038, #BE361D);
+  background: linear-gradient(to left, #FEB038, #B84A26);
   border-radius: 20px;
   color: black;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
-  padding: 2px;
-  transition: ease-in 0.5s;
+  padding: 1px;
+  transition: ease-in 0.4s;
 }
 
 .progress {
-  background-color: #ffff;
+  background-color: rgba(255, 255, 255, 0.355);
   max-width: 100vw;
   border-radius: 20px;
   margin: 5% 5% 10% 5%;
