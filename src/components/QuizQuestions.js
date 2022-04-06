@@ -3,8 +3,12 @@ import { useSelector, useDispatch } from "react-redux"
 
 import { quiz } from "reducers/quiz"
 
+import { StyledButton1 } from "styles"
+
 export const QuizQuestions = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [isWrong, setIsWrong] = useState(false);
   const dispatch = useDispatch();
   // getting data from the store
   // useSelector is like binding a state, this will be binded and in the second dispath and only the index will change..
@@ -14,7 +18,6 @@ export const QuizQuestions = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   // console logged the whole store, easier and better to use a more specific route you want to access in the store
   // const store = useSelector((state) => state)
-
   // getting data to the store / updating
 
   const onAnswerSubmit = (id, index) => {
@@ -22,6 +25,13 @@ export const QuizQuestions = () => {
     setIsClicked(true)
     //proceed on with conditional rendering, so check if ... only then dispatch to next question
     // if (question.correctAnswerIndex === index) {
+    if(question.correctAnswerIndex === index) {
+      setIsCorrect(true)
+      setIsWrong(false)
+    } else {
+      setIsWrong(true)
+      setIsCorrect(false)
+    }
 
     // }
   }
@@ -52,6 +62,9 @@ export const QuizQuestions = () => {
         ? <button onClick={handleNextQuestion}>Submit Quiz</button>
         : <button onClick={handleNextQuestion}>Next question</button>
       }
+      <div>
+        <StyledButton1 right={isCorrect} wrong={isWrong}></StyledButton1>
+      </div>
     </>
   )
 }
