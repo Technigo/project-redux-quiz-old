@@ -8,13 +8,14 @@ const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const questions = useSelector((state) => state.quiz.questions);
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
+  // const checkAnswer = useSelector((state) => state.correctAnswerIndex)
   const dispatch = useDispatch();
 
   const onAnswerSubmit = (index) =>
     dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }));
 
-  const checkAnswer = (index) =>
-    question.correctAnswerIndex === index ? console.log("Correct") : console.log("Wrong");
+  const checkCorrectAnswer = (index) =>
+    question.correctAnswerIndex === index ? (<p>Correct</p>) :  (<p>Wrong</p>);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -31,14 +32,16 @@ const CurrentQuestion = () => {
             type="button"
             onClick={() => {
               onAnswerSubmit(index);
-              checkAnswer(index);
+              checkCorrectAnswer(index)
             }}
           >
             {option.label}
           </button>
+
         );
       })}
       <Buttons />
+     <p>{checkCorrectAnswer()}</p> 
       <p>{currentQuestionIndex + 1}/{questions.length}</p>
     </div>
   );
