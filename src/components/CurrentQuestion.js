@@ -2,14 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import party from "party-js";
+import ProgressBar from "./ProgressBar";
 import {
   ButtonContainer,
   Button,
   Title,
-  NextButton,
 } from "components_styled/StyledElements";
-import ProgressBar from './ProgressBar'
-import party from "party-js";
 import howcouldthishappen from "../assets/howcouldthishappentome.mp3";
 import howdareyou from "../assets/howdareyou.mp3";
 import letmeaskyou from "../assets/letmeaskyousomething.mp3";
@@ -45,12 +44,10 @@ export const CurrentQuestion = ({ setQuizDone }) => {
       });
     } else {
       audio[randomAudioIndex].play();
-      // party.resolvableShapes["myImage"] = "👍";
       party.confetti(document.body, {
         count: party.variation.range(500, 1000),
         size: party.variation.range(0.8, 1.6),
         color: party.Color.fromHex("#4a412a"),
-        // shapes: ["myImage"],
         shapes: ["square"],
       });
     }
@@ -79,19 +76,17 @@ export const CurrentQuestion = ({ setQuizDone }) => {
               disabled={hasAnswered}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={item}
-              >
+            >
               {item}
-            </Button>   
+            </Button>
           );
         })}
-        </ButtonContainer>
-        <ProgressBar/>
-        {hasAnswered && <NextButton onClick={handleNextButton}>Next</NextButton>}
+      </ButtonContainer>
+      <ProgressBar
+        handleNextButton={handleNextButton}
+        hasAnswered={hasAnswered}
+        setQuizDone={setQuizDone}
+      />
     </>
   );
 };
-
-
-
-
-

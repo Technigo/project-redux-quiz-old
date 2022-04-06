@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Title = styled.h1`
@@ -13,12 +12,12 @@ export const Title = styled.h1`
   text-align: center;
   color: white;
   // width: 70vw;
-  
+
   @media (min-width: 1024px) {
-      width: 75vw; 
-    }
+    width: 75vw;
+  }
 `;
-    
+
 export const Container = styled.div`
   width: 325px;
   margin: 0 auto;
@@ -33,92 +32,101 @@ export const Container = styled.div`
   }
 `;
 
-
-export const WhiteBorder = styled.span `
-    border: 1px solid white;
-    margin: 2vw;
-`
-
+export const WhiteBorder = styled.span`
+  border: 1px solid white;
+  margin: 2vw;
+`;
 
 export const ButtonContainer = styled.section`
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center; 
-    margin: 8rem 0;
-    gap: 25px;
-    justify-items: center;
-    
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin: 8rem 0;
+  gap: 25px;
+  justify-items: center;
 
-    @media (min-width: 667px) {
-    
-    }
-    
-    @media (min-width: 1024px) {
-        width: 800px;
-        margin: 0 auto; 
-        display: flex; 
-        // flex-direction: row;
-        // justify-content: center; 
-        // align-items; center;
-        // justify-content: space-between;  
-    }
+  @media (min-width: 667px) {
+  }
 
+  @media (min-width: 1024px) {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items; center;
+    // justify-content: space-between;
+  }
 `;
 
 export const Button = styled.button`
-    width: 150px;
-    border-radius: 8px;
-    padding: 17px;
-    font-size: 18px;
-    background-color: rgba(0,0,0,0);
-    color: white;
-    font-weight: bold;
-    
-    &:hover {
+  width: 150px;
+  border-radius: 8px;
+  padding: 17px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-weight: bold;
+
+  &:hover {
     // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    color: rgba(0,0,0,0.9);
+    color: rgba(0, 0, 0, 0.9);
     transition: 0.3s ease;
+  }
 
-    }
+  @media (min-width: 768px) {
+  }
 
+  @media (min-width: 1024px) {
+  }
+`;
 
+export const NavButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 1;
+`;
 
-    @media (min-width: 768px) {
-        
-      }
-
-    @media (min-width: 1024px) {
-        
-       
-    }
+export const NavButtonIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin-left: 4px;
 `;
 
 export const NextButton = styled.button`
-    width: 100px;
-    border-radius: 8px;
-    padding: 17px;
-    margin-bottom: 20px;
-    font-size: 18px;
-    background-color: rgba(0,0,0,0);
-    color: white;
-    font-weight: bold;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(206, 212, 218, 0.6);
+  height: 48px;
+  width: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  ${
+    "" /* width: 100px;
+  border-radius: 8px;
+  padding: 17px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-weight: bold; */
+  }
 
+  ${
+    "" /* &:hover {
+    // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
+    background-color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.9);
+    transition: 0.3s ease;
+  }
 
-    &:hover {
-      // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
-      background-color: rgba(255,255,255,0.7);
-      cursor: pointer;
-      color: rgba(0,0,0,0.9);
-      transition: 0.3s ease;
-
-      }
-    
-    @media (min-width: 1024px) {
-          
-        
-    }
-  
-  `;
-
+  @media (min-width: 1024px) {
+  } */
+  }
+`;

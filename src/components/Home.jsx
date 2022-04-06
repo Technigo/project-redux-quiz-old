@@ -4,7 +4,6 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
 import { Main, Container, WhiteBorder } from "components_styled/StyledElements";
 import { CurrentQuestion } from "components/CurrentQuestion";
-// import ProgressBar from "./ProgressBar";
 import Summary from "./Summary";
 
 const reducer = combineReducers({
@@ -18,21 +17,17 @@ export const Home = () => {
 
   return (
     <Provider store={store}>
-            <Main>
-              <WhiteBorder>
-                <Container>
-                      {/* <ProgressBar /> */}
-                      {quizDone ? (
-                        <Summary setQuizDone={setQuizDone} />
-                      ) : (
-                        <CurrentQuestion setQuizDone={setQuizDone} />
-                      )}
-                </Container>
-              </WhiteBorder>
-            </Main>
-            {/* <Main>
-              <CurrentQuestion setQuizOver={setQuizOver} />
-            </Main> */}
+      <Main>
+        <WhiteBorder>
+          <Container>
+            {quizDone ? (
+              <Summary setQuizDone={setQuizDone} />
+            ) : (
+              <CurrentQuestion setQuizDone={setQuizDone} />
+            )}
+          </Container>
+        </WhiteBorder>
+      </Main>
     </Provider>
   );
 };

@@ -1,18 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { quiz } from "reducers/quiz"
-import { NextButton } from "components_styled/StyledElements";
+import { quiz } from "reducers/quiz";
+import ProgressBar from "./ProgressBar";
 
-const Summary = ({setQuizDone}) => {
+const Summary = ({ setQuizDone }) => {
   const dispatch = useDispatch();
   const answers = useSelector((store) => store.quiz.answers);
 
   const restartQuiz = () => {
-    dispatch(quiz.actions.restart())
-    setQuizDone(false)
-  }
+    dispatch(quiz.actions.restart());
+    setQuizDone(false);
+  };
 
-  // console.log(answers);
   return (
     <>
       <h1>Quiz is done!</h1>
@@ -31,8 +30,7 @@ const Summary = ({setQuizDone}) => {
           </React.Fragment>
         );
       })}
-       
-        <NextButton onClick={restartQuiz}>RESTART QUIZ!</NextButton>  
+      <ProgressBar setQuizDone={setQuizDone} restartQuiz={restartQuiz} />
     </>
   );
 };
