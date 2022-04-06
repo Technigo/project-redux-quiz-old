@@ -1,12 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import { Summary } from './Summary';
 
 export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	);
+	const quizOver = useSelector((state) => state.quiz.quizOver);
 	console.log(question);
+	console.log(quizOver);
+
+	// const answers = useSelector((state) => state.quiz.answers)
+	// const answerCorrect = answers.filter(item => item.isCorrect)
 
 	// const now = (
 	// 	question.id
@@ -24,7 +30,7 @@ export const CurrentQuestion = () => {
 			dispatch(quiz.actions.goToNextQuestion());
 		}
 	};
-	console.log(questions.answers);
+	// console.log(questions.answers);
 
 	if (!question) {
 		return <h1>Oh no! I could not find the current question!</h1>;
@@ -41,6 +47,7 @@ export const CurrentQuestion = () => {
 				);
 			})}
 			<p>{question.id}/5</p>
+			{/* <p>Points count: {answerCorrect.length}/{answers.length}</p> */}
 		</div>
 	);
 };
