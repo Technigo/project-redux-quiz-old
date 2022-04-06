@@ -20,14 +20,10 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const SpanBorder = styled.span`
+export const WhiteBorder = styled.div`
+  height: 94vh;
   border: 1px solid white;
-  position: absolute;
-  top: 3%;
-  left: 3.5%;
-  z-index: -5;
-  width: 350px;
-  padding: 100px 0px 520px 0px;
+  margin: 3vh;
 `;
 
 export const ButtonContainer = styled.section`
@@ -35,7 +31,7 @@ export const ButtonContainer = styled.section`
     grid-template-columns: repeat(2, 1fr);
     align-items: center; 
     margin: 8rem 0;
-    gap: 2vw;
+    gap: 25px;
     justify-items: center;
     
 
@@ -59,7 +55,6 @@ export const Button = styled.button`
     width: 150px;
     border-radius: 8px;
     padding: 17px;
-    margin-bottom: 20px;
     font-size: 18px;
     background-color: rgba(0,0,0,0);
     color: white;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { quiz } from "reducers/quiz";
-import { Main, Container } from "components_styled/StyledElements";
+import { Main, Container, WhiteBorder } from "components_styled/StyledElements";
 import { CurrentQuestion } from "components/CurrentQuestion";
 import ProgressBar from "./ProgressBar";
 import Summary from "./Summary";
@@ -19,14 +19,16 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <Main>
-        <Container>
-          <ProgressBar />
-          {quizDone ? (
-            <Summary />
-          ) : (
-            <CurrentQuestion setQuizDone={setQuizDone} />
-          )}
-        </Container>
+        <WhiteBorder>
+          <Container>
+            <ProgressBar />
+            {quizDone ? (
+              <Summary />
+            ) : (
+              <CurrentQuestion setQuizDone={setQuizDone} />
+            )}
+          </Container>
+        </WhiteBorder>
       </Main>
       {/* <Main>
         <CurrentQuestion setQuizOver={setQuizOver} />

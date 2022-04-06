@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import {
   ButtonContainer,
-  SpanBorder,
   Button,
   Title,
 } from "components_styled/StyledElements";
@@ -13,8 +12,9 @@ import howcouldthishappen from "../assets/howcouldthishappentome.mp3";
 import howdareyou from "../assets/howdareyou.mp3";
 import letmeaskyou from "../assets/letmeaskyousomething.mp3";
 import teachyou from "../assets/teachyouafewthings.mp3";
+import asif from "../assets/asif.mp3";
 
-const arr = [howcouldthishappen, howdareyou, letmeaskyou, teachyou];
+const arr = [howcouldthishappen, howdareyou, letmeaskyou, teachyou, asif];
 const audio = [];
 for (const sound of arr) {
   const newsound = new Audio();
@@ -69,9 +69,8 @@ export const CurrentQuestion = ({ setQuizDone }) => {
 
   return (
     <>
-      <Title>Question: {question.questionText}</Title>
+      <Title>{question.questionText}</Title>
       <ButtonContainer>
-        <SpanBorder></SpanBorder>
         {question.options.map((item, index) => {
           return (
             <Button

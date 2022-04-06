@@ -1,36 +1,55 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 // Change these to your own questions!
+
 const questions = [
   {
     id: 1,
-    questionText: "Who set the Olympic record for the 100m dash in 2012?",
-    options: ["Usain Bolt", "Justin Gatlin", "Tyson Gay", "Asafa Powell"],
-    correctAnswerIndex: 0,
+    questionText: "On ___ ___, he asked me what day it was.\r\n“It's ___ ___.”",
+    options: ["November 3rd", "December 3rd", "October 3rd", "September 3rd"],
+    correctAnswerIndex: 2,
   },
   {
     id: 2,
     questionText:
-      "When was Michael Phelps last named male World Swimmer of the Year?",
-    options: ["2012", "2014", "2016", "2018"],
-    correctAnswerIndex: 2,
-  },
-  {
-    id: 3,
-    questionText: "Question 3: Correct Answer Index 3",
-    options: ["Answer 1", "Answer2", "Answer3", "Answer4"],
+      "Clueless and 10 Things I Hate About You are both based on literary works.\r\nWhich are they based on?",
+    options: [
+      "Pride & Prejudice and Hamlet",
+      "Romeo & Juliet and Jane Eyre",
+      "Hamlet and Emma",
+      "Emma and Taming of the Shrew",
+    ],
     correctAnswerIndex: 3,
   },
   {
+    id: 3,
+    questionText:
+      "According to Elle Woods, the best way to pick up something you dropped is with a ...",
+    options: [
+      "Swish and flick",
+      "Bend and snap",
+      "Arch and grab",
+      "Bow and snatch",
+    ],
+    correctAnswerIndex: 1,
+  },
+  {
     id: 4,
-    questionText: "Question 4: Correct Answer Index 1",
-    options: ["Answer 1", "Answer2", "Answer3", "Answer4"],
+    questionText:
+      "What film is this iconic line from? “Yo, hold my poodle! Hold my poodle!”",
+    options: ["Clueless", "White Chicks", "Legally Blonde", "Scary Movie"],
     correctAnswerIndex: 1,
   },
   {
     id: 5,
-    questionText: "Question 5: Correct Answer Index 0",
-    options: ["Answer 1", "Answer2", "Answer3", "Answer4"],
+    questionText:
+      "“It's like I have ESPN or something!” is referring to Karen's ability to sense ______.",
+    options: [
+      "the weather with her breasts",
+      "the time of day with her ears",
+      "people's moods with her eyes",
+      "the weather with her knees",
+    ],
     correctAnswerIndex: 0,
   },
 ];
