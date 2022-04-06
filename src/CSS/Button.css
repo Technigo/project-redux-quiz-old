@@ -1,0 +1,14 @@
+body{
+    background-color: lightgrey; 
+}
+
+.defaultbtn{
+    background-color:pink;
+}
+
+.correct {
+    background-color: green;
+}
+.wrong {
+    background-color: red;
+}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { useState, useEffect } from 'react'
+import 'CSS/Button.css';
 
 export const RestartButton = () => {
 const dispatch = useDispatch()
@@ -18,14 +20,22 @@ const clickRestart = () => {
 
 }
 
-export const AnswerButton = ({item, index, questionId}) => {
+
+
+export const AnswerButton = ({item, index, questionId, question, answer}) => {
+    const [disable, setDisabled] = useState(false)
     const dispatch = useDispatch()
     const onAnswerSubmit = (id, index) => {
         dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+        setDisabled(true)
       };
       
     return (
-        <button className=""type="submit" onClick={()=>onAnswerSubmit(questionId, index)} key={item}>{item}</button>
+        <button  className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"}
+        type="submit" 
+        disabled={disable}
+        onClick={() => onAnswerSubmit(questionId, index)}
+        key={item}>{item}</button>
     )
 }
 
@@ -36,7 +46,9 @@ export const NextQuestion = () => {
     }
     
     return (
-    <button type="submit" onClick={()=>nextQuestion ()}>Next question</button>
+    <button 
+    type="submit" 
+      onClick={()=>nextQuestion ()}>Next question</button>
     )
 }
   

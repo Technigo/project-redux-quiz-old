@@ -17,8 +17,8 @@ const Summary = () => {
             <p>
               {' '}
               {answer.questionId}: Correct answer:
-              {answer.question.options[answer.question.correctAnswerIndex]} Your
-              answer:
+              {answer.question.options[answer.question.correctAnswerIndex]} 
+              Your answer:
               {answer.answer}
             </p>
           </>
