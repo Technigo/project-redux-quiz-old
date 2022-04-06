@@ -1,20 +1,24 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { quiz } from 'reducers/quiz'
+import React, { useState } from 'react'
 
-import { CurrentQuestion } from 'components/CurrentQuestion'
-
-const reducer = combineReducers({
-  quiz: quiz.reducer
-})
-
-const store = configureStore({ reducer })
+import { QuizWrapper } from "components/QuizWrapper"
 
 export const App = () => {
+  const [quizStarted, setQuizStarted] = useState(false);
+
+  const handleStartQuiz = () => {
+    setQuizStarted(true)
+  }
+
+  if (quizStarted) {
+    return (
+      <QuizWrapper />
+    )
+  }
+
   return (
-    <Provider store={store}>
-      <CurrentQuestion />
-    </Provider>
+    <>
+      <div>WelcomePage</div>
+      <button onClick={handleStartQuiz}>Start Quiz!</button>
+    </>
   )
 }
