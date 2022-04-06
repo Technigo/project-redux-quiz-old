@@ -45,10 +45,9 @@ const Button = styled.button`
 
   &:hover {
     background-color: gray;
-  }
-`;
+    `;
 
-// const currentQuestionIndex = styled.h1``;
+const currentQuestionIndex = styled.h1``;
 
 export const CurrentQuestion = () => {
   // Getting data from the store

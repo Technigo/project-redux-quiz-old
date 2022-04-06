@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 export const ProgressBar = () => {
   const questionNumber = useSelector(

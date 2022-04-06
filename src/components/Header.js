@@ -23,6 +23,7 @@ export const Header = () => {
           src="https://i.postimg.cc/tRhdkhk0/STLOGO.png"
           width="500px"
           className="logo"
+          alt="STRANGER THINGS"
         ></img>
       </Image>
       <HeaderText>QUIZ</HeaderText>
