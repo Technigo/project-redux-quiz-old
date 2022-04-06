@@ -1,17 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
-// import RestartButton from "./RestartButton";
-
-// const RestartButton = () => {
-//   const dispatch = useDispatch();
-
-//   return (
-//     <button type="button" onClick={() => dispatch(quiz.actions.restart())}>
-//       Restart
-//     </button>
-//   );
-// };
 
 const SubmittedView = () => {
   const answers = useSelector((state) => state.quiz.answers);
