@@ -11,7 +11,7 @@ const questions = [
   {
     id: 2,
     questionText:
-      'What movie is Brittney doing a reference to in her epic hit "Oops i did it again" from 2002?',
+      'What movie is Britney doing a reference to in her epic hit "Oops i did it again" from 2002?',
     options: ['Beauty and the beast', 'Bonnie and Clyde', 'Titanic'],
     correctAnswerIndex: 2,
   },
@@ -30,8 +30,8 @@ const questions = [
   },
   {
     id: 5,
-    questionText: 'Här kommer hannas fråga vara',
-    options: ['1', '2', '3'],
+    questionText: 'Who has the world record for fastest rap?',
+    options: ['Lil Wayne', 'Nicki Minaj', 'Eminem'],
     correctAnswerIndex: 2,
   },
 ]
@@ -111,6 +111,11 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
+    },
+
+    // quiz.actions.whatever()
+    whatever: () => {
+      // this is whatever
     },
   },
 })

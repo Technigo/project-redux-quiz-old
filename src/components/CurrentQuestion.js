@@ -1,44 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Summary } from './Summary'
 
 export const CurrentQuestion = () => {
+  const [answer, setAnswer] = useState('')
+
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   )
 
   const store = useSelector((state) => state)
-  console.log(store)
   const quizOver = useSelector((store) => store.quiz.quizOver)
 
   const dispatch = useDispatch()
 
-  const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
+  // const onAnswerSubmit = (id, index) => {}
 
-    if (question.correctAnswerIndex === index) {
-      dispatch(quiz.actions.goToNextQuestion())
-    }
-    if (quizOver === true) {
-      // return <Summary /> Det sista vi gjorde, vet ej om det ska va kvar.
-    }
+  const goToNextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+    setAnswer('')
+    dispatch(
+      quiz.actions.submitAnswer({
+        questionId: question.id,
+        answerIndex: answer,
+      })
+    )
+  }
+
+  if (quizOver === true) {
+    return <Summary />
   }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  const shouldShow = answer === 0 || answer === 1 || answer === 2
+  const isCorrectAnswer = question.correctAnswerIndex === answer
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
-      {question.options.map((item, index) => {
-        return (
-          <button onClick={() => onAnswerSubmit(question.id, index)} key={item}>
-            {item}
-          </button>
-        )
-      })}
+
+      {
+        // example of optional rendering
+        // tenerary operator
+        // condition ? true : false
+      }
+      {shouldShow && (
+        <h1>{isCorrectAnswer ? 'Raett svar' : 'Fel svar, haha!'}</h1>
+      )}
+
+      {!shouldShow &&
+        question.options.map((item, index) => {
+          return (
+            <button type='button' onClick={() => setAnswer(index)} key={item}>
+              {item}
+            </button>
+          )
+        })}
+      <button className='next-btn' onClick={() => goToNextQuestion()}>
+        Next question
+      </button>
     </div>
   )
 }
