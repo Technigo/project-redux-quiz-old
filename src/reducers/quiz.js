@@ -34,7 +34,7 @@ const questions = [
 	{
 		id: 3,
 		options: ['Wolf', 'Hyena', 'Coyote', 'Fox'],
-		correctAnswerIndex: 3,
+		correctAnswerIn: 3,
 		img: FoxButt,
 		img_alt: 'Fox',
 		img: FoxButt,
@@ -75,7 +75,7 @@ const initialState = {
 	currentQuestionIndex: 0,
 	quizOver: false,
 	counter: 0,
-	animation: false,
+	start: false,
 }
 
 export const quiz = createSlice({
@@ -97,6 +97,10 @@ export const quiz = createSlice({
 		 * When dispatching this action, you should pass an object as the payload with `questionId`
 		 * and `answerIndex` keys. See the readme for more details.
 		 */
+		startGame: (state) => {
+			state.start = true
+		},
+
 		submitAnswer: (state, action) => {
 			const { questionId, answerIndex } = action.payload
 
