@@ -19,7 +19,7 @@ const CurrentQuestion = () => {
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
   // const checkAnswer = useSelector((state) => state.correctAnswerIndex)
   const dispatch = useDispatch();
-  const isSubmitted = useSelector((state) => state.quiz.quizOver);
+  const isOver = useSelector((state) => state.quiz.quizOver);
 
   const onAnswerSubmit = (index) =>
     dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }));
@@ -31,7 +31,7 @@ const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>;
   }
 
-  if (isSubmitted) {
+  if (isOver) {
     return <SubmittedView />;
   }
 
