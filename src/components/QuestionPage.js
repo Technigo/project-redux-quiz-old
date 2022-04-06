@@ -8,6 +8,7 @@ const AnswerSubmitBtn = styled.button`
   align-self: center;
   background: #fef8d8;
   color: #000;
+  font-family: 'Concert One', cursive;
   border: solid #000 3px;
   border-radius: 10px;
   padding: 10px;
