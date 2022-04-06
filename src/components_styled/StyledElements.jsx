@@ -60,7 +60,7 @@ export const ButtonContainer = styled.section`
 `;
 
 export const Button = styled.button`
-  width: 150px;
+  width: 130px;
   border-radius: 8px;
   padding: 17px;
   font-size: 18px;
