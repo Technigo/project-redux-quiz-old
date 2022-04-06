@@ -28,24 +28,28 @@ export const CurrentQuestion = () => {
   // )
 
   // @ida simply to add a console.log
-  const store = useSelector((state) => state);
-  console.log(store, 'store');
+  // const store = useSelector((state) => state);
+  // console.log(store, 'store');
 
-  // @joanna - added to be able to push user through to Summary after last question. 
+  // @joanna - added to be able to push user through to Summary after last question.
   const quizOver = useSelector((store) => store.quiz.quizOver)
 
   // @ida forwarding data from the store / updating the store / "DHL"
   const dispatch = useDispatch();
+
+  const onNextButton = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
     if (question.correctAnswerIndex === index) {
-      dispatch(quiz.actions.goToNextQuestion());
+      // dispatch(quiz.actions.goToNextQuestion());
     } else {
       alert('Wrong answer, pls try again!');
     }
   };
 
-  // This pushes the user to the Summary after last question. 
+  // This pushes the user to the Summary after last question.
   if (quizOver === true) {
     return <Summary />;
   }
@@ -69,6 +73,9 @@ export const CurrentQuestion = () => {
               </button>
             );
           })}
+          <div>
+            <button type="button" onClick={() => onNextButton()}>next</button>
+          </div>
         </div>
       </QuestionContainer>
     </QuestionBackground>

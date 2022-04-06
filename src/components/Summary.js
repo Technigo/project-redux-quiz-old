@@ -10,14 +10,14 @@ const SummaryStyling = styled.div`
 `
 
 export const Summary = () => {
-    return (
-        <QuestionBackground>
-            <SummaryStyling>
-                <div>
-                    <h1>Good work! Here is your summary!</h1>
-                    <button>Restart</button>
-                </div>
-            </SummaryStyling>
-        </QuestionBackground>
-    )
+  return (
+    <QuestionBackground>
+      <SummaryStyling>
+        <div>
+          <h1>Good work! Here is your summary!</h1>
+          <button type="button">Restart</button>
+        </div>
+      </SummaryStyling>
+    </QuestionBackground>
+  )
 }
