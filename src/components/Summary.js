@@ -1,14 +1,13 @@
 import React from 'react'
 import {quiz} from 'reducers/quiz'
 import { useSelector, useDispatch } from 'react-redux'
+import { RestartButton } from './Button';
 
 const Summary = () => {
     const userAnswer = useSelector((state) => state.quiz.answers);
     const dispatch = useDispatch()
 
-    const clickRestart = () => {
-        dispatch(quiz.actions.restart())
-    }
+   
 
     return (
       <div className='summary'>
@@ -24,9 +23,7 @@ const Summary = () => {
             </p>
           </>
         ))}
-        <button className='btn restart' type='button' onClick={clickRestart}>
-          Restart Quiz
-        </button>
+     <RestartButton />
       </div>
     );
   };
