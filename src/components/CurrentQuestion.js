@@ -40,22 +40,23 @@ const Button = styled.button`
   border-radius: 10px;
   font-size: 17px;
   padding: 10px;
-  border: none;
+  border: ${prop => prop.border};
   margin: 10px;
   width: 70%;
+
   &:hover {
     background-color: gray;
+  }
+
     `;
 
 export const CurrentQuestion = (option, index, userAnswer) => {
   // Getting data from the store
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const store = useSelector((state) => state);
   // const currentQ = useSelector((state) => state.quiz.currentQuestionIndex);
-  // const answers = useSelector((state) => state.quiz.answers);
+  const answersArray = useSelector((state) => state.quiz.answers);
   console.log(store);
 
   const dispatch = useDispatch();
@@ -68,21 +69,19 @@ export const CurrentQuestion = (option, index, userAnswer) => {
     return <div>Oh no! I could not find the current question!</div>;
   }
 
-  // const checkAnswer = () => {
-  //   if (answers[currentQ]) {
-  //     if (answers[currentQ].isCorrect) {
-  //       return <p>That is correct!</p>;
-  //     } else {
-  //       return <p>That was the wrong answer</p>;
-  //     }
-  //   } else {
-  //     return null;
-  //   }
-  // };
+  //FROM TOWNHALL
 
-  // const correctAnswer =
-  //   usersAnswer && option.id - 1 === question.correctAnswerIndex;
-
+//   const changeBorderColor = (indexOption) => {
+//     if (answersArray.length === currentQuestionIndex)
+//     return 'none'
+//    else {
+//     if (question.correctAnswerIndex === indexOption ) 
+//     return 'green'
+//    else 
+//     return 'red'
+//   } 
+// }
+ 
   return (
     <Wrapper>
       <Main>
@@ -97,6 +96,8 @@ export const CurrentQuestion = (option, index, userAnswer) => {
               <Button
                 onClick={() => onAnswerSubmit(question.id, index)}
                 key={item}
+                // Put changeBorderColor here
+                
               >
                 {item}
               </Button>
