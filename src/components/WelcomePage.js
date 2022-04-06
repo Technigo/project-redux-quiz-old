@@ -7,16 +7,14 @@ const StartBtn = styled.button`
 	border: 3px solid #45413c;
 	border-radius: 14px;
 `
-let click = false;
+let click = false
 export const WelcomePage = () => {
 	const onStartButtonclick = () => {
-        click = true;
+		click = true
 		//find a way to return this page first (In app? and then call the CurrentQuestion?)
 	}
 
 	return (
-		
-
 		<main>
 			<section className='question-section'>
 				<h1>Guess Whose Butt</h1>
@@ -25,8 +23,6 @@ export const WelcomePage = () => {
 					<button onClick={onStartButtonclick}> Let's play! </button>)
 				</div>
 			</section>
-
 		</main>
-
 	)
 }
