@@ -2,6 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import SubmittedView from "./SubmittedView";
+import {
+  QuestionCard,
+  QuestionCardWrapper,
+  QuestionNumber,
+  Question,
+  Image,
+  OptionBtn,
+} from "styles";
 
 import Buttons from "./Buttons";
 
@@ -17,7 +25,7 @@ const CurrentQuestion = () => {
     dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }));
 
   const checkCorrectAnswer = (index) =>
-    question.correctAnswerIndex === index ? (<p>Correct</p>) :  (<p>Wrong</p>);
+    question.correctAnswerIndex === index ? <p>Correct</p> : <p>Wrong</p>;
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -28,28 +36,35 @@ const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      <img width={200} src={question.image} alt={question.questionText} />
-      {question.options.map((option, index) => {
-        return (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => {
-              onAnswerSubmit(index);
-              checkCorrectAnswer(index)
-            }}
-          >
-            {option.label}
-          </button>
-
-        );
-      })}
-      <Buttons />
-     <p>{checkCorrectAnswer()}</p> 
-      <p>{currentQuestionIndex + 1}/{questions.length}</p>
-    </div>
+    <QuestionCardWrapper>
+      <QuestionCard>
+        <QuestionNumber>
+          <p>
+            Question {currentQuestionIndex + 1}/{questions.length}
+          </p>
+        </QuestionNumber>
+        <div>
+          <Question>{question.questionText}</Question>
+        </div>
+        <Image width={200} src={question.image} alt={question.questionText} />
+        {question.options.map((option, index) => {
+          return (
+            <OptionBtn
+              key={option.value}
+              type="button"
+              onClick={() => {
+                onAnswerSubmit(index);
+                checkCorrectAnswer(index);
+              }}
+            >
+              {option.label}
+            </OptionBtn>
+          );
+        })}
+        <p>{checkCorrectAnswer()}</p>
+        <Buttons />
+      </QuestionCard>
+    </QuestionCardWrapper>
   );
 };
 export default CurrentQuestion;

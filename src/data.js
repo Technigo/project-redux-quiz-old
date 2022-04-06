@@ -23,8 +23,8 @@ export const questions = [
   },
   {
     id: "03",
-    questionText: "Baking paper",
-    image: "./images/baking-paper-1.jpeg",
+    questionText: "Oh wow! That baking episode really turned out well! Now let’s eat the cookies and throw the baking paper in:",
+    image: "./images/woman-baking.jpg",
     options: [
       { value: "Paper", label: "Paper" },
       { value: "Plastic", label: "Plastic" },
@@ -34,7 +34,7 @@ export const questions = [
   },
   {
     id: "04",
-    questionText: "Chip bags",
+    questionText: "You know when you’ve grabbed that last piece out of the chips bag after a lazy fredagsmys. Good things are over you might think but there is still one good thing left: recycle the bag: So where do we put it?",
     image: "./images/chipsbags-2.png",
     options: [
       { value: "Paper", label: "Paper" },
@@ -45,8 +45,8 @@ export const questions = [
   },
   {
     id: "05",
-    questionText: "Coffee filters",
-    image: "./images/coffee-filter-2.png",
+    questionText: "That coffee was a winner. I wanna be a winner too. I wonder what I could do to be one? Help the man by telling him  the correct thing to do with the filter and make him a winner!",
+    image: "./images/man-coffee.jpg",
     options: [
       { value: "Paper", label: "Paper" },
       { value: "Plastic", label: "Plastic" },
