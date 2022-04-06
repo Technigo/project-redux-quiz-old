@@ -20,6 +20,7 @@ const Main = styled.section`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  min-width: 500px;
 `;
 
 const QuestionContainer = styled.div`
@@ -42,34 +43,19 @@ const Button = styled.button`
   border: none;
   margin: 10px;
   width: 70%;
-  &.correct {
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: rgba(41, 155, 56, 0.7);
-    color: white;
-    border: 2px solid green;
-  }
-  &.incorrect {
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: rgba(192, 59, 59, 0.7);
-    color: white;
-    border: 2px solid red;
   &:hover {
     background-color: gray;
     `;
 
-export const CurrentQuestion = () => {
+export const CurrentQuestion = (option, index, userAnswer) => {
   // Getting data from the store
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const store = useSelector((state) => state);
+  // const currentQ = useSelector((state) => state.quiz.currentQuestionIndex);
+  // const answers = useSelector((state) => state.quiz.answers);
   console.log(store);
 
   const dispatch = useDispatch();
@@ -81,6 +67,21 @@ export const CurrentQuestion = () => {
   if (!question) {
     return <div>Oh no! I could not find the current question!</div>;
   }
+
+  // const checkAnswer = () => {
+  //   if (answers[currentQ]) {
+  //     if (answers[currentQ].isCorrect) {
+  //       return <p>That is correct!</p>;
+  //     } else {
+  //       return <p>That was the wrong answer</p>;
+  //     }
+  //   } else {
+  //     return null;
+  //   }
+  // };
+
+  // const correctAnswer =
+  //   usersAnswer && option.id - 1 === question.correctAnswerIndex;
 
   return (
     <Wrapper>
@@ -100,6 +101,7 @@ export const CurrentQuestion = () => {
                 {item}
               </Button>
             ))}
+            {/* {checkAnswer()} */}
           </QuestionContainer>
         )}
         <ProgressBar />

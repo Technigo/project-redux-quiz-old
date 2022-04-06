@@ -7,6 +7,7 @@ const SummaryWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 500px;
 `;
 
 const Button = styled.button`
@@ -22,6 +23,11 @@ const Button = styled.button`
   &:hover {
     background-color: gray;
     `;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 
 export const Summary = () => {
   const dispatch = useDispatch();
@@ -48,11 +54,11 @@ export const Summary = () => {
         </p>
       </SummaryWrap>
 
-      <>
+      <ButtonWrapper>
         <Button onClick={() => dispatch(quiz.actions.restart())}>
           Restart Quiz!
         </Button>
-      </>
+      </ButtonWrapper>
     </>
   );
 };

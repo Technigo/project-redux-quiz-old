@@ -1,5 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
+
+const ProgressBarContainer = styled.div`
+  justify-content: center;
+  padding: 1em;
+  font-size: 20px;
+`;
 
 export const ProgressBar = () => {
   const questionNumber = useSelector(
@@ -8,10 +15,10 @@ export const ProgressBar = () => {
   const questionTotal = useSelector((state) => state.quiz.questions.length);
 
   return (
-    <div>
+    <ProgressBarContainer>
       <p>
         Question {questionNumber} of {questionTotal}
       </p>
-    </div>
+    </ProgressBarContainer>
   );
 };
