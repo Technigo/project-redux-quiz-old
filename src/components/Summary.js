@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { quiz } from "reducers/quiz";
 
 const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
-  //const questions = useSelector((state) => state.quiz.questions);
   console.log(answers);
   let result = 0;
   answers.forEach((answer) => {
@@ -12,16 +12,15 @@ const Summary = () => {
       result = result + 1;
     }
   });
-  /* const useranswer = answers.map((answer) => answer.answerIndex);
-  const correctAnswer = questions.map(
-    (question) => question.correctAnswerIndex
-  );
-  console.log("username", useranswer);
-  console.log("correct", correctAnswer); */
+  const dispatch = useDispatch();
+  const restart = () => {
+    dispatch(quiz.actions.restart({}));
+  };
   return (
     <div>
       <h1>Summary</h1>
-      <p>Your correct answers are {result} /5 </p>
+      <p>You got {result} /5 </p>
+      <button onClick={restart}>Restart Quiz</button>
     </div>
   );
 };
