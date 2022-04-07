@@ -9,6 +9,7 @@ import valentinaTereshkova from 'images/valentinaTereshkova.jpg'
 import adaLovelace from 'images/adaLovelace.jpg'
 import ursulaVonDerLeyen from 'images/ursulaVonDerLeyen.jpg'
 
+
 const SummaryStyling = styled.div`
   margin-top: 10%;
   background-color: #7da7be;
@@ -84,10 +85,8 @@ export const Summary = () => {
   const answerSummary = useSelector((state) => state.quiz.answers)
   const picturesSummary = useSelector((state) => state.quiz.questions)
   console.log(picturesSummary, 'hitta')
-  // const question = useSelector(
-  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  // )
   const [visible, setVisible] = useState(false);
+
   const onRestartButton = () => {
     dispatch(quiz.actions.restart())
   }
@@ -112,6 +111,7 @@ export const Summary = () => {
               </div>
             )
           })}
+
           <button type="button" className="answers-btn" onClick={() => setVisible(!visible)}>
           Wanna see the right answers?
           </button>
@@ -126,6 +126,7 @@ export const Summary = () => {
               </div>
             </PicturesStyling>
           )}
+          
           <button
             type="button"
             onClick={() => onRestartButton()}
