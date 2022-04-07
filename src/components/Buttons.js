@@ -28,12 +28,11 @@ export const StartButton = () => {
   )
 }
 
-export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisabled, setIsCorrectAnswer }) => {
+export const NextButton = ({ isNextDisabled, setIsNextDisabled, setIsOptionDisabled }) => {
   const dispatch = useDispatch()
 
   const onQuizNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
-    setIsCorrectAnswer(null)
     setIsOptionDisabled(false)
     setIsNextDisabled(true)
   }
@@ -53,7 +52,6 @@ export const SubmitButton = ({ isNextDisabled, setIsNextDisabled }) => {
 
   const onQuizSubmit = () => {
     dispatch(quiz.actions.goToNextQuestion())
-    setIsNextDisabled(true)
   }
 
   return (

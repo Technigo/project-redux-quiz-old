@@ -37,7 +37,6 @@ export const CurrentQuestion = () => {
   const questionIndex = useSelector((state) => state.quiz.currentQuestionIndex)
   const quizOver = useSelector((state) => state.quiz.quizOver)
 
-  const [isCorrectAnswer, setIsCorrectAnswer] = useState(null)
   const [isOptionDisabled, setIsOptionDisabled] = useState(false)
   const [isNextDisabled, setIsNextDisabled] = useState(true)
 
@@ -58,11 +57,12 @@ export const CurrentQuestion = () => {
             setIsNextDisabled={setIsNextDisabled}
             isOptionDisabled={isOptionDisabled}
             setIsOptionDisabled={setIsOptionDisabled}
-            isCorrectAnswer={isCorrectAnswer}
-            setIsCorrectAnswer={setIsCorrectAnswer} />
+          />
         ))}
       </OptionsContainer>
-      {!quizOver && questionIndex === questions.length - 1 ? <SubmitButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} /> : <NextButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} isOptionDisabled={isOptionDisabled} setIsOptionDisabled={setIsOptionDisabled} setIsCorrectAnswer={setIsCorrectAnswer} />}
+      {!quizOver && questionIndex === questions.length - 1 ?
+        <SubmitButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} /> :
+        <NextButton isNextDisabled={isNextDisabled} setIsNextDisabled={setIsNextDisabled} isOptionDisabled={isOptionDisabled} setIsOptionDisabled={setIsOptionDisabled} />}
       <ScoreH2>Question {questionIndex + 1} out of {questions.length}</ScoreH2>
     </>
   )

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, img: './assets/thinking.png', questionText: 'How many thoughts do people have in a normal day on average?', options: ['400', '6 000', '70 000', '12 000'], correctAnswerIndex: 2 },
+  { id: 1, img: './assets/thinking.png', questionText: 'How many thoughts do people have in a normal day on average?', options: ['500', '6 000', '70 000', '12 000'], correctAnswerIndex: 2 },
   { id: 2, img: "./assets/poop.png", questionText: 'How much poop will a flock of 50 Canadian geese deposit each year?', options: ['1 000 kg', '750 kg', '5 000 kg', '2 500 kg'], correctAnswerIndex: 3 },
   { id: 3, img: "./assets/speed.png", questionText: 'How fast can particles travel when a person is sneezing freely?', options: ['100 km/h', '160 km/h', '70 km/h', '300 km/h'], correctAnswerIndex: 1 },
   { id: 4, img: "./assets/bone.png", questionText: 'How much meat could a cannibal take out of a man weighing 80 kg?', options: ['35 kg', '10 kg', '70 kg', '55 kg'], correctAnswerIndex: 0 },

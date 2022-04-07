@@ -16,15 +16,13 @@ export const Option = ({
   answerIndex,
   isOptionDisabled,
   setIsOptionDisabled,
-  setIsNextDisabled,
-  isCorrectAnswer,
-  setIsCorrectAnswer }) => {
+  setIsNextDisabled }) => {
   const dispatch = useDispatch()
 
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
 
   const questionId = question.id
-  const correctAnswer = question.correctAnswerIndex
+  const correctAnswerIndex = question.correctAnswerIndex
 
   const [borderColor, setBorderColor] = useState({ borderColor: "transparent" })
 
@@ -32,20 +30,13 @@ export const Option = ({
     setBorderColor({ borderColor: "transparent" })
   }, [questionId])
 
-  useEffect(() => {
-    if (isCorrectAnswer !== null) {
-      setIsOptionDisabled(true)
-      setIsNextDisabled(false)
-    }
-  }, [isCorrectAnswer, setIsOptionDisabled, setIsNextDisabled])
-
   const onAnswerSubmit = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
-    if (answerIndex === correctAnswer) {
-      setIsCorrectAnswer(true)
+    setIsOptionDisabled(true)
+    setIsNextDisabled(false)
+    if (answerIndex === correctAnswerIndex) {
       setBorderColor({ borderColor: "green" })
     } else {
-      setIsCorrectAnswer(false)
       setBorderColor({ borderColor: "red" })
     }
   }

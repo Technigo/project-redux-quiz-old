@@ -56,7 +56,7 @@ export const Summary = () => {
               You answered "{item.answer}"
               {item.isCorrect ?
                 ` and you were right, the answer was indeed ${item.answer}!` :
-                `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}`}
+                `, but you got it wrong, the answer wasn't ${item.answer}, it was ${item.question.options[item.question.correctAnswerIndex]}...`}
             </p>
           </AnswerContainer>
         ))}
