@@ -32,7 +32,6 @@ code {
 	align-items: center;
 	justify-content: space-evenly;
 	text-align: center;
-	color: #f87eb9
 }
 
 .link-styler {
@@ -93,7 +92,7 @@ nav {
 /**********START PAGE*************/
 
 .start-page {
-	margin-top: 5rem;
+	margin-top: 3rem;
 	width: 80%;
 }
 
