@@ -79,10 +79,6 @@ export const FlexQuestionDiv = styled.section`
   width: 100%;
 `
 
-export const Icon = styled.span`
-  vertical-align: middle;
-`
-
 export const QuestionHeading = styled.h2`
   text-transform: uppercase;
 `
