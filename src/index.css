@@ -34,4 +34,28 @@ button {
 img {
 	width: 600px;
 	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 60px 40px -7px;
 	}
+
+.summary {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+.swal-overlay {
+  background-color: rgba(27, 32, 29, 0.705);
+}
+
+.swal-text {
+	font-size: 26px;
+  padding: 17px;
+  text-align: center;
+  
+}
+
+.quiz-text {
+	margin-bottom: 50px;
+}
