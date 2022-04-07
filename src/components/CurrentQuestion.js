@@ -62,10 +62,19 @@ export const CurrentQuestion = () => {
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 		if (question.correctAnswerIndex === index) {
-			swal('Good job!', 'You clicked the button!', 'success');
+			swal({
+				title: "Good job!",
+				text: "You picked the right one!",
+				icon: "success",
+				button: "continue",
+			});
 			dispatch(quiz.actions.goToNextQuestion());
 		} else {
-			swal('WRONG!!!');
+			swal({
+				title: "Wrong answer!",
+				icon: "error",
+				button: "continue",
+			});
 			dispatch(quiz.actions.goToNextQuestion());
 		}
 	};
