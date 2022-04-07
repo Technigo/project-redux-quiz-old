@@ -48,7 +48,7 @@ export const CurrentQuestion = () => {
         </div>
 
         <div className="box">
-          <div className="button-boxes">
+          <div className="box button-boxes">
           {question.options.map((item, index) => {
             return (
               <button
