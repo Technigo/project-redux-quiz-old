@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import QuestionButton from './QuestionButton';
 import Button from './Button';
-// import Timer from './Timer';
+import Timer from './Timer';
 
 // import { useNavigate } from 'react-router-dom';
 
@@ -79,6 +79,7 @@ export const CurrentQuestion = () => {
 
 	return (
 		<div className='question-wrapper'>
+      <Timer />
 			<h1 className='main-title'>
 				Question {question.id}: {question.questionText}
 			</h1>
