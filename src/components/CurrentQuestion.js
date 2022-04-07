@@ -10,11 +10,12 @@ import {
   QuestionMaterial,
   Question,
   Results,
+  Correct,
+  Incorrect,
   Image,
   OptionBtn,
   AnswerWrapper,
 } from "styles";
-
 
 const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -44,10 +45,8 @@ const CurrentQuestion = () => {
         <QuestionNumber>
           Question {currentQuestionIndex + 1}/{questions.length}
         </QuestionNumber>
-        {/* <div> */}
         <QuestionMaterial>{question.material}</QuestionMaterial>
         <Question>{question.questionText}</Question>
-        {/* </div> */}
         <Image src={question.image} alt={question.questionText} />
         {question.options.map((option, index) => {
           return (
@@ -66,7 +65,13 @@ const CurrentQuestion = () => {
 
         <AnswerWrapper>
           {isAnswered && (
-            <Results>{answers[currentQuestionIndex].isCorrect ? "Correct" : "Incorrect"}</Results>
+            <Results>
+              {answers[currentQuestionIndex].isCorrect ? (
+                <Correct>Correct</Correct>
+              ) : (
+                <Incorrect> Incorrect </Incorrect>
+              )}
+            </Results>
           )}
         </AnswerWrapper>
         <Buttons label={isLastQuestion ? "Finish" : "Next"} disabled={!isAnswered} />

@@ -169,3 +169,12 @@ export const Results = styled.p`
   font-weight: bold;
   margin-bottom: 0;
 `;
+
+export const Correct = styled.span`
+  font-weight: bold;
+  color: rgb(55, 120, 44);
+`;
+export const Incorrect = styled.span`
+  font-weight: bold;
+  color: red;
+`;

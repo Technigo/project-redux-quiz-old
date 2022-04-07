@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
-import { Main, StartCard, StartBtn, Results } from "styles";
+import { Main, StartCard, Correct, Incorrect, StartBtn, Results } from "styles";
 
 const SubmittedView = () => {
   const answers = useSelector((state) => state.quiz.answers);
@@ -16,7 +16,11 @@ const SubmittedView = () => {
           return (
             <p key={index}>
               {question.question.material} belongs in {question.answer.value}:{" "}
-              {question.isCorrect ? "correct" : "incorrect"}
+              {question.isCorrect ? (
+                <Correct>Correct</Correct>
+              ) : (
+                <Incorrect> Incorrect </Incorrect>
+              )}
             </p>
           );
         })}
