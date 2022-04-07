@@ -75,6 +75,16 @@ const QuestionPage = () => {
 	const displayNextQuestion = () => {
 		dispatch(quiz.actions.goToNextQuestion())
 	}
+	const changeColorBtn = (indexOption) => {
+		if (answerArray.length === currentQuestionIndex) {
+		  return "#fef8d8";
+		} else {
+		  if (question.correctAnswerIndex === indexOption) {
+			return "green";
+		  }
+		  return "red";
+		}
+	  };
 
 	const scoreCounterBackground = () => {
 		
@@ -157,13 +167,14 @@ const QuestionPage = () => {
 				<div className='answer-btn-container'>
 					{question.options.map((item, index) => (
 						
-				  		<button
-						  type='submit'
-						  onClick={() => onAnswerSubmit(question.id, index)}
-						  key={item}
-					     >
-						  {item}
-		  </button>
+				  		 <AnswerSubmitBtn
+                type="submit"
+                onClick={() => onAnswerSubmit(question.id, index)}
+                key={item}
+                background={changeColorBtn(index)}
+              >
+                {item}
+              </AnswerSubmitBtn>
           
 					))}
 				</div>
@@ -174,4 +185,5 @@ const QuestionPage = () => {
 }
 
 export default QuestionPage
+
 
