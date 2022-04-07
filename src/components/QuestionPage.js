@@ -4,17 +4,33 @@ import { quiz } from "reducers/quiz";
 import "./QuestionPage.css";
 import styled, { keyframes } from "styled-components";
 
-// const zoomInZoomOut = keyframes`
-// 0% {
-//   transform: scale(1, 1);
-// }
-// 50% {
-//   transform: scale(1.1, 1.1);
-// }
-// 100% {
-//   transform: scale(1, 1);
-// }
-// `
+const zoomInZoomOut = keyframes`
+0% {
+  transform: scale(1);
+}
+
+30% {
+  transform: scale(1.35);
+}
+45% {
+  transform: scale(1.35) rotate(5deg);
+}
+60% {
+  transform: scale(1.35) rotate(-5deg);
+}
+70% {
+  transform: scale(1.35) rotate(2deg);
+}
+80% {
+  transform: scale(1.35) rotate(-5deg);
+}
+95% {
+  transform: scale(1.35) rotate(-2deg);
+}
+100% {
+  transform: scale(1);
+}
+`
 
 const AnswerSubmitBtn = styled.button`
   align-self: center;
@@ -27,6 +43,7 @@ const AnswerSubmitBtn = styled.button`
   width: 10em;
   margin-bottom: 1em;
   border: solid ${(props) => props.border} 5px;
+  animation: ${zoomInZoomOut} ${(props) => props.animationtime} ease;
  
   &:hover {
     background-color: #45413c;
@@ -73,7 +90,7 @@ const QuestionPage = () => {
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    setTimeout(displayNextQuestion, 1500);
+    setTimeout(displayNextQuestion, 5000);
   };
 
   const displayNextQuestion = () => {
@@ -91,6 +108,17 @@ const QuestionPage = () => {
       return "red";
     }
   };
+
+  const correctAnswerAnimation = (correctIndex) =>{
+    if (!answer) {
+      return '0';
+    } else {
+      if (question.correctAnswerIndex === correctIndex) {
+        return '5s';
+      }
+      return '0';
+    }
+  }
 
   const scoreCounterBackground = () => {
     if (answerArray.length === currentQuestionIndex) {
@@ -157,6 +185,7 @@ const scoreAnimation= () => {
               onClick={() => onAnswerSubmit(question.id, index)}
               key={item}
               border={changeColorBtn(index)}
+              animationtime={correctAnswerAnimation(index)}
             >
               {item}
             </AnswerSubmitBtn>
