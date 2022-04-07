@@ -37,7 +37,7 @@ const SummaryPage = () => {
 
 	return (
 		<div className='summary-page'>
-			<Confetti z-index="1000" width={width} height={height} />
+			<Confetti zIndex="1000" width={width} height={height} />
 			<h1>Finished !</h1>
 			<p>
 				You got {correctAnswers.length} correct out of {allQuestions} questions!
