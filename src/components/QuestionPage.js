@@ -4,17 +4,17 @@ import { quiz } from "reducers/quiz";
 import "./QuestionPage.css";
 import styled, { keyframes } from "styled-components";
 
-const zoomInZoomOut = keyframes`
-0% {
-  transform: scale(1, 1);
-}
-50% {
-  transform: scale(1.1, 1.1);
-}
-100% {
-  transform: scale(1, 1);
-}
-`
+// const zoomInZoomOut = keyframes`
+// 0% {
+//   transform: scale(1, 1);
+// }
+// 50% {
+//   transform: scale(1.1, 1.1);
+// }
+// 100% {
+//   transform: scale(1, 1);
+// }
+// `
 
 const AnswerSubmitBtn = styled.button`
   align-self: center;
@@ -27,8 +27,7 @@ const AnswerSubmitBtn = styled.button`
   width: 10em;
   margin-bottom: 1em;
   border: solid ${(props) => props.border} 5px;
-  animation: ${zoomInZoomOut} 1s ease;
-
+ 
   &:hover {
     background-color: #45413c;
     color: #fef8d8;
@@ -69,7 +68,7 @@ const QuestionPage = () => {
 
   //Check the answer state - correct or incorrect
   const changeColorBtn = (indexOption) => {
-    if (answerArray.length === currentQuestionIndex) {
+    if (!answer) {
       return "#000";
     } else {
       if (question.correctAnswerIndex === indexOption) {
@@ -80,8 +79,9 @@ const QuestionPage = () => {
   };
 
   return (
+    <>
+    <h1>Guess Whose Butt</h1>
     <section className="question-section">
-      <h1>Guess Whose Butt</h1>
       <div className="question-container">
         <div className="question-img-container">
           <img
@@ -93,7 +93,7 @@ const QuestionPage = () => {
         <div className="answer-btn-container">
           {question.options.map((item, index) => (
             <AnswerSubmitBtn
-              disabled={answerArray.length !== currentQuestionIndex}
+              disabled={answer}
               type="submit"
               onClick={() => onAnswerSubmit(question.id, index)}
               key={item}
@@ -105,6 +105,7 @@ const QuestionPage = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

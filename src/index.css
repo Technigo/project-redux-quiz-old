@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Concert One", cursive;
+  font-family: "Concert One";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
@@ -11,6 +11,7 @@ code {
     mo
     nospace; */
 }
+
 main {
   background-image: url("./components/assets/background.jpg");
   display: flex;
@@ -23,20 +24,6 @@ main {
   background-repeat: no-repeat;
   background-position-x: 60%;
 }
-/*=====QUESTION SECTION STYLES =====*/
-.question-section {
-  width: 80%;
-  max-width: 1000px;
-  height: 80%;
-  background-color: rgba(1, 120, 93, 0.9);
-  border: #000 solid 3px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5em;
-}
 
 h1 {
   color: #c3471b;
@@ -47,7 +34,42 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: #fef8d8;
+  text-align: center;
+  margin: 1em;
+}
+
+/*=====WELCOME PAGE STYLES =====*/
+.welcome-section {
+  height: 250px;
+  background-color: rgba(1, 120, 93, 0.9);
+  border: #000 solid 3px;
+  border-radius: 20px;
+  margin: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/*===== SECTION STYLES =====*/
+.question-section {
+  max-width: 1000px;
+  background-color: rgba(1, 120, 93, 0.9);
+  border: #000 solid 3px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /*=====QUIZOVER SECTION STYLES =====*/
+
 .summary-h1 {
   margin: 0;
   color: #c3471b;
@@ -57,22 +79,24 @@ h1 {
 }
 
 .summary-text {
-  font-size: 36px;
+  font-size: 30px;
   color: #fef8d8;
+  padding: 20px;
 }
 
 .summary-comtainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 80px;
+  column-gap: 20px;
 }
 
 .sticker {
   width: 60px;
+  margin-top: 7px;
 }
 
 .check-mark {
-  width: 40px;
+  width: 35px;
   margin: 10px;
 }
 
@@ -86,6 +110,7 @@ h1 {
   font-size: 18px;
   width: 10em;
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .green {
@@ -94,6 +119,14 @@ h1 {
 
 .red {
   background-color: red;
+}
+
+@media screen and (min-width: 700px) {
+  .summary-comtainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
 }
 
 @media screen and (min-width: 812px) {

@@ -16,36 +16,38 @@ const QuizOver = () => {
   };
 
   return (
-    <section className="question-section summary-section">
-      <h1 className="summary-h1">Guess Whose Butt</h1>
-      <p className="summary-text">
-        {correctAnwser.length <= 3
-          ? "Oh sorry, look at more butts and try again"
-          : correctAnwser.length === 4 || correctAnwser.length === 5
-          ? "Nice try! You did good. But if you see a butt, check it out"
-          : "Congratulations! You really know your butts"}
-      </p>
-      <div className="summary-comtainer">
-        {selectedAnswer.map((item) => (
-          <div>
-            <img
-              className="sticker"
-              src={item.question.sticker}
-              alt={item.img_alt}
-            />
-            <img
-              className="check-mark"
-              src={item.isCorrect ? correctSticker : inCorrectSticker}
-              alt=""
-            />
-          </div>
-        ))}
-      </div>
+    <>
+      <h1>Guess Whose Butt</h1>
+      <section className="question-section summary-section">
+        <p className="summary-text">
+          {correctAnwser.length <= 3
+            ? "Oh sorry, look at more butts and try again"
+            : correctAnwser.length === 4 || correctAnwser.length === 5
+            ? "Nice try! You did good. But if you see a butt, check it out"
+            : "Congratulations! You really know your butts"}
+        </p>
+        <div className="summary-comtainer">
+          {selectedAnswer.map((item) => (
+            <div>
+              <img
+                className="sticker"
+                src={item.question.sticker}
+                alt={item.img_alt}
+              />
+              <img
+                className="check-mark"
+                src={item.isCorrect ? correctSticker : inCorrectSticker}
+                alt=""
+              />
+            </div>
+          ))}
+        </div>
 
-      <button className="restart-btn" onClick={onRestartClick}>
-        Restart
-      </button>
-    </section>
+        <button className="restart-btn" onClick={onRestartClick}>
+          Restart
+        </button>
+      </section>
+    </>
   );
 };
 
