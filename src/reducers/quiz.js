@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, img: './assets/thematrix.png', questionText: 'Which movie is this from?', options: ['matrix', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, img: './assets/WarGames.png', questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 3, img: './assets/TheInternship.png', questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 4, img: './assets/TheImitationGame.png', questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 }
+  { id: 1, img: './assets/thematrix.png', questionText: 'Amount of screens needed to do the Technigo boot camp', options: ['The Matrix', 'The Matrix Reloaded', 'The Matrix Revolutions', 'The Matrix Resurrections'], correctAnswerIndex: 0 },
+  { id: 2, img: './assets/WarGames.png', questionText: 'The relief when your code by some witch craft finally runs', options: ['the Terminator', 'Jurassic Park', 'Alien', 'WarGames'], correctAnswerIndex: 3 },
+  { id: 3, img: './assets/TheInternship.png', questionText: 'Pair Programming with someone a bit above your level', options: ['The Social Network', 'The Internship', 'Silicon Valley', 'The IT Crowd'], correctAnswerIndex: 1 },
+  { id: 4, img: './assets/TheImitationGame.png', questionText: 'Intro to Redux be like', options: ['Ex Machina', 'Enigma', 'The Imitation Game', 'A Beautiful Mind'], correctAnswerIndex: 2 },
+  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: '13 weeks into the boot camp and you still can not spell "lenght"', options: ['The Girl with the Dragon Tattoo', 'Fortran', 'Hidden Figures', 'Hackers'], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
