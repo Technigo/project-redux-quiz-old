@@ -41,11 +41,12 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-	padding: 0.7rem;
 	border-radius: 5px;
 	background-color: #ff5f00;
 	color: white;
+	font-family: 'Raleway', sans-serif;
 	font-size: 1rem;
+	font-weight: 600;
 	cursor: pointer;
 	border: none;
 	height: 4rem;
