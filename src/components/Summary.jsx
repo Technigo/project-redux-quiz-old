@@ -14,6 +14,8 @@ const Summary = ({ setQuizDone }) => {
     setQuizDone(false);
   };
 
+  console.log(answers);
+
   return (
     <SummaryDiv>
       <h1>Quiz is done!</h1>
@@ -26,10 +28,10 @@ const Summary = ({ setQuizDone }) => {
 
         return (
           <QADiv key={answer.questionId}>
-            <span className="text-align-center">Question {index + 1}:</span>
+            {/* <span className="text-align-center">Question {index + 1}:</span> */}
             <h2>
               <br />
-              {answer.question.questionText}
+              {index + 1}. {answer.question.questionText}
             </h2>
             <p>
               You answered {answer.answer} which was{" "}
@@ -39,14 +41,15 @@ const Summary = ({ setQuizDone }) => {
           </QADiv>
         );
       })}
+      <br />
       <QADiv>
-        <p>You got {counter} / 5 correct!</p>
+        <h3>You got {counter} / 5 correct!</h3>
         {counter > 4 ? (
-          <p>WOOOOOOHOOOOO!</p>
+          <h3>WOOOOOOHOOOOO!</h3>
         ) : counter > 2 ? (
-          <p>Not bad!</p>
+          <h3>Not bad!</h3>
         ) : (
-          <p>Better luck next time!</p>
+          <h3>Better luck next time!</h3>
         )}
       </QADiv>
       <ProgressBar setQuizDone={setQuizDone} restartQuiz={restartQuiz} />

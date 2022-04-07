@@ -1,18 +1,10 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  ${"" /* min-height: 100vh; */}
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  ${
-    "" /* &:before {
-    border: 1px solid red;
-    margin: 3vw;
-  } */
-  }
 `;
 
 export const Title = styled.h1`
@@ -20,6 +12,7 @@ export const Title = styled.h1`
   text-align: center;
   color: white;
   font-size: 25px;
+  white-space: pre-line;
 
   @media (min-width: 667px) {
     font-size: 37px;
@@ -29,7 +22,7 @@ export const Title = styled.h1`
   @media (min-width: 1024px) {
     // width: 45vw;
     // margin-top: 50px;
-    margin-bottom: 150px;
+    // margin-bottom: 1px;
     text-align: center;
     color: white;
     font-size: 37px;
@@ -56,17 +49,10 @@ export const Container = styled.div`
   }
 `;
 
-export const WhiteBorder = styled.div`
-  border: 1px solid white;
-  // margin: 3vw;
-
-  @media (min-width: 1024px) {
-  }
-`;
-
 export const ButtonContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-items: center;
   margin: 5rem 0;
   gap: 20px;
@@ -79,15 +65,15 @@ export const ButtonContainer = styled.section`
   }
 
   @media (min-width: 1024px) {
-    width: 800px;
-    margin-top: 4rem;
+    // margin-top: 4rem;
     gap: 15px;
   }
 
   @media (min-width: 1024px) {
-    width: 800px;
+    width: 850px;
     margin: 0 auto;
     display: flex;
+    // margin-top: 4rem;
     // flex-direction: row;
     // justify-content: center;
     // align-items; center;
@@ -96,9 +82,10 @@ export const ButtonContainer = styled.section`
 `;
 
 export const Button = styled.button`
+  font-family: "Montserrat", sans-serif;
   width: 130px;
-  ${"" /* border-radius: 8px; */}
-  padding: 17px;
+  align-self: stretch;
+  padding: 20px 18px;
   font-size: 18px;
   background-color: rgba(0, 0, 0, 0);
   color: white;
@@ -106,12 +93,22 @@ export const Button = styled.button`
   border-radius: 0%;
   border: 1px solid white;
 
-  &:hover {
+  &:hover:hover:not([disabled]) {
     // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     color: rgba(0, 0, 0, 0.9);
     transition: 0.3s ease;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 
   @media (min-width: 768px) {
@@ -154,6 +151,11 @@ export const NextButton = styled.button`
 export const SummaryDiv = styled.div`
   color: white;
   width: 100%;
+  margin: 3vh 0;
+
+  h1 {
+    text-align: center;
+  }
   // h1 {
   //   font-size: 1.75rem;
   //   text-align: center;
@@ -183,15 +185,21 @@ export const SummaryDiv = styled.div`
 export const QADiv = styled.div`
   width: 100%;
   margin: 1rem 0;
-  text-align: center;
+  // text-align: center;
+  white-space: pre-line;
 
   h1 {
     font-size: 1.75rem;
-    // text-align: center;
+    text-align: center;
   }
   h2 {
     font-size: 1.5rem;
     text-align: left;
+    padding-bottom: 0.313rem;
+  }
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
   }
 
   .text-align-center {
@@ -199,7 +207,8 @@ export const QADiv = styled.div`
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
     // text-align: center;
   }
 
@@ -208,7 +217,7 @@ export const QADiv = styled.div`
 
   @media (min-width: 1024px) {
     h2 {
-      font-size: 1.75rem;
+      // font-size: 1.75rem;
     }
   }
 `;
@@ -223,14 +232,15 @@ export const ProgressContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid white;
 `;
 
 export const ProgressStatus = styled.div`
   width: ${(props) => props.width};
   background: linear-gradient(
     90deg,
-    rgba(202, 240, 248, 0.2) 0%,
-    rgba(144, 224, 239, 0.2) 100%
+    rgba(202, 240, 248, 0.6) 0%,
+    rgba(144, 224, 239, 0.6) 100%
   );
   transition: width 1s ease-in-out;
   height: 100%;

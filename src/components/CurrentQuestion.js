@@ -44,10 +44,12 @@ export const CurrentQuestion = ({ setQuizDone }) => {
       });
     } else {
       audio[randomAudioIndex].play();
+      // party.resolvableShapes["myImage"] = "👍";
       party.confetti(document.body, {
         count: party.variation.range(500, 1000),
         size: party.variation.range(0.8, 1.6),
         color: party.Color.fromHex("#4a412a"),
+        // shapes: ["myImage"],
         shapes: ["square"],
       });
     }
@@ -69,7 +71,7 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   return (
     <>
       <Title>{question.questionText}</Title>
-        {/* <div className='img-child'></div> */}
+      {/* <div className='img-child'></div> */}
       <ButtonContainer>
         {question.options.map((item, index) => {
           return (
