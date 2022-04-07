@@ -100,8 +100,8 @@ export const CurrentQuestion = () => {
 
 			{/*TEXT SHOWING IF THE ANSWER WAS RIGHT OR WRONG*/}
 			<div className='answer-text'>
-				<p>{answer?.isCorrect && 'Correct answer'}</p>
-				<p>{answer?.isCorrect === false && 'Wrong answer'}</p>
+				<p>{answer?.isCorrect && 'Abso-f**k-ing-lutely'}</p>
+				<p>{answer?.isCorrect === false && 'Nope!'}</p>
 			</div>
 
 			{/*RENDERING EITHER THE GO TO NEXT QUESTION BUTTON OR FINISH BUTTON*/}
