@@ -42,6 +42,7 @@ const Question = styled.h1`
 
 const Button = styled.button`
   font-family: poppins;
+  color: black;
   background-color: white;
   border-radius: 10px;
   font-size: 17px;
