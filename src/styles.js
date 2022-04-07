@@ -35,6 +35,8 @@ export const ProgressIconsWrapper = styled.div`
 
 export const QuestionContainer = styled(Hero)`
   background-image: url("/images/background.jpg");
+  background-size: cover;
+  overflow: hidden;
 `
 
 export const FlexQuestionDiv = styled.section`
