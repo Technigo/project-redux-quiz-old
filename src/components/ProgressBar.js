@@ -14,6 +14,10 @@ const Progress = styled.div`
   padding: 3px 6px;
   -webkit-appearence: none;
   border-radius: 10px;
+
+  progress {
+    color: green;
+  }
 `
 
 export const ProgressBar = () => {

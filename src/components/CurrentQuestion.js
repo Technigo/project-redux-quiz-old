@@ -15,35 +15,51 @@ export const QuestionBackground = styled.div`
   padding-top: 50px;
   z-index: 0;
 
-  // .circle {
-  //   position: absolute;
-  //   border-radius: 50%;
-  //   background: white;
-  //   animation: ripple 15s infinite;
-  //   z-index: 1;
-  // }
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: ripple 15s infinite;
+    z-index: 1;
+  }
 
-  // @keyframes ripple {
-  //   0% {
-  //     transform: scale(0.9);
-  //   }
+  @keyframes ripple {
+    0% {
+      transform: scale(0.9);
+    }
 
-  //   50% {
-  //     transform: scale(1.2);
-  //   }
+    50% {
+      transform: scale(1.2);
+    }
 
-  //   100% {
-  //     transform: scale(0.8);
-  //   }
-  // }
+    100% {
+      transform: scale(0.8);
+    }
+  }
 
-  // .large {
-  //   width: 400px;
-  //   height: 400px;
-  //   left: -20px;
-  //   top: 70%;
-  //   background-color: #b58526;
-  // }
+  .large {
+    width: 200px;
+    height: 200px;
+    left: -20px;
+    top: 83%;
+    background-color: #b58526;
+  }
+
+  .medium {
+    width: 100px;
+    height: 100px;
+    left: -20px;
+    top: 67%;
+    background-color: #b58526;
+  }
+
+  .small {
+    width: 60px;
+    height: 60px;
+    left: 75px;
+    top: 57%;
+    background-color: #b58526;
+  }
 `
 const QuestionContainer = styled.div`
   background-color: #7da7be;
@@ -56,10 +72,6 @@ const QuestionContainer = styled.div`
   text-align: center;
   z-index: 2;
 
-  // .text {
-  //   width: 400px;
-  // }
-
   h1 {
     color: #d2e9f5;
     font-size: 25px;
@@ -70,10 +82,14 @@ const QuestionContainer = styled.div`
     font-size: 20px;
   }
 
+  .text {
+    z-index: 2;
+  }
+
   // .btn-container {
   //   display: flex;
-  //   justify-content: space-between;
-  //   flex-direction: row;
+  //   justify-content: center;
+  //   flex-direction: column;
   // }
 
   .option-btn {
@@ -86,7 +102,7 @@ const QuestionContainer = styled.div`
     border-radius: 60px;
     color: #326886;
     cursor: pointer;
-    display: inline-block;
+    // display: inline-block;
   }
 
   .incorrect-answer {
@@ -108,6 +124,8 @@ const QuestionContainer = styled.div`
     color: #326886;
     cursor: pointer;
     font-size: 12px;
+    margin-top: 25px;
+    border: solid gray;
   }
 
   button[disabled] {
@@ -165,11 +183,13 @@ export const CurrentQuestion = () => {
       <QuestionContainer>
         <div className="text">
           <div className="circle large"></div>
+          <div className="circle medium"></div>
+          <div className="circle small"></div>
           <h2>Question:</h2>
           <h1>{question.questionText}</h1>
           {question.options.map((item, index) => {
             return (
-              <div className="btn-container">
+              <div>
                 <button
                   className={
                     userAnswer && index === question.correctAnswerIndex
