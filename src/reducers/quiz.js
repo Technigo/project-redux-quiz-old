@@ -75,9 +75,9 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  counter: 0,
+  score: 0,
   start: false,
-
+  
 };
 
 export const quiz = createSlice({
@@ -120,16 +120,14 @@ export const quiz = createSlice({
           `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
         );
       }
-
-
-      //state.nextQuestion = true
-       
-     // if (question.correctAnswerIndex !== answerIndex) {
-      //   state.color = 'red'
-      //} else {
-       //  state.color = 'green'
-
-      //}
+  
+      // Score counter
+      if (question.correctAnswerIndex === answerIndex) {
+        state.score++
+        console.log(answerIndex)
+      } else {
+        state.score--;
+      }
     
       state.answers.push({
         questionId,

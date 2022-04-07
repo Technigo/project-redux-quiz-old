@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 
 const StartBtn = styled.button`
-align-self: center;
+  align-self: center;
   background: #fef8d8;
   color: #000;
   border: solid #000 3px;

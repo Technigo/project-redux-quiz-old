@@ -1,7 +1,8 @@
-import React from "react";
+import React , {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import styled, { keyframes } from "styled-components";
+
 const AnswerSubmitBtn = styled.button`
   align-self: center;
   background: #fef8d8;
@@ -19,8 +20,26 @@ const AnswerSubmitBtn = styled.button`
   }
   &:active {
     background: ${(props) => props.background};
-  }
+}
 `;
+
+
+//background-color: #E76158;
+
+const Counter = styled.span`
+   background: ${props => props.background};
+   width: 200px;
+	height: 50px;
+	border-radius: 10px;
+	border: solid 3px black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 20px;
+	font-weight: 700;
+	animation: ${props => props.animation} 2s ease ;
+`
+
 
 
 const QuestionPage = () => {
@@ -32,42 +51,97 @@ const QuestionPage = () => {
 	const answer = useSelector((state) =>
 		state.quiz.answers.filter((a) => a.questionId === question.id)
 	)
+	
+	const currentQuestionIndex = useSelector(
+		(state) => state.quiz.currentQuestionIndex
+		)
+		
+		const score = useSelector((state) => state.quiz.score)
+		
+		const answerArray = useSelector((state) => state.quiz.answers)
+		
+		console.log(answerArray)
 
-  
-	//const color = useSelector((state) => state.quiz.color)
-	const answerArray = useSelector((state) => state.quiz.answers)
-	console.log(answerArray, 'selected Answer array')
-	console.log(question.id, ' question array')
-
-  
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-        displayNextQuestion();
-   
-		setTimeout(displayNextQuestion, 5000)
+       // displayNextQuestion();
+		setTimeout(displayNextQuestion, 1000)
+		
 	}
 	const displayNextQuestion = () => {
 		dispatch(quiz.actions.goToNextQuestion())
 	}
 
-	const count = () => {
+	const scoreCounterBackground = () => {
+		
+		if (answerArray.length === currentQuestionIndex) {
+            return '#E76158'
+		}
+			else {
+				if(answerArray[currentQuestionIndex].isCorrect) {
+					return 'red'
+				}
+				else {
+					return 'blue'
+		
+				}
 
-		if (answerArray[question.id - 1]?.isCorrect) {
+			}
+		
 
-			return 'true'
-		} return 'false'
-	}
+	} 
 
 
+	const scoreAnimation= () => {
+		
+		if (answerArray.length === currentQuestionIndex) {
+            return ''
+		}
+			else {
+				if(answerArray[currentQuestionIndex].isCorrect) {
+					return keyframes`
+					   0% {
+						   background: red;
+					   }
+
+					   25% {
+						   background: orange;
+					   }
+
+					   50% {
+						   background: blue;
+					   }
+					   100% {
+						   background: yellow;
+					   }
+					`
+				}
+				else {
+					return ''
+		
+				}
+
+			}
+		
+
+	} 
+
+	console.log(answerArray[currentQuestionIndex]?.isCorrect)
+
+
+
+
+	//<span className="score-container"> ⭐️ Score: {score}</span>
+	
 	return (
 		<>
 			<h1>Guess Whose Butt</h1>
-
-				<p>{count()} Hi</p>
-
+            <Counter animation={scoreAnimation()} background={scoreCounterBackground()}>⭐️ {score}</Counter>
 			{/* ADD PROGRESS BAR */}
 			<p>Question {question.id} /6</p>
+
+			{/* Or use {currentQuestionIndex + 1} */}
 			{/* *************** */}
 
 		<section className='question-section'>
