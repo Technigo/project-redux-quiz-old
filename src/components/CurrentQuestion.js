@@ -27,7 +27,6 @@ const Text = styled.p`
 const Image = styled.img`
 	width: 90%;
 	height: auto;
-	// object-fit: cover;
 `;
 
 const ButtonContainer = styled.div`
