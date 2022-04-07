@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { quiz } from "reducers/quiz";
 
-import { Background, FlexDiv, RightAnswerWrapper, RightAnswerDisplay, RightAnswer, ResultHeading } from "styles";
+import { Background, FlexDiv, RightAnswerWrapper, RightAnswer, ResultHeading, RestartButton } from "styles";
 
 export const Results = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const Results = () => {
       <FlexDiv>
       {answers.map(answer => (
         <RightAnswerWrapper key={answer.question.id}>
-          <RightAnswerDisplay>{answer.question.options[answer.question.correctAnswerIndex]}</RightAnswerDisplay>
+          <h3>Correct Answer: {answer.question.options[answer.question.correctAnswerIndex]}</h3>
           <RightAnswer>Your Answer: {answer.answer} 
             {answer.isCorrect 
               ? <span role="img" aria-label="trophy icon"> 🏆</span> 
@@ -31,7 +31,7 @@ export const Results = () => {
         </RightAnswerWrapper>
       ))}
       </FlexDiv>
-      <button onClick={handleQuizRestart}>Restart</button>
+      <RestartButton onClick={handleQuizRestart}>Restart</RestartButton>
     </Background>
   )
 };

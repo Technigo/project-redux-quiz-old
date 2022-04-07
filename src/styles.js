@@ -9,7 +9,8 @@ const Div = styled.div`
 const Hero = styled.div`
   height: 100vh;
   width: 100vw;
-  object-fit: cover;
+  overflow: auto;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 `
@@ -44,8 +45,8 @@ export const FlexQuestionDiv = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 85vh;
   color: white;
+  height: 85vh;
 `
 
 export const QuestionHeading = styled.h2`
@@ -81,51 +82,57 @@ export const QuestionButtons = styled.button`
 
 export const Background = styled(Hero)`
   background-image: url("/images/track.jpg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 
 export const ResultHeading = styled.h2`
-  text-align: center;
   padding-top: 50px;
   margin: 0;
+  font-size: 22px;
+  font-weight: 800;
   text-transform: uppercase;
   color: #333333;
+
+  @media (min-width: 992px) {
+    font-size: 32px;
+  }
 `
 
 export const FlexDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 50px 20px;
+  padding: 50px 20px 25px;
   text-align: center;
   padding-top: 60px;
 `
 
 export const RightAnswerWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-`
-
-export const RightAnswerDisplay = styled.h3`
   background-color: #BB6DD7;
   border-radius: 10px;
   padding: 10px;
   color: white;
-  width: 200px;
+  margin-bottom: 20px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 45%;
+  }
 `
 
 export const RightAnswer = styled.p`
   margin-bottom: 0;
 `
 
-export const ActionButtons = styled.button`
-  margin: 20px;
+export const RestartButton = styled.button`
+  margin: 0 0 30px;
   padding: 10px;
-  border: none;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
   width: 175px;
   color: white;
 `
