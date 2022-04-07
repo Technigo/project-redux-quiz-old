@@ -5,9 +5,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+
 code {
   /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace; */
+    mo
+    nospace; */
 }
 main {
   background-image: url("./components/assets/background.jpg");
@@ -35,33 +37,16 @@ main {
   justify-content: center;
   margin: 1.5em;
 }
-.question-img-container {
-  padding: 20px;
-  max-width: 500px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-}
-.question-img {
-  width: 80%;
-  margin: 1.5em;
-  object-fit: cover;
-  border: #fef8d8 solid 5px;
-  border-radius: 20px;
-}
-.answer-btn-container {
-  display: grid;
-  justify-items: center;
-  gap: 8px;
-}
+
 h1 {
   color: #c3471b;
   font-size: 48px;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: #000;
-  margin: 0;
+  margin: 4px 8px;
   text-align: center;
 }
+
 /*=====QUIZOVER SECTION STYLES =====*/
 .summary-h1 {
   margin: 0;
@@ -70,18 +55,27 @@ h1 {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #000;
 }
+
 .summary-text {
   font-size: 36px;
   color: #fef8d8;
 }
+
 .summary-comtainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 80px;
 }
-.summary-comtainer img {
+
+.sticker {
   width: 60px;
 }
+
+.check-mark {
+  width: 40px;
+  margin: 10px;
+}
+
 .restart-btn {
   align-self: center;
   background: #fef8d8;
@@ -93,23 +87,17 @@ h1 {
   width: 10em;
   margin-bottom: 1em;
 }
+
 .green {
   background-color: green;
 }
+
 .red {
   background-color: red;
 }
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width: 812px) {
   h1 {
-    font-size: 100px;
-  }
-  .question-section {
-    max-width: 800px;
-  }
-  .answer-btn-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .question-img {
-    width: 50%;
+    font-size: 80px;
   }
 }
