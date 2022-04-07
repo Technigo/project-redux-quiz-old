@@ -16,8 +16,6 @@ export const CurrentQuestion = () => {
   const finalQuestion = useSelector((state) => state.quiz.quizOver);
   //
   const currState = useSelector((state) => state.quiz);
-  console.log("answers", currState.answers);
-  console.log(question);
   //
 
   //forwarding data to the store
@@ -38,31 +36,51 @@ export const CurrentQuestion = () => {
     return <Summary />;
   } else {
     return (
-      <div>
-        <h1>Question: {question.questionText}</h1>
-        {question.options.map((item, index) => {
-          return (
-            <button
-              disabled={answers.length === question.id}
-              onClick={() => onAnswersubmit(question.id, index)}
-              key={item}
-            >
-              {item}
-            </button>
-          );
-        })}
-        {answer && (
-          <div>{`This is ${answer.isCorrect ? "correct!" : "wrong"}`}</div>
-        )}
-        <p>Questions Left: {question.id}/5</p>
-        <button
-          className="next-que-button"
-          onClick={nextQueclick}
-          disabled={!answer}
-        >
-          NEXT QUESTION
-        </button>
-      </div>
+      <section className="question-box">
+        <div className="box">
+          <h1 className="question">
+            Question # {question.id} : <span>{question.questionText}</span>
+          </h1>
+        </div>
+
+        <div className="box">
+          <img className="question-image" src={question.img} alt="" />
+        </div>
+
+        <div className="box">
+          {question.options.map((item, index) => {
+            return (
+              <button
+                className="options"
+                disabled={answers.length === question.id}
+                onClick={() => onAnswersubmit(question.id, index)}
+                key={item}
+              >
+                {item}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="box">
+          {answer && (
+            <div className="correct-or-wrong">{`This is ${
+              answer.isCorrect ? "correct !" : "wrong !"
+            }`}</div>
+          )}
+        </div>
+
+        <div className="box">
+          <p className="questions-answered">Question: {question.id} / 5</p>
+          <button
+            className="next-que-button"
+            onClick={nextQueclick}
+            disabled={!answer}
+          >
+            {question.id === 5 ? "SUBMIT QUESTION" : "NEXT QUESTION"}
+          </button>
+        </div>
+      </section>
     );
   }
 };
