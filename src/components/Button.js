@@ -12,10 +12,13 @@ const Button = styled.button`
 	border: none;
 	margin-top: ${props => props.marginTop};
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	&:hover {
 		background-color: #fcfcfc;
-		color: black;
+		color: pink;
 	}
 
 	&:disabled {
