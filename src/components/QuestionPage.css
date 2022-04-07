@@ -1,16 +1,4 @@
-.question-section {
-  width: 80%;
-  max-width: 1000px;
-  height: 80%;
-  background-color: rgba(1, 120, 93, 0.9);
-  border: #000 solid 3px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1.5em;
-}
+
 
 .question-img-container {
   padding: 8px 20px;

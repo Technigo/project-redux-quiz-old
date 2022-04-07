@@ -8,9 +8,8 @@ export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	)
-	const start = useSelector(state => state.quiz.start)
 
-    console.log(start, 'current')
+
 	if (!question) {
 		return <h1>Oh no! I could not find the current question!</h1>
 	}
