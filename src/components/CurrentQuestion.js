@@ -34,6 +34,7 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   const quizOver = useSelector((store) => store.quiz.quizOver);
 
   const onAnswerSubmit = (id, index) => {
+    setHasAnswered(true);
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
     setTimeout(() => setHasAnswered(true), 800);
     if (question.correctAnswerIndex === index) {
@@ -43,6 +44,7 @@ export const CurrentQuestion = ({ setQuizDone }) => {
         shapes: ["star"],
       });
     } else {
+      setHasAnswered(true);
       audio[randomAudioIndex].play();
       // party.resolvableShapes["myImage"] = "👍";
       party.confetti(document.body, {

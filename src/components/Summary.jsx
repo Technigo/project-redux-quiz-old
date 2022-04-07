@@ -28,7 +28,6 @@ const Summary = ({ setQuizDone }) => {
 
         return (
           <QADiv key={answer.questionId}>
-            {/* <span className="text-align-center">Question {index + 1}:</span> */}
             <h2>
               <br />
               {index + 1}. {answer.question.questionText}
@@ -37,13 +36,15 @@ const Summary = ({ setQuizDone }) => {
               You answered {answer.answer} which was{" "}
               {answer.isCorrect ? "correct!" : "sadly incorrect."}
             </p>
-            {!answer.isCorrect && <p>The correct answer was {correctAnswer}</p>}
+            {!answer.isCorrect && (
+              <p>The correct answer was {correctAnswer}.</p>
+            )}
           </QADiv>
         );
       })}
       <br />
       <QADiv>
-        <h3>You got {counter} / 5 correct!</h3>
+        <h3>You got {counter} / 6 correct!</h3>
         {counter > 4 ? (
           <h3>WOOOOOOHOOOOO!</h3>
         ) : counter > 2 ? (

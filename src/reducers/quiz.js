@@ -27,10 +27,10 @@ const questions = [
     questionText:
       "According to Elle Woods, the best way to pick up something you dropped is with a ...",
     options: [
-      "Swish and flick",
-      "Bend and snap",
-      "Arch and grab",
-      "Bow and snatch",
+      "swish and flick",
+      "bend and snap",
+      "arch and grab",
+      "bow and snatch",
     ],
     correctAnswerIndex: 1,
   },
@@ -52,6 +52,17 @@ const questions = [
       "the weather with her knees",
     ],
     correctAnswerIndex: 0,
+  },
+  {
+    id: 6,
+    questionText: "“Why should I listen to you, anyway?\r\nYou're __________.”",
+    options: [
+      "a fake woke poser with a trustfund",
+      "a loser who can't dress right",
+      "a virgin who can't drive",
+      "just mad you can't eat carbs",
+    ],
+    correctAnswerIndex: 2,
   },
 ];
 
