@@ -20,6 +20,9 @@ export const QuizQuestions = () => {
   const dispatch = useDispatch();
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const questionsLength = useSelector((state) => state.quiz.questions.length);
+  const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
+
+  const currentQuestion = currentQuestionIndex + 1;
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
@@ -39,7 +42,7 @@ export const QuizQuestions = () => {
     <main>
       <QuestionContainer>
         <FlexQuestionDiv>
-          <QuestionHeading>Question:</QuestionHeading>
+          <QuestionHeading>Question {currentQuestion}</QuestionHeading>
           <Question>{question.questionText}</Question>
           <QuestionAlternatives>
             {question.options.map((answer, index) => (
