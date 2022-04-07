@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { QuestionBackground } from 'components/CurrentQuestion'
 import { quiz } from 'reducers/quiz'
-// import adaLovelace from './images/adaLovelace'
+import marieCurie from 'images/marieCurie.jpg'
+import ameliaEarhart from 'images/ameliaEarhart.jpg'
+import valentinaTereshkova from 'images/valentinaTereshkova.jpg'
+import adaLovelace from 'images/adaLovelace.jpg'
+import ursulaVonDerLeyen from 'images/ursulaVonDerLeyen.jpg'
 
 const SummaryStyling = styled.div`
   margin-top: 10%;
@@ -20,9 +24,10 @@ const SummaryStyling = styled.div`
     display: flex;
     text-align: center;
     flex-direction: column;
+    padding: 10px;
   }
 
-  .restart-btn {
+  .restart-btn, .answers-btn {
     border: none;
     padding: 15px;
     margin: 10px;
@@ -35,7 +40,8 @@ const SummaryStyling = styled.div`
   h1 {
     color: #d2e9f5;
     font-size: 25px;
-    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   h2 {
@@ -46,6 +52,7 @@ const SummaryStyling = styled.div`
 
   h3 {
     color: #d2e9f5;
+    margin-top: 10px;
     margin: 0;
   }
 
@@ -61,6 +68,16 @@ const SummaryStyling = styled.div`
     margin: 0;
   }
 `
+const PicturesStyling = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  img {
+    width: 75%;
+    padding: 3%;
+  }
+`
 
 export const Summary = () => {
   const dispatch = useDispatch()
@@ -70,7 +87,7 @@ export const Summary = () => {
   // const question = useSelector(
   //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   // )
-
+  const [visible, setVisible] = useState(false);
   const onRestartButton = () => {
     dispatch(quiz.actions.restart())
   }
@@ -88,33 +105,32 @@ export const Summary = () => {
             console.log(answer)
             return (
               <div key={answer.questionId} className="answerBox">
-                {' '}
-                <h4>Question:</h4>
                 <h4>
                   {answer.questionId}: {answer.question.questionText}
                 </h4>
-                <h3>Your answer is:</h3>
-                <h5>{answer.answer}</h5>
+                <h3>Your answer is: {answer.answer}</h3>
               </div>
             )
           })}
-          {/* <div>
-            <img src={picturesSummary.answerUrl} alt="Ada Lovelace" />
-          </div> */}
-          {/* {picturesSummary.map((answerURL) => {
-            console.log(picturesSummary, 'bilder')
-            return (
-              <img key={answerURL.id} src={answerURL.answerURL} alt="images" />
-            )
-          })} */}
-          <button type="button" className="answers-btn">
-            Wanna see the right answers? Click here!
+          <button type="button" className="answers-btn" onClick={() => setVisible(!visible)}>
+          Wanna see the right answers?
           </button>
+          {visible && (
+            <PicturesStyling>
+              <div>
+                <h3>Correct answers</h3>
+                <img src={marieCurie} alt="marieCurie" />
+                <img src={ameliaEarhart} alt="ameliaEarhart" />
+                <img src={valentinaTereshkova} alt="valentina" />
+                <img src={adaLovelace} alt="adaLovelace" />
+                <img src={ursulaVonDerLeyen} alt="ursula" />
+              </div>
+            </PicturesStyling>
+          )}
           <button
             type="button"
             onClick={() => onRestartButton()}
-            className="restart-btn"
-          >
+            className="restart-btn">
             Restart
           </button>
         </div>
