@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import React from "react";
 import { CurrentQuestion } from "./CurrentQuestion";
 
@@ -13,7 +14,7 @@ const StartPage = () => {
       <div>
         <h1>Welcome to FRIENDS Trivia quiz!</h1>
         <button type="button" onClick={onButtonClick}>
-          Let's start the game!
+          Start the quiz!
         </button>
       </div>
     );
