@@ -7,11 +7,11 @@ const QuestionButton = styled.button`
 	border: none;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: 400;
-    padding: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
+	padding: 0.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
 `;
 
 export default QuestionButton;
