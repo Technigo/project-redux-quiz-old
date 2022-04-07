@@ -66,6 +66,7 @@ font-weight: 700;
 color: beige;
 padding: 10px;
 margin: 0;
+border-radius: 5px 5px 0 0;
 ` 
 
 export const Question = styled.h2`
@@ -139,10 +140,6 @@ export const Answers = styled.p`
 margin: 10px 0;
 line-height: 20px;
 
-`
-
-export const Span = styled.span`
-font-weight: 400;
 `
 
 export const StartBtn = styled.button`
