@@ -30,7 +30,7 @@ export const CurrentQuestion = () => {
 
 	return (
 		<div className='container'>
-			<h3>Question: {question.questionText}</h3>
+			<h3>Which of these techy movies are the random print screen from? {question.questionText}</h3>
 			<img src={question.img} alt='movie' />
 			<div className='btn-container'>
 				{question.options.map((item, index) => {
