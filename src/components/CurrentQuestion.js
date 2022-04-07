@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 
+import swal from 'sweetalert';
+
 export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
@@ -14,10 +16,10 @@ export const CurrentQuestion = () => {
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 		if (question.correctAnswerIndex === index) {
-			alert('Correct answer');
+			swal('Good job!', 'You clicked the button!', 'success');
 			dispatch(quiz.actions.goToNextQuestion());
 		} else {
-			alert('WRONG!!!');
+			swal('WRONG!!!');
 			dispatch(quiz.actions.goToNextQuestion());
 		}
 	};
