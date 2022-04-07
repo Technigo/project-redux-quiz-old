@@ -6,7 +6,8 @@ body {
   background-image: url("https://i.postimg.cc/B6yz8f1L/wallpaperflare-com-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50%;
+  background-position: center top;
+  background-attachment: fixed;
 }
 
 code {
@@ -15,18 +16,18 @@ code {
 
 .logo {
   filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+  margin-bottom: -30px;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /* PROGRESSBAR */
 .progress-bar {
-  background: linear-gradient(to left, #FEB038, #B84A26);
+  background: linear-gradient(to left, #feb038, #b84a26);
   border-radius: 20px;
   color: black;
   font-size: 18px;
