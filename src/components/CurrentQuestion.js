@@ -72,6 +72,7 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   return (
     <>
       <Title>{question.questionText}</Title>
+        <div className='img-child'></div>
       <ButtonContainer>
         {question.options.map((item, index) => {
           return (
