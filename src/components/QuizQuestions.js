@@ -9,7 +9,8 @@ import {
   FlexQuestionDiv,
   QuestionAlternatives,
   QuestionButtons,
-  QuestionHeading
+  QuestionHeading,
+  Question
 } from "styles";
 
 export const QuizQuestions = () => {
@@ -38,7 +39,7 @@ export const QuizQuestions = () => {
       <QuestionContainer>
         <FlexQuestionDiv>
           <QuestionHeading>Question:</QuestionHeading>
-          <h3>{question.questionText}</h3>
+          <Question>{question.questionText}</Question>
           <QuestionAlternatives>
             {question.options.map((answer, index) => (
               <QuestionButtons

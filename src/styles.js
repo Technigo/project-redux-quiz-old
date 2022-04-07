@@ -52,6 +52,10 @@ export const QuestionHeading = styled.h2`
   text-transform: uppercase;
 `
 
+export const Question = styled.h3`
+  text-align: center;
+`
+
 export const QuestionAlternatives = styled(Div)`
   width: 500px;
   flex-wrap: wrap;
