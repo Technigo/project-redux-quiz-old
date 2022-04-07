@@ -9,7 +9,6 @@ const Div = styled.div`
 const Hero = styled.div`
   height: 100vh;
   width: 100vw;
-  overflow: auto;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -79,6 +78,16 @@ export const QuestionButtons = styled.button`
     font-size: 18px;
   }
 `
+
+export const ActionButtons = styled.button`
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 175px;
+  color: white;
+` 
 
 export const Background = styled(Hero)`
   background-image: url("/images/track.jpg");
