@@ -56,6 +56,10 @@ const QuestionContainer = styled.div`
   text-align: center;
   z-index: 2;
 
+  // .text {
+  //   width: 400px;
+  // }
+
   h1 {
     color: #d2e9f5;
     font-size: 25px;
@@ -66,10 +70,11 @@ const QuestionContainer = styled.div`
     font-size: 20px;
   }
 
-  .btn-container {
-    display: flex;
-    flex-direction: row;
-  }
+  // .btn-container {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   flex-direction: row;
+  // }
 
   .option-btn {
     border: none;
@@ -158,7 +163,7 @@ export const CurrentQuestion = () => {
   return (
     <QuestionBackground>
       <QuestionContainer>
-        <div>
+        <div className="text">
           <div className="circle large"></div>
           <h2>Question:</h2>
           <h1>{question.questionText}</h1>

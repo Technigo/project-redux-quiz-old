@@ -16,6 +16,12 @@ const SummaryStyling = styled.div`
   text-align: center;
   display: flex;
 
+  .answerBox {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+
   .restart-btn {
     border: none;
     padding: 15px;
@@ -29,25 +35,30 @@ const SummaryStyling = styled.div`
   h1 {
     color: #d2e9f5;
     font-size: 25px;
+    margin: 0;
   }
 
   h2 {
     color: #435a67;
     font-size: 20px;
+    margin: 0;
   }
 
   h3 {
     color: #d2e9f5;
+    margin: 0;
   }
 
   h4 {
     color: #435a67;
     font-size: 20px;
+    margin: 0;
   }
 
   h5 {
     color: #f5ca73;
     font-size: 20px;
+    margin: 0;
   }
 `
 
@@ -72,11 +83,11 @@ export const Summary = () => {
       <SummaryStyling>
         <div>
           <h2>You got {correctAnswer.length} out of 5!</h2>
-          <h1>Good work! These are your answers:</h1>
+          <h1>These are your answers:</h1>
           {answerSummary.map((answer) => {
             console.log(answer)
             return (
-              <div key={answer.questionId}>
+              <div key={answer.questionId} className="answerBox">
                 {' '}
                 <h4>Question:</h4>
                 <h4>
@@ -96,6 +107,9 @@ export const Summary = () => {
               <img key={answerURL.id} src={answerURL.answerURL} alt="images" />
             )
           })} */}
+          <button type="button" className="answers-btn">
+            Wanna see the right answers? Click here!
+          </button>
           <button
             type="button"
             onClick={() => onRestartButton()}
