@@ -1,8 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { NextButton, NextBtnWrapper } from "styles";
-// import arrow from 'images/arrow.png'
-
 import { quiz } from "reducers/quiz";
 
 const Buttons = ({ label, disabled }) => {

@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import SubmittedView from "./SubmittedView";
+import Buttons from "./Buttons";
 import {
   Card,
   Main,
@@ -11,10 +12,9 @@ import {
   Results,
   Image,
   OptionBtn,
-  AnswerWrapper
+  AnswerWrapper,
 } from "styles";
 
-import Buttons from "./Buttons";
 
 const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -39,37 +39,39 @@ const CurrentQuestion = () => {
   }
 
   return (
-      <Main>
-        <Card>
-          <QuestionNumber>
-              Question {currentQuestionIndex + 1}/{questions.length}
-          </QuestionNumber>
-          {/* <div> */}
-            <QuestionMaterial>{question.material}</QuestionMaterial>
-            <Question>{question.questionText}</Question>
-          {/* </div> */}
-          <Image src={question.image} alt={question.questionText} />
-          {question.options.map((option, index) => {
-            return (
-              <OptionBtn
-                key={option.value}
-                type="button"
-                onClick={() => {
-                  onAnswerSubmit(question.id, index);
-                }}
-                disabled={isAnswered}
-              >
-                {option.label}
-              </OptionBtn>
-            );
-          })}
+    <Main>
+      <Card>
+        <QuestionNumber>
+          Question {currentQuestionIndex + 1}/{questions.length}
+        </QuestionNumber>
+        {/* <div> */}
+        <QuestionMaterial>{question.material}</QuestionMaterial>
+        <Question>{question.questionText}</Question>
+        {/* </div> */}
+        <Image src={question.image} alt={question.questionText} />
+        {question.options.map((option, index) => {
+          return (
+            <OptionBtn
+              key={option.value}
+              type="button"
+              onClick={() => {
+                onAnswerSubmit(question.id, index);
+              }}
+              disabled={isAnswered}
+            >
+              {option.label}
+            </OptionBtn>
+          );
+        })}
 
-          <Buttons label={isLastQuestion ? "Finish" : "Next"} disabled={!isAnswered} />
-          <AnswerWrapper>
-          {isAnswered && <Results>{answers[currentQuestionIndex].isCorrect ? "Correct" : "Incorrect"}</Results>}
-          </AnswerWrapper>
-        </Card>
-      </Main>
+        <AnswerWrapper>
+          {isAnswered && (
+            <Results>{answers[currentQuestionIndex].isCorrect ? "Correct" : "Incorrect"}</Results>
+          )}
+        </AnswerWrapper>
+        <Buttons label={isLastQuestion ? "Finish" : "Next"} disabled={!isAnswered} />
+      </Card>
+    </Main>
   );
 };
 export default CurrentQuestion;

@@ -1,8 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
-
-import { Main, StartCard, StartBtn, Results } from 'styles'
+import { Main, StartCard, StartBtn, Results } from "styles";
 
 const SubmittedView = () => {
   const answers = useSelector((state) => state.quiz.answers);
