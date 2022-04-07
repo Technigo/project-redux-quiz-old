@@ -4,6 +4,7 @@ import { quiz } from "reducers/quiz";
 import styled, { keyframes } from "styled-components";
 import "./QuestionPage.css";
 import Button from "./Button";
+import { Footer } from "./Footer";
 
 
 const Counter = styled.span`
@@ -61,9 +62,9 @@ const QuestionPage = () => {
       return "#000";
     } else {
       if (question.correctAnswerIndex === indexOption) {
-        return "#66FF00";
+        return "#6DD627";
       }
-      return "red";
+      return "#FF6242";
     }
   };
 
@@ -147,6 +148,7 @@ const correctAnswerAnimation = (correctIndex) =>{
         </div>
       </div>
     </section>
+    <Footer />
     </>
   );
 };

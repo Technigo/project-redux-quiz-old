@@ -5,6 +5,7 @@ import { quiz } from "reducers/quiz";
 import correctSticker from "../components/assets/checkmark.png";
 import inCorrectSticker from "../components/assets/cross.png";
 import Button from "./Button";
+import { Footer } from "./Footer";
 
 const QuizOver = () => {
 
@@ -49,6 +50,7 @@ const QuizOver = () => {
           Restart
         </Button>
       </section>
+      <Footer />
     </>
   );
 };

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import "./QuestionPage.css";
 import { quiz } from 'reducers/quiz'
 import Button from './Button'
+import { Footer } from './Footer'
 
 
 export const WelcomePage = () => {
@@ -16,6 +17,7 @@ export const WelcomePage = () => {
   return (
     <>
       {!start ? (
+        <>
         <main>
           <h1>Guess Whose Butt</h1>
           <section className="question-section">
@@ -30,6 +32,8 @@ export const WelcomePage = () => {
               <Button onClick={onStartButtonclick}> Let's play! </Button>
           </section>
         </main>
+        <Footer />
+        </>
       ) : (
         <CurrentQuestion />
       )}
