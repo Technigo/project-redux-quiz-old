@@ -39,8 +39,8 @@ const SummaryStyling = styled.div`
   }
 
   h1 {
-    color: #d2e9f5;
-    font-size: 25px;
+    color: #435a67;
+    font-size: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
@@ -49,18 +49,26 @@ const SummaryStyling = styled.div`
     color: #435a67;
     font-size: 20px;
     margin: 0;
+    margin-bottom: 5px;
+    background-color: #b58526;
+    // width: 50%;
+    border: solid #435a67 2px;
   }
 
   h3 {
+    // color: #435a67;
     color: #d2e9f5;
     margin-top: 10px;
     margin: 0;
+    font-size: 15px;
   }
 
-  h4 {
+  .answer {
+    // color: #d2e9f5;
     color: #435a67;
-    font-size: 20px;
+    font-size: 15px;
     margin: 0;
+    margin-bottom: 5px;
   }
 
   h5 {
@@ -98,16 +106,16 @@ export const Summary = () => {
     <QuestionBackground>
       <SummaryStyling>
         <div>
+          <h1>Summary</h1>
           <h2>You got {correctAnswer.length} out of 5!</h2>
-          <h1>These are your answers:</h1>
           {answerSummary.map((answer) => {
             console.log(answer)
             return (
               <div key={answer.questionId} className="answerBox">
-                <h4>
+                <h3>
                   {answer.questionId}: {answer.question.questionText}
-                </h4>
-                <h3>Your answer is: {answer.answer}</h3>
+                </h3>
+                <h3 className="answer">Your answer was: {answer.answer}</h3>
               </div>
             )
           })}

@@ -7,6 +7,11 @@ const ProgressBarWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+
+  p {
+    color: #326886;
+    font-weight: 600;
+  }
 `
 
 const Progress = styled.div`
