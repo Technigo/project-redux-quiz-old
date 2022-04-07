@@ -4,24 +4,39 @@ import { quiz } from "reducers/quiz";
 import "./QuestionPage.css";
 import styled, { keyframes } from "styled-components";
 
+const zoomInZoomOut = keyframes`
+0% {
+  transform: scale(1, 1);
+}
+50% {
+  transform: scale(1.1, 1.1);
+}
+100% {
+  transform: scale(1, 1);
+}
+`
+
 const AnswerSubmitBtn = styled.button`
   align-self: center;
   background: #fef8d8;
   color: #000;
   font-family: "Concert One", cursive;
-  border: solid #000 3px;
   border-radius: 10px;
   padding: 10px;
   font-size: 18px;
   width: 10em;
   margin-bottom: 1em;
-  background: ${(props) => props.background};
+  border: solid ${(props) => props.border} 5px;
+  animation: ${zoomInZoomOut} 1s ease;
 
   &:hover {
     background-color: #45413c;
     color: #fef8d8;
   }
 `;
+
+
+
 
 const QuestionPage = () => {
   const dispatch = useDispatch();
@@ -55,10 +70,10 @@ const QuestionPage = () => {
   //Check the answer state - correct or incorrect
   const changeColorBtn = (indexOption) => {
     if (answerArray.length === currentQuestionIndex) {
-      return "#fef8d8";
+      return "#000";
     } else {
       if (question.correctAnswerIndex === indexOption) {
-        return "green";
+        return "#66FF00";
       }
       return "red";
     }
@@ -78,10 +93,11 @@ const QuestionPage = () => {
         <div className="answer-btn-container">
           {question.options.map((item, index) => (
             <AnswerSubmitBtn
+              disabled={answerArray.length !== currentQuestionIndex}
               type="submit"
               onClick={() => onAnswerSubmit(question.id, index)}
               key={item}
-              background={changeColorBtn(index)}
+              border={changeColorBtn(index)}
             >
               {item}
             </AnswerSubmitBtn>
