@@ -11,8 +11,8 @@ const StartPage = () => {
     return <CurrentQuestion />;
   } else {
     return (
+   
       <div className="start">
-        <img src="./assets/background-start.jpg" alt="" />
         <div className="start-text">
           {" "}
           <h1 className="start-heading">
@@ -32,7 +32,7 @@ const StartPage = () => {
             Start the quiz!
           </button>
         </div>
-      </div>
+     </div>
     );
   }
 };
