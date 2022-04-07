@@ -11,7 +11,11 @@ const StartPage = () => {
 				quiz?"
 			</p>
 			<Link to='/quiz' className='link-styler'>
-				<Button>Start quiz</Button>
+				<Button
+				width="250px"
+				widthDesktop="350px">
+					Start quiz
+				</Button>
 			</Link>
 		</div>
 	);

@@ -46,6 +46,8 @@ export const CurrentQuestion = () => {
 			<Button
       onClick={() => clickNext()}
       disabled={!answer}
+      width="250px"
+      widthDesktop="350px"
       >
 				Next
 			</Button>
@@ -53,7 +55,11 @@ export const CurrentQuestion = () => {
 	} else {
 		button = (
 			<Link to='/summary'>
-				<Button >Finish</Button>
+				<Button
+        width="250px"
+        widthDesktop="350px">
+          Finish
+        </Button>
 			</Link>
 		);
 	}
@@ -80,7 +86,8 @@ export const CurrentQuestion = () => {
 					<QuestionButton
 						disabled={answer}
 						key={item}
-						className='answer-button'
+            width="250px"
+            widthDesktop="350px"
 						onClick={() => onAnswerSubmit(question.id, index)}>
 						{item}
 						<span>{showEmoji(index)}</span>

@@ -40,14 +40,14 @@ const SummaryPage = () => {
 			<Confetti width={width} height={height} />
 			<h1>Finished !</h1>
 			<p>
-				You got {correctAnswers.length} correct out of {allQuestions}
-				questions!
+				You got {correctAnswers.length} correct out of {allQuestions} questions!
 			</p>
 			{correctAnswers < 3 ? "No Manolos for you! 👠" : "Cosmopolitans all around! 🍸"}
 			<Button
 				marginTop="3rem"
-				onClick={onRestartButtonClick}
-				>
+				width="250px"
+				widthDesktop="350px"
+				onClick={onRestartButtonClick}>
 				Restart
 			</Button>
 		</div>

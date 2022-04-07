@@ -8,9 +8,13 @@ const Button = styled.button`
 	color: white;
 	font-family: 'Spartan', sans-serif;
 	font-weight: 700;
-	width: 250px;
+	width: ${props => props.width};
 	border: none;
-	margin-top: ${props => props.marginTop}
+	margin-top: ${props => props.marginTop};
+
+	@media screen and (min-width: 992px) {
+		width: ${props => props.widthDesktop};
+	}
 `;
 
 export default Button;
