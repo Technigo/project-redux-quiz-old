@@ -1,164 +1,154 @@
 .progress-bar {
-  width: 50%;
-  margin: 1em;
+	width: 50%;
+	margin: 1em;
 }
 
 :root {
-  --background: radial-gradient(#ffe600, #ee5e0b);
-  --char: rgba(218, 87, 11, 0.2);
-  --bar: linear-gradient(
-    90deg,
-    #000 5.555%,
-    #000 6.666%,
-    #ffbb00 7.777%,
-    #ffbb00 10%,
-    #000 11.111%,
-    #000 14.444%,
-    #ffbb00 15.555%,
-    #ffbb00 18.888%,
-    #000 19.999%,
-    #000 22.222%,
-    #ffbb00 23.333%,
-    #ffbb00 26.666%,
-    #000 27.777%,
-    #000 31.111%,
-    #ffbb00 32.222%,
-    #ffbb00 35.555%,
-    #000 36.666%,
-    #000 39.999%,
-    #ffbb00 40%,
-    #ffbb00 44.444%,
-    #000 45.555%,
-    #000 50%,
-    #ffbb00 51.111%,
-    #ffbb00 55.555%,
-    #000 56.666%,
-    #000 59.999%,
-    #ffbb00 60%,
-    #ffbb00 64.444%,
-    #000 65.555%,
-    #000 68.888%,
-    #ffbb00 69.999%,
-    #ffbb00 72.222%,
-    #000 73.333%,
-    #000 76.666%,
-    #ffbb00 77.777%,
-    #ffbb00 80%,
-    #000 81.111%,
-    #000 84.444%,
-    #ffbb00 85.555%,
-    #ffbb00 88.888%,
-    #000 89.999%
-  );
-  --eye: #fff;
+	--background: radial-gradient(#ffe600, #ee5e0b);
+	--char: rgba(218, 87, 11, 0.2);
+	--bar: linear-gradient(
+		90deg,
+		#000 5.555%,
+		#000 6.666%,
+		#fef8d8 7.777%,
+		#fef8d8 10%,
+		#000 11.111%,
+		#000 14.444%,
+		#fef8d8 15.555%,
+		#fef8d8 18.888%,
+		#000 19.999%,
+		#000 22.222%,
+		#fef8d8 23.333%,
+		#fef8d8 26.666%,
+		#000 27.777%,
+		#000 31.111%,
+		#fef8d8 32.222%,
+		#fef8d8 35.555%,
+		#000 36.666%,
+		#000 39.999%,
+		#fef8d8 40%,
+		#fef8d8 44.444%,
+		#000 45.555%,
+		#000 50%,
+		#fef8d8 51.111%,
+		#fef8d8 55.555%,
+		#000 56.666%,
+		#000 59.999%,
+		#fef8d8 60%,
+		#fef8d8 64.444%,
+		#000 65.555%,
+		#000 68.888%,
+		#fef8d8 69.999%,
+		#fef8d8 72.222%,
+		#000 73.333%,
+		#000 76.666%,
+		#fef8d8 77.777%,
+		#fef8d8 80%,
+		#000 81.111%,
+		#000 84.444%,
+		#fef8d8 85.555%,
+		#fef8d8 88.888%,
+		#000 89.999%
+	);
+	--eye: #fef8d8;
 }
 
 .progress-wrapper {
-  justify-content: center;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  margin-top: 4em;
-  margin-bottom: 1em;
+	justify-content: center;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	margin-top: 4em;
+	margin-bottom: 1em;
 }
 .chart {
-  justify-content: flex-start;
-  background: var(--char);
-  box-shadow: inset 0px 5px 20px -2px #7e3c17;
-  position: relative;
-  padding: 0 5px;
-  display: flex;
-  height: 40px;
-  width: 500px;
-  border-radius: 100px;
+	justify-content: flex-start;
+	background: var(--char);
+	box-shadow: inset 0px 5px 20px -2px #7e3c17;
+	position: relative;
+	padding: 0 5px;
+	margin-left: 2em;
+	display: flex;
+	height: 40px;
+	width: 500px;
+	border-radius: 100px;
 }
 
 .bar {
-  box-shadow: inset 0px 10px 3px -4px rgba(255, 255, 255, 0.2);
-  animation: load 5s normal forwards;
-  border-radius: 100px;
-  background: var(--bar);
-  height: 40px;
-  /* width: 0px; */
+	box-shadow: inset 0px 10px 3px -4px rgba(255, 255, 255, 0.2);
+	animation: load 5s normal forwards;
+	border-radius: 100px;
+	background: var(--bar);
+	height: 40px;
+	/* width: 0px; */
 }
 
 .bar:after {
-  content: " ";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--eye);
-  animation: eye 5s normal forwards;
+	content: ' ';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: var(--eye);
+	animation: eye 5s normal forwards;
 }
 .bar:before {
-  content: " ";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #000;
-  top: 3px;
-  z-index: 2;
-  animation: eyeball 5s normal forwards;
+	content: ' ';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #000;
+	top: 3px;
+	z-index: 2;
+	animation: eyeball 5s normal forwards;
 }
 
 .num {
-  position: relative;
-  top: -50px;
-  left: -30rem;
-  font-size: 1.1em;
-  font-weight: 600;
-  padding: 7px 30px;
-  background: var(--background);
-  border-radius: 50px;
-  box-shadow: 0px 10px 20px -4px #7e3c17;
-  animation: count 5s normal forwards;
-}
-.num:before {
-  content: " ";
-  position: absolute;
-  top: 30px;
-  left: 60px;
-  width: 15px;
-  height: 15px;
-  transform: rotate(45deg);
-  background: var(--background);
-  z-index: -1;
+	position: relative;
+	top: -50px;
+	left: -30rem;
+	font-size: 1.1em;
+	font-weight: 600;
+	padding: 7px 30px;
+	background: var(--background);
+	border-radius: 50px;
+	box-shadow: 0px 10px 20px -4px #7e3c17;
+	animation: count 5s normal forwards;
 }
 
 @keyframes load {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 1;
-  }
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 1;
+	}
 }
 @keyframes eye {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 92%;
-  }
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 92%;
+	}
 }
 
 @keyframes eyeball {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: 92%;
-    top: 7px;
-    transform: translate(10px, -5px);
-  }
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 92%;
+		top: 7px;
+		transform: translate(10px, -5px);
+	}
 }
 @keyframes count {
-  0% {
-    left: -30rem;
-  }
-  100% {
-    left: -7%;
-  }
+	0% {
+		left: -30rem;
+	}
+	100% {
+		left: -7%;
+	}
 }
