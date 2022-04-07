@@ -207,3 +207,89 @@ footer {
 	/* margin-top: auto; */
 	/* z-index: -500; */
 }
+
+/* MEDIA QUERIES */ 
+
+@media only screen and (min-width: 600px) {
+
+/* This moves white area on bottom in question page, but then ruins starting page. If fix starting page, question page have white blank and vice versa..
+
+	.content-wrapper {
+		height: auto;
+	}*/ 
+
+	.headerWrapper img {
+		width: 500px;
+	}
+
+	nav {
+		width: 400px;
+	}
+
+	a {
+		font-size: 20px;
+	}
+
+	.start-page p {
+		font-size: 20px;
+		margin: 4rem 0;
+	}
+
+	.main-title {
+		font-size: 1.2rem;
+		margin-bottom: 2rem;
+	}
+
+	.answer-button {
+		font-size: 18px;
+	}
+
+	.progress {
+		margin-bottom: 5rem;
+	}
+
+	.credits-page a {
+		font-size: 1.3rem;
+	}
+
+	.summary-page {
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+
+	/*.content-wrapper {
+		height: auto;
+	 } */
+
+	.headerWrapper img {
+		width: 700px;
+	}
+
+	nav {
+		width: 600px;
+	}
+
+	a {
+		font-size: 25px;
+	}
+
+	.start-page p {
+		font-size: 25px;
+		margin: 5rem 0;
+	}
+	
+	.main-title {
+		font-size: 1.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.answer-button {
+		font-size: 20px;
+	}
+
+	.summary-page {
+		font-size: 25px;
+	}
+}
