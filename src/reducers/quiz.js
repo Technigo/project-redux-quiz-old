@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
+    img: "./assets/joey.jpg",
     questionText: "What fake name does Joey go by?",
     options: ["Ken Adams", "John Tribbiani", "Ted Phalange", "Sam Adams"],
     correctAnswerIndex: 0,
@@ -11,6 +12,7 @@ const questions = [
 
   {
     id: 2,
+    img: "./assets/rachelandamy.jpg",
     questionText:
       "What name does Rachel´s sister Amy keep mistakenly calling Emma?",
     options: ["Ellie", "Ella", "Emmy", "Erica"],
@@ -19,6 +21,7 @@ const questions = [
 
   {
     id: 3,
+    img: "./assets/chandlerandjanice.jpg",
     questionText: "Where does Chandler tell Janice he is moving?",
     options: ["Russia", "Yemen", "Yukon", "Switzerland"],
     correctAnswerIndex: 1,
@@ -26,6 +29,7 @@ const questions = [
 
   {
     id: 4,
+    img: "./assets/theneighbour.jpg",
     questionText:
       "What´s the name of the grumpy man who lived below Monica´s apartment?",
     options: ["Mr. Heekler", "Mr. Hickles", "Mr. Finches", "Mr. Heckles"],
@@ -34,6 +38,7 @@ const questions = [
 
   {
     id: 5,
+    img: "./assets/joeyknows.jpg",
     questionText:
       "Which of Monica´s beauty items caused Joey to figure out that Chandler and Monica were hooking up?",
     options: ["An eyelash curler", "Hair straightener", "Hairbrush", "Mascara"],
