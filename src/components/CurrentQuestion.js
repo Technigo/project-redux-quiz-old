@@ -48,7 +48,8 @@ export const CurrentQuestion = () => {
         </div>
 
         <div className="box">
-          <div className="box button-boxes">
+          <div className="box">
+            <div className="button-boxes">
           {question.options.map((item, index) => {
             return (
               <button
@@ -61,6 +62,7 @@ export const CurrentQuestion = () => {
               </button>
             );
           })}
+          </div>
           </div>
         </div>
 
