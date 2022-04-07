@@ -118,7 +118,6 @@ export const Summary = () => {
           {visible && (
             <PicturesStyling>
               <div>
-                <h3>Correct answers</h3>
                 <img src={marieCurie} alt="marieCurie" />
                 <img src={ameliaEarhart} alt="ameliaEarhart" />
                 <img src={valentinaTereshkova} alt="valentina" />
