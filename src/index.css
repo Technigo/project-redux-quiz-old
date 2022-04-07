@@ -23,7 +23,33 @@ main {
   background-repeat: no-repeat;
   background-position-x: 60%;
 }
-/*=====QUESTION SECTION STYLES =====*/
+
+h1 {
+  color: #c3471b;
+  font-size: 48px;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #000;
+  margin: 4px 8px;
+  text-align: center;
+}
+
+/*=====WELCOME PAGE STYLES =====*/
+.welcome-section {
+  height: 250px;
+  background-color: rgba(1, 120, 93, 0.9);
+  border: #000 solid 3px;
+  border-radius: 20px;
+  margin: 1.5em;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/*===== SECTION STYLES =====*/
 .question-section {
   width: 80%;
   max-width: 1000px;
@@ -36,15 +62,6 @@ main {
   align-items: center;
   justify-content: center;
   margin: 1.5em;
-}
-
-h1 {
-  color: #c3471b;
-  font-size: 48px;
-  -webkit-text-stroke-width: 0.2px;
-  -webkit-text-stroke-color: #000;
-  margin: 4px 8px;
-  text-align: center;
 }
 
 /*=====QUIZOVER SECTION STYLES =====*/
@@ -100,4 +117,10 @@ h1 {
   h1 {
     font-size: 80px;
   }
+}
+
+h2 {
+  color: #fef8d8;
+  text-align: center;
+  margin: 1em;
 }

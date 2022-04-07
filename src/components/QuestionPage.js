@@ -65,30 +65,32 @@ const QuestionPage = () => {
   };
 
   return (
-    <section className="question-section">
+    <>
       <h1>Guess Whose Butt</h1>
-      <div className="question-container">
-        <div className="question-img-container">
-          <img
-            className="question-img"
-            src={question.img}
-            alt={question.img_alt}
-          />
+      <section className="question-section">
+        <div className="question-container">
+          <div className="question-img-container">
+            <img
+              className="question-img"
+              src={question.img}
+              alt={question.img_alt}
+            />
+          </div>
+          <div className="answer-btn-container">
+            {question.options.map((item, index) => (
+              <AnswerSubmitBtn
+                type="submit"
+                onClick={() => onAnswerSubmit(question.id, index)}
+                key={item}
+                background={changeColorBtn(index)}
+              >
+                {item}
+              </AnswerSubmitBtn>
+            ))}
+          </div>
         </div>
-        <div className="answer-btn-container">
-          {question.options.map((item, index) => (
-            <AnswerSubmitBtn
-              type="submit"
-              onClick={() => onAnswerSubmit(question.id, index)}
-              key={item}
-              background={changeColorBtn(index)}
-            >
-              {item}
-            </AnswerSubmitBtn>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
