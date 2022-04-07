@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { QuestionBackground } from 'components/CurrentQuestion'
 import { quiz } from 'reducers/quiz'
-// import adaLovelace from './images/adaLovelace'
 
 const SummaryStyling = styled.div`
   margin-top: 10%;
@@ -56,9 +55,6 @@ export const Summary = () => {
   const answerSummary = useSelector((state) => state.quiz.answers)
   const picturesSummary = useSelector((state) => state.quiz.questions)
   console.log(picturesSummary, 'hitta')
-  // const question = useSelector(
-  //   (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  // )
 
   const onRestartButton = () => {
     dispatch(quiz.actions.restart())
@@ -87,15 +83,7 @@ export const Summary = () => {
               </div>
             )
           })}
-          {/* <div>
-            <img src={picturesSummary.answerUrl} alt="Ada Lovelace" />
-          </div> */}
-          {/* {picturesSummary.map((answerURL) => {
-            console.log(picturesSummary, 'bilder')
-            return (
-              <img key={answerURL.id} src={answerURL.answerURL} alt="images" />
-            )
-          })} */}
+          
           <button
             type="button"
             onClick={() => onRestartButton()}
