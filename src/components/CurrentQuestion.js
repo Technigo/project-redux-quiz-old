@@ -15,7 +15,7 @@ export const CurrentQuestion = () => {
 
   const finalQuestion = useSelector((state) => state.quiz.quizOver);
   //
-  const currState = useSelector((state) => state.quiz);
+
   //
 
   //forwarding data to the store
