@@ -6,12 +6,36 @@ const Div = styled.div`
   align-items: center;
 `
 
-const Hero = styled.div`
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-  background-size: cover;
+const Flex = styled.div`
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+`
+
+const Button = styled.button`
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 175px;
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 1024px) {
+    &:hover {
+      background-color: ${props => props.disabled
+      ? "none"
+      : "#BB6DD7"
+    };
+      color: ${props => props.disabled
+      ? "none"
+      : "white"
+    };
+    }
+  }
 `
 
 export const ProgressIcons = styled.p`
@@ -33,10 +57,17 @@ export const ProgressIconsWrapper = styled.div`
   justify-content: center;
 `
 
-export const QuestionContainer = styled(Hero)`
+export const QuestionContainer = styled(Flex)`
   background-image: url("/images/background.jpg");
-  background-size: cover;
+  justify-content: center;
   overflow: hidden;
+  height: auto;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media (min-height: 400px) {
+    height: 100%;
+  }
 `
 
 export const FlexQuestionDiv = styled.section`
@@ -45,7 +76,11 @@ export const FlexQuestionDiv = styled.section`
   align-items: center;
   justify-content: center;
   color: white;
-  height: 85vh;
+  width: 100%;
+`
+
+export const Icon = styled.span`
+  vertical-align: middle;
 `
 
 export const QuestionHeading = styled.h2`
@@ -65,36 +100,26 @@ export const QuestionAlternatives = styled(Div)`
   }
 `
 
-export const QuestionButtons = styled.button`
+export const QuestionButtons = styled(Button)`
   margin: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 175px;
-  color: white;
-
-  @media (min-width: 768px) {
-    font-size: 18px;
-  }
 `
 
-export const ActionButtons = styled.button`
-  margin: 20px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 175px;
-  color: white;
+export const ActionButtons = styled(Button)`
+  margin: 40px 20px 20px;
+
+  @media (min-width: 768px) {
+    margin: 80px 20px 20px;
+  }
 ` 
 
-export const Background = styled(Hero)`
+export const Background = styled(Flex)`
   background-image: url("/images/track.jpg");
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  height: auto;
+
+  @media (min-height: 900px) {
+    height: 100%;
+  }
 `
 
 export const ResultHeading = styled.h2`
@@ -104,16 +129,22 @@ export const ResultHeading = styled.h2`
   font-weight: 800;
   text-transform: uppercase;
   color: #333333;
+  text-shadow: 1px 1px 0px #fff, 7px 6px 0px rgb(0 0 0 / 15%);
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     font-size: 32px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 38px;
   }
 `
 
 export const FlexDiv = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
   padding: 50px 20px 25px;
   text-align: center;
   padding-top: 60px;
@@ -125,10 +156,11 @@ export const RightAnswerWrapper = styled.section`
   padding: 10px;
   color: white;
   margin-bottom: 20px;
+  max-width: 500px;
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 45%;
+    width: 40%;
   }
 `
 
@@ -144,4 +176,9 @@ export const RestartButton = styled.button`
   font-weight: 600;
   width: 175px;
   color: white;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
 `

@@ -11,7 +11,8 @@ import {
   QuestionButtons,
   QuestionHeading,
   Question,
-  ActionButtons
+  ActionButtons,
+  Icon
 } from "styles";
 
 export const QuizQuestions = () => {
@@ -39,28 +40,26 @@ export const QuizQuestions = () => {
   };
 
   return (
-    <main>
-      <QuestionContainer>
-        <FlexQuestionDiv>
-          <QuestionHeading>Question {currentQuestion}</QuestionHeading>
-          <Question>{question.questionText}</Question>
-          <QuestionAlternatives>
-            {question.options.map((answer, index) => (
-              <QuestionButtons
-                key={index}
-                disabled={isClicked}
-                onClick={() => { onAnswerSubmit(question.id, index) }}
-              >{answer}
-              </QuestionButtons>
-            ))}
-          </QuestionAlternatives>
-          {question.id + 1 === questionsLength
-            ? <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Submit Quiz</ActionButtons>
-            : <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Next question</ActionButtons>
-          }
-        </FlexQuestionDiv>
-        <ProgressBar />
-      </QuestionContainer>
-    </main>
+    <QuestionContainer>
+      <FlexQuestionDiv>
+        <QuestionHeading>Question {currentQuestion}</QuestionHeading>
+        <Question>{question.questionText}</Question>
+        <QuestionAlternatives>
+          {question.options.map((answer, index) => (
+            <QuestionButtons
+              key={index}
+              disabled={isClicked}
+              onClick={() => { onAnswerSubmit(question.id, index) }}
+            >{answer}
+            </QuestionButtons>
+          ))}
+        </QuestionAlternatives>
+        {question.id + 1 === questionsLength
+          ? <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Submit Quiz</ActionButtons>
+          : <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Next Question <Icon>{">>"}</Icon></ActionButtons>
+        }
+      </FlexQuestionDiv>
+      <ProgressBar />
+    </QuestionContainer>
   )
 };
