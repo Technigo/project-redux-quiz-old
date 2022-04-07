@@ -12,7 +12,7 @@ const Container = styled.div`
 	background-color: white;
 	width: 90%;
 	max-width: 40rem;
-	margin: 2rem auto;
+	margin: 5rem auto;
 `;
 
 const Title = styled.h3`
@@ -25,6 +25,7 @@ const Text = styled.p`
 	width: 90%;
 	font-size: 1.3rem;
 	text-align: center;
+	font-style: italic;
 `;
 
 const Image = styled.img`

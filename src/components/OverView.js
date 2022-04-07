@@ -9,6 +9,7 @@ export const OverView = () => {
 
 	return <>
 	{!quizEnd ? <CurrentQuestion /> : <Summary />}
+	{/* {!quizEnd ? <Summary /> : <Summary />} */}
 
 
 
