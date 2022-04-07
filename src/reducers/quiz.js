@@ -6,7 +6,7 @@ const questions = [
   { id: 2, img: './assets/WarGames.png', questionText: 'The relief when your code by some witch craft finally runs', options: ['the Terminator', 'Jurassic Park', 'Alien', 'WarGames'], correctAnswerIndex: 3 },
   { id: 3, img: './assets/TheInternship.png', questionText: 'Pair Programming with someone a bit above your level', options: ['The Social Network', 'The Internship', 'Silicon Valley', 'The IT Crowd'], correctAnswerIndex: 1 },
   { id: 4, img: './assets/TheImitationGame.png', questionText: 'Intro to Redux be like', options: ['Ex Machina', 'Enigma', 'The Imitation Game', 'A Beautiful Mind'], correctAnswerIndex: 2 },
-  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: '13 weeks into the boot camp and you still can not spell "lenght"', options: ['The Girl with the Dragon Tattoo', 'Fortran', 'Hidden Figures', 'Hackers'], correctAnswerIndex: 0 }
+  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: '13 weeks into the boot camp and you still can not spell "lenght"', options: ['The Girl with the Dragon Tattoo', 'Fortran', 'Hidden Figures', 'Hackers'], correctAnswerIndex: 3 }
 ]
 
 const initialState = {
