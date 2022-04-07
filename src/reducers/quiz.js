@@ -5,7 +5,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const questions = [
   {
     id: 1,
-    questionText: " On ___ ___, he asked me what day it was.\r\n“It's ___ ___.”",
+    questionText:
+      " On ___ ___, he asked me what day it was.\r\n“It's ___ ___.”",
     options: ["November 3rd", "December 3rd", "October 3rd", "September 3rd"],
     correctAnswerIndex: 2,
   },
