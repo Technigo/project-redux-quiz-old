@@ -73,6 +73,7 @@ margin: 10px;
 font-weight: 400;
 font-size: 18px;
 line-height: 28px;
+/* padding-bottom: 5px; */
 
 `
 
@@ -132,6 +133,16 @@ padding: 5px;
 export const AnswerWrapper = styled.div`
 display: flex;
 justify-content: center;
+`
+
+export const Answers = styled.p`
+margin: 10px 0;
+line-height: 20px;
+
+`
+
+export const Span = styled.span`
+font-weight: 400;
 `
 
 export const StartBtn = styled.button`
