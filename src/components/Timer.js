@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react"
 
 const Timer = () => {
     const [seconds, setSeconds] = useState(10)
-    const [status, setStatus] = useState(true)
 
     useEffect(() => {
         let downloadTimer = setInterval(() => {
@@ -13,7 +12,7 @@ const Timer = () => {
                 clearInterval(downloadTimer)
             }
         }, 1000);
-        return ()=> {
+        return () => {
             clearInterval(downloadTimer);
         }
     })

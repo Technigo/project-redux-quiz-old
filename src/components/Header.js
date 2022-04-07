@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Route } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { quiz } from 'reducers/quiz';

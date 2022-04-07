@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import QuestionButton from './QuestionButton';
 import Button from './Button';
-import Timer from './Timer';
-
-// import { useNavigate } from 'react-router-dom';
-
 import { quiz } from 'reducers/quiz';
+// import Timer from './Timer';
+
 
 export const CurrentQuestion = () => {
+  const [seconds, setSeconds] = useState(10)
+
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	);
@@ -22,7 +22,19 @@ export const CurrentQuestion = () => {
 	const isQuizOver = useSelector((state) => amountOfQuestions === question.id);
 
 	const dispatch = useDispatch();
-	// const navigate = useNavigate();
+
+  useEffect(() => {
+    let downloadTimer = setInterval(() => {
+        if (seconds > 0) {
+            setSeconds(seconds - 1)
+        } else if (seconds <= 0) {
+            clearInterval(downloadTimer)
+        }
+    }, 1000);
+    return () => {
+        clearInterval(downloadTimer);
+    }
+})
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
@@ -77,9 +89,11 @@ export const CurrentQuestion = () => {
 		return null;
 	};
 
+
+
 	return (
 		<div className='question-wrapper'>
-      <Timer />
+       {seconds === 0 ? "Finished" : `${seconds} seconds remaining`}
 			<h1 className='main-title'>
 				Question {question.id}: {question.questionText}
 			</h1>
