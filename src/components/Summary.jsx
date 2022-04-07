@@ -1,11 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz"
-import { NextButton } from "components_styled/StyledElements";
+import { NextButton, SummaryDiv, QADiv } from "components_styled/StyledElements";
 
 const Summary = ({setQuizDone}) => {
   const dispatch = useDispatch();
   const answers = useSelector((store) => store.quiz.answers);
+  let counter = 0;
 
   const restartQuiz = () => {
     dispatch(quiz.actions.restart())
@@ -14,26 +15,38 @@ const Summary = ({setQuizDone}) => {
 
   // console.log(answers);
   return (
-    <>
+    <SummaryDiv>
       <h1>Quiz is done!</h1>
-      {answers.map((answer) => {
+      {answers.map((answer, index) => {
         const correctAnswer =
           answer.question.options[answer.question.correctAnswerIndex];
+        if (correctAnswer === answer.answer) {
+          counter++
+        }
 
         return (
-          <React.Fragment key={answer.questionId}>
-            <h1>{answer.question.questionText}</h1>
-            <h2>You answered: {answer.answer}</h2>
-            <h2>You were {answer.isCorrect ? "right!" : "wrong HAHA."}</h2>
-            {!answer.isCorrect && (
-              <h2>The correct answer was {correctAnswer}</h2>
-            )}
-          </React.Fragment>
+          <QADiv key={answer.questionId}>
+            <span className="text-align-center">Question {index+1}:</span>
+            <h2><br />{answer.question.questionText}</h2>
+            {/* <h1>{answer.question.questionText}</h1> */}
+            <p>You answered {answer.answer} which was {answer.isCorrect ? "correct!" : "sadly incorrect."}</p>
+            {/* <h2>You were {answer.isCorrect ? 'right!' : 'wrong HAHA.'}</h2> */}
+            {!answer.isCorrect && <p>The correct answer was {correctAnswer}</p>}
+            
+          </QADiv>
         );
       })}
-       
-        <NextButton onClick={restartQuiz}>RESTART QUIZ!</NextButton>  
-    </>
+      <QADiv>
+        <p>You got {counter} / 5 correct!</p>
+        {counter > 4 
+          ? <p>WOOOOOOHOOOOO!</p>
+          : counter > 2 
+            ? <p>Not bad!</p>
+            : <p>Better luck next time!</p>
+        }
+      </QADiv>
+      <NextButton onClick={restartQuiz}>RESTART QUIZ!</NextButton>  
+    </SummaryDiv>
   );
 };
 

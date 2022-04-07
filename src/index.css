@@ -23,7 +23,7 @@ body {
 }
 
 
-.img-child {
+/* .img-child {
   background-image: url(./assets/nipyata-upDPy3ZhGt4-unsplash.jpg);
   background-size: cover;
   min-height: 300px;
@@ -37,7 +37,7 @@ body {
   .img-child {
     display: none;
     position: absolute;
-    top: 20%;
+    top: 35%;
     width: 300px;
   }
 }
@@ -49,4 +49,4 @@ body {
     top: 20%;
     height: 100px;
   }
-  }
+  } */
