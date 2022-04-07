@@ -3,12 +3,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import SubmittedView from "./SubmittedView";
 import {
-  QuestionCard,
-  QuestionCardWrapper,
+  Card,
+  Main,
   QuestionNumber,
+  QuestionMaterial,
   Question,
+  Results,
   Image,
   OptionBtn,
+  AnswerWrapper
 } from "styles";
 
 import Buttons from "./Buttons";
@@ -36,18 +39,16 @@ const CurrentQuestion = () => {
   }
 
   return (
-    <>
-      <QuestionCardWrapper>
-        <QuestionCard>
+      <Main>
+        <Card>
           <QuestionNumber>
-            <p>
               Question {currentQuestionIndex + 1}/{questions.length}
-            </p>
           </QuestionNumber>
-          <div>
+          {/* <div> */}
+            <QuestionMaterial>{question.material}</QuestionMaterial>
             <Question>{question.questionText}</Question>
-          </div>
-          <Image width={200} src={question.image} alt={question.questionText} />
+          {/* </div> */}
+          <Image src={question.image} alt={question.questionText} />
           {question.options.map((option, index) => {
             return (
               <OptionBtn
@@ -63,11 +64,12 @@ const CurrentQuestion = () => {
             );
           })}
 
-          {isAnswered && <p>{answers[currentQuestionIndex].isCorrect ? "correct" : "incorrect"}</p>}
           <Buttons label={isLastQuestion ? "Finish" : "Next"} disabled={!isAnswered} />
-        </QuestionCard>
-      </QuestionCardWrapper>
-    </>
+          <AnswerWrapper>
+          {isAnswered && <Results>{answers[currentQuestionIndex].isCorrect ? "Correct" : "Incorrect"}</Results>}
+          </AnswerWrapper>
+        </Card>
+      </Main>
   );
 };
 export default CurrentQuestion;

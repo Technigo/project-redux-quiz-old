@@ -3,57 +3,103 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 body {
-    background-color: hotpink;
+  background-color: rgb(55, 120, 44);
   margin: 0;
   font-family: 'Spartan', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-`
-export const QuestionCard = styled.div`
-display: flex;
-background-color: beige;
-flex-direction: column;
-border: solid;
-width: 90vw;
-height: 85vh;
-`;
 
-export const QuestionCardWrapper = styled.div`
+h1 {
+  font-size: 37px;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  h1 {font-size: 60px;
+    line-height: 78px;
+  }
+}
+
+`
+export const Main = styled.main`
 display: flex;
-width: 100vw;
-height: 100vh;
+min-width: 375px;
+max-width: 700px;
+margin: 0 auto;
+height: auto;
 justify-content: center;
 align-items: center;
 
 `
-export const QuestionNumber = styled.div`
-background-color: purple;
+export const Card = styled.div`
+box-sizing: border-box;
+display: flex;
+background-color: #FCF3D1;
+flex-direction: column;
+border: solid;
+border-radius: 10px;
+width: 90%;
+margin: 3vh;
+min-height: 85vh;
+
+`;
+
+export const StartCard = styled(Card)`
+padding: 2vw 5vw 0 5vw;
+
+`
+
+export const StartText = styled.p`
+
+@media (min-width: 768px) {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+`
+
+export const QuestionNumber = styled.p`
+background-color: rgb(0,0,0);
 font-size: 12px;
 font-weight: 700;
 color: beige;
-padding-left: 10px;
+padding: 10px;
+margin: 0;
 ` 
 
-export const Question = styled.h1`
+export const Question = styled.h2`
 margin: 10px;
 font-weight: 400;
-font-size: 16px;
+font-size: 18px;
 line-height: 28px;
 
 `
+
+export const QuestionMaterial = styled(Question)`
+font-weight: 700;
+font-size: 18px;
+margin-bottom: 0;
+
+`
+
 export const Image = styled.img`
 border: solid 1px; 
 border-radius: 10px;
 align-self: center;
 margin-bottom: 10px;
+width: 200px;
+
+@media (min-width: 768px) {
+  width: 350px;
+}
 `
 
 export const OptionBtn = styled.button`
 font-family: 'Spartan', sans-serif;
 font-size: 14px;
 font-weight: 600;
-width: 70vw;
+width: 70%;
 align-self: center; 
 background: transparent;
 border: 2px solid black;
@@ -64,11 +110,9 @@ margin-top: 8px;
 
 export const NextBtnWrapper = styled.div`
 display: flex;
-position: absolute;
 justify-content: flex-end;
-right: 5%;
-bottom: 8%;
- 
+bottom: 8%; 
+color: black;
 `
 
 export const NextButton = styled.button`
@@ -85,6 +129,26 @@ padding: 5px;
 
 `
 
-export const BtnText = styled.span`
-
+export const AnswerWrapper = styled.div`
+display: flex;
+justify-content: center;
 `
+
+export const StartBtn = styled.button`
+color: white;
+background-color: black;
+font-family: inherit;
+font-weight: 600;
+padding: 50px;
+border: 2px solid black;
+border-radius: 10px;
+margin-top: 40px;
+padding: 18px;
+font-size:20px;
+`
+
+export const Results = styled.p`
+font-weight: bold;
+`
+
+

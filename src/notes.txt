@@ -4,8 +4,11 @@
 - Check if the answer index is the same as the correct answer index
 
 
-Components: 
-1. Start
-2. CurrentQustion
-3. Summary
-4. Button
+7/4/22
+- Start Page (both styling and copywriting)
+- Rewrite questions
+- Buttons on Safari Mobile View (fix the position)
+- Style SubmittedView (Summary)
+
+
+

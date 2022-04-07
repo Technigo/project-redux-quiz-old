@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { quiz } from 'reducers/quiz'
 import { GlobalStyle } from 'styles'
 
+import StartView from 'components/StartView'
 import CurrentQuestion from 'components/CurrentQuestion'
 
 const reducer = combineReducers({
@@ -13,12 +14,16 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 export const App = () => {
+
+  const [quizStart, setQuizStart] = useState(false)
+
   return (
     <>
       <GlobalStyle />
-    <Provider store={store}>
-      <CurrentQuestion />
-    </Provider>
+      <Provider store={store}>
+        {!quizStart && <StartView quizStart={quizStart} setQuizStart={setQuizStart}/>}
+        {quizStart && <CurrentQuestion />}
+      </Provider>
     </>
   )
 }
