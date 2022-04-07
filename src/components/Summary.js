@@ -4,7 +4,7 @@ import { quiz } from 'reducers/quiz'
 import styled from 'styled-components'
 import giphy from 'assets/giphy.gif'
 import g1vY from 'assets/g1vY.gif'
-import Timer from './Timer'
+// import Timer from './Timer'
 
 const SummaryWrap = styled.div`
   display: flex;
@@ -44,13 +44,20 @@ export const Summary = () => {
         {correctAnswers < 3 && (
           <>
             <h2>Maybe you should rewatch the show...</h2>
-            <img src={giphy} alt="loser-gif" />
+            <img 
+            src={giphy} 
+            alt="loser-gif" 
+            width="375px"/>
           </>
         )}
         {correctAnswers >= 3 && (
           <>
             <h2>You are true a fan, great work!</h2>
-            <img src={g1vY} alt="winner-gif" />
+            <img 
+            src={g1vY} 
+            alt="winner-gif" 
+            width="375px"
+            />
           </>
         )}
 

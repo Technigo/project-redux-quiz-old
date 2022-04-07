@@ -16,6 +16,6 @@ const Timer = () => {
     counter > 0 && setTimeout(() => setCounter(counter + 1), 1000)
   }, [counter])
 
-  return <Countdown>Can you bet the clock: {counter}</Countdown>
+  return <Countdown>Can you beat the clock: {counter}</Countdown>
 }
 export default Timer

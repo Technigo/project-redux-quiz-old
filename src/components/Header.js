@@ -21,7 +21,7 @@ export const Header = () => {
       <Image>
         <img
           src="https://i.postimg.cc/tRhdkhk0/STLOGO.png"
-          width="500px"
+          width="375px"
           className="logo"
           alt="STRANGER THINGS"
         ></img>

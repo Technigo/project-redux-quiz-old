@@ -8,20 +8,28 @@ import { Footer } from './Footer'
 import styled from 'styled-components'
 import Timer from './Timer'
 
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
+
+const devices = {
+  mobile: '(min-width: 375px)',
+  tablet: '(min-width: 768px)',
+  desktop: '(min-width: 1025px)'
+}
+
+
+const Wrapper = styled.div`
+  width: 375px;
+  margin: 0 auto;
+
+  @media ${devices.tablet}{
+    width:768px;
+  }
 `
 
 const Main = styled.section`
   background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  min-width: 800px;
 `
 
 const QuestionContainer = styled.div`
@@ -30,7 +38,6 @@ const QuestionContainer = styled.div`
   align-items: center;
 `
 const Question = styled.h1`
-  width: 700px;
   font-size: 25px;
   text-align: center;
 `
@@ -45,12 +52,17 @@ const Button = styled.button`
   border: none;
   margin: 10px;
   width: 70%;
+  height: 70px;
 
   &:hover {
     color: orange;
   }
 
   border: solid 3px ${(props) => props.border};
+
+  @media ${devices.tablet}{
+    height:50px;
+  }
 `
 
 export const CurrentQuestion = () => {
@@ -113,14 +125,13 @@ export const CurrentQuestion = () => {
                 {item}
               </Button>
             ))}
-            {/* {checkAnswer()} */}
           </QuestionContainer>
         )}
 
-        <ProgBar />
-        <Timer />
-        <Footer />
-      </Main>
-    </Wrapper>
+          <ProgBar />
+          <Timer />
+          <Footer />
+        </Main>
+      </Wrapper>
   )
 }
