@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 import ElephantButt from '../components/assets/elephant_butt.png'
 import TigerButt from '../components/assets/tiger_butt.png'
 import FoxButt from '../components/assets/fox_butt.png'
@@ -107,13 +107,13 @@ export const quiz = createSlice({
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;
 
-      const question = state.questions.find((q) => q.id === questionId);
+			const question = state.questions.find((q) => q.id === questionId)
 
-      if (!question) {
-        throw new Error(
-          "Could not find question! Check to make sure you are passing the question id correctly."
-        );
-      }
+			if (!question) {
+				throw new Error(
+					'Could not find question! Check to make sure you are passing the question id correctly.'
+				)
+			}
 
       if (question.options[answerIndex] === undefined) {
         throw new Error(
@@ -137,7 +137,14 @@ export const quiz = createSlice({
         isCorrect: question.correctAnswerIndex === answerIndex,
       });
 
-    },
+			state.answers.push({
+				questionId,
+				answerIndex,
+				question,
+				answer: question.options[answerIndex],
+				isCorrect: question.correctAnswerIndex === answerIndex,
+			})
+		},
 
 
     /**

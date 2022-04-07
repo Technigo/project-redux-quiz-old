@@ -1,6 +1,7 @@
-import React , {useState} from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
+import "./QuestionPage.css";
 import styled, { keyframes } from "styled-components";
 
 const AnswerSubmitBtn = styled.button`
@@ -14,6 +15,8 @@ const AnswerSubmitBtn = styled.button`
   font-size: 18px;
   width: 10em;
   margin-bottom: 1em;
+  background: ${(props) => props.background};
+
   &:hover {
     background-color: #45413c;
     color: #fef8d8;
@@ -43,7 +46,7 @@ const Counter = styled.span`
 
 
 const QuestionPage = () => {
-	const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
