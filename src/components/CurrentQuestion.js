@@ -1,28 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+
 import styled from 'styled-components';
-
-import swal from 'sweetalert'; 
-
-
-const ButtonContainer = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  gap: 1rem;
-
-
-`;
-
-const Button = styled.button`
-padding: 0.7rem;
-border-radius: 5px;
-background-color: #FF5F00;
-color: white;
-font-size: 1rem;
-cursor: pointer;
-border: none;
-`;
+import swal from 'sweetalert';
 
 const Container = styled.div`
 	display: flex;
@@ -45,6 +26,22 @@ const Image = styled.img`
 	// object-fit: cover;
 `;
 
+const ButtonContainer = styled.div`
+	display: flex;
+	margin-top: 2rem;
+	gap: 1rem;
+`;
+
+const Button = styled.button`
+	padding: 0.7rem;
+	border-radius: 5px;
+	background-color: #ff5f00;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	border: none;
+`;
+
 const Counter = styled.p`
 	font-weight: 500;
 	font-size: 1.3rem;
@@ -54,9 +51,6 @@ export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	);
-	//const quizOver = useSelector((state) => state.quiz.quizOver);
-	// console.log(question);
-	// console.log(quizOver);
 
 	const dispatch = useDispatch();
 	const onAnswerSubmit = (id, index) => {
@@ -85,7 +79,7 @@ export const CurrentQuestion = () => {
 				{question.options.map((item, index) => {
 					return (
 						<Button
-						    className=''
+							className=''
 							key={item}
 							onClick={() => onAnswerSubmit(question.id, index)}
 						>
