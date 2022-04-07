@@ -142,12 +142,8 @@ button{
   font-family: 'Permanent Marker', cursive;
 }
 
-.button-boxes {
+.box {
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 300px;
-  justify-content: center;
 }
 
 .options{
@@ -263,6 +259,10 @@ button[disabled] {
     font-weight: initial;
   }
 
+  .box {
+   max-width: 600px;
+  }
+
 
   .options {
     padding: 12px;
@@ -298,10 +298,13 @@ button[disabled] {
     }
     
     .question span {
-      font-size: 30px;
-      max-width: 500px;
+      max-width: 600px;
       display: block;
       font-weight: initial;
+    }
+
+    .box {
+      max-width: 700px;
     }
     
 
