@@ -13,7 +13,7 @@ const Summary = () => {
       return (
         <>
       <div className='summary'>
-        <h2>This is your summary</h2>
+        <h1>This is your summary</h1>
         {userAnswer.map((answer) => (
           <>
             <div className='summary-text'>
