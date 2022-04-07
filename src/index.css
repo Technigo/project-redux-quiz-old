@@ -109,9 +109,11 @@ code {
   align-items: center;
 }
 
-.box {
+.box button {
+  text-align: center;
   align-items: center;
 }
+
 
 .question-image {
   height: 270px;
@@ -140,23 +142,23 @@ button{
   font-family: 'Permanent Marker', cursive;
 }
 
+.button-boxes {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  justify-content: center;
+}
+
 .options{
 margin:5px;
 padding:10px;
 background-color: #42A2D6;
-width: 160px;
+width: 250px;
 font-size: 14pt;
 border:2px solid #00009e;
 align-items: center;
 color:white;
-}
-
-.button-boxes {
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  max-width: 350px;
-  text-align: center;
 }
 
 button:hover{
@@ -250,14 +252,6 @@ button[disabled] {
       width: 6px;
     }
 
-  .button-boxes {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    max-width: 350px;
-    text-align: center;
-  }
-
   .question {
     font-weight: 300;
     max-width: 480px;
@@ -308,14 +302,6 @@ button[disabled] {
       max-width: 500px;
       display: block;
       font-weight: initial;
-    }
-
-    .button-boxes {
-      display: flex; 
-      flex-wrap: wrap; 
-      justify-content: center; 
-      max-width: 350px;
-      text-align: center;
     }
     
 
