@@ -22,7 +22,32 @@ color: white;
 font-size: 1rem;
 cursor: pointer;
 border: none;
+`;
 
+const Container = styled.div`
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: white;
+	width: 90%;
+	max-width: 40rem;
+	margin: 2rem auto;
+`;
+
+const Title = styled.h3`
+	width: 90%;
+	font-size: 1.3rem;
+`;
+
+const Image = styled.img`
+	width: 90%;
+	height: auto;
+	// object-fit: cover;
+`;
+
+const Counter = styled.p`
+	font-weight: 500;
+	font-size: 1.3rem;
 `;
 
 export const CurrentQuestion = () => {
@@ -50,9 +75,12 @@ export const CurrentQuestion = () => {
 	}
 
 	return (
-		<div className='container'>
-			<h3>Question: {question.questionText}</h3>
-			<img src={question.img} alt='movie' />
+		<Container>
+			<Title>
+				Which of these techy movies are the random print screen from?{' '}
+				{question.questionText}
+			</Title>
+			<Image src={question.img} alt='movie' />
 			<ButtonContainer>
 				{question.options.map((item, index) => {
 					return (
@@ -66,7 +94,7 @@ export const CurrentQuestion = () => {
 					);
 				})}
 			</ButtonContainer>
-			<p className='question-count'>Question {question.id} of 5</p>
-		</div>
+			<Counter>Question {question.id} of 5</Counter>
+		</Container>
 	);
 };
