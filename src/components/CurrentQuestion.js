@@ -20,6 +20,10 @@ const Title = styled.h3`
 	font-size: 1.3rem;
 `;
 
+const Text = styled.p`
+	width: 90%;
+`;
+
 const Image = styled.img`
 	width: 90%;
 	height: auto;
@@ -71,10 +75,10 @@ export const CurrentQuestion = () => {
 	return (
 		<Container>
 			<Title>
-				Which of these techy movies are the random print screen from?{' '}
-				{question.questionText}
+				Which of these techy movies are the random print screen from?
 			</Title>
 			<Image src={question.img} alt='movie' />
+			<Text>{question.questionText}</Text>
 			<ButtonContainer>
 				{question.options.map((item, index) => {
 					return (
