@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector} from 'react-redux'
-import { RestartButton } from './Button';
+import { RestartButton } from './Button'
+import { Footer } from 'components/Footer'
+
 
 const Summary = () => {
     const userAnswer = useSelector((state) => state.quiz.answers);
@@ -26,9 +28,11 @@ const Summary = () => {
             </div>
           </>
         ))}
+         <RestartButton />
         <p>Your score {correctAnswers.length}/{userAnswer.length}</p>
       </div>
-      <RestartButton />
+      <Footer/>
+      
       </>
     );
   };

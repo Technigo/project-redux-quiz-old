@@ -1,54 +1,82 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { quiz } from 'reducers/quiz'
-import { useState, useEffect } from 'react'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { quiz } from 'reducers/quiz';
+import { Audio } from 'components/Audio'
+import { Link } from 'react-router-dom'
 
+
+export const StartButton = () => {
+  return ( 
+  <>
+  <button className="start-button" onClick={StartButton}> 
+  START QUIZ HERE!</button>
+  <Audio />
+  </>
+  )
+}
 
 export const RestartButton = () => {
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-const clickRestart = () => {
-    dispatch(quiz.actions.restart())
+  const clickRestart = () => {
+    dispatch(quiz.actions.restart());
+  };
 
-}
+  return (
+    <div>  
+      <Link to="/">
+    <button className='btn-restart' type='button' onClick={clickRestart}>
+      Restart Quiz
+    </button>
+    </Link> 
+    </div>
+  );
+};
 
-    return (
-      <button className='btn-restart' type='button' onClick={clickRestart}>
-        Restart Quiz
-      </button>
-    )
-}
+export const AnswerButton = ({
+  item,
+  index,
+  questionId,
+  question,
+  answer,
+  setDisabled,
+  disabled,
+}) => {
+  const dispatch = useDispatch();
+  const onAnswerSubmit = (id, index) => {
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+    setDisabled(true);
+  };
 
+  return (
+    <button
+      className={
+        !answer
+          ? 'defaultbtn'
+          : index === question.correctAnswerIndex
+          ? 'correct'
+          : 'wrong'
+      }
+      type='submit'
+      disabled={disabled}
+      onClick={() => onAnswerSubmit(questionId, index)}
+      key={item}
+    >
+      {item}
+    </button>
+  );
+};
 
-export const AnswerButton = ({item, index, questionId, question, answer}) => {
-    const [disable, setDisabled] = useState(false)
-    const dispatch = useDispatch()
-    const onAnswerSubmit = (id, index) => {
-        dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-        setDisabled(true)
-      };
-      
-    return (
-        <button  className={!answer ? "defaultbtn" : index === question.correctAnswerIndex ? "correct" : "wrong"}
-        type="submit" 
-        disabled={disable}
-        onClick={() => onAnswerSubmit(questionId, index)}
-        key={item}>{item}</button>
-    )
-}
+export const NextQuestion = ({ setDisabled }) => {
+  const dispatch = useDispatch();
+  const nextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion());
+    setDisabled(false);
+  };
 
-export const NextQuestion = () => {
-    const dispatch = useDispatch()
-    const nextQuestion = () => {
-        dispatch(quiz.actions.goToNextQuestion());
-    }
-    
-    return (
-      <button 
-        className='next'
-        type="submit" 
-        onClick={()=>nextQuestion ()}>
-        Next question</button>
-    )
-}
-  
+  return (
+    <button className='next' type='submit' onClick={() => nextQuestion()}>
+      Next question
+    </button>
+  );
+};
