@@ -70,7 +70,7 @@ export const QuestionButtons = styled.button`
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
   width: 175px;
   color: white;
 
