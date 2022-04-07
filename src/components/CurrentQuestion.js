@@ -120,6 +120,7 @@ export const CurrentQuestion = () => {
                 onClick={() => onAnswerSubmit(question.id, index)}
                 key={item}
                 border={changeBorderColor(index)}
+                disabled={answersArray.length === question.id}
               >
                 {item}
               </Button>
