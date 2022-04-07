@@ -7,7 +7,8 @@ import swal from 'sweetalert';
 
 
 const ButtonContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
   gap: 1rem;
 
@@ -15,13 +16,13 @@ const ButtonContainer = styled.div`
 `;
 
 const Button = styled.button`
-padding: 0.7rem;
-border-radius: 5px;
-background-color: #FF5F00;
-color: white;
-font-size: 1rem;
-cursor: pointer;
-border: none;
+ padding: 0.7rem;
+ border-radius: 5px;
+ background-color: #FF5F00;
+ color: white;
+ font-size: 1rem;
+ cursor: pointer;
+ border: none;
 
 `;
 
