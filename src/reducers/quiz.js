@@ -6,34 +6,39 @@ const questions = [
     id: 1,
     questionText: 'Who was the first woman to win a Nobel prize?',
     options: ['Selma Lagerlöf', 'Marie Curie', 'Mother Teresa'],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
+    answerURL: './images/marie-curie1.jpg'
   },
   {
     id: 2,
     questionText:
       'Who was the first woman to, in 1932, fly nonstop and alone over the Atlantic?',
     options: ['Kathrine Switzer', 'Amelia Earhart', 'Gertrude Ederle'],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
+    answerURL: './images/Amelia_Earthart.jpg'
   },
   {
     id: 3,
     questionText: 'Who was the first woman in space?',
     options: ['Valentina Tereshkova', 'Sally Ride', 'Mae Jemison'],
-    correctAnswerIndex: 0
+    correctAnswerIndex: 0,
+    answerURL: './images/Valentina tereskhova.jpg'
   },
   {
     id: 4,
     questionText:
       'Which woman, who lived 1815-1852, is described as the first programmer in history?',
     options: ['Grace Hopper', 'Mae Jemison', 'Ada Lovelace'],
-    correctAnswerIndex: 2
+    correctAnswerIndex: 2,
+    answerURL: './images/Ada_lovelace.jpg'
   },
   {
     id: 5,
     questionText:
       'What is the name of the President of the European Commission since 1 Dec 2019 and also the first woman to hold this post?',
     options: ['Angela Merkel', 'Ursula von der Leyen', 'Christine Lagarde'],
-    correctAnswerIndex: 1
+    correctAnswerIndex: 1,
+    answerURL: './images/Ursula von der leyen.jpg'
   }
 ]
 

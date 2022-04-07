@@ -5,28 +5,28 @@ import { useSelector } from 'react-redux'
 const ProgressBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   margin-top: 50px;
 `
 
 const Progress = styled.div`
   background-color: #b58526;
-  padding: 3px 6px; 
+  padding: 3px 6px;
   -webkit-appearence: none;
+  border-radius: 10px;
 `
 
 export const ProgressBar = () => {
-  const quizSlice = useSelector(state => state)
+  const quizSlice = useSelector((state) => state)
   const questions = quizSlice.quiz.questions
   const answers = quizSlice.quiz.answers
 
   return (
     <ProgressBarWrapper>
-        <Progress>
-          <progress value={answers.length} max={questions.length} />
-        </Progress>
-        <p>{(answers.length/questions.length)*100}%</p>
+      <Progress>
+        <progress value={answers.length} max={questions.length} />
+      </Progress>
+      <p>{(answers.length / questions.length) * 100}%</p>
     </ProgressBarWrapper>
   )
 }
-
