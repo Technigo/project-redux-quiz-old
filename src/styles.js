@@ -119,3 +119,13 @@ export const RightAnswerDisplay = styled.h3`
 export const RightAnswer = styled.p`
   margin-bottom: 0;
 `
+
+export const ActionButtons = styled.button`
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 175px;
+  color: white;
+`

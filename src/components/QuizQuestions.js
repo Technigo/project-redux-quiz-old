@@ -10,7 +10,8 @@ import {
   QuestionAlternatives,
   QuestionButtons,
   QuestionHeading,
-  Question
+  Question,
+  ActionButtons
 } from "styles";
 
 export const QuizQuestions = () => {
@@ -51,8 +52,8 @@ export const QuizQuestions = () => {
             ))}
           </QuestionAlternatives>
           {question.id + 1 === questionsLength
-            ? <button disabled={!isClicked} onClick={handleNextQuestion}>Submit Quiz</button>
-            : <button disabled={!isClicked} onClick={handleNextQuestion}>Next question</button>
+            ? <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Submit Quiz</ActionButtons>
+            : <ActionButtons disabled={!isClicked} onClick={handleNextQuestion}>Next question</ActionButtons>
           }
         </FlexQuestionDiv>
         <ProgressBar />
