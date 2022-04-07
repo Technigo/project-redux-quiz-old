@@ -11,10 +11,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 
 	font-family: 'Raleway', sans-serif;
-	background: radial-gradient(
-		circle,
-		rgb(60, 60, 60) 0%,
-		rgb(235, 235, 235) 100%
+	background: linear-gradient(
+		135deg,
+		rgba(132, 57, 185, 1) 0%,
+		rgba(255, 74, 112, 1) 25%,
+		rgba(255, 144, 0, 1) 50%,
+		rgba(255, 74, 112, 1) 75%,
+		rgba(132, 57, 185, 1) 100%
 	);
 	background-attachment: fixed;
 }
