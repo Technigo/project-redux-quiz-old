@@ -30,6 +30,7 @@ export const App = () => {
 						<Route path='/header' element={<Header />} />
 						<Route path='/credits' element={<Credits />} />
 					</Routes>
+					<Footer />
 				</BrowserRouter>
 			</Provider>
 		</div>

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import useWindowSize from "react-use/lib/useWindowSize"
 import Confetti from 'react-confetti';
 
 import { quiz } from 'reducers/quiz';
@@ -15,14 +16,19 @@ const SummaryPage = () => {
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const [height, setHeight] = useState(null);
-	const [width, setWidth] = useState(null);
-	const confettiRef = useRef(null);
 
-	useEffect(() => {
-		setHeight(confettiRef.current.clientHeight);
-		setWidth(confettiRef.current.clientWidth);
-	});
+	const { width, height } = useWindowSize()
+
+	console.log("width:", width)
+	console.log("height:", height)
+	// const [height, setHeight] = useState(null); ref={confettiRef}
+	// const [width, setWidth] = useState(null);
+	// const confettiRef = useRef(null);
+
+	// useEffect(() => {
+	// 	setHeight(confettiRef.current.clientHeight);
+	// 	setWidth(confettiRef.current.clientWidth);
+	// });
 
 	const onRestartButtonClick = () => {
 		dispatch(quiz.actions.restart());
@@ -30,17 +36,20 @@ const SummaryPage = () => {
 	};
 
 	return (
-		<div className='confetti-wrapper' ref={confettiRef}>
+		<div className='summary-page'>
 			<Confetti width={width} height={height} />
-			<div className='summary-page'>
-				<h1>Finished !</h1>
-				<p>
-					You got {correctAnswers.length} correct out of {allQuestions}
-					questions!
-				</p>
-				{correctAnswers < 3 ? "No Manolos for you!" : "Cosmopolitans all around!"}
-				<Button marginTop="3rem" onClick={onRestartButtonClick}>Restart</Button>
-			</div>
+			<h1>Finished !</h1>
+			<p>
+				You got {correctAnswers.length} correct out of {allQuestions}
+				questions!
+			</p>
+			{correctAnswers < 3 ? "No Manolos for you! 👠" : "Cosmopolitans all around! 🍸"}
+			<Button
+				marginTop="3rem"
+				onClick={onRestartButtonClick}
+				>
+				Restart
+			</Button>
 		</div>
 	);
 };

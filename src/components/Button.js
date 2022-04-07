@@ -1,10 +1,9 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
 	appearance: none;
 	background-color: #ee3e93;
-	padding: 1rem 3rem;
+	padding: 0.9rem 3rem;
 	text-transform: uppercase;
 	color: white;
 	font-family: 'Spartan', sans-serif;

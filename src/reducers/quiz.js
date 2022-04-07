@@ -23,7 +23,7 @@ const questions = [
 	{
 		id: 4,
 		questionText:
-			'Samantha cant get through the guest list at Soho House club, which has service and a pool. Whos card does she use to get in?',
+			'Samantha cant get in to the Soho House clubs pool area. Whos card does she use to get in?',
 		options: [
 			'Stanford Blatch',
 			'Smith Jerrod',

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import QuestionButton from './QuestionButton';
 import Button from './Button';
 // import Timer from './Timer';
 
@@ -42,14 +43,17 @@ export const CurrentQuestion = () => {
 
 	if (!isQuizOver) {
 		button = (
-			<Button onClick={() => clickNext()} disabled={!answer}>
+			<Button
+      onClick={() => clickNext()}
+      disabled={!answer}
+      >
 				Next
 			</Button>
 		);
 	} else {
 		button = (
 			<Link to='/summary'>
-				<Button>Finish</Button>
+				<Button >Finish</Button>
 			</Link>
 		);
 	}
@@ -57,9 +61,9 @@ export const CurrentQuestion = () => {
 	const showEmoji = (index) => {
 		if (answer) {
 			if (index === question.correctAnswerIndex) {
-				return '              ✔️';
+				return '✔️';
 			} else {
-				return '         ✖️';
+				return '✖️';
 			}
 		}
 		return null;
@@ -73,14 +77,14 @@ export const CurrentQuestion = () => {
 
 			<div className='questions'>
 				{question.options.map((item, index) => (
-					<button
+					<QuestionButton
 						disabled={answer}
 						key={item}
 						className='answer-button'
 						onClick={() => onAnswerSubmit(question.id, index)}>
 						{item}
 						<span>{showEmoji(index)}</span>
-					</button>
+					</QuestionButton>
 				))}
 			</div>
 
