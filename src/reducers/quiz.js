@@ -34,7 +34,7 @@ const questions = [
 	{
 		id: 3,
 		options: ['Wolf', 'Hyena', 'Coyote', 'Fox'],
-		correctAnswerIn: 3,
+		correctAnswerIndex: 3,
 		img: FoxButt,
 		img_alt: 'Fox',
 		img: FoxButt,
