@@ -14,6 +14,7 @@ const Button = styled.button`
 
 	@media screen and (min-width: 992px) {
 		width: ${props => props.widthDesktop};
+		font-size: ${props => props.fontSizeDesktop};
 	}
 `;
 

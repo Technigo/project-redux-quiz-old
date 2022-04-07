@@ -13,7 +13,8 @@ const StartPage = () => {
 			<Link to='/quiz' className='link-styler'>
 				<Button
 				width="250px"
-				widthDesktop="350px">
+				widthDesktop="450px"
+				fontSizeDesktop="1rem">
 					Start quiz
 				</Button>
 			</Link>

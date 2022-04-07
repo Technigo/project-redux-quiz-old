@@ -46,7 +46,8 @@ const SummaryPage = () => {
 			<Button
 				marginTop="3rem"
 				width="250px"
-				widthDesktop="350px"
+				widthDesktop="450px"
+				fontSizeDesktop="1rem"
 				onClick={onRestartButtonClick}>
 				Restart
 			</Button>
