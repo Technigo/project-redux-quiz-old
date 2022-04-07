@@ -17,11 +17,14 @@ const Container = styled.div`
 
 const Title = styled.h3`
 	width: 90%;
-	font-size: 1.3rem;
+	font-size: 1.8rem;
+	text-align: center;
 `;
 
 const Text = styled.p`
 	width: 90%;
+	font-size: 1.3rem;
+	text-align: center;
 `;
 
 const Image = styled.img`
@@ -30,22 +33,22 @@ const Image = styled.img`
 `;
 
 const ButtonContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: 2rem;
-  gap: 1rem;
-
-
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 1rem;
+	gap: 1rem;
+	width: 90%;
 `;
 
 const Button = styled.button`
- padding: 0.7rem;
- border-radius: 5px;
- background-color: #FF5F00;
- color: white;
- font-size: 1rem;
- cursor: pointer;
- border: none;
+	padding: 0.7rem;
+	border-radius: 5px;
+	background-color: #ff5f00;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+	border: none;
+	height: 4rem;
 `;
 
 const Counter = styled.p`
@@ -63,17 +66,17 @@ export const CurrentQuestion = () => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 		if (question.correctAnswerIndex === index) {
 			swal({
-				title: "Good job!",
-				text: "You picked the right one!",
-				icon: "success",
-				button: "continue",
+				title: 'Good job!',
+				text: 'You picked the right one!',
+				icon: 'success',
+				button: 'continue',
 			});
 			dispatch(quiz.actions.goToNextQuestion());
 		} else {
 			swal({
-				title: "Wrong answer!",
-				icon: "error",
-				button: "continue",
+				title: 'Wrong answer!',
+				icon: 'error',
+				button: 'continue',
 			});
 			dispatch(quiz.actions.goToNextQuestion());
 		}
