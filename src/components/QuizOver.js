@@ -4,13 +4,15 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import correctSticker from "../components/assets/checkmark.png";
 import inCorrectSticker from "../components/assets/cross.png";
+import Button from "./Button";
 
 const QuizOver = () => {
-  const selectedAnswer = useSelector((state) => state.quiz.answers);
+
   const dispatch = useDispatch();
+  const selectedAnswer = useSelector((state) => state.quiz.answers);
   const correctAnwser = selectedAnswer.filter((answer) => answer.isCorrect);
 
-  console.log(correctAnwser, "correctAnwser");
+  // Restart game
   const onRestartClick = () => {
     dispatch(quiz.actions.restart());
   };
@@ -43,9 +45,9 @@ const QuizOver = () => {
           ))}
         </div>
 
-        <button className="restart-btn" onClick={onRestartClick}>
+        <Button onClick={onRestartClick}>
           Restart
-        </button>
+        </Button>
       </section>
     </>
   );

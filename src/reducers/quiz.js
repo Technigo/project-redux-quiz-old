@@ -123,8 +123,7 @@ export const quiz = createSlice({
   
       // Score counter
       if (question.correctAnswerIndex === answerIndex) {
-        state.score++
-        console.log(answerIndex)
+        state.score = state.score + 2
       } else {
         state.score--;
       }
@@ -147,7 +146,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     goToNextQuestion: (state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
+      if (state.currentQuestionIndex + 1 === state.questions.length || state.score < 0) {
         state.quizOver = true;
       } else {
         state.currentQuestionIndex += 1;

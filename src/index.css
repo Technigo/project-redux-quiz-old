@@ -41,24 +41,26 @@ h2 {
 }
 
 /*=====WELCOME PAGE STYLES =====*/
-.welcome-section {
-  height: 250px;
-  background-color: rgba(1, 120, 93, 0.9);
-  border: #000 solid 3px;
-  border-radius: 20px;
-  margin: 1.5em;
-  display: flex;
-  align-items: center;
-}
 
 .welcome-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+}
+.welcome-wrapper p {
+  margin:0 0 20px 0;
+  font-size: 20px;
+  color: #fef8d8;
 }
 
 /*===== SECTION STYLES =====*/
 .question-section {
   max-width: 1000px;
+  width: 800px;
+  height: 500px;
   background-color: rgba(1, 120, 93, 0.9);
   border: #000 solid 3px;
   border-radius: 20px;
