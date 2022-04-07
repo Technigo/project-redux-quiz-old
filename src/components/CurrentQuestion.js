@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { quiz } from 'reducers/quiz';
 import Summary from 'components/Summary';
 import { Footer } from 'components/Footer'
 import { AnswerButton, NextQuestion } from './Button';

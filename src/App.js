@@ -5,7 +5,7 @@ import { quiz } from 'reducers/quiz'
 import { StartPage } from 'components/StartPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CurrentQuestion } from 'components/CurrentQuestion'
-import Summary  from 'components/Summary'
+
 
 const reducer = combineReducers({
   quiz: quiz.reducer

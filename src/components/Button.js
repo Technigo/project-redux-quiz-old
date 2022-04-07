@@ -1,17 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { Audio } from 'components/Audio'
-import { Link } from 'react-router-dom'
 
 
 export const StartButton = () => {
   return ( 
-  <>
-  <button className="start-button" onClick={StartButton}> 
+  <button className="start-button">
   START QUIZ HERE!</button>
-  <Audio />
-  </>
   )
 }
 
@@ -24,11 +19,9 @@ export const RestartButton = () => {
 
   return (
     <div>  
-      <Link to="/">
     <button className='btn-restart' type='button' onClick={clickRestart}>
       Restart Quiz
     </button>
-    </Link> 
     </div>
   );
 };

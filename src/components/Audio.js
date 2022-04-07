@@ -1,13 +1,18 @@
 import React from 'react';
 
-export const Audio = () => {
-  
+ /* export const elephantSound = new Audio ("assets/elephantSound.mp3")*/
+
+export const Audio = () => {  
   return (
+    
     <div>
-    <audio controls>
-    <source src="/assets/elephantSound.mp3" type="audio/mp3"/>
-    Your browser does not support the audio element.
-    </audio>
+      <audio controls autoPlay>
+        <source src="assets/Airplanesound.wav" type='audio/wav'/>
+      
+  
+        Your browser does not support the audio element.
+      </audio>
+
     </div>
   );
 };
