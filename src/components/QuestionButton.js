@@ -13,6 +13,18 @@ const QuestionButton = styled.button`
 	align-items: center;
 	margin: 5px;
 	color: black;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #ee3e93;
+		color: white;
+	}
+
+	&:disabled {
+		background-color: #fcfcfc;
+		color: black;
+		opacity: 0.5;
+	}
 
 	@media screen and (min-width: 992px) {
 		width: ${props => props.widthDesktop};

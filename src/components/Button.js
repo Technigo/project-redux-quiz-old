@@ -11,6 +11,18 @@ const Button = styled.button`
 	width: ${props => props.width};
 	border: none;
 	margin-top: ${props => props.marginTop};
+	cursor: pointer;
+
+	&:hover {
+		background-color: #fcfcfc;
+		color: black;
+	}
+
+	&:disabled {
+		background-color: #ee3e93;
+		color: white;
+		opacity: 0.5;
+	}
 
 	@media screen and (min-width: 992px) {
 		width: ${props => props.widthDesktop};
