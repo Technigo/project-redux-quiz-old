@@ -3,25 +3,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import styled, { keyframes } from "styled-components";
 import "./QuestionPage.css";
+import "./ProgressBar.css";
 import Button from "./Button";
 import { Footer } from "./Footer";
 
-
 const Counter = styled.span`
-   background: #000;
-   width: 200px;
-    height: 50px;
-    border-radius: 10px;
-    color: #fef8d8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: 700;
-    animation: ${props => props.animation} 2s ease-in-out ;
-`
-
-
+  background: #000;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  color: #fef8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  animation: ${(props) => props.animation} 2s ease-in-out;
+`;
 
 const QuestionPage = () => {
   const dispatch = useDispatch();
@@ -34,27 +32,22 @@ const QuestionPage = () => {
     state.quiz.answers.find((a) => a.questionId === question.id)
   );
 
-  
   const answerArray = useSelector((state) => state.quiz.answers);
-  
+
   const currentQuestionIndex = useSelector(
     (state) => state.quiz.currentQuestionIndex
-    );
-    
+  );
+
   const score = useSelector((state) => state.quiz.score);
 
   const onAnswerSubmit = (id, index) => {
- 
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
     setTimeout(displayNextQuestion, 4000);
-    
   };
-  
+
   const displayNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion());
-    
   };
-  
 
   //Check the answer state - correct or incorrect
   const changeColorBtn = (indexOption) => {
@@ -68,14 +61,12 @@ const QuestionPage = () => {
     }
   };
 
-
-const scoreAnimation= () => {
+  const scoreAnimation = () => {
     if (answerArray.length === currentQuestionIndex) {
-        return ''
-    }
-        else {
-            if(answerArray[currentQuestionIndex].isCorrect) {
-                return keyframes`
+      return "";
+    } else {
+      if (answerArray[currentQuestionIndex].isCorrect) {
+        return keyframes`
      
                    25% {
                        font-size: 40px;
@@ -88,10 +79,9 @@ const scoreAnimation= () => {
                        font-size: 20px;
 
                    }
-                `
-            }
-            else {
-                return keyframes `
+                `;
+      } else {
+        return keyframes`
                 25% {
                   font-size: 40px;
                   background:#E76158 ;
@@ -99,56 +89,64 @@ const scoreAnimation= () => {
                 60% {
                   background: black;
                   font-size: 20px;
-                `
-            }
-        }
-}
-const correctAnswerAnimation = (correctIndex) =>{
-  if (!answer) {
-    return '0';
-  } else {
-    if (question.correctAnswerIndex === correctIndex) {
-      return '4s';
+                `;
+      }
     }
-    return '0';
-  }
-}
+  };
+  const correctAnswerAnimation = (correctIndex) => {
+    if (!answer) {
+      return "0";
+    } else {
+      if (question.correctAnswerIndex === correctIndex) {
+        return "4s";
+      }
+      return "0";
+    }
+  };
 
   return (
     <>
-    <h1>Guess Whose Butt</h1>
-    <Counter animation={scoreAnimation()}>⭐️ {score} </Counter>
-            {/* ADD PROGRESS BAR */}
-            <p>Question {question.id} /6</p>
-            {/* Or use {currentQuestionIndex + 1} */}
-            {/* *************** */}
-    <section className="question-section">
-      <div className="question-container">
-        <div className="question-img-container">
-          <img
-            className="question-img"
-            src={question.img}
-            alt={question.img_alt}
-          />
+      <h1>Guess Whose Butt</h1>
+      <Counter animation={scoreAnimation()}>⭐️ {score} </Counter>
+      {/* ADD PROGRESS BAR */}
+      {/* <p>Question {question.id} /6</p> */}
+      <div className="progress-wrapper">
+        <div className="chart">
+          <div
+            className="bar"
+            style={{ width: `${(question.id / 6) * 100}%` }}
+          ></div>
         </div>
-        <div className="answer-btn-container">
-          {question.options.map((item, index) => (
-            <Button
-              
-              disabled={answer}
-              type="submit"
-              onClick={() => onAnswerSubmit(question.id, index)}
-              key={item}
-              border={changeColorBtn(index)}
-              animationtime={correctAnswerAnimation(index)}
-            >
-              {item}
-            </Button>
-          ))}
-        </div>
+        <div className="num">{question.id}</div>
       </div>
-    </section>
-    <Footer />
+      {/* Or use {currentQuestionIndex + 1} */}
+      {/* *************** */}
+      <section className="question-section">
+        <div className="question-container">
+          <div className="question-img-container">
+            <img
+              className="question-img"
+              src={question.img}
+              alt={question.img_alt}
+            />
+          </div>
+          <div className="answer-btn-container">
+            {question.options.map((item, index) => (
+              <Button
+                disabled={answer}
+                type="submit"
+                onClick={() => onAnswerSubmit(question.id, index)}
+                key={item}
+                border={changeColorBtn(index)}
+                animationtime={correctAnswerAnimation(index)}
+              >
+                {item}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };
