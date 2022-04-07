@@ -5,13 +5,12 @@ import { useSelector } from "react-redux"
 import { Results } from "./Results"
 
 export const QuizCards = () => {
-  const quizIsOver = useSelector(state => state.quiz.quizOver === true)
+  const quizIsOver = useSelector(state => state.quiz.quizOver);
 
   return (
     <>
-      {!quizIsOver && <QuizQuestions />}
-      {quizIsOver && <Results />}
+      {quizIsOver ? <Results /> : <QuizQuestions /> }
     </>
   )
-}
+};
 

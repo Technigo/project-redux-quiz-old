@@ -1,76 +1,62 @@
 import styled from "styled-components";
 
+const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Hero = styled.div`
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+`
+
 export const ProgressIcons = styled.p`
   background-color: ${props => props.right
-    ? "green"
+    ? "#52af5c"
     : props.wrong
-    ? "red"
+    ? "#fc2041"
     : "grey" 
   };
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
 `
 
 export const ProgressIconsWrapper = styled.div`
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
 `
 
-export const Background = styled.div`
-  background-image: url('https://images.unsplash.com/photo-1549896869-ca27eeffe4fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80');
-  height: 150vh;
-  width: 100vw;
-  object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
+export const QuestionContainer = styled(Hero)`
+  background-image: url("/images/background.jpg");
 `
 
-export const FlexDiv = styled.div`
+export const FlexQuestionDiv = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  padding-top: 60px;
-`
-
-export const ResultHeading = styled.h1`
-  margin: 0;
-  text-transform: uppercase;
-  color: #333333;
-`
-
-export const RightAnswerDisplay = styled.h2`
-  background-color: #BB6DD7;
-  border-radius: 10px;
-  padding: 10px;
+  justify-content: center;
+  height: 85vh;
   color: white;
 `
 
-export const BackgroundDiv = styled.div`
-  background-image: url('https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-  height: 150vh;
-  width: 100vw;
-  object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
+export const QuestionHeading = styled.h2`
+  text-transform: uppercase;
 `
 
-export const FlexQuestionDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-`
-
-export const QuestionAlternatives = styled.span`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @media (min-width: 992px) {
-      flex-direction: row;
-    }
+export const QuestionAlternatives = styled(Div)`
+  width: 500px;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
 `
 
 export const QuestionButtons = styled.button`
@@ -78,15 +64,52 @@ export const QuestionButtons = styled.button`
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 30vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 175px;
   color: white;
 
   @media (min-width: 768px) {
-    
+    font-size: 18px;
   }
 `
 
-export const QuestionHeading = styled.h1`
-    text-transform: uppercase;
+export const Background = styled(Hero)`
+  background-image: url("/images/track.jpg");
+`
+
+export const ResultHeading = styled.h2`
+  text-align: center;
+  padding-top: 50px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #333333;
+`
+
+export const FlexDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 20px;
+  text-align: center;
+  padding-top: 60px;
+`
+
+export const RightAnswerWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+`
+
+export const RightAnswerDisplay = styled.h3`
+  background-color: #BB6DD7;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  width: 200px;
+`
+
+export const RightAnswer = styled.p`
+  margin-bottom: 0;
 `
