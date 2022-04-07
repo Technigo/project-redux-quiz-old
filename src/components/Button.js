@@ -11,6 +11,7 @@ const Button = styled.button`
 	font-weight: 700;
 	width: 250px;
 	border: none;
+	margin-top: ${props => props.marginTop}
 `;
 
 export default Button;

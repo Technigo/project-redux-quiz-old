@@ -9,6 +9,7 @@ import Header from 'components/Header';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import SummaryPage from 'components/SummaryPage';
 import Credits from 'components/Credits';
+import Footer from 'components/Footer';
 
 const reducer = combineReducers({
 	quiz: quiz.reducer,
