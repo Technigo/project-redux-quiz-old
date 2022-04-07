@@ -21,11 +21,11 @@ const CurrentQuestion = () => {
   const dispatch = useDispatch();
 
   const isAnswered = currentQuestionIndex + 1 === answers.length;
-  const readyToSubmit = questions.length - 1 === currentQuestionIndex;
+  const isLastQuestion = questions.length - 1 === currentQuestionIndex;
   const isOver = useSelector((state) => state.quiz.quizOver);
 
-  const onAnswerSubmit = (index) =>
-    dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }));
+  const onAnswerSubmit = (id, index) =>
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -37,30 +37,6 @@ const CurrentQuestion = () => {
 
   return (
     <>
-      {/* <h2>{question.questionText}</h2>
-      <img width={200} src={question.image} alt={question.questionText} /> */}
-      {/* {question.options.map((option, index) => {
-        return (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => {
-              onAnswerSubmit(index);
-            }}
-          >
-            {option.label}
-          </button>
-        );
-      })} */}
-      {/* <Buttons
-        label={readyToSubmit ? "Submit" : "Next"}
-        disabled={currentQuestionIndex === answers.length}
-      /> */}
-      {/* <p>
-        Question {currentQuestionIndex + 1} of {questions.length}
-      </p> */}
-      {/* {isAnswered && <p>{answers[currentQuestionIndex].isCorrect ? "correct" : "incorrect"}</p>} */}
-
       <QuestionCardWrapper>
         <QuestionCard>
           <QuestionNumber>
@@ -78,8 +54,9 @@ const CurrentQuestion = () => {
                 key={option.value}
                 type="button"
                 onClick={() => {
-                  onAnswerSubmit(index);
+                  onAnswerSubmit(question.id, index);
                 }}
+                disabled={isAnswered}
               >
                 {option.label}
               </OptionBtn>
@@ -87,10 +64,7 @@ const CurrentQuestion = () => {
           })}
 
           {isAnswered && <p>{answers[currentQuestionIndex].isCorrect ? "correct" : "incorrect"}</p>}
-          <Buttons
-            label={readyToSubmit ? "Submit" : "Next"}
-            disabled={currentQuestionIndex === answers.length}
-          />
+          <Buttons label={isLastQuestion ? "Finish" : "Next"} disabled={!isAnswered} />
         </QuestionCard>
       </QuestionCardWrapper>
     </>
