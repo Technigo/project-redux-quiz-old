@@ -1,8 +1,29 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import styled from 'styled-components';
 
-import swal from 'sweetalert';
+import swal from 'sweetalert'; 
+
+
+const ButtonContainer = styled.div`
+  display: flex;
+  margin-top: 2rem;
+  gap: 1rem;
+
+
+`;
+
+const Button = styled.button`
+padding: 0.7rem;
+border-radius: 5px;
+background-color: #FF5F00;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+border: none;
+
+`;
 
 export const CurrentQuestion = () => {
 	const question = useSelector(
@@ -32,18 +53,19 @@ export const CurrentQuestion = () => {
 		<div className='container'>
 			<h3>Question: {question.questionText}</h3>
 			<img src={question.img} alt='movie' />
-			<div className='btn-container'>
+			<ButtonContainer>
 				{question.options.map((item, index) => {
 					return (
-						<button
+						<Button
+						    className=''
 							key={item}
 							onClick={() => onAnswerSubmit(question.id, index)}
 						>
 							{item}
-						</button>
+						</Button>
 					);
 				})}
-			</div>
+			</ButtonContainer>
 			<p className='question-count'>Question {question.id} of 5</p>
 		</div>
 	);
