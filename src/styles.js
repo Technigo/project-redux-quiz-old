@@ -178,3 +178,9 @@ export const RestartButton = styled.button`
     color: black;
   }
 `
+
+export const CorrectNumbers = styled.p`
+  @media (min-width: 992px) {
+    font-size: 30px;
+  }
+`

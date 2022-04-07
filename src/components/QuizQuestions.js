@@ -21,7 +21,7 @@ export const QuizQuestions = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const questionsLength = useSelector((state) => state.quiz.questions.length);
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
-
+  
   const currentQuestion = currentQuestionIndex + 1;
 
   const onAnswerSubmit = (id, index) => {

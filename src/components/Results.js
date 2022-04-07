@@ -3,27 +3,38 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { quiz } from "reducers/quiz";
 
-import { Background, FlexDiv, RightAnswerWrapper, RightAnswer, ResultHeading, RestartButton } from "styles";
+import { 
+  Background, 
+  FlexDiv, 
+  RightAnswerWrapper, 
+  RightAnswer, 
+  ResultHeading, 
+  RestartButton, 
+  CorrectNumbers 
+  } from "styles";
 
 export const Results = () => {
   const dispatch = useDispatch();
   const answers = useSelector(state => state.quiz.answers);
-  console.log(answers)
+  const questionsLength = useSelector((state) => state.quiz.questions.length);
 
   const handleQuizRestart = () => {
     dispatch(quiz.actions.restart())
   };
 
+  const filterCorrectAnswers = answers.filter(item => item.isCorrect);
+
   return (
     <Background>
       <ResultHeading>Correct answers</ResultHeading>
+      <CorrectNumbers>You got {filterCorrectAnswers.length}/{questionsLength} right!</CorrectNumbers>
       <FlexDiv>
       {answers.map(answer => (
         <RightAnswerWrapper key={answer.question.id}>
           <h3>Correct Answer: {answer.question.options[answer.question.correctAnswerIndex]}</h3>
           <RightAnswer>Your Answer: {answer.answer} 
             {answer.isCorrect 
-              ? <span role="img" aria-label="trophy icon"> 🏆</span> 
+              ? <span role="img" aria-label="trophy icon"> 🏆</span>
               : <span role="img" aria-label="cross icon"> ❌</span>
             }
           </RightAnswer>
