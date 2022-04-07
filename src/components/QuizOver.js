@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import correctSticker from "../components/assets/checkmark.png";
 import inCorrectSticker from "../components/assets/cross.png";
+import { Footer } from "./Footer";
 
 const QuizOver = () => {
   const selectedAnswer = useSelector((state) => state.quiz.answers);
@@ -47,6 +48,7 @@ const QuizOver = () => {
           Restart
         </button>
       </section>
+      <Footer />
     </>
   );
 };

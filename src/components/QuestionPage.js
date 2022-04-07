@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import "./QuestionPage.css";
 import styled, { keyframes } from "styled-components";
+import { Footer } from "./Footer";
 
 const zoomInZoomOut = keyframes`
 0% {
@@ -103,9 +104,9 @@ const QuestionPage = () => {
       return "#000";
     } else {
       if (question.correctAnswerIndex === indexOption) {
-        return "#66FF00";
+        return "#6DD627";
       }
-      return "red";
+      return "#FF6242";
     }
   };
 
@@ -193,6 +194,7 @@ const scoreAnimation= () => {
         </div>
       </div>
     </section>
+    <Footer />
     </>
   );
 };

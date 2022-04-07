@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { Footer } from './Footer'
 
 const StartBtn = styled.button`
   align-self: center;
@@ -31,6 +32,7 @@ export const WelcomePage = () => {
   return (
     <>
       {!start ? (
+        <>
         <main>
           <h1>Guess Whose Butt</h1>
           <section className="welcome-section">
@@ -42,6 +44,8 @@ export const WelcomePage = () => {
             </div>
           </section>
         </main>
+        <Footer />
+        </>
       ) : (
         <CurrentQuestion />
       )}
