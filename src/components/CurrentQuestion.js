@@ -27,6 +27,7 @@ const Main = styled.section`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+  margin-top: 50px;
 `;
 
 const QuestionContainer = styled.div`
@@ -120,6 +121,7 @@ export const CurrentQuestion = () => {
                 key={item}
                 border={changeBorderColor(index)}
                 disabled={answersArray.length === question.id}
+                tabindex="0"
               >
                 {item}
               </Button>
