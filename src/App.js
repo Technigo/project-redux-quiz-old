@@ -6,6 +6,14 @@ import { Header } from 'components/Header'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import styled from 'styled-components'
 import assets from './assets/background.jpg'
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+body{
+  font-family: 'Bebas Neue', cursive;
+}
+
+`
 
 const StyledApp = styled.section`
   section {
@@ -24,6 +32,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <>
+      <GlobalStyle />
       <StyledApp>
         <section>
           <Header />

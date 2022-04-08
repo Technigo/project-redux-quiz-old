@@ -9,12 +9,23 @@ const StyledCurrentQuestion = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: rgb(255, 255, 255, 0.6);
+    padding-bottom: 30px;
+    width: 50%;
+    min-width: 300px;
+    margin: auto;
   }
 
-  h1,
+  h1 {
+    font-size: 18px;
+    margin: 20px;
+    text-align: center;
+  }
+
   h2 {
     font-size: 18px;
     text-align: center;
+    margin: 10px;
   }
 
   .btn-container {
@@ -30,6 +41,7 @@ const StyledCurrentQuestion = styled.div`
     background: magenta;
     color: black;
     border: 2px solid black;
+    font-family: 'Bebas Neue', cursive;
   }
 
   .next-btn {
@@ -37,9 +49,10 @@ const StyledCurrentQuestion = styled.div`
     border-radius: 3px;
     padding: 5px;
     width: 11rem;
-    background: lightblue;
+    background: #fad02c;
     color: black;
     border: 2px solid black;
+    font-family: 'Bebas Neue', cursive;
   }
 
   button:hover {
@@ -85,18 +98,15 @@ export const CurrentQuestion = () => {
       <div className='question-container'>
         <h1>{question.questionText}</h1>
 
-        {
-          // example of optional rendering
-          // tenerary operator
-          // condition ? true : false
-        }
         <div className='btn-container'>
           {shouldShow && (
             <div>
-              <h1>{isCorrectAnswer ? 'Right answer' : 'Wrong answer'}</h1>
+              <h1>
+                {isCorrectAnswer ? 'Yeah! You got that right!' : 'Haha nope!'}
+              </h1>
               <div className='next-btn-container'>
                 <button className='next-btn' onClick={() => goToNextQuestion()}>
-                  Next question!
+                  Next!
                 </button>
               </div>
             </div>
