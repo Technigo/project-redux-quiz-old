@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import Summary from "./Summary";
 export const CurrentQuestion = () => {
-  //getting data from the store
 
+  //getting data from the store
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
@@ -14,8 +14,6 @@ export const CurrentQuestion = () => {
   );
 
   const finalQuestion = useSelector((state) => state.quiz.quizOver);
-  //
-
   //
 
   //forwarding data to the store
@@ -66,7 +64,8 @@ export const CurrentQuestion = () => {
 
         <div className="box">
           {answer && (
-            <div className="correct-or-wrong">{`This is ${
+            <div className="correct-or-wrong">
+              {`This is ${
               answer.isCorrect ? "correct !" : "wrong !"
             }`}</div>
           )}
