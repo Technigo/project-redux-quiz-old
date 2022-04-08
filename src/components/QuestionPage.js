@@ -148,7 +148,12 @@ const QuestionPage = () => {
 							</Button>
 						))}
 					</div>
-					<Counter animation={scoreAnimation()}>⭐️ {score} </Counter>
+					<Counter animation={scoreAnimation()}>
+						<span role='img' aria-label='star emoji'>
+							⭐️
+						</span>{' '}
+						{score}{' '}
+					</Counter>
 				</section>
 			</div>
 			<Footer />

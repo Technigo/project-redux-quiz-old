@@ -31,7 +31,7 @@ const QuizOver = () => {
 					</h2>
 					<div className='summary-container'>
 						{selectedAnswer.map((item) => (
-							<div>
+							<div id={item}>
 								<img
 									className='sticker'
 									src={item.question.sticker}

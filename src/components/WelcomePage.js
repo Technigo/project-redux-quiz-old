@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { useSelector, useDispatch } from 'react-redux'
 import './QuestionPage.css'
@@ -23,9 +22,8 @@ export const WelcomePage = () => {
 							<div className='question-container welcome-wrapper '>
 								<h2>Let’s see if you know your animal butts!</h2>
 								<h3 className='welcome-text'>How to play?</h3>
-								<p> Correct butt: +2 points </p>
+								<p>Correct butt: +2 points </p>
 								<p>Incorrect butt: -1 point </p>
-								<p>Gameover: under 0 point</p>
 							</div>
 							<Button onClick={onStartButtonclick}> Let's play! </Button>
 						</section>
