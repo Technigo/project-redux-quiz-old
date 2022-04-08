@@ -21,14 +21,7 @@ const SummaryPage = () => {
 
 	console.log("width:", width)
 	console.log("height:", height)
-	// const [height, setHeight] = useState(null); ref={confettiRef}
-	// const [width, setWidth] = useState(null);
-	// const confettiRef = useRef(null);
 
-	// useEffect(() => {
-	// 	setHeight(confettiRef.current.clientHeight);
-	// 	setWidth(confettiRef.current.clientWidth);
-	// });
 
 	const onRestartButtonClick = () => {
 		dispatch(quiz.actions.restart());

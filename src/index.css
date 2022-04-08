@@ -22,14 +22,11 @@ code {
 
 .content-wrapper {
 	width: 100vw;
-	/* height: 100%; */
 	height: 100vh;
-	/* min-height: 90vh; */
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* justify-content: space-around; */
 	text-align: center;
 }
 
@@ -109,7 +106,6 @@ nav {
 	flex-direction: column;
 	width: 80%;
 	align-items: center;
-	/* justify-content: space-evenly; */
 	text-align: center;
 	margin-top: 4rem;
 }
@@ -220,20 +216,13 @@ footer {
 	height: 90px;
 	margin-top: auto;
 	z-index: -10;
-	/* position: relative; */
-	/* position: absolute;
-	bottom: 0; */
+
 }
 
 .skyline-img {
 	mix-blend-mode: multiply;
 	margin-bottom: -5rem;
-	/* position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0; */
-	/* opacity: .3; */
+
 }
 
 
@@ -242,11 +231,6 @@ footer {
 
 @media only screen and (min-width: 668px) {
 
-/* This moves white area on bottom in question page, but then ruins starting page. If fix starting page, question page have white blank and vice versa..
-
-	.content-wrapper {
-		height: auto;
-	}*/ 
 
 	a {
 		font-size: 20px;
@@ -305,10 +289,6 @@ footer {
 
 @media only screen and (min-width: 992px) {
 
-	/*.content-wrapper {
-		height: auto;
-	 } */
-
 	a {
 		font-size: 25px;
 	}
@@ -323,7 +303,6 @@ footer {
 
 	nav {
 		width: 600px;
-		/* padding-bottom: 3rem; */
 	}
 
 	.start-page {

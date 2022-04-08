@@ -7,9 +7,11 @@ import Button from './Button';
 import { quiz } from 'reducers/quiz';
 // import Timer from './Timer';
 
+// */ eslint-disable */
 
 export const CurrentQuestion = () => {
-  const [seconds, setSeconds] = useState(10)
+//   const [seconds, setSeconds] = useState(10)
+//   const [timer] = Timer(10)
 
 	const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 	const answer = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
@@ -18,6 +20,12 @@ export const CurrentQuestion = () => {
 	const isQuizOver = useSelector((state) => amountOfQuestions === question.id);
 
 	const dispatch = useDispatch();
+
+	// useEffect(() => {
+	// 	if (timer <= 0) {
+	// 		dispatch(quiz.actions.goToNextQuestion())
+	// 	}
+	// }, [timer, dispatch])
 
 	const clickNext = () => {
 		dispatch(quiz.actions.goToNextQuestion());
@@ -76,7 +84,7 @@ export const CurrentQuestion = () => {
 
 	return (
 		<div className='question-wrapper'>
-       {/* {seconds === 0 ? "Finished" : `${seconds} seconds remaining`} */}
+			{/* <p>{timer} seconds left</p> */}
 			<h1 className='main-title'>
 				Question {question.id}: {question.questionText}
 			</h1>
