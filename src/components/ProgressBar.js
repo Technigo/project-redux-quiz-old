@@ -9,7 +9,7 @@ const ProgressBarWrapper = styled.div`
   margin-top: 50px;
 
   p {
-    color: #326886;
+    color: #326886;a
     font-weight: 600;
   }
 `
@@ -19,10 +19,6 @@ const Progress = styled.div`
   padding: 3px 6px;
   -webkit-appearence: none;
   border-radius: 10px;
-
-  progress {
-    color: green;
-  }
 `
 
 export const ProgressBar = () => {

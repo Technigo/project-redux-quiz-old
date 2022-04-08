@@ -20,7 +20,7 @@ export const QuestionBackground = styled.div`
     border-radius: 50%;
     background: white;
     animation: ripple 15s infinite;
-    z-index: 1;
+    z-index: 2;
   }
 
   @keyframes ripple {
@@ -36,30 +36,57 @@ export const QuestionBackground = styled.div`
       transform: scale(0.8);
     }
   }
-
-  .large {
-    width: 200px;
-    height: 200px;
-    left: -20px;
-    top: 83%;
+  
+  .small {
+    width: 60px;
+    height: 60px;
+    left: 65px;
+    top: 61%;
     background-color: #b58526;
   }
 
   .medium {
-    width: 100px;
-    height: 100px;
-    left: -20px;
-    top: 67%;
+    width: 110px;
+    height: 110px;
+    left: -10px;
+    top: 68%;
     background-color: #b58526;
   }
 
-  .small {
-    width: 60px;
-    height: 60px;
-    left: 75px;
-    top: 57%;
+  .large {
+    width: 200px;
+    height: 200px;
+    left: -10px;
+    top: 83%;
     background-color: #b58526;
   }
+
+  @media (max-width: 768px) {
+    .small {
+      width: 30px;
+      height: 30px;
+      left: 30px;
+      top: 82%;
+      background-color: #b58526;
+    }
+  
+    .medium {
+      width: 50px;
+      height: 50px;
+      left: -20px;
+      top: 88%;
+      background-color: #b58526;
+    }
+  
+    .large {
+      width: 100px;
+      height: 100px;
+      left: -20px;
+      top: 96%;
+      background-color: #b58526;
+    }
+  }
+
 `
 const QuestionContainer = styled.div`
   background-color: #7da7be;
@@ -134,27 +161,15 @@ const QuestionContainer = styled.div`
 `
 
 export const CurrentQuestion = () => {
-  // @ida getting data from the store / "postnord"
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   )
-
-  // const answer = useSelector(
-  //   (state) => state.quiz.answers.find((a) => (a.questionId === question.id))
-  // )
-
-  // @ida simply to add a console.log
-  // const store = useSelector((state) => state)
-  // console.log(store, 'store')
-
-  // @joanna - added to be able to push user through to Summary after last question.
   const quizOver = useSelector((state) => state.quiz.quizOver)
 
   const userAnswer = useSelector((state) =>
     state.quiz.answers.find((answer) => question.id === answer.questionId)
   )
 
-  // @ida forwarding data from the store / updating the store / "DHL"
   const dispatch = useDispatch()
 
   const onNextButton = () => {
@@ -162,14 +177,8 @@ export const CurrentQuestion = () => {
   }
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-    // if (question.correctAnswerIndex === index) {
-    //   // dispatch(quiz.actions.goToNextQuestion());
-    // } else {
-    //   alert('Wrong answer, pls try again!')
-    // }
   }
 
-  // This pushes the user to the Summary after last question.
   if (quizOver === true) {
     return <Summary />
   }
@@ -189,7 +198,7 @@ export const CurrentQuestion = () => {
           <h1>{question.questionText}</h1>
           {question.options.map((item, index) => {
             return (
-              <div>
+              <div key={index}>
                 <button
                   className={
                     userAnswer && index === question.correctAnswerIndex
@@ -202,7 +211,6 @@ export const CurrentQuestion = () => {
                   key={item}
                   onClick={() => onAnswerSubmit(question.id, index)}
                   disabled={userAnswer}
-                  // disabled={answers.length === question.id}
                 >
                   {item}
                 </button>

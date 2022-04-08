@@ -9,7 +9,6 @@ import valentinaTereshkova from 'images/valentinaTereshkova.jpg'
 import adaLovelace from 'images/adaLovelace.jpg'
 import ursulaVonDerLeyen from 'images/ursulaVonDerLeyen.jpg'
 
-
 const SummaryStyling = styled.div`
   margin-top: 10%;
   background-color: #7da7be;
@@ -28,7 +27,8 @@ const SummaryStyling = styled.div`
     padding: 10px;
   }
 
-  .restart-btn, .answers-btn {
+  .restart-btn,
+  .answers-btn {
     border: none;
     padding: 15px;
     margin: 10px;
@@ -52,7 +52,10 @@ const SummaryStyling = styled.div`
     margin-bottom: 5px;
     background-color: #b58526;
     // width: 50%;
+    align-items: center;
     border: solid #435a67 2px;
+    border-radius: 10px;
+    padding: 5px;
   }
 
   h3 {
@@ -87,13 +90,19 @@ const PicturesStyling = styled.div`
     padding: 3%;
   }
 `
+const Copyright = styled.p`
+  text-align: center;
+  font-size: 0.75rem;
+  color: #b58526;
+  margin-bottom: 1rem;
+`
 
 export const Summary = () => {
   const dispatch = useDispatch()
   const answerSummary = useSelector((state) => state.quiz.answers)
   const picturesSummary = useSelector((state) => state.quiz.questions)
   console.log(picturesSummary, 'hitta')
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   const onRestartButton = () => {
     dispatch(quiz.actions.restart())
@@ -120,8 +129,12 @@ export const Summary = () => {
             )
           })}
 
-          <button type="button" className="answers-btn" onClick={() => setVisible(!visible)}>
-          Wanna see the right answers?
+          <button
+            type="button"
+            className="answers-btn"
+            onClick={() => setVisible(!visible)}
+          >
+            Wanna see the right answers?
           </button>
           {visible && (
             <PicturesStyling>
@@ -134,15 +147,21 @@ export const Summary = () => {
               </div>
             </PicturesStyling>
           )}
-          
+
           <button
             type="button"
             onClick={() => onRestartButton()}
-            className="restart-btn">
+            className="restart-btn"
+          >
             Restart
           </button>
         </div>
       </SummaryStyling>
+      <Copyright>
+        Quiz made by Joanna Lodell, Vanessa Hajek,
+        <br />
+        Therese Nyman and Ida Halling
+      </Copyright>
     </QuestionBackground>
   )
 }
