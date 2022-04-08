@@ -41,13 +41,13 @@ const Button = styled.button`
 	border: solid ${(props) => (props ? props.border : '#000')} 3px;
 	animation: ${zoomInZoomOut} ${(props) => props.animationtime} ease;
 
-	&:hover {
-		background-color: #45413c;
-		color: #fef8d8;
-	}
-
 	@media (min-width: 768px) {
 		margin-bottom: 0;
+
+		&:hover {
+			background-color: #45413c;
+			color: #fef8d8;
+		}
 	}
 `
 

@@ -21,7 +21,7 @@ const QuizOver = () => {
 		<>
 			<h1>Guess Whose Butt</h1>
 			<div className='container'>
-				<section className='question-section'>
+				<section className='question-section quiz-section'>
 					<h2 className='summary-text'>
 						{correctAnwser.length <= 3
 							? 'Oh sorry, look at more butts and try again'
