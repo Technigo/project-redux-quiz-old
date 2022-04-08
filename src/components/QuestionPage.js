@@ -14,7 +14,7 @@ const Counter = styled.span`
 	color: #fef8d8;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
 	font-size: 20px;
 	font-weight: 700;
 	position: absolute;
@@ -170,6 +170,7 @@ const QuestionPage = () => {
 								key={item}
 								border={changeColorBtn(index)}
 								animation={correctAnswerAnimation(index)}
+								
 							>
 								{item}
 							</Button>
@@ -177,9 +178,8 @@ const QuestionPage = () => {
 					</div>
 					<Counter animation={scoreAnimation()}>
 						<span role='img' aria-label='star emoji'>
-							⭐️
-						</span>{' '}
-						{score}{' '}
+							⭐️ 
+						</span> {score}
 					</Counter>
 				</section>
 			</div>

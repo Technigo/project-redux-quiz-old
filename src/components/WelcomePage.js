@@ -1,7 +1,6 @@
 import React from 'react'
 import { CurrentQuestion } from './CurrentQuestion'
 import { useSelector, useDispatch } from 'react-redux'
-import './QuestionPage.css'
 import { quiz } from 'reducers/quiz'
 import Button from './Button'
 import { Footer } from './Footer'
