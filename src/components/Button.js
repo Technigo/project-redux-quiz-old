@@ -20,7 +20,7 @@ export const RestartButton = () => {
   return (
     <div>  
     <button className='btn-restart' type='button' onClick={clickRestart}>
-      Restart Quiz
+      <span>Restart Quiz</span> 
     </button>
     </div>
   );

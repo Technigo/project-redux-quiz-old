@@ -206,10 +206,66 @@ h5 {
     box-shadow: 10px 5px 5px black;
   } 
 
-  .btn-restart:hover {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
+  .btn-restart {
+    background-color: #D3C4BE;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .btn-restart span {
+    transition: all 0.3s;
+  }
+
+  .btn-restart::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+
+  .btn-restart:hover span {
+    letter-spacing: 2px;
+  }
+ 
+  .btn-restart::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .btn-restart::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: rgba(250, 19, 19, 0.1);
+  }
+  .btn-restart:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+
+  /*.btn-restart:hover {
+    -ms-transform: scale(1.5); 
+    -webkit-transform: scale(1.5);
     transform: scale(1.05);
-    box-shadow: 10px 5px 5px black;
-  } 
+    box-shadow: 10px 5px 5px black; */
 }
