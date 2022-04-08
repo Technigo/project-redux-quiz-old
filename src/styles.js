@@ -4,7 +4,7 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 const Flex = styled.div`
   background-repeat: no-repeat;
@@ -12,7 +12,7 @@ const Flex = styled.div`
   flex-direction: column;
   align-items: center;
   background-size: cover;
-`
+`;
 
 const Button = styled.button`
   padding: 10px;
@@ -26,36 +26,33 @@ const Button = styled.button`
 
   @media (min-width: 1024px) {
     &:hover {
-      background-color: ${props => props.disabled
+      background-color: ${(props) => props.disabled
       ? "none"
-      : "#BB6DD7"
-    };
-      color: ${props => props.disabled
+      : "#BB6DD7"};
+      color: ${(props) => props.disabled
       ? "none"
-      : "white"
-    };
+      : "white"};
     }
   }
-`
+`;
 
 export const ProgressIcons = styled.p`
-  background-color: ${props => props.right
+  background-color: ${(props) => props.right
     ? "#52af5c"
     : props.wrong
     ? "#fc2041"
-    : "grey" 
-  };
+    : "grey"};
   border-radius: 50%;
   width: 40px;
   height: 40px;
   margin-right: 12px;
-`
+`;
 
 export const ProgressIconsWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-`
+`;
 
 export const QuestionContainer = styled(Flex)`
   background-image: url("/images/background.jpg");
@@ -68,7 +65,7 @@ export const QuestionContainer = styled(Flex)`
   @media (min-height: 400px) {
     height: 100%;
   }
-`
+`;
 
 export const FlexQuestionDiv = styled.section`
   display: flex;
@@ -77,15 +74,15 @@ export const FlexQuestionDiv = styled.section`
   justify-content: center;
   color: white;
   width: 100%;
-`
+`;
 
 export const QuestionHeading = styled.h2`
   text-transform: uppercase;
-`
+`;
 
 export const Question = styled.h3`
   text-align: center;
-`
+`;
 
 export const QuestionAlternatives = styled(Div)`
   width: 500px;
@@ -94,11 +91,11 @@ export const QuestionAlternatives = styled(Div)`
   @media (min-width: 992px) {
     flex-direction: row;
   }
-`
+`;
 
 export const QuestionButtons = styled(Button)`
   margin: 10px;
-`
+`;
 
 export const ActionButtons = styled(Button)`
   margin: 40px 20px 20px;
@@ -106,7 +103,7 @@ export const ActionButtons = styled(Button)`
   @media (min-width: 768px) {
     margin: 80px 20px 20px;
   }
-` 
+`;
 
 export const Background = styled(Flex)`
   background-image: url("/images/track.jpg");
@@ -116,7 +113,7 @@ export const Background = styled(Flex)`
   @media (min-height: 900px) {
     height: 100%;
   }
-`
+`;
 
 export const ResultHeading = styled.h2`
   padding-top: 50px;
@@ -134,7 +131,7 @@ export const ResultHeading = styled.h2`
   @media (min-width: 768px) {
     font-size: 38px;
   }
-`
+`;
 
 export const FlexDiv = styled.div`
   display: flex;
@@ -144,7 +141,7 @@ export const FlexDiv = styled.div`
   padding: 50px 20px 25px;
   text-align: center;
   padding-top: 60px;
-`
+`;
 
 export const RightAnswerWrapper = styled.section`
   background-color: #BB6DD7;
@@ -158,11 +155,11 @@ export const RightAnswerWrapper = styled.section`
   @media (min-width: 768px) {
     width: 40%;
   }
-`
+`;
 
 export const RightAnswer = styled.p`
   margin-bottom: 0;
-`
+`;
 
 export const RestartButton = styled.button`
   margin: 0 0 30px;
@@ -177,10 +174,4 @@ export const RestartButton = styled.button`
     background-color: white;
     color: black;
   }
-`
-
-export const CorrectNumbers = styled.p`
-  @media (min-width: 992px) {
-    font-size: 30px;
-  }
-`
+`;

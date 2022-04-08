@@ -21,22 +21,22 @@ export const QuizQuestions = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const questionsLength = useSelector((state) => state.quiz.questions.length);
   const currentQuestionIndex = useSelector((state) => state.quiz.currentQuestionIndex);
-  
+
   const currentQuestion = currentQuestionIndex + 1;
 
   const onAnswerSubmit = (id, index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-    setIsClicked(true)
+    dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
+    setIsClicked(true);
   };
 
   const handleNextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion())
-    setIsClicked(false)
+    dispatch(quiz.actions.goToNextQuestion());
+    setIsClicked(false);
   };
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
-  };
+    return <h1>Oh no! I could not find the current question!</h1>;
+  }
 
   return (
     <QuestionContainer>
@@ -48,8 +48,7 @@ export const QuizQuestions = () => {
             <QuestionButtons
               key={index}
               disabled={isClicked}
-              onClick={() => { onAnswerSubmit(question.id, index) }}
-            >{answer}
+              onClick={() => { onAnswerSubmit(question.id, index); }}>{answer}
             </QuestionButtons>
           ))}
         </QuestionAlternatives>
@@ -59,5 +58,5 @@ export const QuizQuestions = () => {
       </FlexQuestionDiv>
       <ProgressBar />
     </QuestionContainer>
-  )
+  );
 };

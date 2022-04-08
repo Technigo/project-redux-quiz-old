@@ -22,5 +22,5 @@ export const WelcomePage = () => {
         </WelcomeContent>
       </WelcomeWrapper>
     </header>
-  )
+  );
 };

@@ -11,7 +11,7 @@ export const WelcomeWrapper = styled.div`
   object-fit: cover;
   text-align: center;
   background-image: url("/images/bgwelcome.png");
-`
+`;
 
 export const WelcomeContent = styled.div`
   position: relative;
@@ -19,7 +19,7 @@ export const WelcomeContent = styled.div`
   justify-content: center;
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const WelcomeTitle = styled.h1`
   position: relative;
@@ -33,7 +33,7 @@ export const WelcomeTitle = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-`
+`;
 
 export const WelcomeBtn = styled.button`
   border-radius: 20px;
@@ -51,4 +51,4 @@ export const WelcomeBtn = styled.button`
     background-color: transparent;
     border: 2px solid #fd9a89;
   }
-`
+`;
