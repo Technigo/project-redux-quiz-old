@@ -11,45 +11,28 @@ import { quiz } from 'reducers/quiz';
 export const CurrentQuestion = () => {
   const [seconds, setSeconds] = useState(10)
 
-	const question = useSelector(
-		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-	);
-	const answer = useSelector(
-		(state) => state.quiz.answers[state.quiz.currentQuestionIndex]
-	);
+	const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
+	const answer = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
 	const amountOfQuestions = useSelector((state) => state.quiz.questions.length);
 	const amountOfAnswers = useSelector((state) => state.quiz.answers.length);
 	const isQuizOver = useSelector((state) => amountOfQuestions === question.id);
 
 	const dispatch = useDispatch();
 
-  useEffect(() => {
-    let downloadTimer = setInterval(() => {
-        if (seconds > 0) {
-            setSeconds(seconds - 1)
-        } else if (seconds <= 0) {
-            clearInterval(downloadTimer)
-        }
-    }, 1000);
-    return () => {
-        clearInterval(downloadTimer);
-    }
-})
+	const clickNext = () => {
+		dispatch(quiz.actions.goToNextQuestion());
+	};
 
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 	};
-
-	const clickNext = () => {
-		dispatch(quiz.actions.goToNextQuestion());
-	};
-	
 
 	if (!question) {
 		return (
 			<h1>And just like that... I could not find the current question!</h1>
 		);
 	}
+
 
 	let button;
 
@@ -93,7 +76,7 @@ export const CurrentQuestion = () => {
 
 	return (
 		<div className='question-wrapper'>
-       {seconds === 0 ? "Finished" : `${seconds} seconds remaining`}
+       {/* {seconds === 0 ? "Finished" : `${seconds} seconds remaining`} */}
 			<h1 className='main-title'>
 				Question {question.id}: {question.questionText}
 			</h1>
