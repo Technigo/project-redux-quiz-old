@@ -136,6 +136,13 @@ const QuestionPage = () => {
 	}
 }
 
+const cursorStyle = () => {
+  if (!answer){
+    return 'pointer'
+  }
+  return 'not-allowed'
+}
+
   
 
 	return (
@@ -170,7 +177,7 @@ const QuestionPage = () => {
 								key={item}
 								border={changeColorBtn(index)}
 								animation={correctAnswerAnimation(index)}
-								
+                cursor={cursorStyle}
 							>
 								{item}
 							</Button>

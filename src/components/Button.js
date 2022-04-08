@@ -13,6 +13,7 @@ const Button = styled.button`
 	margin-bottom: 1em;
 	border: solid ${(props) => (props ? props.border : '#000')} 3px;
 	animation: ${(props) => props.animation} 2s ease;
+	
 
 	@media (min-width: 768px) {
 		margin-bottom: 0;
@@ -20,6 +21,7 @@ const Button = styled.button`
 		&:hover {
 			background-color: #45413c;
 			color: #fef8d8;
+			cursor: ${(props) => props.cursor}
 		}
 	}
 `
