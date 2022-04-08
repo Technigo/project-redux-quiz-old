@@ -40,7 +40,8 @@ main.start,
 
 h1 {
 	color: #c3471b;
-	font-size: clamp(2.5rem, -0.475rem + 9.333vw, 6rem);
+	font-family: 'Gaegu', cursive;
+	font-size: clamp(2.75rem, -0.475rem + 9.333vw, 6rem);
 	-webkit-text-stroke-width: 0.2px;
 	-webkit-text-stroke-color: #000;
 	margin: 10px 8px;
@@ -80,7 +81,7 @@ h3 {
 .question-section {
 	max-width: 1000px;
 	width: clamp(340px, 60% + 20px, 700px);
-	height: 500px;
+	height: 650px;
 	background-color: rgba(1, 120, 93, 0.9);
 	border: #000 solid 3px;
 	border-radius: 20px;
@@ -172,6 +173,10 @@ h3 {
 		column-gap: 80px;
 	}
 
+	.question-section {
+		height: 500px;
+	}
+
 	.question-img-container {
 		height: 250px;
 	}
@@ -179,6 +184,7 @@ h3 {
 	.answer-btn-container {
 		grid-template-columns: 1fr 1fr;
 		gap: 18px;
+		margin-top: 1em;
 	}
 }
 
