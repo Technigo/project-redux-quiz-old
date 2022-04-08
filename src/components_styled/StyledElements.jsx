@@ -16,13 +16,9 @@ export const Title = styled.h1`
 
   @media (min-width: 667px) {
     font-size: 37px;
-    // margin: 8rem 1rem 3rem 1rem;
   }
 
   @media (min-width: 1024px) {
-    // width: 45vw;
-    // margin-top: 50px;
-    // margin-bottom: 1px;
     text-align: center;
     color: white;
     font-size: 37px;
@@ -32,7 +28,6 @@ export const Title = styled.h1`
 export const Container = styled.div`
   width: 325px;
   margin: 0 auto;
-  // padding: 20px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -65,7 +60,6 @@ export const ButtonContainer = styled.section`
   }
 
   @media (min-width: 1024px) {
-    // margin-top: 4rem;
     gap: 15px;
   }
 
@@ -73,11 +67,6 @@ export const ButtonContainer = styled.section`
     width: 850px;
     margin: 0 auto;
     display: flex;
-    // margin-top: 4rem;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-items; center;
-    // justify-content: space-between;
   }
 `;
 
@@ -93,8 +82,7 @@ export const Button = styled.button`
   border-radius: 0%;
   border: 1px solid white;
 
-  &:hover:hover:not([disabled]) {
-    // background-image: linear-gradient(120deg,#FFA8A8,#f8ffba);
+  &:hover:not([disabled]) {
     background-color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     color: rgba(0, 0, 0, 0.9);
@@ -156,36 +144,11 @@ export const SummaryDiv = styled.div`
   h1 {
     text-align: center;
   }
-  // h1 {
-  //   font-size: 1.75rem;
-  //   text-align: center;
-  // }
-
-  // h2 {
-  //   font-size: 1.5rem;
-  // }
-
-  // p {
-  //   font-size: 1.1rem;
-  //   text-align: center;
-  // }
-
-  // @media (min-width: 768px) {
-
-  //   }
-
-  // @media (min-width: 1024px) {
-  //   h2 {
-  //     font-size: 1.75rem;
-  //   }
-
-  // }
 `;
 
 export const QADiv = styled.div`
   width: 100%;
   margin: 1rem 0;
-  // text-align: center;
   white-space: pre-line;
 
   h1 {
@@ -202,23 +165,9 @@ export const QADiv = styled.div`
     font-size: 1.5rem;
   }
 
-  .text-align-center {
-    // text-align: center;
-  }
-
   p {
     font-size: 1.25rem;
     font-weight: 500;
-    // text-align: center;
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 1024px) {
-    h2 {
-      // font-size: 1.75rem;
-    }
   }
 `;
 

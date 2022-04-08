@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { quiz } from "reducers/quiz";
 import party from "party-js";
+
 import ProgressBar from "./ProgressBar";
 import {
   ButtonContainer,
@@ -71,7 +72,6 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   return (
     <>
       <Title>{question.questionText}</Title>
-      {/* <div className='img-child'></div> */}
       <ButtonContainer>
         {question.options.map((item, index) => {
           return (
