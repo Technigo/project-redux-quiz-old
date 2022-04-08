@@ -66,7 +66,8 @@ export const CurrentQuestion = () => {
 
         <div className="box">
           {answer && (
-            <div className="correct-or-wrong">{`This is ${
+            <div className="correct-or-wrong">
+              {`This is ${
               answer.isCorrect ? "correct !" : "wrong !"
             }`}</div>
           )}
