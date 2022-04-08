@@ -1,13 +1,23 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+The brief was to build a quiz game using Redux similar to Buzzfeed quizzes, using Redux store and a reducer with a few actions.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we learnt:
+
+- What global state is
+- How to use styled components
+- What redux is
+- How to use selectors to access redux state
+- How to use dispatch to trigger redux actions
+- How to interact with your store using selectors or by dispatching actions
+- Merging git branches and managing conflicts
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We started with planning and mob programming to build a boilerplate. After that, we created several branches and used a kanban board to keep track of the project's status.
+
+We met several times to merge and create new feature branches.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://redux-quiz-week13.netlify.app/
