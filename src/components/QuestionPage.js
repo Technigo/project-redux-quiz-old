@@ -100,16 +100,43 @@ const QuestionPage = () => {
 			}
 		}
 	}
+
 	const correctAnswerAnimation = (correctIndex) => {
 		if (!answer) {
-			return '0'
+			return null
 		} else {
-			if (question.correctAnswerIndex === correctIndex) {
-				return '4s'
-			}
-			return '0'
-		}
+      if (question.correctAnswerIndex === correctIndex) {
+				return keyframes`
+        0% {
+          transform: scale(1);
+        }
+        30% {
+          transform: scale(1.35);
+        }
+        45% {
+          transform: scale(1.35) rotate(5deg);
+        }
+        60% {
+          transform: scale(1.35) rotate(-5deg);
+        }
+        70% {
+          transform: scale(1.35) rotate(2deg);
+        }
+        80% {
+          transform: scale(1.35) rotate(-5deg);
+        }
+        95% {
+          transform: scale(1.35) rotate(-2deg);
+        }
+        100% {
+          transform: scale(1);
+        }
+        ` 
+			} return null
 	}
+}
+
+  
 
 	return (
 		<>
@@ -142,7 +169,7 @@ const QuestionPage = () => {
 								onClick={() => onAnswerSubmit(question.id, index)}
 								key={item}
 								border={changeColorBtn(index)}
-								animationtime={correctAnswerAnimation(index)}
+								animation={correctAnswerAnimation(index)}
 							>
 								{item}
 							</Button>
