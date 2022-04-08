@@ -8,7 +8,7 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-  const answers = useSelector((state) => state.quiz.answers);
+  //  const answers = useSelector((state) => state.quiz.answers);
   const answer = useSelector((state) =>
     state.quiz.answers.find((answer) => answer.questionId === question.id)
   );
@@ -49,20 +49,18 @@ export const CurrentQuestion = () => {
 
         <div className="box">
           <div className="box">
-       
-          {question.options.map((item, index) => {
-            return (
-              <button
-                className="options"
-                disabled={answers.length === question.id}
-                onClick={() => onAnswersubmit(question.id, index)}
-                key={item}
-              >
-                {item}
-              </button>
-            );
-          })}
-        
+            {question.options.map((item, index) => {
+              return (
+                <button
+                  className="options"
+                  disabled={answer}
+                  onClick={() => onAnswersubmit(question.id, index)}
+                  key={item}
+                >
+                  {item}
+                </button>
+              );
+            })}
           </div>
         </div>
 
