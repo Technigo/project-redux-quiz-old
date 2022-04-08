@@ -10,10 +10,13 @@ const Button = styled.button`
 	background-color: #711A75;
 	color: white;
 	font-size: 1rem;
+	font-family: 'Raleway', sans-serif;
 	cursor: pointer;
 	border: none;
 	font-weight: bold;
 	margin: 2rem 0 5rem 0;
+	height: 3rem;
+	width: 8rem;
 `;
 
 const Container = styled.div`
@@ -25,6 +28,8 @@ const Container = styled.div`
 	max-width: 40rem;
 	margin: 5rem auto;
 	padding: 2rem 0;
+	font-weight: 500;
+	font-size: 1.3rem;
 `;
 
 export const Summary = () => {

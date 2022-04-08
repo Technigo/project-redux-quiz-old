@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-
 import styled from 'styled-components';
 import swal from 'sweetalert';
 
+ 
 const Container = styled.div`
 	display: flex;
 	align-items: center;
@@ -58,10 +58,13 @@ const Counter = styled.p`
 	font-size: 1.3rem;
 `;
 
+// fetching the questions from the store
 export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	);
+	
+// Updating the store by the dispatch function
 
 	const dispatch = useDispatch();
 	const onAnswerSubmit = (id, index) => {
@@ -91,7 +94,7 @@ export const CurrentQuestion = () => {
 	return (
 		<Container>
 			<Title>
-				Which of these techy movies are the random print screen from?
+				Which of these techy movies is the random print screen from?
 			</Title>
 			<Image src={question.img} alt='movie' />
 			<Text>{question.questionText}</Text>

@@ -4,16 +4,15 @@ import { CurrentQuestion } from './CurrentQuestion';
 import { Summary } from './Summary';
 
 
+//fetching the state of quizover and decide wether to render summary or currentquestion 
 export const OverView = () => {
 	const quizEnd = useSelector((state) => state.quiz.quizOver);
 
-	return <>
-	{!quizEnd ? <CurrentQuestion /> : <Summary />}
-	{/* {!quizEnd ? <Summary /> : <Summary />} */}
+	return (
 
-
-
-	</>;
-	
+	<>
+		{!quizEnd ? <CurrentQuestion /> : <Summary />}
+	</>
+	)
 };
 

@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, img: './assets/thematrix.png', questionText: 'Amount of screens needed to do the Technigo boot camp', options: ['The Matrix', 'The Matrix Reloaded', 'The Matrix Revolutions', 'The Matrix Resurrections'], correctAnswerIndex: 0 },
-  { id: 2, img: './assets/WarGames.png', questionText: 'The relief when your code by some witch craft finally runs', options: ['The Terminator', 'Jurassic Park', 'Alien', 'WarGames'], correctAnswerIndex: 3 },
-  { id: 3, img: './assets/TheInternship.png', questionText: 'Pair Programming with someone a bit above your level', options: ['The Social Network', 'The Internship', 'Silicon Valley', 'The IT Crowd'], correctAnswerIndex: 1 },
-  { id: 4, img: './assets/TheImitationGame.png', questionText: 'Intro to Redux be like', options: ['Ex Machina', 'Enigma', 'The Imitation Game', 'A Beautiful Mind'], correctAnswerIndex: 2 },
-  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: 'When you typed the best code ever and localhost be like "Failed to compile"', options: ['The Girl with the Dragon Tattoo', 'Fortran', 'Hidden Figures', 'Hackers'], correctAnswerIndex: 2 }
+  { id: 1, img: './assets/thematrix.png', questionText: 'Amount of screens needed to do the Technigo boot camp.', options: ['The Matrix', 'The Matrix Reloaded', 'The Matrix Revolutions', 'The Matrix Resurrections'], correctAnswerIndex: 0 },
+  { id: 2, img: './assets/WarGames.png', questionText: 'The relief when your code by some witch craft finally runs!', options: ['The Terminator', 'Jurassic Park', 'Alien', 'WarGames'], correctAnswerIndex: 3 },
+  { id: 3, img: './assets/TheInternship.png', questionText: 'Pair Programming with someone a bit above your level...', options: ['The Social Network', 'The Internship', 'Silicon Valley', 'The IT Crowd'], correctAnswerIndex: 1 },
+  { id: 4, img: './assets/TheImitationGame.png', questionText: 'Intro to Redux be like...', options: ['Ex Machina', 'Enigma', 'The Imitation Game', 'A Beautiful Mind'], correctAnswerIndex: 2 },
+  { id: 5, img: './assets/HiddenFiguresFortran.png', questionText: 'When you typed the best code ever and localhost be like "Failed to compile".', options: ['The Girl with the Dragon Tattoo', 'Ghost In The Shell', 'Hidden Figures', 'Hackers'], correctAnswerIndex: 2 }
 ]
 
 const initialState = {
