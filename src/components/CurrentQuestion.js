@@ -6,7 +6,6 @@ import { ProgBar } from "./ProgressBar";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import styled from "styled-components";
-import Timer from "./Timer";
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -129,7 +128,7 @@ export const CurrentQuestion = () => {
         )}
 
         <ProgBar />
-        <Timer />
+        {/* <Timer /> */}
         <Footer />
       </Main>
     </Wrapper>
