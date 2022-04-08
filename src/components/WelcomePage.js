@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { CurrentQuestion } from './CurrentQuestion'
 import { useSelector, useDispatch } from 'react-redux'
 import './QuestionPage.css'
