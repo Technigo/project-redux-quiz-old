@@ -4,7 +4,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { OverView } from 'components/OverView';
 
-
 const reducer = combineReducers({
 	quiz: quiz.reducer,
 });

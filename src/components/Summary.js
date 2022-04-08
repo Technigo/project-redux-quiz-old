@@ -7,7 +7,7 @@ import Rate from './Rating';
 const Button = styled.button`
 	padding: 0.7rem;
 	border-radius: 5px;
-	background-color: #711A75;
+	background-color: #711a75;
 	color: white;
 	font-size: 1rem;
 	font-family: 'Raleway', sans-serif;

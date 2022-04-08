@@ -4,7 +4,6 @@ import { quiz } from 'reducers/quiz';
 import styled from 'styled-components';
 import swal from 'sweetalert';
 
- 
 const Container = styled.div`
 	display: flex;
 	align-items: center;
@@ -63,9 +62,8 @@ export const CurrentQuestion = () => {
 	const question = useSelector(
 		(state) => state.quiz.questions[state.quiz.currentQuestionIndex]
 	);
-	
-// Updating the store by the dispatch function
 
+	// Updating the store by the dispatch function
 	const dispatch = useDispatch();
 	const onAnswerSubmit = (id, index) => {
 		dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
