@@ -175,7 +175,8 @@ button[disabled] {
   background: grey;
   pointer-events: none;
   color: white;
-  opacity: 90;
+  opacity: 90 ;
+
 }
 
 
