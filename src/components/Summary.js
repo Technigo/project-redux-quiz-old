@@ -15,8 +15,7 @@ const Summary = () => {
       <div className='summary'>
         <h1>This is your summary</h1>
         {userAnswer.map((answer) => (
-          <>
-            <div className='summary-text'>
+         <div className='summary-text' key={answer.questionId}>
               <h5>
               {' '}
               {answer.questionId}: Correct answer: {' '}
@@ -27,7 +26,7 @@ const Summary = () => {
               {answer.answer}
               </p>
             </div>
-          </>
+          
         ))}
          <Link to="/"style={{ color: 'inherit', textDecoration: 'inherit'}}>
          <RestartButton />

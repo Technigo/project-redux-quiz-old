@@ -1,11 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-
+import mySound  from '../assets/elephantSound.mp3';
+import useSound from 'use-sound';
 
 export const StartButton = () => {
+
+  const [playsound] = useSound(mySound)
+
   return ( 
-  <button className="start-button">
+  <button className="start-button" onClick={playsound}>
   <span>START QUIZ HERE!</span></button>
   )
 }

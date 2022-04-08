@@ -6,7 +6,6 @@ import { StartPage } from 'components/StartPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 
-
 const reducer = combineReducers({
   quiz: quiz.reducer
 })
