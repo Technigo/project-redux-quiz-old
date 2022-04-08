@@ -15,7 +15,7 @@ export const WelcomePage = () => {
 	return (
 		<>
 			{!start ? (
-				<>
+				<div className='welcome-container'>
 					<main className='start'>
 						<h1>Guess Whose Butt</h1>
 						<section className='question-section start'>
@@ -29,7 +29,7 @@ export const WelcomePage = () => {
 						</section>
 					</main>
 					<Footer />
-				</>
+				</div>
 			) : (
 				<CurrentQuestion />
 			)}
