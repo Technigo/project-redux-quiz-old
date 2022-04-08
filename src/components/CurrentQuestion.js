@@ -36,7 +36,7 @@ export const CurrentQuestion = ({ setQuizDone }) => {
   const onAnswerSubmit = (id, index) => {
     setHasAnswered(true);
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-    setTimeout(() => setHasAnswered(true), 800);
+    // setTimeout(() => setHasAnswered(true), 800);
     if (question.correctAnswerIndex === index) {
       party.confetti(document.body, {
         count: party.variation.range(100, 500),
@@ -46,14 +46,12 @@ export const CurrentQuestion = ({ setQuizDone }) => {
     } else {
       setHasAnswered(true);
       audio[randomAudioIndex].play();
-      // party.resolvableShapes["myImage"] = "👍";
-      party.confetti(document.body, {
-        count: party.variation.range(500, 1000),
-        size: party.variation.range(0.8, 1.6),
-        color: party.Color.fromHex("#4a412a"),
-        // shapes: ["myImage"],
-        shapes: ["square"],
-      });
+      // party.confetti(document.body, {
+      //   count: party.variation.range(500, 1000),
+      //   size: party.variation.range(0.8, 1.6),
+      //   color: party.Color.fromHex("#4a412a"),
+      //   shapes: ["square"],
+      // });
     }
   };
 
