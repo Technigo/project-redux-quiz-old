@@ -110,7 +110,7 @@
 
 .num {
 	position: absolute;
-    top: 120px;
+    top: 90px;
 	font-size: 1.1em;
 	font-weight: 600;
 	padding: 7px 30px;
@@ -129,4 +129,9 @@
 	}
 }
 
+@media screen and (min-width: 700px) {
+	.num {
+		top: 140px;
+	}
+}
 
