@@ -20,9 +20,17 @@ const SummaryStyling = styled.div`
   text-align: center;
   display: flex;
 
+  .summaryBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
   .answerBox {
     display: flex;
-    text-align: center;
+    text-align: left;
+    margin: 0px 30px 0px 30px;
     flex-direction: column;
     padding: 10px;
   }
@@ -31,7 +39,7 @@ const SummaryStyling = styled.div`
   .answers-btn {
     border: none;
     padding: 15px;
-    margin: 10px;
+    margin: 30px 10px 10px 10px;
     border-radius: 50px;
     color: #326886;
     background-color: #d2e9f5;
@@ -48,10 +56,10 @@ const SummaryStyling = styled.div`
   h2 {
     color: #435a67;
     font-size: 20px;
-    margin: 0;
+    margin: 0px 0px 80px 0px;
     margin-bottom: 5px;
     background-color: #b58526;
-    // width: 50%;
+    width: 50%;
     align-items: center;
     border: solid #435a67 2px;
     border-radius: 10px;
@@ -59,15 +67,14 @@ const SummaryStyling = styled.div`
   }
 
   h3 {
-    // color: #435a67;
     color: #d2e9f5;
     margin-top: 10px;
     margin: 0;
     font-size: 15px;
+    padding: 5px 0px 0px 0px;
   }
 
   .answer {
-    // color: #d2e9f5;
     color: #435a67;
     font-size: 15px;
     margin: 0;
@@ -100,8 +107,6 @@ const Copyright = styled.p`
 export const Summary = () => {
   const dispatch = useDispatch()
   const answerSummary = useSelector((state) => state.quiz.answers)
-  const picturesSummary = useSelector((state) => state.quiz.questions)
-  console.log(picturesSummary, 'hitta')
   const [visible, setVisible] = useState(false)
 
   const onRestartButton = () => {
@@ -115,10 +120,11 @@ export const Summary = () => {
     <QuestionBackground>
       <SummaryStyling>
         <div>
-          <h1>Summary</h1>
-          <h2>You got {correctAnswer.length} out of 5!</h2>
+          <div className="summaryBox">
+            <h1>Summary</h1>
+            <h2>You got {correctAnswer.length} out of 5!</h2>
+          </div>
           {answerSummary.map((answer) => {
-            console.log(answer)
             return (
               <div key={answer.questionId} className="answerBox">
                 <h3>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
@@ -113,12 +114,6 @@ const QuestionContainer = styled.div`
     z-index: 2;
   }
 
-  // .btn-container {
-  //   display: flex;
-  //   justify-content: center;
-  //   flex-direction: column;
-  // }
-
   .option-btn {
     border: none;
     background-color: #d2e9f5;
@@ -129,7 +124,6 @@ const QuestionContainer = styled.div`
     border-radius: 60px;
     color: #326886;
     cursor: pointer;
-    // display: inline-block;
   }
 
   .incorrect-answer {
