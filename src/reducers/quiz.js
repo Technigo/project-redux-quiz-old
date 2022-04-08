@@ -13,7 +13,7 @@ const questions = [
     correctAnswerIndex: 0 
   },
   { id: 3, 
-    questionText: 'How much can an elephant tooth weigh?', 
+    questionText: 'Up to how much can an elephant tooth weigh?', 
     options: ['1kg', '2kg', '3kg', '4kg'], 
     correctAnswerIndex: 2 
   },

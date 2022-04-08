@@ -80,7 +80,9 @@ h2 {
   margin-bottom: 10px;
   padding: 10px;
   font-family: 'Raleway', sans-serif;
+  cursor: pointer;
 }
+
 
 .next {
   background-color: #E8E6D6;
@@ -90,6 +92,7 @@ h2 {
   padding: 10px;
   font-family: 'Raleway', sans-serif;
   font-size: 17px;
+  cursor: pointer;
 }
 
 .summary {
@@ -195,4 +198,18 @@ h5 {
   footer p{
     font-size: 17px;
   }
+
+  .defaultbtn:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.05);
+    box-shadow: 10px 5px 5px black;
+  } 
+
+  .btn-restart:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.05);
+    box-shadow: 10px 5px 5px black;
+  } 
 }

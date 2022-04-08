@@ -6,7 +6,7 @@ import { quiz } from 'reducers/quiz';
 export const StartButton = () => {
   return ( 
   <button className="start-button">
-  START QUIZ HERE!</button>
+  <span>START QUIZ HERE!</span></button>
   )
 }
 
