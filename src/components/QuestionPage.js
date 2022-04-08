@@ -18,9 +18,14 @@ const Counter = styled.span`
 	font-size: 20px;
 	font-weight: 700;
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 10px;
+	left: 10px;
 	animation: ${(props) => props.animation} 2s ease-in-out;
+
+	@media (min-width: 800px) {
+		top: 20px;
+		left: 20px;
+	}
 `
 
 const QuestionPage = () => {
