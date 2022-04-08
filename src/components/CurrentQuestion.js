@@ -76,6 +76,7 @@ export const CurrentQuestion = () => {
 
         <div className="box">
           <p className="questions-answered">Question: {question.id} / 5</p>
+
           <button
             className="next-que-button"
             onClick={nextQueclick}
