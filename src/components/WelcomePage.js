@@ -13,9 +13,7 @@ export const WelcomePage = () => {
     <header>
       <WelcomeWrapper>
         <WelcomeContent>
-          <WelcomeTitle>
-            <h1>Sports Quiz</h1>
-          </WelcomeTitle>
+          <WelcomeTitle>Sports Quiz</WelcomeTitle>
           <Link to="/quiz">
             <WelcomeBtn>Start Quiz!</WelcomeBtn>
           </Link>

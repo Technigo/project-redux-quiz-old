@@ -26,8 +26,8 @@ export const WelcomeTitle = styled.h1`
   align-items: center;
   text-align: center;
   display: flex;
-  weight: 200, regular;
-  font-size: 40px;
+  weight: 400, regular;
+  font-size: 80px;
   background: linear-gradient(94.9deg, #FFE4C4 19.79%, #FECA7D 49.29%, #FF8A00 87.96%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
