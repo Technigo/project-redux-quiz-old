@@ -10,7 +10,7 @@ import {
   RightAnswer,
   ResultHeading,
   RestartButton
-} from "styles";
+} from "Styles";
 
 export const Results = () => {
   const dispatch = useDispatch();

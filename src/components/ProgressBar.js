@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import {
   ProgressIcons,
   ProgressIconsWrapper
-} from "styles";
+} from "Styles";
 
 export const ProgressBar = () => {
   const answers = useSelector((state) => state.quiz.answers);
