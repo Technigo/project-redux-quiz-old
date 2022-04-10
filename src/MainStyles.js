@@ -26,10 +26,10 @@ const Button = styled.button`
 
   @media (min-width: 1024px) {
     &:hover {
-      background-color: ${(props) => props.disabled
+      background-color: ${(prop) => prop.disabled
       ? "none"
       : "#BB6DD7"};
-      color: ${(props) => props.disabled
+      color: ${(prop) => prop.disabled
       ? "none"
       : "white"};
     }
@@ -37,9 +37,9 @@ const Button = styled.button`
 `;
 
 export const ProgressIcons = styled.p`
-  background-color: ${(props) => props.right
+  background-color: ${(prop) => prop.right
     ? "#52af5c"
-    : props.wrong
+    : prop.wrong
     ? "#fc2041"
     : "grey"};
   border-radius: 50%;

@@ -12,7 +12,7 @@ import {
   QuestionHeading,
   Question,
   ActionButtons
-} from "Styles";
+} from "MainStyles";
 
 export const QuizQuestions = () => {
   const [isClicked, setIsClicked] = useState(false);
