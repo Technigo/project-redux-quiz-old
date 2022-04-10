@@ -1,13 +1,15 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was a group project where we built a sports quiz game using Redux. It’s a multiple choice quiz beginning with a welcome page, a page that displays all the quiz questions and a results page showing all of the answers. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We worked with Redux and it was new to all of us, this was a challenging part of the project as redux has such a steep 
+learning curve. We started off with creating a figma design, then moving onto displaying the data we needed from the 
+store using the useSelector and then sending data back to the store using Dispatch. 
+
+We learned a lot this week and I think our biggest challenge was deploying our project. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://master--rad-meerkat-8c3677.netlify.app/
