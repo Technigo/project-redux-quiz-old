@@ -1,50 +1,64 @@
-import { useState, useEffect } from "react"
+import React from "react"
+import { useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux";
+
+import { quiz } from "reducers/quiz";
 
 
-// const Timer = (initialVal) => {
-
-// const [seconds, setSeconds] = useState(10)
-
-// useEffect(() => {
-
-//         const interval = setInterval(() => {
-//             setValue((value) => - 1)
-//         }, 1000)
-
-//         return () => {
-//             clearInterval(interval)
-//         }
-
-// }, [])
-
-//     return [value]
-// }
-
-const Timer = (initialValue) => {
-    const [seconds, setSeconds] = useState(initialValue)
-
+const Timer = () => {
+    const amountOfTime = useSelector((state) => state.quiz.time)
+    const dispatch = useDispatch()
+  
     useEffect(() => {
-        let downloadTimer = setInterval(() => {
-            if (seconds > 0) {
-                setSeconds(seconds - 1)
-            } else if (seconds <= 0) {
-                clearInterval(downloadTimer)
-            }
-        }, 1000);
+        const countTime = setInterval(() => {
+          dispatch(quiz.actions.addTime())
+        }, 1000)
         return () => {
-            clearInterval(downloadTimer);
+          clearInterval(countTime)
         }
-    })
+    }, [dispatch])
 
-    return [seconds]
+    return (
+      <p className="timer">
+        {`${amountOfTime} seconds`}
+      </p>
+    )
 
 }
+
+export default Timer
+
+
+///// Commented out code, left for possible later use (will clean up at some point):
+
+    // const [second, setSecond] = useState(initialSecond);
+
+  //   useEffect(() => {
+  //     const countdownTimer = setInterval(() => {
+  //       if (second > 0) {
+  //           setSecond((second) => second - 1);
+  //       } else if (second === 0) {
+  //           setSecond((second) => second + 10)
+  //       }
+  //     }, 1000);
+  //     return () => {
+  //       clearInterval(countdownTimer);
+  //     };
+  //   });
+  
+  //   return [second];
+  // };
+
+// if (seconds > 0) {
+//     setSeconds(seconds - 1)
+// } else if (seconds <= 0) {
+//     clearInterval(downloadTimer)
+// }
 //     return (
 //         <div className="timer">
 //             {seconds === 0 ? "Finished" : `${seconds} seconds remaining`}
 //         </div>
 //     )
-
 
     // let timeleft = 10;
 
@@ -60,7 +74,6 @@ const Timer = (initialValue) => {
     // }
 
     // const downloadTimer = setInterval(myTimer, 1000)
-    //     console.log("download timer", downloadTimer)
 
     // timeleft < 0 ? "Finished" : "seconds remaining"
 
@@ -78,8 +91,6 @@ const Timer = (initialValue) => {
 //             console.log(timeleft, "seconds remaining")
 //         }
 //     }, 1000);
-
-//     // console.log("time left", timeleft)
     
 
 //         return (
@@ -88,36 +99,4 @@ const Timer = (initialValue) => {
 //             </>
 //         )
 
-   
-    
-// }
-    // let date = new Date();
-    // let sec = date.getSeconds();
-    // let min = date.getMinutes();
 
-    // const timeHandler = () => {
-    //     sec--;
-    //     if (sec == 60) {
-    //         sec = 0;
-    //         min--;
-    //     } else if (sec < 0) {
-    //         date.setSeconds(0);
-    //         } else if (min < 0) {
-    //         date.setMinutes(0);
-    //     }
-    // }
-
-    // document.getElementById("time").innerHTML = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
-    // };
-
-    // timeHandler();
-    // setInterval(timeHandler, 1000); 
-
-    // return ( 
-    //     <>
-    //     {(sec < 10 ? "0" + sec : sec)}
-    //     </>   
-    // )
-
-
-export default Timer

@@ -50,6 +50,7 @@ const initialState = {
 	answers: [],
 	currentQuestionIndex: 0,
 	quizOver: false,
+	time: 0,
 };
 
 export const quiz = createSlice({
@@ -109,6 +110,10 @@ export const quiz = createSlice({
 			} else {
 				state.currentQuestionIndex += 1;
 			}
+		},
+
+		addTime: (state) => {
+			state.time++
 		},
 
 		/**

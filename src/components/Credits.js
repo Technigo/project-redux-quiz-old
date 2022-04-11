@@ -9,7 +9,7 @@ const Credits = () => {
             <a href="https://www.linkedin.com/in/dorotheabarre/" target="_blank" rel="noopener noreferrer">Dorothea Barre</a>
             <a href="https://www.linkedin.com/in/tiina-liukkonen-668baa231/" target="_blank" rel="noopener noreferrer">Tiina Liukkonen</a>
             <a href="https://www.linkedin.com/in/marianneardin/" target="_blank" rel="noopener noreferrer">Marianne Ardin</a>
-            <a href="" target="_blank" rel="noopener noreferrer">Gonçalo Vilela</a>
+            <a href="something" target="_blank" rel="noopener noreferrer">Gonçalo Vilela</a>
         </div>
     )
 }
