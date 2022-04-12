@@ -1,13 +1,25 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+This week, our team's task is to build a quiz game using Redux. It's a multiple choice quiz, so we defined our own questions and a bunch of possible answers to present to the users.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Collaborators: 
+- Kristiina Kolu 
+- Lovisa Brorson
+- Emma Högberg
+- Mimmi Fordal Uddin
+- Suki Nhung Phan
+
 
 ## The problem
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
-## View it live
+There are few significant things we learned and developed. First, We spent a lot of time on planning the projects and divide the tasks sufficiently before starting to code. We use Kanba board to plan and assign the tasks. Next we sketched and designed in Figma.  We implemented pair programming, mob programming, and individual working style through the project. 
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Regarding to technical-skill learning, throught the project, we absorbed the fundamentals of Redux, mastered using useSelecter, dispatch and apply them in various concepts
+
+If we have had more time, we will add more animation, background music, sounds to make the quiz game more interesting
+
+## View it live
+https://guesswhobutt.netlify.app
+
