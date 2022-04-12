@@ -12,7 +12,6 @@ Collaborators:
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 There are few significant things we learned and developed. First, We spent a lot of time on planning the projects and divide the tasks sufficiently before starting to code. We use Kanba board to plan and assign the tasks. Next we sketched and designed in Figma.  We implemented pair programming, mob programming, and individual working style through the project. 
 
