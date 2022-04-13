@@ -78,7 +78,6 @@
 .bar {
 	box-shadow: inset 0px 10px 3px -4px rgba(255, 255, 255, 0.2);
 	transition: all 1s ease;
-	-webkit-animation: load 5s normal forwards;
 	border-radius: 100px;
 	background: var(--bar);
 	height: 40px;
