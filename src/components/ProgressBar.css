@@ -119,14 +119,6 @@
 	-webkit-animation: count 5s normal forwards;
 }
 
-@-webkit-keyframes load {
-	0% {
-		width: 0;
-	}
-	100% {
-		width: 1;
-	}
-}
 
 @media screen and (min-width: 700px) {
 	.num {
