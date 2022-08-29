@@ -1,10 +1,3 @@
-# Weekly project for Technigo's bootcamp, week 13
-Task: build a quiz
-
-Tech: HTML, CSS, JavaScript, React, Redux, Styled components
-
-----
-
 # Week 13: Redux quiz
 
 This week's project was a group project where we had to build a multiple choice quiz using Redux.
