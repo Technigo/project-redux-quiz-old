@@ -11,6 +11,11 @@ export const CurrentQuestion = () => {
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
+      Answer: {question.options.map((option) => {
+        return (
+          <p>{option}</p>
+        )
+      })}
     </div>
   )
 }
