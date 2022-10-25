@@ -1,18 +1,46 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+/* import header1 from 'assets/asdasdasd' */
 // Change these to your own questions!
 const questions = [
   {
     id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'],
-    correctAnswerIndex: 0
+    questionText: 'What is the nickname of this Stranger things character?',
+    options: ['Ella', 'El', 'Ellen', 'Len'],
+    backdropImg: '',
+    audio: '',
+    correctAnswerIndex: 1
   },
   {
     id: 2,
-    questionText: 'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016', '2018'],
+    questionText: 'Which one is not a character in the TV-Show La Casa de Papel?',
+    options: ['Rio', 'Nairobi', 'Paris', 'Helsinki'],
+    backdropImg: '',
+    audio: '',
     correctAnswerIndex: 2
+  },
+  {
+    id: 3,
+    questionText: 'What is the name of the main character in The Playlist?',
+    options: ['Daniel', 'Mark', 'Sophie', 'Antonella'],
+    backdropImg: '',
+    audio: '',
+    correctAnswerIndex: 0
+  },
+  {
+    id: 4,
+    questionText: 'What is the real name of Downton Abbey?',
+    options: ['Buckingham palace', 'Rochester Castle', 'Neuschwanstein', 'Highclere Castle'],
+    backdropImg: '',
+    audio: '',
+    correctAnswerIndex: 3
+  },
+  {
+    id: 5,
+    questionText: 'Summary',
+    options: ['Buckingham palace', 'Rochester Castle', 'Neuschwanstein', 'Highclere Castle'],
+    backdropImg: '',
+    audio: '',
+    correctAnswerIndex: 3
   }
 ]
 
@@ -43,9 +71,9 @@ export const quiz = createSlice({
      * When dispatching this action, you should pass an object as the payload with `questionId`
      * and `answerIndex` keys.
      */
-    submitAnswer: (state, action) => {
+    submitAnswer: (store, action) => {
       const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const question = store.questions.find((q) => q.id === questionId)
 
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
@@ -55,7 +83,7 @@ export const quiz = createSlice({
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
 
-      state.answers.push({
+      store.answers.push({
         questionId,
         answerIndex,
         question,
@@ -71,11 +99,11 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    goToNextQuestion: (state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+    goToNextQuestion: (store) => {
+      if (store.currentQuestionIndex + 1 === store.questions.length) {
+        store.quizOver = true
       } else {
-        state.currentQuestionIndex += 1
+        store.currentQuestionIndex += 1
       }
     },
 

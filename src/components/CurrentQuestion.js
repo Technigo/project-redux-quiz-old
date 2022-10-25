@@ -1,10 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
+import { Summary } from 'components/Summary'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
   const wholeStore = useSelector((store) => store)
+  const quizOver = useSelector((store) => store.quizOver);
+
   console.log(wholeStore);
   console.log(question);
 
@@ -23,6 +26,8 @@ export const CurrentQuestion = () => {
     ));
     if (question.correctAnswerIndex === answerIndex) {
       dispatch(quiz.actions.goToNextQuestion());
+    } else if (quizOver === true) {
+      <Summary />
     } else {
       window.alert('Sorry, wrong answer');
     }
