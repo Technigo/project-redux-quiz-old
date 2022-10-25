@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "@reduxjs/toolkit": "^1.8.3",
+    "components": "^0.1.0",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
@@ -14,7 +15,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "styled": "^1.0.0",
+    "styled-components": "^5.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
