@@ -3,11 +3,16 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 5, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Who is Phoebe`s on-and-off wedding planner?', options: ['Monica', 'Ross', 'Mike', 'Rachel'], correctAnswerIndex: 0 },
+  { id: 2,
+    questionText: 'Why are Ross and Rachel late to Phoebe`s birthsday party? ',
+    options:
+  ['They got lost ', 'They had sex', ' They locked themself out of the apartment, with Emma inside ', 'They had to work late'
+  ],
+    correctAnswerIndex: 2 },
+  { id: 3, questionText: 'After the duck definitely doesn not throw up in Joe`s bed, what does he find under Reachel`s pillow?', options: ['Sleepy pills', 'massager', ' "dirty" book  ', ' pigama'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'Who is the second friend to find out about Monica and Chandler?', options: ['Joey ', 'Rachel', 'Phoebe', 'Ross'], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'Why does Rachel gladly agree to Phoebe setting up Ross with her friend Bonnie?', options: ['She thinks Bonnie is bold', 'She is over Ross', 'She has a new boyfriend', ' She moved out to Paris'], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
@@ -37,9 +42,9 @@ export const quiz = createSlice({
      * When dispatching this action, you should pass an object as the payload with `questionId`
      * and `answerIndex` keys. See the readme for more details.
      */
-    submitAnswer: (state, action) => {
+    submitAnswer: (store, action) => {
       const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const question = store.questions.find((q) => q.id === questionId)
 
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
@@ -49,7 +54,7 @@ export const quiz = createSlice({
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
 
-      state.answers.push({
+      store.answers.push({
         questionId,
         answerIndex,
         question,
@@ -65,11 +70,11 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    goToNextQuestion: (state) => {
-      if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+    goToNextQuestion: (store) => {
+      if (store.currentQuestionIndex + 1 === store.questions.length) {
+        store.quizOver = true
       } else {
-        state.currentQuestionIndex += 1
+        store.currentQuestionIndex += 1
       }
     },
 
