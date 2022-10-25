@@ -11,6 +11,10 @@ export const CurrentQuestion = () => {
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
+      <input type="radio" /> {question.options[0]}
+      <input type="radio" /> {question.options[1]}
+      <input type="radio" /> {question.options[2]}
+      <input type="radio" /> {question.options[3]}
     </div>
   )
 }
