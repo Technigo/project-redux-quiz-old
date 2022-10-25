@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import EndPage from './EndPage';
 
 export const CurrentQuestion = () => {
   const { question, quizOver } = useSelector((state) => ({
@@ -24,27 +25,8 @@ export const CurrentQuestion = () => {
   };
 
   if (quizOver) {
-    return (
-      <div>
-        <h1>Quiz Over</h1>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch(quiz.actions.restart());
-          }}
-        >
-          restart
-        </button>
-      </div>
-    );
+    return <EndPage />;
   }
-
-  // /* Page Component */
-  // if (quizOver) {
-  //   return <EndScreen />
-  // } else {
-  //   return <CurrentQuestion />
-  // }
 
   return (
     <div>
