@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { NextButton } from 'components/NextButton'
+import { ReturnButton } from 'components/ReturnButton'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -28,6 +29,7 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
+      <p>{question.id} / 5</p>
       <h1>Question: {question.questionText}</h1>
       <div>
         {question.options.map((option, index) => {
@@ -36,7 +38,7 @@ export const CurrentQuestion = () => {
           )
         })}
       </div>
-      <NextButton />
+      <NextButton /><ReturnButton />
     </div>
   )
 }
