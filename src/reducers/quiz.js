@@ -2,8 +2,30 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1,
+    questionText: 'Which book is the show Game of Thrones based on?',
+    options: ['The prisoner of Azkaban', 'A Song of Ice and Fire', 'Eragon', 'House of the Dragon'],
+    correctAnswerIndex: 1 },
+  { id: 2,
+    questionText: 'Who is Reginald Kenneth Dwight better known as?',
+    options: ['Elton John', 'John Lennon', 'John Legend', 'Elon Musk'],
+    correctAnswerIndex: 0 },
+  { id: 3,
+    questionText: 'Which song by Ed Sheeran is his most streamed one?',
+    options: ['Thinking out loud', 'Shivers', 'Don`t', 'Shape of you'],
+    correctAnswerIndex: 3 },
+  { id: 4,
+    questionText: 'For which film did Steven Spielberg win his first Oscar?',
+    options: ['Saving Private Ryan', 'Indiana Jones and the Temple of Doom', 'Schindler`s List', 'Catch Me If You Can'],
+    correctAnswerIndex: 2 },
+  { id: 5,
+    questionText: 'In the 2022 series Severance the main characters are working at a company where they get "severed" from something when they come to work. What?',
+    options: ['Their feelings', 'Their memory of who they are outside of work', 'Their perception of time', 'One of their five senses'],
+    correctAnswerIndex: 1 },
+  { id: 6,
+    questionText: 'Whitney Houston sang `I will always love you` for the Bodyguard soundtrack. Who wrote and sang the original song?',
+    options: ['Celine Dion', 'Kenny Loggins', 'Aretha Franklin', 'Dolly Parton'],
+    correctAnswerIndex: 3 }
 ]
 
 const initialState = {
