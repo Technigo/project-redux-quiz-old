@@ -91,7 +91,7 @@
     "react/destructuring-assignment": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-closing-bracket-location": [
-      "error",
+      "off",
       {
         "selfClosing": "after-props",
         "nonEmpty": "after-props"
