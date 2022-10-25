@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { QuizEnd } from './QuizEnd'
@@ -12,7 +13,9 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>{!quizEnd ? <Question /> : <QuizEnd />}</div>
+    <div>
+      {!quizEnd ? <Question /> : <QuizEnd />}
+    </div>
   )
 }
 

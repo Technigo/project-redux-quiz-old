@@ -5,6 +5,7 @@ import { quiz } from 'reducers/quiz'
 export const Question = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const dispatch = useDispatch();
+  console.log(question);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -14,9 +15,9 @@ export const Question = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     if (question.correctAnswerIndex === answerIndex) {
       dispatch(quiz.actions.goToNextQuestion())
-    } else {
+    } /* else {
       window.alert('sorry wrong answer')
-    }
+    } */
   }
 
   return (

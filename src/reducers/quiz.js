@@ -32,6 +32,7 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
+  quizStarted: false,
   quizOver: false
 }
 // CreateSlice creates a piece of the store
@@ -56,6 +57,11 @@ export const quiz = createSlice({
      * When dispatching this action, you should pass an object as the payload with `questionId`
      * and `answerIndex` keys. See the readme for more details.
      */
+
+    startQuiz: (state) => {
+      state.start = true
+    },
+
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
