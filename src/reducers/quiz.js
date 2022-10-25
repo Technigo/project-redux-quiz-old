@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-/* import header1 from 'assets/asdasdasd' */
+// import styled from 'styled-components/macro'
 // Change these to your own questions!
 const questions = [
   {
@@ -36,11 +36,11 @@ const questions = [
   },
   {
     id: 5,
-    questionText: 'Summary',
-    options: ['Buckingham palace', 'Rochester Castle', 'Neuschwanstein', 'Highclere Castle'],
+    questionText: 'In Pulp Fiction, What does Vincent tell Jules is the name of a Quarter Pounder in Europe?',
+    options: ['A Magnificent Cheese Quarter', 'A Royal with Cheese', 'A Pounder with Cheese', 'The Crowned with Cheese'],
     backdropImg: '',
     audio: '',
-    correctAnswerIndex: 3
+    correctAnswerIndex: 2
   }
 ]
 
