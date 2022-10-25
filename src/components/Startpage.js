@@ -2,11 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import xmasBackground from 'Images/XmasBackground.png'
 import Cookie from 'Images/cookie.png'
+import { QuestionContainer, Headers, Buttons } from './Styling/GlobalStyles'
 
 export const StartPage = () => {
   return (
     <Background>
-      <GingerCookie src={Cookie} alt="Profile Picture Carina Moreno" />
+      <QuestionContainer>
+        <Headers> How much do you know about Christmas traditions from around the world?</Headers>
+        <GingerCookie src={Cookie} alt="Ginger Cookie" />
+        <Buttons href="" class="button"> START QUIZ </Buttons>
+      </QuestionContainer>
     </Background>
   )
 }
@@ -20,10 +25,11 @@ const Background = styled.div`
 `
 
 const GingerCookie = styled.img`
-position: absolute;
+position: fixed;
 right: 2%;
 bottom: 2%;
-height: 300px;
-width: 300px;
+height: auto;
+width: 30%;
 object-fit: cover;
+z-index: 99;
 `
