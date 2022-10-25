@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import ProgressBar from 'components/ProgressBar'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -23,13 +24,26 @@ export const CurrentQuestion = () => {
     }
   };
 
+  const barChange = (question.id / 5) * 100;
+  const barData = [
+    { bgcolor: 'green', completed: `${barChange}` }
+  ];
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, index) => {
         return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
       })}
+      <div className="progressbar">
+        {barData.map((item) => (
+          <ProgressBar
+            key={item}
+            changeOfBarProgress={barChange}
+            bgcolor={item.bgcolor}
+            completed={item.completed} />
+        ))}
+      </div>
     </div>
   )
 }
-
