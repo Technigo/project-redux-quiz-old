@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'In Spain there is a tradition during Christmas that kids get to hit a log for it to expell their gifts?', options: ['Tree of Joy', 'Shitty Dude', 'Wooden Gifter', 'Papa Pine'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'In Sweden 40% of the population tunes in during Christmas to watch the Donald Duch Special, in the video, what happens after?', options: ['Donuld Duck ...', 'Donuld Duck ...', 'Donuld Duck ...', 'Donuld Duck ...'], correctAnswerIndex: 2 }
 ]
 
 const initialState = {

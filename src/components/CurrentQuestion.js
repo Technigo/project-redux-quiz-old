@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-/* import Options from 'components/Options' */
+import { Background, QuestionContainer, Headers } from './Styling/GlobalStyles'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -25,11 +25,13 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((option, index) => {
-        return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
-      })}
-    </div>
+    <Background>
+      <QuestionContainer>
+        <Headers>Question: {question.questionText}</Headers>
+        {question.options.map((option, index) => {
+          return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
+        })}
+      </QuestionContainer>
+    </Background>
   )
 }
