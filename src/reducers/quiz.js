@@ -4,8 +4,11 @@ import { Image } from 'styledcomponents/ImageStyles.js'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', <Image src="./images/ramsay.png" />, 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0, completed: 10 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2, completed: 40 }
+  { id: 1, questionText: 'What room doesn`t exist?', options: [<Image src="./images/room/room-real-1.jpg" />, <Image src="./images/room/room-real.jpg" />, <Image src="./images/room/room-AI.jpg" />], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'which of these portraits are real?', options: [<Image src="./images/bnw/girl-AI.jpg" />, <Image src="./images/bnw/girl-real.jpg" />, <Image src="./images/bnw/man-AI-1.jpg" />], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'Which frog is fake?', options: [<Image src="./images/frogs/frog-AI.jpg" />, <Image src="./images/frogs/frog-real.jpg" />, <Image src="./images/frogs/frog-real-1.jpg" />], correctAnswerIndex: 0 },
+  { id: 4, questionText: 'What concrete building exists?', options: [<Image src="./images/concrete/concrete-AI.jpg" />, <Image src="./images/concrete/concrete-real.jpg" />, <Image src="./images/concrete/concrete-AI-1.jpg" />], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'Can you spot the fake cat?', options: [<Image src="./images/cats/cat-AI.jpg" />, <Image src="./images/cats/cat-real.jpg" />, <Image src="./images/cats/cat-real-1.jpg" />], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
