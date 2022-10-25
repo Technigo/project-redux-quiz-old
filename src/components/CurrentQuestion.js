@@ -24,7 +24,13 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
-    setTimeout(displayNextQuestion, 1000);
+    if (question.correctAnswerIndex === answerIndex) {
+      window.alert('Yep, correct!')
+      setTimeout(displayNextQuestion, 1000);
+    } else {
+      window.alert('you are an amateur!')
+      setTimeout(displayNextQuestion, 1000);
+    }
   };
 
   const barChange = (question.id / 5) * 100;
