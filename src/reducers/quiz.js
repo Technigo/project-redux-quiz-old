@@ -34,10 +34,11 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: false
 }
-
+// CreateSlice creates a piece of the store
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
+  // reducers are functions that modifies the store
   reducers: {
 
     /**
