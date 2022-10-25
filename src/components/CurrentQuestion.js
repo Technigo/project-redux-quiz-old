@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react'
+import { Container, QuestionWrapper } from 'Globalstyles'
 import { useSelector /* useDispatch */ } from 'react-redux'
 
 export const CurrentQuestion = () => {
@@ -12,8 +13,10 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-    </div>
+    <Container>
+      <QuestionWrapper>
+        <h1>{question.questionText}</h1>
+      </QuestionWrapper>
+    </Container>
   )
 }
