@@ -2,8 +2,30 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1,
+    questionText: '“On October 3rd, he asked me what day it was. It\'s October 3rd.”',
+    options: ['Pretty Little Liars', 'The Hangover', 'Mean Girls', 'Clueless'],
+    correctAnswerIndex: 2 },
+
+  { id: 2,
+    questionText: ' “The world is full enough of hurts and mischances without wars to multiply them.”',
+    options: ['Saving private ryan', 'Star wars', 'The wave', 'Lord of the rings'],
+    correctAnswerIndex: 3 },
+
+  { id: 3,
+    questionText: '"I\'m also just a girl, standing in front of a boy, asking him to love her."',
+    options: ['Love actually', 'Pretty woman', 'About a boy', 'Notting hill'],
+    correctAnswerIndex: 3 },
+
+  { id: 4,
+    questionText: '"The greatest trick the devil ever pulled was convincing the world he didn\'t exist."',
+    options: ['The usual suspects', 'The passion of christ', 'Jesus christ superstar', 'Gone girl'],
+    correctAnswerIndex: 0 },
+
+  { id: 5,
+    questionText: '"This is the beginning of a beautiful friendship."',
+    options: ['The perks of being a wallflower', 'Casablanca', 'Stand by me', 'The Intouchables'],
+    correctAnswerIndex: 1 }
 ]
 
 const initialState = {
@@ -31,7 +53,7 @@ export const quiz = createSlice({
      *    isCorrect   - true/false if the answer was the one which the question says is correct.
      *
      * When dispatching this action, you should pass an object as the payload with `questionId`
-     * and `answerIndex` keys. See the readme for more details.
+     * and `answerIndex` keys.
      */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
