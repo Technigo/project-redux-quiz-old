@@ -25,13 +25,13 @@ const questions = [
     id: 4,
     questionText: '4',
     options: ['2012', '2014', '2016', '2018'],
-    correctAnswerIndex: 4
+    correctAnswerIndex: 3
   },
   {
     id: 5,
     questionText: '5',
     options: ['2012', '2014', '2016', '2018'],
-    correctAnswerIndex: 5
+    correctAnswerIndex: 1
   }
 ];
 

@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 
 export const CurrentQuestion = () => {
-  const question = useSelector(
-    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
-  );
+  const { question, quizOver } = useSelector((state) => ({
+    question: state.quiz.questions[state.quiz.currentQuestionIndex],
+    quizOver: state.quiz.quizOver
+  }));
 
   const dispatch = useDispatch();
 
@@ -15,8 +16,35 @@ export const CurrentQuestion = () => {
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
-    dispatch(quiz.actions.goToNextQuestion());
+    if (question.correctAnswerIndex === answerIndex) {
+      dispatch(quiz.actions.goToNextQuestion());
+    } else {
+      // window.alert('Sorry, Wrong answer');
+    }
   };
+
+  if (quizOver) {
+    return (
+      <div>
+        <h1>Quiz Over</h1>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch(quiz.actions.restart());
+          }}
+        >
+          restart
+        </button>
+      </div>
+    );
+  }
+
+  // /* Page Component */
+  // if (quizOver) {
+  //   return <EndScreen />
+  // } else {
+  //   return <CurrentQuestion />
+  // }
 
   return (
     <div>
