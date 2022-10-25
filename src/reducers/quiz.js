@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!

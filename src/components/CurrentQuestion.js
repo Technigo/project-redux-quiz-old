@@ -1,7 +1,10 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector /* useDispatch */ } from 'react-redux'
 
 export const CurrentQuestion = () => {
+  /* const dispatch = useDispatch() */
+
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
 
   if (!question) {
