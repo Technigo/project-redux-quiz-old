@@ -3,7 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'In Spain there is a tradition during Christmas that kids get to hit a log for it to expell their gifts?', options: ['Tree of Joy', 'Shitty Dude', 'Wooden Gifter', 'Papa Pine'], correctAnswerIndex: 1 },
-  { id: 2, questionText: 'In Sweden 40% of the population tunes in during Christmas to watch the Donald Duch Special, in the video, what happens after?', options: ['Donuld Duck ...', 'Donuld Duck ...', 'Donuld Duck ...', 'Donuld Duck ...'], correctAnswerIndex: 2 }
+  { id: 2, questionText: 'In Sweden 40% of the population tunes in during Christmas to watch the Donald Duch Special, in the video, what happens after?', options: ['Donuld Duck ...1', 'Donuld Duck 2...', 'Donuld Duck3 ...', 'Donuld Duck4 ...'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'Test question nb 3', options: ['test answer 1', 'test answer 2', 'test answer 3', 'test answer 4'], correctAnswerIndex: 3 },
+  { id: 4, questionText: 'Test question nb 4', options: ['test answer 2:1', 'test answer 2:2', 'test answer 2:3', 'test answer 2:4'], correctAnswerIndex: 4 },
+  { id: 5, questionText: 'Test question nb 5', options: ['test answer 3:1', 'test answer 3:2', 'test answer 3:3', 'test answer 3:4'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {

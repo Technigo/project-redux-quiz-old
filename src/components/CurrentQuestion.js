@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { quiz } from 'reducers/quiz'
+import RestartButton from './RestartButton'
 import { Background, QuestionContainer, Headers } from './Styling/GlobalStyles'
 
 export const CurrentQuestion = () => {
@@ -31,6 +33,9 @@ export const CurrentQuestion = () => {
         {question.options.map((option, index) => {
           return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
         })}
+        <Link to="/">
+          <RestartButton />
+        </Link>
       </QuestionContainer>
     </Background>
   )
