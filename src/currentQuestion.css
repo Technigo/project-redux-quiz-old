@@ -1,0 +1,10 @@
+.answerbutton {
+  background-color: aqua;
+}
+.correct {
+  background-color: rgba(0, 128, 0, 0.542);
+}
+
+.wrong {
+  background-color: rgba(255, 0, 0, 0.556);
+}

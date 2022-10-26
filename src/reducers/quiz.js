@@ -1,12 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
-/* import strangerthings from 'assets/stranger-things.jpg' */
+import strangerThings from 'assets/stranger-things.jpg'
+import casaPapel from 'assets/la-casa-de-papel.jpg'
+import playList from 'assets/playlist.jpg'
+import downTown from 'assets/downton-abbey.jpg'
+import pulpFiction from 'assets/pulp-fiction.jpg'
 
 const questions = [
   {
     id: 1,
     questionText: 'What is the nickname of this Stranger things character?',
     options: ['Ella', 'El', 'Ellen', 'Len'],
-    backdropImg: 'assets/stranger-things.jpg',
+    backdropImg: strangerThings,
     audio: '',
     correctAnswerIndex: 1
   },
@@ -14,7 +18,7 @@ const questions = [
     id: 2,
     questionText: 'Which one is not a character in the TV-Show La Casa de Papel?',
     options: ['Rio', 'Nairobi', 'Paris', 'Helsinki'],
-    backdropImg: '',
+    backdropImg: casaPapel,
     audio: '',
     correctAnswerIndex: 2
   },
@@ -22,7 +26,7 @@ const questions = [
     id: 3,
     questionText: 'What is the name of the main character in The Playlist?',
     options: ['Daniel', 'Mark', 'Sophie', 'Antonella'],
-    backdropImg: '',
+    backdropImg: playList,
     audio: '',
     correctAnswerIndex: 0
   },
@@ -30,7 +34,7 @@ const questions = [
     id: 4,
     questionText: 'What is the real name of Downton Abbey?',
     options: ['Buckingham palace', 'Rochester Castle', 'Neuschwanstein', 'Highclere Castle'],
-    backdropImg: '',
+    backdropImg: downTown,
     audio: '',
     correctAnswerIndex: 3
   },
@@ -38,7 +42,7 @@ const questions = [
     id: 5,
     questionText: 'In Pulp Fiction, What does Vincent tell Jules is the name of a Quarter Pounder in Europe?',
     options: ['A Magnificent Cheese Quarter', 'A Royal with Cheese', 'A Pounder with Cheese', 'The Crowned with Cheese'],
-    backdropImg: '',
+    backdropImg: pulpFiction,
     audio: '',
     correctAnswerIndex: 1
   }
