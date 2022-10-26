@@ -13,11 +13,16 @@ font-size: 1.5rem;
 const ImgButton = styled.button`
 background-color: transparent;
 justify-content: center;
-padding: 0px;
+border: none; 
+padding: 0;
 cursor: pointer;
 
 & img {
   max-width: 100%;
+  height: 100%;
+  box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
+  -webkit-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
+  -moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
 }
 `
 
@@ -68,7 +73,9 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
     if (currentanswer) {
       if (currentanswer.answerIndex === index) {
         if (currentanswer.isCorrect) {
-          return { border: '4px solid green' };
+          return {
+            border: '6px solid green'
+          };
         }
         return { border: '4px solid red' };
       }
@@ -79,7 +86,7 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
 
   const barChange = (question.id / 5) * 100;
   const barData = [
-    { bgcolor: 'green', completed: `${barChange}` }
+    { bgcolor: 'hotpink', completed: `${barChange}` }
   ];
 
   // background-color: ${(props) => (props.primary ? '#7E4B48' : '#FDFBF8')};

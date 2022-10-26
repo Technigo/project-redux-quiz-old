@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import styled from 'styled-components';
+import { StyledButton, ButtonWrap } from 'styledcomponents/Buttons';
 
 const SummaryText = styled.p`
     text-align: center;
@@ -16,7 +17,9 @@ export const Summary = () => {
   return (
     <>
       <SummaryText>You got {correctAnswers} correct answers out of {numOfAnswers}</SummaryText>
-      <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</button>
+      <ButtonWrap>
+        <StyledButton type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</StyledButton>
+      </ButtonWrap>
     </>
   );
 };
