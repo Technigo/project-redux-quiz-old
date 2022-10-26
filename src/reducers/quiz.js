@@ -15,12 +15,12 @@ const questions = [
     options: ['hej', 'hopp', 'tjopp', 'hipp'],
     correctAnswerIndex: 2 },
   { id: 4,
-    questionText: 'Question 4',
-    options: ['1', '2', '3', '4'],
+    questionText: 'Which animal can gallop like a horse?',
+    options: ['Crocodiles', '', '3', '4'],
     correctAnswerIndex: 3 },
   { id: 5,
-    questionText: 'Question 5',
-    options: ['XXX', 'YYYY', 'AAAA', 'BBBB'],
+    questionText: 'A new born baby contains of this much water... ',
+    options: ['1/4', '2/4', '3/4', '4/4'],
     correctAnswerIndex: 4 }
 ]
 
@@ -28,7 +28,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  quizStart: false
 }
 
 export const quiz = createSlice({
@@ -96,7 +97,10 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState
-    }
+    },
 
+    startQuiz: (state) => {
+      state.quizStart = true
+    }
   }
 })

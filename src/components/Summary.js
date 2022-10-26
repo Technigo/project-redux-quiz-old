@@ -5,7 +5,7 @@ import React from 'react'
 const Summary = () => {
   return (
     // <p>{quiz.answers.answerIndex}</p>
-    <p>hello</p>
+    <p>Summary</p>
   )
 }
 

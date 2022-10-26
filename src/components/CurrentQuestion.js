@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
@@ -16,14 +18,20 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  const answer = useSelector((state) => 
+  state.quiz.answers.find((a) => ( a.questionId === question.id)
+  ));
+
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer(
       { questionId, answerIndex }
     ));
+ 
     if (question.correctAnswerIndex === answerIndex) {
-      window.alert('Correct answer!')
+        document.getElementById(`${answerIndex}`).style.background = 'green'
+
     } else {
-      window.alert('Sorry, wrong answer')
+      document.getElementById(`${answerIndex}`).style.background = 'red'
     }
   }
 
@@ -31,10 +39,18 @@ export const CurrentQuestion = () => {
     <div>
       <p>{question.id} / 5</p>
       <h1>Question: {question.questionText}</h1>
-      <div>
+      <div className="question-button-container">
         {question.options.map((option, index) => {
           return (
-            <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
+          <button 
+          className={answer ? 'disabled-true' : 'disabled-false'} 
+          id={index}
+          onClick={() => onAnswerSubmit(question.id, index)} 
+          key={option} 
+          type="button" 
+          disabled={answer}
+          >
+          {option}</button>
           )
         })}
       </div>

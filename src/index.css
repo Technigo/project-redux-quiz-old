@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.question-button-container{
+  display: flex;
+  flex-direction: row;
+  border: solid 2px blue;
+}
+
+.question-button {
+  border: solid 2px red;
+  background-color: black;
+  color: white;
+  padding: 15px;
+
+}
+
+.disabled-true{
+  border: solid 2px black;
+  background-color: grey;
+  color: white;
+  padding: 15px;
+}
+
+.disabled-false{
+  border: solid 2px black;
+  background-color: pink;
+  color: white;
+  padding: 15px;
+}
