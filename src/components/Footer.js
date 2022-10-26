@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Footer = styled.footer`
+
+`
 
 const Footer = () => {
   return (
     <footer>
-      <h4>This is the footer</h4>
+      <p>This is the footer</p>
     </footer>
   )
 }

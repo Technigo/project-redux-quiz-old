@@ -28,7 +28,7 @@ export const CurrentQuestion = () => {
       window.alert('Yep, correct!')
       setTimeout(displayNextQuestion, 1000);
     } else {
-      window.alert('you are an amateur!')
+      window.alert('You are an amateur!')
       setTimeout(displayNextQuestion, 1000);
     }
   };
