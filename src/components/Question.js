@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { ProgressBar } from './ProgressBar';
 
 export const Question = () => {
-  const [disable, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+
   const dispatch = useDispatch();
   console.log(question);
 
@@ -16,24 +18,26 @@ export const Question = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     setDisabled(true);
 
+    if (question.correctAnswerIndex === answerIndex) {
+      <h1>You are super right</h1>
+    } else {
+      <h1>No loser</h1>
+    }
+
     setTimeout(() => {
       dispatch(quiz.actions.goToNextQuestion())
       setDisabled(false)
     }, 500);
-
-    /* if (question.correctAnswerIndex === answerIndex) {
-      dispatch(quiz.actions.goToNextQuestion())
-    }  else {
-      window.alert('sorry wrong answer')
-    } */
   }
 
   return (
     <div>
+      <ProgressBar />
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, index) => {
-        return <button disabled={disable} onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
+        return <button disabled={disabled} onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
       })}
+      <h2>{}</h2>
     </div>
   )
 }
