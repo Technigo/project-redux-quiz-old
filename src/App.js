@@ -24,7 +24,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/question" element={<CurrentQuestion />} />
-          <Route path="/summary" element={<Summary />} />
+          <Route path="/question/summary" element={<Summary />} />
         </Routes>
       </BrowserRouter>
     </Provider>

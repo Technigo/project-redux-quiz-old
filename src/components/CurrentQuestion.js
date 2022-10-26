@@ -24,11 +24,11 @@ export const CurrentQuestion = () => {
     if (question.correctAnswerIndex === answerIndex) {
       // setCorrect(true)
       dispatch(quiz.actions.displayCorrectOrWrong({ questionId, answerIndex }))
-      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1600);
+      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 800);
     } else {
       // setCorrect(false)
       dispatch(quiz.actions.displayCorrectOrWrong({ questionId, answerIndex }))
-      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1600);
+      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 800);
     }
   }
 
