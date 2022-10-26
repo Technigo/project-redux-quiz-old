@@ -1,6 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledFooter = styled.footer`
+    justify-self: end;
+    display: grid;
+`
+
+const FooterText = styled.p`
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+`
+
 const Footer = () => {
   return (
     <StyledFooter>
@@ -12,14 +23,3 @@ const Footer = () => {
   )
 }
 export default Footer;
-
-const StyledFooter = styled.footer`
-    justify-self: end;
-    display: grid;
-`
-
-const FooterText = styled.p`
-    text-align: center;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-`
