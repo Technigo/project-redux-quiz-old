@@ -1,10 +1,12 @@
 import React from 'react';
+// import styled from 'styled-components'
+import { OuterWrapper, MainQuestion } from '../components/MainStyles';
 
 export const Welcome = () => {
   return (
-    <>
-      <p>hej</p>
-      <p>då!</p>
-    </>
+    <OuterWrapper>
+      <MainQuestion>Halloween Quiz</MainQuestion>
+      <p>Start here</p>
+    </OuterWrapper>
   )
 }

@@ -1,15 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+// import { pumpkinHappy } from './images/pumpkinHappy.png';
+// import { pumpkinSad } from './images/pumpkinSad.png';
 
 // Change these to your own questions!
 const questions = [
   { id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'],
-    correctAnswerIndex: 0 },
+    questionText: 'Whats the name of this character from Stephen Kings famous story?',
+    options: ['Clown', 'Pennywise', 'It', 'Richie Tozier'],
+    correctAnswerIndex: 2 },
   { id: 2,
-    questionText: 'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016', '2018'],
-    correctAnswerIndex: 2 }
+    questionText: 'In Scottish folklore, girls believed that if they hung wet sheets in front of the fire, or looked into mirrors while walking downstairs at midnight on Halloween – they would see images of what?',
+    options: ['Their future children', 'Their future husbands', 'Their ancestors', 'A magical stew recipe'],
+    correctAnswerIndex: 1 },
+  { id: 3,
+    questionText: 'Hundreds of years ago it was believed that ghosts came back to the earthly world on Halloween and people thought they would encounter ghosts if they left their homes. To avoid being recognised by these ghosts, people would:',
+    options: ['Wear masks to blend in with the ghosts', 'Bang loudly on pots and pans when outside', 'Use enchanted invisibility cloaks', 'Only move in large groups'],
+    correctAnswerIndex: 0 },
+  { id: 4,
+    questionText: 'How many Halloween-movies are there?',
+    options: ['7', '3', '10', '13'],
+    correctAnswerIndex: 3 },
+  { id: 5,
+    questionText: 'Where does the tradition of Halloween come from?',
+    options: ['the Native American celebration of Soyal', 'the Irish celebration Samhain', 'the Creol celebration La Toussaint', 'the Mexican celebration of día de muertos'],
+    correctAnswerIndex: 2 },
+  { id: 6,
+    questionText: 'How many pieces of candy does the average american household give to each trick or treater on Halloween?',
+    options: ['3', '7', '5', '2'],
+    correctAnswerIndex: 4 },
+  { id: 7,
+    questionText: 'Which former leader’s ghost has there been several sightings of throughout the years?',
+    options: ['John F Kennedy ', 'Queen Mary I (“Bloody Mary”)', 'Genghis Khan', 'Abraham Lincoln'],
+    correctAnswerIndex: 3 },
+  { id: 8,
+    questionText: 'The word ‘witch’ comes from the old English word ‘wicce’, meaning what?',
+    options: ['Wise woman', 'Magician', 'Wicked', 'Old lady'],
+    correctAnswerIndex: 0 }
 ]
 
 const initialState = {
