@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'pages/Summary';
+import { Wrapper } from 'styledcomponents/OpeningScreenStyle';
 /* import { Options } from './Options'; */
 
 export const CurrentQuestion = () => {
@@ -55,7 +56,7 @@ export const CurrentQuestion = () => {
   };
 
   return (
-    <div>
+    <Wrapper>
       {quizOver ? (
         <Summary />
       ) : (
@@ -98,6 +99,6 @@ export const CurrentQuestion = () => {
           > Next
           </button>
         </>)}
-    </div>
+    </Wrapper>
   );
 };

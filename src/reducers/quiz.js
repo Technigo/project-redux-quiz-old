@@ -38,7 +38,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  quizStart: false
 };
 
 export const quiz = createSlice({
@@ -109,6 +110,10 @@ export const quiz = createSlice({
      */
     restart: () => {
       return initialState;
+    },
+
+    startQuiz: (state) => {
+      state.quizStart = true
     }
   }
 });
