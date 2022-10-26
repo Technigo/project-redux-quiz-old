@@ -12,12 +12,12 @@ height: 40px;
 margin: 0 auto;
 font-size: 1rem;
 background: hotpink;
-color:white;
+color: white;
 font-weight: 600;
 
 & a{
   text-decoration: none;
-  color:white;
+  color: white;
   font-weight: 600;
 }
 `

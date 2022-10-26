@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
-    justify-self: end;
     display: grid;
 `
 

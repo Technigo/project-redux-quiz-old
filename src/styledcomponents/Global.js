@@ -11,6 +11,8 @@ export const InnerWrapper = styled.div`
     width: 95%;
     max-width: 1300px;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 `
 
 export const Wrapper = ({ children }) => (
