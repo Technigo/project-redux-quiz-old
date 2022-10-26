@@ -8,7 +8,7 @@ export const CurrentQuestion = () => {
   console.log(wholeStore);
   console.log(question);
 
-  /* A fetch of the answers to each questions */
+  /* A fetch of the answers to each question */
   const answer = useSelector(
     (store) => store.quiz.answers.find((a) => a.questionId === question.id)
   )
