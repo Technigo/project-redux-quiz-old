@@ -4,11 +4,10 @@ import { ButtonWrap, StyledButton } from 'styledcomponents/Buttons';
 
 const StyledStartPage = styled.div`
   display: grid;
-
-  padding-left: 10%;
-  padding-right: 10%;
+  background-color: rgba(255,105,180,0.1);
+  padding: 5% 10%; 
   p {
-    text-align: center;
+    text-align: left;
     line-height: 1.5rem;
   }
 `
