@@ -5,11 +5,9 @@ import ProgressBar from 'components/ProgressBar'
 import styled from 'styled-components'
 import { Summary } from './Summary'
 
-const QuestionText = styled.div`
+const QuestionText = styled.p`
 text-align: center;
 font-size: 1.5rem;
-border: 1px red solid; 
-place-self: center;
 `
 
 const ImgButton = styled.button`
@@ -32,7 +30,6 @@ display: grid;
 gap: 20px;
 grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 justify-content: space-between;
-border: 1px red solid; 
 `
 
 export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
