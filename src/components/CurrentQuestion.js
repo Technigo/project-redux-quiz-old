@@ -11,7 +11,6 @@ font-size: 1.5rem;
 `
 
 const ImgButton = styled.button`
-border: 1px red solid;
 background-color: transparent;
 justify-content: center;
 padding: 0px;
@@ -30,8 +29,9 @@ justify-content: space-between;
 /* border: 1px red solid; */
 `
 
-export const CurrentQuestion = () => {
+export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const currentanswer = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex])
   const wholeStore = useSelector((store) => store)
   const quizOver = useSelector((state) => state.quiz.quizOver)
   const answersArray = useSelector((state) => state.quiz.answers)
@@ -57,11 +57,24 @@ export const CurrentQuestion = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
     if (question.correctAnswerIndex === answerIndex) {
       window.alert('You are a queen!')
-      setTimeout(displayNextQuestion, 1000);
+      setTimeout(displayNextQuestion, 1500);
     } else {
       window.alert('You are an amateur!')
-      setTimeout(displayNextQuestion, 1000);
+      setTimeout(displayNextQuestion, 1500);
     }
+  };
+
+  const answerButtonClass = (index) => {
+    if (currentanswer) {
+      if (currentanswer.answerIndex === index) {
+        if (currentanswer.isCorrect) {
+          return { border: '4px solid green' };
+        }
+        return { border: '4px solid red' };
+      }
+      return {};
+    }
+    return {};
   };
 
   const barChange = (question.id / 5) * 100;
@@ -69,17 +82,20 @@ export const CurrentQuestion = () => {
     { bgcolor: 'green', completed: `${barChange}` }
   ];
 
+  // background-color: ${(props) => (props.primary ? '#7E4B48' : '#FDFBF8')};
+
   return (
     <>
       <QuestionText>Question: {question.questionText}</QuestionText>
       <ImageGrid>
         {question.options.map((option, index) => (
           <ImgButton
+            isCorrect={wasCorrectAnswerSelected}
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
             type="button"
-            style={{ border: question.correctAnswerIndex ? '#de84b4' : '#eaeaea' }}
-            disabled={answersArray.length === question.id}>
+            disabled={answersArray.length === question.id}
+            style={answerButtonClass(index)}>
             {option}
           </ImgButton>
         ))}
@@ -98,8 +114,3 @@ export const CurrentQuestion = () => {
   )
 }
 
-/* const Alert = styled.div`
-width: 100px;
-height: 100px;
-background-color: hotpink;
-`; */
