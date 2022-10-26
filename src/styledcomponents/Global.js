@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 export const OuterWrapper = styled.div`
     display: flex;
@@ -11,12 +13,18 @@ export const InnerWrapper = styled.div`
     width: 95%;
     max-width: 1300px;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 `
 
-export const Wrapper = ({ children }) => (
+export const Layout = ({ children }) => (
   <OuterWrapper>
     <InnerWrapper>
-      {children}
+      <Header />
+      <main>
+        {children}
+      </main>
+      <Footer />
     </InnerWrapper>
   </OuterWrapper>
 )

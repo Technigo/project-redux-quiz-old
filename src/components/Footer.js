@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
-    justify-self: end;
-    display: grid;
-`
-
 const FooterText = styled.p`
     text-align: center;
     font-size: 0.9rem;
@@ -14,12 +9,10 @@ const FooterText = styled.p`
 
 const Footer = () => {
   return (
-    <StyledFooter>
-      <FooterText>
+    <FooterText>
           Made by Amanda Wellington, Annika Gadman, Cecilia Frånlund,
           Kristin Larsson, Linus Eriksson
-      </FooterText>
-    </StyledFooter>
+    </FooterText>
   )
 }
 export default Footer;

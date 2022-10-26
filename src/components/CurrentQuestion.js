@@ -12,7 +12,6 @@ font-size: 1.5rem;
 
 const ImgButton = styled.button`
 background-color: transparent;
-justify-content: center;
 border: none; 
 padding: 0;
 cursor: pointer;
@@ -31,7 +30,6 @@ display: grid;
 gap: 20px;
 grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 justify-content: space-between;
-/* border: 1px red solid; */
 `
 
 export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
