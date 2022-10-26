@@ -7,7 +7,6 @@ import { quiz } from 'reducers/quiz';
 
 import { StartPage } from 'components/StartPage'
 import { CurrentQuestion } from 'components/CurrentQuestion';
-import { Summary } from 'components/Summary'
 import { GlobalStyles } from 'Globalstyles';
 
 const reducer = combineReducers({
@@ -24,7 +23,6 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<StartPage />} />
           <Route path="/question" element={<CurrentQuestion />} />
-          <Route path="/question/summary" element={<Summary />} />
         </Routes>
       </BrowserRouter>
     </Provider>
