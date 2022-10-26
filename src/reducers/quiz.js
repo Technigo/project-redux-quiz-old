@@ -2,14 +2,39 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'],
-    correctAnswerIndex: 0 },
-  { id: 2,
-    questionText: 'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016', '2018'],
-    correctAnswerIndex: 2 }
+  {
+    id: 1,
+    questionText: 'Which one of these things were invented in year 1970?',
+    options: ['The post-it notes', 'Walkman', 'Videocassette', 'The floppy disk'],
+    correctAnswerIndex: 3
+  },
+  {
+    id: 2,
+    questionText: 'What year was Apple founded?',
+    options: ['1974', '1976', '1979', '1973'],
+    correctAnswerIndex: 1
+  },
+
+  {
+    id: 3,
+    questionText: 'Why did president Nixon resign from office in 1974?',
+    options: ['He suffered from dementia', 'He wanted to spend more time with his family', 'Watergate', 'Because of a love affair'],
+    correctAnswerIndex: 2
+  },
+
+  {
+    id: 4,
+    questionText: 'Which year did Abba win the Eurovision song contest with “Waterloo”?',
+    options: ['1972', '1974', '1976', '1978'],
+    correctAnswerIndex: 1
+  },
+
+  {
+    id: 5,
+    questionText: 'What is the name of the most hyped night club in the late 1970-ies?',
+    options: ['Studio 54', 'Studio 56', 'Studio 51', 'Studio 53'],
+    correctAnswerIndex: 0
+  }
 ]
 
 const initialState = {
