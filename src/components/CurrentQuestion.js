@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { quiz } from 'reducers/quiz'
 import RestartButton from './RestartButton'
+import Summary from './Summary'
 import { Background, QuestionContainer, Headers } from './Styling/GlobalStyles'
 
 export const CurrentQuestion = () => {
@@ -10,6 +11,8 @@ export const CurrentQuestion = () => {
   const wholeStore = useSelector((store) => store)
   console.log(wholeStore);
   console.log(question);
+
+  const finalQuestion = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
 
@@ -26,17 +29,21 @@ export const CurrentQuestion = () => {
     }
   }
 
-  return (
-    <Background>
-      <QuestionContainer>
-        <Headers>Question: {question.questionText}</Headers>
-        {question.options.map((option, index) => {
-          return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
-        })}
-        <Link to="/">
-          <RestartButton />
-        </Link>
-      </QuestionContainer>
-    </Background>
-  )
+  if (finalQuestion === true) {
+    return <Summary />;
+  } else {
+    return (
+      <Background>
+        <QuestionContainer>
+          <Headers>Question: {question.questionText}</Headers>
+          {question.options.map((option, index) => {
+            return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
+          })}
+          <Link to="/">
+            <RestartButton />
+          </Link>
+        </QuestionContainer>
+      </Background>
+    )
+  }
 }
