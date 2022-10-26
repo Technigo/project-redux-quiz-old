@@ -1,6 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledStartPage = styled.div`
+  width: 40%;
+`
+
+const StyledButton = styled.button`
+
+`
+
 const StartPage = () => {
   return (
     <StyledStartPage>
@@ -23,10 +31,3 @@ const StartPage = () => {
 }
 export default StartPage;
 
-const StyledStartPage = styled.div`
-  width: 40%;
-`
-
-const StyledButton = styled.button`
-
-`
