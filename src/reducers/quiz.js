@@ -29,8 +29,8 @@ const questions = [
   {
     id: 5,
     questionText: 'Vilken är den korrekta stavningen av detta ord?',
-    options: ['Följdaktligen', 'Följaktligen', 'Följakligen', 'Följdakligen'],
-    correctAnswerIndex: 1
+    options: ['Följdaktligen', 'Följdakligen', 'Följakligen', 'Följaktligen'],
+    correctAnswerIndex: 3
   }
 ];
 

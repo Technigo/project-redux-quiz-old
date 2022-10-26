@@ -18,6 +18,7 @@ export const CurrentQuestion = () => {
   );
 
   const answers = useSelector((state) => state.quiz.answers);
+
   const isCorrect = useSelector(
     (state) => state.quiz.answers[state.quiz.currentQuestionIndex]?.isCorrect
   );
@@ -30,6 +31,11 @@ export const CurrentQuestion = () => {
   console.log('options:', options);
   console.log('answers:', answers);
   console.log('isCorrect', isCorrect);
+
+  /* if
+  (quizOver === true) {
+    return <Summary />;
+  } */
 
   if (!question) {
     return <h1>Åh nej! Jag kunde inte hitta den aktuella frågan!</h1>;
@@ -83,7 +89,7 @@ export const CurrentQuestion = () => {
             onClick={() => handleClickButton(question.id, optionIndex)}
             type="submit"
           >
-              OK
+                OK
           </button>
           <button
             type="button"
@@ -91,8 +97,7 @@ export const CurrentQuestion = () => {
             disabled={!answer}
           > Next
           </button>
-        </>
-      )}
+        </>)}
     </div>
   );
 };
