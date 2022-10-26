@@ -11,7 +11,7 @@ const PageHeading = styled.h1`
 const Header = () => {
   return (
     <header>
-      <PageHeading>Hello yes this is quiz header</PageHeading>
+      <PageHeading>Can you outsmart an AI?</PageHeading>
     </header>
   )
 }

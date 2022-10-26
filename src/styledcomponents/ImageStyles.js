@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+// import styled from 'styled-components'
 
 // Component with everything that has to do with the button/selected images
 
