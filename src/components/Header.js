@@ -2,11 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 
 const PageHeading = styled.h1`
-    font-family: 'Rammetto One';
     text-align: center;
     font-size: 3rem;
-    line-height: 2.5rem;
-    font-weight: 500;
+    font-weight: 700;
     color: hotpink;
 `
 
