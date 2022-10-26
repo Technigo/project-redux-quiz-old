@@ -6,14 +6,15 @@ export const NavButtons = ({
   handleOkayButtonClick,
   handleNextButton,
   questionId,
-  optionIndex
+  optionIndex,
+  answer
 }) => {
   return (
     <>
       <button
         onClick={() => handleOkayButtonClick(questionId, optionIndex)}
         type="submit"
-        disabled={questionAnswered}
+        disabled={questionAnswered || !answer}
       >
         OK
       </button>

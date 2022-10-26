@@ -54,6 +54,7 @@ export const CurrentQuestion = () => {
   const handleNextButton = () => {
     dispatch(quiz.actions.goToNextQuestion());
     setQuestionAnswered(false);
+    setAnswer('');
   };
 
   return (
@@ -85,6 +86,7 @@ export const CurrentQuestion = () => {
             questionId={question.id}
             optionIndex={optionIndex}
             handleNextButton={handleNextButton}
+            answer={answer}
           />
         </>
       )}
