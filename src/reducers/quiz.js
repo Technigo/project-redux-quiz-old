@@ -59,7 +59,7 @@ export const quiz = createSlice({
      */
 
     startQuiz: (state) => {
-      state.start = true
+      state.quizStarted = true
     },
 
     submitAnswer: (state, action) => {
