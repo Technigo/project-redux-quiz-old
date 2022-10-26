@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
+import { useState } from 'react'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -9,24 +10,27 @@ export const CurrentQuestion = () => {
   console.log(question);
 
   const dispatch = useDispatch();
+  const [borderColor, setBorderColor] = useState('black');
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
-  // const onAnswerSubmit = (id, index) => {
-  //   dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-  // }
-  const onAnswerSubmit = (questionId, answerIndex) => {
+  const onAnswerSubmit = (questionId, answerIndex, correctAnswerIndex) => {
     dispatch(quiz.actions.submitAnswer(
-      { questionId, answerIndex }
+      { questionId, answerIndex, correctAnswerIndex }
     ));
-    if (question.correctAnswerIndex === answerIndex) {
-      dispatch(quiz.actions.goToNextQuestion());
+    if (answerIndex === correctAnswerIndex) {
+      setBorderColor('green');
     } else {
-      window.alert('Sorry, wrong answer');
+      setBorderColor('red');
     }
   }
+
+  const ButtonAnswer = {
+    border: `solid ${borderColor} 2px`
+  }
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
@@ -35,11 +39,11 @@ export const CurrentQuestion = () => {
           <button
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
-            type="button">{option}
+            type="button"
+            style={ButtonAnswer}>{option}
           </button>
         )
       })}
     </div>
   )
 }
-

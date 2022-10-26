@@ -12,7 +12,9 @@ const Welcome = () => {
   return (
     <div>
       <h1>Welcome</h1>
-      <Button />
+      <Button
+        handleClick={() => onStartQuiz()}
+        buttonText="Start the quiz here!" />
     </div>
   )
 }
