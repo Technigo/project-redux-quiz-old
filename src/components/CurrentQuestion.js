@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Summary } from 'pages/Summary';
 import { Wrapper } from 'styledcomponents/OpeningScreenStyle';
+import { NavButtons } from './NavButtons';
+import Form from './Form';
 /* import { Options } from './Options'; */
 
 export const CurrentQuestion = () => {
@@ -28,6 +30,7 @@ export const CurrentQuestion = () => {
 
   const [answer, setAnswer] = useState(null);
   const [optionIndex, setOptionIndex] = useState(0);
+  const [questionAnswered, setQuestionAnswered] = useState(false);
   console.log('question:', question);
   console.log('options:', options);
   console.log('answers:', answers);
@@ -42,14 +45,15 @@ export const CurrentQuestion = () => {
     return <h1>Åh nej! Jag kunde inte hitta den aktuella frågan!</h1>;
   }
 
-  const handleClickButton = (questionId, answerIndex) => {
+  const handleOkayButtonClick = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
     if (question.correctAnswerIndex === answerIndex) {
-      window.alert('Rätt svar!')
+      window.alert('Rätt svar!');
     } else {
-      window.alert('Fel svar!')
+      window.alert('Fel svar!');
     }
-  }
+    setQuestionAnswered(true);
+  };
 
   const handleNextButton = () => {
     dispatch(quiz.actions.goToNextQuestion());
@@ -67,38 +71,26 @@ export const CurrentQuestion = () => {
             {/* <Options /> */}
             {question.options.map((option, index) => {
               return (
-                <form>
-                  <input
-                    id="answer"
-                    type="radio"
-                    key=""
-                    onChange={(event) => {
-                      setAnswer(event.target.value);
-                      setOptionIndex(index);
-                    }}
-                    value={option}
-                    checked={answer === option}
-                    required />
-                  <label htmlFor="answer" key={option}>
-                    {` ${option}`}
-                  </label>
-                </form>
+                <Form
+                  setAnswer={setAnswer}
+                  setOptionIndex={setOptionIndex}
+                  answer={answer}
+                  questionAnswered={questionAnswered}
+                  option={option}
+                  index={index}
+                />
               );
             })}
           </div>
-          <button
-            onClick={() => handleClickButton(question.id, optionIndex)}
-            type="submit"
-          >
-                OK
-          </button>
-          <button
-            type="button"
-            onClick={() => handleNextButton()}
-            disabled={!answer}
-          > Next
-          </button>
-        </>)}
+          <NavButtons
+            questionAnswered={questionAnswered}
+            handleOkayButtonClick={handleOkayButtonClick}
+            questionId={question.id}
+            optionIndex={optionIndex}
+            handleNextButton={handleNextButton}
+          />
+        </>
+      )}
     </Wrapper>
   );
 };
