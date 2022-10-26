@@ -13,9 +13,9 @@ code {
 }
 
 .right-answer {
-  border: green dotted 1px;
+  border: green dotted 3px;
 }
 
 .wrong-answer {
-  border: red dotted 1px;
+  border: red dotted 3px;
 }

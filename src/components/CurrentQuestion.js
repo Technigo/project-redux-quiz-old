@@ -8,11 +8,16 @@ export const CurrentQuestion = () => {
   console.log(wholeStore);
   console.log(question);
 
+  // below fetches the answer to a question
+  const answer = useSelector(
+    (store) => store.quiz.answers.find((a) => a.questionId === question.id)
+  )
+
   const dispatch = useDispatch();
   const [hasAnswered, setHasAnswered] = useState(false)
   const [userAnswerIndex, setUserAnswerIndex] = useState(99)
 
-  /* A reset for hasAnswered and answerIndex for each question */
+  /* A reset for each question */
   useEffect(() => {
     setHasAnswered(false)
     setUserAnswerIndex('')
@@ -23,12 +28,15 @@ export const CurrentQuestion = () => {
   }
 
   const onAnswerSubmit = (questionId, answerIndex) => {
-    setHasAnswered(true)
-    setUserAnswerIndex(answerIndex)
+    if (answer) return
+    else {
+      setHasAnswered(true)
+      setUserAnswerIndex(answerIndex)
 
-    dispatch(quiz.actions.submitAnswer(
-      { questionId, answerIndex }
-    ));
+      dispatch(quiz.actions.submitAnswer(
+        { questionId, answerIndex }
+      ));
+    }
   }
 
   const classCheck = (index) => {
@@ -41,10 +49,6 @@ export const CurrentQuestion = () => {
       return 'wrong-answer'
     }
   }
-
-  // const ButtonAnswer = {
-  //   border: `solid ${borderColor} 2px`
-  // }
 
   return (
     <div>
