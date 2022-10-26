@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
@@ -19,7 +20,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  correctAnswer: null
 }
 
 export const quiz = createSlice({
@@ -53,7 +55,11 @@ export const quiz = createSlice({
       if (question.options[answerIndex] === undefined) {
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
-
+      // if (question.correctAnswerIndex === answerIndex) {
+      //   store.correctAnswer = true
+      // } else if (!question.correctAnswerIndex === answerIndex) {
+      //   store.correctAnswer = false
+      // }
       store.answers.push({
         questionId,
         answerIndex,
@@ -75,6 +81,24 @@ export const quiz = createSlice({
         store.quizOver = true
       } else {
         store.currentQuestionIndex += 1
+      }
+    },
+
+    /**
+     * Use this action to show if correct or not.
+     *
+     * This action does not require a payload.
+     */
+    displayCorrectOrWrong: (store, action) => {
+      const { questionId, answerIndex } = action.payload
+      const question = store.questions.find((q) => q.id === questionId)
+
+      if (question.correctAnswerIndex === answerIndex) {
+        store.correctAnswer = true
+        // document.getElementById('correct').style.display = 'block'
+      } else {
+        store.correctAnswer = false
+        // document.getElementById('wrong').style.display = 'block'
       }
     },
 
