@@ -58,7 +58,7 @@ export const quiz = createSlice({
      *    isCorrect   - true/false if the answer was the one which the question says is correct.
      *
      * When dispatching this action, you should pass an object as the payload with `questionId`
-     * and `answerIndex` keys. See the readme for more details.
+     * and `answerIndex` keys.
      */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload;

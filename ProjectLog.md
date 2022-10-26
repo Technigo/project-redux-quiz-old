@@ -7,3 +7,13 @@ Tue 25/10/2022 (Joel, Kartika, Linnea, Maria)
 - Started on show correct/false answer (in progress) & next time we should create a better solution for it so it's closer to our initial plan.
 
 - Don't forget to pull! 🌷🌼🌸🌹🌺
+
+----------------------------------------------------------------
+
+Wed 26/10/2022 (Maria & Sofia)
+
+- Maria did the pull
+- Aiming to create the alert saying wrong answer.
+- Did a window alert showing "Rätt svar!" or "fel svar"
+- Managed to show which question you are on 1/5... Maybe you can do this in a more Reduxy way? We dunno how, though. Feel free to improve if you know :D
+- Started creating a Summary-page
