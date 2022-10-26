@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Footer = styled.footer`
+const StyledFooter = styled.footer`
 
 `
 
 const Footer = () => {
   return (
-    <footer>
+    <StyledFooter>
       <p>This is the footer</p>
-    </footer>
+    </StyledFooter>
   )
 }
 export default Footer;
