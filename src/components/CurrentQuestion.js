@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
 
@@ -9,24 +9,43 @@ export const CurrentQuestion = () => {
   console.log(question);
 
   const dispatch = useDispatch();
+  const [hasAnswered, setHasAnswered] = useState(false)
+  const [userAnswerIndex, setUserAnswerIndex] = useState(99)
+
+  /* A reset for hasAnswered and answerIndex for each question */
+  useEffect(() => {
+    setHasAnswered(false)
+    setUserAnswerIndex('')
+  }, [question])
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
-  // const onAnswerSubmit = (id, index) => {
-  //   dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-  // }
   const onAnswerSubmit = (questionId, answerIndex) => {
+    setHasAnswered(true)
+    setUserAnswerIndex(answerIndex)
+
     dispatch(quiz.actions.submitAnswer(
       { questionId, answerIndex }
     ));
-    if (question.correctAnswerIndex === answerIndex) {
-      dispatch(quiz.actions.goToNextQuestion());
-    } else {
-      window.alert('Sorry, wrong answer');
+  }
+
+  const classCheck = (index) => {
+    if (!hasAnswered) {
+      return ''
+    }
+    if (index === question.correctAnswerIndex) {
+      return 'right-answer'
+    } else if (index === userAnswerIndex) {
+      return 'wrong-answer'
     }
   }
+
+  // const ButtonAnswer = {
+  //   border: `solid ${borderColor} 2px`
+  // }
+
   return (
     <div>
       <h1>Question: {question.questionText}</h1>
@@ -35,11 +54,11 @@ export const CurrentQuestion = () => {
           <button
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
-            type="button">{option}
+            type="button"
+            className={classCheck(index)}>{option}
           </button>
         )
       })}
     </div>
   )
 }
-

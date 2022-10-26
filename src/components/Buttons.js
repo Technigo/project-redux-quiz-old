@@ -1,6 +1,4 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { quiz } from 'reducers/quiz'
 // import { useSelector } from 'react-redux'
 
 // export const OptionsButton = ({ questions.options }) => {
@@ -13,13 +11,8 @@ import { quiz } from 'reducers/quiz'
 //   )
 // }
 
-export const Button = ({ buttonText }) => {
-  const dispatch = useDispatch()
-  const onRestart = () => {
-    dispatch(quiz.actions.restart());
-  }
-
+export const Button = ({ buttonText, handleClick }) => {
   return (
-    <button type="button" onClick={() => onRestart}>{buttonText}</button>
+    <button type="button" onClick={handleClick}>{buttonText}</button>
   )
 }
