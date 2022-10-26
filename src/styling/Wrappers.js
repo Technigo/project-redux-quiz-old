@@ -9,11 +9,9 @@ export const OuterWrapper = styled.section`
 export const InnerWrapper = styled.div`
   display: flex;
   width: 80%;
-  margin: 0 auto;
-  height: 500px;
+  margin: 0 auto;  
   flex-direction: column;
-  position: absolute;
-  @media (min-width: 1024px) {
-    width: 60%
-  }
+  align-items: center;
+  justify-content:center;
+  height: 100vh;
 `

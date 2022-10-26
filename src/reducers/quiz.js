@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
-// import styled from 'styled-components/macro'
-// Change these to your own questions!
+/* import strangerthings from 'assets/stranger-things.jpg' */
+
 const questions = [
   {
     id: 1,
     questionText: 'What is the nickname of this Stranger things character?',
     options: ['Ella', 'El', 'Ellen', 'Len'],
-    backdropImg: '',
+    backdropImg: 'assets/stranger-things.jpg',
     audio: '',
     correctAnswerIndex: 1
   },
@@ -40,7 +40,7 @@ const questions = [
     options: ['A Magnificent Cheese Quarter', 'A Royal with Cheese', 'A Pounder with Cheese', 'The Crowned with Cheese'],
     backdropImg: '',
     audio: '',
-    correctAnswerIndex: 2
+    correctAnswerIndex: 1
   }
 ]
 
