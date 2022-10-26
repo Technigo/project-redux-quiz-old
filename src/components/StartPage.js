@@ -16,7 +16,7 @@ export const StartPage = () => {
             <div>
               <p>hej hej</p>
               <h1>Start quiz here!</h1>
-              <button onClick={() => dispatch(quiz.actions.quizStart())} type="button">Start Quiz</button>
+              <button onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Start Quiz</button>
             </div>
         ) : (
           <CurrentQuestion />

@@ -5,12 +5,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { NextButton } from 'components/NextButton'
 import { ReturnButton } from 'components/ReturnButton'
+import Summary from 'components/Summary'
 
 export const CurrentQuestion = () => {
-  const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  const wholeStore = useSelector((store) => store)
-  console.log(wholeStore)
-  console.log(question)
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const store = useSelector((state) => state.quiz)
 
   const dispatch = useDispatch();
 
@@ -34,9 +33,16 @@ export const CurrentQuestion = () => {
       document.getElementById(`${answerIndex}`).style.background = 'red'
     }
   }
+  
+//  if( store.quizOver === true) {
+//   return (
+//     <Summary/>)
+//   } else {
 
   return (
-    <div>
+  <>
+    {!store.quizOver ? (
+      <div>
       <p>{question.id} / 5</p>
       <h1>Question: {question.questionText}</h1>
       <div className="question-button-container">
@@ -56,5 +62,11 @@ export const CurrentQuestion = () => {
       </div>
       <NextButton /><ReturnButton />
     </div>
-  )
-}
+  ) : ( 
+    <>
+    <Summary />
+    </>
+    )}
+  </>
+)
+} 
