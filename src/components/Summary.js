@@ -11,9 +11,13 @@ const Summary = () => {
   // console.log('summaryQuestions', summaryQuestions)
 
   return (
-
-    {summaryAnswers.map((answer) => 
+    <div>
+      <p>you answered {summaryAnswers[0].isCorrect}</p>
+      <p>{summaryAnswers[1].answer}</p>
+      {/* <p>{answerIndex.length} </p> */}
+    </div>
   )
 }
 
 export default Summary;
+
