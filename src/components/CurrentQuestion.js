@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import ProgressBar from 'components/ProgressBar'
+import styled from 'styled-components'
 import { Summary } from './Summary'
 
 export const CurrentQuestion = () => {
@@ -38,21 +39,35 @@ export const CurrentQuestion = () => {
     { bgcolor: 'green', completed: `${barChange}` }
   ];
 
+  const QuestionText = styled.p`
+    text-align: center;
+    font-size: 1.5rem;
+   `
+
+  const ImgButton = styled.button`
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    `
+
   return (
     <div>
       {quizOver ? (
         <Summary />
       ) : (
         <div>
-          <h1>Question: {question.questionText}</h1>
+          <QuestionText>Question: {question.questionText}</QuestionText>
           {question.options.map((option, index) => (
-            <button
+            <ImgButton
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option}
               type="button"
               disabled={answersArray.length === question.id}>
               {option}
-            </button>
+            </ImgButton>
           ))}
           <div className="progressbar">
             {barData.map((item) => (
@@ -68,3 +83,4 @@ export const CurrentQuestion = () => {
     </div>
   )
 }
+

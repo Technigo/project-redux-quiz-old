@@ -1,14 +1,13 @@
 import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
-import { Image } from 'styledcomponents/ImageStyles.js'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: "Which room doesn't exist?", options: [<Image src="./images/room/room-real-1.jpg" />, <Image src="./images/room/room-real.jpg" />, <Image src="./images/room/room-AI.jpg" />], correctAnswerIndex: 2 },
-  { id: 2, questionText: 'Which of these portraits are real?', options: [<Image src="./images/bnw/girl-AI.jpg" />, <Image src="./images/bnw/girl-real.jpg" />, <Image src="./images/bnw/man-AI-1.jpg" />], correctAnswerIndex: 1 },
-  { id: 3, questionText: 'Which frog is fake?', options: [<Image src="./images/frogs/frog-AI.jpg" />, <Image src="./images/frogs/frog-real.jpg" />, <Image src="./images/frogs/frog-real-1.jpg" />], correctAnswerIndex: 0 },
-  { id: 4, questionText: 'Which concrete building exists?', options: [<Image src="./images/concrete/concrete-AI.jpg" />, <Image src="./images/concrete/concrete-real.jpg" />, <Image src="./images/concrete/concrete-AI-1.jpg" />], correctAnswerIndex: 1 },
-  { id: 5, questionText: 'Can you spot the fake cat?', options: [<Image src="./images/cats/cat-AI.jpg" />, <Image src="./images/cats/cat-real.jpg" />, <Image src="./images/cats/cat-real-1.jpg" />], correctAnswerIndex: 0 }
+  { id: 1, questionText: "Which room doesn't exist?", options: [<img alt="asbratext" src="./images/room/room-real-1.jpg" />, <img alt="asbratext" src="./images/room/room-real.jpg" />, <img alt="asbratext" src="./images/room/room-AI.jpg" />], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'Which of these portraits are real?', options: [<img alt="asbratext" src="./images/bnw/girl-AI.jpg" />, <img alt="asbratext" src="./images/bnw/girl-real.jpg" />, <img alt="asbratext" src="./images/bnw/man-AI-1.jpg" />], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'Which frog is fake?', options: [<img alt="asbratext" src="./images/frogs/frog-AI.jpg" />, <img alt="asbratext" src="./images/frogs/frog-real.jpg" />, <img alt="asbratext" src="./images/frogs/frog-real-1.jpg" />], correctAnswerIndex: 0 },
+  { id: 4, questionText: 'Which concrete building exists?', options: [<img alt="asbratext" src="./images/concrete/concrete-AI.jpg" />, <img alt="asbratext" src="./images/concrete/concrete-real.jpg" />, <img alt="asbratext" src="./images/concrete/concrete-AI-1.jpg" />], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'Can you spot the fake cat?', options: [<img alt="asbratext" src="./images/cats/cat-AI.jpg" />, <img alt="asbratext" src="./images/cats/cat-real.jpg" />, <img alt="asbratext" src="./images/cats/cat-real-1.jpg" />], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
