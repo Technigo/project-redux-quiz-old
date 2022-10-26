@@ -39,7 +39,8 @@ const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  showQuiz: false
 };
 
 export const quiz = createSlice({
@@ -90,26 +91,26 @@ export const quiz = createSlice({
      * Use this action to progress the quiz to the next question. If there's
      * no more questions (the user was on the final question), set `quizOver`
      * to `true`.
-     *
-     * This action does not require a payload.
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;
+        state.showQuiz = false;
       } else {
         state.currentQuestionIndex += 1;
       }
     },
 
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
+    /* Use this action to reset the state to the initial state the page had
+      when it was loaded.
+      This action does not require a payload. */
+
     restart: () => {
       return initialState;
+    },
+
+    startQuiz: (state) => {
+      state.showQuiz = true;
     }
   }
 });

@@ -1,15 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import EndPage from './EndPage';
 
 export const CurrentQuestion = () => {
-  const { question, quizOver } = useSelector((state) => ({
-    question: state.quiz.questions[state.quiz.currentQuestionIndex],
-    quizOver: state.quiz.quizOver
-  }));
-
   const dispatch = useDispatch();
+  const question = useSelector(
+    (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
+  );
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -20,13 +17,9 @@ export const CurrentQuestion = () => {
     if (question.correctAnswerIndex === answerIndex) {
       dispatch(quiz.actions.goToNextQuestion());
     } else {
-      // window.alert('Sorry, Wrong answer');
+      window.alert('Sorry, Wrong answer');
     }
   };
-
-  if (quizOver) {
-    return <EndPage />;
-  }
 
   return (
     <div>
@@ -42,6 +35,8 @@ export const CurrentQuestion = () => {
           </button>
         );
       })}
+
+      <p>Question {question.id}/5</p>
     </div>
   );
 };
