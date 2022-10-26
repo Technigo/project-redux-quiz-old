@@ -20,6 +20,6 @@ export const Button = ({ buttonText }) => {
   }
 
   return (
-    <button type="button" onClick={() => onRestart}>{buttonText}</button>
+    <button type="button" onClick={() => onRestart()}>{buttonText}</button>
   )
 }
