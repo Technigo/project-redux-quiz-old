@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { Summary } from 'pages/Summary';
 import { Wrapper } from 'styledcomponents/OpeningScreenStyle';
+import { Summary } from './Summary';
+
 import { NavButtons } from './NavButtons';
 import Form from './Form';
 /* import { Options } from './Options'; */
@@ -36,11 +37,6 @@ export const CurrentQuestion = () => {
   console.log('answers:', answers);
   console.log('isCorrect', isCorrect);
 
-  /* if
-  (quizOver === true) {
-    return <Summary />;
-  } */
-
   if (!question) {
     return <h1>Åh nej! Jag kunde inte hitta den aktuella frågan!</h1>;
   }
@@ -57,6 +53,7 @@ export const CurrentQuestion = () => {
 
   const handleNextButton = () => {
     dispatch(quiz.actions.goToNextQuestion());
+    setQuestionAnswered(false);
   };
 
   return (

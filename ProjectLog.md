@@ -34,6 +34,10 @@ Wed 19.00 - 20.00 26/10/ 2022 (Kartika)
 Wed 20.00 26/10/ 2022 (Joel & Kartika)
 
 -Worked from Joel's pull
--Started with disabled button for OK & next
+-Fixed with disabled button for OK & next
 -Created a Button and Form component (to breakdown into smaller components)
 -Moved styled component in Summary to styled components folder
+-GIIIIIIFFFFFFFFFFFFF
+
+- Moved Summary to component folder and deleted pages folder
+- Updated the "task list" on Jamboard, made a few more tasks
