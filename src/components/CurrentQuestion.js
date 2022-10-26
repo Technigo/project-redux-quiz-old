@@ -26,7 +26,7 @@ export const CurrentQuestion = () => {
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
     if (question.correctAnswerIndex === answerIndex) {
-      window.alert('Yep, correct!')
+      window.alert('You are a queen!')
       setTimeout(displayNextQuestion, 1000);
     } else {
       window.alert('You are an amateur!')
@@ -65,6 +65,7 @@ export const CurrentQuestion = () => {
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option}
               type="button"
+              style={{ border: question.correctAnswerIndex ? '#de84b4' : '#eaeaea' }}
               disabled={answersArray.length === question.id}>
               {option}
             </ImgButton>
@@ -84,3 +85,8 @@ export const CurrentQuestion = () => {
   )
 }
 
+/* const Alert = styled.div`
+width: 100px;
+height: 100px;
+background-color: hotpink;
+`; */
