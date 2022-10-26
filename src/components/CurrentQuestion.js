@@ -78,6 +78,7 @@ export const CurrentQuestion = () => {
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
             type="button"
+            style={{ border: question.correctAnswerIndex ? '#de84b4' : '#eaeaea' }}
             disabled={answersArray.length === question.id}>
             {option}
           </ImgButton>
@@ -94,36 +95,6 @@ export const CurrentQuestion = () => {
         ))}
       </div>
     </>
-
-  return (
-    <div>
-      {quizOver ? (
-        <Summary />
-      ) : (
-        <div>
-          <QuestionText>Question: {question.questionText}</QuestionText>
-          {question.options.map((option, index) => (
-            <ImgButton
-              onClick={() => onAnswerSubmit(question.id, index)}
-              key={option}
-              type="button"
-              style={{ border: question.correctAnswerIndex ? '#de84b4' : '#eaeaea' }}
-              disabled={answersArray.length === question.id}>
-              {option}
-            </ImgButton>
-          ))}
-          <div className="progressbar">
-            {barData.map((item) => (
-              <ProgressBar
-                key={item}
-                changeOfBarProgress={barChange}
-                bgcolor={item.bgcolor}
-                completed={item.completed} />
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
   )
 }
 
