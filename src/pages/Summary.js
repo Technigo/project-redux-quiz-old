@@ -13,8 +13,8 @@ import { OuterWrapper } from '../components/MainStyles';
 export const Summary = () => {
   return (
     <OuterWrapper>
-      <p>Images by: riajulislam from Flaticon, Yuri from Pixabay</p>
-      <p>Images by: riajulislam from Flaticon, Yuri from Pixabay</p>
+      <p>Images by: riajulislam from Flaticon & Yuri B and QuinceCreative from Pixabay</p>
+      <p>test</p>
     </OuterWrapper>
   )
 }

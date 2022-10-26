@@ -7,7 +7,7 @@ const questions = [
   { id: 1,
     questionText: 'Whats the name of this character from Stephen Kings famous story?',
     options: ['Clown', 'Pennywise', 'It', 'Richie Tozier'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 1 },
   { id: 2,
     questionText: 'In Scottish folklore, girls believed that if they hung wet sheets in front of the fire, or looked into mirrors while walking downstairs at midnight on Halloween – they would see images of what?',
     options: ['Their future children', 'Their future husbands', 'Their ancestors', 'A magical stew recipe'],
