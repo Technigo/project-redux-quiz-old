@@ -8,14 +8,14 @@ export const CurrentQuestion = () => {
   console.log(wholeStore);
   console.log(question);
 
-  // below fetches the answer to a question
+  /* A fetch of the answers to each questions */
   const answer = useSelector(
     (store) => store.quiz.answers.find((a) => a.questionId === question.id)
   )
 
   const dispatch = useDispatch();
   const [hasAnswered, setHasAnswered] = useState(false)
-  const [userAnswerIndex, setUserAnswerIndex] = useState(99)
+  const [userAnswerIndex, setUserAnswerIndex] = useState('')
 
   /* A reset for each question */
   useEffect(() => {
@@ -27,6 +27,8 @@ export const CurrentQuestion = () => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  // The line if (answer) return seems to make sure that it is only possible
+  // to answe the question once.
   const onAnswerSubmit = (questionId, answerIndex) => {
     if (answer) return
     else {
