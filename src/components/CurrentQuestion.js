@@ -93,6 +93,7 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
 
   return (
     <>
+
       <QuestionText>Question: {question.questionText}</QuestionText>
       <ImageGrid>
         {question.options.map((option, index) => (
