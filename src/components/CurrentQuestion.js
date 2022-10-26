@@ -1,16 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import { SummaryPage } from '../pages/SummaryPage'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
   const wholeStore = useSelector((store) => store)
   console.log(wholeStore);
+  const quizOver = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
 
-  if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+  if
+  (quizOver === true) {
+    return <SummaryPage />;
   }
 
   const onAnswerSubmit = (questionId, answerIndex) => {
@@ -21,6 +24,7 @@ export const CurrentQuestion = () => {
       dispatch(quiz.actions.goToNextQuestion());
     } else {
       window.alert('WRONG!!');
+      dispatch(quiz.actions.goToNextQuestion());
     }
   }
   // I framtiden byt ut goToNextQ till bli röd och sen lägga till en nästa-knapp

@@ -14,7 +14,6 @@ export const Summary = () => {
         </p>
         <p>You answered {answer.answer}</p>
       </section>
-
     )
   })
 };

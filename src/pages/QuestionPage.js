@@ -1,8 +1,12 @@
 import React from 'react';
+import { CurrentQuestion } from 'components/CurrentQuestion';
 import { ProgressBar } from 'components/ProgressBar';
 
-export const SummaryPage = () => {
+export const QuestionPage = () => {
   return (
-    <ProgressBar />
+    <>
+      <CurrentQuestion />
+      <ProgressBar />
+    </>
   )
 };
