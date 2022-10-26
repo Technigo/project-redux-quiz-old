@@ -48,7 +48,9 @@ export const CurrentQuestion = () => {
     width: 100%;
     border: none;
     background-color: transparent;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     `
 
   return (
