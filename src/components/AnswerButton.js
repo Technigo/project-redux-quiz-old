@@ -46,4 +46,8 @@ const StyledButton = styled.button`
   &.wrong {
     background-color: red;
   }
+
+  &:hover {
+    background-color: darkgray;
+  }
 `
