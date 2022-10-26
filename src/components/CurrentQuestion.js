@@ -7,6 +7,9 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
+  const questions = useSelector(
+    (state) => state.quiz.questions.length[state.quiz.questions]
+  );
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -36,7 +39,9 @@ export const CurrentQuestion = () => {
         );
       })}
 
-      <p>Question {question.id}/5</p>
+      <p>
+        Question {question.id}/{questions}
+      </p>
     </div>
   );
 };
