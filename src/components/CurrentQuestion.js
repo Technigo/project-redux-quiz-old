@@ -55,6 +55,9 @@ export const CurrentQuestion = () => {
                 </AnswerButton>
               )
             })}
+            <div>
+              <iframe src={question.audio} width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
+            </div>
             <button
               onClick={() => dispatch(quiz.actions.goToNextQuestion())}
               type="button"

@@ -11,7 +11,7 @@ const questions = [
     questionText: 'What is the nickname of this Stranger things character?',
     options: ['Ella', 'El', 'Ellen', 'Len'],
     backdropImg: strangerThings,
-    audio: '',
+    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
     correctAnswerIndex: 1
   },
   {
@@ -19,7 +19,7 @@ const questions = [
     questionText: 'Which one is not a character in the TV-Show La Casa de Papel?',
     options: ['Rio', 'Nairobi', 'Paris', 'Helsinki'],
     backdropImg: casaPapel,
-    audio: '',
+    audio: 'https://open.spotify.com/embed/track/3lWzVNe1yFZlkeBBzUuZYu?si=e57c5bde9d1f40fc',
     correctAnswerIndex: 2
   },
   {
@@ -27,7 +27,7 @@ const questions = [
     questionText: 'What is the name of the main character in The Playlist?',
     options: ['Daniel', 'Mark', 'Sophie', 'Antonella'],
     backdropImg: playList,
-    audio: '',
+    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
     correctAnswerIndex: 0
   },
   {
@@ -35,7 +35,7 @@ const questions = [
     questionText: 'What is the real name of Downton Abbey?',
     options: ['Buckingham palace', 'Rochester Castle', 'Neuschwanstein', 'Highclere Castle'],
     backdropImg: downTown,
-    audio: '',
+    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
     correctAnswerIndex: 3
   },
   {
@@ -43,7 +43,7 @@ const questions = [
     questionText: 'In Pulp Fiction, What does Vincent tell Jules is the name of a Quarter Pounder in Europe?',
     options: ['A Magnificent Cheese Quarter', 'A Royal with Cheese', 'A Pounder with Cheese', 'The Crowned with Cheese'],
     backdropImg: pulpFiction,
-    audio: '',
+    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
     correctAnswerIndex: 1
   }
 ]

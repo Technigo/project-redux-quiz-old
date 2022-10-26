@@ -3,7 +3,9 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { CurrentQuestion } from 'components/CurrentQuestion';
-import { Welcome } from 'components/Welcome'
+import { Welcome } from 'components/Welcome';
+import { Summary } from 'components/Summary';
+import { Footer } from 'components/Footer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const reducer = combineReducers({
@@ -19,8 +21,10 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/quizflix" element={<CurrentQuestion />} />
+          <Route path="/summary" element={<Summary />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </Provider>
   );
 }
