@@ -20,4 +20,11 @@ Wed 26/10/2022 (Maria & Sofia & Linnea)
 - Restart-button in summary page
 - Number of correct answers shows in summary page
 
+----------------------------------------------------------------
+
+Wed 19.00 - 20.00 26/10/ 2022 (Kartika)
+
+-Kartika cloned project
+-Did an opening screen with Browser Router.
+- Started styled components & styled a bit of opening screen just to see if it worked or not (it worked)
 
