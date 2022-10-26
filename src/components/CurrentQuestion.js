@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { quiz } from 'reducers/quiz'
 import RestartButton from './RestartButton'
 import { Background, QuestionContainer, Headers } from './Styling/GlobalStyles'
+import ProgressBar from './Progressbar'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -36,6 +37,7 @@ export const CurrentQuestion = () => {
         <Link to="/">
           <RestartButton />
         </Link>
+        <ProgressBar />
       </QuestionContainer>
     </Background>
   )
