@@ -3,7 +3,7 @@ import React from 'react'
 const ProgressBar = (props) => {
   const { bgcolor, completed } = props;
   const containerStyles = {
-    height: 10,
+    height: 20,
     backgroundColor: '#4d4d4d',
     borderRadius: 50,
     margin: 50
@@ -27,7 +27,7 @@ const ProgressBar = (props) => {
   return (
     <div style={containerStyles}>
       <div style={fillerStyles}>
-        <span style={labelStyles} />
+        <span style={labelStyles}>{`${completed}%`} </span>
       </div>
     </div>
   );
