@@ -1,13 +1,16 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+This project was made during the Technigo bootcamp. We used Redux for the first time to build a multiple-choice quiz game. We've been working in a group of five, using mob-programming in pairs and git-branches.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We started with planning the project in Figma deciding type of quiz, design and what kind of components we first thought was needed. Since we've different time schedules we also mapped out who worked when. The plan was to at last build the base in group, but due to schedule we needed to split up.
+
+We used the techniques that's associated with Redux and also got more practice In React styled components.
+
+We reached several stretch goals, but if we had more time we would have worked more on the styling.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to deployed project: 
