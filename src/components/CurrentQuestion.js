@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import ProgressBar from 'components/ProgressBar'
 import styled from 'styled-components'
 import { Summary } from './Summary'
+import Timer from './Timer'
 
 const QuestionText = styled.p`
 text-align: center;
@@ -15,15 +16,16 @@ background-color: transparent;
 border: none; 
 padding: 0;
 cursor: pointer;
+-webkit-appearance: none;
+-webkit-box-shadow: -4px 4px 20px 4px rgba(0,0,0,0.6);
+box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
+-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
 
 & img {
   max-width: 100%;
-  height: 100%;
-  box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
-  -webkit-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
-  -moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
-}
-`
+  margin-bottom: -2%;
+  margin-top: -1%;
+}`
 
 const ImageGrid = styled.div`
 display: grid;
@@ -59,14 +61,11 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
     if (question.correctAnswerIndex === answerIndex) {
-      window.alert('You are a queen!')
       setTimeout(displayNextQuestion, 1500);
     } else {
-      window.alert('You are an amateur!')
       setTimeout(displayNextQuestion, 1500);
     }
   };
-
   const answerButtonClass = (index) => {
     if (currentanswer) {
       if (currentanswer.answerIndex === index) {
@@ -75,7 +74,7 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
             border: '6px solid green'
           };
         }
-        return { border: '4px solid red' };
+        return { border: '6px solid red' };
       }
       return {};
     }
@@ -86,13 +85,13 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
   const barData = [
     { bgcolor: 'hotpink', completed: `${barChange}` }
   ];
-
-  // background-color: ${(props) => (props.primary ? '#7E4B48' : '#FDFBF8')};
+  // const countDown = [{ color: 'hotpink' }];
 
   return (
     <>
 
       <QuestionText>Question: {question.questionText}</QuestionText>
+      <Timer />
       <ImageGrid>
         {question.options.map((option, index) => (
           <ImgButton
@@ -119,4 +118,3 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
     </>
   )
 }
-
