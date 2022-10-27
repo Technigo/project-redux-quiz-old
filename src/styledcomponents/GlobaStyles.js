@@ -11,7 +11,7 @@ export const OuterWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto Mono', monospace;
-  letter-spacing: -2px;
+  letter-spacing: 1px;
 
   @media (min-width: 600px) and (max-width: 1023px) {
   }
@@ -28,15 +28,20 @@ justify-content: center;
 background-color: white;
 border-radius: 20px;
 text-align: center;
-padding: 10% 5%;
-margin: 20% 10%;
+box-shadow: 10px 8px 26px 3px rgba(0,0,0,0.42);
+-webkit-box-shadow: 10px 8px 26px 3px rgba(0,0,0,0.42);
+-moz-box-shadow: 10px 8px 26px 3px rgba(0,0,0,0.42);
+margin: 5%;
+padding: 5%;
 
   h1{
-    margin: 5% 0;
+    margin: 5%;
+    font-size: 20px;
   }
 
   h2{
-    margin: 0 auto;
+    margin: 5% auto;
+    font-size: 16px;
   }
 
   a{
@@ -44,23 +49,50 @@ margin: 20% 10%;
   }
 
   @media (min-width: 600px) and (max-width: 1023px) {
-    
+    margin: 5%;
+    padding: 5%;
+
+    h1{
+      font-size: 
+    }
+  
+    h2{
+      margin: 0 auto;
+    }
   }
 
   @media (min-width: 1024px) {
-    
+margin: 5%;
+padding: 5%;
   }
 `;
 
 export const LinkContainer = styled(Link)`
   button {
     display: block;
-    padding: 10px 15px;
+    padding: 5px 20px;
+    margin: 10% auto;
+    background-color: #CAE0FF;
+    border: none;
+    font-size: 16px;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 20px;
+
+    @media (min-width: 600px) and (max-width: 1023px) {
+    
+    }
+  
+    @media (min-width: 1024px) {
+      display: block;
+    width: 120px;
+    padding: 10px 20px;
     margin: 10% auto;
     background-color: #CAE0FF;
     border: none;
     font-size: 21px;
     font-family: 'Roboto Mono', monospace;
+    border-radius: 20px;
+    }
   }
 
 `;

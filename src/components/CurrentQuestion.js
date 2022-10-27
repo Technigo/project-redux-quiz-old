@@ -64,7 +64,7 @@ export const CurrentQuestion = () => {
         <Summary />
       ) : (
         <InnerWrapper>
-          <h1>🤓</h1>
+          <h2>🤓</h2>
           <h2>Fråga {question.id} av 5</h2>
           <h1>{question.questionText}</h1>
           {/* <Options /> */}
