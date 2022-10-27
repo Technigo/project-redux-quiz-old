@@ -44,14 +44,14 @@ export const CurrentQuestion = () => {
   <>
     {!store.quizOver ? (
       <div>
-      <Question>
-      <ReturnButton />
-      <p>{question.id} / 5</p>
-      <h1>Question: {question.questionText}</h1>
-      </Question>
+      <InnerWrapperQuestion>
+      <QuestionWrapper>
+      <Counter>{question.id} / 5</Counter>
+      <Text>Question: {question.questionText}</Text>
+      </QuestionWrapper>
 
-      <Answer>
-      <div className="question-button-container">
+      <AnswerWrapper>
+      <QuestionButtonContainer>
         {question.options.map((option, index) => {
           return (
           <button 
@@ -65,9 +65,10 @@ export const CurrentQuestion = () => {
           {option}</button>
           )
         })}
-      </div>
-      <NextButton />
-      </Answer>
+    </QuestionButtonContainer>
+      <NextButton /><ReturnButton />
+      </AnswerWrapper>
+      </InnerWrapperQuestion>
     </div>
   ) : ( 
     <>
@@ -79,13 +80,52 @@ export const CurrentQuestion = () => {
 } 
 
 
-const Question = styled.div `
-border: solid red 2px;
+const QuestionWrapper = styled.div `
 width: 100%;
-background-color: pink;
+height: 40vh;
+background-color: yellow;
+display: grid;
+justify-content: center;
+border: solid pink 2px;
 `
-const Answer = styled.div `
-border: solid red 2px;
+
+const Counter = styled.p`
+border: solid black 2px;
+`
+const Text = styled.h1`
+border: solid green 2px;
+border: solid blue 2px;
+`
+
+const AnswerWrapper = styled.div `
 width: 100%;
+height: 60vh;
 background-color: black;
+justify-content: center;
+border: solid 2px red;
 `
+const QuestionButtonContainer = styled.div`
+border: solid red 2px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+border: solid 2px blue;
+`
+
+const InnerWrapperQuestion = styled.div`
+  background-color: pink;
+  width: 80%;
+  // height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 2px blue;
+
+
+
+`
+
+
+

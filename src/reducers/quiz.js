@@ -4,24 +4,24 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
   { id: 1,
     questionText: 'Bubble wrap was originally invented as...?',
-    options: ['Wallpaper', 'Art', 'XX', 'XX'],
+    options: ['Wallpaper', 'Art', '1', '2'],
     correctAnswerIndex: 0 },
   { id: 2,
     questionText: 'Which country has the lagrest amount of pyramids?',
-    options: ['XX', 'Egypt', 'XX', 'XX'],
+    options: ['34', 'Egypt', '3', '4'],
     correctAnswerIndex: 1 },
   { id: 3,
     questionText: 'Question 3',
     options: ['hej', 'hopp', 'tjopp', 'hipp'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 3 },
   { id: 4,
     questionText: 'Which animal can gallop like a horse?',
-    options: ['Crocodiles', 'Ants', 'XX', 'Lizzard'],
-    correctAnswerIndex: 0 },
+    options: ['Crocodiles', 'Ants', '5', 'Lizzard'],
+    correctAnswerIndex: 1 },
   { id: 5,
     questionText: 'A new born baby contains how much water? ',
     options: ['1/4', '2/4', '3/4', '4/4'],
-    correctAnswerIndex: 3 }
+    correctAnswerIndex: 2 }
 ]
 
 const initialState = {

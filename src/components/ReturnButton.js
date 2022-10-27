@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz';
+// import styled from 'styled-components/macro';
 
 export const ReturnButton = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])

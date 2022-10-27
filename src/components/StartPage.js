@@ -14,21 +14,35 @@ export const StartPage = () => {
 
   return (
     <>
-    <ContentSection>
+
       {!question.quizStart ? (
+        <ContentSection>
+            <InnerQr>
             <Start>
-              <p>hej hej</p>
               <h1>Start quiz here!</h1>
               <button onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Start Quiz</button>
             </Start>
+            </InnerQr>
+            </ContentSection>
         ) : (
           <CurrentQuestion />
       )}
-      </ContentSection>
+ 
     </>
   )
 }
 const Start = styled.div`
-margin: 50% 20% 0 20%;
-border: solid red 2px;
+display: flex;
+flex-direction: column;
+border: solid green 2px;`
+
+
+const InnerQr = styled.div`
+  background-color: pink;
+  width: 60%;
+  height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 `
