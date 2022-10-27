@@ -4,11 +4,14 @@ import { quiz } from 'reducers/quiz'
 import styled from 'styled-components/macro';
 
 const Button = styled.button`
-width: 10rem; 
+width: 12rem; 
 border-width: 10px;
+margin-bottom: 5px; 
+background-color: rgba(230,160,61,0.5);
+border-radius: 15px; 
 `
 
-const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNextDisabled }) => {
+const Options = ({ option, answerIndex }) => {
   const dispatch = useDispatch()
 
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -24,12 +27,12 @@ const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNe
 
   const onSubmitAnswer = () => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
-    setOptionDisabled(false)
-    setNextDisabled(true)
     if (answerIndex === correctAnswerIndex) {
       setBorderColor({ borderColor: 'green' })
+      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1000)
     } else {
       setBorderColor({ borderColor: 'red' })
+      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1000)
     }
   }
   return (
@@ -37,8 +40,7 @@ const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNe
       <Button
         type="button"
         style={borderColor}
-        onClick={onSubmitAnswer}
-        disabled={optionDisabled}>
+        onClick={onSubmitAnswer}>
         {option}
       </Button>
     </OptionContainer>

@@ -55,6 +55,7 @@ export const Questions = styled.div`
   font-size: 1.5vw;
   font-weight: bold;
   line-height: 1.75vw;
+  top: 15px; 
 `
 
 export const Buttons = styled.a`
@@ -70,6 +71,7 @@ export const Buttons = styled.a`
     width: 20%;
     text-align: center;
     border-radius: 12px;
+    top: 20px; 
 `
 export const Illustration = styled.img`
 position: fixed;

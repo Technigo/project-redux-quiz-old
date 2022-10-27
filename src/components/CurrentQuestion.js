@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import { useSelector/* , useDispatch */ } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-/* import { quiz } from 'reducers/quiz' */
 import RestartButton from './RestartButton'
 import Summary from './Summary'
 import { Background, QuestionContainer, Questions } from './Styling/GlobalStyles'
 import ProgressBar from './Progressbar'
 import Options from './Options'
-import NextButton from './NextButton'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -16,9 +14,6 @@ export const CurrentQuestion = () => {
   console.log(question);
 
   const finalQuestion = useSelector((state) => state.quiz.quizOver);
-
-  const [optionDisabled, setOptionDisabled] = useState(false)
-  const [nextDisabled, setNextDisabled] = useState(true)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -35,17 +30,8 @@ export const CurrentQuestion = () => {
             <Options
               key={option.id}
               option={option}
-              answerIndex={answerIndex}
-              setNextDisabled={setNextDisabled}
-              optionDisable={optionDisabled}
-              setOptionDisabled={setOptionDisabled} />
-
+              answerIndex={answerIndex} />
           ))}
-          <NextButton
-            nextDisabled={nextDisabled}
-            setNextDisabled={setNextDisabled}
-            optionDisable={optionDisabled}
-            setOptionDisabled={setOptionDisabled} />
 
           <Link to="/">
             <RestartButton />
