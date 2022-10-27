@@ -9,13 +9,13 @@ export const Button = ({ buttonText, handleClick }) => {
 
 export const ButtonStyling = styled.button`
 background-color: ${(props) => (props.options ? '#F26A3A' : '#A5D8C5')};
-padding: 12px;
+padding: 11px;
 border-radius: 15px;
 border: 2px solid #EEE8D2;
 font-family: 'Quicksand', sans-serif;
 font-size: 20px;
 font-weight: 700;
-&: hover {
+  &:hover {
   opacity: 0.8;
 }
 
