@@ -11,7 +11,7 @@ export const OuterWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto Mono', monospace;
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   position: relative;
 
   @media (min-width: 600px) and (max-width: 1023px) {
@@ -34,6 +34,9 @@ export const InnerWrapper = styled.div`
   padding: 2% 5%;
   /* margin: 20% 10%; */
   margin: 150px 10% 0;
+  box-shadow: 10px 8px 26px 3px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 10px 8px 26px 3px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 10px 8px 26px 3px rgba(0, 0, 0, 0.42);
 
   h1 {
     margin: 5% 0;
@@ -63,12 +66,28 @@ export const InnerWrapper = styled.div`
 export const LinkContainer = styled(Link)`
   button {
     display: block;
-    padding: 10px 15px;
+    padding: 5px 20px;
     margin: 10% auto;
     background-color: #cae0ff;
     border: none;
     font-size: 16px;
     font-family: 'Roboto Mono', monospace;
-    cursor: pointer;
+    border-radius: 20px;
+
+    @media (min-width: 600px) and (max-width: 1023px) {
+    }
+
+    @media (min-width: 1024px) {
+      display: block;
+      width: 120px;
+      padding: 10px 20px;
+      margin: 10% auto;
+      background-color: #cae0ff;
+      border: none;
+      font-size: 16px;
+      font-family: 'Roboto Mono', monospace;
+      cursor: pointer;
+      border-radius: 20px;
+    }
   }
 `;
