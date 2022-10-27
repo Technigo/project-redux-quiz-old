@@ -32,6 +32,8 @@ export const Summary = () => {
             alt="alright"
             /* src="https://media.giphy.com/media/LNxlSJpxAN55bS51Ro/giphy.gif" */
             src="https://media.giphy.com/media/hVUuQmXu7rtSNVUo6n/giphy.gif"
+            width="100%"
+            height="300px"
           />
         )) ||
         (rightAnswers.length >= 4 && (
