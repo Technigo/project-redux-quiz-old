@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 
-export const ButtonWrap = styled.div`
+export const ButtonWrap = styled.a`
 display: flex;
+justify-content: center;
+text-decoration: none;
+color: white;
+font-weight: 600;
 `
 
 export const StyledButton = styled.button`
 border: none; 
 border-radius: 10px;
-width: 100px;
+width: auto;
 height: 40px;
-margin: 0 auto;
+padding: 0 1.5rem;
 font-size: 1rem;
 background: hotpink;
 color: white;
 font-weight: 600;
-
-& a{
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
+&:hover {
+  background-color: MediumVioletRed;
+  }
 `

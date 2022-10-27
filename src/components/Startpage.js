@@ -2,16 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { ButtonWrap, StyledButton } from 'styledcomponents/Buttons';
 
-const StyledStartPage = styled.div`
-  display: grid;
-  background-color: rgba(255,105,180,0.1);
-  padding: 5% 10%; 
-  p {
-    text-align: left;
-    line-height: 1.5rem;
-  }
-`
-
 const StartPage = () => {
   return (
     <StyledStartPage>
@@ -26,9 +16,9 @@ const StartPage = () => {
           will see some examples of the images it can create.
       </p>
       <p>Can you separate which images are made by Midjourney or not?</p>
-      <ButtonWrap>
+      <ButtonWrap href="/quiz">
         <StyledButton>
-          <a href="/quiz">Start quiz</a>
+          Start quiz
         </StyledButton>
       </ButtonWrap>
     </StyledStartPage>
@@ -36,3 +26,14 @@ const StartPage = () => {
 }
 export default StartPage;
 
+const StyledStartPage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255,105,180,0.1);
+  padding: 5% 10%; 
+  p {
+    text-align: center;
+    line-height: 1.5rem;
+  }
+`
