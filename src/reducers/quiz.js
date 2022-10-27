@@ -77,6 +77,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     goToNextQuestion: (store) => {
+      store.correctAnswer = null
       if (store.currentQuestionIndex + 1 === store.questions.length) {
         store.quizOver = true
       } else {
