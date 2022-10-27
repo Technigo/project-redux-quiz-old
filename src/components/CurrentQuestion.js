@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
@@ -23,9 +25,6 @@ export const CurrentQuestion = () => {
       alert('You are wrong!')
     }
     dispatch(quiz.actions.goToNextQuestion())
-    if (entireStore.quiz.quizOver === true) {
-      return <Summary />
-    }
     console.log('is quiz over?', entireStore.quiz.quizOver)
   }
 
@@ -34,8 +33,13 @@ export const CurrentQuestion = () => {
   })
   return (
     <div>
-      <h1>Question: {question.questionText}</h1>
-      {allAnswers}
+      {entireStore.quiz.quizOver
+        ? <Summary />
+        : <div>
+          <h1>Question: {question.questionText}</h1>
+          {allAnswers}
+        </div>}
     </div>
+
   )
 }
