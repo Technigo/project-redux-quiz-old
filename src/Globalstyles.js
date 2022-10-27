@@ -49,3 +49,7 @@ export const QuestionWrapper = styled.div`
     }
 
 `
+
+export const LogoWrapper = styled.div`
+width:50vw;
+`

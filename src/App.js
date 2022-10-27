@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
@@ -16,13 +16,14 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 export const App = () => {
+  const [score, setScore] = useState(0);
   return (
     <Provider store={store}>
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StartPage />} />
-          <Route path="/question" element={<CurrentQuestion />} />
+          <Route path="/question" element={<CurrentQuestion score={score} setScore={setScore} />} />
         </Routes>
       </BrowserRouter>
     </Provider>

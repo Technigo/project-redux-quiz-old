@@ -2,18 +2,21 @@
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 import React from 'react'
-import { Container, QuestionWrapper } from 'Globalstyles'
+import { Container, QuestionWrapper, LogoWrapper } from 'Globalstyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Summary } from 'components/Summary'
 import { Progressbar } from './ProgressBar'
+import FriendsLogo from '../Pictures/FriendsLogo.svg'
 
-export const CurrentQuestion = () => {
+export const CurrentQuestion = ({ score, setScore }) => {
   /* const [correct, setCorrect] = useState(false) */
   const dispatch = useDispatch();
-  const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
+  const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
   const quizState = useSelector((store) => store.quiz.quizOver);
-  const correctState = useSelector((store) => store.quiz.correctAnswer)
+  const correctState = useSelector((store) => store.quiz.correctAnswer);
+  // const { score, setScore } = props;
+  console.log('score', score)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -24,6 +27,7 @@ export const CurrentQuestion = () => {
     if (question.correctAnswerIndex === answerIndex) {
       // setCorrect(true)
       dispatch(quiz.actions.displayCorrectOrWrong({ questionId, answerIndex }))
+      setScore(score + 1)
       setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 800);
     } else {
       // setCorrect(false)
@@ -35,6 +39,10 @@ export const CurrentQuestion = () => {
   if (quizState === false) {
     return (
       <Container>
+        <LogoWrapper>
+          <img src={FriendsLogo} alt="logo" />
+        </LogoWrapper>
+
         <QuestionWrapper>
           <h1>{question.questionText}</h1>
           {question.options.map((option, index) => {
@@ -64,7 +72,7 @@ export const CurrentQuestion = () => {
     )
   } else {
     return (
-      <Summary />
+      <Summary score={score} />
     )
   }
 }
