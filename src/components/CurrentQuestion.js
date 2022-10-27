@@ -6,6 +6,7 @@ import { quiz } from 'reducers/quiz'
 import { NextButton } from 'components/NextButton'
 import { ReturnButton } from 'components/ReturnButton'
 import Summary from 'components/Summary'
+import styled from 'styled-components/macro';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -43,8 +44,13 @@ export const CurrentQuestion = () => {
   <>
     {!store.quizOver ? (
       <div>
+      <Question>
+      <ReturnButton />
       <p>{question.id} / 5</p>
       <h1>Question: {question.questionText}</h1>
+      </Question>
+
+      <Answer>
       <div className="question-button-container">
         {question.options.map((option, index) => {
           return (
@@ -60,7 +66,8 @@ export const CurrentQuestion = () => {
           )
         })}
       </div>
-      <NextButton /><ReturnButton />
+      <NextButton />
+      </Answer>
     </div>
   ) : ( 
     <>
@@ -70,3 +77,15 @@ export const CurrentQuestion = () => {
   </>
 )
 } 
+
+
+const Question = styled.div `
+border: solid red 2px;
+width: 100%;
+background-color: pink;
+`
+const Answer = styled.div `
+border: solid red 2px;
+width: 100%;
+background-color: black;
+`
