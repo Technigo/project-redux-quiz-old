@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { AnswerContainer, Wrapper } from 'styledComponents/containers';
+import { StyledButton } from 'styledComponents/StyledButton';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ export const CurrentQuestion = () => {
       state.quiz.answers.find((a) => a.questionId === question.id)
     // eslint-disable-next-line function-paren-newline
   );
+
+  const [disabledStyledButton, setDisabledStyledButton] = useState(false);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>;
@@ -32,6 +35,7 @@ export const CurrentQuestion = () => {
 
   const handleNext = () => {
     dispatch(quiz.actions.goToNextQuestion());
+    setDisabledStyledButton(false);
   };
 
   const statusAnswer = () => {
@@ -49,13 +53,17 @@ export const CurrentQuestion = () => {
         <div className="question-text">{question.questionText}</div>
         {question.options.map((option, index) => {
           return (
-            <button
-              onClick={() => submitAnswer(question.id, index)}
+            <StyledButton
+              onClick={() => {
+                submitAnswer(question.id, index);
+                setDisabledStyledButton(true);
+              }}
+              disabled={disabledStyledButton}
               type="button"
               key={option}
             >
               {option}
-            </button>
+            </StyledButton>
           );
         })}
       </AnswerContainer>
