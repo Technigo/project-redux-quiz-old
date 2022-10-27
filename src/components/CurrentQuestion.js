@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import Summary from './Summary'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-  const dispatch = useDispatch()
+  const entireStore = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -19,10 +21,14 @@ export const CurrentQuestion = () => {
     } else {
       alert('You are wrong!')
     }
+    dispatch(quiz.actions.goToNextQuestion())
+    if (entireStore.quiz.quizOver === true) {
+      return <Summary />
+    }
   }
 
   const allAnswers = question.options.map((option, index) => {
-    return (<button onClick={() => onAnswerSubmit(question.id, index)} type="button" key={option.id}>{option}</button>)
+    return (<button onClick={() => onAnswerSubmit(question.id, index)} type="button" key={option}>{option}</button>)
   })
   return (
     <div>
