@@ -3,6 +3,8 @@ import { CurrentQuestion } from 'components/CurrentQuestion';
 import Summary from 'components/Summary';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import background from 'images/background.jpg';
+import styled from 'styled-components/macro';
 import { Button } from './Buttons';
 
 const Main = () => {
@@ -20,23 +22,32 @@ const Main = () => {
 
   if (!quizOver) {
     return (
-      <main>
+      <Background img src={background} alt="70s pattern">
         <CurrentQuestion />
         <Button
           handleClick={() => onNextQuestion()}
           buttonText="Next question" />
-      </main>
+      </Background>
     )
   } else {
     return (
-      <main>
+      <Background alt="70s pattern">
         <Summary />
         <Button
           handleClick={() => onRestart()}
           buttonText="Start over" />
-      </main>
+      </Background>
     )
   }
 }
+
+const Background = styled.main`
+background-image: url(${background});
+position: relative;
+width: 100vw;
+height:80vh;
+background-size: cover;
+margin: auto;
+`;
 
 export default Main;

@@ -2,10 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
-import Header from './components/Header'
+import { Header } from './components/Header'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import ProgressBar from './components/ProgressBar';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -18,7 +17,6 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <Main />
-      <ProgressBar />
       <Footer />
     </Provider>
   );

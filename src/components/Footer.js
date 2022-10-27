@@ -1,10 +1,12 @@
 import React from 'react'
+import ProgressBar from 'components/ProgressBar'
+import { HeaderWrapper } from 'components/Header'
 
 const Footer = () => {
   return (
-    <footer>
-      <h1>Footer</h1>
-    </footer>
+    <HeaderWrapper>
+      <ProgressBar />
+    </HeaderWrapper>
   )
 }
 

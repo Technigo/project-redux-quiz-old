@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
+import { ButtonStyling } from './Buttons';
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -30,11 +31,9 @@ export const CurrentQuestion = () => {
   // The line if (answer) return seems to make sure that it is only possible
   // to answe the question once.
   const onAnswerSubmit = (questionId, answerIndex) => {
-    if (answer) return
-    else {
+    if (!answer) {
       setHasAnswered(true)
       setUserAnswerIndex(answerIndex)
-
       dispatch(quiz.actions.submitAnswer(
         { questionId, answerIndex }
       ));
@@ -57,12 +56,13 @@ export const CurrentQuestion = () => {
       <h1>Question: {question.questionText}</h1>
       {question.options.map((option, index) => {
         return (
-          <button
+          <ButtonStyling
+            options
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
             type="button"
             className={classCheck(index)}>{option}
-          </button>
+          </ButtonStyling>
         )
       })}
     </div>
