@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
+import { NavButtonsStyles, CurrentQuestionStyles } from 'styledcomponents/NavButtonStyles';
 
 export const NavButtons = ({
   questionAnswered,
@@ -10,23 +11,23 @@ export const NavButtons = ({
   answer
 }) => {
   return (
-    <>
-      <button
+    <CurrentQuestionStyles>
+      <NavButtonsStyles
         onClick={() => handleOkayButtonClick(questionId, optionIndex)}
         type="submit"
         disabled={questionAnswered || !answer}
       >
         OK
-      </button>
+      </NavButtonsStyles>
 
-      <button
+      <NavButtonsStyles
         type="button"
         onClick={() => handleNextButton()}
         disabled={!questionAnswered}
       >
         {' '}
         Nästa
-      </button>
-    </>
+      </NavButtonsStyles>
+    </CurrentQuestionStyles>
   );
 };

@@ -3,11 +3,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { Wrapper } from 'styledcomponents/OpeningScreenStyle';
+import { InnerWrapper, OuterWrapper } from 'styledcomponents/GlobaStyles';
+/* import { CurrentQuestionStyles } from 'styledcomponents/CurrentQuestionStyles'; */
 import { Summary } from './Summary';
 
-import { NavButtons } from './NavButtons';
 import Form from './Form';
+import { NavButtons } from './NavButtons';
 /* import { Options } from './Options'; */
 
 export const CurrentQuestion = () => {
@@ -58,28 +59,27 @@ export const CurrentQuestion = () => {
   };
 
   return (
-    <Wrapper>
+    <OuterWrapper>
       {quizOver ? (
         <Summary />
       ) : (
-        <>
-          <div>
-            <h2>Fråga {question.id} av 5</h2>
-            <h1>{question.questionText}</h1>
-            {/* <Options /> */}
-            {question.options.map((option, index) => {
-              return (
-                <Form
-                  setAnswer={setAnswer}
-                  setOptionIndex={setOptionIndex}
-                  answer={answer}
-                  questionAnswered={questionAnswered}
-                  option={option}
-                  index={index}
-                />
-              );
-            })}
-          </div>
+        <InnerWrapper>
+          <h2>Fråga {question.id} av 5</h2>
+          <h1>{question.questionText}</h1>
+          {/* <Options /> */}
+          {question.options.map((option, index) => {
+            return (
+              <Form
+                setAnswer={setAnswer}
+                setOptionIndex={setOptionIndex}
+                answer={answer}
+                questionAnswered={questionAnswered}
+                option={option}
+                index={index}
+              />
+            );
+          })}
+
           <NavButtons
             questionAnswered={questionAnswered}
             handleOkayButtonClick={handleOkayButtonClick}
@@ -88,8 +88,10 @@ export const CurrentQuestion = () => {
             handleNextButton={handleNextButton}
             answer={answer}
           />
-        </>
+
+        </InnerWrapper>
       )}
-    </Wrapper>
+
+    </OuterWrapper>
   );
 };

@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
+import { FormStyle } from 'styledcomponents/FormStyle';
 
 const Form = ({
   setAnswer,
@@ -10,7 +11,7 @@ const Form = ({
   index
 }) => {
   return (
-    <form>
+    <FormStyle>
       <input
         id="answer"
         type="radio"
@@ -27,7 +28,7 @@ const Form = ({
       <label htmlFor="answer" key={option}>
         {` ${option}`}
       </label>
-    </form>
+    </FormStyle>
   );
 };
 

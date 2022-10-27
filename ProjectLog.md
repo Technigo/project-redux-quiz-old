@@ -24,8 +24,8 @@ Wed 26/10/2022 (Maria & Sofia & Linnea)
 
 Wed 19.00 - 20.00 26/10/ 2022 (Kartika)
 
--Kartika cloned project
--Did an opening screen with Browser Router.
+- Kartika cloned project
+- Did an opening screen with Browser Router.
 
 - Started styled components & styled a bit of opening screen just to see if it worked or not (it worked)
 
@@ -33,11 +33,19 @@ Wed 19.00 - 20.00 26/10/ 2022 (Kartika)
 
 Wed 20.00 26/10/ 2022 (Joel & Kartika)
 
--Worked from Joel's pull
--Fixed with disabled button for OK & next
--Created a Button and Form component (to breakdown into smaller components)
--Moved styled component in Summary to styled components folder
--GIIIIIIFFFFFFFFFFFFF
+- Worked from Joel's pull
+- Fixed with disabled button for OK & next
+- Created a Button and Form component (to breakdown into smaller components)
+- Moved styled component in Summary to styled components folder
+- GIIIIIIFFFFFFFFFFFFF
 
 - Moved Summary to component folder and deleted pages folder
 - Updated the "task list" on Jamboard, made a few more tasks
+
+---
+
+Thurs 27/10/2022 (Kartika & Sofia)
+
+- Working on CSS (styled components)
+- Added new background
+- Basic styling is done
