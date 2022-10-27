@@ -49,3 +49,12 @@ Thurs 27/10/2022 (Kartika & Sofia)
 - Working on CSS (styled components)
 - Added new background
 - Basic styling is done, and if later you want to change anything you're welcome to do so
+
+Thurs 20.00 27/10/2022 (Kartika, Sofia, Maria & Joel)
+
+- Worked more on the CSS
+- Made mobile first media query
+- Made a footer + styled component
+- Changed the wrong/right answer: from alert to emoji beside the option
+- Expanded the clickable space for the options (now not only the radiobullets, but also the option text)
+- Solved a merge conflict

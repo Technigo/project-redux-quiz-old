@@ -79,9 +79,9 @@ export const LinkContainer = styled(Link)`
 
     @media (min-width: 1024px) {
       display: block;
-      width: 120px;
+      width: 200px;
       padding: 10px 20px;
-      margin: 10% auto;
+      margin: 10% 0;
       background-color: #cae0ff;
       border: none;
       font-size: 16px;

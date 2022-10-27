@@ -1,6 +1,7 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
-import { FormStyle } from 'styledcomponents/FormStyle';
+import { FormStyle, SpanStyle } from 'styledcomponents/FormStyle';
 
 const Form = ({
   setAnswer,
@@ -8,12 +9,17 @@ const Form = ({
   answer,
   questionAnswered,
   option,
-  index
+  index,
+  correctIndex,
+  answerIndex
 }) => {
+  const correctOption = index === correctIndex;
+  const selectedWrongOption =
+    questionAnswered && !correctOption && index === answerIndex;
   return (
     <FormStyle>
       <input
-        id="answer"
+        id={option}
         type="radio"
         key=""
         onChange={(event) => {
@@ -25,8 +31,11 @@ const Form = ({
         required
         disabled={questionAnswered}
       />
-      <label htmlFor="answer" key={option}>
+      <label htmlFor={option} key={option}>
         {` ${option}`}
+        <SpanStyle visible={questionAnswered}>
+          {(correctOption && '✅') || (selectedWrongOption && '❌')}
+        </SpanStyle>
       </label>
     </FormStyle>
   );
