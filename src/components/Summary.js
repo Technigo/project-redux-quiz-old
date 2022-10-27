@@ -9,11 +9,10 @@ const Summary = () => {
     return <h2 key={question.id}>{question.questionText}</h2>
   })
 
-  console.log('answerList', allAnswers)
   const answerList = allAnswers.map((answer) => {
-    return <p key={answer}>{answer.answerIndex} {answer.answer} {answer.isCorrect ? 'Correct' : 'Wrong'}</p>
+    return <p>{answer.answerIndex} {answer.answer} {answer.isCorrect ? 'Correct' : 'Wrong'}</p>
   })
-  console.log(answerList)
+
   return (
     <div>
       {listOfQuestions[0]}
