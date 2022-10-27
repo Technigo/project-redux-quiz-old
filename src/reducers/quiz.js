@@ -2,6 +2,8 @@ import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
+
+// @TODO replace asbra text with Guess this one
 const questions = [
   { id: 1, questionText: "Which room doesn't exist?", options: [<img alt="asbratext" src="./images/room/room-real-1.jpg" />, <img alt="asbratext" src="./images/room/room-real.jpg" />, <img alt="asbratext" src="./images/room/room-AI.jpg" />], correctAnswerIndex: 2 },
   { id: 2, questionText: 'Which of these portraits are real?', options: [<img alt="asbratext" src="./images/bnw/girl-AI.jpg" />, <img alt="asbratext" src="./images/bnw/girl-real.jpg" />, <img alt="asbratext" src="./images/bnw/man-AI-1.jpg" />], correctAnswerIndex: 1 },
@@ -10,11 +12,14 @@ const questions = [
   { id: 5, questionText: 'Can you spot the fake cat?', options: [<img alt="asbratext" src="./images/cats/cat-AI.jpg" />, <img alt="asbratext" src="./images/cats/cat-real.jpg" />, <img alt="asbratext" src="./images/cats/cat-real-1.jpg" />], correctAnswerIndex: 0 }
 ]
 
+const countdownInitialValue = 7
+
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  countdown: countdownInitialValue
 }
 
 export const quiz = createSlice({
@@ -71,6 +76,13 @@ export const quiz = createSlice({
       } else {
         state.currentQuestionIndex += 1
       }
+    },
+
+    resetCountdown: (state) => {
+      state.countdown = countdownInitialValue
+    },
+    setCountdown: (state, seconds) => {
+      state.countdown = seconds
     },
 
     /**

@@ -1,26 +1,37 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { quiz } from 'reducers/quiz';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Timer = () => {
-  const [value, setValue] = React.useState(7);
-  React.useEffect(() => {
-    const timer = value > 0 && setInterval(() => setValue(value - 1), 1000);
-    return () => clearInterval(timer);
-  }, [value]);
-
+const Timer = ({ questionId }) => {
+  const countdown = useSelector((state) => state.quiz.countdown)
+  const [value, setValue] = useState(countdown);
   const dispatch = useDispatch();
-
-  const restart = () => {
-    setValue(7);
-  };
+  const tick = () => {
+    console.log('tick')
+    setValue(value - 1)
+    quiz.actions.setCountdown(value - 1)
+  }
 
   useEffect(() => {
-    if (value <= 0) {
+    let timer
+    if (countdown > 0) {
+      timer = setInterval(tick, 1000)
+    }
+
+    return () => clearInterval(timer);
+  }, [countdown, value]);
+
+  useEffect(() => {
+    if (value === 0) {
       dispatch(quiz.actions.goToNextQuestion());
-      restart();
+      // gör så att man svarar fast fel? pga skickar ej in att man svarar nu, bara går vidare
     }
   }, [value, dispatch]);
+
+  useEffect(() => {
+    dispatch(quiz.actions.resetCountdown);
+    setValue(countdown)
+  }, [questionId])
 
   return (
     <div className="counter">
@@ -28,4 +39,5 @@ const Timer = () => {
     </div>
   );
 }
+
 export default Timer;
