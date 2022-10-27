@@ -35,13 +35,14 @@ export const Headers = styled.div`
   text-align: center;
   padding: 5%; 
   font-family: 'Montserrat';
-  font-size: 5vw;
+  font-size: 3vw;
   font-weight: bold;
-  line-height: 5vw;
+  line-height: 3vw;
   white-space: wrap;
   
 `
 export const Buttons = styled.a`
+    text-decoration: none;
     position: relative;
     align-self: center;
     background-color: #E3182B;
@@ -49,7 +50,6 @@ export const Buttons = styled.a`
     font-family: 'Montserrat';
     font-size: 2vw;
     font-weight: bold;
-    text-decoration: none;
     padding: 15px 30px;
     width: 20%;
     text-align: center;

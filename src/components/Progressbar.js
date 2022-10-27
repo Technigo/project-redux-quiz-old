@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const ProgressContainer = styled.div`
   width: 400px;
   height: 50px;
-  border-radius: 15px;
+  border-radius: 15px; 
   background-color: #E6A03D;
   position: relative;
   overflow: hidden;
@@ -29,11 +29,20 @@ const ProgressStatus = styled.div`
   top: 0;
 `;
 const Amount = styled.label`
-color: red; `
+  color: black; 
+  position: relative;
+  align-self: center;
+  text-align: center;
+  font-family: 'Montserrat';
+  font-size: 2vw;
+  font-weight: bold;
+  line-height: 2vw;
+  white-space: wrap;`
 
 const Wrapper = styled.div`
-display:block; 
-padding: 1em;  `
+display: block; 
+padding: 3em;  
+`
 
 const ProgressBar = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -43,7 +52,7 @@ const ProgressBar = () => {
   )}%`;
   return (
     <Wrapper>
-      <Amount> Please add something here
+      <Amount> QUESTION:
         {question.id} / {amountOfQuestions}
       </Amount>
       <ProgressContainer>

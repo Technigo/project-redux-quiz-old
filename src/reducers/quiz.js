@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'In Spain there is a tradition during Christmas that kids get to hit a log for it to expell their gifts?', options: ['Tree of Joy', 'Shitty Dude', 'Wooden Gifter', 'Papa Pine'], correctAnswerIndex: 1 },
-  { id: 2, questionText: 'In Sweden 40% of the population tunes in during Christmas to watch the Donald Duch Special, in the video, what happens after?', options: ['Donuld Duck ...1', 'Donuld Duck 2...', 'Donuld Duck3 ...', 'Donuld Duck4 ...'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'Test question nb 3', options: ['test answer 1', 'test answer 2', 'test answer 3', 'test answer 4'], correctAnswerIndex: 3 },
-  { id: 4, questionText: 'Test question nb 4', options: ['test answer 2:1', 'test answer 2:2', 'test answer 2:3', 'test answer 2:4'], correctAnswerIndex: 3 },
-  { id: 5, questionText: 'Test question nb 5', options: ['test answer 3:1', 'test answer 3:2', 'test answer 3:3', 'test answer 3:4'], correctAnswerIndex: 1 }
+  { id: 1, questionText: 'In Spain there is a tradition during Christmas that kids get to hit a log for it to expell their gifts. What is the log called?', options: ['Tree of Joy', 'Shitty Dude', 'Wooden Gifter', 'Papa Pine'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'Every year on Christmas Eve, as many as 40% of the population in Sweden gather around to watch Donald Duck´s Christmas special on TV. But witch of the following movies isn’t part of the Christmas special?', options: ['Lady and the Tramp', 'Snow White and the Seven Dwarfs', 'Cinderella', 'The Lion King'], correctAnswerIndex: 3 },
+  { id: 3, questionText: 'As if the threat of missing out on presents wasn’t bad enough, Austrian kids who end up on Santa’s naughty list also have to worry about a horned, hairy beast that snatches misbehaving children in his wicker basket, serving as Saint Nicholas’ creepy enforcer. What is the name of this half-goat demon?', options: ['Kraken', 'Krampus', 'Krackle', 'Karen'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'Christmas isn’t huge in Japan, but a ridiculously successful ad campaign during the 1970’s established the tradition of families eating at this fast food restaurant on December 25. What fast food chain is it?', options: ['McDonald’s', 'Pizza Hut', 'Burger King', 'KFC (Kentucky Fried Chicken'], correctAnswerIndex: 3 },
+  { id: 5, questionText: 'Twelve days after Santa’s visit, on the eve of the Epiphany (January 5), families across Italy leave out something for the witch ‘La Befana’, who pops down the chimney on her broomstick. What is it that they leave out for her?', options: ['A glass of milk and cavallucci cookies', 'A glass of wine and some sausages', 'An espresso', 'A peace of focaccia'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {

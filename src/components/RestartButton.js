@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { Buttons } from './Styling/GlobalStyles'
 
 const RestartButton = () => {
   const dispatch = useDispatch()
@@ -10,11 +11,11 @@ const RestartButton = () => {
 
   return (
     <div>
-      <button
+      <Buttons
         type="button"
         onClick={onRestart}>
-            restart
-      </button>
+            RESTART
+      </Buttons>
     </div>
   )
 }
