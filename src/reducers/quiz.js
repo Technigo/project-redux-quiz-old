@@ -1,5 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { questions } from 'Data'
+// import { questions } from 'Data'
+
+export const questions = [
+  { id: 1,
+    questionText: 'Which is the brightest comet in the solar system?',
+    options: ['Hayley`s commet', 'Herschel`s commet', 'Ganymed`s commet', 'Ether`s commet'],
+    correctAnswerIndex: 0 },
+  { id: 2,
+    questionText: 'What name was given to the invisible material once thought to occupy all space?',
+    options: ['Black mud', 'Ether', 'Black hole', 'Tenebrosus'],
+    correctAnswerIndex: 1 }
+]
 
 const initialState = {
   questions,
@@ -58,9 +69,12 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
+        console.log(state.currentQuestionIndex);
+        console.log('array längd', state.questions.length);
         state.quizOver = true
       } else {
         state.currentQuestionIndex += 1
+        console.log(state.currentQuestionIndex)
       }
     },
 

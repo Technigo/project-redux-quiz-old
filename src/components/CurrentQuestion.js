@@ -7,6 +7,7 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const entireStore = useSelector((state) => state);
   const dispatch = useDispatch();
+  console.log('antal frågor', entireStore.quiz.questions.length)
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -25,6 +26,7 @@ export const CurrentQuestion = () => {
     if (entireStore.quiz.quizOver === true) {
       return <Summary />
     }
+    console.log('is quiz over?', entireStore.quiz.quizOver)
   }
 
   const allAnswers = question.options.map((option, index) => {
