@@ -23,21 +23,23 @@ const Main = () => {
   if (!quizOver) {
     return (
       <Background img src={background} alt="70s pattern">
-        <InnerWrapper />
-        <CurrentQuestion />
-        <Button
-          handleClick={() => onNextQuestion()}
-          buttonText="Next question" />
+        <InnerWrapper>
+          <CurrentQuestion />
+          <Button
+            handleClick={() => onNextQuestion()}
+            buttonText="Next question" />
+        </InnerWrapper>
       </Background>
     )
   } else {
     return (
       <Background alt="70s pattern">
-        <InnerWrapper />
-        <Summary />
-        <Button
-          handleClick={() => onRestart()}
-          buttonText="Start over" />
+        <InnerWrapper>
+          <Summary />
+          <Button
+            handleClick={() => onRestart()}
+            buttonText="Start over" />
+        </InnerWrapper>
       </Background>
     )
   }
@@ -53,8 +55,12 @@ margin: auto;
 `;
 
 const InnerWrapper = styled.div`
-
-
+  position: absolute;
+  left: 25%;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 3rem;
+  padding: 3rem;
 `
 
 export default Main;

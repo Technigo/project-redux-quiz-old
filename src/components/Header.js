@@ -15,8 +15,8 @@ export const HeaderWrapper = styled.header`
   left: 30%;
   height: 20vh;
   background-color: #F26A3A;
-  border: 15px dotted #A5D8C5;
-  padding: 5px 40px 5px 20px;
+  border: 10px dotted #A5D8C5;
+  /*padding: 5px 40px 5px 20px;*/
   text-align: center;
-  font-size: 30px;
+  font-size: 3rem;
 `
