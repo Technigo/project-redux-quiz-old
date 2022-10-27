@@ -10,20 +10,8 @@ export const OuterWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
-
-  .imageOverlay {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
-    color: #f1f1f1;
-    width: 100%;
-    height: 100%;
-    opacity:0;
-    color: white;
-  }
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: -2px;
 
   @media (min-width: 600px) and (max-width: 1023px) {
   }
@@ -37,15 +25,11 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: center;
-background-color: #cec0a5;
+background-color: white;
+border-radius: 20px;
 text-align: center;
 padding: 10% 5%;
 margin: 20% 10%;
-
-  p {
-    font-size: 18px;
-    margin: 5% auto;
-  }
 
   h1{
     margin: 5% 0;
@@ -75,7 +59,8 @@ export const LinkContainer = styled(Link)`
     margin: 10% auto;
     background-color: #CAE0FF;
     border: none;
-    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    font-family: 'Roboto Mono', monospace;
   }
 
 `;

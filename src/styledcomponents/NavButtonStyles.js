@@ -12,6 +12,7 @@ export const NavButtonsStyles = styled.button`
   padding: 10px;
   background-color: #CAE0FF;
   border: none;
+  border-radius: 20px;
   font-family: 'Poppins', sans-serif;
   margin: 5px 0;
   text-decoration: none;

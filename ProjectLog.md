@@ -48,4 +48,4 @@ Thurs 27/10/2022 (Kartika & Sofia)
 
 - Working on CSS (styled components)
 - Added new background
-- Basic styling is done
+- Basic styling is done, and if later you want to change anything you're welcome to do so
