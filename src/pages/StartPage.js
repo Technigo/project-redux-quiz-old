@@ -5,7 +5,7 @@ import { OuterWrapper, Button } from 'GlobalStyles';
 
 export const StartPage = () => {
   return (
-    <OuterWrapper>
+    <StartWrapper>
       <InnerWrapper>
         {/* <StartHeader>MOVIE QUIZ!!!</StartHeader> */}
         {/* <ButtonStart type="button"/> */}
@@ -13,28 +13,30 @@ export const StartPage = () => {
           <Circel />
           <Circle2 />
           <Niddle />
-          <Number>
-            <NumberR>10</NumberR>
-            <NumberR>9</NumberR>
-            <NumberR>8</NumberR>
-            <NumberR>7</NumberR>
-            <NumberR>6</NumberR>
-            <NumberR>5</NumberR>
-            <NumberR>4</NumberR>
-            <NumberR>3</NumberR>
-            <NumberR>2</NumberR>
-            <NumberR>1</NumberR>
+          <div className="number">
+            <div>10</div>
+            <div>9</div>
+            <div>8</div>
+            <div>7</div>
+            <div>6</div>
+            <div>5</div>
+            <div>4</div>
+            <div>3</div>
+            <div>2</div>
+            <div>1</div>
 
-          </Number>
-          <Link to="/quiz"><ButtonStart type="button" />
-          </Link>
+          </div>
         </Box>
       </InnerWrapper>
-      {/*       <Link to="/quiz"><ButtonStart type="button" />
-      </Link> */}
-    </OuterWrapper>
+      <Link to="/quiz"><ButtonStart type="button" />
+      </Link>
+    </StartWrapper>
   )
 };
+
+const StartWrapper = styled(OuterWrapper)`
+  padding: 0;
+`;
 
 const InnerWrapper = styled.div`
   display: flex;
@@ -43,9 +45,11 @@ const InnerWrapper = styled.div`
 `
 
 const Box = styled.div`
-width:50%;
-height:50%;
-background: radial-gradient(#fff,#757575);
+position: absolute;
+width: 100%;
+height: 100%;
+/* white and gray background */ 
+// background: radial-gradient(#fff,#757575);
 overflow: hidden;
 &:before
 {
@@ -113,7 +117,7 @@ const Niddle = styled.div`
   }
 `;
 
-const Number = styled.div`
+/* const Number = styled.div`
 
   position: absolute;
   width:100%;
@@ -130,10 +134,10 @@ const NumberR = styled.div`
   display: flex;
   justify-content:center;
   align-items: center;
-  opacity:1;
+  opacity:0;
   animation: animateNumber 10s linear infinite;
-  
-&:NumberR NumberR:nth-child(1)
+
+  &:NumberR NumberR:nth-child(1)
 {
   animation-delay: 0s;
 }
@@ -178,17 +182,13 @@ const NumberR = styled.div`
   {
     opacity: 1;
   }
-  0%,10%
-  {
-    opacity: 1;
-  }
   10.01%,100%
   {
     opacity: 0;
   }
 }
 ´;
-
+ */
 // const StartHeader = styled.h1`
 //   color: blueviolet;
 //   font-size: 4rem;
@@ -202,11 +202,57 @@ const NumberR = styled.div`
 
 export const ButtonStart = styled(Button)`
   margin-top: 25px;
+  padding: 10px;
   background-image: url(./images/start_quiz.png);
   background-color: transparent;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 40vw;
+  width: 50vw;
   height: 10vh;
+  z-index: 2;
 `;
+
+/* @keyframes animateNumber {
+  0%,10%
+  {
+    opacity: 1;
+  }
+  10.01%,100%
+  {
+    opacity: 0;
+  }
+  10.01%,20%
+  {
+    opacity: 1;
+  }
+  20.01%,30%
+  {
+    opacity: 1;
+  }
+  30.01%,40%
+  {
+    opacity: 1;
+  }
+  40.01%,50%
+  {
+    opacity: 1;
+  }
+  50.01%,60%
+  {
+    opacity: 1;
+  }
+  60.01%,70%
+  {
+    opacity: 1;
+  }
+  70.01%,80%
+  {
+  80.01%,90%
+  {
+    opacity: 1;
+  {
+  90.01%,100%
+}
+´;
+ */

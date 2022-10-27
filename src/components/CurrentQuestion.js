@@ -51,20 +51,21 @@ export const CurrentQuestion = () => {
 const ButtonWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align
+  justify-content: center;
   width: 60%;
   margin: 0 auto;
+ 
 
   .answerButton {
     width: 35%;
     margin: 5%;
     color: white; 
     background-color: transparent;
-    border: 3px solid white;
+    border: 2px solid white;
+    box-shadow: 3px 3px 15px #0fa;
     border-radius: 30px;
     padding: 10px;
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem;    
   }
 
 `;
@@ -72,14 +73,14 @@ const ButtonWrapper = styled.div`
 const QuoteWrapper = styled.div`
   display: flex;
   justify-content: center;
-  height: 60px;
+  height: auto;
   border: 3px solid white;
   padding: 20px;
   width: 75%;
   border-radius: 30px;
-  margin: 8% 0 8% 0;
+  margin: 8% auto;
   z-index: 1;
-`;
+ `;
 
 const NeonHeader = styled.h2`
 
