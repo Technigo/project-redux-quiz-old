@@ -3,18 +3,20 @@ import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Buttons } from './Styling/GlobalStyles'
 
-const NextButton = ({ setOptionDisabled }) => {
+const NextButton = ({ setOptionDisabled, setNextDisabled, nextDisabled }) => {
   const dispatch = useDispatch()
   const onNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
     setOptionDisabled(false)
+    setNextDisabled(true)
   }
 
   return (
     <div>
       <Buttons
         type="submit"
-        onClick={() => onNext()}> {/* {onNext}> */}
+        disabled={nextDisabled}
+        onClick={onNext}>
             Next
       </Buttons>
     </div>

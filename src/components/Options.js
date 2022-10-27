@@ -4,12 +4,11 @@ import { quiz } from 'reducers/quiz'
 import styled from 'styled-components';
 
 const Button = styled.button`
-widht: 10rem; 
-border-widht: 10px;
+width: 10rem; 
+border-width: 10px;
 `
 
-const Options = ({
-  option, answerIndex, optionDisabled, setOptionDisabled/* , setNextDisabled */ }) => {
+const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNextDisabled }) => {
   const dispatch = useDispatch()
 
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -24,14 +23,11 @@ const Options = ({
   }, [questionId])
 
   const onSubmitAnswer = () => {
-    /* dispatch(quiz.actions.submitAnswer({ questionId, answerIndex })) */
-    setOptionDisabled(true)
-    /* setNextDisabled(false) */
+    dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
+    setOptionDisabled(false)
+    setNextDisabled(true)
     if (answerIndex === correctAnswerIndex) {
       setBorderColor({ borderColor: 'green' })
-      dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
-      /*  dispatch(quiz.actions.submitAnswer({ questionId: questionId, 
-      answerIndex: answerIndex })); */
     } else {
       setBorderColor({ borderColor: 'red' })
     }
@@ -41,9 +37,8 @@ const Options = ({
       <Button
         type="button"
         style={borderColor}
-        /* onClick={onSubmitAnswer} */
-        disabled={optionDisabled}
-        onClick={() => onSubmitAnswer(questionId, answerIndex)}>
+        onClick={onSubmitAnswer}
+        disabled={optionDisabled}>
         {option}
       </Button>
     </div>
@@ -51,20 +46,3 @@ const Options = ({
 }
 
 export default Options
-
-/* 
-const dispatch = useDispatch()
-const onAnswerSubmit = (id, index) => {
-  dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  setDisabled(true)
-};
- */
-/* return (
-  <button className={!answer ? "defaultbtn" : index ===
-  question.correctAnswerIndex ? "correct" : "wrong"}
-    type="submit"
-    disabled={disabled}
-    onClick={() => onAnswerSubmit(questionId, index)}
-    key={item}>{item}</button>
-)
-} */
