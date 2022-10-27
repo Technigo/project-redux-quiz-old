@@ -5,6 +5,7 @@ import { Container, QuestionWrapper } from 'Globalstyles'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { CorrectAnswer } from './CorrectAnswer'
 
 export const Summary = ({ score }) => {
   const dispatch = useDispatch()
@@ -18,20 +19,23 @@ export const Summary = ({ score }) => {
   return (
     <Container>
       <h1>Summary </h1>
-      {answerSummary.map((item) => {
-        return (
-          <QuestionWrapper>
-            <p key={item.questionId}>{item.answer}</p>
-            <p key={item.questionId}>{item.isCorrect.toString()}</p>
-            <p key={item.questionId}>Correct answer: {item.question.correctAnswerIndex}</p>
-            {/* <p key={item.questionId}>Correct answer:{item.question.options[correctAnswer]}</p> */}
-          </QuestionWrapper>
-        )
-      })}
+      <QuestionWrapper>
+        {answerSummary.map((item) => {
+          return (
+            <div key={item.questionId}>
+              <p>{item.answer}</p>
+              <p>{item.isCorrect.toString()}</p>
+              <CorrectAnswer />
+              {/* <p key={item.questionId}>Correct answer:{item.question.options[correctAnswer]}</p> */}
+            </div>
+          )
+        })}
+      </QuestionWrapper>
+
       <p>Your score is: {score}</p>
       {/* showing if you win or loose */}
-      {score >= 4 && ('you are FRIEND`s Nerd Congratulation')}
-      {score < 4 && ('you lost, watch all seasons again')}
+      {score >= 4 && ('You are FRIEND`s Nerd Congratulation')}
+      {score < 4 && ('You lost, watch all seasons again')}
       <button id="restartBtn" type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
     </Container>
   )

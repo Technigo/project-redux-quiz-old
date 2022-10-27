@@ -14,7 +14,6 @@ export const CurrentQuestion = ({ score, setScore }) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
   const quizState = useSelector((store) => store.quiz.quizOver);
   const correctState = useSelector((store) => store.quiz.correctAnswer);
-  // const { score, setScore } = props;
   console.log('score', score)
 
   if (!question) {
