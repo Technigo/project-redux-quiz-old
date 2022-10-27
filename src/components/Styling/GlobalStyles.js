@@ -35,9 +35,15 @@ export const Headers = styled.div`
   text-align: center;
   padding: 5%; 
   font-family: 'Montserrat';
+<<<<<<< Updated upstream
   font-size: 3vw;
   font-weight: bold;
   line-height: 3vw;
+=======
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 4vw;
+>>>>>>> Stashed changes
   white-space: wrap;
   
 `
