@@ -22,11 +22,10 @@ export const ProgressBar = () => {
   return (
     <ProgressBarWrapper>
       {questions.map((question) => (
-        <ProgressSquares>
+        <ProgressSquares
           key={question.id}
           right={answers[question.id]?.isCorrect}
-          wrong={answers[question.id]?.isCorrect === false}
-        </ProgressSquares>
+          wrong={answers[question.id]?.isCorrect === false} />
       ))}
     </ProgressBarWrapper>
   );
@@ -41,18 +40,30 @@ const ProgressSquares = styled.p`
   width: 50px;
   height: 50px;
   margin-right: 12px;
-  
+  border-radius: 50%;
   @media (max-width: 667px) {
     width: 20px;
     height: 20px;
     margin-right: 12px;
   }
+
+  color: #fff;
+  box-shadow:
+      0 0 2px #fff,
+      0 0 5px #fff,
+      0 0 16px #fff,
+      0 0 37px #0fa,
+      0 0 77px #0fa,
+      0 0 87px #0fa,
+      0 0 97px #0fa,
+      0 0 146px #0fa;
 `;
 
 const ProgressBarWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  padding: 10%;
 `;
 
 // export const ProgressBarWrapper = styled.section`

@@ -32,28 +32,70 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h2>From which movie does this quote come from?</h2>
-      <TypingWrapper>
+      <NeonHeader>From which movie does this quote come from?</NeonHeader>
+      <QuoteWrapper>
         {/* <Typing>{question.questionText}</Typing> */}
         <h3>{question.questionText}</h3>
-      </TypingWrapper>
-      {question.options.map((option, index) => {
-        return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
-      })}
+      </QuoteWrapper>
+      <ButtonWrapper>
+        {question.options.map((option, index) => {
+          return <button className="answerButton" onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
+        })}
+      </ButtonWrapper>
     </div>
   )
 }
 
 // styled components
 
-const TypingWrapper = styled.div`
-  height: 60px;
+const ButtonWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  align
+  width: 60%;
+  margin: 0 auto;
 
+  .answerButton {
+    width: 35%;
+    margin: 5%;
+    color: white; 
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 1.5rem;
+    
+  }
+
+`;
+
+const QuoteWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  border: 3px solid white;
+  padding: 20px;
+  width: 75%;
+  border-radius: 30px;
+  margin: 8% 0 8% 0;
   z-index: 1;
 `;
+
+const NeonHeader = styled.h2`
+
+  color: #fff;
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+
+  
+ `;
 
 //----------------------------
 

@@ -1,16 +1,21 @@
 import React from 'react';
-import { OuterWrapper, MovieImg } from 'GlobalStyles';
+import styled from 'styled-components';
+import { BgWrapper, OuterWrapper } from 'GlobalStyles';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import { ProgressBar } from 'components/ProgressBar';
 
 export const QuestionPage = () => {
   return (
-    <OuterWrapper>
-      <MovieImg>
+    <QuestionWrapper>
+      <OuterWrapper>
         <CurrentQuestion />
         <ProgressBar />
-      </MovieImg>
-    </OuterWrapper>
+      </OuterWrapper>
+    </QuestionWrapper>
   )
 };
+
+const QuestionWrapper = styled(BgWrapper)`
+  background-image: url(./images/blue_lila_bg_mov.jpg);
+`;
