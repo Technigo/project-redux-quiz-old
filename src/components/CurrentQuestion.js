@@ -8,12 +8,14 @@ import { MainQuestion } from './MainStyles';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
+
+  // TINAS ADDITION:
   const quizOver = useSelector((state) => state.quiz.quizOver);
   const dispatch = useDispatch();
-
   const moveToNext = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
+  // END
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -21,17 +23,21 @@ export const CurrentQuestion = () => {
 
   return (
     <>
+      {/* TINAS ADDITION: */}
       {quizOver && <Summary />}
       {!quizOver && (
-        <div>
+        <div> {/* END */}
           <MainQuestion>Question: {question.questionText}</MainQuestion>
           {question.options.map((option, index) => (
-            // A React component
-            <AnswerButton key={option} option={option} index={index} />
+            <AnswerButton
+              key={option}
+              option={option}
+              index={index} />
           ))}
+          {/* TINAS ADDITION: */}
           <NextButton clickAction={moveToNext} content="Next" />
         </div>
-      )}
+      )} {/* END */}
     </>
   )
 }
