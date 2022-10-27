@@ -14,10 +14,9 @@ const Main = () => {
     dispatch(quiz.actions.restart());
   }
 
-    const onNextQuestion = () => {
+  const onNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion());
   }
-
 
   if (!quizOver) {
     return (
