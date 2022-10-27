@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 import React from 'react'
-import { Container, QuestionWrapper, LogoWrapper } from 'Globalstyles'
+import { Container, QuestionWrapper } from 'Globalstyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Summary } from 'components/Summary'
@@ -36,10 +36,7 @@ export const CurrentQuestion = ({ score, setScore }) => {
   if (quizState === false) {
     return (
       <Container>
-        <LogoWrapper>
-          <img src={FriendsLogo} alt="logo" />
-        </LogoWrapper>
-
+        <img src={FriendsLogo} alt="logo" />
         <QuestionWrapper>
           <h1>{question.questionText}</h1>
           {question.options.map((option, index) => {
