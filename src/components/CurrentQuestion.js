@@ -2,6 +2,7 @@
 import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
 import { quiz } from 'reducers/quiz';
 
 import { Summary } from 'components/Summary'
@@ -9,6 +10,11 @@ import { ProgressBar } from 'components/ProgressBar'
 
 import styled from 'styled-components/macro';
 import { InnerWrapper, OuterWrapper } from 'styling/Wrappers';
+
+// import nextBtn from 'assets/svg/arrow-next-right-icon.svg';
+import restartBtn from 'assets/svg/undo-icon.svg';
+// import nextBtn from 'assets/svg/';
+import nextBtn from 'assets/svg/double-arrow-right-icon.svg';
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -21,6 +27,12 @@ export const CurrentQuestion = () => {
   console.log(question);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleRestart = () => {
+    dispatch(quiz.actions.restart())
+    navigate('/')
+  }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -37,11 +49,11 @@ export const CurrentQuestion = () => {
   }
   return (
     <OuterWrapper>
+      <ImageWrapper>
+        <QuestionImage src={question.backdropImg} alt={`Question${question.id}`} />
+      </ImageWrapper>
       <InnerWrapper>
         <QuizCard>
-          <ImageWrapper>
-            <QuestionImage src={question.backdropImg} alt={`Question${question.id}`} />
-          </ImageWrapper>
           <Question>{question.questionText}</Question>
           <AnswersWrapper>
             {question.options.map((option, index) => {
@@ -55,16 +67,36 @@ export const CurrentQuestion = () => {
                 </AnswerButton>
               )
             })}
-            <div>
-              <iframe src={question.audio} width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
-            </div>
-            <button
-              onClick={() => dispatch(quiz.actions.goToNextQuestion())}
-              type="button"
-              disabled={!answer}> NEXT Question
-            </button>
+            <ButtonWrapper>
+              <NextBtn
+                onClick={handleRestart}
+                type="button">
+                <img
+                  src={restartBtn}
+                  width="40"
+                  height="40"
+                  alt="next question"
+                  className="" />
+              </NextBtn>
+              <NextBtn
+                onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+                type="button"
+                disabled={!answer}>
+                <img
+                  src={nextBtn}
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  alt="next question"
+                  className="" />
+              </NextBtn>
+            </ButtonWrapper>
           </AnswersWrapper>
           <ProgressBar />
+          <div>
+            <iframe src={question.audio} width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
+          </div>
         </QuizCard>
       </InnerWrapper>
     </OuterWrapper>
@@ -72,45 +104,65 @@ export const CurrentQuestion = () => {
 }
 
 const Question = styled.h1`
-  color: red;
+  color: #ffffff;
+  font-size: 20px;
+`
+export const NextBtn = styled.button`
+  background-color: transparent;
+  display: flex;
+  flex-wrap: wrap;
+  border: 0;
 `
 
 const AnswersWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  row-gap: 5vw;
+  justify-content: center;
+  row-gap: 3vh;
+  align-items: center;
 `
 
 const QuizCard = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   row-gap: 5vh;
   height: auto;
-  justify-content: center;
+  margin: 5vh 0 5vh 0;
 `
 
-const ImageWrapper = styled.div`  
+export const ImageWrapper = styled.div`  
   display:flex;
   height: 30vh;
   width: 100%;
   margin: 0;
-  position: absolute;
+  position: relative;
   top: 0;
 `
 
-const QuestionImage = styled.img`
+export const QuestionImage = styled.img`
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: cover ;
   /* position: absolute; */
   /* top: 0; */  
 `
 
 const AnswerButton = styled.button`
-    color: blue;
-  .answerbutton {
-    color: red;
-  }
+color: black;
+width: 140px;
+max-width: 800px;
+border-radius: 5px;
+/* border-color: pink; */
+/* box-shadow: 5px 5px 10px orange; */
+font-weight: 600;
+`
+
+const ButtonWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+column-gap: 5vw;
+margin-top: 20px;
+width: 100%;
 `

@@ -1,10 +1,14 @@
 .answerbutton {
-  background-color: #D37070;
+  background-color: rgba(255, 166, 0, 0.559);
+  box-shadow: 5px 5px 10px rgba(255, 166, 0, 0.795);
+  border-color: rgba(255, 166, 0, 0.571);
 }
 .correct {
-  background-color: rgba(0, 128, 0, 0.542);
+  border-color: rgba(0, 128, 0, 0.542);
+  box-shadow: 5px 5px 10px rgba(7, 204, 7, 0.542);
 }
 
 .wrong {
-  background-color: rgba(255, 0, 0, 0.556);
+  border-color: rgba(255, 0, 0, 0.556);
+  box-shadow: 5px 5px 10px rgba(252, 42, 42, 0.556);
 }
