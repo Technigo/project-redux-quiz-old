@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import { NeonHeader } from 'GlobalStyles';
 import { SummaryPage } from '../pages/SummaryPage'
 
 export const CurrentQuestion = () => {
@@ -24,7 +25,7 @@ export const CurrentQuestion = () => {
     if (question.correctAnswerIndex === answerIndex) {
       dispatch(quiz.actions.goToNextQuestion());
     } else {
-      window.alert('WRONG!!');
+      // window.alert('WRONG!!');
       dispatch(quiz.actions.goToNextQuestion());
     }
   }
@@ -58,14 +59,18 @@ const ButtonWrapper = styled.div`
 
   .answerButton {
     width: 35%;
-    margin: 5%;
-    color: white; 
+    margin: 2%;
+    color: whitesmoke; 
     background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid whitesmoke;
     box-shadow: 3px 3px 15px #0fa;
     border-radius: 30px;
     padding: 10px;
     font-size: 1.5rem;    
+  }
+
+  .answerButton:hover {
+    cursor: pointer;
   }
 
 `;
@@ -74,28 +79,14 @@ const QuoteWrapper = styled.div`
   display: flex;
   justify-content: center;
   height: auto;
-  border: 3px solid white;
-  padding: 20px;
+  border: 3px solid whitesmoke;
+  padding: 20px 0 15px 0;
   width: 75%;
   border-radius: 30px;
-  margin: 8% auto;
+  margin: 3% auto;
+  margin-bottom: 5%;
   z-index: 1;
- `;
-
-const NeonHeader = styled.h2`
-
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
-
-  
+  background-color: rgba(0, 0, 0, 0.3);
  `;
 
 //----------------------------

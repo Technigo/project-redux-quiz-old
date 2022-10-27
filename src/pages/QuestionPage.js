@@ -17,5 +17,5 @@ export const QuestionPage = () => {
 };
 
 const QuestionWrapper = styled(BgWrapper)`
-  background-image: url(./images/blue_lila_bg_mov.jpg);
+ /*  background-image: url(./images/blue_lila_bg_mov.jpg); */
 `;

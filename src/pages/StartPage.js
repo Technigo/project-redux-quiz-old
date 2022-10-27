@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { OuterWrapper, Button } from 'GlobalStyles';
+import { OuterWrapper, ButtonWrapper, NeonHeader, ButtonNeon } from 'GlobalStyles';
 
 export const StartPage = () => {
   return (
@@ -24,15 +24,30 @@ export const StartPage = () => {
             <div>3</div>
             <div>2</div>
             <div>1</div>
-
           </div>
         </Box>
       </InnerWrapper>
-      <Link to="/quiz"><ButtonStart type="button" />
-      </Link>
+      <StartButtonWrapper>
+        <Link to="/quiz"><StartButtonNeon type="button"><NeonHeader>START QUIZ</NeonHeader></StartButtonNeon>
+        </Link>
+      </StartButtonWrapper>
     </StartWrapper>
   )
 };
+
+const StartButtonNeon = styled(ButtonNeon)`
+  z-index: 1;
+`;
+
+const StartButtonWrapper = styled(ButtonWrapper)`
+  position: relative;
+  top: 85%;
+
+  @media (max-width: 667px) {
+    top: 83%;
+    // left: 24%;
+  }
+`;
 
 const StartWrapper = styled(OuterWrapper)`
   padding: 0;
@@ -199,19 +214,6 @@ const NumberR = styled.div`
 // `;
 
 // Här kan StartPageImg placeras
-
-export const ButtonStart = styled(Button)`
-  margin-top: 25px;
-  padding: 10px;
-  background-image: url(./images/start_quiz.png);
-  background-color: transparent;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 50vw;
-  height: 10vh;
-  z-index: 2;
-`;
 
 /* @keyframes animateNumber {
   0%,10%

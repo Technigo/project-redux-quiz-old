@@ -36,7 +36,7 @@ export const ProgressBar = () => {
 /* if (?) isCorrect.right då blir den kvadraten "grön".
   else (:) iscorrect.wrong if (?) user klickade fel "red" else (:) "grey" */
 const ProgressSquares = styled.p`
-  background-color: ${(isCorrect) => (isCorrect.right ? 'green' : isCorrect.wrong ? 'red' : 'grey')};
+  background-color: ${(isCorrect) => (isCorrect.right ? 'green' : isCorrect.wrong ? 'red' : 'inherit')}; //change
   width: 50px;
   height: 50px;
   margin-right: 12px;
@@ -63,7 +63,7 @@ const ProgressBarWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 10%;
+  margin: 5% 0;
 `;
 
 // export const ProgressBarWrapper = styled.section`
