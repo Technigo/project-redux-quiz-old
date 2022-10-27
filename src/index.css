@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "friends-font"; 
+  src: local("GabrielWeissFriendsFont.TTF"),
+      url("./fonts/GabrielWeissFriendsFont.TTF") format("truetype");
+  }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

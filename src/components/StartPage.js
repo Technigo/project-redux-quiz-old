@@ -1,13 +1,14 @@
 /* eslint-disable linebreak-style */
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container } from 'Globalstyles'
+import { Container, StartButton } from 'Globalstyles'
 
 export const StartPage = () => {
   return (
     <Container>
-      <h1>Friends trivia - how much do you know?</h1>
-      <Link to="/question"><button type="button">START</button></Link>
+      <img src="images/logo.svg" alt="logo" />
+      <h1>- How much do you know? -</h1>
+      <Link to="/question"><StartButton type="button">START</StartButton></Link>
     </Container>
   )
 }
