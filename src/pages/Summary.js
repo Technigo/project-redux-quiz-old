@@ -8,13 +8,23 @@ Sad pumpkin:
 */
 
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { NextButton } from 'components/NextButton';
+import { quiz } from 'reducers/quiz';
 import { OuterWrapper } from '../components/MainStyles';
 
 export const Summary = () => {
+  const dispatch = useDispatch();
+
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+  }
+
   return (
     <OuterWrapper>
       <p>Images by: riajulislam from Flaticon, Yuri from Pixabay</p>
       <p>Images by: riajulislam from Flaticon, Yuri from Pixabay</p>
+      <NextButton clickAction={restartQuiz} content="Restart Quiz" />
     </OuterWrapper>
   )
 }

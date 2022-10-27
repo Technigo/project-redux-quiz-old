@@ -9,13 +9,12 @@ export const Question = () => {
   return (
     <OuterWrapperQuestion>
       <CurrentQuestion />
-      <p>test</p>
-      <p>test</p>
     </OuterWrapperQuestion>
   )
 }
 
 const OuterWrapperQuestion = styled.div`
+  color: white;
   background-image: url(${mobileBG});
   background-size: cover;
   background-repeat: no-repeat;
