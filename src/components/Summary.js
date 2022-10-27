@@ -18,7 +18,7 @@ export const Summary = () => {
   return (
 
     <SummaryContainer>
-      <h1>Sammanfattning</h1>
+      <h1>🎉Sammanfattning🎉</h1>
 
       {(rightAnswers.length <= 2 && (
         <img

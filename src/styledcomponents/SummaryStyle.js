@@ -3,22 +3,20 @@ import { NavButtonsStyles } from './NavButtonStyle';
 import { InnerWrapper } from './GlobalStyles';
 
 export const SummaryContainer = styled(InnerWrapper)`
-margin: 15%; 
+margin: 40px; 
 h1{
-    margin: 30px auto 0;
+    margin: 15px auto 0;
     font-size: 18px;
 }
 
 img{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 100%;
 }
 
-@media (min-width: 600px) and (max-width: 1023px) {
+@media (min-width: 668px) and (max-width: 1023px) {
 
     img{
-    width: 100%;
-    height: 300px;
     object-fit: cover;
 }
     h1{
@@ -31,7 +29,6 @@ img{
     padding: 20px 30px;
 
     img{
-    width: 100%;
     object-fit: cover;
 }
     h1{
@@ -65,10 +62,10 @@ padding: 5px;
 font-family: 'Roboto Mono', monospace;
 
 @media (min-width: 600px) and (max-width: 1023px) {
-    width: 120px;
+    margin: 10px auto;
 }
 
 @media (min-width: 1024px) {
-    width: 120px;
+    margin: 10px auto;
 }
 `;
