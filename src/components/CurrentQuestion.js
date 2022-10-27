@@ -54,20 +54,19 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
-  // const displayNextQuestion = () => {
-  //   dispatch(quiz.actions.goToNextQuestion())
-  // }
+  const displayNextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }));
     if (question.correctAnswerIndex === answerIndex) {
-      // setTimeout(displayNextQuestion, 1500);
-      dispatch(quiz.actions.goToNextQuestion());
+      setTimeout(displayNextQuestion, 1000);
     } else {
-      // setTimeout(displayNextQuestion, 1500);
-      dispatch(quiz.actions.goToNextQuestion());
+      setTimeout(displayNextQuestion, 1000);
     }
   };
+
   const answerButtonClass = (index) => {
     if (currentanswer) {
       if (currentanswer.answerIndex === index) {
@@ -99,7 +98,7 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
             isCorrect={wasCorrectAnswerSelected}
             onClick={() => onAnswerSubmit(question.id, index)}
             // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={option}
             type="button"
             disabled={answersArray.length === question.id}
             style={answerButtonClass(index)}>

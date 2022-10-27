@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { quiz } from 'reducers/quiz';
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
+
+const Counter = styled.div`
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: hotpink;
+`
 
 const Timer = ({ questionId }) => {
   const countdown = useSelector((state) => state.quiz.countdown)
@@ -24,7 +34,6 @@ const Timer = ({ questionId }) => {
   useEffect(() => {
     if (value === 0) {
       dispatch(quiz.actions.goToNextQuestion());
-      // gör så att man svarar fast fel? pga skickar ej in att man svarar nu, bara går vidare
     }
   }, [value, dispatch]);
 
@@ -34,9 +43,9 @@ const Timer = ({ questionId }) => {
   }, [questionId])
 
   return (
-    <div className="counter">
+    <Counter>
       <div>Countdown: {value}</div>
-    </div>
+    </Counter>
   );
 }
 

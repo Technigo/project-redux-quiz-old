@@ -12,12 +12,12 @@ const SummaryText = styled.p`
 export const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
-  const numOfAnswers = answers.length;
+  // const numOfAnswers = answers.length;
   const dispatch = useDispatch();
   return (
     <>
       <Confetti />
-      <SummaryText>You got {correctAnswers} correct answers out of {numOfAnswers}</SummaryText>
+      <SummaryText>You got {correctAnswers} correct answers out of 5</SummaryText>
       <ButtonWrap>
         <StyledButton type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart Quiz</StyledButton>
       </ButtonWrap>
