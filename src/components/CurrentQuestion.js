@@ -6,6 +6,7 @@ import { quiz } from 'reducers/quiz'
 import { NextButton } from 'components/NextButton'
 import { ReturnButton } from 'components/ReturnButton'
 import Summary from 'components/Summary'
+import styled from 'styled-components/macro';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -43,9 +44,14 @@ export const CurrentQuestion = () => {
   <>
     {!store.quizOver ? (
       <div>
-      <p>{question.id} / 5</p>
-      <h1>Question: {question.questionText}</h1>
-      <div className="question-button-container">
+      <InnerWrapperQuestion>
+      <QuestionWrapper>
+      <Counter>{question.id} / 5</Counter>
+      <Text>Question: {question.questionText}</Text>
+      </QuestionWrapper>
+
+      <AnswerWrapper>
+      <QuestionButtonContainer>
         {question.options.map((option, index) => {
           return (
           <button 
@@ -59,8 +65,10 @@ export const CurrentQuestion = () => {
           {option}</button>
           )
         })}
-      </div>
+    </QuestionButtonContainer>
       <NextButton /><ReturnButton />
+      </AnswerWrapper>
+      </InnerWrapperQuestion>
     </div>
   ) : ( 
     <>
@@ -70,3 +78,54 @@ export const CurrentQuestion = () => {
   </>
 )
 } 
+
+
+const QuestionWrapper = styled.div `
+width: 100%;
+height: 40vh;
+background-color: yellow;
+display: grid;
+justify-content: center;
+border: solid pink 2px;
+`
+
+const Counter = styled.p`
+border: solid black 2px;
+`
+const Text = styled.h1`
+border: solid green 2px;
+border: solid blue 2px;
+`
+
+const AnswerWrapper = styled.div `
+width: 100%;
+height: 60vh;
+background-color: black;
+justify-content: center;
+border: solid 2px red;
+`
+const QuestionButtonContainer = styled.div`
+border: solid red 2px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+border: solid 2px blue;
+`
+
+const InnerWrapperQuestion = styled.div`
+  background-color: pink;
+  width: 80%;
+  // height: 100vh;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 2px blue;
+
+
+
+`
+
+
+

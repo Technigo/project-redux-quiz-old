@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> bd743194d776d980c15bf9e555fe9848396e0ead
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ReturnButton } from 'components/ReturnButton';
@@ -39,4 +42,8 @@ const Summary = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Summary;
+=======
+export default Summary;
+>>>>>>> bd743194d776d980c15bf9e555fe9848396e0ead

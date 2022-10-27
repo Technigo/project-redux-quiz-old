@@ -3,25 +3,25 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'],
+    questionText: 'Bubble wrap was originally invented as...?',
+    options: ['Wallpaper', 'Art', '1', '2'],
     correctAnswerIndex: 0 },
   { id: 2,
-    questionText: 'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016', '2018'],
+    questionText: 'Which country has the lagrest amount of pyramids?',
+    options: ['34', 'Egypt', '3', '4'],
     correctAnswerIndex: 1 },
   { id: 3,
     questionText: 'Question 3',
     options: ['hej', 'hopp', 'tjopp', 'hipp'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 3 },
   { id: 4,
     questionText: 'Which animal can gallop like a horse?',
-    options: ['Crocodiles', '', '3', '4'],
-    correctAnswerIndex: 3 },
+    options: ['Crocodiles', 'Ants', '5', 'Lizzard'],
+    correctAnswerIndex: 1 },
   { id: 5,
-    questionText: 'A new born baby contains of this much water... ',
+    questionText: 'A new born baby contains how much water? ',
     options: ['1/4', '2/4', '3/4', '4/4'],
-    correctAnswerIndex: 4 }
+    correctAnswerIndex: 2 }
 ]
 
 const initialState = {
