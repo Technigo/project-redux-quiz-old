@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { InnerWrapper } from 'styledcomponents/GlobaStyles';
+import { InnerWrapper } from 'styledcomponents/GlobalStyles';
 import { Summary } from './Summary';
 
 import Form from './Form';
@@ -43,7 +43,7 @@ export const CurrentQuestion = () => {
         <Summary />
       ) : (
         <InnerWrapper>
-          <h2>🤓</h2>
+          <p>🤓</p>
           <h2>Fråga {question.id} av 5</h2>
           <h1>{question.questionText}</h1>
           {question.options.map((option, index) => {

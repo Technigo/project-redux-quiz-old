@@ -40,10 +40,17 @@ export const InnerWrapper = styled.div`
 
   h1 {
     margin: 5% 0;
+    font-size: 17px;
   }
 
   h2 {
     margin: 0 auto;
+    font-size: 16px;
+  }
+
+  p {
+    margin: 10px auto;
+    font-size: 18px;
   }
 
   a {

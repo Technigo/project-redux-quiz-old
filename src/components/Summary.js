@@ -8,7 +8,6 @@ import {
   RestartButton
 } from 'styledcomponents/SummaryStyle';
 import { quiz } from 'reducers/quiz';
-import { OuterWrapper } from 'styledcomponents/GlobaStyles';
 
 export const Summary = () => {
   const question = useSelector((state) => state.quiz.questions);
@@ -17,19 +16,17 @@ export const Summary = () => {
   const dispatch = useDispatch();
 
   return (
-    <OuterWrapper>
-      <SummaryContainer>
-        <h1>Sammanfattning</h1>
 
-        {(rightAnswers.length <= 2 && (
-          <img
-            alt="bad"
-            src="https://media.giphy.com/media/SmHXb7cDn1hVoNKZI4/giphy.gif"
-            // src="https://media.giphy.com/media/0mLLCRteLho6WvLkN4/giphy.gif"
-            width="480"
-            height="480"
-          />
-        )) ||
+    <SummaryContainer>
+      <h1>Sammanfattning</h1>
+
+      {(rightAnswers.length <= 2 && (
+        <img
+          alt="bad"
+          src="https://media.giphy.com/media/SmHXb7cDn1hVoNKZI4/giphy.gif"
+          // src="https://media.giphy.com/media/0mLLCRteLho6WvLkN4/giphy.gif"
+        />
+      )) ||
         (rightAnswers.length === 3 && (
           <img
             alt="alright"
@@ -41,22 +38,20 @@ export const Summary = () => {
           <img
             alt="amazing"
             src="https://media.giphy.com/media/ZbYi3xM1S5A5071TXe/giphy.gif"
-            width="480"
-            height="480"
           />
         ))}
-        <SummaryScore>
+      <SummaryScore>
         Du fick {rightAnswers.length} av {question.length} korrekta svar!
-        </SummaryScore>
-        <RestartButton
-          onClick={() => {
-            dispatch(quiz.actions.restart());
-          }}
-        >
-          {' '}
+      </SummaryScore>
+      <RestartButton
+        onClick={() => {
+          dispatch(quiz.actions.restart());
+        }}
+      >
+        {' '}
         Börja om{' '}
-        </RestartButton>
-      </SummaryContainer>
-    </OuterWrapper>
+      </RestartButton>
+    </SummaryContainer>
+
   );
 };

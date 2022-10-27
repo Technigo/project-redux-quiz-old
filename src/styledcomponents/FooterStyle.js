@@ -6,6 +6,14 @@ export const FooterStyle = styled.footer`
   margin-bottom: 40px;
   background-color: rgb(255, 255, 255, 0.7);
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   width: 100%;
+
+  @media (min-width: 600px) and (max-width: 1023px) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1024px) {
+    
+  }
 `;

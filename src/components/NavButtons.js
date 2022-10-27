@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
-import { NavButtonsStyles, CurrentQuestionStyles } from 'styledcomponents/NavButtonStyles';
+import { NavButtonsStyles, CurrentQuestionStyles } from 'styledcomponents/NavButtonStyle';
 
 export const NavButtons = ({
   questionAnswered,

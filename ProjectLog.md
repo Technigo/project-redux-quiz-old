@@ -58,3 +58,11 @@ Thurs 20.00 27/10/2022 (Kartika, Sofia, Maria & Joel)
 - Changed the wrong/right answer: from alert to emoji beside the option
 - Expanded the clickable space for the options (now not only the radiobullets, but also the option text)
 - Solved a merge conflict
+- Netlify link!
+
+Thurs 23.00 27/10/2022 (Kartika & Maria)
+
+- MEDIA QUERYYYYY
+- Changed folder names so it looked more similar to each other
+- Icon hippo 😎
+- Please check if there is anything else we need to do

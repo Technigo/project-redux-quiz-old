@@ -6,7 +6,7 @@ import { quiz } from 'reducers/quiz';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import { OpeningScreen } from 'components/OpeningScreen';
 import Footer from 'components/Footer';
-import { OuterWrapper } from 'styledcomponents/GlobaStyles';
+import { OuterWrapper } from 'styledcomponents/GlobalStyles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const reducer = combineReducers({

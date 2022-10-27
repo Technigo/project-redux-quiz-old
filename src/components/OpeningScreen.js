@@ -1,6 +1,6 @@
 import React from 'react';
-import { LinkContainer } from 'styledcomponents/GlobaStyles';
-import { OpeningInnerWrapper } from 'styledcomponents/OpeningScreen';
+import { LinkContainer } from 'styledcomponents/GlobalStyles';
+import { OpeningInnerWrapper } from 'styledcomponents/OpeningScreenStyle';
 
 export const OpeningScreen = () => {
   return (
