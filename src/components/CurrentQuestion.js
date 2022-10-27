@@ -34,21 +34,16 @@ export const CurrentQuestion = () => {
       document.getElementById(`${answerIndex}`).style.background = 'red'
     }
   }
-  
-//  if( store.quizOver === true) {
-//   return (
-//     <Summary/>)
-//   } else {
 
   return (
   <>
     {!store.quizOver ? (
-      <div>
-      <InnerWrapperQuestion>
-      <QuestionWrapper>
-      <Counter>{question.id} / 5</Counter>
-      <Text>Question: {question.questionText}</Text>
-      </QuestionWrapper>
+       <Outer>
+        <InnerWrapperQuestion>
+        <QuestionWrapper>
+        <Counter>{question.id} / 5</Counter>
+        <Text>Question: {question.questionText}</Text>
+        </QuestionWrapper>
 
       <AnswerWrapper>
       <QuestionButtonContainer>
@@ -66,10 +61,12 @@ export const CurrentQuestion = () => {
           )
         })}
     </QuestionButtonContainer>
+      <div className="nav-button-wrapper">
       <NextButton /><ReturnButton />
+      </div>
       </AnswerWrapper>
       </InnerWrapperQuestion>
-    </div>
+      </Outer>
   ) : ( 
     <>
     <Summary />
@@ -79,30 +76,54 @@ export const CurrentQuestion = () => {
 )
 } 
 
+const Outer = styled.main`
+background-color: lightgrey;
+width: 100%;
+`
+
+const InnerWrapperQuestion = styled.div`
+background-color: pink;
+width: 80%;
+// height: 100vh;
+margin: 0 auto;
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+border: solid 2px green;
+`
 
 const QuestionWrapper = styled.div `
 width: 100%;
 height: 40vh;
 background-color: yellow;
-display: grid;
+display: flex;
+flex-direction: column;
 justify-content: center;
 border: solid pink 2px;
-`
+text-align: center;`
 
 const Counter = styled.p`
 border: solid black 2px;
 `
 const Text = styled.h1`
-border: solid green 2px;
 border: solid blue 2px;
+width: 100%;
 `
 
 const AnswerWrapper = styled.div `
-width: 100%;
+width: 80%;
 height: 60vh;
 background-color: black;
 justify-content: center;
 border: solid 2px red;
+
+.nav-button-wrapper{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
 `
 const QuestionButtonContainer = styled.div`
 border: solid red 2px;
@@ -110,21 +131,21 @@ display: grid;
 grid-template-columns: repeat(2, 1fr);
 gap: 20px;
 border: solid 2px blue;
-`
+box-sizing: border-box;
 
-const InnerWrapperQuestion = styled.div`
+.disabled-true{
+  border: solid 2px black;
+  background-color: grey;
+  color: white;
+  padding: 70px;
+  }
+
+.disabled-false{
+  border: solid 2px black;
   background-color: pink;
-  width: 80%;
-  // height: 100vh;
-  margin: 0 auto;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border: solid 2px blue;
-
-
-
+  color: white;
+  padding: 70px;
+  }
 `
 
 

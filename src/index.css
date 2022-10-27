@@ -12,32 +12,15 @@ code {
     monospace;
 }
 
-.question-button-container{
+/* .question-button-container{
   display: flex;
   flex-direction: row;
   border: solid 2px blue;
-}
+} */
 
 .question-button {
   border: solid 2px red;
   background-color: black;
   color: white;
   padding: 15px;
-
-}
-
-.disabled-true{
-  border: solid 2px black;
-  background-color: grey;
-  color: white;
-  padding: 15px;
-  /* width: 500px; */
-}
-
-.disabled-false{
-  border: solid 2px black;
-  background-color: pink;
-  color: white;
-  padding: 15px;
-  /* width: 500px; */
 }
