@@ -22,10 +22,11 @@ export const ProgressBar = () => {
   return (
     <ProgressBarWrapper>
       {questions.map((question) => (
-        <ProgressSquares
+        <ProgressSquares>
           key={question.id}
           right={answers[question.id]?.isCorrect}
-          wrong={answers[question.id]?.isCorrect === false} />
+          wrong={answers[question.id]?.isCorrect === false}
+        </ProgressSquares>
       ))}
     </ProgressBarWrapper>
   );
@@ -40,6 +41,7 @@ const ProgressSquares = styled.p`
   width: 50px;
   height: 50px;
   margin-right: 12px;
+  
   @media (max-width: 667px) {
     width: 20px;
     height: 20px;
@@ -52,3 +54,43 @@ const ProgressBarWrapper = styled.div`
   align-items: flex-end;
   justify-content: center;
 `;
+
+// export const ProgressBarWrapper = styled.section`
+//    width: 20%;
+//   height: 1rem;
+//   display: block;
+//   appearance: none;
+//   border: none;
+//   margin-top: 5px;
+// `;
+//
+// export const ProgressSquares = styled.progress`
+//   progress::-webkit-progress-bar {
+//     background: #fff;
+//     border-radius: 50px;
+//     padding: 2px;
+//   }
+
+//   progress::-moz-progress-bar {
+//     background: #fff;
+//     border-radius: 50px;
+//     padding: 2px;
+//   }
+
+//   progress::-webkit-progress-value {
+//     background: #D3A13B;
+//     border-radius: 50px;
+//     animation: move 5s linear 0 infinite;
+//   }
+
+//   progress::-moz-progress-value {
+//     background: #D3A13B;
+//     border-radius: 50px;
+//     animation: move 5s linear 0 infinite;
+//   }
+
+//   @keyframes move {
+//     0% {background-position: 0px 0px, 0 0, 0 0}
+//     100% {background-position: -100px 0px, 0 0, 0 0}
+//   }
+// `;

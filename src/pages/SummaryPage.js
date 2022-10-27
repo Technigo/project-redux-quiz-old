@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Summary } from '../components/Summary'
 import { quiz } from '../reducers/quiz';
@@ -18,6 +19,15 @@ export const SummaryPage = () => {
       <Summary />
       <p>You had {correctAnswers.length}/5 correct answers</p>
       <button onClick={onRestartClick} type="button">Restart</button>
+      <ImageCredWrapper>
+        <a href="https://www.freepik.com/">Image from Freepik</a>
+      </ImageCredWrapper>
     </div>
   )
 };
+
+// styled component
+// ifall vi använder oss av bilderna jag gjort
+const ImageCredWrapper = styled.div`
+  font-size: 0.7rem;
+`;

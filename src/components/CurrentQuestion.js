@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { SummaryPage } from '../pages/SummaryPage'
@@ -31,11 +32,57 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h1>From which movie does this quote come from?</h1>
-      <h2>{question.questionText}</h2>
+      <h2>From which movie does this quote come from?</h2>
+      <TypingWrapper>
+        {/* <Typing>{question.questionText}</Typing> */}
+        <h3>{question.questionText}</h3>
+      </TypingWrapper>
       {question.options.map((option, index) => {
         return <button onClick={() => onAnswerSubmit(question.id, index)} key={option} type="button">{option}</button>
       })}
     </div>
   )
 }
+
+// styled components
+
+const TypingWrapper = styled.div`
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1;
+`;
+
+//----------------------------
+
+// const Typing = styled.div`
+//   width: 25ch;
+//   animation: typing 5s steps(22) infinite, blink-caret .5s step-end infinite alternate;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   border-right: 3px solid;
+//   font-family: var(--font-typing);
+//   font-size: 21px;
+//   color: black;
+//   padding-top:10px;
+
+//   @keyframes typing {
+//     from {
+//       width: 0;
+//     }
+//     /* 50% {
+//       width:100%
+//     } */
+//   }
+
+//   @keyframes blink {
+//     50% {
+//       border-color: transparent
+//     }
+//   }
+//   /* @media (min-width: 668px){
+//       font-size: 30px;
+//     } */
+// `;
