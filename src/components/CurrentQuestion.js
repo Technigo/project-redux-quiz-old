@@ -45,9 +45,9 @@ export const CurrentQuestion = () => {
       return ''
     }
     if (index === question.correctAnswerIndex) {
-      return 'right-answer'
+      return 'rightanswer'
     } else if (index === userAnswerIndex) {
-      return 'wrong-answer'
+      return 'wronganswer'
     }
   }
 
@@ -61,7 +61,8 @@ export const CurrentQuestion = () => {
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
             type="button"
-            className={classCheck(index)}>{option}
+            className={classCheck(index)}>
+            {option}
           </ButtonStyling>
         )
       })}

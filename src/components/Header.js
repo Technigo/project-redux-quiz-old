@@ -10,12 +10,13 @@ export const Header = () => {
 };
 
 // Styling of header
-
 export const HeaderWrapper = styled.header`
   top: 30%;
   left: 30%;
-  background-color: #8A8635;
-  border: 10px dotted #F6C6EA;
-  padding: 5px 20px 5px 20px;
+  height: 20vh;
+  background-color: #F26A3A;
+  border: 15px dotted #A5D8C5;
+  padding: 5px 40px 5px 20px;
   text-align: center;
+  font-size: 30px;
 `

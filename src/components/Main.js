@@ -23,6 +23,7 @@ const Main = () => {
   if (!quizOver) {
     return (
       <Background img src={background} alt="70s pattern">
+        <InnerWrapper />
         <CurrentQuestion />
         <Button
           handleClick={() => onNextQuestion()}
@@ -32,6 +33,7 @@ const Main = () => {
   } else {
     return (
       <Background alt="70s pattern">
+        <InnerWrapper />
         <Summary />
         <Button
           handleClick={() => onRestart()}
@@ -49,5 +51,10 @@ height:80vh;
 background-size: cover;
 margin: auto;
 `;
+
+const InnerWrapper = styled.div`
+
+
+`
 
 export default Main;

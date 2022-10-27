@@ -19,16 +19,19 @@ h1 {
 
 }
 
-.right-answer {
+.rightanswer {
   border: green dotted 3px;
 }
 
-.wrong-answer {
+.wronganswer {
   border: red dotted 3px;
 }
 
 /* Orange #F26A3A
    Light blue #A5D8C5
    Yellow #FCAF2D
-   Light Orange #F79A66
-   White #EEE8D2 */
+   Light Orange EEE8D2
+   White #EEE8D2
+   Green #5B845B
+   Lila #E4AEC5 */
+   
