@@ -38,7 +38,7 @@ export const CurrentQuestion = () => {
   return (
   <>
     {!store.quizOver ? (
-       <Outer>
+       <OuterWrapperQuestion>
         <InnerWrapperQuestion>
         <QuestionWrapper>
         <Counter>{question.id} / 5</Counter>
@@ -46,6 +46,7 @@ export const CurrentQuestion = () => {
         </QuestionWrapper>
 
       <AnswerWrapper>
+      <Test>
       <QuestionButtonContainer>
         {question.options.map((option, index) => {
           return (
@@ -61,12 +62,14 @@ export const CurrentQuestion = () => {
           )
         })}
     </QuestionButtonContainer>
+    </Test> 
       <div className="nav-button-wrapper">
-      <NextButton /><ReturnButton />
+      <ReturnButton /> <NextButton />
       </div>
+    
       </AnswerWrapper>
       </InnerWrapperQuestion>
-      </Outer>
+      </OuterWrapperQuestion>
   ) : ( 
     <>
     <Summary />
@@ -76,13 +79,13 @@ export const CurrentQuestion = () => {
 )
 } 
 
-const Outer = styled.main`
+const OuterWrapperQuestion = styled.main`
 background-color: lightgrey;
 width: 100%;
 `
 
 const InnerWrapperQuestion = styled.div`
-background-color: pink;
+background-color: beige;
 width: 80%;
 // height: 100vh;
 margin: 0 auto;
@@ -90,33 +93,43 @@ align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-border: solid 2px green;
 `
 
 const QuestionWrapper = styled.div `
 width: 100%;
-height: 40vh;
-background-color: yellow;
+height: 45vh;
+background-color: #FFD06F;
+margin: 0px;
+align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-border: solid pink 2px;
-text-align: center;`
+text-align: center;
+`
 
 const Counter = styled.p`
-border: solid black 2px;
+border-radius: 50%;
+background-color: beige;
+width: 50px;
+height: 50px;
+display: flex;
+align-item: center;
+justify-content: center;
+
 `
 const Text = styled.h1`
-border: solid blue 2px;
+// border: solid blue 2px;
 width: 100%;
 `
 
 const AnswerWrapper = styled.div `
 width: 80%;
 height: 60vh;
-background-color: black;
+background-color: beige;
+flex-direction: column;
 justify-content: center;
-border: solid 2px red;
+display: flex;
+// border: solid 2px red;
 
 .nav-button-wrapper{
   display: flex;
@@ -126,27 +139,52 @@ border: solid 2px red;
 
 `
 const QuestionButtonContainer = styled.div`
-border: solid red 2px;
 display: grid;
-grid-template-columns: repeat(2, 1fr);
+grid-template-columns: repeat(1, 1fr);
 gap: 20px;
-border: solid 2px blue;
+width: 500px;
 box-sizing: border-box;
 
+@media (max-width: 667px) {
+  width: 150px;
+
+}
+
 .disabled-true{
-  border: solid 2px black;
-  background-color: grey;
+  font-size: 20px;
+border: none;
+border-radius: 10px;
+ width: 100%;
+ height: 100%;
+  background-color: lightgrey;
   color: white;
-  padding: 70px;
+  padding: 20px;
+  margin: 0px;
   }
 
 .disabled-false{
-  border: solid 2px black;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   background-color: pink;
   color: white;
-  padding: 70px;
+  padding: 20px;
+  margin: 0px;
+  }
+
+
+  @media (min-width: 667px) {
+    grid-template-columns: repeat(2, 1fr);
+
   }
 `
-
+const Test = styled.div`
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+`
 
 
