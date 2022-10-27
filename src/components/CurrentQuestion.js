@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { InnerWrapper, OuterWrapper } from 'styledcomponents/GlobaStyles';
+import { InnerWrapper } from 'styledcomponents/GlobaStyles';
 /* import { CurrentQuestionStyles } from 'styledcomponents/CurrentQuestionStyles'; */
 import { Summary } from './Summary';
 
@@ -59,12 +59,12 @@ export const CurrentQuestion = () => {
   };
 
   return (
-    <OuterWrapper>
+    <div>
       {quizOver ? (
         <Summary />
       ) : (
         <InnerWrapper>
-          <h1>🤓</h1>
+          <h2>🤓</h2>
           <h2>Fråga {question.id} av 5</h2>
           <h1>{question.questionText}</h1>
           {/* <Options /> */}
@@ -89,10 +89,8 @@ export const CurrentQuestion = () => {
             handleNextButton={handleNextButton}
             answer={answer}
           />
-
         </InnerWrapper>
       )}
-
-    </OuterWrapper>
+    </div>
   );
 };
