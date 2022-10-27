@@ -29,23 +29,16 @@ export const QuestionWrapper = styled.div`
     flex-direction: column;
     padding: 5%;
 
-    #optionBtn {
-        color: black; 
-        background-color: lightgray;
-
-    &:focus {
+    button:focus {
         background-color: darkgrey;
     }
+
+    .correctBtn {
+    background-color: lightgrey;
     }
 
-    #correct {
-        color: lightgrey;
-        font-size: 50px;
+    .wrongBtn {
+    background-color: lightgrey;
     }
-
-    #wrong {
-        color: lightgrey;
-        font-size: 50px;
-    }
-
+  
 `

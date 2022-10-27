@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
+/* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
 import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
@@ -55,11 +56,7 @@ export const quiz = createSlice({
       if (question.options[answerIndex] === undefined) {
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
-      // if (question.correctAnswerIndex === answerIndex) {
-      //   store.correctAnswer = true
-      // } else if (!question.correctAnswerIndex === answerIndex) {
-      //   store.correctAnswer = false
-      // }
+
       store.answers.push({
         questionId,
         answerIndex,
@@ -86,20 +83,27 @@ export const quiz = createSlice({
     },
 
     /**
-     * Use this action to show if correct or not.
+     * Use this action to show if correct or not and display which button is actually correct.
      *
-     * This action does not require a payload.
      */
     displayCorrectOrWrong: (store, action) => {
       const { questionId, answerIndex } = action.payload
       const question = store.questions.find((q) => q.id === questionId)
 
+      const changeBgColor = () => {
+        const buttons = document.getElementsByClassName('correctBtn')
+        const color = 'green'
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].style.background = color;
+        }
+      };
+
       if (question.correctAnswerIndex === answerIndex) {
         store.correctAnswer = true
-        // document.getElementById('correct').style.display = 'block'
+        changeBgColor()
       } else {
         store.correctAnswer = false
-        // document.getElementById('wrong').style.display = 'block'
+        changeBgColor()
       }
     },
 
