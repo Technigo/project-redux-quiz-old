@@ -1,16 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components/macro';
 
 const ProgressContainer = styled.div`
-  width: 400px;
-  height: 50px;
-  border-radius: 15px; 
+  width: 30vw;
+  height: 20px;
+  border-radius: 50px; 
   background-color: #E6A03D;
   position: relative;
   overflow: hidden;
   display: flex;
-  margin-top: 25px; 
+  margin-top: 5px; 
   justify-content: space-between;
   align-items: center;
   border: 1px solid white;
@@ -30,17 +30,20 @@ const ProgressStatus = styled.div`
 `;
 const Amount = styled.label`
   color: black; 
-  position: relative;
-  align-self: center;
   text-align: center;
   font-family: 'Montserrat';
-  font-size: 2vw;
+  font-size: 1.25vw;
   font-weight: bold;
   line-height: 2vw;
-  white-space: wrap;`
+  white-space: wrap;
+  letter-spacing: 0.1vw;
+`
 
 const Wrapper = styled.div`
-display: block; 
+display: flex; 
+align-items: center;
+justify-content: center;
+flex-direction: column;
 padding: 3em;  
 `
 
@@ -52,7 +55,7 @@ const ProgressBar = () => {
   )}%`;
   return (
     <Wrapper>
-      <Amount> QUESTION:
+      <Amount> QUESTION:&nbsp;
         {question.id} / {amountOfQuestions}
       </Amount>
       <ProgressContainer>
@@ -62,4 +65,4 @@ const ProgressBar = () => {
     </Wrapper>
   )
 }
-export default ProgressBar
+export default ProgressBar;

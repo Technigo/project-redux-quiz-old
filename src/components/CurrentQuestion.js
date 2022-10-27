@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 /* import { quiz } from 'reducers/quiz' */
 import RestartButton from './RestartButton'
 import Summary from './Summary'
-import { Background, QuestionContainer, Headers } from './Styling/GlobalStyles'
+import { Background, QuestionContainer, Questions } from './Styling/GlobalStyles'
 import ProgressBar from './Progressbar'
 import Options from './Options'
 import NextButton from './NextButton'
@@ -30,7 +30,7 @@ export const CurrentQuestion = () => {
     return (
       <Background>
         <QuestionContainer>
-          <Headers>Question: {question.questionText}</Headers>
+          <Questions>{question.questionText}</Questions>
           {question.options.map((option, answerIndex) => (
             <Options
               key={option.id}

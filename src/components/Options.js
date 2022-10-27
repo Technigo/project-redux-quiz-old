@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz'
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Button = styled.button`
 width: 10rem; 
@@ -33,7 +33,7 @@ const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNe
     }
   }
   return (
-    <div>
+    <OptionContainer>
       <Button
         type="button"
         style={borderColor}
@@ -41,8 +41,15 @@ const Options = ({ option, answerIndex, optionDisabled, setOptionDisabled, setNe
         disabled={optionDisabled}>
         {option}
       </Button>
-    </div>
+    </OptionContainer>
   )
 }
 
-export default Options
+export default Options;
+
+export const OptionContainer = styled.div`
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`
+

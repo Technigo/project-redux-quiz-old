@@ -10,6 +10,7 @@ body {
 }
 `
 export const Background = styled.div`
+  display: flex;
   background-image: url(${xmasBackground});
   background-size: cover;
   position: relative;
@@ -17,11 +18,11 @@ export const Background = styled.div`
   height: 100vh;
 `
 export const QuestionContainer = styled.section`
-position: relative;
+  align-items: center;
+  justify-content: center;
   background-color: #f6f5f4;
   display: flex; 
   flex-direction: column;
-  justify-content: center;
   height: 75%;
   width: 75%;
   border-radius: 25px;
@@ -31,22 +32,31 @@ position: relative;
 export const Headers = styled.div`
   position: relative;
   align-self: center;
-  width: 55%;
+  width: 60%;
   text-align: center;
+  color: #E3182B;
   padding: 5%; 
   font-family: 'Montserrat';
-<<<<<<< Updated upstream
   font-size: 3vw;
   font-weight: bold;
-  line-height: 3vw;
-=======
-  font-size: 4vw;
-  font-weight: bold;
-  line-height: 4vw;
->>>>>>> Stashed changes
+  line-height: 3.25vw;
+
   white-space: wrap;
-  
 `
+
+export const Questions = styled.div`
+  position: relative;
+  align-self: center;
+  width: 55%;
+  text-align: center;
+  color: #E3182B;
+  padding: 5%; 
+  font-family: 'Montserrat';
+  font-size: 1.5vw;
+  font-weight: bold;
+  line-height: 1.75vw;
+`
+
 export const Buttons = styled.a`
     text-decoration: none;
     position: relative;
