@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+
 import { CurrentQuestion } from './CurrentQuestion';
 import EndPage from './EndPage';
 import StartPage from './StartPage';
