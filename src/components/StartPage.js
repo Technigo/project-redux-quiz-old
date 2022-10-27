@@ -10,5 +10,7 @@ export const StartPage = () => {
       <h1>- How much do you know? -</h1>
       <Link to="/question"><StartButton type="button">START</StartButton></Link>
     </Container>
+
   )
 }
+
