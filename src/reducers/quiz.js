@@ -33,7 +33,8 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false,
-  quizStart: false
+  quizStart: false,
+  currentQuestion: 1
 }
 
 export const quiz = createSlice({
