@@ -20,14 +20,9 @@ export const AnswerButton = ({ index, option }) => {
       questionId, answerIndex
     }));
     setActiveBtn(true);
-    console.log('questionId', questionId)
-    console.log('answerIndex', answerIndex)
   }
 
   const correctAnswer = usersAnswer && index === question.correctAnswerIndex
-  // console.log('question.correctAnswerIndex', question.correctAnswerIndex)
-  // console.log('usersAnswer && index', usersAnswer && index)
-  // console.log('correctAnswer', correctAnswer)
 
   return (
     <StyledButton
