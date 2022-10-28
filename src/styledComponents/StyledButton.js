@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.button`
-  min-width: 100px;
-  min-height: 30px;
-  color: #005e25;
-  border-radius: 30px;
+export const OptionButton = styled.button`
+  width: 450px;
+  color: black;
+  border-radius: 10px;
   border: 2px solid #b2e2e0;
-  padding: 5px;
+  padding: 30px;
   font-weight: 700;
+  transition: all 0.2s;
+  margin-top: 10px;
   ${(props) => props.isCorrect && 'background-color: #67b467; color: white;'};
   ${(props) => props.isIncorrect && 'background-color: #b96f6f; color: white;'};
   transition: all 0.2s;
@@ -16,9 +17,28 @@ export const StyledButton = styled.button`
     background-color: #b2e2e0;
     color: white;
   }
-  /* &:disabled {
-    background-color: rgba(0, 94, 37, 0.25);
-    color: rgb(0, 94, 37);
-    border: none;
-  } */
+
+  @media (max-width: 667px) {
+    width: 250px;
+  }
+`;
+
+export const Button = styled.button`
+  min-width: 150px;
+  min-height: 50px;
+  border-radius: 15px;
+  background-color: rgba(0, 94, 37, 0.25);
+  color: #373232;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  &:hover {
+    background-color: rgb(255 255 255 / 25%);
+    color: white;
+  }
+`;
+
+export const CorrectAnswerMessage = styled.p`
+  ${(props) => props.rightAnswer && 'color: green;'};
+  ${(props) => props.wrongAnswer && 'color: red;'};
 `;

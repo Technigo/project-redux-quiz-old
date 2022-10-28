@@ -4,34 +4,52 @@ import { createSlice } from '@reduxjs/toolkit';
 const questions = [
   {
     id: 1,
-    questionText: 'Who set the Olympic record for the 100m dash in 2012?',
-    options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay'],
+    questionText:
+      'What is the correct HTML for referring to an external style sheet?',
+    options: [
+      '<link rel="stylesheet" type="text/css" href "mystyle.css">',
+      '<style src="mystyle.css">',
+      '<styles>mystyle.css</styles>'
+    ],
     correctAnswerIndex: 0
   },
   {
     id: 2,
-    questionText:
-      'When was Michael Phelps last named male World Swimmer of the Year?',
-    options: ['2012', '2014', '2016'],
-    correctAnswerIndex: 2
+    questionText: 'Which is the correct CSS syntax?',
+    options: [
+      '{body: color=black;}',
+      'body {color: black;}',
+      'body: {color=black}'
+    ],
+    correctAnswerIndex: 1
   },
   {
     id: 3,
-    questionText: '3',
-    options: ['2012', '2014', '2016'],
-    correctAnswerIndex: 2
-  },
-  {
-    id: 4,
-    questionText: '4',
-    options: ['2012', '2014', '2016'],
+    questionText: 'How do you write "Hello World" in an alert box?',
+    options: [
+      'msgBox("Hello World");',
+      'alert("Hello World);',
+      'alertBox("Hello World")'
+    ],
     correctAnswerIndex: 0
   },
   {
-    id: 5,
-    questionText: '5',
-    options: ['2012', '2014', '2016'],
+    id: 4,
+    questionText:
+      'What is the correct syntax to import a Component from React?',
+    options: [
+      'import React.Component from "react"',
+      'import { Component } from "react"',
+      'import Component from "react"'
+    ],
     correctAnswerIndex: 1
+  },
+  {
+    id: 5,
+    questionText:
+      'Redux offers a solution for storing your application state in a single place called...',
+    options: ['Status', 'Bank', 'Store'],
+    correctAnswerIndex: 2
   }
 ];
 
