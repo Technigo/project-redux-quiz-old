@@ -12,8 +12,12 @@ This week is a group programming project, to work as a dev team in more ways tha
 
 One challange for the week have been our very diffrent working schedules. So we have used a google document for keeping track of our progress for each working session done. We have mainly worked together with mob-programming, but also with branched off manageable smaller tasks in pairs or as individual work. 
 
-We have learned valuable lessons regarding making changes during the process in both planning, design, dividing of work depending on
+We have learned valuable lessons regarding making changes during the process in both planning, design and dividing of work, depending on the different challenges we have faced.
 
+If we hade more time, 
+- structure styled-components and Global-styles for pages vs. components
+- Change on first page, to start the quiz when countdown hits zero.
+- added some fancy function like timer.
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link: https://hippos-movie-quote-quiz.netlify.app/
