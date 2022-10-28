@@ -12,11 +12,9 @@ export const QuestionWrapper = styled.div`
     }
 
     .correctBtn {
-    //background-color: lightgrey;
     }
 
     .wrongBtn {
-    //background-color: lightgrey;
     }
 
     #noSymbol {
@@ -28,7 +26,6 @@ export const QuestionWrapper = styled.div`
 export const AnswerButtons = styled.div`
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
 
     @media (min-width: 1024px) {
         grid-template-columns: 1fr 1fr;

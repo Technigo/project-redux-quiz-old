@@ -96,8 +96,7 @@ export const quiz = createSlice({
     },
 
     /**
-     * Use this action to show if correct or not and display which button is actually correct.
-     *
+     * This action shows if your answer is correct or not and display which button is actually correct.
      */
     displayCorrectOrWrong: (store, action) => {
       const { questionId, answerIndex } = action.payload

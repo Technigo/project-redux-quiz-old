@@ -13,9 +13,10 @@ export const SummaryWrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 20px;
-    border-bottom: 0.3px solid #a0a0a0;
+    border-bottom: 0.3px solid #a0a0a0;  
 
 `
+/* line 16 - styled line between the result */
 
 export const Scores = styled.div`
     border: 0.3px solid #a0a0a0;
@@ -28,7 +29,13 @@ export const Scores = styled.div`
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    @media (min-width: 428px) {
+        p {
+            font-size: 1.5rem
+        }
     }
 
 `

@@ -1,12 +1,15 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project is a quiz for Friend sitcom fandom built using React, Redux and styled components. Project is made in mob programming. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The biggest problem was to understand and get data to summary component. We have learned: 
+- how to change className 
+- className in React.js returns a array, which needs to be iterated using a for loop
+- separating styled components to target the designated components instead of dumping everything in Global styled component 
+- modifying in the reducer to make the fetch in array easier 
+
 
 ## View it live
 

@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 import styled, { createGlobalStyle } from 'styled-components/macro';
 import './index.css'
-// import Cursor32 from 'assets/Cursor32.png'
 
 export const GlobalStyles = createGlobalStyle`
    
@@ -84,7 +83,6 @@ export const Buttons = styled.button`
     padding: 13px 50px 13px;
     outline: 0;
     border: 1px solid black;
-    /* cursor: url(Cursor32.png); */
     position: relative;
     background-color: rgba(0, 0, 0, 0);
     margin: 20px;

@@ -11,10 +11,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('LogoPointer.png'), pointer;
+  cursor: url('LogoPointer.png'), pointer; /* Cursor styling */
 
 }
-
+/* Pointer styled */ 
 button:hover {
   cursor: url('LogoPointer.png'), pointer;
 }

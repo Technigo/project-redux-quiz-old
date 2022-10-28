@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-/* eslint-disable linebreak-style */
 import { Container, Buttons } from 'Globalstyles'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,8 +10,6 @@ export const Summary = ({ score }) => {
   const dispatch = useDispatch()
 
   const answerSummary = useSelector((store) => store.quiz.answers)
-  // console.log('our answers:', answerSummary)
-  // console.log('score summary', score)
 
   return (
     <Container>
@@ -21,8 +18,8 @@ export const Summary = ({ score }) => {
       {/* showing if you win or loose */}
       <Scores>
         <p><span id="star">&#9733;</span>Your score: <span id="score">{score}/5</span><span id="star">&#9733;</span></p>
-        {score >= 4 && ('You are FRIEND`s Nerd. Congratulations')}
-        {score < 4 && ('You lost, watch all seasons again')}
+        <p>{score >= 4 && ('You are FRIEND`s Nerd. Congratulations')}</p>
+        <p>{score < 4 && ('You lost, watch all seasons again')}</p>
       </Scores>
       <SummaryContainer>
         {answerSummary.map((item) => {

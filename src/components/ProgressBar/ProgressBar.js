@@ -5,7 +5,6 @@ import { ProgressBar } from './ProgressBar.styles'
 
 export const Progressbar = () => {
   const step = useSelector((store) => store.quiz.currentQuestionIndex + 1)
-  console.log(step)
   return (
     <ProgressBar>
       <label htmlFor="progress"> {step === 6 ? 'Finished!' : `Question ${step}/5`} </label>
