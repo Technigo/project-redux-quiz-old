@@ -1,4 +1,5 @@
 import React from 'react'
+import Progressbar from 'components/ProgressBar'
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import Summary from 'components/Summary';
 import { useSelector, useDispatch } from 'react-redux'
@@ -24,14 +25,15 @@ const Main = () => {
     return (
       <Background img src={background} alt="70s pattern">
         <InnerWrapper>
-          <WhiteRapper>
+          <WhiteWrapper>
             <CurrentQuestion />
             <BtnContainer>
               <Button
                 handleClick={() => onNextQuestion()}
                 buttonText="Next question" />
-              </BtnContainer>
-          </WhiteRapper>
+            </BtnContainer>
+            <Progressbar />
+          </WhiteWrapper>
         </InnerWrapper>
       </Background>
     )
@@ -39,10 +41,12 @@ const Main = () => {
     return (
       <Background alt="70s pattern">
         <InnerWrapper>
-          <Summary />
-          <Button
-            handleClick={() => onRestart()}
-            buttonText="Start over" />
+          <WhiteWrapper>
+            <Summary />
+            <Button
+              handleClick={() => onRestart()}
+              buttonText="Start over" />
+          </WhiteWrapper>
         </InnerWrapper>
       </Background>
     )
@@ -67,7 +71,7 @@ const InnerWrapper = styled.div`
   padding: 3rem;
 `
 
-const WhiteRapper = styled.div`
+const WhiteWrapper = styled.div`
 background-color: #eee8d2;
 opacity: 0.9;
 padding: 20px;

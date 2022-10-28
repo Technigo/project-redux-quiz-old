@@ -43,12 +43,14 @@ export const CurrentQuestion = () => {
 
   const classCheck = (index) => {
     if (!hasAnswered) {
-      return ''
+      return 'default'
     }
     if (index === question.correctAnswerIndex) {
       return 'rightanswer'
     } else if (index === userAnswerIndex) {
       return 'wronganswer'
+    } else {
+      return 'default'
     }
   }
 
@@ -58,13 +60,14 @@ export const CurrentQuestion = () => {
       <ButtonContainer>
         {question.options.map((option, index) => {
           return (
-            <ButtonStyling
+            <button
               options
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option}
-              type="button">
+              type="button"
+              className={classCheck(index)}>
               {option}
-            </ButtonStyling>
+            </button>
           )
         })}
         {/* {userAnswerIndex === 'number' ? (<ButtonRight />) :} */}

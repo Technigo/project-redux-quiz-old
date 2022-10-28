@@ -19,12 +19,38 @@ h1 {
 
 }
 
+.default {
+  background-color: #F26A3A;
+  padding: 11px;
+  border-radius: 15px;
+  border: 2px solid #EEE8D2;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 700; 
+}
+
+.default:hover {
+  opacity: 0.8;
+}
+
 .rightanswer {
+  background-color: #F26A3A;
+  padding: 11px;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 700; 
   border: green dotted 3px;
 }
 
 .wronganswer {
   border: red dotted 3px;
+  background-color: #F26A3A;
+  padding: 11px;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+  font-weight: 700; 
 }
 
 /* Orange #F26A3A
