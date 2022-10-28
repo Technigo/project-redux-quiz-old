@@ -1,7 +1,8 @@
-/* Vi behöver styling på answer buttons, font styles, root font size, färger */
 import styled, { createGlobalStyle } from 'styled-components/macro';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
+
+/* background image */
 html {
   background: url('./images/blue_lila_bg_mov.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -9,26 +10,20 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
-`;
-
-export const GlobalStyles = createGlobalStyle`
  
-// Project fonts
 `;
 
-// -------------------------
+//----------------------
 
 export const BgWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   height: 100vh;
-  /* background-image: url(./images/blue_lila_bg-web.jpg); */  
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center; */
   
 `;
+
+//----------------------
 
 export const OuterWrapper = styled.div`
   position: relative;
@@ -38,19 +33,15 @@ export const OuterWrapper = styled.div`
   padding-top: 3%;
 `;
 
-// export const MovieImg = styled.div`
-//   height: 100%;
-//   width: auto;
-//   background-image: url(./images/blue_lila_bg_mov.jpg);
-//   background-repeat: no-repeat;
-//   background-position: center center;
-
-// `;
+//----------------------
 
 export const ButtonWrapper = styled.div`
   position: relative;
+`;
 
-`
+//----------------------
+
+/* Styling for Start and Restart button */
 
 export const ButtonNeon = styled.button`
   position: absolute;
@@ -65,12 +56,18 @@ export const ButtonNeon = styled.button`
   -ms-transform: translate(-50%, -50%);
   border: none;
   cursor: pointer;
-  
 
+  @media (max-width: 667px) {
+  right: 50%;
+  bottom: -10%;
+  }
 `;
 
-export const NeonHeader = styled.h2`
+//----------------------
 
+/* Styling for Header */
+
+export const NeonHeader = styled.h2`
   color: #fff;
   text-shadow:
       0 0 7px #fff,
@@ -81,5 +78,9 @@ export const NeonHeader = styled.h2`
       0 0 92px #0fa,
       0 0 102px #0fa,
       0 0 151px #0fa;
-     
+      
+      @media (max-width: 667px) {
+        margin-top: 10%;
+        font-size: 130%;
+      }
  `;

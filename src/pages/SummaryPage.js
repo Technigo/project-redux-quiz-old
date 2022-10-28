@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
+
 import { ButtonNeon, NeonHeader, ButtonWrapper } from 'GlobalStyles';
 import { Summary } from '../components/Summary'
 import { quiz } from '../reducers/quiz';
 
+/* gets info from store, dispatches restart action and returns summary page */
 export const SummaryPage = () => {
   const answers = useSelector((state) => state.quiz.answers)
   const correctAnswers = answers.filter((answer) => answer.isCorrect)
@@ -22,30 +24,39 @@ export const SummaryPage = () => {
         <QuizResult>You had {correctAnswers.length}/5 correct answers</QuizResult>
 
       </SummaryWrapper>
-      <ClonedButtonWrapper>
+      <RestartButtonWrapper>
         <ButtonNeon onClick={onRestartClick} type="button"><NeonHeader>Restart</NeonHeader></ButtonNeon>
-      </ClonedButtonWrapper>
+      </RestartButtonWrapper>
     </div>
   )
 };
 
-const ClonedButtonWrapper = styled(ButtonWrapper)`
-  position: absolute;
-  top: 85%; 
-  
+// Styled Components
 
+/* restart button wrapper and media query */
+
+const RestartButtonWrapper = styled(ButtonWrapper)`
+  position: absolute;
+  top: 91%;
+ 
+  @media (max-width: 667px) {
+    bottom: -10%;
+    
+    }
 `;
+
+//----------------------
 
 const SummaryWrapper = styled.p`
   text-align: left;
   width: 60%;
   margin: 2% auto;
-  //* padding-bottom: 5%; */
 
-`
+`;
+
+//----------------------
 
 const QuizResult = styled.p`
   margin: 2%;
-  width: 
-  border: 2px solid yellowgreen; 
+  font-weight: 700;
 `;

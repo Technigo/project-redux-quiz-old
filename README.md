@@ -1,12 +1,18 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+Movie qoutes Quiz by
+Group 1: Lisa, Linda, Neah, Nina & Viktor
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The brief was to create a multiple question quiz game with Redux, using selectors and actions to access props from store.
+
+This week is a group programming project, to work as a dev team in more ways than only mob programming. To agree on quiz topic and design. 
+
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+One challange for the week have been our very diffrent working schedules. So we have used a google document for keeping track of our progress for each working session done. We have mainly worked together with mob-programming, but also with branched off manageable smaller tasks in pairs or as individual work. 
+
+We have learned valuable lessons regarding making changes during the process in both planning, design, dividing of work depending on
 
 ## View it live
 

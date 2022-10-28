@@ -1,23 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { NeonHeader } from 'GlobalStyles';
 import { SummaryPage } from '../pages/SummaryPage'
 
 export const CurrentQuestion = () => {
+  /* Selectors get info from store */
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
   const wholeStore = useSelector((store) => store)
   console.log(wholeStore);
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
+  /* Dispatch sends info to store */
   const dispatch = useDispatch();
 
   if
   (quizOver === true) {
     return <SummaryPage />;
   }
-
+  /* moves to next question regarldess of right or wrong and sends info  */
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer(
       { questionId, answerIndex }
@@ -29,13 +32,12 @@ export const CurrentQuestion = () => {
       dispatch(quiz.actions.goToNextQuestion());
     }
   }
-  // I framtiden byt ut goToNextQ till bli röd och sen lägga till en nästa-knapp
 
+  /* returns info and maps all of the questions and options from store */
   return (
     <div>
       <NeonHeader>From which movie does this quote come from?</NeonHeader>
       <QuoteWrapper>
-        {/* <Typing>{question.questionText}</Typing> */}
         <h3>{question.questionText}</h3>
       </QuoteWrapper>
       <ButtonWrapper>
@@ -48,6 +50,8 @@ export const CurrentQuestion = () => {
 }
 
 // styled components
+
+/* button wrapper, answer button and media query for answer buttons */
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -72,8 +76,19 @@ const ButtonWrapper = styled.div`
   .answerButton:hover {
     cursor: pointer;
   }
+  @media (max-width: 667px) {
+    width: 100%;
+    margin: 15% auto;
 
+    .answerButton {
+      font-size: 1.2rem;
+    }
+}
 `;
+
+//----------------------
+
+/* quote wrapper and media query for quote margin */
 
 const QuoteWrapper = styled.div`
   display: flex;
@@ -87,36 +102,8 @@ const QuoteWrapper = styled.div`
   margin-bottom: 5%;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 667px) {
+    margin-top: 10%;
+  }
  `;
-
-//----------------------------
-
-// const Typing = styled.div`
-//   width: 25ch;
-//   animation: typing 5s steps(22) infinite, blink-caret .5s step-end infinite alternate;
-//   white-space: nowrap;
-//   overflow: hidden;
-//   border-right: 3px solid;
-//   font-family: var(--font-typing);
-//   font-size: 21px;
-//   color: black;
-//   padding-top:10px;
-
-//   @keyframes typing {
-//     from {
-//       width: 0;
-//     }
-//     /* 50% {
-//       width:100%
-//     } */
-//   }
-
-//   @keyframes blink {
-//     50% {
-//       border-color: transparent
-//     }
-//   }
-//   /* @media (min-width: 668px){
-//       font-size: 30px;
-//     } */
-// `;
