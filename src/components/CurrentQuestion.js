@@ -39,7 +39,7 @@ export const CurrentQuestion = () => {
     return (
       <>
         {question.id === 5
-          ? <Image
+          ? <ClonedImage
               src={option.img}
               alt={option.value}
               onClick={() => onAnswerSubmit(question.id, index)}
@@ -77,7 +77,8 @@ const OuterWrapper = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   color: var(--lightPink-color);
@@ -91,9 +92,9 @@ background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.5));
 background-size: cover;
 max-width: 50rem;
 margin-top: 4vh;
-margin-bottom: 8%;
+margin-bottom: 4vh;
 border-radius: 8px;
-height: 96vh;
+
 `;
 
 const QuestionContainer = styled.div`
@@ -111,9 +112,26 @@ margin-top: 4rem;
 margin-bottom: 4rem;
 gap: 1rem;
 width: 90%;
-
-
 @media (min-width: 667px) {
 
 }
 `;
+
+const ClonedImage = styled(Image)`
+  transform: rotate(120deg);
+  animation: rotate-planet 10s linear infinite;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @keyframes rotate-planet
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+`
