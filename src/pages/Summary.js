@@ -35,7 +35,7 @@ export const Summary = () => {
           {finalImage()}
           <SummaryText>
             <p>Want to give it another try?</p>
-            <NextButton clickAction={restartQuiz()} content="Restart" />
+            <NextButton clickAction={restartQuiz} content="Restart" />
           </SummaryText>
         </ResultsContainer>
         <Credits>
