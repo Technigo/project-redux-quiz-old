@@ -30,10 +30,19 @@ const StyledStartPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255,105,180,0.1);
+  background-color: #33001A;
+  border-radius: 15px;
   padding: 5% 10%; 
+  -webkit-appearance: none;
+-webkit-box-shadow: -4px 4px 20px 4px rgba(0,0,0,0.6);
+box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
+-moz-box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
+
+
   p {
     text-align: center;
     line-height: 1.5rem;
+    font-size: 1rem;
+    color: white;
   }
 `

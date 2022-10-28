@@ -17,14 +17,22 @@ export const InnerWrapper = styled.div`
     grid-template-rows: auto 1fr auto;
 `
 
+export const Background = styled.div`
+background-color: rgb(220, 211, 211);
+height: 100%;
+width: 100%;
+`
+
 export const Layout = ({ children }) => (
-  <OuterWrapper>
-    <InnerWrapper>
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
-    </InnerWrapper>
-  </OuterWrapper>
+  <Background>
+    <OuterWrapper>
+      <InnerWrapper>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </InnerWrapper>
+    </OuterWrapper>
+  </Background>
 )

@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Background } from 'styledcomponents/Global';
 
 const FooterText = styled.p`
     text-align: center;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-    background-color: #33001a;
-    color: #fff;
+    color: #AF998E;
     height: 100px;
     width: 100%;
     font-weight: 400;
@@ -22,10 +22,12 @@ const FooterText = styled.p`
 
 const Footer = () => {
   return (
-    <FooterText>
+    <Background>
+      <FooterText>
           Made by Amanda Wellington, Annika Gadman, Cecilia Frånlund,
           Kristin Larsson, Linus Eriksson
-    </FooterText>
+      </FooterText>
+    </Background>
   )
 }
 export default Footer;

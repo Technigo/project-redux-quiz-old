@@ -98,7 +98,7 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
             isCorrect={wasCorrectAnswerSelected}
             onClick={() => onAnswerSubmit(question.id, index)}
             // eslint-disable-next-line react/no-array-index-key
-            key={option}
+            key={index}
             type="button"
             disabled={answersArray.length === question.id}
             style={answerButtonClass(index)}>

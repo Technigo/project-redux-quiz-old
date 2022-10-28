@@ -1,3 +1,4 @@
+/* eslint-disable */ 
 import React, { useEffect, useState } from 'react';
 import { quiz } from 'reducers/quiz';
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,7 +18,6 @@ const Timer = ({ questionId }) => {
   const [value, setValue] = useState(countdown);
   const dispatch = useDispatch();
   const tick = () => {
-    console.log('tick')
     setValue(value - 1)
     quiz.actions.setCountdown(value - 1)
   }
@@ -27,9 +27,8 @@ const Timer = ({ questionId }) => {
     if (countdown > 0) {
       timer = setInterval(tick, 1000)
     }
-
     return () => clearInterval(timer);
-  }, [countdown, value]);
+  }, [countdown]);
 
   useEffect(() => {
     if (value === 0) {
@@ -40,7 +39,7 @@ const Timer = ({ questionId }) => {
   useEffect(() => {
     dispatch(quiz.actions.resetCountdown);
     setValue(countdown)
-  }, [questionId])
+  }, [questionId, dispatch, countdown])
 
   return (
     <Counter>
