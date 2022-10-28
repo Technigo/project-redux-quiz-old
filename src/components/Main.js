@@ -26,10 +26,12 @@ const Main = () => {
         <InnerWrapper>
           <WhiteRapper>
             <CurrentQuestion />
-            <Button
-              handleClick={() => onNextQuestion()}
-              buttonText="Next question" />
-            </WhiteRapper>
+            <BtnContainer>
+              <Button
+                handleClick={() => onNextQuestion()}
+                buttonText="Next question" />
+              </BtnContainer>
+          </WhiteRapper>
         </InnerWrapper>
       </Background>
     )
@@ -70,6 +72,12 @@ background-color: #eee8d2;
 opacity: 0.9;
 padding: 20px;
 border-radius: 5px;
+`
+
+const BtnContainer = styled.div`
+display: flex;
+justify-content: flex-end;
+margin-right: 15px;
 `
 
 export default Main;
