@@ -78,6 +78,7 @@ export const Container = styled.section`
 
 export const Buttons = styled.button`
     font-size: 20px;
+    color: black;
     font-weight: 200;
     letter-spacing: 1px;
     padding: 13px 50px 13px;
@@ -103,6 +104,11 @@ export const Buttons = styled.button`
     &:hover::after {
         top: 0px;
         left: 0px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
     }
 
 `
