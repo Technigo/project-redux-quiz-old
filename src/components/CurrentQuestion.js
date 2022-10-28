@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { QuizEnd } from './QuizEnd'
 import { Question } from './Question'
 
-export const CurrentQuestion = () => {
+const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const quizEnd = useSelector((state) => state.quiz.quizOver)
 
@@ -12,8 +12,10 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       {!quizEnd ? <Question /> : <QuizEnd />}
     </div>
   )
-}
+};
+
+export default CurrentQuestion;

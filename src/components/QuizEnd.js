@@ -9,9 +9,9 @@ export const QuizEnd = () => {
   console.log(selectedAnswer)
   return (
     <div>
-      <h1>This quiz is over! Please leave now.</h1>
+      <h1>Thanks for playing!</h1>
       {selectedAnswer.map((item) => {
-        return <p key={item.answer}>{item.isCorrect ? 'rätt' : 'fel'} {item.answer}</p>
+        return <p key={item.answer}>{item.isCorrect ? 'Correct' : 'Wrong'} {item.answer}</p>
       })}
       <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
     </div>

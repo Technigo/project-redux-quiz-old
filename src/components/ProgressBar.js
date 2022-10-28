@@ -5,7 +5,15 @@ import styled from 'styled-components'
 export const ProgressContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  
+
+  & progress {
+    color: red;
+    height: 3rem;
+    width: 80%;
+    transition: all 500ms ease;
+  }
 `
 
 export const ProgressBar = () => {

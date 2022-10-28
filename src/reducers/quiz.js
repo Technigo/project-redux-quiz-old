@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
   { id: 1,
     questionText: 'Which book is the show Game of Thrones based on?',
-    options: ['The prisoner of Azkaban', 'A Song of Ice and Fire', 'Eragon', 'House of the Dragon'],
+    options: ['The Prisoner of Azkaban', 'A Song of Ice and Fire', 'Eragon', 'House of the Dragon'],
     correctAnswerIndex: 1 },
   { id: 2,
     questionText: 'Who is Reginald Kenneth Dwight better known as?',
