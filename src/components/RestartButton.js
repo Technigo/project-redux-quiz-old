@@ -1,7 +1,24 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Buttons } from './Styling/GlobalStyles'
+import styled from 'styled-components/macro';
+
+export const StyledRestartButton = styled.a`
+    position: relative;
+    background-color: #E3182B;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 1.25vw;
+    letter-spacing: 0.1vw;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 50px;
+    top: 20px; 
+
+    :hover {
+    background-color: #9d1f14;
+  }
+`
 
 const RestartButton = () => {
   const dispatch = useDispatch()
@@ -11,12 +28,13 @@ const RestartButton = () => {
 
   return (
     <div>
-      <Buttons
+      <StyledRestartButton
         type="button"
         onClick={onRestart}>
             RESTART
-      </Buttons>
+      </StyledRestartButton>
     </div>
   )
 }
-export default RestartButton
+
+export default RestartButton;

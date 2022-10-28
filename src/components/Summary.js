@@ -7,25 +7,31 @@ import RestartButton from './RestartButton'
 import { Background, QuestionContainer, Headers, Illustration } from './Styling/GlobalStyles'
 
 const SummaryContainer = styled.div`
+width: 55%;
 display: flex;
 flex-direction: column; 
 justify-content: center;
 text-align: center;   `
 
+const Score = styled.p`
+font-family: 'Montserrat';
+font-size: 1.75vw;
+font-weight: bold;
+color: #E3182B;
+margin: 0;
+`
+
 const Citat = styled.p` 
 position: relative;
 align-self: center;
-width: 60%;
 text-align: center;
 color: black;
 font-family: 'Montserrat';
-line-height: 3.25vw;
-font-size: 15px;`
-
-const Score = styled.p`
-font-family: 'Montserrat';
-font-size: 20px;
 font-weight: bold;
+line-height: 2 vw;
+font-size: 1.75vw;
+color: #E3182B;
+margin: 10px 0;
 `
 
 const Summary = () => {
@@ -41,10 +47,10 @@ const Summary = () => {
         <Headers>Summary</Headers>
         <SummaryContainer>
           {lover && (
-            <><Score className="Summary-result">Wow! You got {result} correct answers out of 5!</Score><Citat> I can see that is sparkle christmas lights in your eyes</Citat></>
+            <><Score className="Summary-result">Ho ho ho! You got {result} correct answers out of 5!</Score><Citat> I can really see the sparkle of Christmas lights in your eyes!</Citat></>
           )}
           {grinch && (
-            <><Score>You got {result} correct answers out of 5..</Score><Citat> oh do we have a grinch here?</Citat></>
+            <><Score>You got {result} correct answers out of 5.</Score><Citat>Oh dear! Do we have a grinch among us?</Citat></>
           )}
         </SummaryContainer>
         <Illustration src={Cookie} alt="Ginger Cookie" />

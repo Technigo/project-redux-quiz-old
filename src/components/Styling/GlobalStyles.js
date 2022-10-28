@@ -35,19 +35,17 @@ export const Headers = styled.div`
   width: 60%;
   text-align: center;
   color: #E3182B;
-  padding: 5%; 
+  padding: 2.5%; 
   font-family: 'Montserrat';
   font-size: 3vw;
   font-weight: bold;
   line-height: 3.25vw;
-
-  white-space: wrap;
 `
 
 export const Questions = styled.div`
   position: relative;
   align-self: center;
-  width: 55%;
+  width: 500px;
   text-align: center;
   color: #E3182B;
   padding: 5%; 
@@ -59,19 +57,24 @@ export const Questions = styled.div`
 `
 
 export const Buttons = styled.a`
-    text-decoration: none;
-    position: relative;
-    align-self: center;
-    background-color: #E3182B;
-    color: white;
-    font-family: 'Montserrat';
-    font-size: 2vw;
-    font-weight: bold;
-    padding: 15px 30px;
-    width: 20%;
-    text-align: center;
-    border-radius: 12px;
-    top: 20px; 
+  text-decoration: none;
+  position: relative;
+  align-self: center;
+  background-color: #E3182B;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 2vw;
+  letter-spacing: 0.1vw;
+  font-weight: bold;
+  padding: 15px 30px;
+  width: 20%;
+  text-align: center;
+  border-radius: 50px;
+  top: 20px; 
+
+  :hover {
+    background-color: #9d1f14
+  }
 `
 export const Illustration = styled.img`
 position: fixed;

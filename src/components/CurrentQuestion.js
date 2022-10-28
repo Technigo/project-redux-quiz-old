@@ -1,11 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components/macro';
 import RestartButton from './RestartButton'
 import Summary from './Summary'
 import { Background, QuestionContainer, Questions } from './Styling/GlobalStyles'
 import ProgressBar from './Progressbar'
 import Options from './Options'
+
+export const OptionsContainer = styled.div`
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+`
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -26,13 +35,14 @@ export const CurrentQuestion = () => {
       <Background>
         <QuestionContainer>
           <Questions>{question.questionText}</Questions>
-          {question.options.map((option, answerIndex) => (
-            <Options
-              key={option.id}
-              option={option}
-              answerIndex={answerIndex} />
-          ))}
-
+          <OptionsContainer>
+            {question.options.map((option, answerIndex) => (
+              <Options
+                key={option.id}
+                option={option}
+                answerIndex={answerIndex} />
+            ))}
+          </OptionsContainer>
           <Link to="/">
             <RestartButton />
           </Link>
