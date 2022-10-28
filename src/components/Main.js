@@ -11,7 +11,9 @@ import { Button } from './Buttons';
 const Main = () => {
   const dispatch = useDispatch()
   const quizOver = useSelector((store) => store.quiz.quizOver);
+  const currentQuestion = useSelector((state) => state.quiz.currentQuestionIndex)
   console.log(quizOver)
+  console.log(currentQuestion)
 
   const onRestart = () => {
     dispatch(quiz.actions.restart());
@@ -28,9 +30,16 @@ const Main = () => {
           <WhiteWrapper>
             <CurrentQuestion />
             <BtnContainer>
-              <Button
+              {currentQuestion < 4 && (<Button
                 handleClick={() => onNextQuestion()}
                 buttonText="Next question" />
+              )}
+              {currentQuestion === 4 && (
+                <Button
+                  handleClick={() => onNextQuestion()}
+                  buttonText="Show results" />
+              )}
+
             </BtnContainer>
             <Progressbar />
           </WhiteWrapper>
@@ -52,42 +61,61 @@ const Main = () => {
     )
   }
 }
+export default Main;
 
 const Background = styled.main`
   background-image: url(${background});
   background-size: cover;
-  height: 60vh;
+  min-height: 430px;
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+
+  /* @media (min-width: 1025px){ 
+    min-height: 530px;
+  } */
+`
 
 const InnerWrapper = styled.div`
   width: 95vw;
 
   @media (min-width: 668px) and (max-width: 1024px) {
-    width: 60vw;
+    width: 70vw;
+    min-width: 550px;
   }
 
   @media (min-width: 1025px){ 
-    width: 50vw;
+    width: 60vw;
+    min-width: 670px;
   }
+
 `
 
 const WhiteWrapper = styled.div`
   background-color: #eee8d2;
   opacity: 0.9;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   margin-top: 5vh;
   margin-bottom: 5vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 1025px){ 
+    min-height: 520px;
+  }
 `
 
 const BtnContainer = styled.div`
   display: flex;
+
+
+@media (min-width: 668px) and (max-width: 1024px) {
   justify-content: flex-end;
   margin-right: 15px;
+}
 `
 
-export default Main;

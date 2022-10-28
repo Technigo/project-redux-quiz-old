@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 const Summary = () => {
   const selectedAnswers = useSelector((store) => store.quiz.answers)
@@ -10,30 +11,51 @@ const Summary = () => {
 
   return (
     <div>
-      <h1>Summary</h1>
+      <StyledHeadtitle>Summary</StyledHeadtitle>
       {selectedAnswers.map((singleAnswer) => {
         if (singleAnswer.isCorrect) {
           return (
-            <>
+            <StyledSummaryQ>
               <h2>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</h2>
-              <p>Your answer: {singleAnswer.answer}</p>
-              <p>That&apos;s correct! 👏⭐️ </p>
-            </>
+              <StyledCorrectAnswer>⭐️ {singleAnswer.answer}</StyledCorrectAnswer>
+            </StyledSummaryQ>
           )
         } else {
           return (
-            <>
+            <StyledSummaryQ>
               <h2>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</h2>
-              <p>Your answer: {singleAnswer.answer}</p>
-              <p>That&apos;s wrong... ❌</p>
-              <p>The correct answer is: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</p>
-            </>
+              <p>❌ {singleAnswer.answer}</p>
+              <StyledCorrectAnswer>The correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledCorrectAnswer>
+            </StyledSummaryQ>
           )
         }
       })}
-      <h2>Your total score is {numberOfCorrectAnswers.length}/{numberOfQuestions.length}.</h2>
+      <StyledScoreBoard>Your total score is {numberOfCorrectAnswers.length}/{numberOfQuestions.length}</StyledScoreBoard>
     </div>
   )
 }
 
 export default Summary;
+
+const StyledCorrectAnswer = styled.p`
+  font-weight: 700;
+`
+const StyledSummaryQ = styled.div`
+  margin: 20px 0;
+
+  p {
+    margin: 5px 0;
+  }
+`
+
+const StyledScoreBoard = styled.h2`
+  margin: 20px 0;
+  background-color: #f26a3c;
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+`
+
+const StyledHeadtitle = styled.h1`
+  text-align:center;
+`

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -49,7 +49,7 @@ export const CurrentQuestion = () => {
     } else if (index === userAnswerIndex) {
       return 'wronganswer'
     } else {
-      return 'default'
+      return 'default-disabled'
     }
   }
 
@@ -76,19 +76,32 @@ export const CurrentQuestion = () => {
 
 const QuestionHeader = styled.h1`
   font-size: 18px;
+  padding: 20px;
+  text-align: center;
 
   @media (min-width: 668px) and (max-width: 1024px) {
-    font-size: 20px;
+    text-align: left;
+    font-size: 25px;
   }
 
   @media (min-width: 1025px){ 
-    font-size: 25px;
+    text-align: left;
+    font-size: 30px;
+    padding: 60px;
   }
 `
 
 const ButtonContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(1, 200px);
+  justify-content: center;
   margin: 15px;
   gap: 10px;
-`
+
+  @media (min-width: 668px){
+    grid-template-columns: repeat(2, 250px);
+  }
+  @media (min-width: 1025px){
+    grid-template-columns: repeat(2, 300px);
+  }
+  `
