@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Background } from 'styledcomponents/Global';
 
 const FooterText = styled.p`
     text-align: center;
@@ -22,12 +21,10 @@ const FooterText = styled.p`
 
 const Footer = () => {
   return (
-    <Background>
-      <FooterText>
-          Made by Amanda Wellington, Annika Gadman, Cecilia Frånlund,
-          Kristin Larsson, Linus Eriksson
-      </FooterText>
-    </Background>
+    <FooterText>
+        Made by Amanda Wellington, Annika Gadman, Cecilia Frånlund,
+        Kristin Larsson, Linus Eriksson
+    </FooterText>
   )
 }
 export default Footer;
