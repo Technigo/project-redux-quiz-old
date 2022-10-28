@@ -5,16 +5,29 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who is Phoebe`s on-and-off wedding planner?', options: ['Monica', 'Ross', 'Mike', 'Rachel'], correctAnswerIndex: 0 },
+  { id: 1, questionText: 'Who is Phoebe`s on-and-off wedding planner?', options: ['Monica', 'Ross', 'Mike', 'Rachel'], correctAnswerIndex: 0, stringAnswer: 'Monica' },
   { id: 2,
-    questionText: 'Why are Ross and Rachel late to Phoebe`s birthsday party? ',
+    questionText: 'Why are Ross and Rachel late to Phoebe`s birthday party? ',
     options:
   ['They got lost ', 'They had sex', ' They locked themself out of the apartment, with Emma inside ', 'They had to work late'
   ],
-    correctAnswerIndex: 2 },
-  { id: 3, questionText: 'After the duck definitely doesn not throw up in Joe`s bed, what does he find under Reachel`s pillow?', options: ['Sleepy pills', 'massager', ' "dirty" book  ', ' pigama'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'Who is the second friend to find out about Monica and Chandler?', options: ['Joey ', 'Rachel', 'Phoebe', 'Ross'], correctAnswerIndex: 1 },
-  { id: 5, questionText: 'Why does Rachel gladly agree to Phoebe setting up Ross with her friend Bonnie?', options: ['She thinks Bonnie is bold', 'She is over Ross', 'She has a new boyfriend', ' She moved out to Paris'], correctAnswerIndex: 0 }
+    correctAnswerIndex: 2,
+    stringAnswer: 'They locked themself out of the apartment, with Emma inside' },
+  { id: 3,
+    questionText: 'After the duck definitely doesn`t throw up in Joey`s bed, what does he find under Rachel`s pillow?',
+    options: ['Sleepy pills', 'Massager', ' "Dirty" book  ', 'Pyjamas'],
+    correctAnswerIndex: 2,
+    stringAnswer: ' "Dirty" book ' },
+  { id: 4,
+    questionText: 'Who is the second friend to find out about Monica and Chandler?',
+    options: ['Joey ', 'Rachel', 'Phoebe', 'Ross'],
+    correctAnswerIndex: 1,
+    stringAnswer: 'Rachel' },
+  { id: 5,
+    questionText: 'Why does Rachel gladly agree to Phoebe setting up Ross with her friend Bonnie?',
+    options: ['She thinks Bonnie is bold', 'She is over Ross', 'She has a new boyfriend', ' She moved out to Paris'],
+    correctAnswerIndex: 0,
+    stringAnswer: 'She thinks Bonnie is bold' }
 ]
 
 const initialState = {
@@ -92,18 +105,28 @@ export const quiz = createSlice({
 
       const changeBgColor = () => {
         const buttons = document.getElementsByClassName('correctBtn')
-        const color = 'green'
+        const color = '#7FB77E'
         for (let i = 0; i < buttons.length; i++) {
           buttons[i].style.background = color;
+          buttons[i].disabled = true;
+        }
+      };
+
+      const disableButtons = () => {
+        const buttons = document.getElementsByClassName('wrongBtn')
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = true;
         }
       };
 
       if (question.correctAnswerIndex === answerIndex) {
         store.correctAnswer = true
         changeBgColor()
+        disableButtons()
       } else {
         store.correctAnswer = false
         changeBgColor()
+        disableButtons()
       }
     },
 

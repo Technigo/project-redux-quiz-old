@@ -13,8 +13,7 @@ export const GlobalStyles = createGlobalStyle`
 
    body {
         background-image: url('https://w0.peakpx.com/wallpaper/245/56/HD-wallpaper-amigos-central-perk-serie.jpg');
-        background-size: cover;
-       
+        background-size: cover;       
    }
 `
 
@@ -22,23 +21,41 @@ export const Container = styled.section`
     display: flex;
     flex-direction: column;
     margin: 10%;
-    padding: 5%;
+    padding: 2%;
     align-items: center;
     background: #f0ede7c4;
+    text-align: center;
+
+    a {
+        color: black;
+    }
+
+    .progress-bar {
+        text-align: center;
+    }
+
+    progress {
+        accent-color: #ffDC00;
+    }
         
  
     h1 {
         font-size: 1.1rem;
-        color: #2a1513;
+        color: black;
         margin: 10% 0;
         text-align: center;
     }
 
 
-    img {
+    .logo {
         width: 70vw;
         height: auto;
         padding: 3%;
+    }
+
+    .symbols {
+        width: 50px;
+        margin-bottom: 20px;
     }
 
     @media (min-width: 768px) {
@@ -48,7 +65,7 @@ export const Container = styled.section`
             margin: 5%;
         }
 
-        img {
+        .logo {
             width: 30vw
         }
 
@@ -77,6 +94,7 @@ export const StartButton = styled.button`
     cursor: pointer;
     position: relative;
     background-color: rgba(0, 0, 0, 0);
+    margin: 20px;
 
     &::after {
     content: "";
@@ -99,18 +117,50 @@ export const StartButton = styled.button`
 export const QuestionWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 5%;
+    align-items: center;
+    padding: 2%;
 
     button:focus {
-        background-color: darkgrey;
+        background-color: #42a2db;
     }
 
     .correctBtn {
-    background-color: lightgrey;
+    //background-color: lightgrey;
     }
 
     .wrongBtn {
-    background-color: lightgrey;
+    //background-color: lightgrey;
+    }
+
+    #noSymbol {
+        opacity: 0
     }
   
+`
+
+export const AnswerButtons = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    @media (min-width: 1024px) {
+        grid-template-columns: 1fr 1fr;
+
+}
+
+`
+export const SummaryContainer = styled.div`
+    text-align: left;
+
+    #score {
+        font-family: "Roboto"
+    }
+
+`
+export const SummaryWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border-bottom: 0.3px solid #a0a0a0;
+
 `
