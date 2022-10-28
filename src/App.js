@@ -17,5 +17,3 @@ export const App = () => {
     </Provider>
   );
 }
-
-// {store.quiz.quizOver ? <Summary /> : <CurrentQuestion />}

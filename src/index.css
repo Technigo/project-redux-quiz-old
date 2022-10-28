@@ -1,3 +1,10 @@
+
+:root {
+  --white-color:#fafafa;
+  --lightPink-color:#ffe9e3;
+  --lightPurple-color: rgb(196, 193, 224);
+  --darkPurple-color: rgb(52, 46, 110);
+}
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat&display=swap');
 
 body {
@@ -5,13 +12,6 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background: linear-gradient(rgba(82, 81, 81, 0.5), rgba(0, 0, 0, 0.062));
-background-size: cover;
-background-repeat: no-repeat;
-width: 100vw;
-height: 50vh;
-position: relative;
-display: flex;
 }
 
 code {
@@ -21,4 +21,12 @@ code {
 
 h1 {
   font-family: 'Audiowide', cursive;
+  color: var(--white-color);
+  width: 90%;
+  font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2rem;
 }

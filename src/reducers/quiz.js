@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import { createSlice } from '@reduxjs/toolkit'
-/* import mars from '../images/mars.jpg'
+import mars from '../images/mars.jpg'
 import venus from '../images/venus.jpg'
 import mercury from '../images/mercury.jpg'
-import neptun from '../images/neptun.jpg' */
+import neptune from '../images/neptune.jpg'
 // Change these to your own questions!
 const questions = [
   { id: 1,
@@ -21,12 +21,12 @@ const questions = [
   { id: 4,
     questionText: 'How many times bigger than Earth is Jupiter?',
     options: ['Somewhat bigger', 'Not much bigger', 'Alot bigger', 'Crazy much bigger'],
-    correctAnswerIndex: 3 }/* ,
+    correctAnswerIndex: 3 },
   { id: 5,
     questionText: 'Choose which of the following planets is Mercury?',
-    options: [`${venus}`, `${mars}`, `${mercury}`, `${neptun}`
+    options: [`${venus}`, `${mars}`, `${mercury}`, `${neptune}`
     ],
-    correctAnswerIndex: 2 } */
+    correctAnswerIndex: 2 }
 ]
 const initialState = {
   questions, /* can also be written questions: questions, */
