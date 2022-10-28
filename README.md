@@ -13,4 +13,4 @@ We reached several stretch goals, but if we had more time we would have worked m
 
 ## View it live
 
-Link to deployed project: 
+Link to deployed project: https://quiz-ai.netlify.app
