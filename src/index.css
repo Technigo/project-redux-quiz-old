@@ -7,6 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
@@ -21,11 +22,11 @@ h1 {
 
 .default {
   background-color: #F26A3A;
-  padding: 11px;
+  padding: 5px;
   border-radius: 15px;
-  border: 2px solid #EEE8D2;
+  border: 2px solid #F4AF33;
   font-family: 'Quicksand', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700; 
 }
 
@@ -35,7 +36,7 @@ h1 {
 
 .rightanswer {
   background-color: #F26A3A;
-  padding: 11px;
+  padding: 5px;
   border-radius: 15px;
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
@@ -46,12 +47,52 @@ h1 {
 .wronganswer {
   border: red solid 4px;
   background-color: #F26A3A;
-  padding: 11px;
+  padding: 5px;
   border-radius: 15px;
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   font-weight: 700; 
 }
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  .default {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+  .rightanswer {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+  .wronganswer {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+}
+
+
+@media (min-width: 1025px){
+  .default {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+  .rightanswer {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+  .wronganswer {
+    padding: 11px;
+    font-size: 20px;
+    font-weight: 700; 
+  }
+}
+
+
+
 
 /* Orange #F26A3A
    Light blue #A5D8C5

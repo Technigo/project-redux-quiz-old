@@ -55,7 +55,7 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h1>Question: {question.questionText}</h1>
+      <QuestionHeader>Question: {question.questionText}</QuestionHeader>
       <ButtonContainer>
         {question.options.map((option, index) => {
           return (
@@ -73,6 +73,18 @@ export const CurrentQuestion = () => {
     </div>
   )
 }
+
+const QuestionHeader = styled.h1`
+  font-size: 18px;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 1025px){ 
+    font-size: 25px;
+  }
+`
 
 const ButtonContainer = styled.div`
   display: grid;

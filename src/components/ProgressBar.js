@@ -15,6 +15,14 @@ const ProgressBar = () => {
 export default ProgressBar;
 
 export const CounterStyling = styled.h1`
- font-size: 30px;
- font-family: vendana;
+ font-size: 20px;
+ font-family: 'Quicksand', sans-serif;
+
+ @media (min-width: 668px) and (max-width: 1024px) {
+  font-size: 22px;
+ }
+
+ @media (min: 1024px) {
+  font-size: 25px;
+ }
 `;

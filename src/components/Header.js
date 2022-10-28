@@ -10,13 +10,33 @@ export const Header = () => {
 };
 
 // Styling of header
+
 export const HeaderWrapper = styled.header`
-  top: 30%;
-  left: 30%;
   height: 20vh;
+  padding-top: 3rem;
   background-color: #F26A3A;
   border: 10px dotted #A5D8C5;
-  /*padding: 5px 40px 5px 20px;*/
   text-align: center;
-  font-size: 3rem;
-`
+  font-size: 0.8rem;
+
+/* TABLET */
+@media (min-width: 668px) and (max-width: 1024px) {
+  padding-top: 2rem;
+  height: 20vh;
+  font-size: 1.4rem;
+
+} 
+
+/* DESKTOP */
+@media (min-width: 1025px) {
+  height: 20vh;
+  padding-top: 1rem;
+  background-color: #F26A3A;
+  border: 10px dotted #A5D8C5;
+  text-align: center;
+  font-size: 2.2rem;
+
+} 
+
+`;
+

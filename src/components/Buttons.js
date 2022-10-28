@@ -11,11 +11,19 @@ export const ButtonStyling = styled.button`
 background-color: #A5D8C5;
 padding: 11px;
 border-radius: 15px;
-border: 2px solid #EEE8D2;
+border: 2px solid #F19A66;
 font-family: 'Quicksand', sans-serif;
-font-size: 20px;
+font-size: 16px;
 font-weight: 700;
 &:hover {
   opacity: 0.8;
 }
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  font-size: 20px;
+}
+@media (min-width: 1025px) {
+  font-size: 20px;
+}
+
 `

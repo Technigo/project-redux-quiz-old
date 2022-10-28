@@ -54,34 +54,40 @@ const Main = () => {
 }
 
 const Background = styled.main`
-background-image: url(${background});
-position: relative;
-width: 100vw;
-height:80vh;
-background-size: cover;
-margin: auto;
+  background-image: url(${background});
+  background-size: cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const InnerWrapper = styled.div`
-  position: absolute;
-  left: 25%;
-  width: 50vw;
-  height: 50vh;
-  margin-top: 3rem;
-  padding: 3rem;
+  width: 95vw;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    width: 60vw;
+  }
+
+  @media (min-width: 1025px){ 
+    width: 50vw;
+  }
 `
 
 const WhiteWrapper = styled.div`
-background-color: #eee8d2;
-opacity: 0.9;
-padding: 20px;
-border-radius: 5px;
+  background-color: #eee8d2;
+  opacity: 0.9;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 100%;
 `
 
 const BtnContainer = styled.div`
-display: flex;
-justify-content: flex-end;
-margin-right: 15px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
 `
 
 export default Main;
