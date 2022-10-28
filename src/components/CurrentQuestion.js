@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
 import styled from 'styled-components'
-import { ButtonStyling } from './Buttons';
+import { ButtonRight, ButtonStyling } from './Buttons';
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -30,7 +30,7 @@ export const CurrentQuestion = () => {
   }
 
   // The line if (answer) return seems to make sure that it is only possible
-  // to answe the question once.
+  // to answer the question once.
   const onAnswerSubmit = (questionId, answerIndex) => {
     if (!answer) {
       setHasAnswered(true)
@@ -62,19 +62,20 @@ export const CurrentQuestion = () => {
               options
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option}
-              type="button"
-              className={classCheck(index)}>
+              type="button">
               {option}
             </ButtonStyling>
           )
         })}
+        {/* {userAnswerIndex === 'number' ? (<ButtonRight />) :} */}
       </ButtonContainer>
     </div>
   )
 }
 
 const ButtonContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px;
+  gap: 10px;
 `

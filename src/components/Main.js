@@ -24,10 +24,12 @@ const Main = () => {
     return (
       <Background img src={background} alt="70s pattern">
         <InnerWrapper>
-          <CurrentQuestion />
-          <Button
-            handleClick={() => onNextQuestion()}
-            buttonText="Next question" />
+          <WhiteRapper>
+            <CurrentQuestion />
+            <Button
+              handleClick={() => onNextQuestion()}
+              buttonText="Next question" />
+            </WhiteRapper>
         </InnerWrapper>
       </Background>
     )
@@ -61,6 +63,13 @@ const InnerWrapper = styled.div`
   height: 50vh;
   margin-top: 3rem;
   padding: 3rem;
+`
+
+const WhiteRapper = styled.div`
+background-color: #eee8d2;
+opacity: 0.9;
+padding: 20px;
+border-radius: 5px;
 `
 
 export default Main;
