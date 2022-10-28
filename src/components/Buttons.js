@@ -8,7 +8,7 @@ export const Button = ({ buttonText, handleClick }) => {
 };
 
 export const ButtonStyling = styled.button`
-background-color: ${(props) => (props.options ? '#F26A3A' : '#A5D8C5')};
+background-color: #A5D8C5;
 padding: 11px;
 border-radius: 15px;
 border: 2px solid #EEE8D2;

@@ -40,11 +40,11 @@ h1 {
   font-family: 'Quicksand', sans-serif;
   font-size: 20px;
   font-weight: 700; 
-  border: green dotted 3px;
+  border: green solid 4px;
 }
 
 .wronganswer {
-  border: red dotted 3px;
+  border: red solid 4px;
   background-color: #F26A3A;
   padding: 11px;
   border-radius: 15px;

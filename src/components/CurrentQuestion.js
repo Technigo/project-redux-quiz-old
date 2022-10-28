@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz';
 import styled from 'styled-components'
-import { ButtonRight, ButtonStyling } from './Buttons';
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -70,7 +69,6 @@ export const CurrentQuestion = () => {
             </button>
           )
         })}
-        {/* {userAnswerIndex === 'number' ? (<ButtonRight />) :} */}
       </ButtonContainer>
     </div>
   )
