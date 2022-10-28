@@ -23,3 +23,11 @@ code {
 .question-title {
   font-family: 'Lobster', cursive;
 }
+
+.correct {
+  background-color: rgb(104, 147, 106);
+}
+
+.incorrect {
+  background-color: rgb(139, 58, 58);
+}

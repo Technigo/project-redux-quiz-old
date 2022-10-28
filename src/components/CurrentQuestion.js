@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { AnswerContainer, Wrapper } from 'styledComponents/containers';
+import { AnswerContainer, Wrapper } from 'styledComponents/Containers';
 import { StyledButton } from 'styledComponents/StyledButton';
 
 export const CurrentQuestion = () => {
@@ -54,6 +54,8 @@ export const CurrentQuestion = () => {
         {question.options.map((option, index) => {
           return (
             <StyledButton
+              isCorrect={answer && index === question.correctAnswerIndex}
+              isIncorrect={answer && index !== question.correctAnswerIndex}
               onClick={() => {
                 submitAnswer(question.id, index);
                 setDisabledStyledButton(true);
@@ -67,6 +69,7 @@ export const CurrentQuestion = () => {
           );
         })}
       </AnswerContainer>
+
       {answer && (
         <div>
           <p>{`The answer is ${statusAnswer()}`}</p>
