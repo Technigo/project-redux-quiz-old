@@ -9,37 +9,89 @@ import mars from '../images/mars.png'
 const questions = [
   { id: 1,
     questionText: 'Which is the brightest comet in the solar system?',
-    options: ["Hayley's commet", "Herschel's commet", "Ganymed's commet", "Ether's commet"],
+    options: [
+      {
+        value: "Hayley's comet"
+      },
+      {
+        value: "Herschel's comet"
+      },
+      {
+        value: "Ganymed's comet"
+      },
+      {
+        value: "Ether's comet"
+      }
+    ],
     correctAnswerIndex: 0 },
   { id: 2,
     questionText: 'What name was given to the invisible material once thought to occupy all space?',
-    options: ['Black mud', 'Ether', 'Black hole', 'Tenebrosus'],
+    options: [
+      {
+        value: 'Black mud'
+      },
+      {
+        value: 'Ether'
+      },
+      {
+        value: 'Black hole'
+      },
+      {
+        value: 'Tenebrosus'
+      }
+    ],
     correctAnswerIndex: 1 },
   { id: 3,
     questionText: 'The sun is made up of mostly which gas?',
-    options: ['Neon', 'Helium', 'Oxygen', 'Hydrogen'],
+    options: [
+      {
+        value: 'Neon'
+      },
+      {
+        value: 'Hydrogen'
+      },
+      {
+        value: 'Oxygen'
+      },
+      {
+        value: 'Helium'
+      }
+    ],
     correctAnswerIndex: 1 },
   { id: 4,
     questionText: 'Approximately how many times bigger than Earth is Jupiter?',
-    options: ['15 times', '23 times', '5 times', '11 times'],
-    correctAnswerIndex: 3 },
-  { id: 5,
-    questionText: 'Choose which of the following planets is Mercury?',
     options: [
       {
-        name: 'Venus',
+        value: '15 times'
+      },
+      {
+        value: '23 times'
+      },
+      {
+        value: '5 times'
+      },
+      {
+        value: '11 times'
+      }
+    ],
+    correctAnswerIndex: 3 },
+  { id: 5,
+    questionText: 'Which of the following planets is Mercury?',
+    options: [
+      {
+        value: 'Venus',
         img: `${venus}`
       },
       {
-        name: 'Mercury',
+        value: 'Mercury',
         img: `${mercury}`
       },
       {
-        name: 'Mars',
+        value: 'Mars',
         img: `${mars}`
       },
       {
-        name: 'Neptune',
+        value: 'Neptune',
         img: `${neptune}`
       }
     ],

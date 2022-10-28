@@ -41,13 +41,13 @@ export const CurrentQuestion = () => {
         {question.id === 5
           ? <Image
               src={option.img}
-              alt={option}
+              alt={option.value}
               onClick={() => onAnswerSubmit(question.id, index)}
-              key={option} />
+              key={option.value} />
           : <StyledButton
             onClick={() => onAnswerSubmit(question.id, index)}
-            key={option}
-            type="button"><p>{option}</p>
+            key={option.value}
+            type="button"><p>{option.value}</p>
           </StyledButton>}
       </>)
   })
@@ -72,7 +72,7 @@ export const CurrentQuestion = () => {
 }
 
 const OuterWrapper = styled.div`
-  background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0)),
+  background: linear-gradient(rgba(7, 7, 7, 0.7), rgb(0, 0, 0, 0)),
   url(${universe});
   background-position: center;
   background-repeat: no-repeat;
@@ -87,7 +87,7 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.0));
+background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.5));
 background-size: cover;
 max-width: 50rem;
 margin-top: 4vh;
