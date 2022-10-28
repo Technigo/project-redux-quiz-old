@@ -4,7 +4,8 @@ import quizBackground from 'assets/quizbackground.jpg';
 
 export const OuterWrapper = styled.section`
   background-image: url(${quizBackground});
-  height: 100vh;
+  background-attachment:fixed;
+  min-height: 100vh;
   background-size: cover;
   background-position: top center;
   display: flex;
@@ -15,11 +16,11 @@ export const OuterWrapper = styled.section`
   position: relative;
 
   @media (min-width: 600px) and (max-width: 1023px) {
-    max-height: 100vh;
+
   }
 
   @media (min-width: 1024px) {
-    max-height: 100vh;
+  
   }
 `;
 
@@ -32,7 +33,6 @@ export const InnerWrapper = styled.div`
   border-radius: 20px;
   text-align: center;
   padding: 2% 5%;
-  /* margin: 20% 10%; */
   margin: 150px 10% 0;
   box-shadow: 10px 8px 26px 3px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: 10px 8px 26px 3px rgba(0, 0, 0, 0.42);

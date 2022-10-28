@@ -66,6 +66,5 @@ Thurs 23.00 27/10/2022 (Kartika & Maria)
 - Changed folder names so it looked more similar to each other
 - Icon hippo 😎🦛
 - Please check if there is anything else we need to do (especially try the media querry once more)
-- Fixed height for outer wrapper so that it will not scroll & cover the whole page
 - Meta Tags
 - The gifs worked well, BUT the 2nd gif (for 3 correct answer) appears to be smaller size than the others. Reason is because it is a landscape size while others are portrait. So, if you feel like that is a big problem, feel free to find a portrait gif that fits more for this page. Otherwise....nu kör vi då
