@@ -8,21 +8,11 @@ import { Image } from './ReusableStyles';
 const Summary = () => {
   const allAnswers = useSelector((state) => state.quiz.answers)
   const allQuestions = useSelector((state) => state.quiz.questions);
-  let temp;
 
   const listOfQuestions = allQuestions.map((question) => {
     return <h3 key={question.id}>{question.questionText}</h3>
   })
 
-  const imageAnswerText = allAnswers[4].answer.name;
-  const imageAnswerImage = allAnswers[4].answer.img;
-  const imageAnswerCorrect = () => {
-    if (allAnswers[4].isCorrect === true) {
-      temp = 'Correct'
-    } else {
-      temp = 'Wrong'
-    }
-  }
   const answerList = allAnswers.map((answer) => {
     return (
       <div>
@@ -31,6 +21,15 @@ const Summary = () => {
       </div>
     )
   })
+
+  const corretAnswers = allQuestions.map((question) => {
+    return <p>{question}</p>
+  })
+  // The three lines below solves the problem of displaying the answer on the last question
+  // that includes an image.
+  const imgeAnswerResult = useSelector((state) => state.quiz.answers[4].isCorrect);
+  const imageAnswerText = allAnswers[4].answer.name;
+  const imageAnswerImage = allAnswers[4].answer.img;
 
   return (
     <SummaryPage>
@@ -50,7 +49,7 @@ const Summary = () => {
         {listOfQuestions[4]}
         <div>
           <p>{imageAnswerText}</p>
-          <p>{temp}</p>
+          {imgeAnswerResult ? <p style={{ color: 'green' }}>Correct</p> : <p style={{ color: 'red' }}>Wrong</p>}
           <ClonedImage src={imageAnswerImage} alt="sdg" />
         </div>
       </QuestionsAndAnswers>
