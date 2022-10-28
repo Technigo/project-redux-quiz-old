@@ -21,6 +21,9 @@ export const InnerWrapper = styled.section`
 `
 
 export const OuterWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-image: url(${mobileBG2});
   background-size: cover;
   background-repeat: no-repeat;
@@ -38,4 +41,16 @@ export const OuterWrapper = styled.div`
 export const MainQuestion = styled.h1`
   color: white;
   font-family: 'Courier Prime', monospace;
+`
+
+export const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: auto;
+  background-color: rgb(40, 40, 40, 0.5);
+  border-radius: 15px;
+  padding: 5% 0%;
 `

@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 // Change these to your own questions!
 const questions = [
   { id: 1,
-    questionText: 'Whats the name of this character from Stephen Kings famous story?',
+    questionText: 'What’s the name of this character from Stephen Kings famous story?',
     options: ['Clown', 'Pennywise', 'It', 'Richie Tozier'],
     correctAnswerIndex: 1 },
   { id: 2,

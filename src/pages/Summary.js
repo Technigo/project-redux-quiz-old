@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux';
 import { NextButton } from 'components/NextButton';
 import { quiz } from 'reducers/quiz';
-import { OuterWrapper, Devices } from '../components/MainStyles';
+import { OuterWrapper, Devices, PageContainer } from '../components/MainStyles';
 import HappyPumpkin from '../images/pumpkinHappy.png'
 import SadPumpkin from '../images/pumpkinSad.png'
 
@@ -60,10 +60,9 @@ const InnerWrapper = styled.section`
   }
 `
 
-const ResultsContainer = styled.div`
-  width: 50%;
+const ResultsContainer = styled(PageContainer)`
+  width: 100%;
   height: auto;
-  background-color: red;
 `
 
 const Score = styled.div`
@@ -85,13 +84,12 @@ const SummaryText = styled.div`
   justify-content: center;
   width: 70%;
   text-align: center;
-  
 
   @media ${Devices.tablet} {
     width: 80%;
   }                                                                                                                                                                        
-
 `
+
 const Credits = styled.div`
   width: 80%;
   text-align: center;
