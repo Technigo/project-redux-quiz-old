@@ -25,33 +25,35 @@ export const Welcome = () => {
               </div>
             </div>
           </TextContainer>
-          <h4>Developed and designed by</h4>
           <FooterContainer>
-            <Link
-              href="https://www.linkedin.com/in/linda-malm-7aa8866b/"
-              target="_blank">
+            <div>
+              <h4>Developed and designed by</h4>
+              <Link
+                href="https://www.linkedin.com/in/linda-malm-7aa8866b/"
+                target="_blank">
           Linda Malm
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/tina-bruce-9b1a0813a/"
-              target="_blank">
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/tina-bruce-9b1a0813a/"
+                target="_blank">
           Tina Bruce
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/jesshansson/"
-              target="_blank">
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/jesshansson/"
+                target="_blank">
           Jessica Hansson
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/emil-bergvik/"
-              target="_blank">
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/emil-bergvik/"
+                target="_blank">
           Emil Bergvik
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/ceciliaraden/"
-              target="_blank">
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/ceciliaraden/"
+                target="_blank">
           Cecilia Rådén
-            </Link>
+              </Link>
+            </div>
           </FooterContainer>
         </Container>
       </ClonedInnerWrapper>
@@ -102,6 +104,8 @@ width: 80%;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+margin-top: 20%;
+
 @media ${Devices.laptop} {
 flex-direction: row;
 }

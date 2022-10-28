@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 export const ProgressBar = () => {
@@ -8,10 +9,13 @@ export const ProgressBar = () => {
   });
 
   return (
-
-    <p className="QuestionCounter">
+    <QuestionCounter className="QuestionCounter">
         Question: {currentQuestion.id} / {questionTotal.length}
-    </p>
-
+    </QuestionCounter>
   );
 };
+
+const QuestionCounter = styled.p`
+  font-size: 1.3rem;
+`
+

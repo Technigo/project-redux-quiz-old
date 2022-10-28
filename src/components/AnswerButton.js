@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
 import { Devices } from './MainStyles';
 
-export const AnswerButton = ({ index, option }) => {
+export const AnswerButton = ({ index, option, setGoToNextButton }) => {
   const dispatch = useDispatch();
   const [activeBtn, setActiveBtn] = useState(false);
 
@@ -20,6 +20,7 @@ export const AnswerButton = ({ index, option }) => {
       questionId, answerIndex
     }));
     setActiveBtn(true);
+    setGoToNextButton(true);
   }
 
   const correctAnswer = usersAnswer && index === question.correctAnswerIndex
@@ -37,7 +38,7 @@ export const AnswerButton = ({ index, option }) => {
 const StyledButton = styled.button`
   background-color: #FFCD42;
   border: #FFCD42;
-  width: 200px;
+  width: 300px;
   border-radius: 10px;
   color: black;
   font-weight: bold;
