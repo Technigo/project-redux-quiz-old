@@ -37,4 +37,5 @@ export const OuterWrapper = styled.div`
 
 export const MainQuestion = styled.h1`
   color: white;
+  font-family: 'Courier Prime', monospace;
 `

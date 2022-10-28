@@ -44,6 +44,7 @@ const StyledButton = styled.button`
   font-size: 25px;
   padding: 20px;
   margin: 10px;
+  font-family: 'Special Elite', cursive;
 
   &.correct {
     background-color: green;   

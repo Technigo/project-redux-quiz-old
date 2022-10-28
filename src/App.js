@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { Welcome } from 'pages/Welcome';
-// import { Summary } from 'pages/Summary';
+import { Summary } from 'pages/Summary';
 import { Question } from 'pages/Question';
 
 const reducer = combineReducers({
@@ -20,7 +20,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Welcome />} />
           <Route path="/quiz" element={<Question />} />
-          {/* <Route path="/result" element={<Summary />} /> */}
+          <Route path="/result" element={<Summary />} />
         </Routes>
       </BrowserRouter>
     </Provider>

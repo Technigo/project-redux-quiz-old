@@ -9,8 +9,6 @@ export const Question = () => {
   return (
     <OuterWrapperQuestion>
       <CurrentQuestion />
-      <p>test</p>
-      <p>test</p>
     </OuterWrapperQuestion>
   )
 }
