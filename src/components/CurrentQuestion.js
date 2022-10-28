@@ -169,7 +169,7 @@ const AnswerButton = styled.button`
   border-radius: 5px;
   font-weight: 600;
   min-height: 3vw;
-  height: 3vh;
+  height: 5vh;
 `
 
 const ButtonWrapper = styled.div`
