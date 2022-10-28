@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/jsx-indent-props */
@@ -11,6 +12,7 @@ import { quiz } from 'reducers/quiz'
 import { ProgBar } from './ProgressBar'
 import Summary from './Summary'
 import universe from '../images/universe.jpg'
+import { StyledButton, Image } from './ReusableStyles.js'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -37,17 +39,15 @@ export const CurrentQuestion = () => {
     return (
       <>
         {question.id === 5
-          ? <ImageWrapper>
-            <Image
-              src={option}
+          ? <Image
+              src={option.img}
               alt={option}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option} />
-          </ImageWrapper>
           : <StyledButton
             onClick={() => onAnswerSubmit(question.id, index)}
             key={option}
-            type="button">{option}
+            type="button"><p>{option}</p>
           </StyledButton>}
       </>)
   })
@@ -59,7 +59,9 @@ export const CurrentQuestion = () => {
           ? <Summary />
           : <>
             <ProgBar />
-            <h1>Question: {question.questionText}</h1>
+            <QuestionContainer>
+              <h1>{question.questionText}</h1>
+            </QuestionContainer>
             <ButtonContainer>
               {allAnswers}
             </ButtonContainer>
@@ -80,53 +82,36 @@ const OuterWrapper = styled.div`
   justify-content: center;
   color: var(--lightPink-color);
 `
-const Image = styled.img`
-  width: 50%;
-  border-radius: 8px;
-`
-
-const ImageWrapper = styled.div`
-background-color: black;`
 
 const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0));
+background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.0));
 background-size: cover;
 max-width: 50rem;
-margin-top: 4%;
+margin-top: 4vh;
 margin-bottom: 8%;
 border-radius: 8px;
+height: 96vh;
 `;
-const StyledButton = styled.button`
-height: 5rem;
-background-color: rgba(124, 115, 230, 0.75);
-font-size: 1rem;
-border-radius: 20px;
-border: none;
-cursor: pointer; 
-color: var(--white-color);
-@media (min-width: 1024px) {
-  :hover {
-    background-color: rgb(124, 115, 230);
-  }
-}
-`
 
-/* const Title = styled.h3`
-width: 90%;
-font-size: 1.8rem;
-text-align: center;
-`; */
+const QuestionContainer = styled.div`
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+`
 
 const ButtonContainer = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 margin-top: 4rem;
 margin-bottom: 4rem;
-/* gap: 1rem; */
+gap: 1rem;
 width: 90%;
+
 
 @media (min-width: 667px) {
 
