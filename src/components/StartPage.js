@@ -19,8 +19,9 @@ export const StartPage = () => {
         <OuterWrapperStartpage>
             <InnerWrapperStartpage>
             <Start>
-              <h1>Start quiz here!</h1>
-              <button onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Start Quiz</button>
+              <h1>6 questions</h1>
+              <h1>about random stuff</h1>
+              <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
             </Start>
             </InnerWrapperStartpage>
             </OuterWrapperStartpage>
@@ -34,10 +35,27 @@ export const StartPage = () => {
 const Start = styled.div`
 display: flex;
 flex-direction: column;
-border: solid green 2px;`
+align-items: center;
+`
+
+const StartButton = styled.button`
+  padding: 15px;
+  color: #4F4350;
+  border-radius: 15px;
+  font-size: 18px;
+  border: none;
+  margin: 10px;
+  width: 150px;
+  background-color:#D9B2DE;
+
+  &:hover {
+  background-color:  #C371D2; 
+  color: black;
+  }
+`
 
 export const InnerWrapperStartpage = styled.div`
-  background-color: pink;
+  background-color: #A27DA7;
   width: 60%;
   height: 100vh;
   margin: 0 auto;

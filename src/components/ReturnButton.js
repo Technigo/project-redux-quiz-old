@@ -25,6 +25,7 @@ border: none;
 margin: 10px;
 width: 150px;
 background-color:#D9B2DE;
+margin-top: 10px;
 
 &:hover {
   background-color:  #C371D2; 

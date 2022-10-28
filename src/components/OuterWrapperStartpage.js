@@ -5,9 +5,9 @@ export const OuterWrapperStartpage = (props) => {
   const { children } = props;
 
   const OuterWrapper = styled.div`
-    background-color: pink;
+    background-color: #A27DA7;
     width: 100vw;
-    border: solid 3px blue;
+    height: auto;
 `
 
   return (

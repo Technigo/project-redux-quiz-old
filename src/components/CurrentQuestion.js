@@ -41,7 +41,7 @@ export const CurrentQuestion = () => {
        <OuterWrapperQuestion>
         <InnerWrapperQuestion>
         <QuestionWrapper>
-        <Counter>{question.id} / 5</Counter>
+        <Counter>{question.id} / 6</Counter>
         <Text>Question: {question.questionText}</Text>
         </QuestionWrapper>
 
@@ -85,7 +85,7 @@ width: 100%;
 `
 
 const InnerWrapperQuestion = styled.div`
-background-color: beige;
+background-color: #FFE4FF;
 width: 80%;
 // height: 100vh;
 margin: 0 auto;
@@ -98,7 +98,7 @@ justify-content: center;
 const QuestionWrapper = styled.div `
 width: 100%;
 height: 45vh;
-background-color: #FFD06F;
+background-color: #A27DA7;
 margin: 0px;
 align-items: center;
 display: flex;
@@ -113,11 +113,11 @@ background-color: beige;
 width: 50px;
 height: 50px;
 display: flex;
-align-item: center;
+align-items: center;
 justify-content: center;
-
 `
 const Text = styled.h1`
+color: whitesmoke;
 // border: solid blue 2px;
 width: 100%;
 `
@@ -125,7 +125,7 @@ width: 100%;
 const AnswerWrapper = styled.div `
 width: 80%;
 height: 60vh;
-background-color: beige;
+background-color: #FFE4FF;
 flex-direction: column;
 justify-content: center;
 display: flex;
@@ -139,11 +139,11 @@ display: flex;
 
 `
 const QuestionButtonContainer = styled.div`
-display: grid;
-grid-template-columns: repeat(1, 1fr);
-gap: 20px;
-width: 500px;
-box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  width: 500px;
+  box-sizing: border-box;
 
 @media (max-width: 667px) {
   width: 150px;
@@ -152,12 +152,12 @@ box-sizing: border-box;
 
 .disabled-true{
   font-size: 20px;
-border: none;
-border-radius: 10px;
- width: 100%;
- height: 100%;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   background-color: lightgrey;
-  color: white;
+  color: whitesmoke;
   padding: 20px;
   margin: 0px;
   }
@@ -168,8 +168,8 @@ border-radius: 10px;
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  background-color: pink;
-  color: white;
+  background-color: #78557D;
+  color: whitesmoke;
   padding: 20px;
   margin: 0px;
   }
@@ -181,10 +181,10 @@ border-radius: 10px;
   }
 `
 const Test = styled.div`
-align-items: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 

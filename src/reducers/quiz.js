@@ -21,7 +21,11 @@ const questions = [
   { id: 5,
     questionText: 'A new born baby contains how much water? ',
     options: ['1/4', '2/4', '3/4', '4/4'],
-    correctAnswerIndex: 2 }
+    correctAnswerIndex: 2 },
+  { id: 6,
+    questionText: 'Lorum ipsum lorum ipsum',
+    options: ['a', 'b', 'c', 'd'],
+    correctAnswerIndex: 4 }
 ]
 
 const initialState = {
