@@ -1,7 +1,8 @@
 import React from 'react'
-/* import Styled from 'styled-components' */
+import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { StyledButton } from './ReusableStyles.js'
 
 const RestartButton = () => {
   const dispatch = useDispatch();
@@ -10,9 +11,13 @@ const RestartButton = () => {
   }
 
   return (
-    <button type="button" onClick={handleRestart()}>Restart</button>
+    <StyledButtonCloned type="button" onClick={() => handleRestart()}><p>Restart</p></StyledButtonCloned>
   )
 }
 
 export default RestartButton
+
+const StyledButtonCloned = styled(StyledButton)`
+width: 7rem;
+`
 
