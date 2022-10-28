@@ -5,10 +5,6 @@ import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
 
 export const AnswerButton = ({ index, option }) => {
-  // TINAS ADDITION:
-  const [check, setcheck] = useState('default');
-  // END
-
   const dispatch = useDispatch();
 
   // Gets all question in the store
@@ -21,22 +17,11 @@ export const AnswerButton = ({ index, option }) => {
     dispatch(quiz.actions.submitAnswer({
       questionId, answerIndex
     }))
-    // TINAS ADDITION:
-    if (question.correctAnswerIndex === answerIndex) {
-      setcheck('correct')
-    } else if (question.correctAnswerIndex !== answerIndex) {
-      setcheck('wrong')
-    } else {
-      setcheck('default')
-    }
-    // END
   }
 
   return (
     <StyledButton
-      // TINAS ADDITION:
-      className={check}
-      // END
+      className={}
       onClick={() => onAnswerSubmit(question.id, index)}
       disabled={usersAnswer}
       type="button">{option}
