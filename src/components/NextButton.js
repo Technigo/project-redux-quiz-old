@@ -12,23 +12,33 @@ export const NextButton = () => {
     dispatch(quiz.actions.goToNextQuestion(question))
   }
   return (
-    <Button onClick={() => goToNextQuestion(question.id)} type="button"><b>Next question</b></Button>
+    <Button onClick={() => goToNextQuestion(question.id)} type="button"><b>Next</b></Button>
   );
 }
 
 const Button = styled.button`
-padding: 15px;
-color: #4F4350;
-border-radius: 15px;
-font-size: 18px;
-border: none;
-margin: 10px;
-width: 150px;
-background-color:#D9B2DE;
+  padding: 8px;
+  color: whitesmoke;
+  border-radius: 10px;
+  font-size: 11px;
+  border: solid 1px #A27DA7;
+  // margin: 7px 5px 0px 0px;
+  margin: auto;
+  margin-top: 10px;
+  width: 118px;
+  background-color:#D9B2DE;
+  &:hover {
+    background-color: #C371D2; 
+    color: whitesmoke;
+  }
 
-&:hover {
-  background-color:  #C371D2; 
-  color: black;
-}
-
+@media (min-width: 668px) {
+  padding: 15px;
+  color: whitesmoke;
+  border-radius: 15px;
+  font-size: 18px;
+  border: none;
+  margin: 10px;
+  width: 150px;
+  }
 `

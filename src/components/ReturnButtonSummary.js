@@ -17,15 +17,16 @@ export const ReturnButton = () => {
 }
 
 const Button = styled.button`
-padding: 8px;
-color: whitesmoke;
+padding: 10px;
+align-items: center;
+justify-content: center;
+text-align: center;
+color: #67456C;
 border-radius: 10px;
-font-size: 11px;
-border: solid 1px #A27DA7;
-// margin: 7px 0px 0px 20px;
- margin: auto;
- margin-top: 10px;
-width: 118px;
+font-size: 12px;
+margin: 5px 0 0 10px;
+border: none;
+width: auto;
 background-color:#D9B2DE;
 &:hover {
   background-color: #C371D2; 
@@ -34,11 +35,11 @@ background-color:#D9B2DE;
 
 @media (min-width: 1025px) {
 padding: 15px;
-color: whitesmoke;
+color: #4F4350;
 border-radius: 15px;
 font-size: 18px;
 border: none;
-margin: 10px;
-width: 150px;
+margin: 20px;
+width: auto;
 }
 `

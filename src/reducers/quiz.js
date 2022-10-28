@@ -24,7 +24,7 @@ const questions = [
     correctAnswerIndex: 2 },
   { id: 6,
     questionText: 'Which country in the world has the most islands?',
-    options: ['Finland', 'Finland', 'Greece', 'Sweden'],
+    options: ['Indonesia', 'Finland', 'Greece', 'Sweden'],
     correctAnswerIndex: 3 }
 ]
 

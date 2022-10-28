@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { ReturnButton } from 'components/ReturnButton';
+import { ReturnButton } from 'components/ReturnButtonSummary';
 // import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
 // import { getLatestVariableDefinition } from 'eslint-plugin-react/lib/util/variable';
@@ -14,7 +14,8 @@ const Summary = () => {
 
   return (
     <OuterWrapperSummary>
-    <InnerWrapperSummary>
+     <ReturnButton />
+     <InnerWrapperSummary>
         <BigText>You got {result.length}/{summaryAnswers.length} answers correct!</BigText>
         <CardContainer>
         {summaryAnswers.map((results) => (
@@ -38,20 +39,13 @@ const Summary = () => {
           </Card>
         ))}
            </CardContainer>
-        <ReturnButton />
       </InnerWrapperSummary>
       </OuterWrapperSummary>
   );
 };
 
 const OuterWrapperSummary = styled.div `
-background: repeating-linear-gradient(
-  to right,
-  #f6ba52,
-  #f6ba52 10px,
-  #ffd180 10px,
-  #ffd180 20px
-);
+background: transparent;
 width: 100%;
 height: 100%;
 padding-top: 10px;
@@ -62,14 +56,23 @@ const InnerWrapperSummary = styled.div`
   height: auto;
   margin: 0 auto;
   text-align: center;
+
+  @media (max-width: 1023px) {
+    width: 80%;
+  }
 `
 const CardContainer = styled.div`
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(1, 1fr);
   margin-top: 30px; 
+  margin-bottom: 20px; 
 
-@media (min-width: 1025px) {
+  @media (min-width: 668px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+@media (min-width: 1024px) {
   grid-template-columns: repeat(3, 1fr);
 }
 `
@@ -78,7 +81,7 @@ const Card = styled.div `
   background-color: #D9B2DE;
   text-align: left;
   border-radius: 3%;
-  padding: 30px;
+  padding: 5px 20px 5px 20px;
   box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
@@ -94,6 +97,7 @@ h3 {
   font-size: 24px;
   display: flex;
 flex-direction: row;
+color: #69476E;
 
 }
 
@@ -103,7 +107,8 @@ h4{
 
 p{
   margin: 10px 0 30px 0;
-  font-family: 'Helvetica Neue';
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 `
 const Div = styled.div `
@@ -113,14 +118,18 @@ justify-content: space-between;
 
 const BigText = styled.h1`
   background-color: #C371D2;
-font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
   text-align: center;
   margin: 20px;
   padding: 30px;
+  color: #FFE7FF;
   box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
+
+  @media (max-width: 667px) {
+    font-size: 20px;
+  }
+
 `
 
 const Counter = styled.h2`
@@ -133,6 +142,11 @@ monospace;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #69476E;
+
+  @media (max-width: 668px) {
+  width: 40px;
+  height: 40px;
 `
 
 const IconCorrect = styled.p `

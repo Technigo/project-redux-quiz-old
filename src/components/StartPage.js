@@ -64,7 +64,7 @@ h1 {
   padding: 5px 15px 5px 15px;
 }
 
-  @media (min-width: 668px) and (max-width: 1052px) {
+  @media (min-width: 668px) {
     height: 450px;
     width: 450px;
 
@@ -80,33 +80,32 @@ h1 {
       padding: 5px 55px 5px 55px;
     }
   }
-
-  @media (min-width: 1053px) {
-
-  }
 `
 
 const StartButton = styled.button`
-  padding: 7px;
-  color: #4F4350;
-  border-radius: 15px;
-  font-size: 18px;
-  border: none;
-  width: 150px;
+padding: 7px;
+color: #4F4350;
+border-radius: 10px;
+margin-top: 6px;
+font-size: 13px;
+font-weight: 600;
+border: solid 1px #4F4350;
+width: 133px;
   background-color:#D9B2DE;
   position: relative;
   top: 70px;
 
   &:hover {
-  background-color:  #533258; 
+  background-color: #533258; 
   color: white;
   }
 
-  @media (min-width: 668px) and (max-width: 1024px) {
+  @media (min-width: 668px) {
   position: relative;
-  top: 150px;
+  top: 180px;
   padding: 14px;
   }
+
 `
 
 export const InnerWrapperStartpage = styled.div`

@@ -14,7 +14,7 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const store = useSelector((state) => state.quiz)
   const result = useSelector((state) => state.quiz.questions.length)
-  const id = useSelector(state => state.quiz.questions[state.quiz.currentQuestion].id)
+  // const id = useSelector(state => state.quiz.questions[state.quiz.currentQuestion].id)
 
   console.log('store', store)
   console.log('result', result) //funkar
@@ -57,7 +57,6 @@ export const CurrentQuestion = () => {
         </QuestionWrapper>
 
       <AnswerWrapper>
-      <Test>
       <QuestionButtonContainer>
         {question.options.map((option, index) => {
           return (
@@ -73,7 +72,6 @@ export const CurrentQuestion = () => {
           )
         })}
     </QuestionButtonContainer>
-    </Test> 
       <div className="nav-button-wrapper">
       <ReturnButton /> <NextButton />
       </div>
@@ -91,14 +89,12 @@ export const CurrentQuestion = () => {
 } 
 
 const OuterWrapperQuestion = styled.main`
-background: repeating-linear-gradient(
-  to right,
-  #f6ba52,
-  #f6ba52 10px,
-  #ffd180 10px,
-  #ffd180 20px
-);
+background: transparent;
+padding-top: 15px;
 width: 100%;
+@media (min-width: 1025px){
+  padding-top: 0;
+}
 `
 
 const InnerWrapperQuestion = styled.div`
@@ -110,7 +106,9 @@ align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-
+@media (min-width: 1025px){
+  height: 100vh;
+}
 `
 
 const QuestionWrapper = styled.div `
@@ -123,45 +121,53 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: center;
-
 @media (max-width: 667px) {
-  height: 40vh;
+  height: 30vh;
 }
 `
 
-const Counter = styled.p`
-border-radius: 50%;
-background-color: #FFE7FF;
-width: 50px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-`
+// const Counter = styled.p`
+// border-radius: 50%;
+// background-color: #FFE7FF;
+// width: 50px;
+// height: 50px;
+// display: flex;
+// align-items: center;
+// justify-content: center;
+// `
 const Text = styled.h1`
 color: whitesmoke;
-// border: solid blue 2px;
 width: 100%;
+font-size: 18px;
+
+@media (min-width: 1025px) {
+  height: auto;
+  font-size: 26px;}
 `
 
 const AnswerWrapper = styled.div `
-width: 80%;
-height: 60vh;
-background-color: #FFE4FF;
-flex-direction: column;
-justify-content: center;
-display: flex;
-padding-top: 25px;
-// border: solid 2px red;
-.nav-button-wrapper{
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-@media (max-width: 667px) {
+  width: 80%;
+  height: 60vh;
+  background-color: #FFE4FF;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  padding-top: 25px;
+  box-sizing: border-box;
+
+  .nav-button-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  @media (max-width: 667px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 200px;
   .nav-button-wrapper{
     display: flex;
@@ -169,73 +175,57 @@ padding-top: 25px;
     width: 200px;
   }
 }
-
 `
 const QuestionButtonContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  width: 700px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+  width: auto;
   box-sizing: border-box;
-  padding-bottom: 20px;
+  @media (min-width: 1025px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 700px;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+  }
 
   .disabled-true {
-    font-size: 20px;
+    font-size: 13px;
     border: none;
     border-radius: 10px;
-    width: 100%;
+    width: 160px;
     height: 100%;
     background-color: #D9B2DE;
     color: whitesmoke;
-    padding: 45px;
+    padding: 13px;
     margin: 0px;
     }
 
   .disabled-false {
-    font-size: 18px;
+    font-size: 13px;
     font-weight: 600;
     border: solid 1px #A152B1;
     border-radius: 10px;
-    width: 100%;
+    width: 160px;
     height: 100%;
     background-color: #C371D2;
     color: whitesmoke;
-    padding: 45px;
+    padding: 13px;
     margin: 0px;
     cursor: pointer;
     &:hover {
       background-color:  #A152B1; 
       color: whitesmoke;
     }
-    @media (max-width: 667px) {
-      width: 200px;
-      .disabled-true{
-        font-size: 13px;
-        border-radius: 13px;
-        width: 75%;
-        padding: 15px;
-      }
-    
-      .disabled-false{
-        font-size: 13px;
-        border-radius: 13px;
-        width: 75%;
-        padding: 15px;
-      }
-
-    @media (min-width: 667px) {
-      grid-template-columns: repeat(2, 1fr);
-      width: auto;
+    @media (min-width: 1025px) {
+      width: 100%;
+      font-size: 15px;
+      padding: 31px;
     }
   }
-  }
-`
-const Test = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
 
+`
 
 
