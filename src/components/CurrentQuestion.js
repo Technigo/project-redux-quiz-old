@@ -7,10 +7,17 @@ import { NextButton } from 'components/NextButton'
 import { ReturnButton } from 'components/ReturnButton'
 import Summary from 'components/Summary'
 import styled from 'styled-components/macro';
+import ProgressBar from 'components/Progressbar';
+
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const store = useSelector((state) => state.quiz)
+  const result = useSelector((state) => state.quiz.questions.length)
+  const id = useSelector(state => state.quiz.questions[state.quiz.currentQuestion].id)
+
+  console.log('store', store)
+  console.log('result', result) //funkar
 
   const dispatch = useDispatch();
 
@@ -21,6 +28,7 @@ export const CurrentQuestion = () => {
   const answer = useSelector((state) => 
   state.quiz.answers.find((a) => ( a.questionId === question.id)
   ));
+  
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer(
@@ -35,14 +43,17 @@ export const CurrentQuestion = () => {
     }
   }
 
+  const bgcolor = '#6a1b9a'
+  let completed =Math.round((question.id/result) *100)
+
   return (
   <>
     {!store.quizOver ? (
        <OuterWrapperQuestion>
         <InnerWrapperQuestion>
-        <QuestionWrapper>
-        <Counter>{question.id} / 6</Counter>
-        <Text>{question.questionText}</Text>
+        <QuestionWrapper>        
+        <ProgressBar bgcolor={bgcolor} completed={completed} />
+        <Text>Question: {question.questionText}</Text>
         </QuestionWrapper>
 
       <AnswerWrapper>
