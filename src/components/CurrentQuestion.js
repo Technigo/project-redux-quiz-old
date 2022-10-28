@@ -1,7 +1,4 @@
 /* eslint-disable indent */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable no-unused-vars */
@@ -45,9 +42,10 @@ export const CurrentQuestion = () => {
               onClick={() => onAnswerSubmit(question.id, index)}
               key={option.value} />
           : <StyledButton
-            onClick={() => onAnswerSubmit(question.id, index)}
-            key={option.value}
-            type="button"><p>{option.value}</p>
+              onClick={() => onAnswerSubmit(question.id, index)}
+              key={option.value}
+              type="button">
+                <p>{option.value}</p>
           </StyledButton>}
       </>)
   })
@@ -91,8 +89,8 @@ align-items: center;
 background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.5));
 background-size: cover;
 max-width: 50rem;
-margin-top: 4vh;
-margin-bottom: 4vh;
+/* margin-top: 4vh;
+margin-bottom: 4vh; */
 border-radius: 8px;
 
 `;

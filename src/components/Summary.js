@@ -1,26 +1,29 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable max-len */
 /* eslint-disable no-plusplus */
-/* eslint-disable no-unused-vars */
+
 import React from 'react'
 import styled from 'styled-components/macro'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import RestartButton from './RestartButton';
 import { Image } from './ReusableStyles';
 
 const Summary = () => {
   const allAnswers = useSelector((state) => state.quiz.answers)
   const allQuestions = useSelector((state) => state.quiz.questions);
-  console.log('all.answers', allAnswers);
-  console.log('all.questions', allQuestions);
 
-  const qsNAs = [];
+  // Here the questions and answers are merged together in an array so we can map over it below.
+  const summaryArray = [];
   for (let i = 0; i <= 3; i++) {
-    qsNAs.push({ isCorrect: allAnswers[i].isCorrect, answer: allAnswers[i].answer.value, question: allQuestions[i] })
+    summaryArray.push(
+      { isCorrect: allAnswers[i].isCorrect,
+        answer: allAnswers[i].answer.value,
+        question: allQuestions[i] }
+    )
   }
-  console.log('Qs & As', qsNAs);
-  const results = qsNAs.map((object) => {
+  console.log('Qs & As', summaryArray);
+
+  const results = summaryArray.map((object) => {
     const rightAnswer = object.question.correctAnswerIndex;
     return (
       <QnAWrapper key={object.question.id}>
@@ -35,12 +38,12 @@ const Summary = () => {
     )
   })
 
-  // The four lines below solves the problem of displaying the answer on the last question
+  // The three lines below solves the problem of displaying the answer on the last question
   // that includes an image. It's not pretty but it works.
   const imgeAnswerResult = useSelector((state) => state.quiz.answers[4].isCorrect);
   const imageAnswerText = allAnswers[4].answer.value;
-  const imageAnswerImage = allAnswers[4].answer.img;
   const imageQuestion = useSelector((state) => state.quiz.questions[4]);
+
   return (
     <SummaryPage>
       <h1>You rock-et that quiz!!</h1>
@@ -49,15 +52,13 @@ const Summary = () => {
         <div>
           <h3>{imageQuestion.questionText}</h3>
           {imgeAnswerResult
-            ? <>
-              <ClonedImage src={imageAnswerImage} alt="sdg" />
-              <p style={{ color: 'green' }}>Correct</p>
-            </>
+            ? <p style={{ color: 'green' }}>Correct!</p>
             : <>
               <p style={{ color: 'red' }}>Wrong, you chose "{imageAnswerText}"</p>
               <p>This is Mercury 👇</p>
-              <ClonedImage src={imageQuestion.options[1].img} alt="Mercury" />
+
             </>}
+          <ClonedImage src={imageQuestion.options[1].img} alt="Mercury" />
         </div>
       </QuestionsAndAnswers>
       <FinalCitate>
@@ -89,5 +90,4 @@ margin-bottom: 2rem;
 const ClonedImage = styled(Image)`
   width: 8rem;
   margin: 1rem;
-
 `

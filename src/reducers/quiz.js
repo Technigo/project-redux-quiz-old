@@ -1,11 +1,11 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import { createSlice } from '@reduxjs/toolkit'
 import venus from '../images/venus.png'
 import neptune from '../images/neptune.png'
 import mercury from '../images/mercury.png'
 import mars from '../images/mars.png'
-// Change these to your own questions!
+
+// The questions are stored as object to make it possible to map through all values
+// and add images to the last question
 const questions = [
   { id: 1,
     questionText: 'Which is the brightest comet in the solar system?',
