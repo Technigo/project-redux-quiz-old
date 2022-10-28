@@ -1,10 +1,8 @@
-
 .correctFeedback {
-  background:black;
+  background: black;
   min-height: 60px;
   position: absolute;
   top: 200px;
-
 }
 
 .wrongFeedback {
@@ -14,10 +12,9 @@
   top: 200px;
 }
 
-.noAnswerFeedback{
+.noAnswerFeedback {
   background: red;
   min-height: 60px;
   position: absolute;
   top: 200px;
 }
-

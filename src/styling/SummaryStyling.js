@@ -30,9 +30,8 @@ p{
 }
 
 .table-div{
-  margin-left: 2vw;
+  margin-left: 5em;
 }
-
 
 td{
   width: 80vw;
@@ -41,16 +40,16 @@ td{
   //Iphone SE
 @media (max-width:388px){
 .table-div{
-width: 100%;
+  width: 100%;
 }
 
 td{
-max-width: 368px;
+  max-width: 368px;
 }
 
 .question-p{
   min-width: 136px;
-}
+  }
 }
 
 @media (min-width: 768px) {

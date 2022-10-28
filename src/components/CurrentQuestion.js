@@ -59,7 +59,6 @@ export const CurrentQuestion = () => {
           <AnswersWrapper>
             {question.options.map((option, index) => {
               return (
-
                 <AnswerButton
                   onClick={() => onAnswerSubmit(question.id, index)}
                   className={!answer ? 'answerbutton' : index === question.correctAnswerIndex ? 'correct' : 'wrong'}
@@ -68,7 +67,6 @@ export const CurrentQuestion = () => {
                   type="button">{option}
                   <Feedback className={!answer ? 'noAnswerFeedback' : index === question.correctAnswerIndex ? 'correctFeedback' : 'wrongFeedback'} />
                 </AnswerButton>
-
               )
             })}
           </AnswersWrapper>
@@ -86,15 +84,15 @@ export const CurrentQuestion = () => {
             <NextBtn
               onClick={() => dispatch(quiz.actions.goToNextQuestion())}
               type="button"
-              disabled={!answer}>
+              disabled={!answer}
+              className="hidden">
               <img
                 src={nextBtn}
                 width="40"
                 height="40"
                 viewBox="0 0 24 24"
-                fill="white"
-                alt="next question"
-                className="" />
+                fill="black"
+                alt="next question" />
             </NextBtn>
           </ButtonWrapper>
           <ProgressBar />
@@ -121,7 +119,10 @@ export const NextBtn = styled.button`
   display: flex;
   flex-wrap: wrap;
   border: 0;
-  `
+  :disabled {
+    display:none;
+  }
+`
 
 const AnswersWrapper = styled.div`
   display: flex;
@@ -158,25 +159,22 @@ export const ImageWrapper = styled.div`
 export const QuestionImage = styled.img`
   width: 100%;
   height: auto;
-  object-fit: cover;
-  
+  object-fit: cover;  
 `
 
 const AnswerButton = styled.button`
-color: black;
-width: 140px;
-max-width: 800px;
-border-radius: 5px;
-/* border-color: pink; */
-/* box-shadow: 5px 5px 10px orange; */
-font-weight: 600;
-min-height: 3vw;
+  color: black;
+  width: 140px;
+  max-width: 800px;
+  border-radius: 5px;
+  font-weight: 600;
+  min-height: 3vw;
+  height: 3vh;
 `
 
 const ButtonWrapper = styled.div`
-display: flex;
-justify-content: center;
-column-gap: 5vw;
-margin-top: 20px;
-width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 5vw;
+  width: 100%;
 `

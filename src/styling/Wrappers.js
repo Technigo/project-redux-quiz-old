@@ -15,7 +15,6 @@ export const InnerWrapper = styled.div`
   margin: 0 auto;  
   flex-direction: column;
   align-items: center;
-  justify-content:center;
-  /* height: 100vh; */
+  justify-content: center;
   background-color: #821C1C;
 `

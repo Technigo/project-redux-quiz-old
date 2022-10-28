@@ -27,7 +27,7 @@ const questions = [
     questionText: 'What is the name of the main character in The Playlist?',
     options: ['Daniel', 'Mark', 'Sophie', 'Antonella'],
     backdropImg: playList,
-    audio: 'https://open.spotify.com/embed/track/2V65y3PX4DkRhy1djlxd9p?si=b3b6055290114f79',
+    audio: 'https://open.spotify.com/embed/track/067fl5HYjYtQkb3LK11bYI?si=c3e848b05d3f41be',
     correctAnswerIndex: 0
   },
   {

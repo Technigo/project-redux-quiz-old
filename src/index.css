@@ -124,10 +124,12 @@ table {
   border-spacing: 0;
 }
 
-
 @font-face {
   font-family: 'Retroday';
   font-family: 'VintageRoundPersonalUse';
   src: url('assets/Retroday.otf') format('opentype');
   src: url('assets/VintageRoundPersonalUse-0W1Z4.otf') format('opentype');
+}
+body {
+  background-color: #821c1c;
 }

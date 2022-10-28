@@ -34,24 +34,23 @@ export const Summary = () => {
             <h1>The End!</h1>
             <div className="credits-wrapper">
               {answers.map((answer) => (
-                <div
+                <SummaryContainer
                   className="table-div"
                   key={answer.question.id}>
                   <tr>
-                    <td><p className="question-p">{answer.question.questionText}</p></td>
-                    <td><p className="answer-p">{answer.answer}</p></td>
+                    <td><p className="question-p">Question {answer.question.id}</p></td>
                     <td>
                       <span className="isCorrect-span"> {answer.isCorrect ? ' ✅' : ' ❌'}
                       </span>
                     </td>
+                    {/* <td><p className="answer-p">{answer.answer}</p> </td> */}
                   </tr>
-
-                </div>
+                </SummaryContainer>
               ))}
             </div>
-            <div>
-              {`${nrOfCorrect.length}`}/{nrOfQuestion.length} correct
-            </div>
+            <CorrectContainer>
+              <h2> {`${nrOfCorrect.length}`}/{nrOfQuestion.length} correct </h2>
+            </CorrectContainer>
             <Restart>
               <nextBtn onClick={handleRestart} type="button"><img
                 src={restartBtn}
@@ -73,7 +72,6 @@ export const Summary = () => {
 const SummaryWrapper = styled(InnerWrapper)`
 width: 100%;
 height: 100vh;
-
 `
 
 const BackgroundWrapper = styled.div`
@@ -102,4 +100,16 @@ left: 80%
 left: 74%;
 }
 
+`
+const SummaryContainer = styled.div`
+
+`
+
+const CorrectContainer = styled.div`
+margin: 20px auto;
+
+h2 {
+  color: orange;
+  font-size: 50px;
+}
 `
