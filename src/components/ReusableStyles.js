@@ -24,25 +24,9 @@ p {
 `
 
 export const Image = styled.img`
-  width: 50%;
+  width: 10rem;
   border-radius: 100px;
   justify-self: center;
   cursor: pointer;
-  transform: rotate(120deg);
-  animation: rotate-planet 10s linear infinite;
-    &:hover {
-      transform: scale(1.1);
-    }
-    @keyframes rotate-planet
-{
-  0%
-  {
-    transform:rotate(0deg);
-  }
-  100%
-  {
-    transform:rotate(360deg);
-  }
-}
   
 `

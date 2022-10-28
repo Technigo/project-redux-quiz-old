@@ -1,7 +1,4 @@
 /* eslint-disable indent */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable no-unused-vars */
@@ -39,15 +36,16 @@ export const CurrentQuestion = () => {
     return (
       <>
         {question.id === 5
-          ? <Image
+          ? <ClonedImage
               src={option.img}
-              alt={option}
+              alt={option.value}
               onClick={() => onAnswerSubmit(question.id, index)}
-              key={option} />
+              key={option.value} />
           : <StyledButton
-            onClick={() => onAnswerSubmit(question.id, index)}
-            key={option}
-            type="button"><p>{option}</p>
+              onClick={() => onAnswerSubmit(question.id, index)}
+              key={option.value}
+              type="button">
+                <p>{option.value}</p>
           </StyledButton>}
       </>)
   })
@@ -72,12 +70,13 @@ export const CurrentQuestion = () => {
 }
 
 const OuterWrapper = styled.div`
-  background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0)),
+  background: linear-gradient(rgba(7, 7, 7, 0.7), rgb(0, 0, 0, 0)),
   url(${universe});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   color: var(--lightPink-color);
@@ -87,13 +86,13 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.0));
+background: linear-gradient(rgba(7, 7, 7, 0.7), rgba(0, 0, 0, 0.5));
 background-size: cover;
 max-width: 50rem;
-margin-top: 4vh;
-margin-bottom: 8%;
+/* margin-top: 4vh;
+margin-bottom: 4vh; */
 border-radius: 8px;
-height: 96vh;
+
 `;
 
 const QuestionContainer = styled.div`
@@ -111,9 +110,26 @@ margin-top: 4rem;
 margin-bottom: 4rem;
 gap: 1rem;
 width: 90%;
-
-
 @media (min-width: 667px) {
 
 }
 `;
+
+const ClonedImage = styled(Image)`
+  transform: rotate(120deg);
+  animation: rotate-planet 10s linear infinite;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @keyframes rotate-planet
+{
+  0%
+  {
+    transform:rotate(0deg);
+  }
+  100%
+  {
+    transform:rotate(360deg);
+  }
+}
+`
