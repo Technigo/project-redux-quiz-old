@@ -14,6 +14,14 @@ export const OptionsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
+
+  @media (max-width: 767.98px){
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  }
 `
 
 export const CurrentQuestion = () => {

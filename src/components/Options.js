@@ -11,6 +11,11 @@ const Button = styled.button`
   border-radius: 50px; 
   font-family: 'Montserrat';
   font-size: 1.25vw;
+  cursor: pointer;
+  
+  @media (max-width: 767.98px){
+    font-size: 4vw;
+  }
 `
 
 const Options = ({ option, answerIndex }) => {

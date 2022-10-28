@@ -40,6 +40,12 @@ export const Headers = styled.div`
   font-size: 3vw;
   font-weight: bold;
   line-height: 3.25vw;
+
+  @media (max-width: 767.98px){
+    width: 80%;
+    font-size: 6vw;
+    line-height: 7vw;
+  }
 `
 
 export const Questions = styled.div`
@@ -54,6 +60,13 @@ export const Questions = styled.div`
   font-weight: bold;
   line-height: 1.75vw;
   top: 15px; 
+
+  @media (max-width: 767.98px){
+    padding: 10%; 
+    width: 250px;
+    font-size: 4.75vw;
+    line-height: 5.5vw;
+  }
 `
 
 export const Buttons = styled.a`
@@ -75,6 +88,11 @@ export const Buttons = styled.a`
   :hover {
     background-color: #9d1f14
   }
+
+  @media (max-width: 767.98px){
+    font-size: 4vw;
+    top: 40px; 
+  }
 `
 export const Illustration = styled.img`
 position: fixed;
@@ -84,5 +102,23 @@ height: auto;
 width: 30%;
 object-fit: cover;
 z-index: 99;
+
+:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@media (max-width: 767.98px){
+  width: 60%;
+}
 `
 export default GlobalStyles;

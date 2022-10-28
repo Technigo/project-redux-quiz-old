@@ -11,7 +11,12 @@ width: 55%;
 display: flex;
 flex-direction: column; 
 justify-content: center;
-text-align: center;   `
+text-align: center;   
+
+  @media (max-width: 767.98px){
+    width: 70%;
+  }
+`
 
 const Score = styled.p`
 font-family: 'Montserrat';
@@ -19,6 +24,12 @@ font-size: 1.75vw;
 font-weight: bold;
 color: #E3182B;
 margin: 0;
+
+@media (max-width: 767.98px){
+    font-size: 4.75vw;
+    line-height: 5.5vw;
+    margin-top: 10px;
+}
 `
 
 const Citat = styled.p` 
@@ -32,6 +43,11 @@ line-height: 2 vw;
 font-size: 1.75vw;
 color: #E3182B;
 margin: 10px 0;
+
+  @media (max-width: 767.98px){
+    font-size: 4.75vw;
+    line-height: 5.5vw;
+  }
 `
 
 const Summary = () => {

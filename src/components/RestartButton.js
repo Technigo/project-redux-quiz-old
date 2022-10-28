@@ -17,7 +17,11 @@ export const StyledRestartButton = styled.a`
 
     :hover {
     background-color: #9d1f14;
-  }
+    }
+
+    @media (max-width: 767.98px){
+      font-size: 3vw;
+    }
 `
 
 const RestartButton = () => {

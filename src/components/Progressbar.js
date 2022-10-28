@@ -14,6 +14,11 @@ const ProgressContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid white;
+
+  @media (max-width: 767.98px){
+    width: 12rem;
+    height: 15px;
+  }
 `;
 
 const ProgressStatus = styled.div`
@@ -37,6 +42,10 @@ const Amount = styled.label`
   line-height: 2vw;
   white-space: wrap;
   letter-spacing: 0.1vw;
+
+  @media (max-width: 767.98px){
+    font-size: 3vw;
+  }
 `
 
 const Wrapper = styled.div`
