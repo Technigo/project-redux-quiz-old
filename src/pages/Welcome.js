@@ -15,115 +15,146 @@ export const Welcome = () => {
         <Container>
           <TextContainer>
             <div className="Intro-Text">
-              <MainQuestion>Halloween Quiz</MainQuestion>
-              <p>
+              <MainHeader>Halloween Quiz</MainHeader>
+              <WelcomeText>
             Get ready for a spooky quiz! Gather your friends
             and family and find out who&apos;s the real king or queen of horror
-              </p>
+              </WelcomeText>
               <div className="Button">
                 <NextButton clickAction={moveToQuiz} content="Start Quiz" />
               </div>
             </div>
           </TextContainer>
-          <FooterContainer>
-            <div>
-              <h4>Developed and designed by</h4>
-              <Link
-                href="https://www.linkedin.com/in/linda-malm-7aa8866b/"
-                target="_blank">
-          Linda Malm
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/tina-bruce-9b1a0813a/"
-                target="_blank">
-          Tina Bruce
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/jesshansson/"
-                target="_blank">
-          Jessica Hansson
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/emil-bergvik/"
-                target="_blank">
-          Emil Bergvik
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/ceciliaraden/"
-                target="_blank">
-          Cecilia Rådén
-              </Link>
-            </div>
-          </FooterContainer>
         </Container>
+        <FooterContainer>
+          <SecondHeader>Developed and designed by</SecondHeader>
+          <LinkContainer>
+            <Link
+              href="https://www.linkedin.com/in/linda-malm-7aa8866b/"
+              target="_blank">
+          Linda Malm
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/tina-bruce-9b1a0813a/"
+              target="_blank">
+          Tina Bruce
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/jesshansson/"
+              target="_blank">
+          Jessica Hansson
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/emil-bergvik/"
+              target="_blank">
+          Emil Bergvik
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/ceciliaraden/"
+              target="_blank">
+          Cecilia Rådén
+            </Link>
+          </LinkContainer>
+        </FooterContainer>
       </ClonedInnerWrapper>
     </OuterWrapper>
   )
 }
 
 const Container = styled(PageContainer)`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-width: 100%;
-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0% 0% 5% 0%;
 `
 
 const ClonedInnerWrapper = styled(InnerWrapper)`
   margin: 5%;
 `
 
+const MainHeader = styled(MainQuestion)`
+  font-size: 3em;
+  text-align: center;
+  color: #FFCD42;
+`
+
+const SecondHeader = styled.h2`
+  font-family: 'Courier Prime', monospace;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+  color: #FFCD42;
+`
+
+const WelcomeText = styled.p`
+  font-family: 'Courier Prime', monospace;
+  line-height: 22px;
+`
+
 const TextContainer = styled.div`
-display: flex;
-color: white;
-justify-content: center;
-width: 50%;
-height: 50%;
+  display: flex;
+  color: white;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
 
-.Button {
- text-align: center;
- padding: 15px;
-}
+  .Button {
+  text-align: center;
+  padding: 15px;
+  }
 
-@media ${Devices.laptop} {
-width: 80%;
-height: 50%;
-}
+  @media ${Devices.laptop} {
+  width: 80%;
+  height: 50%;
+  }
 
-@media ${Devices.desktop} {
-width: 80%;
-height: 50%;
-}
+  @media ${Devices.desktop} {
+  width: 80%;
+  height: 50%;
+  }
 `
 
 const FooterContainer = styled.div`
 color: white;
 display: flex;
-width: 80%;
+width: 100%;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-margin-top: 20%;
+margin-top: 10%;
 
-@media ${Devices.laptop} {
-flex-direction: row;
-}
-
-@media ${Devices.desktop} {
-  flex-direction: row;
-}
+  @media ${Devices.laptop} {
+    margin-top: 30%;
+  }
 `
+
+const LinkContainer = styled.div`
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  @media ${Devices.laptop} {
+    display: flex;
+  }
+`
+
 const Link = styled.a`
+font-family: 'Courier Prime', monospace;
 color: white;
 text-decoration: none;
 flex-direction: column;
-display:flex;
+display: flex;
 margin: 5px;
 
-&:hover {
-  color: #B74F26;
-  transition: all .2s ease-in-out;
-  transform: scale(1.1);
+@media ${Devices.laptop} {
+  display: flex;
+  margin: 10px;
+
+  &:hover {
+    color: #B74F26;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+  }
 }
 `

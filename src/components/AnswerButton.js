@@ -56,7 +56,6 @@ const StyledButton = styled.button`
   }
 
   &:disabled {
-    /* background-color: lightgray; */
     opacity: .50;
   }
 
