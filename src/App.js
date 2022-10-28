@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 
-import { StartPage } from 'components/StartPage'
-import { CurrentQuestion } from 'components/CurrentQuestion';
+import { StartPage } from 'components/StartPage/StartPage'
+import { CurrentQuestion } from 'components/CurrentQuestion/CurrentQuestion';
 import { GlobalStyles } from 'Globalstyles';
 
 const reducer = combineReducers({

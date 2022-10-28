@@ -2,12 +2,13 @@
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
 import React /* { useState } */ from 'react'
-import { Container, QuestionWrapper, StartButton, AnswerButtons } from 'Globalstyles'
+import { Container, Buttons } from 'Globalstyles'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Summary } from 'components/Summary'
-import { Progressbar } from './ProgressBar'
-import FriendsLogo from '../assets/FriendsLogo.svg'
+import { Summary } from 'components/Summary/Summary'
+import { Progressbar } from '../ProgressBar/ProgressBar'
+import { QuestionWrapper, AnswerButtons } from './CurrentQuestion.styles'
+import FriendsLogo from '../../assets/FriendsLogo.svg'
 
 export const CurrentQuestion = ({ score, setScore }) => {
   const dispatch = useDispatch();
@@ -40,13 +41,13 @@ export const CurrentQuestion = ({ score, setScore }) => {
           <AnswerButtons>
             {question.options.map((option, index) => {
               return (
-                <StartButton
+                <Buttons
                   className={index === question.correctAnswerIndex ? 'correctBtn' : 'wrongBtn'}
                   key={option}
                   type="button"
                   onClick={() => onAnswerSubmit(question.id, index)}>
                   {option}
-                </StartButton>
+                </Buttons>
               )
             })}
           </AnswerButtons>

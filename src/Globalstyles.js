@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import styled, { createGlobalStyle } from 'styled-components/macro';
 import './index.css'
+// import Cursor32 from 'assets/Cursor32.png'
 
 export const GlobalStyles = createGlobalStyle`
    
@@ -13,7 +14,8 @@ export const GlobalStyles = createGlobalStyle`
 
    body {
         background-image: url('https://w0.peakpx.com/wallpaper/245/56/HD-wallpaper-amigos-central-perk-serie.jpg');
-        background-size: cover;       
+        background-size: cover;  
+        // cursor: url('CursorSmall.png'), pointer;
    }
 `
 
@@ -28,24 +30,15 @@ export const Container = styled.section`
 
     a {
         color: black;
-    }
-
-    .progress-bar {
-        text-align: center;
-    }
-
-    progress {
-        accent-color: #ffDC00;
-    }
-        
+        text-decoration: none;
+    } 
  
     h1 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         color: black;
         margin: 10% 0;
         text-align: center;
     }
-
 
     .logo {
         width: 70vw;
@@ -58,6 +51,7 @@ export const Container = styled.section`
         margin-bottom: 20px;
     }
 
+
     @media (min-width: 768px) {
 
         h1 {
@@ -69,7 +63,6 @@ export const Container = styled.section`
             width: 30vw
         }
 
-
     }
 
     @media (min-width: 2000px) {
@@ -79,19 +72,18 @@ export const Container = styled.section`
             margin: 2%;
         }
 
-        }
-
+     }
 
 `
 
-export const StartButton = styled.button`
+export const Buttons = styled.button`
     font-size: 20px;
     font-weight: 200;
     letter-spacing: 1px;
     padding: 13px 50px 13px;
     outline: 0;
     border: 1px solid black;
-    cursor: pointer;
+    /* cursor: url(Cursor32.png); */
     position: relative;
     background-color: rgba(0, 0, 0, 0);
     margin: 20px;
@@ -112,55 +104,5 @@ export const StartButton = styled.button`
         top: 0px;
         left: 0px;
     }
-
-`
-export const QuestionWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2%;
-
-    button:focus {
-        background-color: #42a2db;
-    }
-
-    .correctBtn {
-    //background-color: lightgrey;
-    }
-
-    .wrongBtn {
-    //background-color: lightgrey;
-    }
-
-    #noSymbol {
-        opacity: 0
-    }
-  
-`
-
-export const AnswerButtons = styled.div`
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-
-    @media (min-width: 1024px) {
-        grid-template-columns: 1fr 1fr;
-
-}
-
-`
-export const SummaryContainer = styled.div`
-    text-align: left;
-
-    #score {
-        font-family: "Roboto"
-    }
-
-`
-export const SummaryWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    border-bottom: 0.3px solid #a0a0a0;
 
 `

@@ -1,10 +1,11 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
-import { Container, StartButton, SummaryWrapper, SummaryContainer } from 'Globalstyles'
+import { Container, Buttons } from 'Globalstyles'
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { SummaryWrapper, SummaryContainer, Scores } from './Summary.styles'
 
 export const Summary = ({ score }) => {
   const dispatch = useDispatch()
@@ -16,10 +17,13 @@ export const Summary = ({ score }) => {
   return (
     <Container>
       <h1>Summary </h1>
+
       {/* showing if you win or loose */}
-      <p><span>&#9733;</span>Your score: <span id="score">{score}/5</span><span>&#9733;</span></p>
-      {score >= 4 && ('You are FRIEND`s Nerd. Congratulations')}
-      {score < 4 && ('You lost, watch all seasons again')}
+      <Scores>
+        <p><span id="star">&#9733;</span>Your score: <span id="score">{score}/5</span><span id="star">&#9733;</span></p>
+        {score >= 4 && ('You are FRIEND`s Nerd. Congratulations')}
+        {score < 4 && ('You lost, watch all seasons again')}
+      </Scores>
       <SummaryContainer>
         {answerSummary.map((item) => {
           return (
@@ -30,7 +34,7 @@ export const Summary = ({ score }) => {
           )
         })}
       </SummaryContainer>
-      <StartButton id="restartBtn" type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</StartButton>
+      <Buttons id="restartBtn" type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</Buttons>
     </Container>
   )
 }
