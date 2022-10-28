@@ -21,7 +21,7 @@ export const StartPage = () => {
             <Start>
               <h2>6 questions</h2>
               <h1>about random stuff</h1>
-              <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
+              <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started</StartButton>
             </Start>
             </InnerWrapperStartpage>
             </OuterWrapperStartpage>
@@ -38,7 +38,7 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 border: solid;
-border-color:  #A27DA7;
+border: solid 8px #C371D2;
 border-radius: 50%;
 height: 250px;
 width: 250px;
@@ -47,7 +47,7 @@ position: absolute;
   
 h2 {
   font-size: 10px;
-  margin-top: 20px;
+  margin-top: 30px;
   color: white;
   position: absolute;
   font-size: 20px;
@@ -70,12 +70,29 @@ h1 {
 
     h2 {
       font-size: 50px;
-      top: 30px;
+      top: 62px;
     }
     
     h1 {
-      font-size: 65px;
-      top: 120px;
+      font-size: 61px;
+      top: 169px;
+      line-height: 53px;
+      padding: 5px 55px -1px 55px;
+    }
+  }
+
+  @media (min-width: 1025px) {
+    height: 450px;
+    width: 450px;
+
+    h2 {
+      font-size: 47px;
+      top: 75px;
+    }
+    
+    h1 {
+      font-size: 51px;
+      top: 170px;
       line-height: 50px;
       padding: 5px 55px 5px 55px;
     }
@@ -83,31 +100,39 @@ h1 {
 `
 
 const StartButton = styled.button`
-padding: 7px;
-color: #4F4350;
-border-radius: 10px;
-margin-top: 6px;
-font-size: 13px;
-font-weight: 600;
-border: solid 1px #4F4350;
-width: 133px;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  width: 133px;
   background-color:#D9B2DE;
   position: relative;
   top: 70px;
+  text-transform: uppercase;
 
   &:hover {
-  background-color: #533258; 
-  color: white;
+    background-color: #533258; 
+    color: white;
   }
 
   @media (min-width: 668px) {
-  position: relative;
-  top: 180px;
-  padding: 14px;
+    position: relative;
+    top: 195px;
+    padding: 14px;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    width: 162px;
   }
 
+  @media (min-width: 1025px) {
+    padding: 15px;
+    width: 233px;
+    font-size: 18px;
 `
-
 export const InnerWrapperStartpage = styled.div`
   background-color: transparent;
   width: 60%;

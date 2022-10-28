@@ -7,10 +7,10 @@ export const OuterWrapperStartpage = (props) => {
   const OuterWrapper = styled.div`
   background: repeating-radial-gradient(
     circle,
-    #f6ba52,
-    #f6ba52 10px,
+    #ffd180,
     #ffd180 10px,
-    #ffd180 20px
+    #f6ba52 10px, 
+    #f6ba52 25px
   );
     width: 100vw;
     height: auto;

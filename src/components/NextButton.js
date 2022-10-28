@@ -21,12 +21,11 @@ const Button = styled.button`
   color: whitesmoke;
   border-radius: 10px;
   font-size: 11px;
-  border: solid 1px #A27DA7;
-  // margin: 7px 5px 0px 0px;
+  border: none;
   margin: auto;
   margin-top: 10px;
   width: 118px;
-  background-color:#D9B2DE;
+  background-color:#A27DA7;
   &:hover {
     background-color: #C371D2; 
     color: whitesmoke;
@@ -36,9 +35,19 @@ const Button = styled.button`
   padding: 15px;
   color: whitesmoke;
   border-radius: 15px;
-  font-size: 18px;
+  font-size: 14px;
   border: none;
   margin: 10px;
-  width: 150px;
+  width: 120px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 15px;
+    color: whitesmoke;
+    border-radius: 15px;
+    font-size: 17px;
+    border: none;
+    margin: 10px;
+    width: 150px;
   }
 `

@@ -53,7 +53,7 @@ export const CurrentQuestion = () => {
         <InnerWrapperQuestion>
         <QuestionWrapper>        
         <ProgressBar bgcolor={bgcolor} completed={completed} />
-        <Text>Question: {question.questionText}</Text>
+        <Text>{question.questionText}</Text>
         </QuestionWrapper>
 
       <AnswerWrapper>
@@ -92,6 +92,11 @@ const OuterWrapperQuestion = styled.main`
 background: transparent;
 padding-top: 15px;
 width: 100%;
+
+@media (min-width: 667px){
+  padding-top: 0;
+}
+
 @media (min-width: 1025px){
   padding-top: 0;
 }
@@ -100,12 +105,12 @@ width: 100%;
 const InnerWrapperQuestion = styled.div`
 background-color: #FFE4FF;
 width: 80%;
-// height: 100vh;
 margin: 0 auto;
 align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
+
 @media (min-width: 1025px){
   height: 100vh;
 }
@@ -121,6 +126,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: center;
+border-bottom: solid 2px #C371D2;
+
 @media (max-width: 667px) {
   height: 30vh;
 }
@@ -142,7 +149,7 @@ font-size: 18px;
 
 @media (min-width: 1025px) {
   height: auto;
-  font-size: 26px;}
+  font-size: 32px;}
 `
 
 const AnswerWrapper = styled.div `
@@ -156,25 +163,24 @@ const AnswerWrapper = styled.div `
   text-align: center;
   padding-top: 25px;
   box-sizing: border-box;
-
   .nav-button-wrapper{
     display: flex;
     justify-content: center;
     padding: 20px;
   }
+
   @media (max-width: 667px) {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   width: 200px;
   .nav-button-wrapper{
     display: flex;
     flex-direction: column-reverse;
     width: 200px;
+    }
   }
-}
 `
 const QuestionButtonContainer = styled.div`
   display: grid;
@@ -182,6 +188,15 @@ const QuestionButtonContainer = styled.div`
   gap: 10px;
   width: auto;
   box-sizing: border-box;
+  
+  @media (min-width: 667px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: auto;
+    box-sizing: border-box;
+  }
+
   @media (min-width: 1025px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -201,6 +216,12 @@ const QuestionButtonContainer = styled.div`
     color: whitesmoke;
     padding: 13px;
     margin: 0px;
+
+    @media (min-width: 1025px) {
+      width: 100%;
+      font-size: 18px;
+      padding: 31px;
+    }
     }
 
   .disabled-false {
@@ -221,8 +242,9 @@ const QuestionButtonContainer = styled.div`
     }
     @media (min-width: 1025px) {
       width: 100%;
-      font-size: 15px;
+      font-size: 18px;
       padding: 31px;
+      
     }
   }
 

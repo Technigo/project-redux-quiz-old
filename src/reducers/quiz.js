@@ -11,7 +11,7 @@ const questions = [
     options: ['Libya', 'Egypt', 'Sudan', 'Algeria'],
     correctAnswerIndex: 2 },
   { id: 3,
-    questionText: 'What is the rarest M&M color?',
+    questionText: 'What is the rarest M&M (candy) color?',
     options: ['Blue', 'Red', 'Yellow', 'Brown'],
     correctAnswerIndex: 3 },
   { id: 4,
@@ -24,7 +24,7 @@ const questions = [
     correctAnswerIndex: 2 },
   { id: 6,
     questionText: 'Which country in the world has the most islands?',
-    options: ['Indonesia', 'Finland', 'Greece', 'Sweden'],
+    options: ['Idonesia', 'Finland', 'Greece', 'Sweden'],
     correctAnswerIndex: 3 }
 ]
 

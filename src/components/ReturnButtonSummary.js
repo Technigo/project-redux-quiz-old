@@ -12,34 +12,53 @@ export const ReturnButton = () => {
     dispatch(quiz.actions.restart(question))
   }
   return (
-    <Button onClick={() => restart(question.id)} type="button"><b>Restart quiz</b></Button>
+    <Button onClick={() => restart(question.id)} type="button"><b>Restart</b></Button>
   );
 }
 
 const Button = styled.button`
-padding: 10px;
+padding: 10px 2px 10px 0px;
 align-items: center;
 justify-content: center;
 text-align: center;
-color: #67456C;
+color: white;
 border-radius: 10px;
 font-size: 12px;
-margin: 5px 0 0 10px;
+text-transform: uppercase;
+margin: 5px 0 0 20px;
+height: 75px;
+width: 75px;
+border-radius: 50%;
+border: solid 2px #ED8DD6;
+background-color:#F090D9;
 border: none;
-width: auto;
-background-color:#D9B2DE;
 &:hover {
-  background-color: #C371D2; 
+  background-color: #F090D9; 
   color: whitesmoke;
 }
 
+@media (min-width: 668px) {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: solid 2px #ED8DD6;
+  position: absolute;
+  top: 25px;
+  font-size: 13px;
+}
+
 @media (min-width: 1025px) {
-padding: 15px;
-color: #4F4350;
-border-radius: 15px;
-font-size: 18px;
-border: none;
-margin: 20px;
-width: auto;
+  padding: 20px;
+  color: white;
+  border-radius: 15px;
+  font-size: 18px;
+  margin: 10px 0 0 80px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: solid 4px #ED8DD6;
+  position: absolute;
+  top: 35px;
+}
 }
 `

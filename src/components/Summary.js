@@ -25,15 +25,19 @@ const Summary = () => {
           <Div>
             <h3>{results.answer}</h3>
             {results.isCorrect ? (
-            <IconCorrect>✔</IconCorrect> 
+            <IconCorrect>
+              <h3>✔</h3>
+            </IconCorrect> 
             ) : (
-            <IconNotCorrect>✖️</IconNotCorrect>
+            <IconNotCorrect>
+              <h3>✖️</h3>
+            </IconNotCorrect>
             )}
           </Div>
             {!results.isCorrect && (
               <p>
-              (Correct answer is:{' '}
-                {results.question.options[results.question.correctAnswerIndex]})
+              Correct answer is:{' '}
+                {results.question.options[results.question.correctAnswerIndex]}
               </p>
             )}
           </Card>
@@ -45,20 +49,25 @@ const Summary = () => {
 };
 
 const OuterWrapperSummary = styled.div `
-background: transparent;
-width: 100%;
-height: 100%;
-padding-top: 10px;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
 `
 const InnerWrapperSummary = styled.div`
-  background-color: none;
-  width: 60%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
 
   @media (max-width: 1023px) {
     width: 80%;
+    padding-top: 10px;
   }
 `
 const CardContainer = styled.div`
@@ -82,33 +91,34 @@ const Card = styled.div `
   text-align: left;
   border-radius: 3%;
   padding: 5px 20px 5px 20px;
+  width: 251px;
   box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
 
-
 h2{
   font-family: Montserrat, sans-serif;
 }
-
 h3 {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
   font-size: 24px;
   display: flex;
-flex-direction: row;
-color: #69476E;
-
+  flex-direction: row;
+  color: #69476E;
 }
-
 h4{
   margin: 10px 0 5px 0;
 }
-
 p{
   margin: 10px 0 30px 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+  font-size: 13px;
+}
+@media (max-width: 1023px) {
+  width: 220px;
+  font-size: 20px;
 }
 `
 const Div = styled.div `
@@ -121,13 +131,21 @@ const BigText = styled.h1`
   text-align: center;
   margin: 20px;
   padding: 30px;
-  color: #FFE7FF;
+  color: white;
+  font-size: 37px;
+  width: 540px;
   box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
 
+  @media (max-width: 820px) {
+    font-size: 32px;
+    width: 450px;
+  }
+
   @media (max-width: 667px) {
     font-size: 20px;
+    width: auto;
   }
 
 `
@@ -150,27 +168,31 @@ monospace;
 `
 
 const IconCorrect = styled.p `
-  border-radius: 50%;
-  background-color: #FFE7FF;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: green;
- font-size: 25px;
+  h3{
+    border-radius: 50%;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F848B7;
+    font-size: 27px;
+  }
 `
 
 const IconNotCorrect = styled.p `
-  border-radius: 50%;
-  background-color: #FFE7FF;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: pink;
-  font-size: 25px;
+  h3{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 27px;
+    color: #BD8700;
+  }
 `
 
 export default Summary;
