@@ -51,6 +51,18 @@ export const Summary = () => {
         {' '}
         Börja om{' '}
       </RestartButton>
+
+      {answer.map((answerr) => {
+        return (
+          <section key={answerr.questionId}>
+            <p>Fråga: {answerr.question.id}</p>
+            <span>
+              <p>Rätt stavning:{answerr.question.options[answerr.question.correctAnswerIndex]}</p>
+            </span>
+            <p>Ditt svar: {answerr.answer}</p>
+          </section>
+        )
+      })}
     </SummaryContainer>
 
   );
