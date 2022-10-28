@@ -16,6 +16,7 @@ export const Question = () => {
 }
 
 const OuterWrapperQuestion = styled.div`
+  color: white;
   background-image: url(${mobileBG});
   background-size: cover;
   background-repeat: no-repeat;

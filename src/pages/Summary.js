@@ -8,13 +8,25 @@ Sad pumpkin:
 */
 
 import React from 'react';
+// TINAS ADDITION:
+import { useDispatch } from 'react-redux';
+import { NextButton } from 'components/NextButton';
+import { quiz } from 'reducers/quiz';
+// END
 import { OuterWrapper } from '../components/MainStyles';
 
 export const Summary = () => {
+  // TINAS ADDITION:
+  const dispatch = useDispatch();
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+  }
+  // END
+
   return (
     <OuterWrapper>
       <p>Images by: riajulislam from Flaticon & Yuri B and QuinceCreative from Pixabay</p>
-      <p>test</p>
+      <NextButton clickAction={restartQuiz} content="Restart Quiz" />
     </OuterWrapper>
   )
 }
