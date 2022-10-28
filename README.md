@@ -1,12 +1,10 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project has been done in collaboration between Naghmeh Okhovat, Elin Segelöv, Petra Söderström, Younas Tesfamariam and Julia Östedt. For week ten of the Technigo bootcamp (first week working with Redux) our assignment was to create a quiz and displaying the provided answers is a summary. We were given a starter code with reducers and actions.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+To complete the task we planed using a Kanban board, breaking down the assignment in smaller parts. We have mostly been mob- or pair-programming.
+The project has is styled using Styled components.
 
 ## View it live
 
