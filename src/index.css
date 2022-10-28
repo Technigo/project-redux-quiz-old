@@ -11,12 +11,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: url('CursorSmall.png'), pointer;
+  cursor: url('LogoPointer.png'), pointer;
 
 }
 
 button:hover {
-  cursor: url('CursorSmall.png'), pointer;
+  cursor: url('LogoPointer.png'), pointer;
 }
 
 code {

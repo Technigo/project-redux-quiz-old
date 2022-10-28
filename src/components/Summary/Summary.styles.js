@@ -18,6 +18,8 @@ export const SummaryWrapper = styled.div`
 `
 
 export const Scores = styled.div`
+    border: 0.3px solid #a0a0a0;
+    padding: 20px;
    
    #star {
         color: #ffDC00;

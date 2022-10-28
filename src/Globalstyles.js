@@ -15,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
    body {
         background-image: url('https://w0.peakpx.com/wallpaper/245/56/HD-wallpaper-amigos-central-perk-serie.jpg');
         background-size: cover;  
-        // cursor: url('CursorSmall.png'), pointer;
+        color: black;
    }
 `
 
