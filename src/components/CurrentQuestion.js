@@ -71,32 +71,32 @@ export const CurrentQuestion = () => {
 
               )
             })}
-            <ButtonWrapper>
-              <NextBtn
-                onClick={handleRestart}
-                type="button">
-                <img
-                  src={restartBtn}
-                  width="40"
-                  height="40"
-                  alt="next question"
-                  className="" />
-              </NextBtn>
-              <NextBtn
-                onClick={() => dispatch(quiz.actions.goToNextQuestion())}
-                type="button"
-                disabled={!answer}>
-                <img
-                  src={nextBtn}
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="white"
-                  alt="next question"
-                  className="" />
-              </NextBtn>
-            </ButtonWrapper>
           </AnswersWrapper>
+          <ButtonWrapper>
+            <NextBtn
+              onClick={handleRestart}
+              type="button">
+              <img
+                src={restartBtn}
+                width="40"
+                height="40"
+                alt="next question"
+                className="" />
+            </NextBtn>
+            <NextBtn
+              onClick={() => dispatch(quiz.actions.goToNextQuestion())}
+              type="button"
+              disabled={!answer}>
+              <img
+                src={nextBtn}
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                fill="white"
+                alt="next question"
+                className="" />
+            </NextBtn>
+          </ButtonWrapper>
           <ProgressBar />
           <div>
             <iframe src={question.audio} width="250vw" height="auto" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
@@ -110,13 +110,18 @@ export const CurrentQuestion = () => {
 const Question = styled.h1`
   color: #ffffff;
   font-size: 20px;
+  text-align:center;
+
+  @media (min-width: 767px){
+    font-size: 30px;
+  }
 `
 export const NextBtn = styled.button`
   background-color: transparent;
   display: flex;
   flex-wrap: wrap;
   border: 0;
-`
+  `
 
 const AnswersWrapper = styled.div`
   display: flex;
@@ -124,6 +129,11 @@ const AnswersWrapper = styled.div`
   justify-content: center;
   row-gap: 3vh;
   align-items: center;
+
+  @media (min-width:768px){
+    flex-direction: row;
+    gap: 3vw; 
+  }
 `
 
 const QuizCard = styled.div`
@@ -148,9 +158,8 @@ export const ImageWrapper = styled.div`
 export const QuestionImage = styled.img`
   width: 100%;
   height: auto;
-  object-fit: cover ;
-  /* position: absolute; */
-  /* top: 0; */  
+  object-fit: cover;
+  
 `
 
 const AnswerButton = styled.button`
@@ -161,11 +170,12 @@ border-radius: 5px;
 /* border-color: pink; */
 /* box-shadow: 5px 5px 10px orange; */
 font-weight: 600;
+min-height: 3vw;
 `
 
 const ButtonWrapper = styled.div`
 display: flex;
-justify-content: space-between;
+justify-content: center;
 column-gap: 5vw;
 margin-top: 20px;
 width: 100%;

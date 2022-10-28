@@ -2,16 +2,15 @@ import styled from 'styled-components/macro'
 
 export const SummaryStyling = styled.div`
 
-@font-face {
-font-family: "Rosebright";
-src: local("Rosebright"),
- url("./fonts/rosebright.personal-use.ttf") format("truetype");
-font-weight: bold;
-}
-
 display: flex;
 flex-direction: column;
 align-items: center;
+
+.credits-wrapper{
+  display:flex;
+  flex-direction: column;
+  margin-left: 7vw;
+}
 
 h1 {
   color: #821c1c;
@@ -31,14 +30,28 @@ p{
 }
 
 .table-div{
-  margin-left: 16vw;
+  margin-left: 2vw;
 }
+
 
 td{
   width: 80vw;
-  padding: 2px 2px 5px 2px;
+  padding: 2px 2px 5px 2px}
+
+  //Iphone SE
+@media (max-width:388px){
+.table-div{
+width: 100%;
 }
 
+td{
+max-width: 368px;
+}
+
+.question-p{
+  min-width: 136px;
+}
+}
 
 @media (min-width: 768px) {
 h1 {

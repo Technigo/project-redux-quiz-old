@@ -32,7 +32,7 @@ export const Summary = () => {
         <BackgroundWrapper>
           <SummaryStyling>
             <h1>The End!</h1>
-            <div>
+            <div className="credits-wrapper">
               {answers.map((answer) => (
                 <div
                   className="table-div"
@@ -58,7 +58,6 @@ export const Summary = () => {
                 width="50"
                 height="50"
                 viewBox="0 0 24 24"
-                fill="white"
                 alt="next question"
                 className="" />
               </nextBtn>
@@ -74,6 +73,7 @@ export const Summary = () => {
 const SummaryWrapper = styled(InnerWrapper)`
 width: 100%;
 height: 100vh;
+
 `
 
 const BackgroundWrapper = styled.div`
@@ -88,7 +88,18 @@ position: relative;
 
 const Restart = styled.div`
 position: absolute;
+top: 74%;
+left: 74%;
+
+@media (min-width:768px){
 top: 7%;
 left: 80%
+}
+
+//Iphone SE
+@media (max-width:389px){
+  top: 70%;
+left: 74%;
+}
 
 `
