@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable no-nested-ternary */
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
@@ -6,6 +7,7 @@ import { Devices } from './MainStyles';
 
 export const AnswerButton = ({ index, option }) => {
   const dispatch = useDispatch();
+  const [activeBtn, setActiveBtn] = useState(false);
 
   // Gets all question in the store
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -17,28 +19,19 @@ export const AnswerButton = ({ index, option }) => {
     dispatch(quiz.actions.submitAnswer({
       questionId, answerIndex
     }));
+    setActiveBtn(true);
     console.log('questionId', questionId)
     console.log('answerIndex', answerIndex)
   }
 
   const correctAnswer = usersAnswer && index === question.correctAnswerIndex
-  console.log('question.correctAnswerIndex', question.correctAnswerIndex)
-  console.log('usersAnswer && index', usersAnswer && index)
-  console.log('correctAnswer', correctAnswer)
+  // console.log('question.correctAnswerIndex', question.correctAnswerIndex)
+  // console.log('usersAnswer && index', usersAnswer && index)
+  // console.log('correctAnswer', correctAnswer)
 
   return (
     <StyledButton
-      className={
-        (() => {
-          if (correctAnswer === true) {
-            return 'correct'
-          } if (correctAnswer === false) {
-            return 'wrong'
-          } else {
-            return 'default'
-          }
-        })
-      }
+      className={activeBtn ? (correctAnswer ? 'correct' : 'wrong') : 'default'}
       onClick={() => onAnswerSubmit(question.id, index)}
       disabled={usersAnswer}
       type="button">{option}

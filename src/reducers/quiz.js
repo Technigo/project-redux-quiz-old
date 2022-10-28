@@ -23,7 +23,7 @@ const questions = [
   { id: 5,
     questionText: 'Where does the tradition of Halloween come from?',
     options: ['the Native American celebration of Soyal', 'the Irish celebration Samhain', 'the Creol celebration La Toussaint', 'the Mexican celebration of día de muertos'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 1 },
   { id: 6,
     questionText: 'How many pieces of candy does the average american household give to each trick or treater on Halloween?',
     options: ['3', '7', '5', '2'],
