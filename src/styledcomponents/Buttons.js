@@ -11,6 +11,7 @@ font-weight: 600;
 export const StyledButton = styled.button`
 border: none; 
 border-radius: 10px;
+margin-top: 20px;
 width: auto;
 height: 40px;
 padding: 0 1.5rem;

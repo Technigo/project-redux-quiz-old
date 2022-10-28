@@ -10,9 +10,8 @@ const Counter = styled.div`
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  color: hotpink;
+  color: #33001A;
 `
-
 const Timer = ({ questionId }) => {
   const countdown = useSelector((state) => state.quiz.countdown)
   const [value, setValue] = useState(countdown);
@@ -27,8 +26,9 @@ const Timer = ({ questionId }) => {
     if (countdown > 0) {
       timer = setInterval(tick, 1000)
     }
+
     return () => clearInterval(timer);
-  }, [countdown]);
+  }, [countdown, value]);
 
   useEffect(() => {
     if (value === 0) {

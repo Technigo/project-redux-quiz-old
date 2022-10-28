@@ -5,10 +5,14 @@ import Confetti from 'react-confetti'
 import styled from 'styled-components';
 import { StyledButton, ButtonWrap } from 'styledcomponents/Buttons';
 
-const SummaryText = styled.p`
+const SummaryText = styled.div`
     text-align: center;
     font-size: 2rem;
+    color: #33001A;
+    padding-top: 100px;
+    padding-bottom: 40px;
 `
+
 export const Summary = () => {
   const answers = useSelector((state) => state.quiz.answers);
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;

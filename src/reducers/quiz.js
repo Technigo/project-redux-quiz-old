@@ -12,7 +12,7 @@ const questions = [
   { id: 5, questionText: 'Can you spot the fake cat?', options: [<img alt="asbratext" src="./images/cats/cat-AI.jpg" />, <img alt="asbratext" src="./images/cats/cat-real.jpg" />, <img alt="asbratext" src="./images/cats/cat-real-1.jpg" />], correctAnswerIndex: 0 }
 ]
 
-const countdownInitialValue = 7
+const countdownInitialValue = 30
 
 const initialState = {
   questions,

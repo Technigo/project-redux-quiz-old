@@ -7,8 +7,11 @@ import { Summary } from './Summary'
 import Timer from './Timer'
 
 const QuestionText = styled.p`
+color: #33001A;
 text-align: center;
 font-size: 1.5rem;
+font-family: 'Open Sans', sans-serif;
+font-weight: 500;
 `
 
 const ImgButton = styled.button`
@@ -23,7 +26,7 @@ box-shadow: -1px 1px 10px 1px rgba(0,0,0,0.6);
 
 & img {
   max-width: 100%;
-  margin-bottom: -2%;
+  margin-bottom: -1%;
   margin-top: -1%;
 }`
 
@@ -72,10 +75,10 @@ export const CurrentQuestion = ({ wasCorrectAnswerSelected }) => {
       if (currentanswer.answerIndex === index) {
         if (currentanswer.isCorrect) {
           return {
-            border: '6px solid green'
+            border: '6px solid #63A241'
           };
         }
-        return { border: '6px solid red' };
+        return { border: '6px solid #F64E66' };
       }
       return {};
     }
