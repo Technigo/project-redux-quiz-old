@@ -6,7 +6,6 @@ import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
-// import question from '../images/question.png';
 
 export const StartPage = () => {
   //const question = useSelector((state) => state.quizStart())
@@ -22,7 +21,6 @@ export const StartPage = () => {
             <Start>
               <h2>6 questions</h2>
               <h1>about random stuff</h1>
-              {/* <Img src={question} alt="question-img"/> */}
               <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
             </Start>
             </InnerWrapperStartpage>
@@ -40,38 +38,74 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 border: solid;
-border-color: #F6CEFB;
+border-color:  #A27DA7;
 border-radius: 50%;
-height: 480px;
-width: 480px;
-background-color: #F6CEFB;
+height: 250px;
+width: 250px;
+background-color: #A27DA7;
+position: absolute;
   
 h2 {
-  font-size: 40px;
-  margin-top: 40px;
+  font-size: 10px;
+  margin-top: 20px;
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  margin-bottom: 0px;
+  top: 1px;
 }
+
 h1 {
-  font-size: 70px;
+  font-size: 30px;
+  color: white;
+  position: relative;
+  margin: 5px;
+  top: 60px;
+  padding: 5px 15px 5px 15px;
 }
+
+  @media (min-width: 668px) and (max-width: 1052px) {
+    height: 450px;
+    width: 450px;
+
+    h2 {
+      font-size: 50px;
+      top: 30px;
+    }
+    
+    h1 {
+      font-size: 65px;
+      top: 120px;
+      line-height: 50px;
+      padding: 5px 55px 5px 55px;
+    }
+  }
+
+  @media (min-width: 1053px) {
+
+  }
 `
 
-// const Img = styled.img`
-// `
-
-
 const StartButton = styled.button`
-  padding: 15px;
+  padding: 7px;
   color: #4F4350;
   border-radius: 15px;
   font-size: 18px;
   border: none;
-  margin: 10px;
   width: 150px;
   background-color:#D9B2DE;
+  position: relative;
+  top: 70px;
 
   &:hover {
-  background-color:  #C371D2; 
-  color: black;
+  background-color:  #533258; 
+  color: white;
+  }
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+  position: relative;
+  top: 150px;
+  padding: 14px;
   }
 `
 

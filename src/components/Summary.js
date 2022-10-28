@@ -3,7 +3,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ReturnButton } from 'components/ReturnButton';
-import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
+// import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
 // import { getLatestVariableDefinition } from 'eslint-plugin-react/lib/util/variable';
 
@@ -13,7 +13,7 @@ const Summary = () => {
   console.log(summaryAnswers)
 
   return (
-    <OuterWrapperStartpage>
+    <OuterWrapperSummary>
     <InnerWrapperSummary>
         <BigText>You got {result.length}/{summaryAnswers.length} answers correct!</BigText>
         <CardContainer>
@@ -21,12 +21,14 @@ const Summary = () => {
           <Card>
             <Counter>{results.questionId}</Counter>
             <p>{results.question.questionText}</p>
-            <h3>You answered: {results.answer}</h3>
+          <Div>
+            <h3>{results.answer}</h3>
             {results.isCorrect ? (
-              <h4> <Icon>✔</Icon> Your answer is correct </h4>
+            <IconCorrect>✔</IconCorrect> 
             ) : (
-              <h4><Icon>✖️</Icon> Your answer is not correct</h4>
+            <IconNotCorrect>✖️</IconNotCorrect>
             )}
+          </Div>
             {!results.isCorrect && (
               <p>
               (Correct answer is:{' '}
@@ -38,21 +40,30 @@ const Summary = () => {
            </CardContainer>
         <ReturnButton />
       </InnerWrapperSummary>
-      </OuterWrapperStartpage>
+      </OuterWrapperSummary>
   );
 };
 
-
+const OuterWrapperSummary = styled.div `
+background: repeating-linear-gradient(
+  to right,
+  #f6ba52,
+  #f6ba52 10px,
+  #ffd180 10px,
+  #ffd180 20px
+);
+width: 100%;
+height: 100%;
+padding-top: 10px;
+`
 const InnerWrapperSummary = styled.div`
   background-color: none;
   width: 60%;
   height: auto;
   margin: 0 auto;
   text-align: center;
-  /* border: solid 2px green; */
 `
 const CardContainer = styled.div`
-  /* border: solid blue 2px; */
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(1, 1fr);
@@ -64,8 +75,7 @@ const CardContainer = styled.div`
 `
 
 const Card = styled.div `
-  /* border: solid red 2px; */
-  background-color: #A27DA7;
+  background-color: #D9B2DE;
   text-align: left;
   border-radius: 3%;
   padding: 30px;
@@ -73,10 +83,18 @@ const Card = styled.div `
   -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
   -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
 
-    // margin: 15px;
 
 h2{
   font-family: Montserrat, sans-serif;
+}
+
+h3 {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  font-size: 24px;
+  display: flex;
+flex-direction: row;
+
 }
 
 h4{
@@ -85,15 +103,29 @@ h4{
 
 p{
   margin: 10px 0 30px 0;
-  font-style: italic;
+  font-family: 'Helvetica Neue';
 }
+`
+const Div = styled.div `
+display: flex;
+justify-content: space-between;
 `
 
 const BigText = styled.h1`
+  background-color: #C371D2;
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
   text-align: center;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
+  -webkit-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
+  -moz-box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);
 `
 
 const Counter = styled.h2`
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+monospace;
   border-radius: 50%;
   background-color: #FFE7FF;
   width: 50px;
@@ -103,7 +135,7 @@ const Counter = styled.h2`
   justify-content: center;
 `
 
-const Icon = styled.p `
+const IconCorrect = styled.p `
   border-radius: 50%;
   background-color: #FFE7FF;
   width: 40px;
@@ -111,6 +143,20 @@ const Icon = styled.p `
   display: flex;
   align-items: center;
   justify-content: center;
+  color: green;
+ font-size: 25px;
+`
+
+const IconNotCorrect = styled.p `
+  border-radius: 50%;
+  background-color: #FFE7FF;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: pink;
+  font-size: 25px;
 `
 
 export default Summary;

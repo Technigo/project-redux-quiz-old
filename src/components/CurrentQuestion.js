@@ -112,6 +112,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 text-align: center;
+
+@media (max-width: 667px) {
+  height: 40vh;
+}
 `
 
 const Counter = styled.p`
@@ -138,62 +142,81 @@ justify-content: center;
 display: flex;
 padding-top: 25px;
 // border: solid 2px red;
-
 .nav-button-wrapper{
   display: flex;
   justify-content: center;
   padding: 20px;
 }
+@media (max-width: 667px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  .nav-button-wrapper{
+    display: flex;
+    flex-direction: column-reverse;
+    width: 200px;
+  }
+}
 
 `
 const QuestionButtonContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   width: 700px;
   box-sizing: border-box;
   padding-bottom: 20px;
 
-@media (max-width: 667px) {
-  width: 150px;
-
-}
-
-.disabled-true{
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #D9B2DE;
-  color: whitesmoke;
-  padding: 45px;
-  margin: 0px;
-  }
-
-.disabled-false{
-  font-size: 18px;
-  font-weight: 600;
-  border: solid 1px #A152B1;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  background-color: #C371D2;
-  color: whitesmoke;
-  padding: 45px;
-  margin: 0px;
-  cursor: pointer;
-  &:hover {
-    background-color:  #A152B1; 
+  .disabled-true {
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #D9B2DE;
     color: whitesmoke;
-  
+    padding: 45px;
+    margin: 0px;
+    }
+
+  .disabled-false {
+    font-size: 18px;
+    font-weight: 600;
+    border: solid 1px #A152B1;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #C371D2;
+    color: whitesmoke;
+    padding: 45px;
+    margin: 0px;
+    cursor: pointer;
+    &:hover {
+      background-color:  #A152B1; 
+      color: whitesmoke;
+    }
+    @media (max-width: 667px) {
+      width: 200px;
+      .disabled-true{
+        font-size: 13px;
+        border-radius: 13px;
+        width: 75%;
+        padding: 15px;
+      }
+    
+      .disabled-false{
+        font-size: 13px;
+        border-radius: 13px;
+        width: 75%;
+        padding: 15px;
+      }
+
+    @media (min-width: 667px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: auto;
+    }
   }
-  }
-
-
-  @media (min-width: 667px) {
-    grid-template-columns: repeat(2, 1fr);
-
   }
 `
 const Test = styled.div`
