@@ -21,7 +21,7 @@ export const Summary = () => {
 
     <SummaryContainer>
       <h1>🎉Sammanfattning🎉</h1>
-
+      {/* This return a fitting gif depending on how many correct answers you got */}
       {(rightAnswers.length <= 2 && (
         <img
           alt="bad"
@@ -41,6 +41,7 @@ export const Summary = () => {
           />
         ))}
       <SummaryScore>
+        {/* This display number of correct answers and number of total answers */}
         Du fick {rightAnswers.length} av {question.length} korrekta svar!
       </SummaryScore>
       <RestartButton
@@ -53,6 +54,7 @@ export const Summary = () => {
       </RestartButton>
       <AnswersContainer>
         {answer.map((answerr) => {
+          {/* This returns the chosen answer and the correct answer to every question */}
           return (
             <SingleAnswerContainer key={answerr.questionId}>
               <p><b>Fråga: {answerr.question.id}</b></p>

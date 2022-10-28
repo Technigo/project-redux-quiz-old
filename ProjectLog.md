@@ -72,6 +72,7 @@ Thurs 23.00 27/10/2022 (Kartika & Maria)
 Fri 12.30 28/10/2022 (Linnéa, Maria & Tika)
 
 - Finalized the Readme
-- Started on the comments: all of them are done except from the summary (Linnéa will do that)
-- Did the summary answers
+- Started on the comments: all of them are done
+- Added the summary answers
+- and styling of summary answers
 - Changed some styling for the footer
