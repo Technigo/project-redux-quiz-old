@@ -5,7 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   SummaryContainer,
   SummaryScore,
-  RestartButton
+  RestartButton,
+  AnswersContainer,
+  SingleAnswerContainer
 } from 'styledcomponents/SummaryStyle';
 import { quiz } from 'reducers/quiz';
 
@@ -24,13 +26,11 @@ export const Summary = () => {
         <img
           alt="bad"
           src="https://media.giphy.com/media/SmHXb7cDn1hVoNKZI4/giphy.gif"
-          // src="https://media.giphy.com/media/0mLLCRteLho6WvLkN4/giphy.gif"
         />
       )) ||
         (rightAnswers.length === 3 && (
           <img
             alt="alright"
-            /* src="https://media.giphy.com/media/LNxlSJpxAN55bS51Ro/giphy.gif" */
             src="https://media.giphy.com/media/hVUuQmXu7rtSNVUo6n/giphy.gif"
           />
         )) ||
@@ -51,18 +51,19 @@ export const Summary = () => {
         {' '}
         Börja om{' '}
       </RestartButton>
-
-      {answer.map((answerr) => {
-        return (
-          <section key={answerr.questionId}>
-            <p>Fråga: {answerr.question.id}</p>
-            <span>
-              <p>Rätt stavning:{answerr.question.options[answerr.question.correctAnswerIndex]}</p>
-            </span>
-            <p>Ditt svar: {answerr.answer}</p>
-          </section>
-        )
-      })}
+      <AnswersContainer>
+        {answer.map((answerr) => {
+          return (
+            <SingleAnswerContainer key={answerr.questionId}>
+              <p><b>Fråga: {answerr.question.id}</b></p>
+              <span>
+                <p>Rätt: {answerr.question.options[answerr.question.correctAnswerIndex]}</p>
+              </span>
+              <p>Ditt svar: {answerr.answer}</p>
+            </SingleAnswerContainer>
+          )
+        })}
+      </AnswersContainer>
     </SummaryContainer>
 
   );

@@ -68,3 +68,10 @@ Thurs 23.00 27/10/2022 (Kartika & Maria)
 - Please check if there is anything else we need to do (especially try the media querry once more)
 - Meta Tags
 - The gifs worked well, BUT the 2nd gif (for 3 correct answer) appears to be smaller size than the others. Reason is because it is a landscape size while others are portrait. So, if you feel like that is a big problem, feel free to find a portrait gif that fits more for this page. Otherwise....nu kör vi då
+
+Fri 12.30 28/10/2022 (Linnéa, Maria & Tika)
+
+- Finalized the Readme
+- Started on the comments: all of them are done except from the summary (Linnéa will do that)
+- Did the summary answers
+- Changed some styling for the footer

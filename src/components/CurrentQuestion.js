@@ -37,6 +37,9 @@ export const CurrentQuestion = () => {
     setAnswer('');
   };
 
+  /* If the user has answered all the questions, the summary page will show.
+      If not, the summary page isn't shown.
+        The user will then be shown the next unanswered question. */
   return (
     <div>
       {quizOver ? (

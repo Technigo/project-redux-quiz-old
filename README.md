@@ -4,7 +4,9 @@ This is a group project made by; Joel Öhman, Kartika Purwahyuningrum, Sofia And
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+In this project we made a Swedish spelling quiz, testing the user with 5 hardspelled Swedish words. The main focus was to learn how to use Redux and also to use its selectors, use dispatch, trigger Redux actions and interact with the store. By reading through the project brief we decided on what problems to tackle first, which components and styled components to add and in which order, an adequate time structure and a constructive mindset.
+During this project we used Redux, React, JSX, HTML, CSS, Git & Google Jamboard.
+If we had more time, we would have wanted to add a timer to show the user how long time the user took to complete the quiz.
 
 ## View it live
 https://the-better-hippo-team-quiz.netlify.app/

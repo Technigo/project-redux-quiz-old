@@ -14,14 +14,6 @@ export const OuterWrapper = styled.section`
   font-family: 'Roboto Mono', monospace;
   letter-spacing: 1px;
   position: relative;
-
-  @media (min-width: 600px) and (max-width: 1023px) {
-
-  }
-
-  @media (min-width: 1024px) {
-  
-  }
 `;
 
 export const InnerWrapper = styled.div`
@@ -57,15 +49,15 @@ export const InnerWrapper = styled.div`
     text-decoration: none;
   }
 
+  /* --- MEDIA  QUERIES --- */
+
   @media (min-width: 600px) and (max-width: 1023px) {
-    padding: 10% 5%;
-    /* margin: 20% 10%; */
+    padding: 5% 5%;
     margin-top: 50px;
   }
 
   @media (min-width: 1024px) {
-    padding: 10% 5%;
-    /* margin: 20% 10%; */
+    padding: 5% 5%;
     margin-top: 50px;
   }
 `;
@@ -81,10 +73,9 @@ export const LinkContainer = styled(Link)`
     font-family: 'Roboto Mono', monospace;
     border-radius: 20px;
 
-    @media (min-width: 600px) and (max-width: 1023px) {
-    }
+    /* --- MEDIA  QUERIES --- */
 
-    @media (min-width: 1024px) {
+      @media (min-width: 1024px) {
       display: block;
       width: 200px;
       padding: 10px 20px;

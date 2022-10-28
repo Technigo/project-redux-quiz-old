@@ -18,11 +18,13 @@ export const NavButtonsStyles = styled.button`
   margin: 5px 0;
   text-decoration: none;
 
+  /* --- MEDIA  QUERIES --- */
+
   @media (min-width: 600px) and (max-width: 1023px) {
     padding: 10px;
-}
+  }
 
-@media (min-width: 1024px){
+  @media (min-width: 1024px){
   padding: 15px;
-}
-`
+  }
+`;
