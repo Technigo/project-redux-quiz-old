@@ -15,6 +15,7 @@ import { InnerWrapper, OuterWrapper } from 'styling/Wrappers';
 import restartBtn from 'assets/svg/undo-icon.svg';
 // import nextBtn from 'assets/svg/';
 import nextBtn from 'assets/svg/double-arrow-right-icon.svg';
+import { Feedback } from 'components/Feedback';
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
@@ -58,13 +59,16 @@ export const CurrentQuestion = () => {
           <AnswersWrapper>
             {question.options.map((option, index) => {
               return (
+
                 <AnswerButton
                   onClick={() => onAnswerSubmit(question.id, index)}
                   className={!answer ? 'answerbutton' : index === question.correctAnswerIndex ? 'correct' : 'wrong'}
                   key={option}
                   disabled={answer}
                   type="button">{option}
+                  <Feedback className={!answer ? 'noAnswerFeedback' : index === question.correctAnswerIndex ? 'correctFeedback' : 'wrongFeedback'} />
                 </AnswerButton>
+
               )
             })}
             <ButtonWrapper>
@@ -95,7 +99,7 @@ export const CurrentQuestion = () => {
           </AnswersWrapper>
           <ProgressBar />
           <div>
-            <iframe src={question.audio} width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
+            <iframe src={question.audio} width="250vw" height="auto" frameBorder="0" allowtransparency="true" allow="encrypted-media" title="hej" />
           </div>
         </QuizCard>
       </InnerWrapper>

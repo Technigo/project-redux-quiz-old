@@ -1,0 +1,23 @@
+
+.correctFeedback {
+  background:black;
+  min-height: 60px;
+  position: absolute;
+  top: 200px;
+
+}
+
+.wrongFeedback {
+  background: white;
+  min-height: 60px;
+  position: absolute;
+  top: 200px;
+}
+
+.noAnswerFeedback{
+  background: red;
+  min-height: 60px;
+  position: absolute;
+  top: 200px;
+}
+

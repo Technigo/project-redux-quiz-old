@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-// import styled from 'styled-components';
+import styled from 'styled-components';
 /* import { quiz } from 'reducers/quiz'; */
 
 export const ProgressBar = () => {
@@ -10,15 +10,20 @@ export const ProgressBar = () => {
   return (
     <div>
       <p>Question {currentQuestion} / {finalQuestion}</p>
-      <progress
-        id="progress"
-        value={currentQuestion}
-        max={finalQuestion} />
+      <ProgressWrapper>
+        <progress
+          className="progress"
+          id="progress"
+          value={currentQuestion}
+          max={finalQuestion} />
+      </ProgressWrapper>
     </div>
   )
 }
 
-// const ProgressWrapper = styled.div`
-// background-color: red;
-// `
+const ProgressWrapper = styled.div`
+
+
+
+`
 

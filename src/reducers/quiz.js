@@ -11,7 +11,7 @@ const questions = [
     questionText: 'What is the nickname of this Stranger things character?',
     options: ['Ella', 'El', 'Ellen', 'Len'],
     backdropImg: strangerThings,
-    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
+    audio: 'https://open.spotify.com/embed/track/7z9AOGR6nZlvybNKDj6sDv?si=929e4530f6fd490f',
     correctAnswerIndex: 1
   },
   {
@@ -19,7 +19,7 @@ const questions = [
     questionText: 'Which one is not a character in the TV-Show La Casa de Papel?',
     options: ['Rio', 'Nairobi', 'Paris', 'Helsinki'],
     backdropImg: casaPapel,
-    audio: 'https://open.spotify.com/embed/track/3lWzVNe1yFZlkeBBzUuZYu?si=e57c5bde9d1f40fc',
+    audio: 'https://open.spotify.com/embed/track/3lWzVNe1yFZlkeBBzUuZYu?si=7d156afafae34e2b',
     correctAnswerIndex: 2
   },
   {
@@ -27,7 +27,7 @@ const questions = [
     questionText: 'What is the name of the main character in The Playlist?',
     options: ['Daniel', 'Mark', 'Sophie', 'Antonella'],
     backdropImg: playList,
-    audio: 'https://open.spotify.com/embed/track/5uES1C2NgkdrNHiCwf9jRr?si=d85bdfd5319b4f2d',
+    audio: 'https://open.spotify.com/embed/track/2V65y3PX4DkRhy1djlxd9p?si=b3b6055290114f79',
     correctAnswerIndex: 0
   },
   {

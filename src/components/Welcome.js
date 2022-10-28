@@ -14,12 +14,9 @@ export const Welcome = () => {
             <Link to="/quizflix">
               <PlayButton type="button">
                 <svg
-                  width="50"
-                  height="50"
-                  viewBox="0 0 24 24"
-                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="Hawkins-Icon Hawkins-Icon-Standard">
+                  viewBox="0 0 24 24"
+                  className="Hawkins-Icon">
                   <path d="M4 2.69127C4 1.93067 4.81547 1.44851 5.48192 1.81506L22.4069 11.1238C23.0977 11.5037 23.0977 12.4963 22.4069 12.8762L5.48192 22.1849C4.81546 22.5515 4 22.0693 4 21.3087V2.69127Z" fill="currentColor" />
                 </svg>
               </PlayButton>
@@ -46,7 +43,12 @@ const PlayButton = styled.button`
   color: orange;
   background-color: transparent;
   text-align: center;
-  cursor: pointer;
+
+  .Hawkins-Icon{
+    width: 50px;
+    height: 50px;
+    fill: "none";
+  }
 `
 
 const BackgroundWrapper = styled.div`
@@ -66,14 +68,11 @@ const TitleButtonWrapper = styled.div`
   gap: 15vh;
   height: 60vh;
   justify-content: center;
-
-  @media only screen and (min-width: 800px) {
-    gap: 10vh;
-    height: 60vh;
-  }
 `
 const WelcomeTitle = styled.h1`
   color: white;
   font-family: 'VintageRoundPersonalUse';
-  font-size: 50px
+  font-size: 50px;
+
+
 `

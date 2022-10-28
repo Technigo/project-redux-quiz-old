@@ -12,7 +12,7 @@ import styled from 'styled-components/macro';
 import { InnerWrapper, OuterWrapper } from 'styling/Wrappers';
 /* import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'; */
-import summaryImage from 'assets/summary.jpg'
+import summaryImage from 'assets/cinema.jpg'
 
 export const Summary = () => {
   const dispatch = useDispatch();
@@ -31,16 +31,21 @@ export const Summary = () => {
       <SummaryWrapper>
         <BackgroundWrapper>
           <SummaryStyling>
-            <h1>Summary goes here</h1>
+            <h1>The End!</h1>
             <div>
               {answers.map((answer) => (
                 <div
+                  className="table-div"
                   key={answer.question.id}>
-                  <p>{answer.question.questionText}</p>
-                  <p>{answer.answer}
-                    <span> {answer.isCorrect ? ' ✅' : ' ❌'}
-                    </span>
-                  </p>
+                  <tr>
+                    <td><p className="question-p">{answer.question.questionText}</p></td>
+                    <td><p className="answer-p">{answer.answer}</p></td>
+                    <td>
+                      <span className="isCorrect-span"> {answer.isCorrect ? ' ✅' : ' ❌'}
+                      </span>
+                    </td>
+                  </tr>
+
                 </div>
               ))}
             </div>
@@ -81,10 +86,9 @@ background-size: cover;
 position: relative;
 `
 
-/* const SummaryText = styled.p`
-  color: white;
-` */
-
 const Restart = styled.div`
 position: absolute;
+top: 7%;
+left: 80%
+
 `
