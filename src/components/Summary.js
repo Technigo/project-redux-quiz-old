@@ -42,8 +42,9 @@ const Summary = () => {
   );
 };
 
+
 const InnerWrapperSummary = styled.div`
-  background-color: #FCD3FF;
+  background-color: none;
   width: 60%;
   height: auto;
   margin: 0 auto;

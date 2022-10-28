@@ -42,7 +42,7 @@ export const CurrentQuestion = () => {
         <InnerWrapperQuestion>
         <QuestionWrapper>
         <Counter>{question.id} / 6</Counter>
-        <Text>Question: {question.questionText}</Text>
+        <Text>{question.questionText}</Text>
         </QuestionWrapper>
 
       <AnswerWrapper>
@@ -80,7 +80,13 @@ export const CurrentQuestion = () => {
 } 
 
 const OuterWrapperQuestion = styled.main`
-background-color: lightgrey;
+background: repeating-linear-gradient(
+  to right,
+  #f6ba52,
+  #f6ba52 10px,
+  #ffd180 10px,
+  #ffd180 20px
+);
 width: 100%;
 `
 
@@ -93,6 +99,7 @@ align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
+
 `
 
 const QuestionWrapper = styled.div `
@@ -109,7 +116,7 @@ text-align: center;
 
 const Counter = styled.p`
 border-radius: 50%;
-background-color: beige;
+background-color: #FFE7FF;
 width: 50px;
 height: 50px;
 display: flex;
@@ -129,6 +136,7 @@ background-color: #FFE4FF;
 flex-direction: column;
 justify-content: center;
 display: flex;
+padding-top: 25px;
 // border: solid 2px red;
 
 .nav-button-wrapper{
@@ -142,8 +150,9 @@ const QuestionButtonContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 20px;
-  width: 500px;
+  width: 700px;
   box-sizing: border-box;
+  padding-bottom: 20px;
 
 @media (max-width: 667px) {
   width: 150px;
@@ -156,22 +165,29 @@ const QuestionButtonContainer = styled.div`
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  background-color: lightgrey;
+  background-color: #D9B2DE;
   color: whitesmoke;
-  padding: 20px;
+  padding: 45px;
   margin: 0px;
   }
 
 .disabled-false{
-  font-size: 20px;
-  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  border: solid 1px #A152B1;
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  background-color: #78557D;
+  background-color: #C371D2;
   color: whitesmoke;
-  padding: 20px;
+  padding: 45px;
   margin: 0px;
+  cursor: pointer;
+  &:hover {
+    background-color:  #A152B1; 
+    color: whitesmoke;
+  
+  }
   }
 
 
@@ -186,5 +202,6 @@ const Test = styled.div`
   flex-direction: column;
   justify-content: center;
 `
+
 
 
