@@ -1,6 +1,6 @@
 # Redux quiz group project
 
-Project is a quiz for Friend sitcom fandom built using React, Redux and styled components. Project is made in mob programming. 
+Project is a quiz for Friend sitcom fandom built using React, Redux and styled components. Project is made in mob programming: Sofie Rydmark, Johanna Rosenholm, Maria So, Jessica Mo, Kaja Wilbik
 
 ## The problem
 
