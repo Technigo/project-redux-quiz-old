@@ -28,13 +28,13 @@ export const Summary = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
-        <SummaryTitle>Results</SummaryTitle>
         <ResultsContainer className="container">
+          <SummaryTitle>Results</SummaryTitle>
           <Score>{`You got ${correctAnswers} out of 8 right`}</Score>
           {finalImage()}
           <SummaryText>
             <p>Want to give it another try?</p>
-            <NextButton clickAction={restartQuiz} content="Restart" />
+            <NextButton clickAction={restartQuiz} content="Try again!" />
           </SummaryText>
         </ResultsContainer>
         <Credits>
@@ -62,6 +62,8 @@ const InnerWrapper = styled.section`
 const ResultsContainer = styled(PageContainer)`
   width: 100%;
   height: auto;
+  // added following:
+  margin-top: 10%;
 `
 
 const Score = styled.div`
@@ -71,6 +73,7 @@ const Score = styled.div`
 const SummaryTitle = styled.h1`
   margin-top: 7vh;
   font-family: 'Special Elite', cursive;
+  color: #FFCD42;
 `
 
 const PumpingImg = styled.img`

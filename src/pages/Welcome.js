@@ -90,7 +90,13 @@ const SecondHeader = styled.h2`
 
 const WelcomeText = styled.p`
   font-family: 'Courier Prime', monospace;
-  line-height: 22px;
+  font-size: 18px; // Used to be standard 16px
+  line-height: 26px; // Used to be standard 22px
+
+  // Added following:
+  @media ${Devices.tablet} {
+    font-size: 25px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -123,10 +129,13 @@ width: 100%;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-margin-top: 10%;
+// margin-top: 10%;
+// added following 2 lines:
+position: absolute;
+bottom: 0;
 
   @media ${Devices.laptop} {
-    margin-top: 30%;
+    //margin-top: 30%;
   }
 `
 

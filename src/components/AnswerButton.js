@@ -38,12 +38,12 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
 const StyledButton = styled.button`
   background-color: #FFCD42;
   border: #FFCD42;
-  width: 300px;
+  width: 310px; // Used to be 310px
   border-radius: 10px;
   color: black;
   font-weight: bold;
   font-size: 25px;
-  padding: 20px;
+  padding: 18px; // Used to be 20px
   margin: 10px;
   font-family: 'Special Elite', cursive;
 
