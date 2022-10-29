@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { ReturnButton } from 'components/ReturnButtonSummary';
 // import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
+import confettiIcon from '../confetti.png'
 // import { getLatestVariableDefinition } from 'eslint-plugin-react/lib/util/variable';
 
 const Summary = () => {
@@ -15,6 +16,7 @@ const Summary = () => {
   return (
     <OuterWrapperSummary>
      <ReturnButton />
+     <SummaryIcon src={`${confettiIcon}`} alt="icon"/>
      <InnerWrapperSummary>
         <BigText>You got {result.length}/{summaryAnswers.length} answers correct!</BigText>
         <CardContainer>
@@ -54,6 +56,16 @@ const OuterWrapperSummary = styled.div `
   height: 100%;
   padding-top: 10px;
 `
+
+const SummaryIcon = styled.img`
+  width: 60px;
+  margin: 20px 0 0 5px;
+  position: absolute;
+  top: 56px;
+  left: 247px;
+}
+`
+
 const InnerWrapperSummary = styled.div`
   width: 100%;
   height: auto;
