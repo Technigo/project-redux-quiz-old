@@ -15,6 +15,12 @@ p {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+@media (max-width: 667px) {
+    p {
+      font-size: 16px;
+    }
+      height: 4rem;
+  }
 
 @media (min-width: 1024px) {
   :hover {

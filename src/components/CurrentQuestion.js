@@ -101,6 +101,7 @@ const QuestionContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 90%;
+
 `
 
 const ButtonContainer = styled.div`
