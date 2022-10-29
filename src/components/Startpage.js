@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import tree from 'Images/tree.png'
+import cookie from 'Images/cookie.png'
 import { Background, QuestionContainer, Headers, Buttons, Illustration } from './Styling/GlobalStyles'
 
 export const StartPage = () => {
@@ -12,7 +12,7 @@ export const StartPage = () => {
           <Buttons href="" className="button"> START QUIZ </Buttons>
         </Link>
       </QuestionContainer>
-      <Illustration src={tree} alt="Ginger Cookie" />
+      <Illustration src={cookie} alt="Ginger Cookie" />
     </Background>
   )
 }
