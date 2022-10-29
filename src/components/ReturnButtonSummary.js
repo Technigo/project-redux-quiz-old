@@ -21,11 +21,11 @@ padding: 10px 2px 10px 0px;
 align-items: center;
 justify-content: center;
 text-align: center;
-color: white;
+color: whitesmoke;
 border-radius: 10px;
 font-size: 12px;
 text-transform: uppercase;
-margin: 5px 0 0 20px;
+margin: 15px 0 -8px 17px;
 height: 75px;
 width: 75px;
 border-radius: 50%;
@@ -49,7 +49,7 @@ border: none;
 
 @media (min-width: 1025px) {
   padding: 20px;
-  color: white;
+  color: whitesmoke;
   border-radius: 15px;
   font-size: 18px;
   margin: 10px 0 0 50px;

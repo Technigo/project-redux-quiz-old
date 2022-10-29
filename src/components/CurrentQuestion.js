@@ -93,11 +93,9 @@ const OuterWrapperQuestion = styled.main`
 background: transparent;
 padding-top: 15px;
 width: 100%;
-
 @media (min-width: 667px){
   padding-top: 0;
 }
-
 @media (min-width: 1025px){
   padding-top: 0;
 }
@@ -111,7 +109,6 @@ align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
-
 @media (min-width: 1025px){
   height: 100vh;
 }
@@ -132,7 +129,6 @@ border-bottom: solid 2px #C371D2;
   width: 56px;
   padding-top: 1.5rem;
 }
-
 @media (max-width: 667px) {
   height: 30vh;
   .question-icon {
@@ -152,10 +148,9 @@ border-bottom: solid 2px #C371D2;
 // justify-content: center;
 // `
 const Text = styled.h1`
-color: whitesmoke;
+color: black;
 width: 100%;
 font-size: 13px;
-
 @media (min-width: 668px) {
   font-size: 18px;
 }
@@ -190,7 +185,6 @@ const AnswerWrapper = styled.div `
       width: 269px;
     }
   }
-
   @media (min-width: 1025px) {
     width: 80%;
     .nav-button-wrapper{
@@ -214,7 +208,6 @@ const QuestionButtonContainer = styled.div`
     width: auto;
     box-sizing: border-box;
   }
-
   @media (min-width: 1025px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -223,9 +216,9 @@ const QuestionButtonContainer = styled.div`
     box-sizing: border-box;
     padding-bottom: 20px;
   }
-
   .disabled-true {
     font-size: 13px;
+    font-weight: 600;
     border: none;
     border-radius: 10px;
     width: 160px;
@@ -234,14 +227,12 @@ const QuestionButtonContainer = styled.div`
     color: whitesmoke;
     padding: 13px;
     margin: 0px;
-
     @media (min-width: 1025px) {
       width: 100%;
       font-size: 18px;
       padding: 31px;
     }
     }
-
   .disabled-false {
     font-size: 13px;
     font-weight: 600;
@@ -250,13 +241,13 @@ const QuestionButtonContainer = styled.div`
     width: 160px;
     height: 100%;
     background-color: #C371D2;
-    color: whitesmoke;
+    color: black;
     padding: 13px;
     margin: 0px;
     cursor: pointer;
     &:hover {
       background-color:  #A152B1; 
-      color: whitesmoke;
+      color: black;
     }
     @media (min-width: 1025px) {
       width: 100%;
@@ -265,7 +256,4 @@ const QuestionButtonContainer = styled.div`
       
     }
   }
-
 `
-
-

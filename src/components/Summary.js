@@ -5,7 +5,8 @@ import { useSelector } from 'react-redux';
 import { ReturnButton } from 'components/ReturnButtonSummary';
 // import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
-import confettiIcon from '../confetti.png'
+import confettiIcon from '../confetti.png';
+import Confetti from 'react-confetti'
 // import { getLatestVariableDefinition } from 'eslint-plugin-react/lib/util/variable';
 
 const Summary = () => {
@@ -14,39 +15,42 @@ const Summary = () => {
   console.log(summaryAnswers)
 
   return (
-    <OuterWrapperSummary>
-     <ReturnButton />
-     <SummaryIcon src={`${confettiIcon}`} alt="icon"/>
-     <InnerWrapperSummary>
-        <BigText>You got {result.length}/{summaryAnswers.length} answers correct!</BigText>
-        <CardContainer>
-        {summaryAnswers.map((results) => (
-          <Card>
-            <Counter>{results.questionId}</Counter>
-            <p>{results.question.questionText}</p>
-          <Div>
-            <h3>{results.answer}</h3>
-            {results.isCorrect ? (
-            <IconCorrect>
-              <h3>✔</h3>
-            </IconCorrect> 
-            ) : (
-            <IconNotCorrect>
-              <h3>✖️</h3>
-            </IconNotCorrect>
-            )}
-          </Div>
-            {!results.isCorrect && (
-              <p>
-              Correct answer is:{' '}
-                {results.question.options[results.question.correctAnswerIndex]}
-              </p>
-            )}
-          </Card>
-        ))}
-           </CardContainer>
-      </InnerWrapperSummary>
+    <>
+      {/* <Confetti /> */}
+      <OuterWrapperSummary>
+        <ReturnButton />
+        <SummaryIcon src={`${confettiIcon}`} alt="icon"/>
+        <InnerWrapperSummary>
+          <BigText>You got {result.length}/{summaryAnswers.length} answers correct!</BigText>
+          <CardContainer>
+            {summaryAnswers.map((results) => (
+            <Card>
+              <Counter>{results.questionId}</Counter>
+              <p>{results.question.questionText}</p>
+            <Div>
+              <h3>{results.answer}</h3>
+              {results.isCorrect ? (
+              <IconCorrect>
+                <h3>✔</h3>
+              </IconCorrect> 
+              ) : (
+              <IconNotCorrect>
+                <h3>✖️</h3>
+              </IconNotCorrect>
+              )}
+            </Div>
+              {!results.isCorrect && (
+                <p>
+                Correct answer is:{' '}
+                  {results.question.options[results.question.correctAnswerIndex]}
+                </p>
+              )}
+            </Card>
+          ))}
+          </CardContainer>
+        </InnerWrapperSummary>
       </OuterWrapperSummary>
+    </>
   );
 };
 
@@ -62,17 +66,17 @@ width: 70px;
 margin: 20px 0 0 5px;
 position: absolute;
 top: 70px;
-left: 79%;
+left: 75%;
 
   @media (min-width: 668px) {
-    width: 100px;
+    width: 120px;
     margin: 20px 0 0 5px;
     position: absolute;
     top: 75px;
-    left: 85%;
+    left: 80%;
   }
   @media (min-width: 1024px) {
-    width: 110px;
+    width: 120px;
     margin: 20px 0 0 5px;
     position: absolute;
     top: 75px;
@@ -161,7 +165,7 @@ const BigText = styled.h1`
   text-align: center;
   margin: 20px;
   padding: 30px;
-  color: white;
+  color: black;
   font-size: 37px;
   width: 540px;
   box-shadow: 10px 10px 5px -6px rgba(0,0,0,0.56);

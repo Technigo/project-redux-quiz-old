@@ -27,10 +27,10 @@ const Button = styled.button`
   width: 118px;
   background-color:#A27DA7;
   &:hover {
-    background-color: #C371D2; 
-    color: whitesmoke;
+    background-color: #A27DA7;
+    border: solid 1px #A27DA7;
+    color: #D9B2DE;
   }
-
 @media (min-width: 668px) {
   padding: 15px;
   color: whitesmoke;
@@ -40,7 +40,6 @@ const Button = styled.button`
   margin: 10px;
   width: 120px;
   }
-
   @media (min-width: 1024px) {
     padding: 15px;
     color: whitesmoke;

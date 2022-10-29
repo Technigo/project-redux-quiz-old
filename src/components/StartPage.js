@@ -60,7 +60,7 @@ h1 {
   color: white;
   position: relative;
   margin: 5px;
-  top: 60px;
+  top: 65px;
   padding: 5px 15px 5px 15px;
 }
 
