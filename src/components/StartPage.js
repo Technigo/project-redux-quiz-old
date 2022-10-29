@@ -6,6 +6,7 @@ import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion';
 import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
+import quizIcon from '../quiz.png'
 
 export const StartPage = () => {
   //const question = useSelector((state) => state.quizStart())
@@ -19,7 +20,7 @@ export const StartPage = () => {
         <OuterWrapperStartpage>
             <InnerWrapperStartpage>
             <Start>
-              <h2>6 questions</h2>
+              <img className='start-icon' src={`${quizIcon}`} alt="icon"/>
               <h1>about random stuff</h1>
               <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started</StartButton>
             </Start>
@@ -45,12 +46,11 @@ width: 250px;
 background-color: #A27DA7;
 position: absolute;
   
-h2 {
-  font-size: 10px;
-  margin-top: 30px;
-  color: white;
+.start-icon {
+  width: 99px;
+  padding-right: 89px;
+  margin-top: -20px;
   position: absolute;
-  font-size: 20px;
   margin-bottom: 0px;
   top: 1px;
 }
@@ -68,9 +68,10 @@ h1 {
     height: 450px;
     width: 450px;
 
-    h2 {
-      font-size: 50px;
-      top: 62px;
+    .start-icon {
+      width: 165px;
+      padding-right: 138px;
+      margin-top: 23px;
     }
     
     h1 {
@@ -106,7 +107,7 @@ const StartButton = styled.button`
   margin-top: 6px;
   font-size: 11px;
   font-weight: 600;
-  border: none;
+  border: solid 1px #9D78A2;
   width: 133px;
   background-color:#D9B2DE;
   position: relative;

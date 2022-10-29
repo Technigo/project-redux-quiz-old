@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import bubble from '../bubble-wrap.png'
 import pyramid from '../pyramid.png'
-import mandm from '../jelly-beans.png'
+import mandm from '../candy-jar.png'
 import horse from '../horse.png'
 import baby from '../baby.png'
 import island from '../island.png'

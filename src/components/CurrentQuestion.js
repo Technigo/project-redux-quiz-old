@@ -135,6 +135,10 @@ border-bottom: solid 2px #C371D2;
 
 @media (max-width: 667px) {
   height: 30vh;
+  .question-icon {
+    width: 50px;
+    padding-top: 1rem;
+  }
 }
 `
 
@@ -150,8 +154,11 @@ border-bottom: solid 2px #C371D2;
 const Text = styled.h1`
 color: whitesmoke;
 width: 100%;
-font-size: 18px;
+font-size: 13px;
 
+@media (min-width: 668px) {
+  font-size: 18px;
+}
 @media (min-width: 1025px) {
   height: auto;
   font-size: 32px;}
