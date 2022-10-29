@@ -12,13 +12,6 @@ code {
     monospace;
 }
 
-/* .question-text {
-  background-color: rgb(64, 63, 63);
-  color: white;
-  padding: 16px;
-  margin-bottom: 10px;
-  border-radius: 10px 10px 0px 0px;
-} */
 .question-title {
   font-family: 'Lobster', cursive;
   color: rgb(27, 25, 25);
@@ -31,6 +24,13 @@ code {
   border-radius: 10px 10px 0px 0px;
   margin: 0;
   width: 100%;
+}
+
+.footer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 h2 {

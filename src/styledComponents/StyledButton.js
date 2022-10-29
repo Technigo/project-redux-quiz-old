@@ -11,6 +11,7 @@ export const OptionButton = styled.button`
   margin-top: 10px;
   ${(props) => props.isCorrect && 'background-color: #67b467; color: white;'};
   ${(props) => props.isIncorrect && 'background-color: #b96f6f; color: white;'};
+  ${(props) => props.selected && 'animation: tada; animation-duration: 2s;'};
   transition: all 0.2s;
 
   &:hover {
@@ -39,6 +40,6 @@ export const Button = styled.button`
 `;
 
 export const CorrectAnswerMessage = styled.p`
-  ${(props) => props.rightAnswer && 'color: green;'};
+  ${(props) => props.rightAnswer && 'color: #709f70;'};
   ${(props) => props.wrongAnswer && 'color: red;'};
 `;
