@@ -54,6 +54,7 @@ export const CurrentQuestion = () => {
         <QuestionWrapper>        
         <ProgressBar bgcolor={bgcolor} completed={completed} />
         <Text>{question.questionText}</Text>
+        <img className='question-icon' src={question.imgUrl} alt="icon"/>
         </QuestionWrapper>
 
       <AnswerWrapper>
@@ -127,6 +128,10 @@ flex-direction: column;
 justify-content: center;
 text-align: center;
 border-bottom: solid 2px #C371D2;
+.question-icon {
+  width: 56px;
+  padding-top: 1.5rem;
+}
 
 @media (max-width: 667px) {
   height: 30vh;

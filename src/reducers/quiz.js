@@ -1,31 +1,43 @@
 import { createSlice } from '@reduxjs/toolkit'
+import bubble from '../bubble-wrap.png'
+import pyramid from '../pyramid.png'
+import mandm from '../jelly-beans.png'
+import horse from '../horse.png'
+import baby from '../baby.png'
+import island from '../island.png'
 
 // Change these to your own questions!
 const questions = [
   { id: 1,
     questionText: 'Bubble wrap was originally invented as...?',
     options: ['Wallpaper', 'Art', 'Carpet', 'Isolation'],
-    correctAnswerIndex: 0 },
+    correctAnswerIndex: 0,
+    imgUrl: `${bubble}` },
   { id: 2,
     questionText: 'Which country in the world has the most pyramids?',
     options: ['Libya', 'Egypt', 'Sudan', 'Algeria'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 2,
+    imgUrl: `${pyramid}` },
   { id: 3,
     questionText: 'What is the rarest M&M (candy) color?',
     options: ['Blue', 'Red', 'Yellow', 'Brown'],
-    correctAnswerIndex: 3 },
+    correctAnswerIndex: 3,
+    imgUrl: `${mandm}` },
   { id: 4,
     questionText: 'Which animal can gallop like a horse?',
     options: ['Crocodiles', 'Ants', 'Sir Vääs', 'Lizzard'],
-    correctAnswerIndex: 0 },
+    correctAnswerIndex: 0,
+    imgUrl: `${horse}` },
   { id: 5,
     questionText: 'How much water does a new born baby contain? ',
     options: ['1/4', '2/4', '3/4', '4/4'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 2,
+    imgUrl: `${baby}` },
   { id: 6,
     questionText: 'Which country in the world has the most islands?',
     options: ['Idonesia', 'Finland', 'Greece', 'Sweden'],
-    correctAnswerIndex: 3 }
+    correctAnswerIndex: 3,
+    imgUrl: `${island}` }
 ]
 
 const initialState = {
