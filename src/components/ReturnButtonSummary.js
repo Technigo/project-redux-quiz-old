@@ -52,7 +52,7 @@ border: none;
   color: white;
   border-radius: 15px;
   font-size: 18px;
-  margin: 10px 0 0 80px;
+  margin: 10px 0 0 50px;
   height: 150px;
   width: 150px;
   border-radius: 50%;

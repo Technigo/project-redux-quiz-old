@@ -165,34 +165,40 @@ font-size: 13px;
 `
 
 const AnswerWrapper = styled.div `
-  width: 80%;
-  height: 60vh;
-  background-color: #FFE4FF;
-  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: #FFE4FF;
   text-align: center;
   padding-top: 25px;
   box-sizing: border-box;
-  .nav-button-wrapper{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  @media (max-width: 667px) {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 200px;
   .nav-button-wrapper{
     display: flex;
     flex-direction: column-reverse;
     width: 200px;
+    padding: 20px;
+  }
+  @media (min-width: 667px) {
+    justify-content: flex-start;
+    padding-top: 50px;
+    .nav-button-wrapper{
+      display: flex;
+      flex-direction: row;
+      width: 269px;
     }
   }
+
+  @media (min-width: 1025px) {
+    width: 80%;
+    .nav-button-wrapper{
+      display: flex;
+      justify-content: center;
+      width: auto;
+    }
+}
 `
 const QuestionButtonContainer = styled.div`
   display: grid;

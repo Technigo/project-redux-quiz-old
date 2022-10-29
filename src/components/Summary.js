@@ -58,11 +58,26 @@ const OuterWrapperSummary = styled.div `
 `
 
 const SummaryIcon = styled.img`
-  width: 60px;
-  margin: 20px 0 0 5px;
-  position: absolute;
-  top: 56px;
-  left: 247px;
+width: 70px;
+margin: 20px 0 0 5px;
+position: absolute;
+top: 70px;
+left: 79%;
+
+  @media (min-width: 668px) {
+    width: 100px;
+    margin: 20px 0 0 5px;
+    position: absolute;
+    top: 75px;
+    left: 85%;
+  }
+  @media (min-width: 1024px) {
+    width: 110px;
+    margin: 20px 0 0 5px;
+    position: absolute;
+    top: 75px;
+    left: 80%;
+  }
 }
 `
 
@@ -92,10 +107,9 @@ const CardContainer = styled.div`
   @media (min-width: 668px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
-@media (min-width: 1024px) {
-  grid-template-columns: repeat(3, 1fr);
-}
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `
 
 const Card = styled.div `
@@ -118,19 +132,23 @@ h3 {
   display: flex;
   flex-direction: row;
   color: #69476E;
+  line-height: 78px;
 }
 h4{
   margin: 10px 0 5px 0;
 }
 p{
-  margin: 10px 0 30px 0;
+  margin: 10px 0 10px 0;
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
   font-size: 13px;
 }
 @media (max-width: 1023px) {
-  width: 220px;
-  font-size: 20px;
+  width: 205px;
+  font-size: 10px;
+  h3{
+    font-size: 20px;
+  }
 }
 `
 const Div = styled.div `

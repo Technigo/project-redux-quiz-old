@@ -67,11 +67,10 @@ h1 {
   @media (min-width: 668px) {
     height: 450px;
     width: 450px;
-
     .start-icon {
       width: 165px;
       padding-right: 138px;
-      margin-top: 23px;
+      margin-top: 13px;
     }
     
     h1 {
@@ -111,7 +110,7 @@ const StartButton = styled.button`
   width: 133px;
   background-color:#D9B2DE;
   position: relative;
-  top: 70px;
+  top: 65px;
   text-transform: uppercase;
 
   &:hover {
