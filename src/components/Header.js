@@ -13,6 +13,7 @@ export const Header = () => {
 
 export const HeaderWrapper = styled.header`
   height: 20vh;
+  min-height: 150px;
   padding-top: 3rem;
   background-color: #F26A3A;
   border: 10px dotted #A5D8C5;
