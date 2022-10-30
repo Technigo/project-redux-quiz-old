@@ -16,7 +16,7 @@ const Summary = () => {
 
   return (
     <>
-      {/* <Confetti /> */}
+      <Confetti />
       <OuterWrapperSummary>
         <ReturnButton />
         <SummaryIcon src={`${confettiIcon}`} alt="icon"/>
