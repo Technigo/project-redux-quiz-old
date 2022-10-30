@@ -120,13 +120,17 @@ const FooterContainer = styled.div`
   color: white;
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   margin-top: 10%;
 
   @media ${Devices.laptop} {
     margin-top: 30%;
+  }
+
+  @media ${Devices.laptopL} {
+    margin-top: 40%;
   }
 `
 
