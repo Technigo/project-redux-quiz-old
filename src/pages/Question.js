@@ -5,6 +5,7 @@ import { Devices } from '../components/MainStyles';
 import halloween from '../images/halloween.jpg';
 import mobileBG from '../images/mobileBG.jpeg';
 
+// Outline page for the questions
 export const Question = () => {
   return (
     <OuterWrapperQuestion>
@@ -13,6 +14,7 @@ export const Question = () => {
   )
 }
 
+// The local styled components
 const OuterWrapperQuestion = styled.div`
   color: white;
   background-image: url(${mobileBG});
@@ -25,6 +27,5 @@ const OuterWrapperQuestion = styled.div`
 
   @media ${Devices.tablet} {
     background-image: url(${halloween});
-    
   }
 `

@@ -8,19 +8,22 @@ import { Summary } from '../pages/Summary';
 import { MainQuestion, InnerWrapper, Devices } from './MainStyles';
 import { ProgressBar } from './ProgressBar';
 
+// Question-component for all qustions
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const [goToNextButton, setGoToNextButton] = useState(false);
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
 
+  // Function that activates when user clicks on an answer,
+  // also resets the goToNextButton-state hook
   const moveToNext = () => {
-    dispatch(quiz.actions.goToNextQuestion())
+    dispatch(quiz.actions.goToNextQuestion());
     setGoToNextButton(false);
   }
 
@@ -47,6 +50,7 @@ export const CurrentQuestion = () => {
   )
 }
 
+// The local styled components
 const CloneWrapper = styled(InnerWrapper)`
   display: flex;
   justify-content: center;

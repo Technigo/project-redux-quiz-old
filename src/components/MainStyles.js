@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import startImage from '../images/startImage.png';
 import mobileBG2 from '../images/mobileBG2.png';
 
+// the global styled components
 const sizes = {
   tablet: '768px',
   laptop: '1024px',
@@ -34,7 +35,6 @@ export const OuterWrapper = styled.div`
 
   @media ${Devices.tablet} {
     background-image: url(${startImage});
-    
   }
 `
 

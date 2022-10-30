@@ -4,11 +4,15 @@ import { useNavigate } from 'react-router-dom';
 import { NextButton } from 'components/NextButton';
 import { OuterWrapper, InnerWrapper, MainQuestion, Devices, PageContainer } from '../components/MainStyles';
 
+// First page the user gets to before the quiz starts
 export const Welcome = () => {
   const navigate = useNavigate();
+
+  // Function that navigates the user to the first question of the quiz, when the button is clicked
   const moveToQuiz = () => {
     navigate('/quiz');
   }
+
   return (
     <OuterWrapper>
       <ClonedInnerWrapper>
@@ -31,28 +35,23 @@ export const Welcome = () => {
           <LinkContainer>
             <Link
               href="https://www.linkedin.com/in/linda-malm-7aa8866b/"
-              target="_blank">
-          Linda Malm
+              target="_blank">Linda Malm
             </Link>
             <Link
               href="https://www.linkedin.com/in/tina-bruce-9b1a0813a/"
-              target="_blank">
-          Tina Bruce
+              target="_blank">Tina Bruce
             </Link>
             <Link
               href="https://www.linkedin.com/in/jesshansson/"
-              target="_blank">
-          Jessica Hansson
+              target="_blank">Jessica Hansson
             </Link>
             <Link
               href="https://www.linkedin.com/in/emil-bergvik/"
-              target="_blank">
-          Emil Bergvik
+              target="_blank">Emil Bergvik
             </Link>
             <Link
               href="https://www.linkedin.com/in/ceciliaraden/"
-              target="_blank">
-          Cecilia Rådén
+              target="_blank">Cecilia Rådén
             </Link>
           </LinkContainer>
         </FooterContainer>
@@ -61,6 +60,7 @@ export const Welcome = () => {
   )
 }
 
+// The local styled components
 const Container = styled(PageContainer)`
   display: flex;
   justify-content: center;
@@ -90,13 +90,7 @@ const SecondHeader = styled.h2`
 
 const WelcomeText = styled.p`
   font-family: 'Courier Prime', monospace;
-  font-size: 18px; // Used to be standard 16px
-  line-height: 26px; // Used to be standard 22px
-
-  // Added following:
-  @media ${Devices.tablet} {
-    font-size: 25px;
-  }
+  line-height: 22px;
 `
 
 const TextContainer = styled.div`
@@ -107,33 +101,32 @@ const TextContainer = styled.div`
   height: 50%;
 
   .Button {
-  text-align: center;
-  padding: 15px;
+    text-align: center;
+    padding: 15px;
   }
 
   @media ${Devices.laptop} {
-  width: 80%;
-  height: 50%;
+    width: 80%;
+    height: 50%;
   }
 
   @media ${Devices.desktop} {
-  width: 80%;
-  height: 50%;
+    width: 80%;
+    height: 50%;
   }
 `
 
 const FooterContainer = styled.div`
-color: white;
-display: flex;
-width: 100%;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-margin-top: 10%;
+  color: white;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10%;
 
   @media ${Devices.laptop} {
-    //margin-top: 30% changed to:
-    margin-top: 40%;
+    margin-top: 30%;
   }
 `
 
@@ -147,12 +140,12 @@ const LinkContainer = styled.div`
 `
 
 const Link = styled.a`
-font-family: 'Courier Prime', monospace;
-color: white;
-text-decoration: none;
-flex-direction: column;
-display: flex;
-margin: 5px;
+  font-family: 'Courier Prime', monospace;
+  color: white;
+  text-decoration: none;
+  flex-direction: column;
+  display: flex;
+  margin: 5px;
 
 @media ${Devices.laptop} {
   display: flex;
