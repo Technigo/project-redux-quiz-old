@@ -1,13 +1,9 @@
 # Redux quiz group project
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This quiz features five multiple-choice questions, a progress counter and a summary page at the end, all of which are built around Redux state management.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This was a group project that entailed a great deal of mob programming and individual trouble-shooting. We used React hooks, props and styled components along with Redux state management to build the quiz.
+If we had more time, we could have included a breakdown of the user's answers to each question when they reach the end screen.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://reduxquizproject10.netlify.app/
