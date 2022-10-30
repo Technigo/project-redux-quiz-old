@@ -239,7 +239,6 @@ const QuestionButtonContainer = styled.div`
     font-size: 13px;
     font-weight: 600;
     border: none;
-    border-radius: 10px;
     width: 160px;
     height: 100%;
     background-color: #D9B2DE;
@@ -256,7 +255,7 @@ const QuestionButtonContainer = styled.div`
     font-size: 13px;
     font-weight: 600;
     border: solid 1px #A152B1;
-    border-radius: 10px;
+    border: none;
     width: 160px;
     height: 100%;
     background-color: #C371D2;
