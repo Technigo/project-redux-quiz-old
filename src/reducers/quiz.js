@@ -2,15 +2,21 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Where does the show take place?', options: ['Brooklyn', 'Manhattan', 'San Francisco', 'Chicago'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'What year is Ted narrating the story from?', options: ['2020', '2027', '2030', '2034'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'What instrument does Ted steal for Robin?', options: ['A French horn', 'A tuba', 'A saxophone', 'A trumpet'], correctAnswerIndex: 0 },
+  { id: 4, questionText: 'Who does Barney belive is his father?', options: ['Alex Trebek', 'Dick Clark', 'Peter Marshall', 'Bob Barker'], correctAnswerIndex: 3 },
+  { id: 5, questionText: 'What embarrassing tattoo does Ted get in Season 3?', options: ['A unicorn', 'A skull', 'A butterfly', 'A pineapple'], correctAnswerIndex: 2 }
 ]
+
+const countdownInitialValue = 30
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  countdown: countdownInitialValue
 }
 
 export const quiz = createSlice({
@@ -69,6 +75,12 @@ export const quiz = createSlice({
       }
     },
 
+    resetCountdown: (state) => {
+      state.countdown = countdownInitialValue
+    },
+    setCountdown: (state, seconds) => {
+      state.countdown = seconds
+    },
     /**
      * Use this action to reset the state to the initial state the page had
      * when it was loaded. Who doesn't like re-doing a quiz when you know the
