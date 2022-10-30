@@ -4,9 +4,9 @@ export const Wrapper = styled.div`
   background-color: #b2e2e0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ${(props) => (props.alignTop ? 'flex-top' : 'center')};
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const AnswerContainer = styled.div`
@@ -30,6 +30,7 @@ export const OptionContainer = styled.div`
   margin-top: 10%;
   margin-bottom: 2em;
   padding: 10px;
+  align-items: center;
 `;
 
 export const StartEndContainer = styled.div`

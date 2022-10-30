@@ -31,7 +31,7 @@ const questions = [
       'alert("Hello World);',
       'alertBox("Hello World")'
     ],
-    correctAnswerIndex: 0
+    correctAnswerIndex: 1
   },
   {
     id: 4,
