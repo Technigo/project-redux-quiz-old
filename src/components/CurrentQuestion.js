@@ -81,7 +81,7 @@ export const CurrentQuestion = () => {
 }
 
 const OuterWrapper = styled.div`
-  background: linear-gradient(rgba(7, 7, 7, 0.7), rgb(0, 0, 0, 0)),
+  background: linear-gradient(rgba(7, 7, 7, 0.7), rgb(0, 0, 0, 0.3)),
   url(${universe});
   background-position: center;
   background-repeat: no-repeat;
