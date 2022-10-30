@@ -15,6 +15,7 @@ export const ButtonStyling = styled.button`
   font-family: 'Quicksand', sans-serif;
   font-size: 16px;
   font-weight: 700;
+  color: black;
 
   &:hover {
     opacity: 0.8;
