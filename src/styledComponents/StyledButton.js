@@ -12,9 +12,8 @@ export const OptionButton = styled.button`
   ${(props) => props.isCorrect && 'background-color: #67b467; color: white;'};
   ${(props) => props.isIncorrect && 'background-color: #b96f6f; color: white;'};
   ${(props) => props.selected && 'animation: tada; animation-duration: 2s;'};
-  transition: all 0.2s;
 
-  &:hover {
+  &:hover:enabled {
     background-color: #b2e2e0;
     color: white;
   }
@@ -33,7 +32,9 @@ export const Button = styled.button`
   border: none;
   font-weight: bold;
   font-size: 16px;
-  &:hover {
+  margin-top: 20px;
+
+  &:hover:enabled {
     background-color: rgb(255 255 255 / 25%);
     color: white;
   }

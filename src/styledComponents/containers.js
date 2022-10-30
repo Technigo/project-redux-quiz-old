@@ -30,6 +30,7 @@ export const OptionContainer = styled.div`
   margin-top: 10%;
   margin-bottom: 2em;
   padding: 10px;
+  align-items: center;
 `;
 
 export const StartEndContainer = styled.div`

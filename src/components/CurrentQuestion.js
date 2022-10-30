@@ -61,40 +61,39 @@ export const CurrentQuestion = () => {
         <div className="question-text">
           <h4>{question.questionText}</h4>
         </div>
-        <div>
-          <OptionContainer>
-            {question.options.map((option, index) => {
-              return (
-                <OptionButton
-                  isCorrect={answer && index === question.correctAnswerIndex}
-                  isIncorrect={answer && index !== question.correctAnswerIndex}
-                  selected={answer && index === answer.answerIndex}
-                  onClick={() => {
-                    submitAnswer(question.id, index);
-                    setDisabledStyledButton(true);
-                  }}
-                  disabled={disabledStyledButton}
-                  type="button"
-                  key={option}
-                >
-                  {option}
-                </OptionButton>
-              );
-            })}
-            <div className="footer">
-              <p>
-                Question {question.id}/{questionsLength}
-              </p>
-              {answer && (
-                <CorrectAnswerMessage
-                  rightAnswer={answer.isCorrect}
-                  wrongAnswer={!answer.isCorrect}
-                >
-                  {`The answer is ${statusAnswer()}`}
-                </CorrectAnswerMessage>
-              )}
-            </div>
-          </OptionContainer>
+
+        <OptionContainer>
+          {question.options.map((option, index) => {
+            return (
+              <OptionButton
+                isCorrect={answer && index === question.correctAnswerIndex}
+                isIncorrect={answer && index !== question.correctAnswerIndex}
+                selected={answer && index === answer.answerIndex}
+                onClick={() => {
+                  submitAnswer(question.id, index);
+                  setDisabledStyledButton(true);
+                }}
+                disabled={disabledStyledButton}
+                type="button"
+                key={option}
+              >
+                {option}
+              </OptionButton>
+            );
+          })}
+        </OptionContainer>
+        <div className="footer">
+          <p>
+            Question {question.id}/{questionsLength}
+          </p>
+          {answer && (
+            <CorrectAnswerMessage
+              rightAnswer={answer.isCorrect}
+              wrongAnswer={!answer.isCorrect}
+            >
+              {`The answer is ${statusAnswer()}`}
+            </CorrectAnswerMessage>
+          )}
         </div>
       </AnswerContainer>
       <Button type="button" disabled={!answer} onClick={handleNext}>
