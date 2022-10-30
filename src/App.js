@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import NavigationContainer from 'components/NavigationContainer';
+import 'animate.css';
 
 const reducer = combineReducers({
   quiz: quiz.reducer

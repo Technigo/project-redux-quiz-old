@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import {
   AnswerContainer,
-  BottomPageContainer,
   OptionContainer,
   Wrapper
 } from 'styledComponents/Containers';
@@ -56,51 +55,50 @@ export const CurrentQuestion = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper alignTop>
       <h1 className="question-title">Question {question.id}:</h1>
       <AnswerContainer>
         <div className="question-text">
           <h4>{question.questionText}</h4>
         </div>
-        <div>
-          <OptionContainer>
-            {question.options.map((option, index) => {
-              return (
-                <OptionButton
-                  isCorrect={answer && index === question.correctAnswerIndex}
-                  isIncorrect={answer && index !== question.correctAnswerIndex}
-                  onClick={() => {
-                    submitAnswer(question.id, index);
-                    setDisabledStyledButton(true);
-                  }}
-                  disabled={disabledStyledButton}
-                  type="button"
-                  key={option}
-                >
-                  {option}
-                </OptionButton>
-              );
-            })}
-          </OptionContainer>
-        </div>
-      </AnswerContainer>
 
-      {answer && (
-        <BottomPageContainer>
-          <CorrectAnswerMessage
-            rightAnswer={answer.isCorrect}
-            wrongAnswer={!answer.isCorrect}
-          >
-            {`The answer is ${statusAnswer()}`}
-          </CorrectAnswerMessage>
-          <Button type="button" onClick={handleNext}>
-            Next
-          </Button>
+        <OptionContainer>
+          {question.options.map((option, index) => {
+            return (
+              <OptionButton
+                isCorrect={answer && index === question.correctAnswerIndex}
+                isIncorrect={answer && index !== question.correctAnswerIndex}
+                selected={answer && index === answer.answerIndex}
+                onClick={() => {
+                  submitAnswer(question.id, index);
+                  setDisabledStyledButton(true);
+                }}
+                disabled={disabledStyledButton}
+                type="button"
+                key={option}
+              >
+                {option}
+              </OptionButton>
+            );
+          })}
+        </OptionContainer>
+        <div className="footer">
           <p>
             Question {question.id}/{questionsLength}
           </p>
-        </BottomPageContainer>
-      )}
+          {answer && (
+            <CorrectAnswerMessage
+              rightAnswer={answer.isCorrect}
+              wrongAnswer={!answer.isCorrect}
+            >
+              {`The answer is ${statusAnswer()}`}
+            </CorrectAnswerMessage>
+          )}
+        </div>
+      </AnswerContainer>
+      <Button type="button" disabled={!answer} onClick={handleNext}>
+        Next
+      </Button>
     </Wrapper>
   );
 };
