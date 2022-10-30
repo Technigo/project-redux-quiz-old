@@ -22,7 +22,8 @@ const ProgressBar = (props) => {
     padding: 5,
     color: 'black',
     fontWeight: 'bold',
-    fontSize: '15'
+    fontSize: '15',
+    display: 'none'
   }
 
   return (

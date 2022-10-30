@@ -14,10 +14,6 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const store = useSelector((state) => state.quiz)
   const result = useSelector((state) => state.quiz.questions.length)
-  // const id = useSelector(state => state.quiz.questions[state.quiz.currentQuestion].id)
-
-  console.log('store', store)
-  console.log('result', result) //funkar
 
   const dispatch = useDispatch();
 
@@ -44,14 +40,16 @@ export const CurrentQuestion = () => {
   }
 
   const bgcolor = '#6a1b9a'
-  let completed =Math.round((question.id/result) *100)
+  let completed = Math.round((question.id/result) *100)
+  let questionNumber = question.id
 
   return (
   <>
     {!store.quizOver ? (
        <OuterWrapperQuestion>
         <InnerWrapperQuestion>
-        <QuestionWrapper>        
+        <QuestionWrapper>
+        <Counter>{question.id}/{result}</Counter>   
         <ProgressBar bgcolor={bgcolor} completed={completed} />
         <Text>{question.questionText}</Text>
         <img className='question-icon' src={question.imgUrl} alt="icon"/>
@@ -129,6 +127,9 @@ border-bottom: solid 2px #C371D2;
   width: 56px;
   padding-top: 1.5rem;
 }
+
+@media (min-width: 1025px){
+
 @media (max-width: 667px) {
   height: 30vh;
   .question-icon {
@@ -138,6 +139,22 @@ border-bottom: solid 2px #C371D2;
 }
 `
 
+const Counter = styled.div`
+  color: black;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px;
+
+
+ @media (min-width: 668px){
+  font-size: 18px;
+  padding: 15px;
+}
+@media (min-width: 1025px) {
+  font-size: 32px;
+  padding: 20px;
+}
+`
 // const Counter = styled.p`
 // border-radius: 50%;
 // background-color: #FFE7FF;
@@ -147,6 +164,7 @@ border-bottom: solid 2px #C371D2;
 // align-items: center;
 // justify-content: center;
 // `
+
 const Text = styled.h1`
 color: black;
 width: 100%;
@@ -156,7 +174,8 @@ font-size: 13px;
 }
 @media (min-width: 1025px) {
   height: auto;
-  font-size: 32px;}
+  font-size: 32px;
+}
 `
 
 const AnswerWrapper = styled.div `

@@ -6,7 +6,7 @@ import { ReturnButton } from 'components/ReturnButtonSummary';
 // import { OuterWrapperStartpage } from 'components/OuterWrapperStartpage';
 import styled from 'styled-components/macro';
 import confettiIcon from '../confetti.png';
-import Confetti from 'react-confetti'
+import Confetti from 'react-confetti';
 // import { getLatestVariableDefinition } from 'eslint-plugin-react/lib/util/variable';
 
 const Summary = () => {
