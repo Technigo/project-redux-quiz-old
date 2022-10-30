@@ -17,7 +17,8 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "^5.0.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

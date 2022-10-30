@@ -4,6 +4,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import styled from 'styled-components/macro'
+import swal from 'sweetalert';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { ProgBar } from './ProgressBar'
@@ -25,9 +26,19 @@ export const CurrentQuestion = () => {
       { questionId, answerIndex }
     ))
     if (question.correctAnswerIndex === answerIndex) {
-      alert('Correct answer!')
+      swal({
+        title: 'Good job!',
+        text: 'You picked the right one!',
+        icon: 'success',
+        button: 'continue'
+
+      });
     } else {
-      alert('You are wrong!')
+      swal({
+        title: 'Wrong answer!',
+        icon: 'error',
+        button: 'continue'
+      });
     }
     dispatch(quiz.actions.goToNextQuestion())
   }
