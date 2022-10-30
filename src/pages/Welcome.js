@@ -129,13 +129,11 @@ width: 100%;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-// margin-top: 10%;
-// added following 2 lines:
-position: absolute;
-bottom: 0;
+margin-top: 10%;
 
   @media ${Devices.laptop} {
-    //margin-top: 30%;
+    //margin-top: 30% changed to:
+    margin-top: 40%;
   }
 `
 
