@@ -21,7 +21,7 @@ export const SummaryPage = () => {
       <NeonHeader>SUMMARY</NeonHeader>
       <SummaryWrapper>
         <Summary />
-        <QuizResult>You had {correctAnswers.length}/5 correct answers</QuizResult>
+        <QuizResult>You had {correctAnswers.length}/8 correct answers</QuizResult>
 
       </SummaryWrapper>
       <RestartButtonWrapper>
