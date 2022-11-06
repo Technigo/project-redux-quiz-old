@@ -1,27 +1,45 @@
-/* eslint-disable max-len */
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { NextButton } from 'components/NextButton';
 import { quiz } from 'reducers/quiz';
 import { OuterWrapper, Devices, PageContainer } from '../components/MainStyles';
-import HappyPumpkin from '../images/pumpkinHappy.png'
-import SadPumpkin from '../images/pumpkinSad.png'
+import HappyPumpkin from '../images/pumpkinHappy.png';
+import SadPumpkin from '../images/pumpkinSad.png';
 
+// Final page where the result is shown and the user have option of retaking the quiz
 export const Summary = () => {
   const dispatch = useDispatch();
 
+  // Restart-function, triggered by button-onclick
   const restartQuiz = () => {
-    dispatch(quiz.actions.restart())
+    dispatch(quiz.actions.restart());
   }
 
-  const correctAnswers = useSelector((state) => state.quiz.answers.filter((answer) => answer.isCorrect === true).length)
+  // Variable that checks how many correct answer the user has
+  const correctAnswers = useSelector(
+    (state) => state.quiz.answers.filter((answer) => answer.isCorrect === true).length
+  );
 
+  // Function that allows a different pumpkin to be shown
+  // depending on how many correct answers there are
   const finalImage = () => {
     if (correctAnswers === 8) {
       return <PumpingImg src={HappyPumpkin} alt="" />
     } else {
       return <PumpingImg src={SadPumpkin} alt="" />
+    }
+  }
+
+  // Function that allows a different message to be shown
+  // depending on how many correct answers there are
+  const finalMessage = () => {
+    if (correctAnswers === 8) {
+      return <PumpkinText> Impressive! </PumpkinText>
+    } else if (correctAnswers >= 6 && correctAnswers < 8) {
+      return <PumpkinText>Ok, but room for improvement!</PumpkinText>
+    } else {
+      return <PumpkinText>You need to read up on Halloween...</PumpkinText>
     }
   }
 
@@ -33,7 +51,7 @@ export const Summary = () => {
           <Score>{`You got ${correctAnswers} out of 8 right`}</Score>
           {finalImage()}
           <SummaryText>
-            <p>Want to give it another try?</p>
+            {finalMessage()}
             <NextButton clickAction={restartQuiz} content="Try again!" />
           </SummaryText>
         </ResultsContainer>
@@ -45,6 +63,7 @@ export const Summary = () => {
   )
 }
 
+// The local styled components
 const InnerWrapper = styled.section`
   font-family: 'Courier Prime', monospace;
   color: white;
@@ -62,7 +81,6 @@ const InnerWrapper = styled.section`
 const ResultsContainer = styled(PageContainer)`
   width: 100%;
   height: auto;
-  // added following:
   margin-top: 10%;
 `
 
@@ -78,7 +96,12 @@ const SummaryTitle = styled.h1`
 
 const PumpingImg = styled.img`
   width: 20%;
-  margin-bottom: 4vh;
+  margin-bottom: 1vh;
+`
+
+const PumpkinText = styled.p`
+  text-align: center;
+  margin: 2% 2% 15% 2%;
 `
 
 const SummaryText = styled.div`
@@ -86,9 +109,11 @@ const SummaryText = styled.div`
   justify-content: center;
   width: 70%;
   text-align: center;
+  margin-bottom: 4vh;
 
   @media ${Devices.tablet} {
     width: 80%;
+    margin-top: 2vh;
   }                                                                                                                                                                        
 `
 

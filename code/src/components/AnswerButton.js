@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { quiz } from '../reducers/quiz';
 import { Devices } from './MainStyles';
 
+// Component for the buttons with the different answers
 export const AnswerButton = ({ index, option, setGoToNextButton }) => {
   const dispatch = useDispatch();
   const [activeBtn, setActiveBtn] = useState(false);
@@ -15,6 +16,7 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
   // Gets the answers the user has given
   const usersAnswer = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
 
+  // Function that is activated when the user clicks on an answer
   const onAnswerSubmit = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({
       questionId, answerIndex
@@ -23,7 +25,7 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
     setGoToNextButton(true);
   }
 
-  const correctAnswer = usersAnswer && index === question.correctAnswerIndex
+  const correctAnswer = usersAnswer && index === question.correctAnswerIndex;
 
   return (
     <StyledButton
@@ -35,6 +37,7 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
   )
 };
 
+// The local styled components
 const StyledButton = styled.button`
   background-color: #FFCD42;
   border: #FFCD42;
