@@ -1,3 +1,3 @@
 ## View it live
 
-https://lively-bonbon-cc663c.netlify.app/
+https://halloween-quiz.brucette.com/
