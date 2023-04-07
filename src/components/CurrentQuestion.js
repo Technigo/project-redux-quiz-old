@@ -27,41 +27,91 @@ export const CurrentQuestion = () => {
     return <h2>Oh no! I could not find the current question!</h2>
   }
 
+  const questionNr = question.id
+
   return (
-    <section className="quizWrapper">
-      <h2>{question.questionText}</h2>
-      <div className="answerWrapper">
-        {question.options.map((option, index) => {
-          return (
-            <AnswerOptions
-              type="button"
-              className={answer ? 'disabled-true' : 'disabled-false'}
-              disabled={answer}
-              id={index}
-              key={option}
-              onClick={() => handleAnswer(question.id, index)}>
-              {option}
-            </AnswerOptions>
-          )
-        })}
-      </div>
-      <button type="button" onClick={handleNextQuestion}>Next question</button>
-      <p>Question: /6</p>
-    </section>
+    <CardWrapper>
+      <QuizWrapper>
+        <TheQuestion>{question.questionText}</TheQuestion>
+        <AnswerWrapper>
+          {question.options.map((option, index) => {
+            return (
+              <AnswerOptions
+                type="button"
+                className={answer ? 'disabled-true' : 'disabled-false'}
+                disabled={answer}
+                id={index}
+                key={option}
+                onClick={() => handleAnswer(question.id, index)}>
+                {option}
+              </AnswerOptions>
+            )
+          })}
+        </AnswerWrapper>
+        <Next type="button" onClick={handleNextQuestion}>Next question</Next>
+        <p>question: {questionNr} / 6</p>
+      </QuizWrapper>
+    </CardWrapper>
   )
-}
+};
+
+const CardWrapper = styled.section`
+  background: #1b4f69;
+  box-shadow:  15px 15px 40px #143b4f, -15px -15px 40px #216181;
+  padding: 25px;
+  margin-top: 20%;
+`;
+
+const QuizWrapper = styled.div`
+  border: 1px solid;
+  background-color: white;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+`;
+
+const TheQuestion = styled.h2`
+  font-size: 20px;
+`;
+
+const AnswerWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  width: 70%;
+  margin: 20px 0;
+
+  @media (min-width: 667px) {
+    grid-template-columns: repeat(2, 50%);
+  }
+`;
 
 const AnswerOptions = styled.button`
   padding: 10px;
   border-radius: 10px;
   border: none;
-  background-color: rgb(181, 135, 251);
-  opacity: 0.8;
+  background-color: #1b4f69;
   color: white;
   font-size: 16px;
   font-weight: bold;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.8;
+  }
+`;
+
+const Next = styled.button`
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #1b4f69;
+  background-color: transparent;
+  color: #1b4f69;
+  font-size: 16px;
+  font-weight: bold;
+
+  &:hover {
+    border-radius: 16px;
   }
 `;

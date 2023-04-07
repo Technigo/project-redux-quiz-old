@@ -1,6 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
-// Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'In which city does the river Donav not flow through?', options: ['Belgrade', 'Budapest', 'Strasbourg', 'Vienna'], correctAnswerIndex: 2 },
   { id: 2, questionText: 'During which century did Gutenbergs printing press it possible to produce writing in larger editions?', options: ['1300', '1400', '1500', '1600'], correctAnswerIndex: 1 },

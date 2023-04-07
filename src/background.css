@@ -1,49 +1,33 @@
-.smileys span {
+.triangles img {
     position: fixed;
-    bottom: -80px;
-    animation: animate 10s linear infinite;
-    font-size: 60px;
+    width: 70px;
+    bottom: -50px;
+    animation: animate 9s linear infinite;
     z-index: -1;
     }
     
-    .smileys span:nth-child(1){
-      left: 60px;
-      animation-delay: 0.6s;    
+    .triangles img:nth-child(1){
+      left: 16%;
+      animation-delay: 0.5s;    
     }
-    .smileys span:nth-child(2){
+    .triangles img:nth-child(2){
       left: 10%;
       animation-delay: 3s;  
     }
-    .smileys span:nth-child(3){
-      left: 20%;
+    .triangles img:nth-child(3){
+      left: 32%;
       animation-delay: 2s;    
     }
-    .smileys span:nth-child(4){
-      left: 30%;
-      animation-delay: 5s;   
+    .triangles img:nth-child(4){
+      left: 50%;
+      animation-delay: 3s;   
     }
-    .smileys span:nth-child(5){
-      left: 40%;
+    .triangles img:nth-child(5){
+      left: 64%;
       animation-delay: 1s;    
     }
-    .smileys span:nth-child(6){
-      left: 50%;
-      animation-delay: 7s;    
-    }
-    .smileys span:nth-child(7){
-      left: 60%;
-      animation-delay: 6s;  
-    }
-    .smileys span:nth-child(8){
-      left: 70%;
-      animation-delay: 8s;    
-    }
-    .smileys span:nth-child(9){
+    .triangles img:nth-child(6){
       left: 80%;
-      animation-delay: 6s;  
-    }
-    .smileys span:nth-child(10){
-      left: 90%;
       animation-delay: 4s;    
     }
     
