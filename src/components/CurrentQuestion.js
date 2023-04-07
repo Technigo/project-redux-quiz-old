@@ -19,7 +19,7 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
+    <section className="quizWrapper">
       <h2>{question.questionText}</h2>
       <div className="answerWrapper">
         {question.options.map((answer) => {
@@ -31,6 +31,6 @@ export const CurrentQuestion = () => {
       <p>Your answer is</p>
       <button type="button" onClick={handleNextQuestion}>Next question</button>
       <p>Question: /6</p>
-    </div>
+    </section>
   )
 }
