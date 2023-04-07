@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.answerWrapper {
+  display: grid;
+  width: 50%;
+  grid-template-columns: repeat(2, 50%);
+  gap: 10px;
+}
+
+.answer {
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
