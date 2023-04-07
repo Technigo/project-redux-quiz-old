@@ -35,18 +35,3 @@ h2 {
   width: 70%;
   text-align: center;
 }
-
-.answer {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(181, 135, 251);
-  opacity: 0.8;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.answer:hover {
-  opacity: 1;
-}
