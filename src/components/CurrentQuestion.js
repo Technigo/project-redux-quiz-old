@@ -6,6 +6,10 @@ export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
+  const handleAnswer = (questionId, answerIndex) => {
+    dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
+  };
+
   const handleNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
   };
@@ -16,15 +20,17 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h2>Question: {question.questionText}</h2>
+      <h2>{question.questionText}</h2>
       <div className="answerWrapper">
         {question.options.map((answer) => {
           return (
-            <button type="button" className="answer">{answer}</button>
+            <button type="button" className="answer" onClick={handleAnswer}>{answer}</button>
           )
         })}
       </div>
+      <p>Your answer is</p>
       <button type="button" onClick={handleNextQuestion}>Next question</button>
+      <p>Question: /6</p>
     </div>
   )
 }
