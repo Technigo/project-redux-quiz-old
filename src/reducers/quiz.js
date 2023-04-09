@@ -1,20 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const questions = [
-  { id: 1, questionText: 'In which city does the river Donav not flow through?', options: ['Belgrade', 'Budapest', 'Strasbourg', 'Vienna'], correctAnswerIndex: 2 },
-  { id: 2, questionText: 'During which century did Gutenbergs printing press it possible to produce writing in larger editions?', options: ['1300', '1400', '1500', '1600'], correctAnswerIndex: 1 },
+  { id: 1, questionText: 'Which city does the river Donav not flow through?', options: ['Belgrade', 'Budapest', 'Strasbourg', 'Vienna'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'During which century did Gutenberg´s printing press it possible to produce writing in larger editions?', options: ['1300', '1400', '1500', '1600'], correctAnswerIndex: 1 },
   { id: 3, questionText: 'ABBA won Eurovision Song Contest 1974 with "Waterloo", in which city?', options: ['Amsterdam', 'Brighton', 'Dublin', 'Edinburgh'], correctAnswerIndex: 1 },
   { id: 4, questionText: 'A traditional badminton ball is made out of feathers from a goose, but only from the left wing.', options: ['True', 'False'], correctAnswerIndex: 0 },
   { id: 5, questionText: 'Which musical had been performed in 42 countries and received 76 international awards by 2016?', options: ['Miss Saigon', 'The Book of Mormon', 'Les Misérables', 'West Side Story'], correctAnswerIndex: 2 },
   { id: 6, questionText: 'What company owns a spaceship named "SpaceShipTwo"?', options: ['Blue Origin', 'SpaceX', 'Bigelow Aerospace', 'Virgin Galactic'], correctAnswerIndex: 3 }
-]
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false
-}
+};
 
 export const quiz = createSlice({
   name: 'quiz',

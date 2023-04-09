@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import Summary from './Summary.js';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
+  const quizOver = useSelector((state) => state.quiz.quizOver);
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const answer = useSelector(
     (state) => state.quiz.answers.find((a) => (a.questionId === question.id))
@@ -30,28 +32,33 @@ export const CurrentQuestion = () => {
   const questionNr = question.id
 
   return (
-    <CardWrapper>
-      <QuizWrapper>
-        <TheQuestion>{question.questionText}</TheQuestion>
-        <AnswerWrapper>
-          {question.options.map((option, index) => {
-            return (
-              <AnswerOptions
-                type="button"
-                className={answer ? 'disabled-true' : 'disabled-false'}
-                disabled={answer}
-                id={index}
-                key={option}
-                onClick={() => handleAnswer(question.id, index)}>
-                {option}
-              </AnswerOptions>
-            )
-          })}
-        </AnswerWrapper>
-        <Next type="button" onClick={handleNextQuestion}>Next question</Next>
-        <p>question: {questionNr} / 6</p>
-      </QuizWrapper>
-    </CardWrapper>
+    <>
+      {!quizOver && (
+        <CardWrapper>
+          <QuizWrapper>
+            <TheQuestion>{question.questionText}</TheQuestion>
+            <AnswerWrapper>
+              {question.options.map((option, index) => {
+                return (
+                  <AnswerOptions
+                    type="button"
+                    className={answer ? 'disabled-true' : 'disabled-false'}
+                    disabled={answer}
+                    id={index}
+                    key={option}
+                    onClick={() => handleAnswer(question.id, index)}>
+                    {option}
+                  </AnswerOptions>
+                )
+              })}
+            </AnswerWrapper>
+            <Next type="button" onClick={handleNextQuestion}>Next question</Next>
+            <Tracker>Question {questionNr} / 6</Tracker>
+          </QuizWrapper>
+        </CardWrapper>
+      )}
+      {quizOver && (<Summary />)}
+    </>
   )
 };
 
@@ -74,6 +81,10 @@ const QuizWrapper = styled.div`
 
 const TheQuestion = styled.h2`
   font-size: 20px;
+  text-align: center;
+  margin-top: 40px;
+  text-transform: uppercase;
+  width: 90%;
 `;
 
 const AnswerWrapper = styled.div`
@@ -89,13 +100,14 @@ const AnswerWrapper = styled.div`
 `;
 
 const AnswerOptions = styled.button`
-  padding: 10px;
+  padding: 20px 0;
   border-radius: 10px;
   border: none;
   background-color: #1b4f69;
   color: white;
   font-size: 16px;
   font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
     opacity: 0.8;
@@ -103,15 +115,22 @@ const AnswerOptions = styled.button`
 `;
 
 const Next = styled.button`
-  padding: 10px;
+  padding: 15px 25px;
   border-radius: 10px;
   border: 2px solid #1b4f69;
   background-color: transparent;
   color: #1b4f69;
   font-size: 16px;
   font-weight: bold;
+  text-transform: uppercase;
 
   &:hover {
     border-radius: 16px;
   }
+`;
+
+const Tracker = styled.p`
+  font-size: 16px;
+  color: #1b4f69;
+  text-transform: uppercase;
 `;
