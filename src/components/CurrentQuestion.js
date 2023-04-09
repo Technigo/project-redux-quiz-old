@@ -6,7 +6,7 @@ import Summary from './Summary.js';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
-  const quizOver = useSelector((state) => state.quiz.quizOver);
+  const theStore = useSelector((store) => store);
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const answer = useSelector(
     (state) => state.quiz.answers.find((a) => (a.questionId === question.id))
@@ -33,7 +33,7 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      {!quizOver && (
+      {!theStore.quizOver && (
         <CardWrapper>
           <QuizWrapper>
             <TheQuestion>{question.questionText}</TheQuestion>
@@ -57,7 +57,7 @@ export const CurrentQuestion = () => {
           </QuizWrapper>
         </CardWrapper>
       )}
-      {quizOver && (<Summary />)}
+      {theStore.quizOver && (<Summary />)}
     </>
   )
 };
