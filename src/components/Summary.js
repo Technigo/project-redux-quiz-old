@@ -11,7 +11,7 @@ const Summary = () => {
   return (
     <Wrapper>
       <p>You got {correctAnswers} answers out of 6 correct!</p>
-      <button type="button" onClick={dispatch(quiz.actions.restart())}>Restart</button>
+      <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
     </Wrapper>
   )
 };

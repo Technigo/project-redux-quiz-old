@@ -1,6 +1,6 @@
 .triangles img {
     position: fixed;
-    bottom: -70px;
+    bottom: -100px;
     animation: animate 9s linear infinite;
     z-index: -1;
     }
