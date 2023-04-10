@@ -2,8 +2,16 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'Which of these programming languages was developed by Netscape in 1995 for use in web pages?', options: ['HTML', 'JavaScript', 'Python', 'Java'], correctAnswerIndex: 2 },
+  { id: 2, questionText: 'In CSS, what property is used to control the spacing between elements?', options: ['padding', 'margin', 'border', 'height'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'What is the name of the CSS property used to make text bold?', options: ['font-style', 'font-weight', 'font-size', 'line-height'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'Which of these companies was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne?', options: ['Google', 'Microsoft', 'Apple', 'Amazon'], correctAnswerIndex: 3 },
+  { id: 5, questionText: 'Which of these tags is used to create an unordered list in HTML?', options: ['<ul>', '<ol>', '<li>', '<p>'], correctAnswerIndex: 1 },
+  { id: 6, questionText: 'In JavaScript, what method is used to add an element to the end of an array?', options: ['unshift()', 'shift', 'pop', 'push'], correctAnswerIndex: 4 },
+  { id: 7, questionText: 'What does the acronym API stand for?', options: ['Automated Programming Interface', 'Automated Programming Integration', 'Application Programming Interface', 'Advanced Programming Integration'], correctAnswerIndex: 3 },
+  { id: 8, questionText: 'Who created React?', options: ['Mark Zuckerberg', 'Jordan Walke', 'Jack Dorsey', 'Larry Page'], correctAnswerIndex: 2 },
+  { id: 9, questionText: 'What is the main concept behind Reacts Virtual DOM?', options: ['It allows for faster rendering of components', 'It reduces the number of HTTP requests', 'It enables server-side rendering', 'It ensures better compatibility with older browsers'], correctAnswerIndex: 1 },
+  { id: 10, questionText: 'What is the purpose of the mapStateToProps function in React-Redux?', options: ['It maps the state of the Redux store to props for a component', 'It maps the dispatch function to props for a component', 'It defines the shape of the Redux store', 'It specifies which actions a component can dispatch'], correctAnswerIndex: 2 }
 ]
 
 const initialState = {
