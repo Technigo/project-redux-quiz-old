@@ -6,11 +6,23 @@ import Summary from './Summary.js';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
-  const theStore = useSelector((store) => store);
+  const quizOver = useSelector((state) => state.quiz.quizOver);
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const answer = useSelector(
     (state) => state.quiz.answers.find((a) => (a.questionId === question.id))
   );
+
+  if (!question) {
+    return <h2>Oh no! I could not find the current question!</h2>
+  }
+
+  if (quizOver) {
+    return (<Summary />)
+  }
+
+  const nextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  };
 
   const handleAnswer = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
@@ -19,46 +31,33 @@ export const CurrentQuestion = () => {
     } else {
       document.getElementById(`${answerIndex}`).style.background = 'red'
     }
+    setTimeout(nextQuestion, 1000)
   };
 
-  const handleNextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion())
-  };
-
-  if (!question) {
-    return <h2>Oh no! I could not find the current question!</h2>
-  }
-
-  const questionNr = question.id
+  const questionNr = question.id;
 
   return (
-    <>
-      {!theStore.quizOver && (
-        <CardWrapper>
-          <QuizWrapper>
-            <TheQuestion>{question.questionText}</TheQuestion>
-            <AnswerWrapper>
-              {question.options.map((option, index) => {
-                return (
-                  <AnswerOptions
-                    type="button"
-                    className={answer ? 'disabled-true' : 'disabled-false'}
-                    disabled={answer}
-                    id={index}
-                    key={option}
-                    onClick={() => handleAnswer(question.id, index)}>
-                    {option}
-                  </AnswerOptions>
-                )
-              })}
-            </AnswerWrapper>
-            <Next type="button" onClick={handleNextQuestion}>Next question</Next>
-            <Tracker>Question {questionNr} / 6</Tracker>
-          </QuizWrapper>
-        </CardWrapper>
-      )}
-      {theStore.quizOver && (<Summary />)}
-    </>
+    <CardWrapper>
+      <QuizWrapper>
+        <TheQuestion>{question.questionText}</TheQuestion>
+        <AnswerWrapper>
+          {question.options.map((option, index) => {
+            return (
+              <AnswerOptions
+                type="button"
+                className={answer ? 'disabled-true' : 'disabled-false'}
+                disabled={answer}
+                id={index}
+                key={option}
+                onClick={() => handleAnswer(question.id, index)}>
+                {option}
+              </AnswerOptions>
+            )
+          })}
+        </AnswerWrapper>
+        <Tracker>Question {questionNr} / 6</Tracker>
+      </QuizWrapper>
+    </CardWrapper>
   )
 };
 
@@ -111,21 +110,6 @@ const AnswerOptions = styled.button`
 
   &:hover {
     opacity: 0.8;
-  }
-`;
-
-const Next = styled.button`
-  padding: 15px 25px;
-  border-radius: 10px;
-  border: 2px solid #1b4f69;
-  background-color: transparent;
-  color: #1b4f69;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-
-  &:hover {
-    border-radius: 16px;
   }
 `;
 
