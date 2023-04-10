@@ -12,12 +12,12 @@ export const CurrentQuestion = () => {
     (state) => state.quiz.answers.find((a) => (a.questionId === question.id))
   );
 
-  if (!question) {
-    return <h2>Oh no! I could not find the current question!</h2>
-  }
-
   if (quizOver) {
     return (<Summary />)
+  }
+
+  if (!question) {
+    return <h2>Oh no! I could not find the current question!</h2>
   }
 
   const nextQuestion = () => {

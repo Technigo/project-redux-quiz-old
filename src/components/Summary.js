@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 
@@ -8,11 +9,15 @@ const Summary = () => {
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
 
   return (
-    <div>
+    <Wrapper>
       <p>You got {correctAnswers} answers out of 6 correct!</p>
       <button type="button" onClick={dispatch(quiz.actions.restart())}>Restart</button>
-    </div>
+    </Wrapper>
   )
 };
 
 export default Summary;
+
+const Wrapper = styled.div`
+  background-color: white;
+`;
