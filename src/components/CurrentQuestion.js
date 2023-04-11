@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-len */
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,6 +32,16 @@ export const CurrentQuestion = (props) => {
     <div>
       <button type="button" onClick={onButtonClick}>Next Question</button>
       <h1>Question: {question.questionText}</h1>
+      {question.options.map((singleOption, index) => (
+        <div key={index}>
+          <input
+            type="radio"
+            name="answer"
+            value={index}
+            onChange={(e) => setGuessedAnswerIndex(Number(e.target.value))} />
+          <label>{singleOption}</label>
+        </div>
+      ))}
     </div>
   )
 }
