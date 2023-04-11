@@ -45,6 +45,14 @@ export const quiz = createSlice({
         throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
 
+      if (question.correctAnswerIndex === answerIndex) {
+        console.log('correct index', question.correctAnswerIndex, 'selectedIndex', answerIndex)
+        document.getElementById(question.correctAnswerIndex).classList.add('green')
+      } else {
+        console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
+        document.getElementById(answerIndex).classList.add('red')
+      }
+
       state.answers.push({
         questionId,
         answerIndex,
