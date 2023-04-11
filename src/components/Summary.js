@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import TriviaStyle from './TriviaStyle';
 
 const Summary = () => {
   const dispatch = useDispatch();
@@ -9,15 +10,20 @@ const Summary = () => {
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
 
   return (
-    <Wrapper>
-      <p>You got {correctAnswers} answers out of 6 correct!</p>
-      <button type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</button>
-    </Wrapper>
+    <TriviaStyle
+      text={`You got ${correctAnswers} out of 6 answers correct!`}
+      placeholder={<RestartBtn type="button" onClick={() => dispatch(quiz.actions.restart())}>Restart</RestartBtn>} />
   )
 };
 
 export default Summary;
 
-const Wrapper = styled.div`
-  background-color: white;
+const RestartBtn = styled.button`
+  color: white;
+  text-transform: uppercase;
+  font-size: 32px;
+  text-shadow: 1px 1px 2px black;
+  background-color: transparent;
+  border: none;
+  margin: 0;
 `;

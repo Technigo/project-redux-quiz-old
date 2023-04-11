@@ -62,10 +62,10 @@ export const CurrentQuestion = () => {
 };
 
 const CardWrapper = styled.section`
-  background: #1b4f69;
-  box-shadow:  15px 15px 40px #143b4f, -15px -15px 40px #216181;
+  background: #0f2841;
+  box-shadow:  20px 20px 48px #0a1b2c, -20px -20px 48px #143556;
   padding: 25px;
-  margin-top: 20%;
+  margin: 8px;
 `;
 
 const QuizWrapper = styled.div`
@@ -83,7 +83,7 @@ const TheQuestion = styled.h2`
   text-align: center;
   margin-top: 40px;
   text-transform: uppercase;
-  width: 90%;
+  width: 80%;
 `;
 
 const AnswerWrapper = styled.div`
@@ -102,7 +102,7 @@ const AnswerOptions = styled.button`
   padding: 20px 0;
   border-radius: 10px;
   border: none;
-  background-color: #1b4f69;
+  background-color: #0f2841;
   color: white;
   font-size: 16px;
   font-weight: bold;
@@ -115,6 +115,7 @@ const AnswerOptions = styled.button`
 
 const Tracker = styled.p`
   font-size: 16px;
-  color: #1b4f69;
+  color: #0f2841;
   text-transform: uppercase;
+  font-weight: bold;
 `;
