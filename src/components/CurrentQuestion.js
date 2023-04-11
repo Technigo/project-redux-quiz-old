@@ -5,11 +5,11 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 // import { useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { SummaryPage } from './SummaryPage'
+// import { SummaryPage } from './SummaryPage'
 
 export const CurrentQuestion = () => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  const isQuizOver = useSelector((store) => store.quiz.quizOver)
+  // const isQuizOver = useSelector((store) => store.quiz.quizOver)
   // const correctAnswer = question.correctAnswerIndex
   // const isCorrect = useSelector((store) => store.quiz.answers[store.quiz.currentQuestionIndex]
   //   .isCorrect)
@@ -21,18 +21,11 @@ export const CurrentQuestion = () => {
     // console.log(selectedAnswerIndex)
     // console.log(questionId)
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
-    if (!isQuizOver) {
-      setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 2000)
-      console.log(isQuizOver)
-    } else {
-      <SummaryPage />
-      console.log(isQuizOver)
-    }
 
     // }
     // dispatch(quiz.actions.submitAnswer({ }))
 
-    //  dispatch(quiz.actions.goToNextQuestion())
+    setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 2000)
   }
 
   if (!question) {
