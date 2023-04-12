@@ -9,7 +9,7 @@ export const ResetButton = () => {
   }
   return (
     <button
-      className="nextButton"
+      className="resetButton"
       onClick={restart}
       type="button">
       Play Again
