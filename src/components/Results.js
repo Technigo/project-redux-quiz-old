@@ -7,7 +7,7 @@ background-image: url("../assets/matrix.jpg");
 background-size: cover;
 `
 const ScoreText = styled.h2`
-color:white;
+color:black;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-size:3rem;
 text-align:center;
