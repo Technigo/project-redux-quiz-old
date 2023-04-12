@@ -27,7 +27,7 @@ export const AccordionComponent = () => {
             <AccordionItemPanel>
               <ContainerRow>
                 <AnswerText wrong><span>Your answer: </span>
-                  {wrongAnswer.question.options[wrongAnswer.answerIndex]}
+                  {wrongAnswer.answer}
                 </AnswerText>
                 <AnswerText><span>Correct answer: </span>
                   {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex
