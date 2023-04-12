@@ -36,7 +36,7 @@ export const CurrentQuestion = (props) => {
     return (
       <div>
         <button type="button" onClick={onButtonClick}>Next Question</button>
-        <h1>Question: {question.questionText}</h1>
+        <h1>{question.questionText}</h1>
         {question.options.map((singleOption, index) => (
           <div key={index}>
             <input
