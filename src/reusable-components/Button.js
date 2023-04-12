@@ -9,7 +9,7 @@ export const ButtonContainer = styled.div`
     max-width:600px;
     gap:2rem;
     position:relative;
-    top: 20%;
+    top: 10%;
 
     @media (min-width: 768px) {
         top:15%;
@@ -34,8 +34,9 @@ export const Button = styled.button`
     font-weight:500;
 
     :hover{
-        background-color: yellow;
+        transform: scale(1.15);
     }
+    
 
     @media (min-width: 768px) {
         width: ${(props) => ((props.answerBtn) ? '8em' : '18em')};

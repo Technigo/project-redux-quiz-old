@@ -14,12 +14,12 @@ export const StartContainer = styled.div`
 `
 
 export const Logo = styled.img`
-display:flex;
-width:40%;
-border-radius: 50%;
+    display:flex;
+    width:40%;
+    border-radius: 50%;
 
 @media (min-width: 1024px) {
-    width: 23%;
+    width: 18%;
 
 }
 `
