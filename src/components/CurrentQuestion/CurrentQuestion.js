@@ -3,11 +3,11 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import ProgressBar from '../ProgressBar';
+import { ProgressBar } from '../ProgressBar';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  const currentQuestionId = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].id)
+  // const currentQuestionId = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].id)
   const btnColor = useSelector((store) => store.quiz.btnColor)
   const correctAnswerIndex = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].correctAnswerIndex)
 
@@ -42,7 +42,7 @@ export const CurrentQuestion = (props) => {
     <div>
       <h1>Question: {question.questionText}</h1>
       <div>
-        <ProgressBar currentQuestionId={currentQuestionId} />
+        <ProgressBar />
         {question.options.map((answer, index) => {
           return (
             <button
