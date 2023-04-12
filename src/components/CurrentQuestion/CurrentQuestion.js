@@ -4,11 +4,10 @@ import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Timer } from 'components/Timer';
-import ProgressBar from '../ProgressBar';
+import { ProgressBar } from '../ProgressBar';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  // const currentQuestionId = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].id)
   const btnColor = useSelector((store) => store.quiz.btnColor)
   const correctAnswerIndex = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].correctAnswerIndex)
   const { setScore, score } = props
