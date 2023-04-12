@@ -1,7 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { MovingComponent } from 'react-moving-text'
-import { Container, RestartButton } from './SummaryPageStyling';
+import { quiz } from 'reducers/quiz';
+import { TfiAlarmClock } from 'react-icons/tfi';
+import { Container, RestartButton, ContainerRow } from './SummaryPageStyling';
 import { AccordionComponent } from './AccordionComponent';
 
 export const SummaryPage = (props) => {
@@ -10,7 +12,11 @@ export const SummaryPage = (props) => {
   console.log(wrongAnswers)
   const countOfWrongAnswers = wrongAnswers.length
   console.log(countOfWrongAnswers)
-  // const correctAnswers = answers.filter((answer) => answer.isCorrect === true)
+  const dispatch = useDispatch()
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+  }
+
   return (
     <Container>
       <MovingComponent
@@ -21,12 +27,12 @@ export const SummaryPage = (props) => {
         timing="ease-out"
         iteration="1"
         fillMode="none">
-  Your score is {props.score > 0 ? props.score : 0}
+  Your score is {props.score > 0 ? props.score : 0}/21!
       </MovingComponent>
-      <h2>time taken</h2>
+      <ContainerRow><TfiAlarmClock /> <p>Time spent: 40s</p></ContainerRow>
       <h2>You had {countOfWrongAnswers} incorrect answers:</h2>
       <AccordionComponent />
-      <RestartButton>Play again
+      <RestartButton onClick={restartQuiz}>Play again
       </RestartButton>
     </Container>
   )

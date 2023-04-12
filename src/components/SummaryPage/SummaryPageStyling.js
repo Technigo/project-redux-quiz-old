@@ -9,6 +9,7 @@ align-items:center;
 justify-content:center;
 flex-direction:column;
 min-height:100%;
+color: #dfe3f5;
 `
 export const ContainerRow = styled.section`
 display:flex;
@@ -32,4 +33,5 @@ margin: 18px;
 border-radius: 15px;
 border: rgb(110, 72, 170) solid 3px;
 color:#dfe3f5;
+font-weight:600;
 `
