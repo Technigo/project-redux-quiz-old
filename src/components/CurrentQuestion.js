@@ -4,6 +4,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import Results from './Results';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
@@ -15,33 +16,38 @@ export const CurrentQuestion = (props) => {
   console.log('wholeStore', wholeStore);
   console.log('question', question);
   const { setScore, score } = props;
-  console.log(setScore)
-  console.log(score)
-  console.log(guessedAnswerIndex, setGuessedAnswerIndex, wrongGuessesCount, setWrongGuessesCount)
+  console.log(setScore);
+  console.log(score);
+  console.log(guessedAnswerIndex, setGuessedAnswerIndex, wrongGuessesCount, setWrongGuessesCount);
   const dispatch = useDispatch();
+  const quizOver = useSelector((store) => store.quiz.quizOver);
 
   const notUpdateByReducerQuestion = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
   console.log(notUpdateByReducerQuestion)
 
+  const onButtonClick = () => { dispatch(quiz.actions.goToNextQuestion()) }
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
-  const onButtonClick = () => { dispatch(quiz.actions.goToNextQuestion()) }
-
-  return (
-    <div>
-      <button type="button" onClick={onButtonClick}>Next Question</button>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((singleOption, index) => (
-        <div key={index}>
-          <input
-            type="radio"
-            name="answer"
-            value={index}
-            onChange={(e) => setGuessedAnswerIndex(Number(e.target.value))} />
-          <label>{singleOption}</label>
-        </div>
-      ))}
-    </div>
-  )
+  if (quizOver === true) {
+    return <Results />
+  } else {
+    return (
+      <div>
+        <button type="button" onClick={onButtonClick}>Next Question</button>
+        <h1>Question: {question.questionText}</h1>
+        {question.options.map((singleOption, index) => (
+          <div key={index}>
+            <input
+              type="radio"
+              name="answer"
+              value={index}
+              onChange={(e) => setGuessedAnswerIndex(Number(e.target.value))} />
+            <label>{singleOption}</label>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
