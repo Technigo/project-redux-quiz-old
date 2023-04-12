@@ -2,8 +2,30 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1,
+    questionText: 'Which actor played the role of Iron Man in the Marvel Cinematic Universe?',
+    options: ['Robert Downey Jr.', 'Chris Evans', 'Mark Ruffalo', 'Chris Hemsworth'],
+    correctAnswerIndex: 0 },
+  { id: 2,
+    questionText: 'What is the name of the fictional metal used to make Captain Americas shield??',
+    options: [' Adamantium', 'Vibranium', 'Promethium', 'Unobtanium'],
+    correctAnswerIndex: 1 },
+  { id: 3,
+    questionText: 'Who played the role of Black Widow in the Marvel Cinematic Universe??',
+    options: ['Scarlett Johansson', 'Emma Stone', 'Jennifer Lawrence', 'Anne Hathaway'],
+    correctAnswerIndex: 0 },
+  { id: 4,
+    questionText: 'Which Infinity Stone does the Tesseract contain??',
+    options: ['Power Stone', 'Time stone', 'Space stone', 'Mind stone'],
+    correctAnswerIndex: 2 },
+  { id: 5,
+    questionText: 'Who is Zeus played by in Thor: Love and Thunder??',
+    options: ['Brad Pitt', 'Joaquin Phoenix', 'Matt Damon', 'Russel Crowe'],
+    correctAnswerIndex: 3 },
+  { id: 6,
+    questionText: 'Which character from Guardians of the Galaxy was born on Earth??',
+    options: ['Gamora', 'Drax', 'Rocket', 'Peter Quill'],
+    correctAnswerIndex: 3 }
 ]
 
 const initialState = {
@@ -77,8 +99,8 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
+      return initialState;
     }
 
   }
-})
+});
