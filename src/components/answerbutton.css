@@ -1,0 +1,29 @@
+button {
+  background-color: #3498db;
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+button.default:hover {
+  background-color: #2980b9;
+}
+
+button.default:active {
+  background-color: #21618c;
+}
+
+button.correct {
+  background-color: #2ecc71;
+}
+
+button.wrong {
+  background-color: #e74c3c;
+}
+
+button.default {
+  background-color: #bdc3c7;
+}

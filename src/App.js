@@ -6,6 +6,7 @@ import { quiz } from 'reducers/quiz';
 import { WelcomePage } from 'pages/WelcomePage';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
+import { AnswerButton } from 'components/AnswerButton';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -20,6 +21,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/quiz" element={<CurrentQuestion />} />
+          <Route path="/answer" element={<AnswerButton />} />
         </Routes>
       </BrowserRouter>
     </Provider>
