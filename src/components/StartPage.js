@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
 import quizIcon from '../assets/icon.jpg'
+// import purple from '../assets/purple.jpg'
 
 
 export const StartPage = () => {
@@ -14,6 +15,7 @@ export const StartPage = () => {
 
   return (
     <>
+    {/* <img className='background-img' src={`${purple}`} alt="purple"/> */}
       {!question.quizStart ? (
         <OuterWrapperStartPage>
           <InnerWrapperStartPage>
@@ -62,18 +64,25 @@ const StartButton = styled.button`
   position: relative;
   top: 10px;
   text-transform: uppercase;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
 `
 const OuterWrapperStartPage = styled.div`
+background-size: cover;
 background: #231f20;
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 100vw;
-  height: auto;
+  height: 100vh;
   border: 1px solid red;
 `
 
  const InnerWrapperStartPage = styled.div`
+ background-image: url(${purple});
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -82,42 +91,3 @@ width: 80%;
 height: 100vh;
 align-items: center;
 margin: 0 auto;`
-
-// const Start = styled.div`
-// display: flex;
-// flex-direction: column;
-// text-align: center;
-// border: solid 8px #BDE0FE;
-// height: 200px;
-// width: 200px;
-// position: absolute;
-// `
-
-// const StartButton = styled.button`
-// padding: 10px;
-// color: white;
-// background-color: black;
-// border-radius: 10px;
-// margin-top: 5px;
-// font-size: 12px;
-// font-weight: 500;
-// width: 100px;
-// `
-// export const OuterWrapperStartPage = styled.div`
-//   position: absolute;
-//   display: flex;
-//   flex-direction: column;
-//   width: 100vw;
-//   height: auto;
-//   border: 1px solid red;
-// `
-
-// export const InnerWrapperStartPage = styled.div`
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// background-color: transparent;
-// width: 60%;
-// height: 100vh;
-// align-items: center;
-// margin: 0 auto;`
