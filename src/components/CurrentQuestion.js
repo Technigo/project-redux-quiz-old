@@ -39,7 +39,7 @@ export const CurrentQuestion = () => {
 
   const guessCheck = (index) => {
     if (!hasAnswered) {
-      return 'default'
+      return 'default-disabled'
     }
     if (index === question.correctAnswerIndex) {
       return 'correct'
@@ -83,14 +83,24 @@ export const CurrentQuestion = () => {
 const Main = styled.div`
 display:flex; 
 flex-direction:column;
-background-color: #0078BE;
+background-color: #0078bea7;
+/* margin: 15px; */
+
+@media (min-width: 834px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) {
+  background-color: #0078bea7;
+  width: 45%;
+  margin: 4% auto;
+}
 `
 const Board = styled.div`
 display: flex; 
 flex-direction: column; 
 align-items: center; 
 border: 2px solid red; 
-margin: 20px; 
+margin: 20px;
 `
 
 const StyledImg = styled.img`

@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { Summary } from 'components/Summary';
 import { Button } from './Button'
 import { CurrentQuestion } from './CurrentQuestion'
 
@@ -21,11 +22,11 @@ export const Board = () => {
 
   const onNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
-    setIsAnswered(false) // reset isAnswered state for next question
+    setIsAnswered(false)
   }
 
   const onAnswerSelect = () => {
-    setIsAnswered(true) // set isAnswered state to true when user selects an answer
+    setIsAnswered(true)
   }
 
   if (!quizOver) {
@@ -36,24 +37,27 @@ export const Board = () => {
           <Button
             handleClick={() => onNextQuestion()}
             buttonText="Next question"
-            disabled={!isAnswered} // disable button if current question is not answered
+            disabled={!isAnswered}
           />
         )}
         {currentQuestion === 7 && (
           <Button
             handleClick={() => onNextQuestion()}
             buttonText="Show results"
-            disabled={!isAnswered} // disable button if current question is not answered
+            disabled={!isAnswered}
           />
         )}
       </>
     )
   } else {
     return (
-      <Button
-        handleClick={() => onRestart()}
-        buttonText="Start Over" />
+      <div className="summary-wrapper">
+        <Summary />
+        <Button
+          handleClick={() => onRestart()}
+          buttonText="Start Over"
+        />
+      </div>
     )
   }
 }
-

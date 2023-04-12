@@ -7,7 +7,10 @@ background-color: #FAD040;
 padding:10px; 
 border-radius:10px; 
 border:none; 
-
+position: absolute;
+top: 0;
+right: 0;
+margin: 10px
 `
 
 export const Button = ({ buttonText, handleClick }) => {
