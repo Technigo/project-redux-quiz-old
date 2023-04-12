@@ -34,7 +34,8 @@ const Results = () => {
         : scorePercent >= 70 ? 'Such a nice middle type student its a C for you.'
           : scorePercent >= 60 ? 'Who says guessing cant get you a passing grade?'
             : scorePercent >= 50 ? 'Sadly a chimpanzee randomly poking at a keyboard could do better'
-              : 'unspeakable. Should we pretend that didnt happen and you try again?'
+              : scorePercent >= 40 ? 'unspeakable. Should we pretend that didnt happen and you try again?'
+                : <p>what? Lets give it another try shall we????</p>
   }
 
   return (
