@@ -2,17 +2,17 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { quiz } from '../reducers/quiz';
 
-export const NextButton = () => {
+export const ResetButton = () => {
   const dispatch = useDispatch();
-  const goToNextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion());
+  const restart = () => {
+    dispatch(quiz.actions.restart());
   }
   return (
     <button
-      className="nextButton"
-      onClick={goToNextQuestion}
+      className="resetButton"
+      onClick={restart}
       type="button">
-      Next
+      Play Again
     </button>
   );
 }
