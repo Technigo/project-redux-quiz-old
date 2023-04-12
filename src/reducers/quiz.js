@@ -56,6 +56,7 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+      console.log(state.answers)
     },
 
     /**
