@@ -1,5 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+
+const ResultsContainer = styled.div`
+background-image: url("../assets/matrix.jpg");
+background-size: cover;
+`
+const ScoreText = styled.h2`
+color:white;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size:3rem;
+text-align:center;
+`;
 
 const Results = (props) => {
   const { score } = props;
@@ -7,7 +19,9 @@ const Results = (props) => {
   console.log(quizOver)
 
   return (
-    <h2>Your score was {score}</h2>
+    <ResultsContainer>
+      <ScoreText>Your score was {score}</ScoreText>
+    </ResultsContainer>
   )
 }
 
