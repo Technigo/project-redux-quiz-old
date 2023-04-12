@@ -9,16 +9,20 @@ export const CurrentQuestion = () => {
 
   const dispatch = useDispatch();
 
+  const displayNextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
+
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
-  };
 
-  const handleNextQuestion = () => {
-    dispatch(quiz.actions.goToNextQuestion());
-  };
+    setTimeout(displayNextQuestion, 500)
+  }
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+    return (
+      <h1>Oh no! I could not find the current question!</h1>
+    )
   }
 
   return (
@@ -29,9 +33,6 @@ export const CurrentQuestion = () => {
           <button key={index} type="submit" onClick={() => { onAnswerSubmit(question.id, index); }}>{options}</button>
         ))}
       </div>
-      <div>
-        <button type="submit" onClick={handleNextQuestion}>Next Question</button>
-      </div>
     </div>
   )
-}
+};
