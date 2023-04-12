@@ -3,14 +3,20 @@ import { createSlice } from '@reduxjs/toolkit'
 // Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
+  { id: 4, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 5, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
+  { id: 6, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
+  { id: 7, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
 ]
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: null
+  quizOver: null,
+  btnColor: ''
 }
 
 export const quiz = createSlice({
@@ -47,10 +53,10 @@ export const quiz = createSlice({
 
       if (question.correctAnswerIndex === answerIndex) {
         console.log('correct index', question.correctAnswerIndex, 'selectedIndex', answerIndex)
-        document.getElementById(question.correctAnswerIndex).classList.add('green')
+        state.btnColor = 'green'
       } else {
         console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
-        document.getElementById(answerIndex).classList.add('red')
+        state.btnColor = 'red'
       }
 
       state.answers.push({
@@ -72,8 +78,10 @@ export const quiz = createSlice({
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
+        state.btnColor = ''
       } else {
         state.currentQuestionIndex += 1
+        state.btnColor = ''
       }
     },
 
