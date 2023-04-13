@@ -1,14 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+// import option1 from '../option-images/option1.jpg';
+// import option2 from '../option-images/option2.jpg'
 
-// Change these to your own questions!
 const questions = [
-  { id: 1, img: '/images/questionImg1.jpg', questionText: 'What is the common name for dried plums?', options: ['Prunes', 'Grapes', 'Raisins', 'Apricots'], correctAnswerIndex: 0 },
-  { id: 2, img: '/images/questionImg2.jpg', questionText: 'What name does deer meat go by?', options: ['Squab', 'Veal', 'Venison', 'Mutton'], correctAnswerIndex: 2 },
-  { id: 3, img: '/images/questionImg3.jpg', questionText: 'What other name does “corn” go by?', options: ['Yellow rice', 'Popcorn', 'Barley', 'Maize'], correctAnswerIndex: 3 },
-  { id: 4, img: '/images/questionImg4.jpg', questionText: 'What is the primary ingredient in hummus?', options: ['Corn', 'Chickpeas', 'Lentils', 'Cabbage'], correctAnswerIndex: 1 },
-  { id: 5, img: '/images/questionImg5.jpg', questionText: 'Which country produces the most coffee in the world', options: ['Brazil', 'Colombia', 'Argentina', 'Peru'], correctAnswerIndex: 0 },
-  { id: 6, img: '/images/questionImg6.jpg', questionText: 'What is the name of bickwheat noodles?', options: ['Ramen', 'Somen', 'Soba', 'Udon'], correctAnswerIndex: 2 },
-  { id: 7, img: '/images/questionImg7.jpg', questionText: 'Which flower does the spice saffron come from?', options: ['Orchid', 'Crocus', 'Nasturtium', 'Poppy'], correctAnswerIndex: 1 }
+  { id: 1,
+    img: '/images/questionImg1.jpg',
+    questionText: 'What is the common name for dried plums?',
+    options: [
+      '../option-images/option1.jpg',
+      '../option-images/option2.jpg'
+    ],
+    correctAnswerIndex: 0 },
+  { id: 2, img: '/images/questionImg1.jpg', questionText: 'What is the common name for dried plums?', options: ['Prunes', 'Grapes', 'Raisins', 'Apricots'], correctAnswerIndex: 0 },
+  { id: 3, img: '/images/questionImg2.jpg', questionText: 'What name does deer meat go by?', options: ['Squab', 'Veal', 'Venison', 'Mutton'], correctAnswerIndex: 2 },
+  { id: 4, img: '/images/questionImg3.jpg', questionText: 'What other name does “corn” go by?', options: ['Yellow rice', 'Popcorn', 'Barley', 'Maize'], correctAnswerIndex: 3 },
+  { id: 5, img: '/images/questionImg4.jpg', questionText: 'What is the primary ingredient in hummus?', options: ['Corn', 'Chickpeas', 'Lentils', 'Cabbage'], correctAnswerIndex: 1 },
+  { id: 6, img: '/images/questionImg5.jpg', questionText: 'Which country produces the most coffee in the world', options: ['Brazil', 'Colombia', 'Argentina', 'Peru'], correctAnswerIndex: 0 },
+  { id: 7, img: '/images/questionImg6.jpg', questionText: 'What is the name of bickwheat noodles?', options: ['Ramen', 'Somen', 'Soba', 'Udon'], correctAnswerIndex: 2 },
+  { id: 8, img: '/images/questionImg7.jpg', questionText: 'Which flower does the spice saffron come from?', options: ['Orchid', 'Crocus', 'Nasturtium', 'Poppy'], correctAnswerIndex: 1 }
 ]
 
 const initialState = {
