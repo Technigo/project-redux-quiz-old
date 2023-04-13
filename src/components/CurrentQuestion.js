@@ -9,15 +9,17 @@ export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const dispatch = useDispatch();
   const [showHint, setShowHint] = useState(false);
+  const [wasClicked, setWasClicked] = useState(false);
 
   useEffect(() => {
     setShowHint(false);
-  }, [question]); // Sets showHint to false every time the question changes
+    setWasClicked(false)
+  }, [question]); // Sets state to false every time the question changes
 
   const handleAnswerClick = (answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex }));
     // Submit answer to the store
-
+    setWasClicked(true);
     setTimeout(() => {
       dispatch(quiz.actions.goToNextQuestion());
     }, 1500); // Delays the rendering of the next question after a button has been clicked
@@ -36,7 +38,10 @@ export const CurrentQuestion = () => {
       <h1>Question: {question.questionText}</h1>
       <div>
         {question.options.map((optionText, optionIndex) => (
-          <OptionButton key={optionText} onClick={() => handleAnswerClick(optionIndex)}>
+          <OptionButton
+            key={optionText}
+            onClick={() => handleAnswerClick(optionIndex)}
+            disabled={wasClicked}>
             {optionText}
           </OptionButton>
         ))}
