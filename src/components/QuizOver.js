@@ -16,11 +16,11 @@ export const QuizOver = () => {
   return (
     <div>
       <p>You answered</p>
-      {answers.map((answer, index) => (
-        <div key={answer.questionId}>
-          <h2>{index + 1}. {answer.question.questionText}</h2>
-          <p>Your answer: {answer.answer}</p>
-          <p>Correct answer: {answer.question.options[answer.question.correctAnswerIndex]}</p>
+      {answers.map((singleAnswer, index) => (
+        <div key={singleAnswer.questionId}>
+          <h2>{index + 1}. {singleAnswer.question.questionText}</h2>
+          <p>Your answer: {singleAnswer.answer}</p>
+          <p>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</p>
         </div>
       ))}
       <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
@@ -31,4 +31,4 @@ export const QuizOver = () => {
   )
 }
 
-//* In the return aboev we're mapping through the answers array and are returning the number of the question (the questionId +1 since the start of the index is 0), the questiontext, the user's answer and the correct answer using the correctAnswerIndex property. After that we are filtering the answers array to check how many answers were correct out of how many questions. /Annika
+//* In the return above we're mapping through the answers array and are returning the number of the question (the questionId +1 since the start of the index is 0), the questiontext, the user's answer and the correct answer using the correctAnswerIndex property. After that we are filtering the answers array to check how many answers were correct out of how many questions. /Annika
