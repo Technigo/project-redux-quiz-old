@@ -7,6 +7,12 @@ border-radius: 30px;
 background-color: rgb(151,171,169);
 color: white;`
 
+export const HintButton = styled.button`
+display: block;
+width: fit-content;
+background-color: black;
+color: white;`
+
 export const StartButton = styled.button`
 `
 

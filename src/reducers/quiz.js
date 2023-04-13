@@ -1,11 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, questionText: 'What does AI stand for?', options: ['Automatic Intelligence', 'Artifical Information', 'Automatic information', 'Artificial intelligence'], correctAnswerIndex: 3 },
-  { id: 2, questionText: 'When was the term AI first used?', options: ['1956', '1943', '2022', '1997'], correctAnswerIndex: 0 },
-  { id: 3, questionText: 'What is the name of Google´s AI Chatbot?', options: ['Barry', 'Bard', 'Bert', 'Burt'], correctAnswerIndex: 1 },
-  { id: 4, questionText: 'Which of the following is an example of AI-technology?', options: ['Deep learning', 'Quick learning', 'Shallow learning', 'Heavy learning'], correctAnswerIndex: 0 },
-  { id: 5, questionText: 'The term "Friendly AI" was introduced by...?', options: ['Steve Jobs', 'Alan Turing', 'Marvin Minsky', 'Eliezer Yudkowsky'], correctAnswerIndex: 3 }
+  { id: 1,
+    questionText: 'What does AI stand for?',
+    options: ['Automatic Intelligence', 'Artifical Information', 'Automatic information', 'Artificial intelligence'],
+    hint: 'Hint for Q1',
+    correctAnswerIndex: 3 },
+  { id: 2,
+    questionText: 'When was the term AI first used?',
+    options: ['1956', '1943', '2022', '1997'],
+    hint: 'Hint for Q2',
+    correctAnswerIndex: 0 },
+  { id: 3,
+    questionText: 'What is the name of Google´s AI Chatbot?',
+    options: ['Barry', 'Bard', 'Bert', 'Burt'],
+    hint: 'Hint for Q3',
+    correctAnswerIndex: 1 },
+  { id: 4,
+    questionText: 'Which of the following is an example of AI-technology?',
+    options: ['Deep learning', 'Quick learning', 'Shallow learning', 'Heavy learning'],
+    hint: 'Hint for Q4',
+    correctAnswerIndex: 0 },
+  { id: 5,
+    questionText: 'The term "Friendly AI" was introduced by...?',
+    options: ['Steve Jobs', 'Alan Turing', 'Marvin Minsky', 'Eliezer Yudkowsky'],
+    hint: 'Hint for Q5',
+    correctAnswerIndex: 3 }
 ]
 
 const initialState = {
