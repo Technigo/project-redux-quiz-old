@@ -68,7 +68,7 @@ export const quiz = createSlice({
         state.quizOver = true;
       } else {
         state.currentQuestionIndex += 1;
-      } // Delay transition to next question by 1 second
+      }
     },
 
     /**

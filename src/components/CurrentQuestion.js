@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import { OptionButton } from './styled_components/buttons.js'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -24,9 +25,9 @@ export const CurrentQuestion = () => {
       <h1>Question: {question.questionText}</h1>
       <div>
         {question.options.map((optionText, optionIndex) => (
-          <button type="button" key={optionText} onClick={() => handleAnswerClick(optionIndex)}>
+          <OptionButton key={optionText} onClick={() => handleAnswerClick(optionIndex)}>
             {optionText}
-          </button>
+          </OptionButton>
         ))}
       </div>
     </div>
