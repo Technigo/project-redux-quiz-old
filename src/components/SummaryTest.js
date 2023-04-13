@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import React from 'react'
 // import styled from 'styled-components';
-import { useSelector } from 'react-redux'
-// import { quiz } from '../reducers/quiz'
-// import { RestartButton } from './Button'
+import { useSelector, useDispatch } from 'react-redux'
+import { quiz } from '../reducers/quiz';
+import { RestartButton } from './Button'
 import { HeroSummaryContainer, StyledTitle } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
@@ -17,7 +17,13 @@ import heroSummaryImage from '../assets/hero-summary-image.jpg';
 // In summary, this component creates a user-friendly summary of the quiz answers that shows both the user's answer and the correct answer.
 
 export const SummaryTest = () => {
-  const answers = useSelector((state) => state.quiz.answers)
+  const dispatch = useDispatch();
+  const answers = useSelector((state) => state.quiz.answers);
+
+  const handleRestart = () => {
+    dispatch(quiz.resetQuiz());
+  };
+
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
@@ -36,6 +42,7 @@ export const SummaryTest = () => {
           </HeroSummaryContainer.CorrectAnswer>
         </HeroSummaryContainer.AnswerContainer>
       ))}
+      <RestartButton onClick={handleRestart}>Restart</RestartButton>
     </HeroSummaryContainer>
   )
 };
