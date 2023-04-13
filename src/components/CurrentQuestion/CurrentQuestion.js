@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { CurrentQuestionContainer, ImgBox, Image, Title, ButtonBox } from './CurrentQuestionStyling'
 import { Timer } from 'components/Timer';
 import { ProgressBar } from '../ProgressBar';
 
@@ -42,10 +43,15 @@ export const CurrentQuestion = (props) => {
   }
 
   return (
-    <div>
+    <CurrentQuestionContainer>
+      <ImgBox>
+        <Image src={question.img} alt="img" />
+      </ImgBox>
+      <ProgressBar currentQuestionId={currentQuestionId} />
+      <Title>Question: {question.questionText}</Title>
+      <ButtonBox>
       <Timer countdownRef={countdownRef} setScore={setScore} score={score} />
-      <h1>Question: {question.questionText}</h1>
-      <div>
+      <h1>Question: {question.questionText}</h1>   
         <ProgressBar />
         {question.options.map((answer, index) => {
           return (
@@ -59,7 +65,10 @@ export const CurrentQuestion = (props) => {
             </button>
           )
         })}
-      </div>
-    </div>
+      </ButtonBox>
+    </CurrentQuestionContainer>
+
+    
+
   )
 }
