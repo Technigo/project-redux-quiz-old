@@ -19,6 +19,7 @@ export const StyledQuestionText = styled.h3`
 // PARAGRAPH STYLING P
 export const StyledParagraphText = styled.p`
     color: #4F200D;
+    font-size: 15px;
     `;
 
 // FOOTER TEXT STYLING

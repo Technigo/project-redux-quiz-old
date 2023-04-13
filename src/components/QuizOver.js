@@ -1,8 +1,27 @@
 /* eslint-disable max-len */
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { quiz } from 'reducers/quiz'
-import { Link } from 'react-router-dom'
+import { quiz } from 'reducers/quiz';
+import { Link } from 'react-router-dom';
+import { StyledParagraphText, StyledQuestionText } from 'components/StyledTexts';
+
+export const QuestionsContainer = styled.div`
+background: #FFD93D;
+justify-content: center;
+height: 100%;
+width: 250px;
+color: #FFD93D;
+text-align: center;
+border-radius: 15px;
+padding: 20px;
+margin: 20px;
+
+@media (min-width: 668px) {
+  width: 400px;
+  margin-top: 20px;
+}
+`;
 
 export const QuizOver = () => {
   const answers = useSelector((state) => state.quiz.answers)
@@ -15,13 +34,13 @@ export const QuizOver = () => {
   }
   // The function above calls the restart function in the reducers using the useDispatch-hook /Annika
   return (
-    <div>
+    <QuestionsContainer>
       <p>You answered</p>
       {answers.map((singleAnswer, index) => (
         <div key={singleAnswer.questionId}>
-          <h2>{index + 1}. {singleAnswer.question.questionText}</h2>
-          <p>Your answer: {singleAnswer.answer}</p>
-          <p>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</p>
+          <StyledQuestionText>{index + 1}. {singleAnswer.question.questionText}</StyledQuestionText>
+          <StyledParagraphText>Your answer: {singleAnswer.answer}</StyledParagraphText>
+          <StyledParagraphText>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledParagraphText>
         </div>
       ))}
       <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
@@ -30,7 +49,7 @@ export const QuizOver = () => {
           <button type="button" onClick={restartQuiz}>Restart Quiz</button>
         </Link>
       </div>
-    </div>
+    </QuestionsContainer>
   )
 }
 

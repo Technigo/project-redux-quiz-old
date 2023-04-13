@@ -1,9 +1,28 @@
 
 /* eslint-disable react/no-array-index-key */
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { quiz } from 'reducers/quiz'
+import React from 'react';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { quiz } from 'reducers/quiz';
 import { QuizOver } from './QuizOver';
+import { StyledQuestionText } from './StyledTexts';
+
+export const QuestionsContainer = styled.div`
+background: #FFD93D;
+justify-content: center;
+height: 100%;
+width: 250px;
+color: #FFD93D;
+text-align: center;
+border-radius: 15px;
+padding: 20px;
+margin: 20px;
+
+@media (min-width: 668px) {
+  width: 400px;
+  margin-top: 20px;
+}
+`;
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -28,17 +47,17 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <main>
+    <div>
       {!gameOver ? (
-        <div>
-          <h1>Question: {question.questionText}</h1>
+        <QuestionsContainer>
+          <StyledQuestionText>{question.id} Question: {question.questionText}</StyledQuestionText>
           <div>
             {question.options.map((option, index) => (
               <button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</button>
             ))}
           </div>
-        </div>
+        </QuestionsContainer>
       ) : <QuizOver />}
-    </main>
+    </div>
   )
 };

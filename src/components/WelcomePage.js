@@ -8,11 +8,20 @@ import { StyledWelcomeText, StyledParagraphText } from './StyledTexts';
 // /////////////// COMPONENT //////////////////////// //
 
 export const QuestionsContainer = styled.div`
-background: #FF8400;
+background: #FFD93D;
+justify-content: center;
 height: 100%;
-width: 70%;
+width: 250px;
 color: #FFD93D;
-text-align:center;
+text-align: center;
+border-radius: 15px;
+padding: 20px;
+margin: 20px;
+
+@media (min-width: 668px) {
+  width: 400px;
+  margin-top: 20px;
+}
 `;
 
 export const WelcomePage = () => {
