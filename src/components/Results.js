@@ -1,29 +1,15 @@
+/* eslint-disable max-len */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { RestartButton } from './Buttons/RestartButton';
-
-const ResultsContainer = styled.div`
-background-color: black;
-background-size: cover;
-display: flex;
-`
-const ResultsH1 = styled.h1`
-color:white;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-font-size:3rem;
-text-align:center;
-`
-const ResultsH3 = styled.h3`
-color:white;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-font-size:3rem;
-text-align:center;
-`;
+import matrix from '../assets/matrix.jpg'
 
 const Results = () => {
   const answers = useSelector((store) => store.quiz.answers)
+  // const questions = useSelector((store) => store.quiz.questions)
+
   const correctAnswers = answers.filter((item) => item.isCorrect)
 
   const [scorePercent, setScorePercent] = useState(0);
@@ -46,7 +32,6 @@ const Results = () => {
               : scorePercent >= 40 ? 'unspeakable. Should we pretend that didnt happen and you try again?'
                 : <p>what? Lets give it another try shall we????</p>
   }
-
   return (
     <ResultsContainer>
       <ResultsH1>Your grade was {grade()}</ResultsH1>
@@ -57,3 +42,23 @@ const Results = () => {
 }
 
 export default Results;
+
+const ResultsContainer = styled.div`
+background-image: url(${matrix});
+background-size: cover;
+display: flex;
+text-align: center;
+`
+const ResultsH1 = styled.h1`
+color:white;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size:3rem;
+text-align:center;
+`
+const ResultsH3 = styled.h3`
+color:white;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size:3rem;
+text-align:center;
+`;
+
