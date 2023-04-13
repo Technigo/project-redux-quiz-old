@@ -65,6 +65,7 @@ const StartButton = styled.button`
   &:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
   }
 `
 const OuterWrapperStartPage = styled.div`

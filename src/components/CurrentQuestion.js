@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import styled from 'styled-components';
+import { ProgressBar } from './ProgressBar';
 import Results from './Results';
 
 export const CurrentQuestion = (props) => {
@@ -48,6 +49,7 @@ export const CurrentQuestion = (props) => {
             <label>{singleOption}</label>
           </div>
         ))}
+        <ProgressBar />
       </OptionsContainer>
     );
   }

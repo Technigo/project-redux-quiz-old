@@ -21,7 +21,7 @@ export const ProgressBar = () => {
 };
 
 const ProgressMainBarWrapper = styled.div`
-width: 100vw;
+width: 50vw;
 display: flex;
 justify-content: center;
 margin-top: 50px;
@@ -30,6 +30,6 @@ height: 50px;
 
 const ProgressBarSubWrapper = styled.div`
 width: 80%;
-max-width: 800px;
+max-width: 200px;
 height: 100%;
 `
