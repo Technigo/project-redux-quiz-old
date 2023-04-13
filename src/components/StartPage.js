@@ -18,7 +18,7 @@ export const StartPage = () => {
         <OuterWrapperStartPage>
           <InnerWrapperStartPage>
             <Start>
-              <h1>FRONT END</h1>
+              <StartH1>FRONT END</StartH1>
               <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
             </Start>
           </InnerWrapperStartPage>
@@ -45,6 +45,14 @@ position: absolute;
 box-shadow: 35px -12px #0c4d5f;
 `
 
+const StartH1 = styled.text`
+margin-top: 30%;
+align-items: center;
+padding: 12px 30px;
+font-weight: 1000;
+font-size: 70px;
+color: #0dc9e6;
+`
 
 
 const StartButton = styled.button`
@@ -74,7 +82,6 @@ background: #231f20;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
   background-image: url('${purple}');
   background-size: cover;
 `
