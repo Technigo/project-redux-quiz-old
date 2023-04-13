@@ -3,9 +3,9 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Summary } from 'components/Summary'
 import styled from 'styled-components'
 import { Button } from './Button'
+import { Summary } from './Summary'
 import { CurrentQuestion } from './CurrentQuestion'
 // import { Footer } from './Footer'
 
@@ -18,9 +18,9 @@ export const Board = () => {
   console.log(quizOver)
   console.log(currentQuestion)
 
-  const onRestart = () => {
-    dispatch(quiz.actions.restart())
-  }
+  // const onRestart = () => {
+  //   dispatch(quiz.actions.restart())
+  // }
 
   const onNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
@@ -36,13 +36,13 @@ export const Board = () => {
     return (
       <>
         <CurrentQuestion onAnswerSelect={onAnswerSelect} />
-        {currentQuestion < 7 && (
+        {/* {currentQuestion < 7 && (
           <Button
             handleClick={() => onNextQuestion()}
             buttonText="Next question"
             disabled={!isAnswered}
           />
-        )}
+        )} */}
         {currentQuestion === 7 && (
           <Button
             handleClick={() => onNextQuestion()}
@@ -56,24 +56,23 @@ export const Board = () => {
     return (
       <StyledSummaryWrapper>
         <Summary />
-        <Button
-          handleClick={() => onRestart()}
-          buttonText="Start Over"
-        />
+        {/* <Button
+            handleClick={() => onRestart()}
+            buttonText="Start Over"
+          /> */}
       </StyledSummaryWrapper>
     )
   }
 }
 
 const StyledSummaryWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
 
-@media (min-width:1024px){
-width:70%;
-}
-`
-
+  @media (min-width:1024px){
+  width:70%;
+  }
+  `

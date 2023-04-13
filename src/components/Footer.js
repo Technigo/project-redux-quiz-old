@@ -7,15 +7,19 @@ const FooterWrapper = styled.footer`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-top: auto;
+justify-content: center;
 width: 100%;
-position: absolute;
+padding-top: 45px;
+padding-bottom: 10px;
 `
 
 const FooterH2 = styled.h2`
-font-size: 12px;
+font-size: 24px;
+font-weight:400;
 text-align: center;
-font-family: 'Roboto';
+font-family: 'Just another hand';
+color: white;
+margin-bottom: 0;
 `
 
 const NameWrapper = styled.div`
@@ -30,6 +34,7 @@ const Name = styled.p`
 font-family: 'Roboto';
 font-size: 10px;
 margin-bottom: 0;
+color: #BE4145;
 `
 const GhLink = styled.img`
 width: 30px;
@@ -37,7 +42,7 @@ width: 30px;
 
 const StyledA = styled.a`
 text-decoration: none;
-color: black;
+color: #BE4145;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -45,9 +50,6 @@ justify-content: center;
 
 &:hover {
   color: white;
-}
-
-&:hover {
   filter: brightness(100);
 }
 `
@@ -55,7 +57,7 @@ justify-content: center;
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <FooterH2>Made by hippos group 1</FooterH2>
+      <FooterH2>Made by Hippos Group 1</FooterH2>
       <NameWrapper>
         <NameDiv>
           <StyledA href="https://github.com/Alexander-Gabor">

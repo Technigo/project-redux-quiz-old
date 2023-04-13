@@ -1,17 +1,64 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable max-len */
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { quiz } from 'reducers/quiz'
+import { Button } from './Button'
+
+export const Summary = () => {
+  const dispatch = useDispatch()
+
+  const onRestart = () => {
+    dispatch(quiz.actions.restart())
+  }
+  const selectedAnswers = useSelector((store) => store.quiz.answers)
+  const numberOfQuestions = useSelector((store) => store.quiz.questions)
+  const numberOfCorrectAnswers = selectedAnswers.filter((answer) => answer.isCorrect)
+
+  return (
+    <StyledSummary>
+      <StyledCup alt="cup" src="https://www.iconpacks.net/icons/1/free-cup-icon-788-thumb.png" />
+      <StyledCongrats>Congratulations!</StyledCongrats>
+      <StyledScore>Your total score: <span className="redScore">{numberOfCorrectAnswers.length}</span>/<span className="greenScore">{numberOfQuestions.length}</span></StyledScore>
+      <StyledScore>Gött mos!</StyledScore>
+      <StyledRecap>
+        <StyledRecapText>
+          {selectedAnswers.map((singleAnswer) => {
+            if (singleAnswer.isCorrect) {
+              return (
+                <p>
+                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
+                  <StyledAnswer><span style={{ color: '#2ECC71', fontSize: '24px', fontWeight: 'bold' }}>✓</span> {singleAnswer.answer}</StyledAnswer>
+                </p>
+              )
+            } else {
+              return (
+                <p>
+                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
+                  <StyledAnswer>❌ {singleAnswer.answer}</StyledAnswer>
+                  <StyledCorrectAnswer>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledCorrectAnswer>
+                </p>
+              )
+            }
+          })}
+        </StyledRecapText>
+      </StyledRecap>
+      <Button
+        handleClick={() => onRestart()}
+        buttonText="Start over" />
+    </StyledSummary>
+  )
+}
 
 const StyledSummary = styled.div`
 display: flex;
 flex-direction: column; 
+align-items: center;
 width: 100%;
 background-color: #0078bea7;
-margin: 10%;
 border-radius: 20px; 
-gap:30px;
+padding-bottom: 30px;
 
 @media (min-width:1024px) {
   width: 70%;
@@ -84,40 +131,3 @@ margin: 20px;
 align-content:center;
 gap: 0;
 `
-
-export const Summary = () => {
-  const selectedAnswers = useSelector((store) => store.quiz.answers)
-  const numberOfQuestions = useSelector((store) => store.quiz.questions)
-  const numberOfCorrectAnswers = selectedAnswers.filter((answer) => answer.isCorrect)
-
-  return (
-    <StyledSummary>
-      <StyledCup alt="cup" src="https://www.iconpacks.net/icons/1/free-cup-icon-788-thumb.png" />
-      <StyledCongrats>Congratulations!</StyledCongrats>
-      <StyledScore>Your total score: <span className="redScore">{numberOfCorrectAnswers.length}</span>/<span className="greenScore">{numberOfQuestions.length}</span></StyledScore>
-      <StyledScore>Gött mos!</StyledScore>
-      <StyledRecap>
-        <StyledRecapText>
-          {selectedAnswers.map((singleAnswer) => {
-            if (singleAnswer.isCorrect) {
-              return (
-                <p>
-                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                  <StyledAnswer><span style={{ color: '#2ECC71', fontSize: '24px', fontWeight: 'bold' }}>✓</span> {singleAnswer.answer}</StyledAnswer>
-                </p>
-              )
-            } else {
-              return (
-                <p>
-                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                  <StyledAnswer>❌ {singleAnswer.answer}</StyledAnswer>
-                  <StyledCorrectAnswer>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledCorrectAnswer>
-                </p>
-              )
-            }
-          })}
-        </StyledRecapText>
-      </StyledRecap>
-    </StyledSummary>
-  )
-}

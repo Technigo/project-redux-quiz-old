@@ -37,6 +37,10 @@ export const CurrentQuestion = () => {
     }
   }
 
+  const onNextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
+
   const guessCheck = (index) => {
     if (!hasAnswered) {
       return 'default-disabled'
@@ -67,6 +71,7 @@ export const CurrentQuestion = () => {
                 onClick={() => {
                   guessCheck()
                   onAnswerSubmit(question.id, index)
+                  setTimeout(() => onNextQuestion(), 2000)
                 }}
                 key={option}
                 type="button">
@@ -87,10 +92,7 @@ background-color: #0078bea7;
 border-radius:10px;
 width: 94%;
 height: 80%;
-border: 3px solid pink;
-
-// @media (min-width: 834px) and (max-width: 1024px) {
-// }
+border: 3px solid #0078BE;
 
 @media (min-width: 1025px) {
   width: 45%;
@@ -101,7 +103,7 @@ const Board = styled.div`
 display: flex; 
 flex-direction: column; 
 align-items: center; 
-border: 2px solid red; 
+// border: 2px solid red; 
 margin: 20px;
 `
 
@@ -138,6 +140,10 @@ background-color: #FFFFFF;
 color: #0078BE;
 font-weight: bold;
 font-family: 'Roboto';
+
+&:hover {
+  transform: scale(1.025);
+}
 
 @media (max-width:400px) {
 width: 40%;
