@@ -12,7 +12,7 @@ export const ButtonContainer = styled.div`
     top: 10%;
 
     @media (min-width: 768px) {
-        top:15%;
+        top:9%;
     }
     @media (min-width: 1024px) {
         flex-wrap: none;

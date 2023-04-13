@@ -9,6 +9,6 @@ export const ProgressBar = () => {
   const totalQuestions = useSelector((store) => store.quiz.questions.length)
 
   return (
-    <Line percent={(currentQuestionId / totalQuestions) * 100} strokeWidth={2} strokeColor="#D3D3D3" />
-  );
+    <Line percent={(currentQuestionId / totalQuestions) * 100} width="80%" trailWidth={4} strokeWidth={4} strokeColor="yellow" />
+  )
 }

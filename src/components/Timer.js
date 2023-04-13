@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Countdown from 'react-countdown';
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz';
+import { Title } from 'reusable-components/Title'
+import { CountdownBox } from './CurrentQuestion/CurrentQuestionStyling'
 
 export const Timer = ({ countdownRef, setScore, score }) => {
   const currentQuestionId = useSelector(
@@ -9,6 +11,16 @@ export const Timer = ({ countdownRef, setScore, score }) => {
   )
   const dispatch = useDispatch()
   const [expirationTime, setExpirationTime] = useState(Date.now() + 10000);
+
+  const renderer = ({ seconds, completed }) => {
+    if (completed) {
+      // Render a completed state
+      return <span>00</span>;
+    } else {
+      // Render a countdown
+      return <span>{seconds.toString().padStart(2, '0')}</span>;
+    }
+  };
 
   const handleComplete = (questionId, answerIndex) => {
     setExpirationTime(Date.now() + 10000);
@@ -18,35 +30,21 @@ export const Timer = ({ countdownRef, setScore, score }) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     dispatch(quiz.actions.goToNextQuestion())
     countdownRef.current.stop();
-    countdownRef.current.start();
+    // countdownRef.current.start();
   };
 
   return (
-    <Countdown
-      ref={countdownRef}
-      date={expirationTime}
-      onComplete={() => {
-        handleComplete(currentQuestionId, null);
-      }} />
+    <CountdownBox>
+      <Title>
+        <Countdown
+          zeroPadTime={2}
+          renderer={renderer}
+          ref={countdownRef}
+          date={expirationTime}
+          onComplete={() => {
+            handleComplete(currentQuestionId, null);
+          }} />
+      </Title>
+    </CountdownBox>
   )
 }
-
-// import React, { useState, useEffect } from 'react';
-
-// export const Timer = () => {
-//   const [seconds, setSeconds] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setSeconds(() => seconds + 1);
-//     }, 1000);
-
-//     return () => clearInterval(interval);
-//   }, [seconds]);
-
-//   return (
-//     <div>
-//       <h1>{seconds} seconds</h1>
-//     </div>
-//   );
-// }

@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { MovingComponent } from 'react-moving-text'
 import { quiz } from 'reducers/quiz';
 import { TfiAlarmClock } from 'react-icons/tfi';
-import { Container, RestartButton, ContainerRow } from './SummaryPageStyling';
+import { Button } from 'reusable-components/Button'
+import { Container, ContainerRow } from './SummaryPageStyling';
 import { AccordionComponent } from './AccordionComponent';
 
 export const SummaryPage = (props) => {
@@ -32,8 +33,8 @@ export const SummaryPage = (props) => {
       <ContainerRow><TfiAlarmClock /> <p>Time spent: 40s</p></ContainerRow>
       <h2>You had {countOfWrongAnswers} incorrect answers:</h2>
       <AccordionComponent />
-      <RestartButton onClick={restartQuiz}>Play again
-      </RestartButton>
+      <Button onClick={restartQuiz}>Play again
+      </Button>
     </Container>
   )
 }
