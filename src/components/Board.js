@@ -7,6 +7,7 @@ import { Summary } from 'components/Summary'
 import styled from 'styled-components'
 import { Button } from './Button'
 import { CurrentQuestion } from './CurrentQuestion'
+// import { Footer } from './Footer'
 
 export const Board = () => {
   const dispatch = useDispatch()
@@ -28,6 +29,7 @@ export const Board = () => {
 
   const onAnswerSelect = () => {
     setIsAnswered(true)
+    setTimeout(() => onNextQuestion(), 2000)
   }
 
   if (!quizOver) {
@@ -65,6 +67,13 @@ export const Board = () => {
 
 const StyledSummaryWrapper = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
+align-items: center;
+width:100%;
+
+@media (min-width:1024px){
+width:70%;
+}
 `
 

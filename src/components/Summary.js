@@ -5,14 +5,21 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const StyledSummary = styled.div`
-display:flex;
-flex-direction:column; 
-width:80%;
+display: flex;
+flex-direction: column; 
+width: 100%;
 background-color: #0078bea7;
 margin: 10%;
 border-radius: 20px; 
-border:2px solid orange;
 gap:30px;
+
+@media (min-width:1024px) {
+  width: 70%;
+}
+
+@media (min-width:667px) and (max-width:1024px){
+  width:70%;
+}
 `
 
 const StyledCongrats = styled.h1`
@@ -47,6 +54,7 @@ color:#0c1559;
 const StyledAnswer = styled.p`
 font-family: 'Roboto';
 font-size: 16px;
+color:#0c1559;
 `
 const StyledCup = styled.img`
 width: 40%;
@@ -55,9 +63,9 @@ margin-top: 40px;
 padding:10px;
 `
 const StyledRecap = styled.div`
-display:flex;
-flex-direction:column;
-background:#AED6F1;
+display: flex;
+flex-direction: column;
+background: #AED6F1;
 margin: 5%;
 border-radius: 5px;
 justify-content:center;
@@ -66,14 +74,15 @@ justify-content:center;
 const StyledCorrectAnswer = styled.h2`
 font-size: 14px;
 font-family: 'Roboto';
-color:#2ECC71;
+color: #2ECC71;
 `
 
 const StyledRecapText = styled.div`
-display:flex;
-flex-direction:column;
+display: flex;
+flex-direction: column;
 margin: 20px;
 align-content:center;
+gap: 0;
 `
 
 export const Summary = () => {
@@ -94,14 +103,14 @@ export const Summary = () => {
               return (
                 <p>
                   <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                  <StyledAnswer>👍 {singleAnswer.answer}</StyledAnswer>
+                  <StyledAnswer><span style={{ color: '#2ECC71', fontSize: '24px', fontWeight: 'bold' }}>✓</span> {singleAnswer.answer}</StyledAnswer>
                 </p>
               )
             } else {
               return (
                 <p>
                   <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                  <StyledAnswer>👎 {singleAnswer.answer}</StyledAnswer>
+                  <StyledAnswer>❌ {singleAnswer.answer}</StyledAnswer>
                   <StyledCorrectAnswer>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledCorrectAnswer>
                 </p>
               )

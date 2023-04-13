@@ -84,6 +84,7 @@ const Main = styled.div`
 display: flex; 
 flex-direction: column;
 background-color: #0078bea7;
+border-radius:10px;
 width: 94%;
 height: 80%;
 border: 3px solid pink;
@@ -109,6 +110,11 @@ width: 313px;
 height: 286px;
 object-fit: cover;
 border-radius: 10px;
+
+
+@media (max-width:400px) {
+width:100%;  
+}
 `
 
 const ButtonContainer = styled.div`
@@ -117,6 +123,10 @@ flex-wrap: wrap;
 width: 320px;
 gap: 1rem;
 justify-content: space-around;
+
+@media (max-width:400px) {
+width:250px;
+}
 `
 
 const AnswerBtn = styled.button`
@@ -128,6 +138,12 @@ background-color: #FFFFFF;
 color: #0078BE;
 font-weight: bold;
 font-family: 'Roboto';
+
+@media (max-width:400px) {
+width: 40%;
+height:100px;
+}
+
 
 // Props for changing the buttons color depending on user answer
 // "!important" because otherwise :nth-of-type overrides it
@@ -143,7 +159,6 @@ border: solid 4px red !important;
 &:nth-of-type(3n + 1) {
   background-color: #FAD040;
 }
-
 `
 const Headline = styled.h1`
 font-size: 2rem;

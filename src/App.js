@@ -7,6 +7,7 @@ import { Board } from 'components/Board'
 import styled from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Start from 'components/Start';
+import { Footer } from 'components/Footer';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -25,12 +26,15 @@ export const App = () => {
           </Routes>
         </BrowserRouter>
       </StyledApp>
+      <Footer />
     </Provider>
   )
 }
 
 const StyledApp = styled.section`
 display: flex;
+flex-direction:column;
 justify-content: center;
-margin: 5% auto;
+align-items: center;
+padding: 20px;
 `

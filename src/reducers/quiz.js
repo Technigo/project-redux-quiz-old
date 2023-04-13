@@ -17,7 +17,7 @@ const questions = [
   { id: 4, questionText: 'Who is this?', options: ['Glenn Hysén', 'Ola Serneke', 'Poseidon', 'Håkan Hellström'], img: Question4Image, correctAnswerIndex: 3 },
   { id: 5, questionText: 'Who is this?', options: ['Håkan Hellström', 'Glenn Hysén', 'Ola Serneke', 'Poseidon'], img: Question5Image, correctAnswerIndex: 3 },
   { id: 6, questionText: 'What is the name of this statue?', options: ['Håkan on horse', 'Goldmare', 'Coppermare', 'Poseidon on horse'], img: Question6Image, correctAnswerIndex: 2 },
-  { id: 7, questionText: 'What is Gothenburg sometimes called?', options: ['Little New york', 'Little Håkan town', 'Little London', 'Poseidon town'], img: Question7Image, correctAnswerIndex: 2 },
+  { id: 7, questionText: 'What is Gothenburg sometimes called?', options: ['Little New York', 'Little Håkan town', 'Little London', 'Poseidon town'], img: Question7Image, correctAnswerIndex: 2 },
   { id: 8, questionText: 'What is this popular tourboat called?', options: ['The wiener', 'The Fish', 'The Toad', 'Gbg Tour'], img: Question8Image, correctAnswerIndex: 2 }
 ]
 
