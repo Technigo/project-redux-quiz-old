@@ -37,12 +37,12 @@ const Start = styled.div`
 display: flex;
 flex-direction: column;
 text-align: center;
-border: solid 6px #0dc9e6;
+border: solid 1px #0dc9e6;
+border-radius: 20px;
 height: 500px;
 width: 500px;
 position: absolute;
-background-image: url('${purple}');
-background-size: cover;
+box-shadow: 35px -12px #0c4d5f;
 `
 
 
@@ -54,7 +54,7 @@ const StartButton = styled.button`
   margin-top: 6px;
   font-size: 11px;
   font-weight: 600;
-  border: solid 1px #0dc9e6;
+  border: solid 1px #0dc9e6; 
   width: 133px;
   background-color:#0dc9e6;
   position: absolute;
@@ -71,8 +71,6 @@ const OuterWrapperStartPage = styled.div`
 background-size: cover;
 background: #231f20;
   position: absolute;
-  /* display: flex;
-  flex-direction: column; */
   width: 100vw;
   height: 100vh;
   border: 1px solid red;
@@ -80,12 +78,12 @@ background: #231f20;
   background-size: cover;
 `
 
- const InnerWrapperStartPage = styled.div`
+const InnerWrapperStartPage = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 background-color: transparent;
-width: 80%;
+width: 70%;
 height: 100vh;
 align-items: center;
 margin: 0 auto;`
