@@ -1,21 +1,31 @@
+// /////////////// IMPORT //////////////////////// //
+
 import React from 'react';
 import styled from 'styled-components';
+import { StyledFooterTextH2 } from './StyledTexts';
 
-const Container = styled.div`
-background: pink;
-height: 100px;
+// /////////////// STYLING //////////////////////// //
+
+// Styling for the container div
+
+export const Container = styled.div`
+background: #4F200D;
+height: 50px;
 position:absolute;
 left:0;
 bottom:0;
 right:0;
+color: #FFD93D;
 text-align:center;
 `;
+
+// /////////////// COMPONENT //////////////////////// //
 
 export const Footer = () => {
   return (
     <div>
       <Container>
-         Footer här
+        <StyledFooterTextH2>ANNIKA ⦿ AJMAL ⦿ OSCAR ⦿ ANDREAS</StyledFooterTextH2>
       </Container>
     </div>
   )
