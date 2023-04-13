@@ -14,13 +14,13 @@ export const SummaryPage = () => {
 
   const userSummary = () => {
     if (correctAnswer === 5) {
-      return 'Youa are a genius';
+      return 'Youa are a genius 🧠';
     } else if (correctAnswer === 4) {
-      return 'Well done';
+      return 'Well done 👌';
     } else if (correctAnswer === 3) {
-      return 'Well done';
+      return 'Well done 👌';
     } else {
-      return 'You need to study more';
+      return 'You need to study more 🤦';
     }
   };
 
