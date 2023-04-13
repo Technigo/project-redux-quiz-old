@@ -18,9 +18,7 @@ justify-content: center;
 align-items: center;
 padding: 0 5%;
 gap:1rem;
-
 `
-
 export const ProgressBarContainer = styled.div`
 width: 100%;
 display:flex;
@@ -32,4 +30,7 @@ border: 7px solid rgba(181, 118, 221, 0.65);
 border-radius:50%;
 padding:10px;
 margin:10px;
+`
+export const OptionsImage = styled.img`
+width:90%;
 `

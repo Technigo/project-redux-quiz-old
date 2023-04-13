@@ -27,11 +27,15 @@ export const AccordionComponent = () => {
             <AccordionItemPanel>
               <ContainerRow>
                 <AnswerText wrong><span>Your answer: </span>
-                  {wrongAnswer.answer}
+                  {/* {wrongAnswer.answer} */}
+                  {wrongAnswer.answer.includes('.png') ? <img src={wrongAnswer.answer} alt="option" width="40%" /> : <p> {wrongAnswer.answer} </p>}
+
                 </AnswerText>
                 <AnswerText><span>Correct answer: </span>
                   {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex
                   ]}
+                  {wrongAnswer.question.options.includes('.png') ? <img src={wrongAnswer.question.correctAnswerIndex} alt="option" /> : <p> {wrongAnswer.answer} </p>}
+
                 </AnswerText>
               </ContainerRow>
             </AccordionItemPanel>
