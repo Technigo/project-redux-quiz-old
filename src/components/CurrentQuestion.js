@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { Summary } from './Summary'
 import { ProgressBar } from './ProgressBar'
-// import { NextQuestionBtn } from './Buttons'
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -26,7 +25,7 @@ export const CurrentQuestion = () => {
   return (
     <>
       {!state.quizOver ? (
-        <div>
+        <div className="questionContainer">
           <h1>{question.questionText}</h1>
           {question.options.map((singleOption, index) =>
           // eslint-disable-next-line implicit-arrow-linebreak

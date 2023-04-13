@@ -1,15 +1,10 @@
-// import React from 'react'
-import styled from 'styled-components'
-// import starfullSky from '../assets/starfullSky.mov'
+import React from 'react'
 
-const HeaderContainer = styled.div`
-    display: flex;
-    width: 100%;
-    height: 50px;
-    background-color: blue;
-`
-// return (
-//     const backgroundVideo = () => {
-//     <video src={starfullSky} alt="background" />
-// )}
-export default HeaderContainer;
+export const Header = () => {
+  return (
+    <div className="headerContainer">
+      <h1>Space Quiz</h1>
+    </div>
+  )
+}
+
