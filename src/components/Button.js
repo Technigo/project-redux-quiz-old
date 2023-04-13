@@ -10,7 +10,10 @@ border:none;
 position: absolute;
 top: 0;
 right: 0;
-margin: 10px
+margin: 10px;
+color: #0078BE;
+font-weight: bold;
+font-family: 'Roboto';
 
 ${(props) => props.start && css`
 position: unset;

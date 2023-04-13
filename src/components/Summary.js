@@ -40,12 +40,13 @@ margin:0;
 }
 `
 const StyledQuestion = styled.h2`
-font-family: 'Helvetica';
-font-size: 20px; 
-color:white;
+font-family: 'Roboto';
+font-size: 16px; 
+color:#0c1559;
 `
 const StyledAnswer = styled.p`
-font-size: 20px;
+font-family: 'Roboto';
+font-size: 16px;
 `
 const StyledCup = styled.img`
 width: 40%;
@@ -54,9 +55,25 @@ margin-top: 40px;
 padding:10px;
 `
 const StyledRecap = styled.div`
-background:#FDEDDE;
+display:flex;
+flex-direction:column;
+background:#AED6F1;
 margin: 5%;
 border-radius: 5px;
+justify-content:center;
+
+`
+const StyledCorrectAnswer = styled.h2`
+font-size: 14px;
+font-family: 'Roboto';
+color:#2ECC71;
+`
+
+const StyledRecapText = styled.div`
+display:flex;
+flex-direction:column;
+margin: 20px;
+align-content:center;
 `
 
 export const Summary = () => {
@@ -71,24 +88,26 @@ export const Summary = () => {
       <StyledScore>Your total score: <span className="redScore">{numberOfCorrectAnswers.length}</span>/<span className="greenScore">{numberOfQuestions.length}</span></StyledScore>
       <StyledScore>Gött mos!</StyledScore>
       <StyledRecap>
-        {selectedAnswers.map((singleAnswer) => {
-          if (singleAnswer.isCorrect) {
-            return (
-              <p>
-                <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                <StyledAnswer>👍 {singleAnswer.answer}</StyledAnswer>
-              </p>
-            )
-          } else {
-            return (
-              <p>
-                <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
-                <StyledAnswer>👎 {singleAnswer.answer}</StyledAnswer>
-                <h2>The correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</h2>
-              </p>
-            )
-          }
-        })}
+        <StyledRecapText>
+          {selectedAnswers.map((singleAnswer) => {
+            if (singleAnswer.isCorrect) {
+              return (
+                <p>
+                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
+                  <StyledAnswer>👍 {singleAnswer.answer}</StyledAnswer>
+                </p>
+              )
+            } else {
+              return (
+                <p>
+                  <StyledQuestion>Question {singleAnswer.question.id}: {singleAnswer.question.questionText}</StyledQuestion>
+                  <StyledAnswer>👎 {singleAnswer.answer}</StyledAnswer>
+                  <StyledCorrectAnswer>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledCorrectAnswer>
+                </p>
+              )
+            }
+          })}
+        </StyledRecapText>
       </StyledRecap>
     </StyledSummary>
   )

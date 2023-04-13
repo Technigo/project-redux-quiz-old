@@ -10,30 +10,43 @@ const Start = () => {
   const StartWrapper = styled.section`
 display: flex; 
 flex-direction: column;
+justify-content: center;
+align-items: center;
 background-color: #0078bea7;
 box-shadow: 12px 27px 39px 3px rgba(0, 0, 0, 0.25);
-gap: 10px;
+gap: 30px;
+width: 70%;
+padding: 30px;
 
 @media (min-width: 1025px) {
-    background-color: #0078bea7;
     width: 45%;
     margin: 4% auto;
   }
 `
   const StartH1 = styled.h1`
 font-family: 'Just another hand';
-font-size: 96px;
+font-size: 85px;
 color: #0078BE;
 transform: rotate(-1.44deg);
-`
+margin: unset;
 
+@media (max-width: 834px) {
+  font-size: 55px;
+}
+`
   const Img = styled.img`
 width: 195px;
 `
 
   const StartP = styled.p`
   color: #0078BE;
-  font-size: 32px;
+  font-size: 20px;
+  color: #FAD040;
+  font-weight: bold;
+
+  @media (max-width: 600px) {
+    font-size: 12px;
+  }
 `
 
   return (

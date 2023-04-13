@@ -125,6 +125,9 @@ height: 114px;
 border: none;
 border-radius:10px;
 background-color: #FFFFFF;
+color: #0078BE;
+font-weight: bold;
+font-family: 'Roboto';
 
 // Props for changing the buttons color depending on user answer
 // "!important" because otherwise :nth-of-type overrides it
