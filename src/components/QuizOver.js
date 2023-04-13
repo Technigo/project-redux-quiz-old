@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz'
+import { Link } from 'react-router-dom'
 
 export const QuizOver = () => {
   const answers = useSelector((state) => state.quiz.answers)
@@ -25,7 +26,9 @@ export const QuizOver = () => {
       ))}
       <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
       <div>
-        <button type="button" onClick={restartQuiz}>Restart quiz </button>
+        <Link to="/">
+          <button type="button" onClick={restartQuiz}>Restart Quiz</button>
+        </Link>
       </div>
     </div>
   )
