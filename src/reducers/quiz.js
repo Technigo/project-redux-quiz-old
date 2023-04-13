@@ -1,5 +1,5 @@
+/* eslint-disable linebreak-style */
 import { createSlice } from '@reduxjs/toolkit';
-import cloud from '../assets/brain.png';
 
 // Change these to your own questions!
 const questions = [
@@ -21,7 +21,7 @@ const questions = [
       'Pickled herring',
       'Fermented fish',
       'Fish-flavored ice cream',
-      'Something that should never be eaten indoors or within a 5-mile radius of other humans'
+      'A delicious treat to share with people in a small room, with no airflow.'
     ],
     correctAnswerIndex: 1
   },
@@ -35,13 +35,13 @@ const questions = [
   {
     id: 4,
     questionText: 'What is the national flower of Sweden?',
-    options: ['Lily of the valley', 'Bluebells', ' Pyramidal Saxifrage', 'Jul'],
+    options: ['Lily of the valley', 'Bluebells', ' Pyramidal Saxifrage', 'Daisies'],
     correctAnswerIndex: 1
   },
   {
     id: 5,
     questionText: 'Which Swedish band is known for their catchy pop hits and unique fashion sense?',
-    options: ['ABBA', 'IKEA', 'Ace of Base', 'The Dancing Meatballs'],
+    options: ['ABBA', 'IKEA', 'Aqua', 'The Dancing Meatballs'],
     correctAnswerIndex: 0
   }
 ];

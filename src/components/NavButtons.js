@@ -1,14 +1,26 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import styled from 'styled-components'
 
 const Buttons = styled.button`
+  background: #FFD914;
   border: none;
-  margin: 15px;
-  padding: 10px 25px;
-  font-size: 18px;
+  border-radius: 30px;
   color: #fff;
-  background: #73bcdf;
-  border-radius: 20px;
+  padding: 10px 25px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 26px;
+  cursor: pointer;
+  margin: 25px 0px 0px 0px;
+
+  &:disabled {
+    background: grey;
+    display: none;
+  }
+
+  &:hover {
+    box-shadow: 6px 6px #B6970F; 
+    }
 `;
 
 const NavButtons = ({

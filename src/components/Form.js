@@ -1,9 +1,14 @@
+/* eslint-disable linebreak-style */
 import React from 'react'
 import styled from 'styled-components';
 
 const SpanStyle = styled.span`
   display: ${(props) => (props.visible ? 'inline' : 'none')};
 `;
+
+const RadioButton = styled.label`
+  justify-content: flex-start;
+`
 
 const Form = ({
   setAnswer,
@@ -18,7 +23,7 @@ const Form = ({
   const correctOption = index === correctIndex;
   const selectedWrongOption = questionAnswered && !correctOption && index === answerIndex;
   return (
-    <section>
+    <div>
       <input
         id={option}
         type="radio"
@@ -31,7 +36,7 @@ const Form = ({
         checked={answer === option}
         required
         disabled={questionAnswered} />
-      <label htmlFor={option} key={option}>
+      <RadioButton htmlFor={option} key={option}>
         {/* This code enables the user to not only click on the radio button to select an answer,
           but now it also works with clicking on the actual answer text. */}
         {` ${option}`}
@@ -40,8 +45,8 @@ const Form = ({
         <SpanStyle visible={questionAnswered}>
           {(correctOption && '✅') || (selectedWrongOption && '❌')}
         </SpanStyle>
-      </label>
-    </section>
+      </RadioButton>
+    </div>
   );
 };
 
