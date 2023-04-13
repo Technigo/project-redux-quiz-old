@@ -4,8 +4,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 
-// import { QuizSummary } from 'components/QuizSummary';
-
 const reducer = combineReducers({
   quiz: quiz.reducer
 });

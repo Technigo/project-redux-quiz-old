@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import '../index.css';
-// import { QuizSummary } from './QuizSummary';
+import { QuizSummary } from './QuizSummary';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
@@ -31,6 +31,10 @@ export const CurrentQuestion = () => {
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
+  }
+
+  if (isQuizOver) {
+    return <QuizSummary />;
   }
 
   return (
