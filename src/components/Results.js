@@ -6,6 +6,7 @@ const ResultsContainer = styled.div`
 background-image: url("../assets/matrix.jpg");
 background-size: cover;
 `
+
 const ScoreText = styled.h2`
 color:black;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
