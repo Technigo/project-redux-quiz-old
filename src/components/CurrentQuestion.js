@@ -10,7 +10,15 @@ export const CurrentQuestion = () => {
 
   return (
     <div>
-      <h1>Question: {question.questionText}</h1>
+      <h1>Question {question.id}: {question.questionText}</h1>
+      <ul>
+        {question.options.map((answer) => {
+          return (
+            <li key={answer}>{answer}</li>
+          )
+        })}
+      </ul>
+      <button type="button">Next question</button>
     </div>
   )
 }
