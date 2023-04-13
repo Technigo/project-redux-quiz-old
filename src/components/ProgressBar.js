@@ -7,16 +7,15 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
-// const correctPercent = (formStage * 100) / 6;
-// setPercent(Number(correctPercent).toFixed(1));
-
 export const ProgressBar = () => {
   const currentQuestion = useSelector(
     (state) => state.quiz.currentQuestionIndex
   );
+  /* Divided by the number of questions, so far hard coded */
   const correctPercent = (currentQuestion * 100) / 8;
   let percent = Number(correctPercent).toFixed();
 
+  /* Styles of container and bar */
   const container = {
     height: '2rem',
     width: '100%',
