@@ -39,7 +39,7 @@ export const CurrentQuestion = (props) => {
       <OptionsContainer>
         <button type="button" onClick={onButtonClick}>Next Question</button>
         <h1>{question.questionText}</h1>
-        <img src={question.imgUrl} alt="code" />
+        <img src={question.imgUrl} alt="code" width="300px" />
         {question.options.map((singleOption, index) => (
           <div key={index}>
             <input
@@ -59,6 +59,7 @@ export const CurrentQuestion = (props) => {
 const OptionsContainer = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
 text-align: center;
 border: solid 1px #0dc9e6;
 border-radius: 20px;
