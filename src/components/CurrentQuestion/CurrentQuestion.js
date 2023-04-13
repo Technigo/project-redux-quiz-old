@@ -3,11 +3,11 @@
 import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Timer } from 'components/Timer';
+// import { Timer } from 'components/Timer';
 import { Title } from 'reusable-components/Title'
 import { Button, ButtonContainer } from 'reusable-components/Button'
 import { Image } from 'reusable-components/Image'
-import { CurrentQuestionContainer, ImgBox } from './CurrentQuestionStyling'
+import { CurrentQuestionContainer, ImgBox, OptionsImage } from './CurrentQuestionStyling'
 import { ProgressBar } from '../ProgressBar';
 
 export const CurrentQuestion = (props) => {
@@ -47,7 +47,7 @@ export const CurrentQuestion = (props) => {
 
   return (
     <CurrentQuestionContainer>
-      <Timer countdownRef={countdownRef} setScore={setScore} score={score} />
+      {/* <Timer countdownRef={countdownRef} setScore={setScore} score={score} /> */}
       <ImgBox>
         <Image src={question.img} alt="img" />
         <ProgressBar />
@@ -63,7 +63,7 @@ export const CurrentQuestion = (props) => {
               id={index}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={answer}>
-              {answer}
+              {answer.includes('.png') ? <OptionsImage src={answer} alt="option" /> : <p> {answer} </p>}
             </Button>
           )
         })}

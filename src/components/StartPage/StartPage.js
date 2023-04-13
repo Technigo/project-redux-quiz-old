@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { ButtonContainer, Button } from 'reusable-components/Button';
 import { Title } from 'reusable-components/Title';
-import logo from 'assets/logo.jpg'
 import { StartContainer, Logo } from './StartPageStyling';
 
 export const StartPage = () => {
@@ -13,7 +12,7 @@ export const StartPage = () => {
   }
   return (
     <StartContainer>
-      <Logo src={logo} alt="quiz logo" />
+      <Logo src="/images/logo.jpg" alt="quiz logo" />
       <Title fontSize="4rem"> Quiz! </Title>
       <ButtonContainer>
         <Button type="button" onClick={startOnClick}>Start</Button>
