@@ -48,7 +48,7 @@ export const CurrentQuestion = () => {
         ))}
       </div>
       <div className="next-button-section">
-        <button className="next-button" type="button" disabled={!selectedOption} onClick={onButtonClick}>Next</button>
+        <button className="next-button" type="button" onClick={onButtonClick}>Next</button>
       </div>
     </div>
   );
