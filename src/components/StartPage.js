@@ -82,7 +82,6 @@ background: #231f20;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
   background-image: url('${purple}');
   background-size: cover;
 `
