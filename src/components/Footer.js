@@ -2,18 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #F8F8F8;   
-  position: fixed;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
+background: pink;
+height: 100px;
+position:absolute;
+left:0;
+bottom:0;
+right:0;
+text-align:center;
 `;
 
 export const Footer = () => {
   return (
     <div>
       <Container>
-        hej footer
+         Footer här
       </Container>
     </div>
   )
