@@ -27,24 +27,38 @@ const Title = styled.h1`
   `;
 
 const gradientAnimation = keyframes`
-  5% {color: #b56576 ;}
-  50% {color: #39304a;}
-  100% {color: #028090;}
+  5% {color: #eaac8b;}
+  50% {color: #be56b6f;}
+  100% {color: #b56576;}
+`;
+
+const bounceAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 `;
 
 const Text = styled.p`
   font-size: 2rem;
   color: #1a5e63;
   font-weight: bold;
-  margin-bottom: 2rem;
-  animation-name: ${gradientAnimation};
-  animation-duration: 5s;
+  margin-bottom: 5rem;
+  background-color: rgba(57, 48, 74, 0.3);
+  animation-name: ${gradientAnimation}, ${bounceAnimation};
+  animation-duration: 5s, 1s;
   animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 `;
 
 const Button = styled.button`
   font-size: 1.5rem;
-  background-color: #846a6a;
+  background-color: #b56576;
   color: #eff1f3;
   border: 3px solid #fed766;
   padding: 1rem 2rem;
@@ -54,15 +68,23 @@ const Button = styled.button`
   &:hover {
     background-color: #ffeedb;
     color: #553739;
+    box-shadow: 0 0 10px 0 #fed766, 0 0 20px 0 #fed766, 0 0 30px 0 #fed766, 0 0 40px 0 #fed766, 0 0 50px 1rem #fed766;
   }
 `;
 
 const Start = ({ start }) => {
+  const soundEffect = new Audio('../assets/win1.mp3');
+
+  const handleClick = () => {
+    soundEffect.play();
+    start(true);
+  }
+
   return (
     <StartQuiz>
       <Title>Welcome to the amazing elephants-members trivia quiz</Title>
       <Text>Try your luck by pressing the button below</Text>
-      <Button onClick={() => start(true)}>Clickyclick</Button>
+      <Button onClick={handleClick}>Clickyclick</Button>
     </StartQuiz>
   );
 }
