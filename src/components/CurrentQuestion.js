@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { ProgressBar } from './ProgressBar';
 import Results from './Results';
 import { AnswerButton } from './Buttons/AnswerButtons';
+import { Timer } from './timer/Timer';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
@@ -36,6 +37,7 @@ export const CurrentQuestion = (props) => {
       <OptionsContainer>
         <h1>{question.questionText}</h1>
         <img src={question.imgUrl} alt="code" width="300px" />
+        <Timer />
         <AnswerButton />
         <ProgressBar />
       </OptionsContainer>
