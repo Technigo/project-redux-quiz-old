@@ -42,13 +42,14 @@ export const quiz = createSlice({
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
+      let newAnswer = question.options[answerIndex];
+
+      if (newAnswer === undefined || newAnswer === null) {
+        newAnswer = 'Nothing selected';
+      }
 
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
-      }
-
-      if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
       }
 
       if (question.correctAnswerIndex === answerIndex) {
@@ -63,7 +64,7 @@ export const quiz = createSlice({
         questionId,
         answerIndex,
         question,
-        answer: question.options[answerIndex],
+        answer: newAnswer,
         isCorrect: question.correctAnswerIndex === answerIndex
       })
     },

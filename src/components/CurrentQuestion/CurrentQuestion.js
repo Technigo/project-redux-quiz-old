@@ -1,20 +1,20 @@
 
 /* eslint-disable max-len */
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestionContainer, ImgBox, Image, Title, ButtonBox } from './CurrentQuestionStyling'
-import ProgressBar from '../ProgressBar';
+import { Timer } from 'components/Timer';
+import { ProgressBar } from '../ProgressBar';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
-  const currentQuestionId = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].id)
   const btnColor = useSelector((store) => store.quiz.btnColor)
   const correctAnswerIndex = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex].correctAnswerIndex)
-
   const { setScore, score } = props
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState('')
   const dispatch = useDispatch()
+  const countdownRef = useRef(null)
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     if (correctAnswerIndex === answerIndex) {
@@ -25,6 +25,9 @@ export const CurrentQuestion = (props) => {
     setSelectedAnswerIndex(answerIndex)
     setTimeout(() => dispatch(quiz.actions.submitAnswer({ questionId, answerIndex })), 1000)
     setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1500)
+    countdownRef.current.stop();
+    setTimeout(() => countdownRef.current.start(), 1500)
+    console.log(questionId)
   }
 
   console.log('score:', score)
@@ -47,11 +50,13 @@ export const CurrentQuestion = (props) => {
       <ProgressBar currentQuestionId={currentQuestionId} />
       <Title>Question: {question.questionText}</Title>
       <ButtonBox>
+      <Timer countdownRef={countdownRef} setScore={setScore} score={score} />
+      <h1>Question: {question.questionText}</h1>   
+        <ProgressBar />
         {question.options.map((answer, index) => {
           return (
             <button
               style={buttonStyle(index)}
-              // className={selectedAnswerIndex === question.correctAnswerIndex ? 'green' : ''}
               type="button"
               id={index}
               onClick={() => onAnswerSubmit(question.id, index)}
@@ -61,7 +66,9 @@ export const CurrentQuestion = (props) => {
           )
         })}
       </ButtonBox>
-
     </CurrentQuestionContainer>
+
+    
+
   )
 }
