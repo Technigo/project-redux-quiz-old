@@ -12,15 +12,51 @@ code {
     monospace;
 }
 
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  gap: 5vh;
+}
+
 .next-button {
   color: rgb(35, 38, 38);
-  background-color: rgb(76, 193, 193);
+  background-color: rgb(145, 203, 166);
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   cursor: pointer;
 }
 
 .selected {
   color: blue;
-  background-color: aqua;
+  background-color: rgb(168, 226, 226);
+  cursor: pointer;
+}
+
+.background {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+button {
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.options {
+  display: flex;
+  gap: 2vh;
+}
+
+.h1 {
+  padding: 0;
+  
 }
