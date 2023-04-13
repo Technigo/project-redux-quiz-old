@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './accordion.css';
@@ -32,10 +33,11 @@ export const AccordionComponent = () => {
 
                 </AnswerText>
                 <AnswerText><span>Correct answer: </span>
-                  {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex
-                  ]}
-                  {wrongAnswer.question.options.includes('.png') ? <img src={wrongAnswer.question.correctAnswerIndex} alt="option" /> : <p> {wrongAnswer.answer} </p>}
-
+                  {
+                    wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex].includes('.png')
+                      ? <img src={wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]} alt="option" width="40%" />
+                      : <p> {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]}  </p>
+                  }
                 </AnswerText>
               </ContainerRow>
             </AccordionItemPanel>
