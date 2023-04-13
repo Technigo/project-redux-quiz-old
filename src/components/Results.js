@@ -2,10 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { RestartButton } from './Buttons/RestartButton';
 
 const ResultsContainer = styled.div`
 background-color: black;
 background-size: cover;
+display: flex;
 `
 const ResultsH1 = styled.h1`
 color:white;
@@ -49,6 +51,7 @@ const Results = () => {
     <ResultsContainer>
       <ResultsH1>Your grade was {grade()}</ResultsH1>
       <ResultsH3>Score: {correctAnswers.length}/{answers.length}</ResultsH3>
+      <RestartButton />
     </ResultsContainer>
   )
 }

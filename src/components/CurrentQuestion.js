@@ -2,11 +2,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-len */
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { quiz } from 'reducers/quiz'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components';
 import { ProgressBar } from './ProgressBar';
 import Results from './Results';
+import { AnswerButton } from './Buttons/AnswerButtons';
 
 export const CurrentQuestion = (props) => {
   const question = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex]);
@@ -21,13 +21,10 @@ export const CurrentQuestion = (props) => {
   console.log(setScore);
   console.log(score);
   console.log(guessedAnswerIndex, setGuessedAnswerIndex, wrongGuessesCount, setWrongGuessesCount);
-  const dispatch = useDispatch();
   const quizOver = useSelector((store) => store.quiz.quizOver);
 
   const notUpdateByReducerQuestion = useSelector((store) => store.quiz.questions[store.quiz.currentQuestionIndex])
   console.log(notUpdateByReducerQuestion)
-
-  const onButtonClick = () => { dispatch(quiz.actions.goToNextQuestion()) }
 
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
@@ -37,18 +34,9 @@ export const CurrentQuestion = (props) => {
   } else {
     return (
       <OptionsContainer>
-        <button type="button" onClick={onButtonClick}>Next Question</button>
         <h1>{question.questionText}</h1>
-        {question.options.map((singleOption, index) => (
-          <div key={index}>
-            <input
-              type="radio"
-              name="answer"
-              value={index}
-              onChange={(e) => setGuessedAnswerIndex(Number(e.target.value))} />
-            <label>{singleOption}</label>
-          </div>
-        ))}
+        <img src={question.imgUrl} alt="code" width="300px" />
+        <AnswerButton />
         <ProgressBar />
       </OptionsContainer>
     );
@@ -58,6 +46,7 @@ export const CurrentQuestion = (props) => {
 const OptionsContainer = styled.div`
 display: flex;
 flex-direction: column;
+align-items: center;
 text-align: center;
 border: solid 1px #0dc9e6;
 border-radius: 20px;
