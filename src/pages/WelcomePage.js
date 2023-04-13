@@ -15,7 +15,7 @@ export const WelcomePage = () => {
           <h1>Hello there friend 👋 </h1>
           <p>Ready to Rumbre with React?</p>
         </div>
-        <button type="button" onClick={goToQuiz}>
+        <button className="welcomeButton" type="button" onClick={goToQuiz}>
         Start the quiz
         </button>
       </div>

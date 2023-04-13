@@ -1,9 +1,6 @@
 .questions-background {
-    background-color: #222968;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100vw;
     height: 100vh;
-    background-position: center;
-    overflow-x: hidden;
+    border-color: rgb(0, 37, 255);
+    border-width: 16px 16px 16px 16px;
+    border-style: solid;
 }

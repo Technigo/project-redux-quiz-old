@@ -3,6 +3,7 @@
 import React from 'react';
 import { ResetButton } from 'components/ResetButton';
 import { useSelector } from 'react-redux';
+import './summary.css';
 
 export const SummaryPage = () => {
   // Variable to calculate how many correct answer the user has given
@@ -26,8 +27,8 @@ export const SummaryPage = () => {
 
   // console.log(correctAnswer);
   return (
-    <div>
-      <h1>Summary Page</h1>
+    <div className="summary">
+      <h1>Oh wow, what a ride!</h1>
       <h3>
         Your final score was: {correctAnswer} out of {answers.length}
       </h3>

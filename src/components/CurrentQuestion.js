@@ -5,6 +5,7 @@ import { ProgressBar } from './ProgressBar';
 import { AnswerButton } from './AnswerButton';
 import { SummaryPage } from '../pages/Summary';
 import { quiz } from '../reducers/quiz';
+import './CurrentQuestion.css';
 
 export const CurrentQuestion = () => {
   const dispatch = useDispatch();
@@ -31,14 +32,17 @@ export const CurrentQuestion = () => {
           <div className="answer-buttons">
             {question.options.map((option, index) => (
               <AnswerButton
+                className="answerButton"
                 key={option}
                 index={index}
                 option={option}
                 setGoToNextButton={setGoToNextButton} />
             ))}
           </div>
-          {goToNextButton && <NextButton clickAction={moveToNext} />}
-          <ProgressBar />
+          <div className="eslint-hater-bottom">
+            {goToNextButton && <NextButton className="nextButton" clickAction={moveToNext} />}
+            <ProgressBar />
+          </div>
         </div>
       )}
     </>

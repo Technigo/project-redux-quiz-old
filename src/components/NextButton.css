@@ -1,10 +1,27 @@
 .nextButton {
-    background-color: #3498db;
-    color: #fff;
-    font-size: 16px;
-    padding: 12px 24px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
+  cursor: pointer;
+  text-underline-offset: 6px;
+  font-family: futura-pt, "sans-serif";
+  font-weight: 600;
+  transition: all 0.2s ease 0s;
+  display: inline-block;
+  padding: 18px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid rgb(10, 37, 255);
+  place-self: flex-start;
+  color: rgb(10, 37, 255);
+  background: transparent;
+  align-self: center;
+  margin-top:40px;
+  margin-bottom:40px;
+  /* this is the important stuff 👇 */
+animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0%   {transform: translateY(0);}
+    100% {transform: translateY(50px);}
   }
 
