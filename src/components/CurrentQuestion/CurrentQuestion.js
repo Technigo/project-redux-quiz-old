@@ -63,7 +63,9 @@ export const CurrentQuestion = (props) => {
               id={index}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={answer}>
-              {typeof options === 'string' ? ({ answer }) : (<img src={answer} alt="option" />)}
+              {/* {answer} */}
+              <img src={answer} alt="option" />
+              {/* {typeof options === 'string' ? ({ answer }) : (<img src={answer} alt="option" />)} */}
             </Button>
           )
         })}

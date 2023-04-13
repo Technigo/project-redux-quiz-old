@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import option1 from '../assets/brand1.svg';
-import option2 from '../assets/brand2.svg'
+// import option1 from '/images/questionImg1';
+// import option2 from '/images/questionImg2'
 
 const questions = [
   { id: 1,
     img: '/images/questionImg1.jpg',
     questionText: 'What is Germany said to have given us?',
-    options: [option1, option2],
+    options: ['/images/questionImg1', '/images/questionImg2', '/images/questionImg2', '/images/questionImg3', '/images/questionImg4'],
     correctAnswerIndex: 0 },
   { id: 2,
     img: '/images/questionImg1.jpg',
