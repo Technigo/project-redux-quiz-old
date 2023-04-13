@@ -14,25 +14,21 @@ export const Timer = () => {
   }, [seconds]);
 
   return (
-    <>
-      <Icon src={IconImg} alt="timer-icon" />
-      <TimerStyle>TIMER:{seconds}</TimerStyle>
-    </>
+    <TimerStyle><Icon src={IconImg} alt="timer-icon" />:{seconds}</TimerStyle>
   )
 }
 
 const TimerStyle = styled.div`
-padding: 15px;
+padding: 10px;
 border: none;
 border-radius: 5px;
 font-weight: bold;
 background: transparent;
 font-size: 12px;
-background: red;
+
 `
 const Icon = styled.img`
-display: flex;
 width: 20px;
 height: 20px;
-margin-top: 10px;
+margin-top: 5px;
 `
