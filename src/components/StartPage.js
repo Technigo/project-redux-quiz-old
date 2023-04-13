@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
+import purple from '../assets/purple.jpg'
 
 
 export const StartPage = () => {
@@ -40,6 +41,8 @@ border: solid 6px #0dc9e6;
 height: 500px;
 width: 500px;
 position: absolute;
+background-image: url('${purple}');
+background-size: cover;
 `
 
 
@@ -73,6 +76,8 @@ background: #231f20;
   width: 100vw;
   height: 100vh;
   border: 1px solid red;
+  background-image: url('${purple}');
+  background-size: cover;
 `
 
  const InnerWrapperStartPage = styled.div`
