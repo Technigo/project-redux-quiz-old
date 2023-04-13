@@ -3,9 +3,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import { QuizOver } from './QuizOver';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const gameOver = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
 
@@ -26,13 +28,17 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      <div>
-        {question.options.map((options, index) => (
-          <button key={index} type="submit" onClick={() => { onAnswerSubmit(question.id, index); }}>{options}</button>
-        ))}
-      </div>
-    </div>
+    <main>
+      {!gameOver ? (
+        <div>
+          <h1>Question: {question.questionText}</h1>
+          <div>
+            {question.options.map((option, index) => (
+              <button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</button>
+            ))}
+          </div>
+        </div>
+      ) : <QuizOver />}
+    </main>
   )
 };
