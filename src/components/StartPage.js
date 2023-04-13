@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
+import purple from '../assets/purple.jpg'
 
 
 export const StartPage = () => {
@@ -31,41 +32,58 @@ export const StartPage = () => {
   )
 }
 
+
 const Start = styled.div`
 display: flex;
 flex-direction: column;
 text-align: center;
-border: solid 8px #BDE0FE;
-height: 200px;
-width: 200px;
+border: solid 1px #0dc9e6;
+border-radius: 20px;
+height: 500px;
+width: 500px;
 position: absolute;
+box-shadow: 35px -12px #0c4d5f;
 `
+
+
 
 const StartButton = styled.button`
-padding: 10px;
-color: white;
-background-color: black;
-border-radius: 10px;
-margin-top: 5px;
-font-size: 12px;
-font-weight: 500;
-width: 100px;
-`
-export const OuterWrapperStartPage = styled.div`
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  border: solid 1px #0dc9e6; 
+  width: 133px;
+  background-color:#0dc9e6;
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  bottom: 150px;
+  margin-left: 180px;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+`
+const OuterWrapperStartPage = styled.div`
+background-size: cover;
+background: #231f20;
+  position: absolute;
   width: 100vw;
-  height: auto;
+  height: 100vh;
   border: 1px solid red;
+  background-image: url('${purple}');
+  background-size: cover;
 `
 
-export const InnerWrapperStartPage = styled.div`
+const InnerWrapperStartPage = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
 background-color: transparent;
-width: 60%;
+width: 70%;
 height: 100vh;
 align-items: center;
 margin: 0 auto;`

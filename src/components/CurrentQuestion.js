@@ -4,6 +4,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
+import styled from 'styled-components';
 import Results from './Results';
 
 export const CurrentQuestion = (props) => {
@@ -34,9 +35,9 @@ export const CurrentQuestion = (props) => {
     return <Results />
   } else {
     return (
-      <div>
+      <OptionsContainer>
         <button type="button" onClick={onButtonClick}>Next Question</button>
-        <h1>Question: {question.questionText}</h1>
+        <h1>{question.questionText}</h1>
         {question.options.map((singleOption, index) => (
           <div key={index}>
             <input
@@ -47,7 +48,20 @@ export const CurrentQuestion = (props) => {
             <label>{singleOption}</label>
           </div>
         ))}
-      </div>
+      </OptionsContainer>
     );
   }
 }
+
+const OptionsContainer = styled.div`
+display: flex;
+flex-direction: column;
+text-align: center;
+border: solid 1px #0dc9e6;
+border-radius: 20px;
+height: 80vh;
+width: 50%;
+position: absolute;
+top: 50px;
+left: 310px;
+`
