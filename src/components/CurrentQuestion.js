@@ -37,10 +37,10 @@ export const CurrentQuestion = () => {
                 setGoToNextButton={setGoToNextButton} />
             ))}
           </div>
+          {goToNextButton && <NextButton clickAction={moveToNext} />}
+          <ProgressBar />
         </div>
       )}
-      {goToNextButton && <NextButton onClick={moveToNext} />}
-      <ProgressBar />
     </>
   );
 };

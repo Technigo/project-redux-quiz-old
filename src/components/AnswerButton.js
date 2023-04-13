@@ -19,6 +19,12 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
     dispatch(quiz.actions.submitAnswer({
       questionId, answerIndex
     }));
+    if (question.correctAnswerIndex === answerIndex) {
+      window.alert('Yay YOU!')
+      dispatch(quiz.actions.goToNextQuestion())
+    } else {
+      window.alert('Wrong answer!')
+    }
     setActiveBtn(true);
     setGoToNextButton(true);
   }
