@@ -4,7 +4,7 @@ import { StyledFooterTextH2 } from './StyledTexts';
 
 export const Container = styled.div`
 background: #4F200D;
-height: 70px;
+height: 50px;
 position:absolute;
 left:0;
 bottom:0;
