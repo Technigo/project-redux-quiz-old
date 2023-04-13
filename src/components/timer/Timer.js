@@ -24,7 +24,7 @@ border: none;
 border-radius: 5px;
 font-weight: bold;
 background: transparent;
-font-size: 12px;
+font-size: 16px;
 
 `
 const Icon = styled.img`
