@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit'
+import code from '../assets/code.jpg'
 
 const questions = [
-  { id: 1, questionText: 'Which of these programming languages was developed by Netscape in 1995 for use in web pages?', options: ['HTML', 'JavaScript', 'Python', 'Java'], correctAnswerIndex: 1 },
+  { id: 1, imgUrl: code, questionText: 'Which of these programming languages was developed by Netscape in 1995 for use in web pages?', options: ['HTML', 'JavaScript', 'Python', 'Java'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'In CSS, what property is used to control the spacing between elements?', options: ['padding', 'margin', 'border', 'height'], correctAnswerIndex: 0 },
   { id: 3, questionText: 'What is the name of the CSS property used to make text bold?', options: ['font-style', 'font-weight', 'font-size', 'line-height'], correctAnswerIndex: 1 },
   { id: 4, questionText: 'Which of these companies was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne?', options: ['Google', 'Microsoft', 'Apple', 'Amazon'], correctAnswerIndex: 2 },

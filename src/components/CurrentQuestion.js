@@ -39,6 +39,7 @@ export const CurrentQuestion = (props) => {
       <OptionsContainer>
         <button type="button" onClick={onButtonClick}>Next Question</button>
         <h1>{question.questionText}</h1>
+        <img src={question.imgUrl} alt="code" />
         {question.options.map((singleOption, index) => (
           <div key={index}>
             <input
