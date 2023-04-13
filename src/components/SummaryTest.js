@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import React from 'react'
 // import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
 import { RestartButton } from './Button'
-import { HeroSummaryContainer, StyledTitle } from './SummaryTestStyling';
+import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -23,7 +24,6 @@ export const SummaryTest = () => {
   const handleRestart = () => {
     dispatch(quiz.resetQuiz());
   };
-
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>

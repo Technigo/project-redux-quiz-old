@@ -43,27 +43,41 @@ const Title = ({ text }) => {
   );
 };
 
-const AnswerContainer = styled.div`
-  margin: 20px 0;
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
+export const AnswerContainer = styled.div`
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 1,875rem auto;
+    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 
+    0 0 2rem var(--tertiary-bg-color), 0 0 0.8rem var(--tertiary-bg-color), 
+    0 0 2.8rem var(--tertiary-bg-color), inset 0 0 1.3rem var(--tertiary-bg-color);
+    width: 90%;
+    background-color: rgba(14, 59, 59, 0.8); 
 `;
 
-const Question = styled.h2`
+export const Question = styled.h2`
+ background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+  font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 100;
+  margin-bottom: 0.625rem;
 `;
 
-const UserAnswer = styled.p`
+export const UserAnswer = styled.p`
+  font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 0.625rem 0;
+  color: #fff;
 `;
 
-const CorrectAnswer = styled.p`
+export const CorrectAnswer = styled.p`
+  font-family: var(--paragraph-font-family);
   font-size: 1rem;
   margin: 10px 0;
+  color: #fff;
 `;
 
 HeroSummaryContainer.AnswerContainer = AnswerContainer;
