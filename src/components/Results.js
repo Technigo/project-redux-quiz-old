@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
@@ -21,17 +21,24 @@ text-align:center;
 `;
 
 const Results = () => {
-  const answers = useSelector((state) => state.quiz.answers)
+  const answers = useSelector((store) => store.quiz.answers)
   const correctAnswers = answers.filter((item) => item.isCorrect)
-  const scorePercent = (correctAnswers.length * 100) / answers.length;
 
+  const [scorePercent, setScorePercent] = useState(0);
+
+  useEffect(() => {
+    // Update scorePercent state variable
+    const newScorePercent = (correctAnswers.length * 100) / answers.length;
+    setScorePercent(newScorePercent);
+  }, [answers, correctAnswers]);
   const quizOver = useSelector((store) => store.quiz.quizOver);
   console.log(quizOver)
+  console.log(scorePercent)
 
   const grade = () => {
     return scorePercent >= 90 ? 'You are smashing this bootcamp A!'
       : scorePercent >= 80 ? 'Well done you got a B!'
-        : scorePercent >= 70 ? 'Such a nice middle type student its a C for you.'
+        : scorePercent >= 70 ? 'Such a nice middle of the curve type student its a C for you.'
           : scorePercent >= 60 ? 'Who says guessing cant get you a passing grade?'
             : scorePercent >= 50 ? 'Sadly a chimpanzee randomly poking at a keyboard could do better'
               : scorePercent >= 40 ? 'unspeakable. Should we pretend that didnt happen and you try again?'
