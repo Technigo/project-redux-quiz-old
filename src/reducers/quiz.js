@@ -102,7 +102,8 @@ export const quiz = createSlice({
         state.btnColor = '#56ab2f'
       } else {
         console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
-        state.btnColor = '#FF416C'
+        state.btnColor = '#FF416C';
+        window.alert(`Correct answer is: ${question.options[question.correctAnswerIndex]}`)
       }
 
       state.answers.push({
