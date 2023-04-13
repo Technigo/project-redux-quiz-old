@@ -56,27 +56,15 @@ export const CurrentQuestion = (props) => {
       <ButtonContainer>
         {question.options.map((answer, index) => {
           return (
-            typeof options === 'string' ? (
-              <Button
-                answerBtn
-                style={buttonStyle(index)}
-                type="button"
-                id={index}
-                onClick={() => onAnswerSubmit(question.id, index)}
-                key={answer}>
-                {answer}
-              </Button>
-            ) : (
-              <Button
-                answerBtn
-                style={buttonStyle(index)}
-                type="button"
-                id={index}
-                onClick={() => onAnswerSubmit(question.id, index)}
-                key={answer}>
-                <img src={answer} alt="option" />
-              </Button>
-            )
+            <Button
+              answerBtn
+              style={buttonStyle(index)}
+              type="button"
+              id={index}
+              onClick={() => onAnswerSubmit(question.id, index)}
+              key={answer}>
+              {typeof options === 'string' ? ({ answer }) : (<img src={answer} alt="option" />)}
+            </Button>
           )
         })}
       </ButtonContainer>

@@ -1,17 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import option1 from '../option-images/option1.jpg';
-// import option2 from '../option-images/option2.jpg'
+import option1 from '../assets/brand1.svg';
+import option2 from '../assets/brand2.svg'
 
 const questions = [
   { id: 1,
     img: '/images/questionImg1.jpg',
-    questionText: 'What is the common name for dried plums?',
-    options: [
-      '../option-images/option1.jpg',
-      '../option-images/option2.jpg'
-    ],
+    questionText: 'What is Germany said to have given us?',
+    options: [option1, option2],
     correctAnswerIndex: 0 },
-  { id: 2, img: '/images/questionImg1.jpg', questionText: 'What is the common name for dried plums?', options: ['Prunes', 'Grapes', 'Raisins', 'Apricots'], correctAnswerIndex: 0 },
+  { id: 2,
+    img: '/images/questionImg1.jpg',
+    questionText: 'What is the common name for dried plums?',
+    options: ['Prunes', 'Grapes', 'Raisins', 'Apricots'],
+    correctAnswerIndex: 0 },
   { id: 3, img: '/images/questionImg2.jpg', questionText: 'What name does deer meat go by?', options: ['Squab', 'Veal', 'Venison', 'Mutton'], correctAnswerIndex: 2 },
   { id: 4, img: '/images/questionImg3.jpg', questionText: 'What other name does “corn” go by?', options: ['Yellow rice', 'Popcorn', 'Barley', 'Maize'], correctAnswerIndex: 3 },
   { id: 5, img: '/images/questionImg4.jpg', questionText: 'What is the primary ingredient in hummus?', options: ['Corn', 'Chickpeas', 'Lentils', 'Cabbage'], correctAnswerIndex: 1 },
@@ -63,10 +64,10 @@ export const quiz = createSlice({
 
       if (question.correctAnswerIndex === answerIndex) {
         console.log('correct index', question.correctAnswerIndex, 'selectedIndex', answerIndex)
-        state.btnColor = 'green'
+        state.btnColor = '#56ab2f'
       } else {
         console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
-        state.btnColor = 'red'
+        state.btnColor = '#FF416C'
       }
 
       state.answers.push({
