@@ -1,4 +1,8 @@
+// /////////////// IMPORTS //////////////////////// //
+
 import styled from 'styled-components';
+
+// ////////////// STYLED COMPONENTS /////////////// //
 
 // PARAGRAPH STYLING P
 export const StyledWelcomeText = styled.h1`

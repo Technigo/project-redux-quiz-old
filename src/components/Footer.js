@@ -1,6 +1,12 @@
+// /////////////// IMPORT //////////////////////// //
+
 import React from 'react';
 import styled from 'styled-components';
 import { StyledFooterTextH2 } from './StyledTexts';
+
+// /////////////// STYLING //////////////////////// //
+
+// Styling for the container div
 
 export const Container = styled.div`
 background: #4F200D;
@@ -12,6 +18,8 @@ right:0;
 color: #FFD93D;
 text-align:center;
 `;
+
+// /////////////// COMPONENT //////////////////////// //
 
 export const Footer = () => {
   return (
