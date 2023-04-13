@@ -2,8 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'A very famous space epos starts with the opening line: ”A long time ago in a galaxy far, far away….”.. What is the name of the creator of this epic space opera?', options: ['Luke Skywalker', 'George Lucas', 'George Costanza', 'George Washington'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'The Grant Impact Theory suggests that as a young planet, Earth was hit by another planet called Theia, resulting in what?', options: ['The formation of the Earth’s atmosphere', 'The presence of superheavy elements such as lithium and magnesium', 'The formation of the moon', 'The origins of life on Earth'], correctAnswerIndex: 2 },
+  { id: 3, questionText: 'What is the average surface temperature of the sun, in Celsius?', options: ['500 °C', '5,500 °C', '10,500 °C', '20,500 °C'], correctAnswerIndex: 1 },
+  { id: 4, questionText: 'Halley’s Comet returns to Earth’s vicinity approximately every…', options: ['50 years', '75 years', '100 years', '200 years'], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'Which one of the following names is NOT the name of a galaxy?', options: ['Virgo Cluster', 'Whirlpool', 'Cartwheel', 'Nebulae Serenade'], correctAnswerIndex: 3 },
+  { id: 6, questionText: 'What is the name of the constellation that represents a hunter in Greek mythology and is one of the most recognizable constellations in the night sky?', options: ['Orion', 'Cassiopeia', 'Canis Major', 'Ursa Major'], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
