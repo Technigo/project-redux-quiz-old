@@ -1,3 +1,9 @@
+:root {
+  --headings-font-family: "Rye", cursive;
+  --second-headings-font-family: "Rancho", cursive;
+  --paragraph-font-family: "Newsreader", serif;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,3 +17,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+

@@ -1,4 +1,25 @@
+import React from 'react';
 import styled from 'styled-components';
+
+export const StyledTitle = styled.h1`
+ font-family: var(--headings-font-family);
+ font-size:2rem;
+ font-weight: 600;
+ text-align: center;
+ background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+`
+
+export const Title = ({ text }) => {
+  return (
+    <StyledTitle>{text}</StyledTitle>
+  );
+};
 
 const HeroSummaryContainer = styled.div`
   background-image: url(${(props) => props.image});
@@ -22,5 +43,4 @@ const HeroSummaryContainer = styled.div`
     min-height: 80vh;
   }
 `;
-
 export default HeroSummaryContainer;

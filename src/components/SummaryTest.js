@@ -1,12 +1,16 @@
 import React from 'react'
-import { RestartButton } from './Button'
-import HeroSummaryContainer from './SummaryTestStyling';
+// import styled from 'styled-components';
+// import { useSelector, useDispatch } from "react-redux"
+// import { quiz } from "../reducers/quiz"
+// import { RestartButton } from './Button'
+import HeroSummaryContainer, { Title } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 export const SummaryTest = () => {
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
-      <RestartButton />
+      <Title text="Summary" />
+      {/* <RestartButton /> */}
     </HeroSummaryContainer>
   )
 }
