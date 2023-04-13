@@ -1,12 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import code from '../assets/code.jpg'
+import q2 from '../assets/q2.jpeg'
+import icon from '../assets/icon.jpg'
+import q4 from '../assets/q4.jpg'
+import matrix from '../assets/matrix.jpg'
 
 const questions = [
   { id: 1, imgUrl: code, questionText: 'Which of these programming languages was developed by Netscape in 1995 for use in web pages?', options: ['HTML', 'JavaScript', 'Python', 'Java'], correctAnswerIndex: 1 },
-  { id: 2, questionText: 'In CSS, what property is used to control the spacing between elements?', options: ['padding', 'margin', 'border', 'height'], correctAnswerIndex: 0 },
-  { id: 3, questionText: 'What is the name of the CSS property used to make text bold?', options: ['font-style', 'font-weight', 'font-size', 'line-height'], correctAnswerIndex: 1 },
-  { id: 4, questionText: 'Which of these companies was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne?', options: ['Google', 'Microsoft', 'Apple', 'Amazon'], correctAnswerIndex: 2 },
-  { id: 5, questionText: 'Which of these tags is used to create an unordered list in HTML?', options: ['<ul>', '<ol>', '<li>', '<p>'], correctAnswerIndex: 0 },
+  { id: 2, imgUrl: q2, questionText: 'In CSS, what property is used to control the spacing between elements?', options: ['padding', 'margin', 'border', 'height'], correctAnswerIndex: 0 },
+  { id: 3, imgUrl: icon, questionText: 'What is the name of the CSS property used to make text bold?', options: ['font-style', 'font-weight', 'font-size', 'line-height'], correctAnswerIndex: 1 },
+  { id: 4, imgUrl: q4, questionText: 'Which of these companies was founded by Steve Jobs, Steve Wozniak, and Ronald Wayne?', options: ['Google', 'Microsoft', 'Apple', 'Amazon'], correctAnswerIndex: 2 },
+  { id: 5, imgUrl: matrix, questionText: 'Which of these tags is used to create an unordered list in HTML?', options: ['<ul>', '<ol>', '<li>', '<p>'], correctAnswerIndex: 0 },
   { id: 6, questionText: 'In JavaScript, what method is used to add an element to the end of an array?', options: ['unshift()', 'shift', 'pop', 'push'], correctAnswerIndex: 3 },
   { id: 7, questionText: 'What does the acronym API stand for?', options: ['Automated Programming Interface', 'Automated Programming Integration', 'Application Programming Interface', 'Advanced Programming Integration'], correctAnswerIndex: 2 },
   { id: 8, questionText: 'Who created React?', options: ['Mark Zuckerberg', 'Jordan Walke', 'Jack Dorsey', 'Larry Page'], correctAnswerIndex: 1 },
