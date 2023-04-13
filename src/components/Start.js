@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import backgroundImg from '../assets/startbackground.jpg';
+import noise from '../assets/win1.mp3';
 
 const StartQuiz = styled.div`
   background-image: url(${backgroundImg});
@@ -12,11 +13,22 @@ const StartQuiz = styled.div`
   height: 100vh;
 `;
 
+// const StartContainer = styled.div`
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   background: rgba(26, 25, 25, 0.3);
+//   border-radius: 5%;
+//   padding: 10%;
+//   text-align: center;
+// `;
+
 const Title = styled.h1`
  font-family: var(--headings-font-family);
- font-size: 4rem;
+ font-size: 3rem;
  font-weight: 600;
- text-align: center;
+//  text-align: center;
  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
@@ -73,7 +85,7 @@ const Button = styled.button`
 `;
 
 const Start = ({ start }) => {
-  const soundEffect = new Audio('../assets/win1.mp3');
+  const soundEffect = new Audio(noise);
 
   const handleClick = () => {
     soundEffect.play();
@@ -82,9 +94,11 @@ const Start = ({ start }) => {
 
   return (
     <StartQuiz>
-      <Title>Welcome to the amazing elephants-members trivia quiz</Title>
-      <Text>Try your luck by pressing the button below</Text>
-      <Button onClick={handleClick}>Clickyclick</Button>
+      {/* <StartContainer> */}
+        <Title>Welcome to the amazing elephants-members trivia quiz</Title>
+        <Text>Try your luck by pressing the button below</Text>
+        <Button onClick={handleClick}>Clickyclick</Button>
+      {/* </StartContainer> */}
     </StartQuiz>
   );
 }
