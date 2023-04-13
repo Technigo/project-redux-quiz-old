@@ -7,16 +7,23 @@ export const Timer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds(() => seconds + 1);
+      setSeconds((prevSeconds) => prevSeconds + 1);
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [seconds]);
+  }, []);
+
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
 
   return (
-    <TimerStyle><Icon src={IconImg} alt="timer-icon" />:{seconds}</TimerStyle>
-  )
-}
+    <TimerStyle>
+      <Icon src={IconImg} alt="timer-icon" />
+      {minutes < 10 ? `0${minutes}` : minutes}:
+      {remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}
+    </TimerStyle>
+  );
+};
 
 const TimerStyle = styled.div`
 padding: 10px;
