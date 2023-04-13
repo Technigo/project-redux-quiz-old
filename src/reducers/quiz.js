@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'In Sweden, what is the typical way to greet someone?', options: ['Shaking hands', ' Hugging', 'A firm high-five', ' A gentle "Hej" followed by awkwardly staring at each other until someone speaks'], correctAnswerIndex: 0 },
+  { id: 2, questionText: 'What is the traditional Swedish dish called "Surströmming"?', options: ['Pickled herring', 'Fermented fish', 'Fish-flavored ice cream', 'Something that should never be eaten indoors or within a 5-mile radius of other humans'], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'Which of the following traditional Swedish celebrations marks the end of winter and the beginning of spring?', options: ['Midsummer', 'Lucia', 'Valborgsmässoafton', 'Jul'], correctAnswerIndex: 2 },
+  { id: 4, questionText: 'What is the national flower of Sweden?', options: ['Lily of the valley', 'Bluebells', ' Pyramidal Saxifrage', 'Jul'], correctAnswerIndex: 1 },
+  { id: 5, questionText: 'Which Swedish band is known for their catchy pop hits and unique fashion sense?', options: ['ABBA', 'IKEA', 'Ace of Base', 'The Dancing Meatballs'], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
