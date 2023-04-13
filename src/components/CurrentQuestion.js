@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { quiz } from 'reducers/quiz'
-import Results from 'components/Results'
-import NavButtons from './NavButtons'
-import Form from './Form'
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/jsx-no-useless-fragment */
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { quiz } from 'reducers/quiz';
+import Results from 'components/Results';
+import NavButtons from './NavButtons';
+import Form from './Form';
 
 export const CurrentQuestion = () => {
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
+  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
 
   const dispatch = useDispatch();
   const quizOver = useSelector((state) => state.quiz.quizOver);
@@ -16,7 +18,7 @@ export const CurrentQuestion = () => {
   const [questionAnswered, setQuestionAnswered] = useState(false);
 
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+    return <h1>Oh no! I could not find the current question!</h1>;
   }
 
   const handleOkayButtonClick = (questionId, answerIndex) => {
@@ -61,5 +63,5 @@ export const CurrentQuestion = () => {
         </div>
       )}
     </section>
-  )
-}
+  );
+};
