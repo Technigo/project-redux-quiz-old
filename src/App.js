@@ -5,8 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { WelcomePage } from 'pages/WelcomePage';
 
-import { CurrentQuestion } from 'components/CurrentQuestion';
-import { AnswerButton } from 'components/AnswerButton';
+import { Question } from 'pages/Question';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -20,8 +19,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/quiz" element={<CurrentQuestion />} />
-          <Route path="/answer" element={<AnswerButton />} />
+          <Route path="/quiz" element={<Question />} />
         </Routes>
       </BrowserRouter>
     </Provider>

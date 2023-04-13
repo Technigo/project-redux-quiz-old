@@ -35,7 +35,7 @@ export const AnswerButton = ({ index, option, setGoToNextButton }) => {
       onClick={() => onAnswerSubmit(question.id, index)}
       disabled={usersAnswer}
       type="button">
-      {option} omadonna
+      {option}
     </button>
   );
 };
