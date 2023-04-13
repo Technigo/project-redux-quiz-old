@@ -5,8 +5,6 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import { CurrentQuestion } from 'components/CurrentQuestion'
-import quizIcon from '../assets/icon.jpg'
-// import purple from '../assets/purple.jpg'
 
 
 export const StartPage = () => {
@@ -15,12 +13,10 @@ export const StartPage = () => {
 
   return (
     <>
-    {/* <img className='background-img' src={`${purple}`} alt="purple"/> */}
       {!question.quizStart ? (
         <OuterWrapperStartPage>
           <InnerWrapperStartPage>
             <Start>
-              <img className='start-icon' src={`${quizIcon}`} alt="icon"/>
               <h1>FRONT END</h1>
               <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
             </Start>
@@ -35,21 +31,18 @@ export const StartPage = () => {
   )
 }
 
+
 const Start = styled.div`
 display: flex;
 flex-direction: column;
 text-align: center;
 border: solid 6px #0dc9e6;
-height: 200px;
-width: 200px;
+height: 500px;
+width: 500px;
 position: absolute;
 `
-// const startIcon = styled.icon`
-// width: 99px;
-// position: absolute;
-// margin-bottom: 0px;
-// margin-top: -10px;
-// `
+
+
 
 const StartButton = styled.button`
   padding: 10px;
@@ -61,8 +54,9 @@ const StartButton = styled.button`
   border: solid 1px #0dc9e6;
   width: 133px;
   background-color:#0dc9e6;
-  position: relative;
-  top: 10px;
+  position: absolute;
+  bottom: 150px;
+  margin-left: 180px;
   text-transform: uppercase;
 
   &:hover {
@@ -82,7 +76,6 @@ background: #231f20;
 `
 
  const InnerWrapperStartPage = styled.div`
- background-image: url(${purple});
 display: flex;
 flex-direction: column;
 justify-content: center;
