@@ -59,7 +59,9 @@ flex-direction: column;
 text-align: center;
 border: solid 1px #0dc9e6;
 border-radius: 20px;
-height: 500px;
-width: 500px;
+height: 80vh;
+width: 50%;
 position: absolute;
+top: 50px;
+left: 310px;
 `
