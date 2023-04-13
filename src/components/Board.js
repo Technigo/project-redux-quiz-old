@@ -3,7 +3,8 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Summary } from 'components/Summary';
+import { Summary } from 'components/Summary'
+import styled from 'styled-components'
 import { Button } from './Button'
 import { CurrentQuestion } from './CurrentQuestion'
 
@@ -51,13 +52,19 @@ export const Board = () => {
     )
   } else {
     return (
-      <div className="summary-wrapper">
+      <StyledSummaryWrapper>
         <Summary />
         <Button
           handleClick={() => onRestart()}
           buttonText="Start Over"
         />
-      </div>
+      </StyledSummaryWrapper>
     )
   }
 }
+
+const StyledSummaryWrapper = styled.div`
+display: flex;
+justify-content: center;
+`
+

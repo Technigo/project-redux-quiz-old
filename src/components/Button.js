@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const StyledButton = styled.button`
 background-color: #FAD040;
@@ -11,6 +11,13 @@ position: absolute;
 top: 0;
 right: 0;
 margin: 10px
+
+${(props) => props.start && css`
+position: unset;
+width: 172.08px;
+height: 49px;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+`}
 `
 
 export const Button = ({ buttonText, handleClick }) => {

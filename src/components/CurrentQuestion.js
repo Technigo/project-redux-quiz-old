@@ -54,7 +54,7 @@ export const CurrentQuestion = () => {
     <Main>
       <Board>
         <StyledImg src={question.img} />
-        <Headline>Question: {question.questionText}</Headline>
+        <Headline>{question.questionText}</Headline>
         <ButtonContainer>
           {question.options.map((option, index) => {
             return (
@@ -81,18 +81,19 @@ export const CurrentQuestion = () => {
 }
 
 const Main = styled.div`
-display:flex; 
-flex-direction:column;
+display: flex; 
+flex-direction: column;
 background-color: #0078bea7;
-/* margin: 15px; */
+width: 94%;
+height: 80%;
+border: 3px solid pink;
 
-@media (min-width: 834px) and (max-width: 1024px) {
-}
+// @media (min-width: 834px) and (max-width: 1024px) {
+// }
 
 @media (min-width: 1025px) {
-  background-color: #0078bea7;
   width: 45%;
-  margin: 4% auto;
+  height: 80%;
 }
 `
 const Board = styled.div`
@@ -108,11 +109,6 @@ width: 313px;
 height: 286px;
 object-fit: cover;
 border-radius: 10px;
-
-@media (min-width: 834px) and (max-width: 1024px) {
-width: 691px;
-height: 356px;
-}
 `
 
 const ButtonContainer = styled.div`
@@ -130,15 +126,20 @@ border: none;
 border-radius:10px;
 background-color: #FFFFFF;
 
+// Props for changing the buttons color depending on user answer
+// "!important" because otherwise :nth-of-type overrides it
+
 ${({ correct }) => correct && `
-background-color: green;
-border: solid 2px white;
+border: solid 4px rgb(0, 255, 0) !important;
 `}
 
 ${({ wrong }) => wrong && `
-background-color: red;
-border: solid 2px white;
+border: solid 4px red !important;
 `}
+
+&:nth-of-type(3n + 1) {
+  background-color: #FAD040;
+}
 
 `
 const Headline = styled.h1`
