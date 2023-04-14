@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StyledParagraphText, StyledQuestionText } from 'components/StyledTexts';
+import { StartButton } from './Button';
 
 export const QuestionsContainer = styled.div`
 background: #FFD93D;

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { QuizOver } from './QuizOver';
 import { StyledQuestionText } from './StyledTexts';
+import { StartButton } from './Button';
 
 export const QuestionsContainer = styled.div`
 background: #FFD93D;
@@ -51,9 +52,9 @@ export const CurrentQuestion = () => {
       {!gameOver ? (
         <QuestionsContainer>
           <StyledQuestionText>{question.id} Question: {question.questionText}</StyledQuestionText>
-          <div>
+          <div className="answerSection">
             {question.options.map((option, index) => (
-              <button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</button>
+              <StartButton button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</StartButton>
             ))}
           </div>
         </QuestionsContainer>
