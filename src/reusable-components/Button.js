@@ -24,13 +24,13 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${(props) => ((props.answerBtn) ? '4.5em' : '12em')};
+    width: ${(props) => ((props.answerBtn) ? '5.7em' : '12em')};
     height: ${(props) => ((props.answerBtn) ? '3.5em' : '2em')};
     border-radius: 10px;
     border:none;
     background-color: #dfe3f5;
     font-family: 'Open Sans', sans-serif;
-    font-size:1.5rem;
+    font-size:1.2rem;
     font-weight:500;
     cursor: pointer;
 
