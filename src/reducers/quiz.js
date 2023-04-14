@@ -35,7 +35,7 @@ const questions = [
 
   { id: 6,
     img: '/images/questionImg6.jpg',
-    questionText: 'Which country produces the most coffee in the world',
+    questionText: 'Which country produces the most coffee in the world?',
     options: ['Brazil', 'Colombia', 'Argentina', 'Peru'],
     correctAnswerIndex: 0 },
 
