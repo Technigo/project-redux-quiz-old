@@ -44,7 +44,7 @@ export const AnswerButton = () => {
 const Btn = styled.button`
   border-style: double;
   border-color: black;
-  padding: 10px;
+  padding: 25px 10px;
   color: ${(props) => (props.showSelectedColor ? (props.isCorrectAnswer ? '#4CAF50' : '#da1717') : '#fff')};
   border-radius: 10px;
   margin-top: 6px;
@@ -60,8 +60,8 @@ const Btn = styled.button`
 `;
 
 const BtnsWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-around;
-  width: 100%;
+  gap:40px;
 `;

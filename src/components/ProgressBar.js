@@ -24,7 +24,7 @@ const ProgressMainBarWrapper = styled.div`
 width: 50vw;
 display: flex;
 justify-content: center;
-margin-top: 50px;
+margin-top: 1rem;
 height: 50px;
 `
 

@@ -27,15 +27,15 @@ const Results = () => {
     return scorePercent >= 90 ? 'You are smashing this bootcamp A!'
       : scorePercent >= 80 ? 'Well done you got a B!'
         : scorePercent >= 70 ? 'Such a nice middle of the curve type student its a C for you.'
-          : scorePercent >= 60 ? 'Who says guessing cant get you a passing grade?'
+          : scorePercent >= 60 ? 'Who says guessing cant get you a passing grade? Its a D for you.'
             : scorePercent >= 50 ? 'Sadly a chimpanzee randomly poking at a keyboard could do better'
-              : scorePercent >= 40 ? 'unspeakable. Should we pretend that didnt happen and you try again?'
+              : scorePercent >= 40 ? 'Unspeakable, lets pretend that didnt happen and you try again?'
                 : <p>what? Lets give it another try shall we????</p>
   }
   return (
     <ResultsParentContainer>
       <ResultsChildContainer>
-        <ResultsH1>{grade()}</ResultsH1>()
+        <ResultsH1>{grade()}</ResultsH1>
         <ResultsH3>Score: {correctAnswers.length}/{answers.length}</ResultsH3>
         <RestartButton />
       </ResultsChildContainer>
@@ -62,19 +62,21 @@ const ResultsChildContainer = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 20px;
+  padding-bottom: 20px;
 `
 const ResultsH1 = styled.h1`
-color:#3d85c6;
+color:white;
 font-size:3rem;
 text-align:center;
 width: 90%;
 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 `
 const ResultsH3 = styled.h3`
-color:#3d85c6;
+color:white;
 font-size:3rem;
 text-align:center;
 width: 90%;
 text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+margin-top:0;
 `;
 

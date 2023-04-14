@@ -34,11 +34,11 @@ const TimerStyle = styled.div`
     font-weight: bold;
     background: transparent;
     font-size: 16px;
-    gap: 5px;
+    gap: 10px;
     background-color: rgb(61, 133, 198);
 `
 export const Icon = styled.img`
 width: 20px;
 height: 20px;
-margin-top: 5px;
+margin-top: 30px;
 `

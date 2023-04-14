@@ -24,9 +24,9 @@ export const CurrentQuestion = () => {
         <OptionsContainer>
           <QuestionH1>{question.questionText}</QuestionH1>
           <QImg src={question.imgUrl} alt="code" width="300px" />
-          <Timer />
           <AnswerButton />
           <ProgressBar />
+          <Timer />
         </OptionsContainer>
       </ParentWrapper>
     );
@@ -50,20 +50,21 @@ display: flex;
     text-align: center;
     border: 1px solid rgb(13, 201, 230);
     border-radius: 20px;
-    height: 80%;
-    width: 60%;
+    height: 95%;
+    width: 80%;
     background-color: black;
     justify-content: space-around;
 `
 
 const QuestionH1 = styled.h1`
 color:#3d85c6;
+width: 65%;
 `
 
 const QImg = styled.img`
 width: 300px;
 height: 240px;
-padding: 20px 0;
+
 
   &:hover {
     transform: scale(1.1);

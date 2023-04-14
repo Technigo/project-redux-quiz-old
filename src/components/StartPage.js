@@ -18,7 +18,7 @@ export const StartPage = () => {
         <OuterWrapperStartPage>
           <InnerWrapperStartPage>
             <Start>
-              <StartH1>FRONT END</StartH1>
+              <StartH1>Front End Dev Quiz</StartH1>
               <StartButton onClick={() => dispatch(quiz.actions.startQuiz())} type="button">Lets get started!</StartButton>
             </Start>
           </InnerWrapperStartPage>
@@ -46,7 +46,7 @@ box-shadow: 35px -12px #3d85c6;
 `
 
 const StartH1 = styled.text`
-margin-top: 30%;
+margin-top: 20%;
 align-items: center;
 padding: 12px 30px;
 font-weight: 1000;
