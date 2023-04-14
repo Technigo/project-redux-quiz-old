@@ -1,13 +1,14 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+For this project we worked in a team of four to create a short quiz using React and Redux.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We began by discussing what our quiz should be about, and how we would be working together.  We decided to pair and mob program depending on each team member's availability. We focused on starting with the mechanics of the quiz and understanding Redux, universal state, how to get data from the store, and how to use dispatches.  Once the mechanics of the quiz worked, we updated our questions, and styled the quiz.
+
+If we had more time, we would work on a few stretch goals like adding photos or enriching the summary with information about what questions the user got correct and what questions they should practice more.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://space-quiz-by-annikabridgetfionafrida.netlify.app/

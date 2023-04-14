@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.pexels.com/photos/4644812/pexels-photo-4644812.jpeg");
+  background-size: 100% auto;
+  background-size: cover;
+  font-family: 'Space Grotesk', sans-serif;
+
+}
+
+code {
+
+  font-family: 'Space Grotesk', sans-serif;
+  
+}

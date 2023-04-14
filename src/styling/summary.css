@@ -1,0 +1,69 @@
+.summaryContainer {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.summaryHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: rgb(54, 33, 62) solid 8px;
+    border-radius: 25px;
+    width: 80%;
+    background-image: linear-gradient(to bottom right, #63768D, #8AC6D0);
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+.summaryTitle {
+    font-size: 60px;
+    font-weight: 900;
+    color: #36213E; 
+
+}
+.result {
+    color: white; 
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+    background: rgba(184, 243, 255, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(184, 243, 255, 0.19);
+    padding: 5%; 
+}
+
+.question {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(43, 23, 50, 1); 
+}
+
+.yourAnswer {
+    font-weight: 600;
+    color: rgba(43, 23, 50, 1);
+}
+
+.correctAnswer {
+    color: rgba(43, 23, 50, 1);
+}
+
+@media (max-width: 425px) {
+
+    .summaryTitle {
+        font-size: 30px;
+    }
+
+    .result {
+        font-size: 20px;
+    }
+}
