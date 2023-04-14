@@ -8,7 +8,7 @@ const questions = [
     correctAnswerIndex: 0 },
   { id: 2,
     questionText: 'What is the name of the fictional metal used to make Cap Americas shield?',
-    options: [' Adamantium', 'Vibranium', 'Promethium', 'Unobtanium'],
+    options: ['Adamantium', 'Vibranium', 'Promethium', 'Unobtanium'],
     correctAnswerIndex: 1 },
   { id: 3,
     questionText: 'Who played the role of Black Widow in the Marvel Cinematic Universe?',
