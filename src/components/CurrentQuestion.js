@@ -16,7 +16,7 @@ export const CurrentQuestion = () => {
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
 
-  // This is where the MAGIC happens
+  // This is where the MAGIC happens === Show answers
   const answer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id)
   );
