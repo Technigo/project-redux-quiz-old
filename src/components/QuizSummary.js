@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 export const QuizSummary = () => {
   const questions = useSelector((state) => state.quiz.questions);
   const answers = useSelector((state) => state.quiz.answers);
-
+  console.log('questions:', questions);
+  console.log('answers:', answers);
   if (!questions || !answers) {
     return null;
   }
 
-  const correctAnswers = questions.reduce((total, answer) => {
+  const correctAnswers = answers.reduce((total, answer) => {
     if (answer.isCorrect) {
       return total + 1;
     }
@@ -19,16 +20,19 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2>Quiz Summary</h2>
+      <div className="summary">
+        <p>Total Correct Answers: {correctAnswers}</p>
+        <p>Percentage: {Math.round((correctAnswers / questions.length) * 100)}%</p>
+        <p>Total Questions: {questions.length}</p>
+      </div>
+      <h3>Questions and Answers</h3>
       {answers.map((answer) => (
-        <div className="summary" key={answer.quetionId}>
-          <h3>{answer.question.questionText}</h3>
-          <p>Selected answer: {answer.answer ? answer.answer : 'Not answered'}</p>
+        <div className="summary" key={answer.questionId}>
+          <h4>{answer.question.questionText}</h4>
+          <p>Your answer: {answer.answer ? answer.answer : 'Not answered'}</p>
           <p>Correct answer: {answer.question.options[answer.question.correctAnswerIndex]}</p>
         </div>
       ))}
-      <p>Total Correct Answers: {correctAnswers}</p>
-      <p>Total Questions: {questions.length}</p>
-      <p>Percentage: {Math.round((correctAnswers / questions.length) * 100)}%</p>
     </div>
   );
 };

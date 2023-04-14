@@ -7,7 +7,7 @@ const questions = [
     options: ['Robert Downey Jr.', 'Chris Evans', 'Mark Ruffalo', 'Chris Hemsworth'],
     correctAnswerIndex: 0 },
   { id: 2,
-    questionText: 'What is the name of the fictional metal used to make Captain Americas shield?',
+    questionText: 'What is the name of the fictional metal used to make Cap Americas shield?',
     options: [' Adamantium', 'Vibranium', 'Promethium', 'Unobtanium'],
     correctAnswerIndex: 1 },
   { id: 3,

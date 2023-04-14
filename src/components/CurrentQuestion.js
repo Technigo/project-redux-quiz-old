@@ -40,12 +40,11 @@ export const CurrentQuestion = () => {
 
   return (
     <div className="question-section">
-      <ProgressBar />
       <h1>Marvel movie-Quiz</h1>
-      <h1>Question:
+      <h2>Question:
         <br />
         {question.questionText}
-      </h1>
+      </h2>
       <div className="options">
         {question.options.map((singleOption, index) => (
           <button
@@ -59,6 +58,7 @@ export const CurrentQuestion = () => {
       <div className="next-button-section">
         <button className="next-button" type="button" onClick={onButtonClick}>Next</button>
       </div>
+      <ProgressBar />
     </div>
   );
 }

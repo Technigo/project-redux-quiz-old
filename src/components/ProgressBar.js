@@ -28,12 +28,12 @@ export const ProgressBar = () => {
     display: flex;
     height: 100%;
     width: ${percent}%;
-    background-color: #fad040;
+    background-color: lightgreen;
     border-radius: 10px 0 0 10px;
     align-items: center;
     font-family: 'Roboto';
     font-weight: bold;
-    color: #0078be;
+    color: black;
   `;
 
   const PaddedP = styled.p`
