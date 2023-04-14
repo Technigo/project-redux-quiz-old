@@ -34,6 +34,6 @@ export const QuizOver = () => {
   )
 }
 
-// In the return above we're mapping through the answers array and are returning the number of the question (the questionId +1 since the start of the index is 0), the questiontext, the user's answer and the correct answer using the correctAnswerIndex property. After that we are filtering the answers array to check how many answers were correct out of how many questions.
+// In the return above we're mapping through the answers array and are returning the number of the question (the question.index +1 since the start of the index is 0), the questiontext, the user's answer and the correct answer using the correctAnswerIndex property. After that we are filtering the answers array to check how many answers were correct out of how many questions.
 
 // The Last thing that is displayed is a link that has a button inside it that brings you back to the WelcomPage-component. /Annika
