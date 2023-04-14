@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 export const QuizSummary = () => {
   const questions = useSelector((state) => state.quiz.questions);
   const answers = useSelector((state) => state.quiz.answers);
-  console.log('questions:', questions);
-  console.log('answers:', answers);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!questions || !answers) {
     return null;
   }

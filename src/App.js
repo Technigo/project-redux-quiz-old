@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 import { CurrentQuestion } from 'components/CurrentQuestion';
+import { Footer } from 'components/Footer';
 
 const reducer = combineReducers({
   quiz: quiz.reducer
@@ -15,6 +16,7 @@ export const App = () => {
     <Provider store={store}>
       <div className="background">
         <CurrentQuestion />
+        <Footer />
       </div>
     </Provider>
   );
