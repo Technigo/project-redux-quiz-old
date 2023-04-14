@@ -1,0 +1,61 @@
+.summaryContainer {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.summaryHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: rgb(54, 33, 62) solid 8px;
+    border-radius: 25px;
+    width: 70%;
+    background-image: linear-gradient(to bottom right, #63768D, #8AC6D0);
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 40px;
+}
+
+.summaryTitle {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: #36213E; 
+
+}
+.result {
+    font-family: 'Space Grotesk', sans-serif;
+    color: white; 
+    margin-top: -60px;
+}
+
+.resultsContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+    border: rgb(54, 33, 62) solid 8px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px rgba(54, 33, 62, 0.8);;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-right: 1%; 
+    padding-left: 1%;
+}
+
+.question {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    color: rgba(43, 23, 50, 1); 
+}
+
+.yourAnswer {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #554971;
+}
+
+.correctAnswer {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #554971;
+}
