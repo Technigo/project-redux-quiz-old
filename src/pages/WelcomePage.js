@@ -13,10 +13,10 @@ export const WelcomePage = () => {
       <div className="content">
         <div className="welcome-text-container">
           <h1>Hello there friend 👋 </h1>
-          <p>Ready to Rumbre with React?</p>
+          <p>Ready to Rumble with React?</p>
         </div>
         <button className="welcomeButton" type="button" onClick={goToQuiz}>
-        Start the quiz
+          Start the quiz
         </button>
       </div>
       <div className="welcome-background" />
