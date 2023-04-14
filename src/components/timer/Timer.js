@@ -27,12 +27,14 @@ export const Timer = () => {
 };
 
 const TimerStyle = styled.div`
+display: flex;
 padding: 10px;
 border: none;
 border-radius: 5px;
 font-weight: bold;
 background: transparent;
 font-size: 16px;
+gap: 5px;
 
 `
 export const Icon = styled.img`

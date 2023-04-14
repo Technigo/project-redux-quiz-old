@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 const InfiniteRotate = () => {
   return (
-    <Rotate>🥴</Rotate>
+    <Rotate>⌛</Rotate>
   )
 }
 
@@ -14,6 +14,7 @@ to {
 `
 const Rotate = styled.div`
 animation: ${rotate} 4s linear infinite;
+
 `
 
 export default InfiniteRotate

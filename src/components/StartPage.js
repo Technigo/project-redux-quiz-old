@@ -74,6 +74,7 @@ const StartButton = styled.button`
     background-color: black;
     color: white;
     cursor: pointer;
+    transform: scale(1.2);
   }
 `
 const OuterWrapperStartPage = styled.div`
