@@ -11,3 +11,9 @@ Describe how you approached to problem, and what tools and techniques you used t
 ## View it live
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
+## Image credits
+German Flag - Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/photos/qQomkOCpkes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+Paella - Photo by <a href="https://unsplash.com/ko/@dougglaslopez?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Douglas Lopez</a> on <a href="https://unsplash.com/photos/4B0cLMtJxWw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
