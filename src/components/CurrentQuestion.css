@@ -9,6 +9,10 @@
   align-items: center;
 }
 
+.answerButton {
+  place-self: center;
+}
+
 .answer-buttons {
   display: flex;
   flex-direction: column;
