@@ -33,7 +33,7 @@ button {
   text-decoration: none;
   font-size: 18px;
   border: 2px solid rgb(10, 37, 255);
-  place-self: flex-start;
+  /* place-self: flex-start; */
   color: rgb(255, 255, 255);
   background: rgb(10, 37, 255);
   align-self: center;
