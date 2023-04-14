@@ -9,8 +9,8 @@ export const QuizSummary = () => {
     return null;
   }
 
-  const correctAnswers = questions.reduce((total, question) => {
-    if (answers[question.id] === question.correctAnswerIndex) {
+  const correctAnswers = questions.reduce((total, answer) => {
+    if (answer.isCorrect) {
       return total + 1;
     }
     return total;
@@ -19,11 +19,11 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2>Quiz Summary</h2>
-      {questions.map((question) => (
-        <div className="summary" key={question.id}>
-          <h3>{question.questionText}</h3>
-          <p>Selected answer: {answers[question.id] !== undefined ? question.options[answers[question.id]] : 'Not answered'}</p>
-          <p>Correct answer: {question.options[question.correctAnswerIndex]}</p>
+      {answers.map((answer) => (
+        <div className="summary" key={answer.quetionId}>
+          <h3>{answer.question.questionText}</h3>
+          <p>Selected answer: {answer.answer ? answer.answer : 'Not answered'}</p>
+          <p>Correct answer: {answer.question.options[answer.question.correctAnswerIndex]}</p>
         </div>
       ))}
       <p>Total Correct Answers: {correctAnswers}</p>

@@ -54,6 +54,7 @@ button {
 .options {
   display: flex;
   gap: 2vh;
+  margin: 10px;
 }
 
 .h1 {

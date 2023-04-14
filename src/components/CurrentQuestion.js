@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import '../index.css';
+import { ProgressBar } from './ProgressBar';
 import { QuizSummary } from './QuizSummary';
 
 export const CurrentQuestion = () => {
@@ -25,7 +26,7 @@ export const CurrentQuestion = () => {
   }
 
   const onAnswerSelect = (index) => {
-    dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }))
+    // dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }))
     setSelectedOption(index);
   }
 
@@ -39,8 +40,12 @@ export const CurrentQuestion = () => {
 
   return (
     <div className="question-section">
+      <ProgressBar />
       <h1>Marvel movie-Quiz</h1>
-      <h1>Question: {question.questionText}</h1>
+      <h1>Question:
+        <br />
+        {question.questionText}
+      </h1>
       <div className="options">
         {question.options.map((singleOption, index) => (
           <button
