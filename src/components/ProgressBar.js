@@ -17,40 +17,39 @@ export const ProgressBar = () => {
   let percent = Number(correctPercent).toFixed();
 
   /* Styles of container and bar */
-  const container = {
-    height: '2rem',
-    width: '100%',
-    backgroundColor: '#FFFFFF',
-    borderRadius: '10px',
-    marginBottom: '0.5rem'
-  };
-  const bar = {
-    display: 'flex',
-    height: '100%',
-    width: `${percent}%`,
-    backgroundColor: '#FAD040',
-    borderRadius: '10px 0 0 10px',
-    // marginTop: '-1rem',
-    alignItems: 'center',
-    fontFamily: 'Roboto',
-    fontWeight: 'bold',
-    color: '#0078BE'
-  };
-  const P = {
-    paddingLeft: '15px'
-  };
+  const StyledContainer = styled.div`
+    height: 2rem;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+  `;
+  const StyledBar = styled.div`
+    display: flex;
+    height: 100%;
+    width: ${percent}%;
+    background-color: #fad040;
+    border-radius: 10px 0 0 10px;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: bold;
+    color: #0078be;
+  `;
+
+  const PaddedP = styled.p`
+    padding-left: 15px;
+  `;
 
   return (
-    <div style={container}>
-      <div
-        style={bar}
+    <StyledContainer>
+      <StyledBar
         role="progressbar"
         aria-valuenow={percent - 10}
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <p style={P}>{percent}%</p>
-      </div>
-    </div>
+        <PaddedP>{percent}%</PaddedP>
+      </StyledBar>
+    </StyledContainer>
   );
 };
