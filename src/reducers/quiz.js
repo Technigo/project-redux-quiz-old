@@ -2,8 +2,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 // import { TfiTime } from 'react-icons/tfi'
 
-
-
 const questions = [
   { id: 1,
     img: '/images/questionImg1.jpg',
