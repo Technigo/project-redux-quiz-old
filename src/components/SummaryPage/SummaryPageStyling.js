@@ -8,7 +8,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
-min-height:100vh;
+min-height:${(props) => (props.main ? '100vh' : '100%')};
 color: #dfe3f5;
 gap:0.7rem;
 padding:1rem;
