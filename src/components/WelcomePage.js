@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 // /////////////// IMPORT //////////////////////// //
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { StartButton } from './Button';
-import { StyledWelcomeText, StyledParagraphText } from './StyledTexts';
+import { StyledWelcomeText, StyledParagraphText, StyledQuestionText } from './StyledTexts';
 
 // /////////////// COMPONENT //////////////////////// //
 
@@ -18,6 +19,10 @@ text-align: center;
 border-radius: 15px;
 padding: 20px;
 margin: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 15px;
 
 @media (min-width: 668px) {
   width: 400px;
@@ -28,8 +33,11 @@ margin: 20px;
 export const WelcomePage = () => {
   return (
     <QuestionsContainer>
-      <StyledWelcomeText>Welcome to a Javascript-quiz</StyledWelcomeText>
-      <StyledParagraphText>This is a paragraphtext.</StyledParagraphText>
+      <StyledQuestionText>Welcome to</StyledQuestionText>
+      <StyledWelcomeText>JavaScript Jeopardy </StyledWelcomeText>
+      <StyledParagraphText> So you wanna be a developer, ey?
+        <br />Test you knowledge in JavaScript by answering questions! <span role="img" aria-label="sheep">🤔</span>
+      </StyledParagraphText>
       <Link to="/quiz">
         <StartButton button>Start Quiz</StartButton>
       </Link>

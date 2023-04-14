@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { StyledParagraphText, StyledQuestionText } from 'components/StyledTexts';
+import { StyledParagraphText, StyledQuestionText, StyledWelcomeText } from 'components/StyledTexts';
 import { StartButton } from 'components/Button';
 import { quiz } from 'reducers/quiz';
 
@@ -33,7 +33,7 @@ export const QuizOver = () => {
   // The function above calls the restart function in the reducers using the useDispatch-hook /Annika
   return (
     <QuestionsContainer>
-      <p>You answered</p>
+      <StyledWelcomeText>Here is your result</StyledWelcomeText>
       {answers.map((singleAnswer, index) => (
         <div key={singleAnswer.questionId}>
           <StyledQuestionText>{index + 1}. {singleAnswer.question.questionText}</StyledQuestionText>

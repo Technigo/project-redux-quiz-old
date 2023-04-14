@@ -51,7 +51,7 @@ export const CurrentQuestion = () => {
     <div>
       {!gameOver ? (
         <QuestionsContainer>
-          <StyledQuestionText>{question.id} Question: {question.questionText}</StyledQuestionText>
+          <StyledQuestionText>{question.id}. {question.questionText}</StyledQuestionText>
           <div className="answerSection">
             {question.options.map((option, index) => (
               <StartButton button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</StartButton>
