@@ -30,7 +30,7 @@ const StartingPage = () => {
         </P>
         <P>Good luck and have fun!</P>
         <NavLink to="/quiz">
-          <Button type="button">Lets go!</Button>
+          <Button type="button">Let&apos;s go!</Button>
         </NavLink>
       </QuestionContainer>
     </Wrapper>

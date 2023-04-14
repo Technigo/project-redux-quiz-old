@@ -1,13 +1,13 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a website with a quiz made with Redux and React. The project was made in groups of 5 people: Emma Holtegaard, Emilia Granström Anundi, Nina Ströyer, Amanda Sjöström, and Maja Zimnoch. We used mob programming technique. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We used selectors to access redux state, and dispatch to trigger redux actions. Another challenge was to interact with the store using selectors or by dispatching action. A lot of the redux was predefined, but we adapted it to fit our project. For the styling, we used styled components (with props). Most of the styled components were global.
+For this project we used: JavaScript, React, CSS (styled-components), Redux.
+If we had more time: We would add a progress bar and style the radiobuttons with images.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://quiz-redux-sweden.netlify.app/
