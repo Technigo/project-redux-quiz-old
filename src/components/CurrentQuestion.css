@@ -1,22 +1,22 @@
 .eslint-hater h1 {
-    font-family: futura-pt, "sans-serif";
-    font-weight: 900;
-    letter-spacing: -0.01em;
-    color: rgb(0, 24, 164);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: futura-pt, 'sans-serif';
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgb(0, 24, 164);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .answer-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .eslint-hater-bottom {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
 }

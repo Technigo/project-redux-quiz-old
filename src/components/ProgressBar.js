@@ -11,9 +11,9 @@ export const ProgressBar = () => {
 
   return (
     <div className="container">
-      <h2>
+      <h3 className="progress-bar">
         Question: {currentQuestionIndex.id} / {questions.length}
-      </h2>
+      </h3>
     </div>
   );
 };
