@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
 import { Link } from 'react-router-dom';
 import { StyledParagraphText, StyledQuestionText } from 'components/StyledTexts';
+import { StartButton } from './Button';
 
 export const QuestionsContainer = styled.div`
 background: #FFD93D;
@@ -46,7 +47,7 @@ export const QuizOver = () => {
       <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
       <div>
         <Link to="/">
-          <button type="button" onClick={restartQuiz}>Restart Quiz</button>
+          <StartButton button type="button" onClick={restartQuiz}>Restart Quiz</StartButton>
         </Link>
       </div>
     </QuestionsContainer>
