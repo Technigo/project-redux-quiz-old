@@ -1,23 +1,62 @@
-import { createSlice } from '@reduxjs/toolkit'
+/* eslint-disable linebreak-style */
+import { createSlice } from '@reduxjs/toolkit';
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
-]
+  {
+    id: 1,
+    questionText: 'In Sweden, what is the typical way to greet someone?',
+    options: [
+      'Shaking hands',
+      ' Hugging',
+      'A firm high-five',
+      ' A gentle "Hej" followed by awkwardly staring at each other until someone speaks'
+    ],
+    correctAnswerIndex: 0
+  },
+  {
+    id: 2,
+    questionText: 'What is the traditional Swedish dish called "Surströmming"?',
+    options: [
+      'Pickled herring',
+      'Fermented fish',
+      'Fish-flavored ice cream',
+      'A delicious treat to share with people in a small room, with no airflow.'
+    ],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 3,
+    questionText:
+      'Which of the following traditional Swedish celebrations marks the end of winter and the beginning of spring?',
+    options: ['Midsummer', 'Lucia', 'Valborgsmässoafton', 'Jul'],
+    correctAnswerIndex: 2
+  },
+  {
+    id: 4,
+    questionText: 'What is the national flower of Sweden?',
+    options: ['Lily of the valley', 'Bluebells', ' Pyramidal Saxifrage', 'Daisies'],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 5,
+    questionText: 'Which Swedish band is known for their catchy pop hits and unique fashion sense?',
+    options: ['ABBA', 'IKEA', 'Aqua', 'The Dancing Meatballs'],
+    correctAnswerIndex: 0
+  }
+];
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
   quizOver: false
-}
+};
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -34,15 +73,19 @@ export const quiz = createSlice({
      * and `answerIndex` keys. See the readme for more details.
      */
     submitAnswer: (state, action) => {
-      const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const { questionId, answerIndex } = action.payload;
+      const question = state.questions.find((q) => q.id === questionId);
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          'Could not find question! Check to make sure you are passing the question id correctly.'
+        );
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        );
       }
 
       state.answers.push({
@@ -51,7 +94,7 @@ export const quiz = createSlice({
         question,
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
-      })
+      });
     },
 
     /**
@@ -63,9 +106,9 @@ export const quiz = createSlice({
      */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
-        state.quizOver = true
+        state.quizOver = true;
       } else {
-        state.currentQuestionIndex += 1
+        state.currentQuestionIndex += 1;
       }
     },
 
@@ -77,8 +120,7 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     restart: () => {
-      return initialState
+      return initialState;
     }
-
   }
-})
+});
