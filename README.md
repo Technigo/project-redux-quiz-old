@@ -11,3 +11,4 @@ If we had more time, we would work on a few stretch goals like adding photos or 
 
 ## View it live
 
+https://space-quiz-by-annikabridgetfionafrida.netlify.app/
