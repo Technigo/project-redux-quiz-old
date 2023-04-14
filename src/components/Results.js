@@ -35,7 +35,7 @@ const Results = () => {
   return (
     <ResultsParentContainer>
       <ResultsChildContainer>
-        <ResultsH1>Your grade was {grade()}</ResultsH1>
+        <ResultsH1>{grade()}</ResultsH1>()
         <ResultsH3>Score: {correctAnswers.length}/{answers.length}</ResultsH3>
         <RestartButton />
       </ResultsChildContainer>
