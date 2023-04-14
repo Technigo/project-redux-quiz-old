@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button`
 border: solid red 2px;
-padding: 2rem;
+padding: 1.5rem;
 `
 
 export const Button = () => {

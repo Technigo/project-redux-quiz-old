@@ -2,11 +2,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable implicit-arrow-linebreak */
 // import React, { useState } from 'react'
-import React from 'react'
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { quiz } from 'reducers/quiz';
 import { AnswerButton, NextQuestion } from './Button'
 import { SummaryTest } from './SummaryTest';
+import { ProgressBar } from './ProgressBar';
 
 export const CurrentQuestion = () => {
   // const [disabled, setDisabled] = useState(false);
@@ -20,7 +21,7 @@ export const CurrentQuestion = () => {
   }
   const quizOver = useSelector((state) => state.quiz.quizOver);
   // const userAnswer = useSelector((state) =>
-  // state.quiz.answers.find((a) => a.questionId === question.id));
+  //   state.quiz.answers.find((a) => a.questionId === question.id));
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
@@ -29,6 +30,7 @@ export const CurrentQuestion = () => {
       <SummaryTest />
     )
   }
+
   const handleClick = () => {
     dispatch(quiz.actions.goToNextQuestion());
   }
@@ -39,7 +41,7 @@ export const CurrentQuestion = () => {
       <div className="options">
         {question.options.map((item, index) => (
           <button type="button" index={index} item={item} onClick={() => answerSubmit(question.id, index)}>{item}</button>
-          // <AnswerButton
+          // <Button
           //   key={item}
           //   item={item}
           //   index={index}
@@ -49,7 +51,7 @@ export const CurrentQuestion = () => {
           //   setDisabled={setDisabled}
           //   disabled={disabled} />
         ))}
-        <AnswerButton />
+        <ProgressBar />
         <NextQuestion />
       </div>
     </div>
