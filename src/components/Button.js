@@ -43,7 +43,7 @@ color: white;
 
 ${(props) => props.ctalong && css`
 background-color: #F35408;
-width: 262px;
+width: 10%;
 height: 30px;
 color: white;
 `}
@@ -51,7 +51,7 @@ color: white;
 ${(props) => props.outlinedlong && css`
 background-color: transparent;
 border: 2px solid white;
-width: 262px;
+width: 10%;
 height: 35px;
 color: white;
 `}
@@ -59,7 +59,7 @@ color: white;
 ${(props) => props.outlinedlongFindOut && css`
 background-color: transparent;
 border: 2px solid #95A6B5;
-width: 262px;
+width: 10%;
 height: 35px;
 color: #95A6B5;
 `}
@@ -67,7 +67,7 @@ color: #95A6B5;
 ${(props) => props.outlinedtablet && css`
 background-color: transparent;
 border: 2px solid #95A6B5;
-width: 140px;
+width: 10%;
 height: 35px;
 color: white;
 `}`

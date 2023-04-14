@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { StyledParagraphText, StyledQuestionText } from 'components/StyledTexts';
-import { StartButton } from './Button';
+import { StartButton } from 'components/Button';
+import { quiz } from 'reducers/quiz';
 
 export const QuestionsContainer = styled.div`
 background: #FFD93D;
@@ -23,8 +24,12 @@ margin: 20px;
 `;
 export const QuizOver = () => {
   const answers = useSelector((state) => state.quiz.answers)
-  // We use the useSelector hook to get the answers array from the redux store
+  const dispatch = useDispatch()
+  // We create a varible for the useDispatch hook
 
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+  }
   // The function above calls the restart function in the reducers using the useDispatch-hook /Annika
   return (
     <QuestionsContainer>
@@ -39,7 +44,7 @@ export const QuizOver = () => {
       <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
       <div>
         <Link to="/">
-          <button type="button">Restart Quiz</button>
+          <StartButton type="button" onClick={restartQuiz}>Restart Quiz</StartButton>
         </Link>
       </div>
     </QuestionsContainer>
