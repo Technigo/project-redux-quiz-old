@@ -15,10 +15,21 @@
   background: rgb(10, 37, 255);
 
   /* this is the important stuff 👇 */
-animation: bounce 1s infinite alternate;
+  animation: bounce 1s infinite alternate;
 }
 
 @keyframes bounce {
-    0%   {transform: translateY(0);}
-    100% {transform: translateY(50px);}
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+.resetButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }

@@ -7,13 +7,12 @@ export const ResetButton = () => {
   const dispatch = useDispatch();
   const restart = () => {
     dispatch(quiz.actions.restart());
-  }
+  };
   return (
-    <button
-      className="resetButton"
-      onClick={restart}
-      type="button">
-      Play Again
-    </button>
+    <div className="resetButtonContainer">
+      <button className="resetButton" onClick={restart} type="button">
+        Play Again
+      </button>
+    </div>
   );
-}
+};
