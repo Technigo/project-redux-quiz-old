@@ -32,6 +32,7 @@ export const Button = styled.button`
     font-family: 'Open Sans', sans-serif;
     font-size:1.5rem;
     font-weight:500;
+    cursor: pointer;
 
     :hover{
         transform: scale(1.15);
