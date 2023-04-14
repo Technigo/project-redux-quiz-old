@@ -15,11 +15,32 @@ export const StartContainer = styled.div`
 
 export const Logo = styled.img`
     display:flex;
-    width:40%;
+    width:30%;
     border-radius: 50%;
+    margin-bottom:1rem;
+
 
 @media (min-width: 1024px) {
-    width: 18%;
+    width: 15%;
+}
+`
+
+export const InfoContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 70vw;
+    gap:1.5em;
+    border:3px solid rgba(223, 227, 245, 0.4);
+    border-radius: 10px;
+    padding:1rem;
+    margin-top: 1rem;
+    color:black;
+    background-color: rgba(223, 227, 245, 0.4);
+
+    @media (min-width: 1024px) {
+        max-width:fit-content;
 
 }
 `
