@@ -7,7 +7,19 @@ const SpanStyle = styled.span`
 `;
 
 const RadioButton = styled.label`
-  justify-content: flex-start;
+text-align: left;
+margin-left: 5px;
+`
+const AnswerWrapper = styled.div`
+display: flex;
+gap: 10px;
+padding: 5px;
+padding-right: 10px;
+width: 100%;
+border-radius: 20px;
+`
+const Input = styled.input`
+accent-color: #ffd914;
 `
 
 const Form = ({
@@ -23,8 +35,8 @@ const Form = ({
   const correctOption = index === correctIndex;
   const selectedWrongOption = questionAnswered && !correctOption && index === answerIndex;
   return (
-    <div>
-      <input
+    <AnswerWrapper>
+      <Input
         id={option}
         type="radio"
         key=""
@@ -46,7 +58,7 @@ const Form = ({
           {(correctOption && '✅') || (selectedWrongOption && '❌')}
         </SpanStyle>
       </RadioButton>
-    </div>
+    </AnswerWrapper>
   );
 };
 

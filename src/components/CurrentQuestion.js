@@ -14,6 +14,8 @@ const ButtonWrapper = styled.div`
 display: flex;
 align-items: flex-start;
 flex-direction: column;
+align-items: center;
+width: 75%;
 gap: 10px;
 color: #fff;
 font-family: 'Yanone Kaffeesatz', sans-serif;

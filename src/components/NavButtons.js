@@ -12,6 +12,7 @@ const Buttons = styled.button`
   font-size: 26px;
   cursor: pointer;
   margin: 25px 0px 0px 0px;
+  transition: 0.5s;
 
   &:disabled {
     background: grey;
@@ -19,9 +20,14 @@ const Buttons = styled.button`
   }
 
   &:hover {
-    box-shadow: 6px 6px #B6970F; 
+    box-shadow: 6px 6px #B6970F;
+    transition: 0.5s;
     }
 `;
+
+const NavButtonsWrapper = styled.div`
+  height: 75px;
+`
 
 const NavButtons = ({
   questionAnswered,
@@ -34,7 +40,7 @@ const NavButtons = ({
   /* For the OK button, you can only click on it if an answer option is selected.
       For the Nästa button, you can only click on it if the OK button is clicked. */
   return (
-    <div>
+    <NavButtonsWrapper>
       <Buttons
         onClick={() => handleOkayButtonClick(questionId, optionIndex)}
         type="submit"
@@ -46,7 +52,7 @@ const NavButtons = ({
         {' '}
         Next
       </Buttons>
-    </div>
+    </NavButtonsWrapper>
   );
 };
 
