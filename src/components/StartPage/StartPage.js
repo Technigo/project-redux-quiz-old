@@ -16,7 +16,7 @@ export const StartPage = () => {
       <Logo src="/images/logo.jpg" alt="quiz logo" />
       {/* <Title fontSize="4rem"> Quiz! </Title> */}
       <InfoContainer>
-        <Title fontSize="1.2rem"> See how much you know about food around the world.</Title>
+        <Title fontSize="1rem"> See how much you know about food around the world.</Title>
         <Title fontSize="1rem">Correct: +3</Title>
         <Title fontSize="1rem"> Incorrect: -2</Title>
       </InfoContainer>

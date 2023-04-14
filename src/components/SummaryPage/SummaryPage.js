@@ -34,7 +34,7 @@ export const SummaryPage = ({ score, setScore }) => {
           timing="ease-out"
           iteration="2"
           fillMode="none">
-        Your score is {score > 0 ? score : 0}/21!
+        Your score is {score > 0 ? score : 0}/27!
         </MovingComponent>
       </Title>
       <ContainerRow><TfiAlarmClock /> <p>Time spent: {Math.floor(seconds)}s</p></ContainerRow>
