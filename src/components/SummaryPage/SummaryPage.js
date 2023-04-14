@@ -10,9 +10,14 @@ import { AccordionComponent } from './AccordionComponent';
 export const SummaryPage = (props) => {
   const answers = useSelector((store) => store.quiz.answers)
   const wrongAnswers = answers.filter((answer) => answer.isCorrect === false)
+  const startTime = useSelector((store) => store.quiz.startTime)
   console.log(wrongAnswers)
   const countOfWrongAnswers = wrongAnswers.length
   console.log(countOfWrongAnswers)
+
+  const endTime = new Date().getTime()
+  const seconds = (endTime - startTime) / 1000;
+
   const dispatch = useDispatch()
   const restartQuiz = () => {
     dispatch(quiz.actions.restart())
@@ -28,9 +33,9 @@ export const SummaryPage = (props) => {
         timing="ease-out"
         iteration="1"
         fillMode="none">
-  Your score is {props.score > 0 ? props.score : 0}/21!
+        Your score is {props.score > 0 ? props.score : 0}/21!
       </MovingComponent>
-      <ContainerRow><TfiAlarmClock /> <p>Time spent: 40s</p></ContainerRow>
+      <ContainerRow><TfiAlarmClock /> <p>Time spent: {Math.floor(seconds)}s</p></ContainerRow>
       <h2>You had {countOfWrongAnswers} incorrect answers:</h2>
       <AccordionComponent />
       <Button onClick={restartQuiz}>Play again

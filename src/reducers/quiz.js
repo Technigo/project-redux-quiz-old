@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+// import { TfiTime } from 'react-icons/tfi'
 
 // Change these to your own questions!
 const questions = [
@@ -16,7 +17,8 @@ const initialState = {
   answers: [],
   currentQuestionIndex: 0,
   quizOver: null,
-  btnColor: ''
+  btnColor: '',
+  startTime: 0
 }
 
 export const quiz = createSlice({
@@ -89,6 +91,7 @@ export const quiz = createSlice({
     startQuiz: (state) => {
       if (state.quizOver === null) {
         state.quizOver = false
+        state.startTime = new Date().getTime()
       }
     },
 
