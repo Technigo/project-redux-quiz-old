@@ -48,6 +48,10 @@ const Title = ({ text }) => {
   );
 };
 
+export const ResultContainer = styled.div`
+background:rgba(13, 42, 42, 0.3);
+`;
+
 export const AnswerContainer = styled.div`
     position: relative;
     display: flex;
@@ -56,7 +60,7 @@ export const AnswerContainer = styled.div`
     0 0 2rem var(--tertiary-bg-color), 0 0 0.8rem var(--tertiary-bg-color), 
     0 0 2.8rem var(--tertiary-bg-color), inset 0 0 1.3rem var(--tertiary-bg-color);
     width: 90%;
-    margin-top: 4rem;
+    margin-top: 6rem;
 `;
 
 export const Question = styled.h2`
@@ -66,6 +70,8 @@ export const Question = styled.h2`
   font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
   font-weight: 100;
+  margin: 0;
+  padding: 0 10rem;
 `;
 
 export const UserAnswer = styled.p`
@@ -76,7 +82,7 @@ export const UserAnswer = styled.p`
 
 export const CorrectAnswer = styled.p`
   font-family: var(--paragraph-font-family);
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
 `;
 
@@ -93,7 +99,7 @@ export const StyledRestartButton = styled(RestartButton)`
   background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   color: #000;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
 
   &:hover {
     background-color: #B38728;

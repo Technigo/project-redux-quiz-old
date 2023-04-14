@@ -4,8 +4,7 @@ import React from 'react'
 // import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
-import { RestartButton } from './Button'
-import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer, StyledRestartButton } from './SummaryTestStyling';
+import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer, StyledRestartButton, ResultContainer } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -27,21 +26,23 @@ export const SummaryTest = () => {
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
-      {answers.map((answer) => (
-        <HeroSummaryContainer.AnswerContainer key={answer.question.questionText}>
-          <HeroSummaryContainer.Question>{answer.question.questionText}</HeroSummaryContainer.Question>
-          <HeroSummaryContainer.UserAnswer>
-            {answer.answer}
-            {answer.isCorrect ? '✔️' : '❌'}
-          </HeroSummaryContainer.UserAnswer>
-          <HeroSummaryContainer.CorrectAnswer>
-            {answer.isCorrect ? '' : 'Correct answer: '}
-            {!answer.isCorrect
-              ? answer.question.options[answer.question.correctAnswerIndex]
-              : 'CORRECT'}
-          </HeroSummaryContainer.CorrectAnswer>
-        </HeroSummaryContainer.AnswerContainer>
-      ))}
+      <ResultContainer>
+        {answers.map((answer) => (
+          <HeroSummaryContainer.AnswerContainer key={answer.question.questionText}>
+            <HeroSummaryContainer.Question>{answer.question.questionText}</HeroSummaryContainer.Question>
+            <HeroSummaryContainer.UserAnswer>
+              {answer.answer}
+              {answer.isCorrect ? '✓' : '❌'}
+            </HeroSummaryContainer.UserAnswer>
+            <HeroSummaryContainer.CorrectAnswer>
+              {answer.isCorrect ? '' : 'Correct answer: '}
+              {!answer.isCorrect
+                ? answer.question.options[answer.question.correctAnswerIndex]
+                : 'Right answer!'}
+            </HeroSummaryContainer.CorrectAnswer>
+          </HeroSummaryContainer.AnswerContainer>
+        ))}
+      </ResultContainer>
       <StyledRestartButton onClick={handleRestart}>Restart</StyledRestartButton>
     </HeroSummaryContainer>
   )
