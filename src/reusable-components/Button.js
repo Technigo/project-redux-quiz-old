@@ -30,6 +30,7 @@ export const Button = styled.button`
     border-radius: 10px;
     border:none;
     background-color: #dfe3f5;
+    color:black;
     font-family: 'Open Sans', sans-serif;
     font-size:1.2rem;
     font-weight:500;
