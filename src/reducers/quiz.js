@@ -64,7 +64,8 @@ const initialState = {
   currentQuestionIndex: 0,
   quizOver: null,
   btnColor: '',
-  startTime: 0
+  startTime: 0,
+  disabledButtons: false
 }
 
 export const quiz = createSlice({
@@ -92,6 +93,7 @@ export const quiz = createSlice({
       const question = state.questions.find((q) => q.id === questionId)
       let newAnswer = question.options[answerIndex];
 
+      state.disabledButtons = true
       if (newAnswer === undefined || newAnswer === null) {
         newAnswer = 'Nothing selected';
       }
@@ -106,7 +108,7 @@ export const quiz = createSlice({
       } else {
         console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
         state.btnColor = '#FF416C';
-        window.alert(`Correct answer is: ${question.options[question.correctAnswerIndex]}`)
+        // window.alert(`Correct answer is: ${question.options[question.correctAnswerIndex]}`)
       }
 
       state.answers.push({
@@ -126,12 +128,12 @@ export const quiz = createSlice({
      * This action does not require a payload.
      */
     goToNextQuestion: (state) => {
+      state.disabledButtons = false;
+      state.btnColor = ''
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
-        state.btnColor = ''
       } else {
         state.currentQuestionIndex += 1
-        state.btnColor = ''
       }
     },
 

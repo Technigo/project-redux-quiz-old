@@ -18,6 +18,7 @@ export const CurrentQuestion = (props) => {
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState('')
   const dispatch = useDispatch()
   const countdownRef = useRef(null)
+  const disabledButtons = useSelector((store) => store.quiz.disabledButtons)
 
   const onAnswerSubmit = (questionId, answerIndex) => {
     if (correctAnswerIndex === answerIndex) {
@@ -26,7 +27,7 @@ export const CurrentQuestion = (props) => {
       setScore(score - 2)
     }
     setSelectedAnswerIndex(answerIndex)
-    setTimeout(() => dispatch(quiz.actions.submitAnswer({ questionId, answerIndex })), 1000)
+    dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     setTimeout(() => dispatch(quiz.actions.goToNextQuestion()), 1500)
     countdownRef.current.stop();
     setTimeout(() => countdownRef.current.start(), 1500)
@@ -61,6 +62,7 @@ export const CurrentQuestion = (props) => {
               style={buttonStyle(index)}
               type="button"
               id={index}
+              disabled={disabledButtons}
               onClick={() => onAnswerSubmit(question.id, index)}
               key={answer}>
               {answer.includes('.png') ? <OptionsImage src={answer} alt="option" /> : <p> {answer} </p>}
