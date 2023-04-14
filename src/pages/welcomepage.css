@@ -1,10 +1,10 @@
 .welcome-background {
   height: 400px;
-  background-image: url(../img/technigo.jpg);
+  background-image: url(../img/tech.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-position: center -550px; /* Move the image up by 50 pixels */
+  /* background-position: center -550px; */
 }
 
 .content {
