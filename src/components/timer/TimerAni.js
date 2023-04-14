@@ -1,9 +1,12 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
+import IconImg from 'assets/hourglass.jpeg'
 
 const InfiniteRotate = () => {
   return (
-    <Rotate>⌛</Rotate>
+    <Rotate>
+      <img src={IconImg} alt="icon" size={20} />
+    </Rotate>
   )
 }
 
@@ -14,6 +17,9 @@ to {
 `
 const Rotate = styled.div`
 animation: ${rotate} 4s linear infinite;
+display: flex;
+width: 20px;
+height: 20px;
 
 `
 
