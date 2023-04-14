@@ -22,7 +22,7 @@ export const CurrentQuestion = () => {
     return (
       <OptionsContainer>
         <h1>{question.questionText}</h1>
-        <img src={question.imgUrl} alt="code" width="300px" />
+        <QImg src={question.imgUrl} alt="code" width="300px" />
         <Timer />
         <AnswerButton />
         <ProgressBar />
@@ -43,4 +43,9 @@ width: 50%;
 position: absolute;
 top: 50px;
 left: 310px;
+`
+const QImg = styled.img`
+width: 300px;
+height: 240px;
+padding: 20px 0;
 `
