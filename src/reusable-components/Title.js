@@ -15,5 +15,6 @@ export const Title = styled.h1`
 
     @media (min-width: 1024px) {
     width:55vw;
+    font-size:${(props) => ((props.question) ? '2em' : 'auto')};
 }
 `;

@@ -24,7 +24,7 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${(props) => ((props.answerBtn) ? '6em' : '12em')};
+    width: ${(props) => ((props.answerBtn) ? '4.5em' : '12em')};
     height: ${(props) => ((props.answerBtn) ? '3.5em' : '2em')};
     border-radius: 10px;
     border:none;

@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
-import { Timer } from 'components/Timer';
+// import { Timer } from 'components/Timer';
 import { Title } from 'reusable-components/Title'
 import { Button, ButtonContainer } from 'reusable-components/Button'
 import { Image } from 'reusable-components/Image'
@@ -50,12 +50,12 @@ export const CurrentQuestion = (props) => {
 
   return (
     <CurrentQuestionContainer>
-      <Timer countdownRef={countdownRef} setScore={setScore} score={score} />
+      {/* <Timer countdownRef={countdownRef} setScore={setScore} score={score} /> */}
       <ImgBox>
         <Image src={question.img} alt="img" />
         <ProgressBar />
       </ImgBox>
-      <Title>Question: {question.questionText}</Title>
+      <Title question fontSize="1.4em">Question: {question.questionText}</Title>
       <ButtonContainer>
         {question.options.map((answer, index) => {
           return (
