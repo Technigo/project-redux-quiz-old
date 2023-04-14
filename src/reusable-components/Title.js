@@ -7,8 +7,9 @@ export const Title = styled.h1`
     font-size:${(props) => (props.fontSize)};
     letter-spacing: 0.2rem;
     margin:0;
-    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
-    0px 0px 20px #b393d3;
+    /* text-shadow: 0px 0px 5px #b393d3, 0px 0px 5px #b393d3, 0px 0px 5px #b393d3,
+    0px 0px 10px #b393d3; */
+    text-shadow: -1px -1px 5px rgba(179, 147, 211, 1);
     text-align:center;
     max-width: 70vw;
     margin: 0 5%;
