@@ -20,30 +20,46 @@ export const CurrentQuestion = () => {
     return <Results />
   } else {
     return (
-      <OptionsContainer>
-        <h1>{question.questionText}</h1>
-        <QImg src={question.imgUrl} alt="code" width="300px" />
-        <Timer />
-        <AnswerButton />
-        <ProgressBar />
-      </OptionsContainer>
+      <ParentWrapper>
+        <OptionsContainer>
+          <QuestionH1>{question.questionText}</QuestionH1>
+          <QImg src={question.imgUrl} alt="code" width="300px" />
+          <Timer />
+          <AnswerButton />
+          <ProgressBar />
+        </OptionsContainer>
+      </ParentWrapper>
     );
   }
 }
 
+const ParentWrapper = styled.div`
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background: black;
+`
+
 const OptionsContainer = styled.div`
 display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-border: solid 1px #0dc9e6;
-border-radius: 20px;
-height: 80vh;
-width: 50%;
-position: absolute;
-top: 50px;
-left: 310px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgb(13, 201, 230);
+    border-radius: 20px;
+    height: 80%;
+    width: 60%;
+    background-color: black;
+    justify-content: space-around;
 `
+
+const QuestionH1 = styled.h1`
+color:#3d85c6;
+`
+
 const QImg = styled.img`
 width: 300px;
 height: 240px;

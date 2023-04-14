@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import IconImg from 'assets/hourglass.jpeg'
+import IconImg from 'assets/hourglass.svg'
 
 const InfiniteRotate = () => {
   return (

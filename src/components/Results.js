@@ -33,32 +33,48 @@ const Results = () => {
                 : <p>what? Lets give it another try shall we????</p>
   }
   return (
-    <ResultsContainer>
-      <ResultsH1>Your grade was {grade()}</ResultsH1>
-      <ResultsH3>Score: {correctAnswers.length}/{answers.length}</ResultsH3>
-      <RestartButton />
-    </ResultsContainer>
+    <ResultsParentContainer>
+      <ResultsChildContainer>
+        <ResultsH1>Your grade was {grade()}</ResultsH1>
+        <ResultsH3>Score: {correctAnswers.length}/{answers.length}</ResultsH3>
+        <RestartButton />
+      </ResultsChildContainer>
+    </ResultsParentContainer>
   )
 }
 
 export default Results;
 
-const ResultsContainer = styled.div`
-background-image: url(${matrix});
-background-size: cover;
-display: flex;
-text-align: center;
+const ResultsParentContainer = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  background-color: black;`
+
+const ResultsChildContainer = styled.div`
+  background-image: url(${matrix});
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
 `
 const ResultsH1 = styled.h1`
-color:white;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color:#3d85c6;
 font-size:3rem;
 text-align:center;
+width: 90%;
+text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 `
 const ResultsH3 = styled.h3`
-color:white;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color:#3d85c6;
 font-size:3rem;
 text-align:center;
+width: 90%;
+text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 `;
 

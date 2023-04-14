@@ -51,12 +51,30 @@ export const AnswerButton = () => {
   )
 }
 const Btn = styled.button`
-  font-size: 18px;
   border-style: double;
   border-color: ${(props) => ((props.showSelectedColor && props.selectedIndex === props.index) ? props.AnswerColor : 'none')};
+  padding: 10px;
+  color: black;
+  border-radius: 10px;
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  border: solid 2px black; 
+  width: 133px;
+  background-color: #3d85c6;
+
+  &:hover {
+    background-color: black;
+    color: #3d85c6;
+    cursor: pointer;
+    transform: scale(1.2);
+    border-color:#3d85c6;
+  }
 `;
 
 const BtnsWrapper = styled.div`
 display:flex;
 flex-wrap: wrap;
-justify-content: center;`
+justify-content: space-around;
+width: 100%;
+`

@@ -37,12 +37,12 @@ const Start = styled.div`
 display: flex;
 flex-direction: column;
 text-align: center;
-border: solid 1px #0dc9e6;
+border: solid 1px #3d85c6;
 border-radius: 20px;
 height: 500px;
 width: 500px;
 position: absolute;
-box-shadow: 35px -12px #0c4d5f;
+box-shadow: 35px -12px #3d85c6;
 `
 
 const StartH1 = styled.text`
@@ -51,20 +51,21 @@ align-items: center;
 padding: 12px 30px;
 font-weight: 1000;
 font-size: 70px;
-color: #0dc9e6;
+color: #3d85c6;
+text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 `
 
 
 const StartButton = styled.button`
   padding: 10px;
-  color: white;
+  color: black;
   border-radius: 10px;
   margin-top: 6px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 600;
-  border: solid 1px #0dc9e6; 
+  border: solid 1px black; 
   width: 133px;
-  background-color:#0dc9e6;
+  background-color: #3d85c6;
   position: absolute;
   bottom: 150px;
   margin-left: 180px;
@@ -72,27 +73,27 @@ const StartButton = styled.button`
 
   &:hover {
     background-color: black;
-    color: white;
+    color: #3d85c6;
     cursor: pointer;
+    border-color: #3d85c6;
     transform: scale(1.2);
   }
 `
 const OuterWrapperStartPage = styled.div`
 background-size: cover;
-background: #231f20;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('${purple}');
-  background-size: cover;
+background: #3d85c6;
+width: 100vw;
+height: 100vh;
+background-image: url('${purple}');
+background-size: cover;
 `
 
 const InnerWrapperStartPage = styled.div`
 display: flex;
-flex-direction: column;
-justify-content: center;
-background-color: transparent;
-width: 70%;
-height: 100vh;
-align-items: center;
-margin: 0 auto;`
+    flex-direction: column;
+    justify-content: center;
+    background-color: transparent;
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    margin: 0px auto;`

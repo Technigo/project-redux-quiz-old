@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
-import IconImg from 'assets/hourglass.jpeg'
+import IconImg from 'assets/hourglass.svg'
 import Rotate from './TimerAni'
 
 export const Timer = () => {
@@ -27,15 +27,15 @@ export const Timer = () => {
 };
 
 const TimerStyle = styled.div`
-display: flex;
-padding: 10px;
-border: none;
-border-radius: 5px;
-font-weight: bold;
-background: transparent;
-font-size: 16px;
-gap: 5px;
-
+    display: flex;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background: transparent;
+    font-size: 16px;
+    gap: 5px;
+    background-color: rgb(61, 133, 198);
 `
 export const Icon = styled.img`
 width: 20px;

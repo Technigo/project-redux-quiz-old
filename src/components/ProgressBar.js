@@ -8,7 +8,7 @@ export const ProgressBar = () => {
     return store.quiz.currentQuestionIndex;
   });
   const questionTotal = useSelector((store) => store.quiz.questions.length);
-  const percentComplete = (currentQuestionIndex / questionTotal) * 112;
+  const percentComplete = (currentQuestionIndex / questionTotal) * 100;
 
   return (
     <ProgressMainBarWrapper>
