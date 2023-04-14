@@ -10,6 +10,7 @@ export const ButtonContainer = styled.div`
     gap:2rem;
     position:relative;
     top: 10%;
+    color: #000;;
 
     @media (min-width: 768px) {
         top:9%;

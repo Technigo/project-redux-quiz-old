@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Image = styled.img`
     display:flex;
     max-width:85vw;
+    height:300px;
     border:solid black;
     border-radius: 15px;
     border: 7px solid rgba(181, 118, 221, 0.65);
