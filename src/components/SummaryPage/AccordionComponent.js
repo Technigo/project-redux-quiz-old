@@ -9,7 +9,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel
 } from 'react-accessible-accordion';
-import { AnswerText, ContainerRow } from './SummaryPageStyling';
+import { AnswerImg, AnswerText, Container, ContainerRow } from './SummaryPageStyling';
 
 export const AccordionComponent = () => {
   const answers = useSelector((store) => store.quiz.answers)
@@ -26,25 +26,25 @@ export const AccordionComponent = () => {
               <AccordionItemButton>{wrongAnswer.question.questionText}</AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
-              <ContainerRow>
-                <AnswerText wrong><span>Your answer: </span>
-                  {/* {wrongAnswer.answer} */}
-                  {wrongAnswer.answer.includes('.png') ? <img src={wrongAnswer.answer} alt="option" width="40%" /> : <p> {wrongAnswer.answer} </p>}
-
-                </AnswerText>
-                <AnswerText><span>Correct answer: </span>
+              <Container>
+                <ContainerRow>
+                  <AnswerText wrong>Your answer: </AnswerText>
+                  {wrongAnswer.answer.includes('.png')
+                    ? <AnswerImg src={wrongAnswer.answer} alt="option" />
+                    : <AnswerText wrong> {wrongAnswer.answer} </AnswerText>}
+                </ContainerRow>
+                <ContainerRow>
+                  <AnswerText>Correct answer: </AnswerText>
                   {
                     wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex].includes('.png')
-                      ? <img src={wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]} alt="option" width="40%" />
-                      : <p> {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]}  </p>
+                      ? <AnswerImg src={wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]} alt="option" /> : <AnswerText> {wrongAnswer.question.options[wrongAnswer.question.correctAnswerIndex]}</AnswerText>
                   }
-                </AnswerText>
-              </ContainerRow>
+                </ContainerRow>
+              </Container>
             </AccordionItemPanel>
           </AccordionItem>
         )
       }))}
     </Accordion>
-
   )
 }

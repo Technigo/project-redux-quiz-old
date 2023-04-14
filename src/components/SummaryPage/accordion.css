@@ -1,15 +1,12 @@
-/**
-* ----------------------------------------------
-* Demo styles
-* ----------------------------------------------
-**/
 .accordion {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
+    max-width: 500px;
 }
 
 .accordion__item+.accordion__item {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .accordion__button {
@@ -26,8 +23,7 @@
     text-align: left;
     border: none;
     box-sizing: border-box;
-    width: 90vw;
-    font-size: 0.6em;
+    font-size: 0.95em;
 }
 
 .accordion__button:hover {
@@ -57,7 +53,7 @@
 .accordion__panel {
     padding: 20px;
     animation: fadein 0.35s ease-in;
-    width: 90vw;
+    width: 100%;
     box-sizing: border-box;
 }
 

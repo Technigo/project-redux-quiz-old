@@ -10,28 +10,36 @@ justify-content:center;
 flex-direction:column;
 min-height:100%;
 color: #dfe3f5;
+gap:0.7rem;
+padding:1rem;
+
+    @media (min-width: 768px) {
+        font-size:110%;
+    }
+    @media (min-width: 1024px) {
+        font-size:120%;
+    }
 `
 export const ContainerRow = styled.section`
 display:flex;
 align-items:center;
 justify-content:center;
-gap:10px;
+gap:0.2rem;
 `
 
 export const AnswerText = styled.p`
- font-size: 0.6em;
- color:${(props) => (props.wrong ? '#dfe3f5' : '#56ab2f')};
- overflow-wrap:break-word;
- width:50%;
+font-size: 0.8em;
+color:${(props) => (props.wrong ? '#dfe3f5' : '#5ADF1D')};
+overflow-wrap:break-word;
 `
 
-export const RestartButton = styled.button`
-width: 50%;
-height: 60px;
-background: linear-gradient(to right, #a8e063, #56ab2f);
-margin: 18px;
-border-radius: 15px;
-border: rgb(110, 72, 170) solid 3px;
-color:#dfe3f5;
-font-weight:600;
+export const AnswerImg = styled.img`
+height: 1.2rem;
+`
+
+export const Question = styled.h1`
+font-size:1em;
+ color:#dfe3f5;
+ overflow-wrap:break-word;
+ text-align:center;
 `
