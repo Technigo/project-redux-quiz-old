@@ -8,19 +8,18 @@ import { Title } from 'reusable-components/Title';
 import { Container, ContainerRow, Question } from './SummaryPageStyling';
 import { AccordionComponent } from './AccordionComponent';
 
-export const SummaryPage = (props) => {
+export const SummaryPage = ({ score, setScore }) => {
   const answers = useSelector((store) => store.quiz.answers)
   const wrongAnswers = answers.filter((answer) => answer.isCorrect === false)
   const startTime = useSelector((store) => store.quiz.startTime)
-  console.log(wrongAnswers)
   const countOfWrongAnswers = wrongAnswers.length
-  console.log(countOfWrongAnswers)
 
   const endTime = new Date().getTime()
   const seconds = (endTime - startTime) / 1000;
 
   const dispatch = useDispatch()
   const restartQuiz = () => {
+    setScore(0)
     dispatch(quiz.actions.restart())
   }
 
@@ -33,13 +32,13 @@ export const SummaryPage = (props) => {
           delay="0s"
           direction="normal"
           timing="ease-out"
-          iteration="1"
+          iteration="2"
           fillMode="none">
-        Your score is {props.score > 0 ? props.score : 0}/21!
+        Your score is {score > 0 ? score : 0}/21!
         </MovingComponent>
       </Title>
       <ContainerRow><TfiAlarmClock /> <p>Time spent: {Math.floor(seconds)}s</p></ContainerRow>
-      <Question>You had {countOfWrongAnswers} incorrect answers:</Question>
+      <Question>You had {countOfWrongAnswers} incorrect answers</Question>
       <AccordionComponent />
       <Button onClick={restartQuiz}>Play again
       </Button>

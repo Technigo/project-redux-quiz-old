@@ -65,7 +65,8 @@ const initialState = {
   quizOver: null,
   btnColor: '',
   startTime: 0,
-  disabledButtons: false
+  disabledButtons: false,
+  correctAnswerIndicator: false
 }
 
 export const quiz = createSlice({
@@ -73,27 +74,13 @@ export const quiz = createSlice({
   initialState,
   reducers: {
 
-    /**
-     * Use this action when a user selects an answer to the question.
-     * The answer will be stored in the `quiz.answers` state with the
-     * following values:
-     *
-     *    questionId  - The id of the question being answered.
-     *    answerIndex - The index of the selected answer from the question's options.
-     *    question    - A copy of the entire question object, to make it easier to show
-     *                  details about the question in your UI.
-     *    answer      - The answer string.
-     *    isCorrect   - true/false if the answer was the one which the question says is correct.
-     *
-     * When dispatching this action, you should pass an object as the payload with `questionId`
-     * and `answerIndex` keys. See the readme for more details.
-     */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
       let newAnswer = question.options[answerIndex];
-
+      state.correctAnswerIndicator = true
       state.disabledButtons = true
+
       if (newAnswer === undefined || newAnswer === null) {
         newAnswer = 'Nothing selected';
       }
@@ -101,14 +88,15 @@ export const quiz = createSlice({
       if (!question) {
         throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
       }
-
+      if (question.correctAnswerIndex) {
+        state.btnColor = '#56ab2f'
+      }
       if (question.correctAnswerIndex === answerIndex) {
         console.log('correct index', question.correctAnswerIndex, 'selectedIndex', answerIndex)
         state.btnColor = '#56ab2f'
       } else {
         console.log('correct index', question.correctAnswerIndex, 'wrongselectedIndex', answerIndex)
         state.btnColor = '#FF416C';
-        // window.alert(`Correct answer is: ${question.options[question.correctAnswerIndex]}`)
       }
 
       state.answers.push({
@@ -120,16 +108,10 @@ export const quiz = createSlice({
       })
     },
 
-    /**
-     * Use this action to progress the quiz to the next question. If there's
-     * no more questions (the user was on the final question), set `quizOver`
-     * to `true`.
-     *
-     * This action does not require a payload.
-     */
     goToNextQuestion: (state) => {
       state.disabledButtons = false;
       state.btnColor = ''
+      state.correctAnswerIndicator = false
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
       } else {
@@ -144,13 +126,6 @@ export const quiz = createSlice({
       }
     },
 
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
     restart: () => {
       return initialState
     }
