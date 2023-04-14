@@ -1,9 +1,24 @@
+/* eslint-disable linebreak-style */
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
+import Question1Image from '../images/image1.png'
+import Question2Image from '../images/image2.png'
+import Question3Image from '../images/image3.png'
+import Question4Image from '../images/image4.png'
+import Question5Image from '../images/image5.png'
+import Question6Image from '../images/image6.png'
+import Question7Image from '../images/image7.png'
+import Question8Image from '../images/image8.png'
+
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'What is the name of this food?', options: ['Håkan special', 'Half special', 'Whole special', 'The wiener'], img: Question1Image, correctAnswerIndex: 1 },
+  { id: 2, questionText: 'What is this building called?', options: ['The lipstick', 'The zipper', 'The wiener', 'The Håkan'], img: Question2Image, correctAnswerIndex: 0 },
+  { id: 3, questionText: 'Which of the two Ullevi arenas is more recently built?', options: ['New Ullevi', 'Old Ullevi', 'The wiener', 'Håkan Arena'], img: Question3Image, correctAnswerIndex: 1 },
+  { id: 4, questionText: 'Who is this?', options: ['Glenn Hysén', 'Ola Serneke', 'Poseidon', 'Håkan Hellström'], img: Question4Image, correctAnswerIndex: 3 },
+  { id: 5, questionText: 'Who is this?', options: ['Håkan Hellström', 'Glenn Hysén', 'Ola Serneke', 'Poseidon'], img: Question5Image, correctAnswerIndex: 3 },
+  { id: 6, questionText: 'What is the name of this statue?', options: ['Håkan on horse', 'Goldmare', 'Coppermare', 'Poseidon on horse'], img: Question6Image, correctAnswerIndex: 2 },
+  { id: 7, questionText: 'What is Gothenburg sometimes called?', options: ['Little New York', 'Little Håkan town', 'Little London', 'Poseidon town'], img: Question7Image, correctAnswerIndex: 2 },
+  { id: 8, questionText: 'What is this popular tourboat called?', options: ['The wiener', 'The Fish', 'The Toad', 'Gbg Tour'], img: Question8Image, correctAnswerIndex: 2 }
 ]
 
 const initialState = {
