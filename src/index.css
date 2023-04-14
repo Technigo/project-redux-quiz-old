@@ -59,6 +59,8 @@ button {
 
 .options {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1vh;
   margin: 10px;
 }
@@ -66,5 +68,6 @@ button {
 .summary {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 
 }
