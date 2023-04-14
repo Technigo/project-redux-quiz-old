@@ -37,21 +37,21 @@ export const CurrentQuestion = () => {
   // eslint-disable-next-line max-len
   const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
 
-  const changeColorBtn = (currentQuestionIndex) => {
+  const changeColorBtn = (index) => {
     if (!answer) {
-      return '#000'
+      return '#FF8400'
     } else {
-      if (question.correctAnswerIndex === currentQuestionIndex) {
+      if (question.correctAnswerIndex === index) {
         return '#6DD627'
       }
-      return '#FF6242'
+      return 'red'
     }
   }
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
 
-    setTimeout(displayNextQuestion, 500)
+    setTimeout(displayNextQuestion, 1000)
   }
 
   if (!question) {

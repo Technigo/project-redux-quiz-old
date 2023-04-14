@@ -23,9 +23,9 @@ export const StartButton = styled.button`
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
+    border: solid ${(props) => (props ? props.border : '#FF8400')} 3px;
   
-    &:hover,
-    &:focus {
+    &:hover {
       color: #fff;
       outline: 0;
     }
