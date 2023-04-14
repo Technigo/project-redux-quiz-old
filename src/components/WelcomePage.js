@@ -17,16 +17,24 @@ width: 250px;
 color: #FFD93D;
 text-align: center;
 border-radius: 15px;
-padding: 20px;
-margin: 20px;
+padding: 10px;
+margin-top: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
 gap: 15px;
 
 @media (min-width: 668px) {
-  width: 400px;
+  width: 500px;
   margin-top: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  width: 900px;
+  margin-top: 40px;
+  gap: 30px;
+  
 }
 `;
 
@@ -39,7 +47,7 @@ export const WelcomePage = () => {
         <br />Test you knowledge in JavaScript by answering questions! <span role="img" aria-label="sheep">🤔</span>
       </StyledParagraphText>
       <Link to="/quiz">
-        <StartButton button>Start Quiz</StartButton>
+        <StartButton height>Start Quiz</StartButton>
       </Link>
     </QuestionsContainer>
   )

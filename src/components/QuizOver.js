@@ -16,10 +16,22 @@ color: #FFD93D;
 text-align: center;
 border-radius: 15px;
 padding: 20px;
-margin: 20px;
+margin-top: 20px;
+margin-bottom: 60px;
+position: relative;
+display: flex;
+flex-direction: column;
+gap: 20px;
+
 @media (min-width: 668px) {
-  width: 400px;
+  width: 500px;
   margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  width: 900px;
+  margin-top: 40px;
+  
 }
 `;
 export const QuizOver = () => {
@@ -37,14 +49,17 @@ export const QuizOver = () => {
       {answers.map((singleAnswer, index) => (
         <div key={singleAnswer.questionId}>
           <StyledQuestionText>{index + 1}. {singleAnswer.question.questionText}</StyledQuestionText>
-          <StyledParagraphText>Your answer: {singleAnswer.answer}</StyledParagraphText>
-          <StyledParagraphText>Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}</StyledParagraphText>
+          <StyledParagraphText>
+            Your answer: {singleAnswer.answer}
+            <br />
+            Correct answer: {singleAnswer.question.options[singleAnswer.question.correctAnswerIndex]}
+          </StyledParagraphText>
         </div>
       ))}
-      <h1>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</h1>
+      <StyledParagraphText>You answered {answers.filter((a) => a.isCorrect).length} out of {answers.length} questions correctly.</StyledParagraphText>
       <div>
         <Link to="/">
-          <StartButton type="button" onClick={restartQuiz}>Restart Quiz</StartButton>
+          <StartButton type="button" onClick={restartQuiz} height>Restart Quiz</StartButton>
         </Link>
       </div>
     </QuestionsContainer>

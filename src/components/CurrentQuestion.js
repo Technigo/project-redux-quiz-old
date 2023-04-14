@@ -17,11 +17,24 @@ color: #FFD93D;
 text-align: center;
 border-radius: 15px;
 padding: 20px;
-margin: 20px;
+margin-top: 10%;
+display: flex;
+flex-direction: column;
+gap: 10px;
 
 @media (min-width: 668px) {
-  width: 400px;
+  width: 500px;
+  padding: 30px;
   margin-top: 20px;
+  gap: 30px;
+}
+
+@media (min-width: 1024px) {
+  width: 700px;
+  padding: 40px;
+  margin-top: 40px;
+  gap: 30px;
+  
 }
 `;
 

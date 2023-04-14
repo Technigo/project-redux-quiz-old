@@ -1,6 +1,6 @@
 // /////////////// IMPORT //////////////////////// //
 
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 // /////////////// COMPONENT //////////////////////// //
 
@@ -18,13 +18,29 @@ export const StartButton = styled.button`
     line-height: 1;
     margin: 10px;
     padding: 1.2em 0.8em;
+    padding: 0.3rem;
+    width: 105px;
+    height: ${(props) => (props.height ? '50px' : '35px')};
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed';
     font-weight: 700;
     border: solid ${(props) => (props ? props.border : '#FF8400')} 3px;
   
+    @media (min-width: 668px) {
+      width: 150px;
+      height: ${(props) => (props.height ? '80px' : '50px')};
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      width: 180px;
+      height: ${(props) => (props.height ? '100px' : '50px')};
+      font-size: 1.5rem;
+}
+
+
     &:hover {
       color: #fff;
       outline: 0;
@@ -33,41 +49,5 @@ export const StartButton = styled.button`
     &:hover {
       box-shadow: 0 0 40px 40px #FF8400 inset;
     }
-  
 
-${(props) => props.outlined && css`
-background-color: transparent;
-border: 2px solid white;
-color: white;
-`}
-
-${(props) => props.ctalong && css`
-background-color: #FF8400;
-width: 10%;
-height: 30px;
-color: white;
-`}
-
-${(props) => props.outlinedlong && css`
-background-color: transparent;
-border: 2px solid white;
-width: 10%;
-height: 35px;
-color: white;
-`}
-
-${(props) => props.outlinedlongFindOut && css`
-background-color: transparent;
-border: 2px solid #FF8400;
-width: 10%;
-height: 35px;
-color: #95A6B5;
-`}
-
-${(props) => props.outlinedtablet && css`
-background-color: transparent;
-border: 2px solid #FF8400;
-width: 10%;
-height: 35px;
-color: white;
-`}`
+  `

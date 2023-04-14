@@ -14,8 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  justify-content: center;
+  height: 80vh;
 }
 
 code {
@@ -24,7 +23,6 @@ code {
 }
 
 .answerSection {
-  width: 275px;
   justify-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
