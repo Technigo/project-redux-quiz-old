@@ -34,6 +34,19 @@ export const CurrentQuestion = () => {
   const displayNextQuestion = () => {
     dispatch(quiz.actions.goToNextQuestion())
   }
+  // eslint-disable-next-line max-len
+  const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
+
+  const changeColorBtn = (currentQuestionIndex) => {
+    if (!answer) {
+      return '#000'
+    } else {
+      if (question.correctAnswerIndex === currentQuestionIndex) {
+        return '#6DD627'
+      }
+      return '#FF6242'
+    }
+  }
 
   const onAnswerSubmit = (id, index) => {
     dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }));
@@ -54,7 +67,7 @@ export const CurrentQuestion = () => {
           <StyledQuestionText>{question.id} Question: {question.questionText}</StyledQuestionText>
           <div className="answerSection">
             {question.options.map((option, index) => (
-              <StartButton button key={index} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</StartButton>
+              <StartButton button key={index} border={changeColorBtn(index)} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</StartButton>
             ))}
           </div>
         </QuestionsContainer>
