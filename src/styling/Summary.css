@@ -20,14 +20,12 @@
 }
 
 .summaryTitle {
-    font-family: 'Space Grotesk', sans-serif;
     font-size: 60px;
     font-weight: 900;
     color: #36213E; 
 
 }
 .result {
-    font-family: 'Space Grotesk', sans-serif;
     color: white; 
     margin-top: 10px;
     font-size: 30px;
@@ -37,29 +35,26 @@
     display: flex;
     flex-direction: column;
     margin: 5% 10%;
-    background: rgba(184, 243, 255, 0.68);
+    background: rgba(184, 243, 255, 0.85);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.5px);
     border: 1px solid rgba(184, 243, 255, 0.19);
-    padding-right: 1%; 
-    padding-left: 1%;
+    padding: 5%; 
 }
 
 .question {
-    font-family: 'Space Grotesk', sans-serif;
     font-size: 20px;
+    font-weight: 600;
     color: rgba(43, 23, 50, 1); 
 }
 
 .yourAnswer {
-    font-family: 'Space Grotesk', sans-serif;
-    color: #554971;
+    font-weight: 600;
+    color: rgba(43, 23, 50, 1);
 }
 
 .correctAnswer {
-    font-family: 'Space Grotesk', sans-serif;
-    color: #554971;
+    color: rgba(43, 23, 50, 1);
 }
 
 @media (max-width: 425px) {

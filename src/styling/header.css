@@ -5,7 +5,7 @@
     border: rgb(54, 33, 62) solid 8px;
     border-radius: 25px;
     max-width: 760px;
-    width: 100%;
+    width: 70%;
     background-image: linear-gradient(to bottom right, #63768D, #8AC6D0);
     padding-bottom: 60px;
     margin-bottom: 40px;
@@ -15,7 +15,6 @@
 }
 
 .quizTitle {
-    font-family: 'Space Grotesk', sans-serif;
     font-size: 60px;
     font-weight: 900;
     color: #36213E; 
