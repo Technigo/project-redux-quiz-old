@@ -4,13 +4,13 @@
   font-family: futura-pt, "sans-serif";
   font-weight: 600;
   transition: all 0.2s ease 0s;
-  display: inline-block;
+  /* display: inline-block; */
   padding: 18px 30px;
   border-radius: 50px;
   text-decoration: none;
   font-size: 18px;
   border: 2px solid rgb(10, 37, 255);
-  place-self: flex-start;
+  /* place-self: flex-start; */
   color: rgb(10, 37, 255);
   background: transparent;
   align-self: center;

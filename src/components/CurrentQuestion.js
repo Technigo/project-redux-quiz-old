@@ -8,6 +8,7 @@ import { quiz } from '../reducers/quiz';
 import './CurrentQuestion.css';
 
 export const CurrentQuestion = () => {
+  console.log(quiz);
   const dispatch = useDispatch();
   const [goToNextButton, setGoToNextButton] = useState(false);
   const question = useSelector(
