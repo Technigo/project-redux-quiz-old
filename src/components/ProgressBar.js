@@ -4,6 +4,7 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
+import styled from 'styled-components';
 
 import { useSelector } from 'react-redux';
 
@@ -24,12 +25,21 @@ export const ProgressBar = () => {
     marginBottom: '0.5rem'
   };
   const bar = {
+    display: 'flex',
     height: '100%',
     width: `${percent}%`,
     backgroundColor: '#FAD040',
     borderRadius: '10px 0 0 10px',
-    marginTop: '-1rem'
+    // marginTop: '-1rem',
+    alignItems: 'center',
+    fontFamily: 'Roboto',
+    fontWeight: 'bold',
+    color: '#0078BE'
   };
+  const P = {
+    paddingLeft: '15px'
+  };
+
   return (
     <div style={container}>
       <div
@@ -39,7 +49,7 @@ export const ProgressBar = () => {
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <p>{percent}%</p>
+        <p style={P}>{percent}%</p>
       </div>
     </div>
   );
