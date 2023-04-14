@@ -1,9 +1,10 @@
 .welcome-background {
-  height: 844px;
+  height: 400px;
   background-image: url(../img/technigo.jpg);
   background-size: cover;
-  background-position: center; 
-  background-repeat: no-repeat; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center -550px; /* Move the image up by 50 pixels */
 }
 
 .content {
@@ -14,10 +15,10 @@
   border-style: solid;
 }
 .welcome-text-container h1 {
-  font-family: futura-pt, "sans-serif";
-    font-weight: 900;
-    letter-spacing: -0.01em;
-    color: rgb(0, 24, 164);
+  font-family: futura-pt, 'sans-serif';
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: rgb(0, 24, 164);
 }
 
 button {
@@ -39,10 +40,14 @@ button {
 }
 .welcomeButton {
   /* this is the important stuff 👇 */
-animation: bounce 1s infinite alternate;
+  animation: bounce 1s infinite alternate;
 }
 
 @keyframes bounce {
-    0%   {transform: translateY(0);}
-    100% {transform: translateY(50px);}
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
 }
