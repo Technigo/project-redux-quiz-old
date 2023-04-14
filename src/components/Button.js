@@ -16,8 +16,8 @@ export const StartButton = styled.button`
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
-    margin: 1rem;
-    padding: 1em 1em;
+    margin: 10px;
+    padding: 1.2em 0.8em;
     text-decoration: none;
     text-align: center;
     text-transform: uppercase;
