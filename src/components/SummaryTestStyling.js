@@ -6,9 +6,13 @@ const HeroSummaryContainer = styled.div`
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   object-fit: cover;
   position: relative;
   min-height: 100vh;
+  align-items: center;
+  text-align: center;
+
   @media screen and (max-width: 768px) {
     min-height: 100vh;
   }
@@ -35,6 +39,7 @@ export const StyledTitle = styled.h1`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  margin: 2rem auto 0;
 `
 
 const Title = ({ text }) => {
@@ -44,16 +49,14 @@ const Title = ({ text }) => {
 };
 
 export const AnswerContainer = styled.div`
-    padding: 2rem;
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 1,875rem auto;
     box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 
     0 0 2rem var(--tertiary-bg-color), 0 0 0.8rem var(--tertiary-bg-color), 
     0 0 2.8rem var(--tertiary-bg-color), inset 0 0 1.3rem var(--tertiary-bg-color);
     width: 90%;
-    background-color: rgba(14, 59, 59, 0.8); 
+    margin-top: 4rem;
 `;
 
 export const Question = styled.h2`
@@ -63,21 +66,38 @@ export const Question = styled.h2`
   font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
   font-weight: 100;
-  margin-bottom: 0.625rem;
 `;
 
 export const UserAnswer = styled.p`
   font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
-  margin: 0.625rem 0;
   color: #fff;
 `;
 
 export const CorrectAnswer = styled.p`
   font-family: var(--paragraph-font-family);
   font-size: 1rem;
-  margin: 10px 0;
   color: #fff;
+`;
+
+export const RestartButton = styled.button`
+ cursor: pointer;
+`
+
+export const StyledRestartButton = styled(RestartButton)`
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: #000;
+  border: none;
+  border-radius: 0.25rem;
+
+  &:hover {
+    background-color: #B38728;
+  }
 `;
 
 HeroSummaryContainer.AnswerContainer = AnswerContainer;

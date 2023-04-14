@@ -5,7 +5,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
 import { RestartButton } from './Button'
-import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer } from './SummaryTestStyling';
+import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer, StyledRestartButton } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -42,7 +42,7 @@ export const SummaryTest = () => {
           </HeroSummaryContainer.CorrectAnswer>
         </HeroSummaryContainer.AnswerContainer>
       ))}
-      <RestartButton onClick={handleRestart}>Restart</RestartButton>
+      <StyledRestartButton onClick={handleRestart}>Restart</StyledRestartButton>
     </HeroSummaryContainer>
   )
 };
