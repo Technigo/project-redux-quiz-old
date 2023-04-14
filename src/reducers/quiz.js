@@ -1,30 +1,40 @@
 import { createSlice } from '@reduxjs/toolkit'
+import testImg from '../images/testimg.jpeg';
+/* import question1 from '../images/question1.jpg'; */
+/* import question2 from '../images/question2.jpg'; */
 
 const questions = [
   { id: 1,
+    imgUrl: testImg,
+    /* imgUrl: question1, */
     questionText: 'What does AI stand for?',
     options: ['Automatic Intelligence', 'Artifical Information', 'Automatic information', 'Artificial intelligence'],
-    hint: 'Hint for Q1',
+    hint: 'Artificial > Automatic. Intelligence > Information.',
     correctAnswerIndex: 3 },
   { id: 2,
+    imgUrl: testImg,
+    /* imgUrl: question2, */
     questionText: 'When was the term AI first used?',
     options: ['1956', '1943', '2022', '1997'],
-    hint: 'Hint for Q2',
+    hint: 'Both AI and Tom Hanks were born this year.',
     correctAnswerIndex: 0 },
   { id: 3,
+    imgUrl: testImg,
     questionText: 'What is the name of Google´s AI Chatbot?',
     options: ['Barry', 'Bard', 'Bert', 'Burt'],
-    hint: 'Hint for Q3',
+    hint: 'It is also another term for poet.',
     correctAnswerIndex: 1 },
   { id: 4,
+    imgUrl: testImg,
     questionText: 'Which of the following is an example of AI-technology?',
     options: ['Deep learning', 'Quick learning', 'Shallow learning', 'Heavy learning'],
-    hint: 'Hint for Q4',
+    hint: 'Shares beginning of name with famous Chicago style pizza.',
     correctAnswerIndex: 0 },
   { id: 5,
+    imgUrl: testImg,
     questionText: 'The term "Friendly AI" was introduced by...?',
     options: ['Steve Jobs', 'Alan Turing', 'Marvin Minsky', 'Eliezer Yudkowsky'],
-    hint: 'Hint for Q5',
+    hint: 'Say initials out loud and it almost sounds like AI…',
     correctAnswerIndex: 3 }
 ]
 
