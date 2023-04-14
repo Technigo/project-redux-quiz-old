@@ -48,4 +48,8 @@ const QImg = styled.img`
 width: 300px;
 height: 240px;
 padding: 20px 0;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `
