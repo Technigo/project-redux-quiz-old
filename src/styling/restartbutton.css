@@ -13,5 +13,6 @@
     }
     
     .restart-button:hover {
-        background-color: #8AC6D0;
+        background-color: #554971;
+        color: white;
     }

@@ -10,7 +10,7 @@
     align-items: center;
     border: rgb(54, 33, 62) solid 8px;
     border-radius: 25px;
-    width: 70%;
+    width: 80%;
     background-image: linear-gradient(to bottom right, #63768D, #8AC6D0);
     padding-bottom: 60px;
     margin-bottom: 40px;
@@ -29,17 +29,19 @@
 .result {
     font-family: 'Space Grotesk', sans-serif;
     color: white; 
-    margin-top: -60px;
+    margin-top: 10px;
+    font-size: 30px;
 }
 
 .resultsContainer {
     display: flex;
     flex-direction: column;
     margin: 5% 10%;
-    border: rgb(54, 33, 62) solid 8px;
-    border-radius: 25px;
-    box-shadow: 2px 2px 4px rgba(54, 33, 62, 0.8);;
-    background-color: rgba(255, 255, 255, 0.7);
+    background: rgba(184, 243, 255, 0.68);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(184, 243, 255, 0.19);
     padding-right: 1%; 
     padding-left: 1%;
 }
@@ -58,4 +60,15 @@
 .correctAnswer {
     font-family: 'Space Grotesk', sans-serif;
     color: #554971;
+}
+
+@media (max-width: 425px) {
+
+    .summaryTitle {
+        font-size: 30px;
+    }
+
+    .result {
+        font-size: 20px;
+    }
 }

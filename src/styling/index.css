@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("/images/space-background.jpg"); */
+  background-image: url("https://images.pexels.com/photos/4644812/pexels-photo-4644812.jpeg");
+  background-size: 100% auto;
+  background-size: cover;
 }
 
 code {
