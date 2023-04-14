@@ -23,7 +23,7 @@ const FooterStyle = styled.footer`
     justify-content: center;
     position: absolute;
     bottom: 0;
-    margin-top: 5vh;
+    margin-top: 15vh;
 `;
 
 const CreditStyle = styled.a`
