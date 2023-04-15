@@ -53,7 +53,7 @@ export const ResultContainer = styled.div`
   border: 0.3rem inset;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
   padding: 1rem;
-  margin: 3rem;
+  margin: 0 3rem;
 
   @media screen and (min-width: 1440px) {
     min-height: 80vh;
