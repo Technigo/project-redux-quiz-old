@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-import { OptionButton, HintButton } from './styled_components/buttons.js'
+import { HintButton } from './styled_components/buttons.js'
 import { Progressbar } from './styled_components/progressbar.js';
 import { QuizSummary } from './QuizSummary'
 import Hint from './Hint.js';
@@ -45,6 +45,28 @@ align-items: center;
 justify-content: center;
 width: 100%;
 font-family: "Sarpanch";
+`
+const OptionButton = styled.button`
+width: 90%;
+height: 4rem;
+border-radius: 5px;
+margin-bottom: 1rem;
+background-color: rgb(151,171,169);
+color: white;
+font-family: "Open Sans Semibold";
+font-size: 20px;
+${({ isCorrect }) => isCorrect && css`
+    background-color: #99a771;
+    border: 1px solid white;
+    font-size: 24px;
+    font-weight: bold;
+  `}
+  :disabled {
+    ${({ isCorrect }) => !isCorrect && css`
+    background-color: #834f39;
+    opacity: 0.5;
+    `}
+  }
 `
 
 const ImgQuestion = styled.img`
@@ -106,21 +128,33 @@ export const CurrentQuestion = () => {
   const dispatch = useDispatch();
   const [showHint, setShowHint] = useState(false);
   const [wasClicked, setWasClicked] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [answerCorrect, setAnswerCorrect] = useState(null);
+  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
 
   const quizOver = useSelector((state) => state.quiz.quizOver)
+  console.log(answerCorrect, showCorrectAnswer)
 
   useEffect(() => {
     setShowHint(false);
-    setWasClicked(false)
+    setWasClicked(false);
+    setSelectedAnswer(null);
+    setAnswerCorrect(null);
+    setShowCorrectAnswer(false);
   }, [question]); // Sets state to false every time the question changes
 
   const handleAnswerClick = (answerIndex) => {
+    const isCorrect = question.correctAnswerIndex === answerIndex;
     dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex }));
     // Submit answer to the store
+    setSelectedAnswer(answerIndex);
+    setAnswerCorrect(isCorrect);
     setWasClicked(true);
+    setShowCorrectAnswer(true);
+
     setTimeout(() => {
       dispatch(quiz.actions.goToNextQuestion());
-    }, 100); // Delays the rendering of the next question after a button has been clicked
+    }, 1500); // Delays the rendering of the next question after a button has been clicked
   };
 
   if (quizOver) {
@@ -147,13 +181,16 @@ export const CurrentQuestion = () => {
             <OptionButton
               key={optionText}
               onClick={() => handleAnswerClick(optionIndex)}
-              disabled={wasClicked}>
+              disabled={wasClicked}
+              isCorrect={(selectedAnswer === optionIndex && answerCorrect)
+                || (optionIndex === question.correctAnswerIndex && showCorrectAnswer)}
+              isIncorrect={selectedAnswer === optionIndex && !answerCorrect}>
               {optionText}
             </OptionButton>
           ))}
         </OptionsContainer>
         <HintContainer>
-          <HintButton onClick={handleHintClick}>{showHint}Would you like a hint?</HintButton>
+          <HintButton onClick={handleHintClick}>{showHint ? 'Hide hint' : 'Would you like a hint?'}</HintButton>
           {showHint && <Hint question={question} />}
         </HintContainer>
         <Progressbar totalQuestions={5} />

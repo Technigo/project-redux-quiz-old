@@ -1,16 +1,5 @@
 import styled from 'styled-components';
 
-export const OptionButton = styled.button`
-width: 90%;
-height: 4rem;
-border-radius: 5px;
-margin-bottom: 1rem;
-background-color: rgb(151,171,169);
-color: white;
-font-family: "Open Sans Semibold";
-font-size: 20px;
-`
-
 export const HintButton = styled.button`
 display: block;
 width: fit-content;
