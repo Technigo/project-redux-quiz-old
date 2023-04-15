@@ -8,4 +8,4 @@ We started working in the CurrentQuestion-component changing the questions array
 
 ## View it live
 
-https://javascript-redux-quiz.netlify.app/quiz
+https://javascript-redux-quiz.netlify.app
