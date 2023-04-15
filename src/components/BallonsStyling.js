@@ -1,16 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
-  width: 800px;
-  height: 420px;
+  height: 14.063rem;
   padding: 10px;
   margin: 0 auto;
   position: relative;
 `;
 
 const balloonAnimation1 = keyframes`
-  0% { transform: translate(0, 0) }
-  50% { transform: translate(0, -20px) }
+  0% { transform: translate(0, 0) rotate(0) }
+  50% { transform: translate(0, -20px) rotate(30deg) }
   100% { transform: translate(0, 0) }
 `;
 
@@ -21,21 +20,21 @@ const balloonAnimation2 = keyframes`
 `;
 
 const balloonAnimation3 = keyframes`
-  0% { transform: translate(0, 0) }
-  50% { transform: translate(0, -15px) }
+  0% { transform: translate(0, 0) rotate(0)}
+  50% { transform: translate(0, -15px) rotate(-30deg) }
   100% { transform: translate(0, 0) }
 `;
 
 export const Balloon = styled.div`
-  width: 738px;
+  display: flex;
   margin: 0 auto;
   padding-top: 30px;
   position: relative;
 `;
 
 const BalloonDiv = styled.div`
-  width: 104px;
-  height: 140px;
+  width: 80px;
+  height: 120px;
   background: linear-gradient(
     to right,
     #bf953f,
@@ -46,7 +45,6 @@ const BalloonDiv = styled.div`
   );
   border-radius: 80%;
   margin: 0 auto;
-  position: absolute;
   padding: 10px;
   box-shadow: inset 17px 7px 10px #b38728;
   transform-origin: bottom center;
@@ -60,6 +58,21 @@ const BalloonDiv = styled.div`
     font-size: 1em;
     transform: translateX(-50%);
   }
+
+   @media screen and (min-width: 1440px) {
+        width: 104px;
+        height: 140px;
+  }
+`;
+
+export const BalloonText = styled.p`
+  display: flex;
+  font-size: 3.8em;
+  color: #112E2E;
+  font-family: var(--paragraph-font-family);
+  align-items: center;
+  justify-content: center;
+
 `;
 
 export const BalloonDiv1 = styled(BalloonDiv)`

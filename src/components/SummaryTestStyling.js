@@ -16,15 +16,6 @@ const HeroSummaryContainer = styled.div`
   @media screen and (max-width: 768px) {
     min-height: 100vh;
   }
-  @media screen and (min-width: 1440px) {
-      min-height: 100vh;
-  }
-  @media screen and (min-width: 1632px) {
-      min-height: 100vh;
-  }
-  @media screen and (max-width: 1024px) {
-      min-height: 100vh;
-  }
 `;
 
 export const StyledTitle = styled.h1`
@@ -47,9 +38,11 @@ const Title = ({ text }) => {
 
 export const CorrectAnswerContainer = styled.div`
   display: flex;
+  margin-top: 2rem;
 `
 
 export const StyledCorrectAnswer = styled.p`
+  display: flex;
   color: #fff;
   font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
@@ -57,7 +50,14 @@ export const StyledCorrectAnswer = styled.p`
 
 export const ResultContainer = styled.div`
   background:rgba(13, 42, 42, 0.3);
-  padding: 0 10rem 4rem 10rem;
+  border: 0.3rem inset;
+  border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
+  padding: 1rem 2rem;
+
+  @media screen and (min-width: 1440px) {
+    min-height: 80vh;
+    padding: 0 10rem 4rem 10rem;
+  }
 `;
 
 export const Question = styled.h2`

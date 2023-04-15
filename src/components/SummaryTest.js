@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import React from 'react'
-// import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
 import { HeroSummaryContainer, StyledTitle, Question, UserAnswer,
   CorrectAnswer, StyledRestartButton, ResultContainer, StyledCorrectAnswer, CorrectAnswerContainer } from './SummaryTestStyling';
-// import Balloons from './Balloons'
+import Balloons from './Balloons'
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -25,17 +24,17 @@ export const SummaryTest = () => {
   const percentage = Math.round((correctAnswers / answers.length) * 100);
 
   const handleRestart = () => {
-    dispatch(quiz.resetQuiz());
+    dispatch(quiz.actions.restart());
   };
 
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
-      {/* <Balloons /> */}
-      <CorrectAnswerContainer>
-        <StyledCorrectAnswer>You got {correctAnswers} out of {answers.length} questions right! ({percentage}%)</StyledCorrectAnswer>
-      </CorrectAnswerContainer>
+      <Balloons correctAnswers={correctAnswers} answers={answers} />
       <ResultContainer>
+        <CorrectAnswerContainer>
+          <StyledCorrectAnswer>You got {correctAnswers} out of {answers.length} questions right! ({percentage}%)</StyledCorrectAnswer>
+        </CorrectAnswerContainer>
         {answers.map((answer) => (
           <>
             <HeroSummaryContainer.Question key={answer.question.questionText}>{answer.question.questionText}</HeroSummaryContainer.Question>
