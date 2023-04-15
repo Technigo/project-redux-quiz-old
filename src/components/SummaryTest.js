@@ -4,7 +4,8 @@ import React from 'react'
 // import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
-import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer, CorrectAnswer, StyledRestartButton, ResultContainer } from './SummaryTestStyling';
+import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer,
+  CorrectAnswer, StyledRestartButton, ResultContainer, StyledCorrectAnswer } from './SummaryTestStyling';
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -29,7 +30,7 @@ export const SummaryTest = () => {
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
-      <p>You got {correctAnswers} out of {answers.length} questions right ({percentage}%)</p>
+      <StyledCorrectAnswer>You got {correctAnswers} out of {answers.length} questions right ({percentage}%)</StyledCorrectAnswer>
       <ResultContainer>
         {answers.map((answer) => (
           <HeroSummaryContainer.AnswerContainer key={answer.question.questionText}>

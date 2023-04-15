@@ -48,6 +48,12 @@ const Title = ({ text }) => {
   );
 };
 
+export const StyledCorrectAnswer = styled.p`
+  color: #fff;
+  font-family: var(--paragraph-font-family);
+  font-size: 1.2rem;
+`;
+
 export const ResultContainer = styled.div`
 background:rgba(13, 42, 42, 0.3);
 `;
