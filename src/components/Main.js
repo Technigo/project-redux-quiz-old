@@ -14,51 +14,8 @@ height: 500px;
 display: flex;
 flex-direction: column;
 text-align: center;
-
-z-index: 1;
-  bottom: 10%;
-  left: 10%; 
-  right: 10%;
-  height: 50%;
-  display: flex;
-  animation: myAnim 3s ease 0s 1 normal forwards;
+box-shadow: 0px 5px 10px 0 rgba(89, 52, 96, 0.2), 0 6px 20px 0 rgba(135, 41, 113, 0.19);
 `
-const Gradient = styled.div`
- .gradient {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 255) 0%,
-    rgb(7, 0, 0) 100%
-  );
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    rgb(3, 0, 0) 100%
-  );
-  background: -ms-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    rgb(7, 0, 0) 100%
-  );
-  background: -o-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    rgb(3, 0, 0) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    rgb(17, 0, 0) 100%
-  );
-  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=rgb(13, 1, 1), endColorstr=rgb(0, 0, 0));
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=rgb(25, 49, 49), endColorstr=rgb(7, 0, 0));
-} `
 
 export const Main = () => {
   const [score, setScore] = useState();
@@ -66,7 +23,6 @@ export const Main = () => {
 
   return (
     <QuizWrapper>
-      <Gradient />
       {!showResults && (<CurrentQuestion score={score} setScore={setScore} />)}
       {showResults && (<Results score={score} />)}
     </QuizWrapper>
