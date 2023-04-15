@@ -1,6 +1,10 @@
 import React from 'react';
 import { Container, Balloon, BalloonDiv1, BalloonDiv2, BalloonDiv3, BalloonText } from './BallonsStyling';
 
+// The correctAnswers prop shows a number representing the count of correct answers.
+// The answers prop shows an array of objects containing information about each answer
+// (e.g., whether it was correct or not).
+
 const Balloons = ({ correctAnswers, answers }) => {
   return (
     <Container>
