@@ -33,7 +33,7 @@ export const Timer = ({ countdownRef, setScore, score }) => {
 
   return (
     <CountdownBox>
-      <Title>
+      <Title fontSize="1em">
         <Countdown
           zeroPadTime={2}
           renderer={renderer}

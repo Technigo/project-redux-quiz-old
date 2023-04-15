@@ -9,7 +9,6 @@ export const ButtonContainer = styled.div`
     max-width:600px;
     gap:2rem;
     position:relative;
-    top: 10%;
     color: #000;;
 
     @media (min-width: 768px) {
@@ -32,7 +31,7 @@ export const Button = styled.button`
     background-color: #dfe3f5;
     color:black;
     font-family: 'Open Sans', sans-serif;
-    font-size:1.2rem;
+    font-size:100%;
     font-weight:500;
     cursor: pointer;
 

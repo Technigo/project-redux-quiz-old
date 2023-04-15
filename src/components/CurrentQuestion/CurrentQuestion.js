@@ -55,7 +55,7 @@ export const CurrentQuestion = (props) => {
         <Image src={question.img} alt="img" />
         <ProgressBar />
       </ImgBox>
-      <Title question fontSize="1.4em">Question: {question.questionText}</Title>
+      <Title question fontSize="1em">Question: {question.questionText}</Title>
       <ButtonContainer>
         {question.options.map((answer, index) => {
           return (

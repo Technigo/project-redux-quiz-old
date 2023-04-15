@@ -11,11 +11,11 @@ align-items: center;
 gap:2rem;
 box-sizing:border-box;
 padding:1em;
+font-size:1.2em;
 
 @media (min-width: 1024px) {
 display: flex;
 width: 100vw;
-height: auto;
 
 }
 `
@@ -37,15 +37,13 @@ justify-content:center;
 export const CountdownBox = styled.div`
 border: 7px solid rgba(181, 118, 221, 0.65);
 border-radius:50%;
-padding:10px;
-margin:10px;
+padding:4px;
+margin:5px;
 
 @media (min-width: 1024px) {
 display: flex;
-border: 7px so1id rgba(181, 118, 221, 0.65);
-border-radius: 50%;
-width: 80px;
-height: 80px;
+width: 2em;
+height: 2em;
 }
 `
 export const OptionsImage = styled.img`
