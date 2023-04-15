@@ -1,16 +1,16 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
+The task was to build a quiz game using React, Redux and styled components.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+With the group we started planning how the application would look (pages, resuable styled components etc), visualized it with a sketch and planned the steps of the implementation.
+We first used mob programming approach to create the basic logic using Redux, then worked on separate branches to style the pages and position the components.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed link: https://food-quiz-by-yu-joanna-nora.netlify.app/
 
 ## Image credits
 German Flag - Photo by <a href="https://unsplash.com/@enginakyurt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">engin akyurt</a> on <a href="https://unsplash.com/photos/qQomkOCpkes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
