@@ -5,28 +5,40 @@ import videoBackground from '../images/videoBackground.mp4';
 
 const VideoBackground = styled.video`
   position: absolute;
-  width: 40vw;
+  width: 100%;
   height: 70vh;
   object-fit: cover;
 `;
 
 const BackgroundContainer = styled.div`
   position: relative;
-  width: 40vw;
+  width: 100%;
   height: 100vh;
 `;
 
 const LandingContainer = styled.div`
   position: absolute;
-  top: 75%;
+  top: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40vw;
+  justify-content: center;
+  width: 100%;
 `;
 
 const LandingHeadline = styled.h1`
   color: black;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top:10%;
+
+`;
+
+const LandingText = styled.p`
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
 `;
 
 export const LandingPage = ({ onStart }) => {
@@ -41,10 +53,9 @@ export const LandingPage = ({ onStart }) => {
       </BackgroundContainer>
       <LandingContainer>
         <LandingHeadline>Welcome to the last quiz</LandingHeadline>
-        <p>Test your knowledge about AI</p>
+        <LandingText>Test your knowledge about AI</LandingText>
         <StartButton onClick={onStart}>START QUIZ</StartButton>
       </LandingContainer>
     </>
   );
 };
-

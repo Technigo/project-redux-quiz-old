@@ -79,6 +79,6 @@ font-size: 18px;
 border-radius: 30px;
 border:2px solid black; 
 height: 2rem;
-width: 20%;
+width: 50%;
 cursor: pointer;
 `

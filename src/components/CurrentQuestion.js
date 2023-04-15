@@ -13,7 +13,7 @@ const QuestionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80vw;
+  width: 100%;
   background-color:#7f7f7f ;
 
   @media (min-width: 744px) {
@@ -74,8 +74,8 @@ const ImgQuestion = styled.img`
   position: absolute;
   display: flex;
   flex-direction: column;
-  width: 40vw;
-  height: 40vh;
+  width: 100%;
+  height: 30vh;
   z-index: 1;
 `;
 
@@ -83,6 +83,7 @@ const HintContainer = styled.div`
 width: fit-content;
 background-color: white;
 padding: 1rem;
+margin-top:20px;
 `;
 
 export const CurrentQuestion = ({ onRestart }) => {

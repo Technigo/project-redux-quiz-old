@@ -6,12 +6,12 @@ import { RestartButton } from './styled_components/buttons.js'
 
 const SummaryContainer = styled.div`
   background-color: black;
-  width: 40vw;
+  width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+ padding-top:50%;
+ 
 `;
 
 const SummaryHeadline = styled.h1`
@@ -20,6 +20,7 @@ const SummaryHeadline = styled.h1`
 
 const SummaryText = styled.p`
   color: white;
+  padding:15%;
 `;
 
 export const QuizSummary = ({ onRestart }) => {
