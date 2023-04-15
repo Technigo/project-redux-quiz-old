@@ -42,7 +42,11 @@ const OptionButton = ({ index, option }) => {
         text: 'Great job!'
       });
     } else {
-      swal('Not quite, better luck next time!')
+      swal({
+        icon: 'error',
+        title: 'Not quite :(',
+        text: 'Better luck next time!'
+      });
     }
   }
 
