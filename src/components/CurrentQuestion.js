@@ -38,26 +38,28 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div className="question-section">
-      <h1>Marvel movie-Quiz</h1>
-      <h2>Question:
-        <br />
-        {question.questionText}
-      </h2>
-      <div className="options">
-        {question.options.map((singleOption, index) => (
-          <button
-            className={selectedOption === index ? 'selected' : ''}
-            type="button"
-            onClick={() => onAnswerSelect(index)}>
-            {singleOption}
-          </button>
-        ))}
+    <div className="quiz-section">
+      <div className="question-section">
+        <h1>Marvel movie-Quiz</h1>
+        <h2>Question:
+          <br />
+          {question.questionText}
+        </h2>
+        <div className="options">
+          {question.options.map((singleOption, index) => (
+            <button
+              className={selectedOption === index ? 'selected' : ''}
+              type="button"
+              onClick={() => onAnswerSelect(index)}>
+              {singleOption}
+            </button>
+          ))}
+        </div>
+        <div className="next-button-section">
+          <button className="next-button" type="button" onClick={onButtonClick}>Next</button>
+        </div>
+        <ProgressBar />
       </div>
-      <div className="next-button-section">
-        <button className="next-button" type="button" onClick={onButtonClick}>Next</button>
-      </div>
-      <ProgressBar />
     </div>
   );
 }

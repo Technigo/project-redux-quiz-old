@@ -1,15 +1,33 @@
+@font-face {
+  font-family: 'CC Mighty Mouth Variable';
+  src: url('https://fonts.adobe.com/fonts/cc-mighty-mouth-variable');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'CC Mighty Mouth Variable'; 
+  font-size: 16px;
+  line-height: 1.5; 
+  font-weight: normal; 
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'CC Mighty Mouth Variable', sans-serif;
+}
+
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  height: 100%;
+  background-color: rgb(204, 230, 221);
 }
 
 .question-section {
@@ -18,9 +36,10 @@ code {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  height: 100vh;
+  height: auto;
   padding: 0 20px 0 20px;
   margin: 0;
+  margin-bottom: 20px;
   
 }
 
@@ -44,6 +63,8 @@ code {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 100%;
 
 }
 
