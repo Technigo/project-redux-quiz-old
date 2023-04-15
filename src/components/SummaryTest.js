@@ -4,9 +4,9 @@ import React from 'react'
 // import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
-import { HeroSummaryContainer, StyledTitle, AnswerContainer, Question, UserAnswer,
+import { HeroSummaryContainer, StyledTitle, Question, UserAnswer,
   CorrectAnswer, StyledRestartButton, ResultContainer, StyledCorrectAnswer, CorrectAnswerContainer } from './SummaryTestStyling';
-import Balloons from './Balloons'
+// import Balloons from './Balloons'
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
 // This code creates a React component that displays a summary of quiz answers.
@@ -31,14 +31,14 @@ export const SummaryTest = () => {
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
-      <Balloons />
+      {/* <Balloons /> */}
       <CorrectAnswerContainer>
         <StyledCorrectAnswer>You got {correctAnswers} out of {answers.length} questions right! ({percentage}%)</StyledCorrectAnswer>
       </CorrectAnswerContainer>
       <ResultContainer>
         {answers.map((answer) => (
-          <HeroSummaryContainer.AnswerContainer key={answer.question.questionText}>
-            <HeroSummaryContainer.Question>{answer.question.questionText}</HeroSummaryContainer.Question>
+          <>
+            <HeroSummaryContainer.Question key={answer.question.questionText}>{answer.question.questionText}</HeroSummaryContainer.Question>
             <HeroSummaryContainer.UserAnswer>
               {answer.answer}
               {answer.isCorrect ? ' ✓' : ' ❌'}
@@ -49,7 +49,7 @@ export const SummaryTest = () => {
                 ? answer.question.options[answer.question.correctAnswerIndex]
                 : 'Right answer!'}
             </HeroSummaryContainer.CorrectAnswer>
-          </HeroSummaryContainer.AnswerContainer>
+          </>
         ))}
       </ResultContainer>
       <StyledRestartButton onClick={handleRestart}>Restart</StyledRestartButton>

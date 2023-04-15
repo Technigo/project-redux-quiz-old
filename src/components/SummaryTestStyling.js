@@ -35,10 +35,7 @@ export const StyledTitle = styled.h1`
  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
-  position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 2rem auto 0;
 `
 
@@ -50,10 +47,6 @@ const Title = ({ text }) => {
 
 export const CorrectAnswerContainer = styled.div`
   display: flex;
-  position: absolute;
-  top: calc(40% - 50vh);
-  left: 50%;
-  transform: translateX(-50%);
 `
 
 export const StyledCorrectAnswer = styled.p`
@@ -63,14 +56,8 @@ export const StyledCorrectAnswer = styled.p`
 `;
 
 export const ResultContainer = styled.div`
-background:rgba(13, 42, 42, 0.3);
-`;
-
-export const AnswerContainer = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: 6rem;
+  background:rgba(13, 42, 42, 0.3);
+  padding: 0 10rem 4rem 10rem;
 `;
 
 export const Question = styled.h2`
@@ -80,20 +67,21 @@ export const Question = styled.h2`
   font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
   font-weight: 600;
-  margin: 0;
-  padding: 0 10rem;
+  margin: 3rem 0 0 0;
 `;
 
 export const UserAnswer = styled.p`
   font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
   color: #fff;
+  margin-top: 0;
 `;
 
 export const CorrectAnswer = styled.p`
   font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
   color: #fff;
+  margin: 0;
 `;
 
 export const RestartButton = styled.button`
@@ -116,7 +104,6 @@ export const StyledRestartButton = styled(RestartButton)`
   }
 `;
 
-HeroSummaryContainer.AnswerContainer = AnswerContainer;
 HeroSummaryContainer.Question = Question;
 HeroSummaryContainer.UserAnswer = UserAnswer;
 HeroSummaryContainer.CorrectAnswer = CorrectAnswer;
