@@ -12,43 +12,42 @@ export const ProgressBar = () => {
   const currentQuestion = useSelector(
     (state) => state.quiz.currentQuestionIndex
   );
-  /* Divided by the number of questions, so far hard coded */
-  const correctPercent = (currentQuestion * 100) / 6;
-  let percent = Number(correctPercent).toFixed();
+  const totalQuestions = useSelector(
+    (state) => state.quiz.questions.length
+  );
+    // Calculate percentage progress based on current question index and total number of questions
+    // Subtract 1 from both currentQuestion and totalQuestions because array indices start from 0
+  const percent = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
 
-  /* Styles of container and bar */
   const StyledContainer = styled.div`
-    height: 2rem;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
+   background-color: darkgreen;
+   border: black solid 2px;
   `;
   const StyledBar = styled.div`
     display: flex;
     height: 100%;
-    width: ${percent}%;
+    width: 50px;
     background-color: lightgreen;
-    border-radius: 10px 0 0 10px;
-    align-items: center;
-    font-family: 'Roboto';
+    border-radius: 50px;
     font-weight: bold;
     color: black;
   `;
 
   const PaddedP = styled.p`
-    padding-left: 15px;
+    padding-left: 12px;
   `;
 
   return (
     <StyledContainer>
       <StyledBar
         role="progressbar"
-        aria-valuenow={percent - 10}
+        aria-valuenow={percent}
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <PaddedP>{percent}%</PaddedP>
+        <PaddedP>
+          {currentQuestion}/{totalQuestions}
+        </PaddedP>
       </StyledBar>
     </StyledContainer>
   );

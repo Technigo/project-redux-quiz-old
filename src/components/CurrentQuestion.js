@@ -26,7 +26,6 @@ export const CurrentQuestion = () => {
   }
 
   const onAnswerSelect = (index) => {
-    // dispatch(quiz.actions.submitAnswer({ questionId: question.id, answerIndex: index }))
     setSelectedOption(index);
   }
 
