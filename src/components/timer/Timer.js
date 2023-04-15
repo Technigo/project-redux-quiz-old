@@ -12,7 +12,6 @@ export const Timer = () => {
       setSeconds((prevSeconds) => prevSeconds - 1);
     }, 1000);
 
-    // Check if time is up
     if (seconds === 0) {
       setIsTimeUp(true);
       clearInterval(interval);
@@ -29,10 +28,9 @@ export const Timer = () => {
       <Rotate>
         <Icon src={IconImg} alt="timer-icon" />
       </Rotate>
-      {isTimeUp ? ( // Display "Aw, too slow! Try again" when time is up
+      {isTimeUp ? (
         <div>Aw, too slow! Try again</div>
       ) : (
-        // Display remaining time in minutes and seconds
         <>
           {minutes < 10 ? `0${minutes}` : minutes}:
           {remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}
