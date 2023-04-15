@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Button } from 'react-bootstrap';
+import { quiz } from '../reducers/quiz';
 
 export const QuizSummary = () => {
   const questions = useSelector((state) => state.quiz.questions);
   const answers = useSelector((state) => state.quiz.answers);
+  const dispatch = useDispatch();
+
+  const restartQuiz = () => {
+    dispatch(quiz.actions.restart())
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,6 +30,8 @@ export const QuizSummary = () => {
   return (
     <div>
       <h2>Quiz Summary</h2>
+      <Button onClick={restartQuiz}>Play again
+      </Button>
       <div className="summary">
         <p>Total Correct Answers: {correctAnswers}</p>
         <p>Percentage: {Math.round((correctAnswers / questions.length) * 100)}%</p>

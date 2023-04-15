@@ -1,14 +1,14 @@
 @font-face {
-  font-family: 'CC Mighty Mouth Variable';
-  src: url('https://fonts.adobe.com/fonts/cc-mighty-mouth-variable');
-  font-weight: 400;
+  font-family: 'cc-deadline-variable';
+  src: url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Dancing+Script&family=Inter:wght@200&family=Mynerve&display=swap" rel="stylesheet');
+  
   font-style: normal;
 }
 
-
 body {
   margin: 0;
-  font-family: 'CC Mighty Mouth Variable'; 
+  font-family: 'Chivo Mono', monospace;
+  font-variation-settings: 'wdth' 50, 'slnt' 0;
   font-size: 16px;
   line-height: 1.5; 
   font-weight: normal; 
@@ -18,7 +18,7 @@ body {
 }
 
 code {
-  font-family: 'CC Mighty Mouth Variable', sans-serif;
+  font-family: 'Chivo Mono', sans-serif;
 }
 
 .quiz-section {
@@ -26,7 +26,7 @@ code {
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 100%;
+  
   background-color: rgb(204, 230, 221);
 }
 
@@ -36,8 +36,8 @@ code {
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  height: auto;
-  padding: 0 20px 0 20px;
+  
+  padding: 0 10px 0 10px;
   margin: 0;
   margin-bottom: 20px;
   
@@ -63,8 +63,7 @@ code {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 100%;
-  height: 100%;
+  
 
 }
 
