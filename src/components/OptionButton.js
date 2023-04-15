@@ -39,13 +39,15 @@ const OptionButton = ({ index, option }) => {
       swal({
         icon: 'success',
         title: 'Correct!',
-        text: 'Great job!'
+        text: 'Great job!',
+        button: 'Next question'
       });
     } else {
       swal({
         icon: 'error',
         title: 'Not quite :(',
-        text: 'Better luck next time!'
+        text: 'Better luck next time!',
+        button: 'Next question'
       });
     }
   }
