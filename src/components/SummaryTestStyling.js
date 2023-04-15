@@ -48,6 +48,14 @@ const Title = ({ text }) => {
   );
 };
 
+export const CorrectAnswerContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: calc(40% - 50vh);
+  left: 50%;
+  transform: translateX(-50%);
+`
+
 export const StyledCorrectAnswer = styled.p`
   color: #fff;
   font-family: var(--paragraph-font-family);
@@ -62,10 +70,6 @@ export const AnswerContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 
-    0 0 2rem var(--tertiary-bg-color), 0 0 0.8rem var(--tertiary-bg-color), 
-    0 0 2.8rem var(--tertiary-bg-color), inset 0 0 1.3rem var(--tertiary-bg-color);
-    width: 90%;
     margin-top: 6rem;
 `;
 
@@ -75,7 +79,7 @@ export const Question = styled.h2`
  -webkit-text-fill-color: transparent;
   font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
-  font-weight: 100;
+  font-weight: 600;
   margin: 0;
   padding: 0 10rem;
 `;
