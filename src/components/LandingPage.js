@@ -37,6 +37,7 @@ const LandingHeadline = styled.h1`
 
 const LandingText = styled.p`
   text-align: center;
+  padding:4%;
   width: 70%;
   margin: 0 auto;
 `;
