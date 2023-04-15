@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import swal from 'sweetalert';
 import { quiz } from '../reducers/quiz';
 
 const Option = styled.button`
@@ -35,9 +36,13 @@ const OptionButton = ({ index, option }) => {
   const selectOption = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     if (question.correctAnswerIndex === answerIndex) {
-      window.alert('Correct!')
+      swal({
+        icon: 'success',
+        title: 'Correct!',
+        text: 'Great job!'
+      });
     } else {
-      window.alert('Not quite, better luck next time!')
+      swal('Not quite, better luck next time!')
     }
   }
 
