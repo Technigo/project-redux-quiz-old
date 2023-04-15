@@ -19,20 +19,24 @@ import heroSummaryImage from '../assets/hero-summary-image.jpg';
 export const SummaryTest = () => {
   const dispatch = useDispatch();
   const answers = useSelector((state) => state.quiz.answers);
+  const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
+  const percentage = Math.round((correctAnswers / answers.length) * 100);
 
   const handleRestart = () => {
     dispatch(quiz.resetQuiz());
   };
+
   return (
     <HeroSummaryContainer image={heroSummaryImage}>
       <StyledTitle>Summary</StyledTitle>
+      <p>You got {correctAnswers} out of {answers.length} questions right ({percentage}%)</p>
       <ResultContainer>
         {answers.map((answer) => (
           <HeroSummaryContainer.AnswerContainer key={answer.question.questionText}>
             <HeroSummaryContainer.Question>{answer.question.questionText}</HeroSummaryContainer.Question>
             <HeroSummaryContainer.UserAnswer>
               {answer.answer}
-              {answer.isCorrect ? '✓' : '❌'}
+              {answer.isCorrect ? ' ✓' : ' ❌'}
             </HeroSummaryContainer.UserAnswer>
             <HeroSummaryContainer.CorrectAnswer>
               {answer.isCorrect ? '' : 'Correct answer: '}
