@@ -1,13 +1,10 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Leo Thunell, Eva Sjöholm, and Jennifer Feenstra-Arengård worked as a group to create this quiz using React and Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First we created a Figma design with all of the requirements, questions, and ideas of how the project should work. From there we created the repository and divided the work among the team. Some members worked on branches to create components which were merged later in the project. We focused first on the functionality of the components to create the quiz and then styled it with styled components. 
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://react-redux-quiz-wk10.netlify.app/
