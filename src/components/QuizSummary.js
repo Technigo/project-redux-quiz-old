@@ -4,19 +4,33 @@ import styled from 'styled-components'
 import { quiz } from 'reducers/quiz'
 import { RestartButton } from './styled_components/buttons.js'
 
-const SummaryHeadline = styled.h1`
-color: black;
-`
+const SummaryContainer = styled.div`
+  background-color: black;
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-export const QuizSummary = () => {
+const SummaryHeadline = styled.h1`
+  color: white;
+`;
+
+const SummaryText = styled.p`
+  color: white;
+`;
+
+export const QuizSummary = ({ onRestart }) => {
   const answers = useSelector((state) => state.quiz.answers);
   const dispatch = useDispatch();
 
   const handleRestart = () => {
     dispatch(quiz.actions.restart())
+    onRestart();
   };
-  /* Calculate the number of correct answers : correctAnswers is calculated by
-   filtering the answers array to only include correct answers */
+
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
 
   let message;
@@ -29,10 +43,10 @@ export const QuizSummary = () => {
   }
 
   return (
-    <div>
+    <SummaryContainer>
       <SummaryHeadline>Quiz Summary</SummaryHeadline>
-      <p>{message}</p>
+      <SummaryText>{message}</SummaryText>
       <RestartButton onClick={handleRestart}>Restart Quiz</RestartButton>
-    </div>
-  )
-}
+    </SummaryContainer>
+  );
+};
