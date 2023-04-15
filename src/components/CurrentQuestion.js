@@ -7,6 +7,7 @@ import { quiz } from 'reducers/quiz';
 import { QuizOver } from './QuizOver';
 import { StyledQuestionText } from './StyledTexts';
 import { StartButton } from './Button';
+import { Progress } from './ProgressBar';
 
 export const QuestionsContainer = styled.div`
 background: #FFD93D;
@@ -83,7 +84,9 @@ export const CurrentQuestion = () => {
               <StartButton button key={index} border={changeColorBtn(index)} type="submit" onClick={() => onAnswerSubmit(question.id, index)}>{option}</StartButton>
             ))}
           </div>
+          <Progress />
         </QuestionsContainer>
+
       ) : <QuizOver />}
     </div>
   )
