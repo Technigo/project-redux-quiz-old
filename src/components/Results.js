@@ -21,7 +21,6 @@ const Results = () => {
   }, [answers, correctAnswers]);
   const quizOver = useSelector((store) => store.quiz.quizOver);
   console.log(quizOver)
-  console.log(scorePercent)
 
   const grade = () => {
     return scorePercent >= 90 ? 'You are smashing this bootcamp A!'

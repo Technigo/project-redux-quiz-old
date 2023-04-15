@@ -1,6 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable max-len */
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components';
