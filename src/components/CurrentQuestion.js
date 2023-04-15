@@ -53,12 +53,13 @@ border-radius: 5px;
 margin-bottom: 1rem;
 background-color: rgb(151,171,169);
 color: white;
-font-family: "Open Sans Semibold";
+font-family: "Sarpanch";
 font-size: 20px;
+cursor: pointer;
 ${({ isCorrect }) => isCorrect && css`
     background-color: #99a771;
     border: 1px solid white;
-    font-size: 24px;
+    font-size: 23px;
     font-weight: bold;
   `}
   :disabled {
@@ -82,7 +83,7 @@ const HintContainer = styled.div`
 width: fit-content;
 background-color: white;
 border: 2px solid orange;
-padding: 2rem;
+padding: 1rem;
 font-family: "Sarpanch";
 `;
 

@@ -12,7 +12,7 @@ export const LandingPage = ({ onStart }) => {
       <img src={TestImg} alt="something" />
       <LandingHeadline>Welcome to the last quiz</LandingHeadline>
       <p>Test your knowledge about AI</p>
-      <StartButton onClick={onStart}>Start Quiz</StartButton>
+      <StartButton onClick={onStart}>START QUIZ</StartButton>
     </div>
   );
 };
