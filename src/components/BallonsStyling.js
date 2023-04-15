@@ -2,39 +2,38 @@ import styled, { keyframes } from 'styled-components';
 
 export const Container = styled.div`
   height: 14.063rem;
-  padding: 10px;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 `;
 
 const balloonAnimation1 = keyframes`
   0% { transform: translate(0, 0) rotate(0) }
-  50% { transform: translate(0, -20px) rotate(30deg) }
+  50% { transform: translate(0, -1.25rem) rotate(30deg) }
   100% { transform: translate(0, 0) }
 `;
 
 const balloonAnimation2 = keyframes`
   0% { transform: translate(0, 0) }
-  50% { transform: translate(0, -10px) }
+  50% { transform: translate(0, -0.625rem) }
   100% { transform: translate(0, 0) }
 `;
 
 const balloonAnimation3 = keyframes`
   0% { transform: translate(0, 0) rotate(0)}
-  50% { transform: translate(0, -15px) rotate(-30deg) }
+  50% { transform: translate(0, -0.938rem) rotate(-30deg) }
   100% { transform: translate(0, 0) }
 `;
 
 export const Balloon = styled.div`
   display: flex;
-  margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 1.875rem;
   position: relative;
 `;
 
 const BalloonDiv = styled.div`
-  width: 80px;
-  height: 120px;
+  width: 5rem;
+  height: 7.5rem;
   background: linear-gradient(
     to right,
     #bf953f,
@@ -45,29 +44,29 @@ const BalloonDiv = styled.div`
   );
   border-radius: 80%;
   margin: 0 auto;
-  padding: 10px;
-  box-shadow: inset 17px 7px 10px #b38728;
+  padding: 0.625rem;
+  box-shadow: inset 1.0625rem 0.4375rem 0.625rem #b38728;
   transform-origin: bottom center;
 
   &:before {
     color: #b38728;
     position: absolute;
-    bottom: -11px;
+    bottom: -0.688rem;
     left: 50%;
     content: "▲";
-    font-size: 1em;
+    font-size: 1rem;
     transform: translateX(-50%);
   }
 
    @media screen and (min-width: 1440px) {
-        width: 104px;
-        height: 140px;
+        width: 6.5rem;
+        height: 8.75rem;
   }
 `;
 
 export const BalloonText = styled.p`
   display: flex;
-  font-size: 3.8em;
+  font-size: 3.8rem;
   color: #112E2E;
   font-family: var(--paragraph-font-family);
   align-items: center;
@@ -84,12 +83,12 @@ export const BalloonDiv1 = styled(BalloonDiv)`
     #fbf5b7,
     #aa771c
   );
-  box-shadow: inset 10px 10px 10px rgba(179, 134, 40, 0.9);
+  box-shadow: inset 0.625rem 0.625rem 0.625rem rgba(179, 134, 40, 0.9);
   animation: ${balloonAnimation1} 6s ease-in-out infinite;
 `;
 
 export const BalloonDiv2 = styled(BalloonDiv)`
-  left: 120px;
+  left: 7.5rem;
   background: linear-gradient(
     to right,
     #bf953f,
@@ -98,12 +97,12 @@ export const BalloonDiv2 = styled(BalloonDiv)`
     #fbf5b7,
     #aa771c
   );
-  box-shadow: inset 10px 10px 10px rgba(179, 134, 40, 0.9);
+  box-shadow: inset 0.625rem 0.625rem 0.625rem rgba(179, 134, 40, 0.9);
   animation: ${balloonAnimation2} 6s ease-in-out infinite;
 `;
 
 export const BalloonDiv3 = styled(BalloonDiv)`
-  left: 240px;
+  left: 7.5rem;
   background: linear-gradient(
     to right,
     #bf953f,
@@ -112,6 +111,6 @@ export const BalloonDiv3 = styled(BalloonDiv)`
     #fbf5b7,
     #aa771c
   );
-  box-shadow: inset 10px 10px 10px rgba(179, 134, 40, 0.9);
+  box-shadow: inset 0.625rem 0.625rem 0.625rem rgba(179, 134, 40, 0.9);
   animation: ${balloonAnimation3} 6s ease-in-out infinite;
 `;

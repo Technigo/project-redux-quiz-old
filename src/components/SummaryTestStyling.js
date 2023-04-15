@@ -37,12 +37,12 @@ const Title = ({ text }) => {
 };
 
 export const CorrectAnswerContainer = styled.div`
-  display: flex;
+  /* display: flex; */
   margin-top: 2rem;
+  width: 90%;
 `
 
 export const StyledCorrectAnswer = styled.p`
-  display: flex;
   color: #fff;
   font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
@@ -52,7 +52,8 @@ export const ResultContainer = styled.div`
   background:rgba(13, 42, 42, 0.3);
   border: 0.3rem inset;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
-  padding: 1rem 2rem;
+  padding: 1rem;
+  margin: 3rem;
 
   @media screen and (min-width: 1440px) {
     min-height: 80vh;
