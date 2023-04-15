@@ -18,7 +18,7 @@ const blink = keyframes`
   }
 
   25%, 75% {
-    opacity: 0;
+    opacity: 0.4;
   }
 `;
 
@@ -71,8 +71,7 @@ border: 10px solid orange;
 font-family: "Orbitron";
 font-size: 16px; 
 cursor: pointer;
-animation: ${blink} 2s infinite;
-animation: ${glitch} 0.6s linear infinite;
+animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
 `
 
 export const RestartButton = styled.button`
