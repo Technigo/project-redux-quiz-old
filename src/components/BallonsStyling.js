@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
+// Balloon styling based on the code pen https://codepen.io/wearebold/pen/DWQVQV
+
 export const Container = styled.div`
   height: 14.063rem;
   margin: 0 auto;
