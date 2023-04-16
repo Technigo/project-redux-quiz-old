@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styled, { keyframes } from 'styled-components';
 import backgroundImg from '../assets/startbackground.jpg';
 import noise from '../assets/win1.mp3';
+import { quiz } from '../reducers/quiz';
+import { CurrentQuestion } from './CurrentQuestion';
 
 const StartQuiz = styled.div`
   background-image: url(${backgroundImg});
@@ -13,22 +16,22 @@ const StartQuiz = styled.div`
   height: 100vh;
 `;
 
-// const StartContainer = styled.div`
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   background: rgba(26, 25, 25, 0.3);
-//   border-radius: 5%;
-//   padding: 10%;
-//   text-align: center;
-// `;
+const StartContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 25, 25, 0.3);
+  border-radius: 5%;
+  padding: 10%;
+  text-align: center;
+`;
 
 const Title = styled.h1`
  font-family: var(--headings-font-family);
  font-size: 3rem;
  font-weight: 600;
-//  text-align: center;
+ text-align: center;
  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
@@ -39,7 +42,7 @@ const Title = styled.h1`
   `;
 
 const gradientAnimation = keyframes`
-  5% {color: #eaac8b;}
+  0% {color: #eaac8b;}
   50% {color: #be56b6f;}
   100% {color: #b56576;}
 `;
@@ -49,7 +52,7 @@ const bounceAnimation = keyframes`
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
   100% {
     transform: translateY(0);
@@ -61,7 +64,7 @@ const Text = styled.p`
   color: #1a5e63;
   font-weight: bold;
   margin-bottom: 5rem;
-  background-color: rgba(57, 48, 74, 0.3);
+//   background-color: rgba(57, 48, 74, 0.3);
   animation-name: ${gradientAnimation}, ${bounceAnimation};
   animation-duration: 5s, 1s;
   animation-iteration-count: infinite;
@@ -70,10 +73,11 @@ const Text = styled.p`
 
 const Button = styled.button`
   font-size: 1.5rem;
-  background-color: #b56576;
+//   background-color: #b56576;
+  background-color: rgba(181, 101, 118, 0.5);
   color: #eff1f3;
   border: 3px solid #fed766;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
 
@@ -84,21 +88,26 @@ const Button = styled.button`
   }
 `;
 
-const Start = ({ start }) => {
+const Start = () => {
+  const [isStarted, setIsStarted] = useState(false);
   const soundEffect = new Audio(noise);
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     soundEffect.play();
-    start(true);
+    dispatch(quiz.actions.startQuiz());
+    dispatch(quiz.actions.setCurrentQuestionIndex(0));
+    setIsStarted(true);
   }
 
   return (
     <StartQuiz>
-      {/* <StartContainer> */}
-        <Title>Welcome to the amazing elephants-members trivia quiz</Title>
-        <Text>Try your luck by pressing the button below</Text>
-        <Button onClick={handleClick}>Clickyclick</Button>
-      {/* </StartContainer> */}
+      <StartContainer>
+        <Title>Welcome to the amazing trivia quiz </Title>
+        <Text>Test your knowledge of the quiz-creators</Text>
+        <Button onClick={handleClick}>Click to start</Button>
+        {isStarted && <CurrentQuestion />}
+      </StartContainer>
     </StartQuiz>
   );
 }
