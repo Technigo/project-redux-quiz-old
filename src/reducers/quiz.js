@@ -4,51 +4,66 @@ import testImg from '../images/testimg.jpeg';
 /* import question2 from '../images/question2.jpg'; */
 
 const questions = [
-  { id: 1,
+  {
+    id: 1,
     imgUrl: testImg,
     /* imgUrl: question1, */
     questionText: 'What does AI stand for?',
     options: ['Automatic Intelligence', 'Artifical Information', 'Automatic information', 'Artificial intelligence'],
     hint: 'Artificial > Automatic. Intelligence > Information.',
-    correctAnswerIndex: 3 },
-  { id: 2,
+    correctAnswerIndex: 3
+  },
+  {
+    id: 2,
     imgUrl: testImg,
     /* imgUrl: question2, */
     questionText: 'When was the term AI first used?',
     options: ['1956', '1943', '2022', '1997'],
     hint: 'Both AI and Tom Hanks were born this year.',
-    correctAnswerIndex: 0 },
-  { id: 3,
+    correctAnswerIndex: 0
+  },
+  {
+    id: 3,
     imgUrl: testImg,
     questionText: 'What is the name of Google´s AI Chatbot?',
     options: ['Barry', 'Bard', 'Bert', 'Burt'],
     hint: 'It is also another term for poet.',
-    correctAnswerIndex: 1 },
-  { id: 4,
+    correctAnswerIndex: 1
+  },
+  {
+    id: 4,
     imgUrl: testImg,
     questionText: 'Which of the following is an example of AI-technology?',
     options: ['Deep learning', 'Quick learning', 'Shallow learning', 'Heavy learning'],
     hint: 'Shares beginning of name with famous Chicago style pizza.',
-    correctAnswerIndex: 0 },
-  { id: 5,
+    correctAnswerIndex: 0
+  },
+  {
+    id: 5,
     imgUrl: testImg,
     questionText: 'The term "Friendly AI" was introduced by...?',
     options: ['Steve Jobs', 'Alan Turing', 'Marvin Minsky', 'Eliezer Yudkowsky'],
     hint: 'Say initials out loud and it almost sounds like AI…',
-    correctAnswerIndex: 3 }
+    correctAnswerIndex: 3
+  }
 ]
 
 const initialState = {
   questions,
   answers: [],
   currentQuestionIndex: 0,
-  quizOver: false
+  quizOver: false,
+  hintsUsed: 0
 }
 
 export const quiz = createSlice({
   name: 'quiz',
   initialState,
   reducers: {
+
+    useHint: (state) => {
+      state.hintsUsed += 1
+    },
 
     /**
      * Use this action when a user selects an answer to the question.

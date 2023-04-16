@@ -18,6 +18,7 @@ export const QuizSummary = () => {
   /* Calculate the number of correct answers : correctAnswers is calculated by
    filtering the answers array to only include correct answers */
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
+  const hintUsed = useSelector((state) => state.quiz.hintsUsed)
 
   let message;
   if (correctAnswers === answers.length) {
@@ -32,6 +33,7 @@ export const QuizSummary = () => {
     <div>
       <SummaryHeadline>Quiz Summary</SummaryHeadline>
       <p>{message}</p>
+      <p>Hints used: {hintUsed}</p>
       <RestartButton onClick={handleRestart}>Restart Quiz</RestartButton>
     </div>
   )
