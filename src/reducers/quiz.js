@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const questions = [
-  { id: 1, questionText: 'Which wine is Michelle\'s favorite, red or white?', options: ['Red', 'White', 'Rosé', 'Orange'], correctAnswerIndex: 1 },
+  { id: 1, questionText: 'Which wine is Michelle\'s favorite?', options: ['Red', 'White', 'Rosé', 'Orange'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'Which is Edvard\'s favorite tree?', options: ['Birch', 'Pine', 'Beech', 'Oak'], correctAnswerIndex: 2 },
   { id: 3, questionText: 'Which is Ylva\'s favorite animal?', options: ['Dogs', 'Cats', 'Horses', 'Rabbits'], correctAnswerIndex: 2 },
   { id: 4, questionText: 'Which is Sandra\'s favorite country to visit?', options: ['Scotland', 'Spain', 'Czech Republic', 'Germany'], correctAnswerIndex: 2 },
