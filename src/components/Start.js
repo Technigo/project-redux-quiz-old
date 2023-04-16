@@ -78,11 +78,10 @@ const bounceAnimation = keyframes`
 `;
 
 const Text = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #1a5e63;
   font-weight: bold;
   margin-bottom: 1rem;
-//   background-color: rgba(57, 48, 74, 0.3);
   animation-name: ${gradientAnimation}, ${bounceAnimation};
   animation-duration: 5s, 1s;
   animation-iteration-count: infinite;
@@ -95,14 +94,13 @@ const Text = styled.p`
 
   @media (min-width: 1025px) {
     font-size: 2rem;
-    margin:bottom: 5rem;
+    margin:bottom: 4rem;
   }
 `;
 
 const Button = styled.button`
   font-size: 0.8rem;
-//   background-color: #b56576;
-  background-color: rgba(181, 101, 118, 0.5);
+  background-color: rgba(181, 101, 118, 0.3);
   color: #eff1f3;
   border: 3px solid #fed766;
   padding: 0.4rem 0.8rem;
@@ -142,7 +140,7 @@ const Start = () => {
   return (
     <StartQuiz>
       <StartContainer>
-        <Title>Welcome to the amazing trivia quiz </Title>
+        <Title>Welcome to the amazing trivia quiz!</Title>
         <Text>Test your knowledge of the quiz-creators</Text>
         <Button onClick={handleClick}>Click to start</Button>
         {isStarted && (
