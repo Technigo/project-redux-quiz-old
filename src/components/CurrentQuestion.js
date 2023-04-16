@@ -164,6 +164,7 @@ export const CurrentQuestion = () => {
 
   const handleHintClick = () => {
     setShowHint(!showHint);
+    dispatch(quiz.actions.useHint())
   }
 
   if (!question) {
@@ -191,7 +192,7 @@ export const CurrentQuestion = () => {
           ))}
         </OptionsContainer>
         <HintContainer>
-          <HintButton onClick={handleHintClick}>{showHint ? 'Hide hint' : 'Would you like a hint?'}</HintButton>
+          <HintButton disabled={showHint} onClick={handleHintClick}>{showHint ? 'Time to make a guess' : 'Would you like a hint?'}</HintButton>
           {showHint && <Hint question={question} />}
         </HintContainer>
         <Progressbar totalQuestions={5} />
