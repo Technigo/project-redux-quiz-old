@@ -1,18 +1,19 @@
 /* eslint-disable implicit-arrow-linebreak */
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import { Button, AnswerButton, NextQuestion } from './Button'
-import { SummaryTest } from './SummaryTest';
+import { QuestionTitle, QuestionWrapper, QuestionText, ButtonWrapper } from './CurrentQuestionStyling'
+import { AnswerButton, NextQuestion } from './Button'
+import { SummaryTest } from './SummaryTest'
 
 export const CurrentQuestion = () => {
-  const [disabled, setDisabled] = useState(false);
-
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
   const quizOver = useSelector((state) => state.quiz.quizOver);
+
   const userAnswer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id));
+
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
@@ -23,23 +24,22 @@ export const CurrentQuestion = () => {
   }
 
   return (
-    <div>
-      <h1>Question: {question.questionText}</h1>
-      <div className="options">
+    <QuestionWrapper>
+      <QuestionTitle><h1>{question.questionText}</h1></QuestionTitle>
+      <QuestionText><p>{question.id}/5</p></QuestionText>
+      <ButtonWrapper>
         {question.options.map((item, index) => (
-          <Button
+          <AnswerButton
             key={item}
             item={item}
             index={index}
             questionId={question.id}
             question={question}
             answer={userAnswer}
-            setDisabled={setDisabled}
-            disabled={disabled} />
+            disabled={userAnswer} />
         ))}
-        <AnswerButton />
-        <NextQuestion />
-      </div>
-    </div>
+      </ButtonWrapper>
+      <NextQuestion />
+    </QuestionWrapper>
   )
 }

@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Change these to your own questions!
 const questions = [
   { id: 1, questionText: 'Which wine is Michelle\'s favorite, red or white?', options: ['Red', 'White', 'Rosé', 'Orange'], correctAnswerIndex: 1 },
   { id: 2, questionText: 'Which is Edvard\'s favorite tree?', options: ['Birch', 'Pine', 'Beech', 'Oak'], correctAnswerIndex: 2 },
