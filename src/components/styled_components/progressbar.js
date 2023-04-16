@@ -10,8 +10,8 @@ const MainContainer = styled.div`
 
 element.style {
 }
-@media (min-width: 744px) {
-    width: 35vw;
+@media (min-width: 667px) {
+    width: 50vw;
 }
   `
 

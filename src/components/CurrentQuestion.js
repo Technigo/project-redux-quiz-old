@@ -17,7 +17,7 @@ const QuestionWrapper = styled.div`
   background-color:#7f7f7f ;
 
   @media (min-width: 744px) {
-    width: 40vw;
+    width: 100%;
   }
 `;
 
@@ -36,6 +36,10 @@ const QuestionContainer = styled.div`
   margin-top: 9rem;
   z-index: 2;
   border-radius: 5px;
+
+  @media (min-width: 667px) {
+    width: 50%;
+  }
 `;
 
 const OptionsContainer = styled.div`
@@ -44,7 +48,9 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 100%;
-font-family: "Sarpanch";
+@media (min-width: 667px) {
+    width: 50%;
+  }
 `
 const OptionButton = styled.button`
 width: 90%;
@@ -53,12 +59,13 @@ border-radius: 5px;
 margin-bottom: 1rem;
 background-color:black;
 color: white;
-font-family: "Sarpanch";
+font-family: "Space Mono";
 font-size: 20px;
 cursor: pointer;
 ${({ isCorrect }) => isCorrect && css`
     background-color: #b5cbce;
-    border: 1px solid white;
+    color: black;
+    border: 2px solid white;
     font-size: 23px;
     font-weight: bold;
   `}
@@ -67,6 +74,10 @@ ${({ isCorrect }) => isCorrect && css`
     background-color: black;
     opacity: 0.5;
     `}
+  }
+
+  @media (min-width: 667px) {
+    width: 100%;
   }
 `
 
@@ -154,7 +165,7 @@ export const CurrentQuestion = ({ onRestart }) => {
           ))}
         </OptionsContainer>
         <HintContainer>
-          <HintButton disabled={showHint} onClick={handleHintClick}>{showHint ? 'Time to make a guess' : 'Would you like a hint?'}</HintButton>
+          <HintButton disabled={showHint} onClick={handleHintClick}>{showHint ? 'Time to make a guess ↑' : 'Would you like a hint?'}</HintButton>
           {showHint && <Hint question={question} />}
         </HintContainer>
         <Progressbar totalQuestions={5} />

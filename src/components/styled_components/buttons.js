@@ -7,9 +7,13 @@ margin-left: auto;
 margin-right:auto;
 color: white;
 background-color: black;
-font-family: "Sarpanch";
+font-family: "Space Mono";
 font-size: 16px;
 cursor: pointer;
+
+&:disabled {
+  cursor: default;
+}
 `
 const blink = keyframes`
   0%, 50%, 100% {
@@ -67,8 +71,10 @@ const glitch = keyframes`
 
 export const StartButton = styled.button`
 border: 10px solid #b5cbce;
+border-radius: 30px;
 font-family: "Orbitron";
-font-size: 16px; 
+font-size: 16px;
+margin-bottom: 5%; 
 cursor: pointer;
 animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
 `
@@ -81,4 +87,9 @@ border:2px solid black;
 height: 2rem;
 width: 50%;
 cursor: pointer;
+animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
+
+@media (min-width: 1024px) {
+  width: 25%;
+}
 `

@@ -10,17 +10,43 @@ const SummaryContainer = styled.div`
   height: 100vh;
   text-align: center;
   margin: 0 auto;
- padding-top:50%;
- 
+  padding-top:50%;
+
+  @media (min-width: 667px) {
+    padding-top: 25%;
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: unset;
+  }
 `;
 
 const SummaryHeadline = styled.h1`
   color: white;
+  margin: unset;
+  padding-top: 10%;
+
+  @media (min-width: 667px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
 `;
 
 const SummaryText = styled.p`
   color: white;
   padding:15%;
+
+  @media (min-width: 667px) {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 1024px) {
+  padding: 5%;
+  font-size: 1.8rem;
+}
 `;
 
 export const QuizSummary = ({ onRestart }) => {
@@ -37,18 +63,26 @@ export const QuizSummary = ({ onRestart }) => {
 
   let message;
   if (correctAnswers === answers.length) {
-    message = 'Wow impressive, you got everything right about AI!';
+    message = 'Wow impressive ⭐! You are an AI-genius!';
   } else if (correctAnswers === 0) {
-    message = 'sorry no correct answers, you are doomed!! 🫠'
+    message = 'Sorry no correct answers, you are doomed!! 🫠'
+  } else if (correctAnswers === 1) {
+    message = 'Some more training is needed before you become an AI-genius';
+  } else if (correctAnswers === 2) {
+    message = 'Keep the spirits up and do some more research. You can do it!';
+  } else if (correctAnswers === 3) {
+    message = 'More than half of the answers right, well done!';
   } else {
-    message = `You answered ${correctAnswers} out of ${answers.length} questions correctly.`
+    message = 'Wow, so close this time! Almost a champion!'
   }
 
   return (
     <SummaryContainer>
       <SummaryHeadline>Quiz Summary</SummaryHeadline>
-      <SummaryText>{message}</SummaryText>
-      <p>Hints used: {hintUsed}</p>
+      <SummaryText>{message}
+        <p>You answered {correctAnswers} out of {answers.length} questions correctly.</p>
+        <p>Hints used: {hintUsed}</p>
+      </SummaryText>
       <RestartButton onClick={handleRestart}>Restart Quiz</RestartButton>
     </SummaryContainer>
   );

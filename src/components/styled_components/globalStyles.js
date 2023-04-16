@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
   margin: 0 auto;
-  font-family: "Sarpanch";
+  font-family: "Space Mono";
 }
 
 h1 {
