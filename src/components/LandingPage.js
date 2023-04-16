@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { isMobile } from 'react-device-detect';
 import { StartButton } from './styled_components/buttons';
 import videoBackground from '../images/videoBackground.mp4';
 import Imagebackground from '../images/img-landingpage.jpg'
@@ -91,11 +92,13 @@ export const LandingPage = ({ onStart }) => {
     <>
       <BackgroundContainer>
         <PhoneBackground src={Imagebackground} />
-        <VideoBackground
-          src={videoBackground}
-          autoPlay
-          muted
-          loop />
+        {!isMobile && (
+          <VideoBackground
+            src={videoBackground}
+            autoPlay
+            muted
+            loop />
+        )}
       </BackgroundContainer>
       <LandingContainer>
         <LandingHeadline>Welcome to the Last Quiz</LandingHeadline>
