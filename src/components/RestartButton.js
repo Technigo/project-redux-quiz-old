@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import styled from 'styled-components';
 
-const NextQuestionButton = styled.button`
+const RestartButton = styled.button`
   width: 300px;
   height: 40px;
   font-family: Outfit;
@@ -37,7 +37,7 @@ const NextButton = () => {
 
   return (
     <div>
-      <NextQuestionButton onClick={onButtonClick}>Restart Quiz!</NextQuestionButton>
+      <RestartButton onClick={onButtonClick}>Restart Quiz</RestartButton>
     </div>
   )
 }

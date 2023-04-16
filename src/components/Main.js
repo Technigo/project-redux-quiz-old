@@ -9,7 +9,7 @@ margin: auto;
 background-color: white;
 border-radius: 10px;
 padding: 20px;
-width: 350px;
+width: 325px;
 height: 500px;
 display: flex;
 flex-direction: column;
