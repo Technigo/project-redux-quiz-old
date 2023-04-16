@@ -77,7 +77,7 @@ font-size: 16px;
 margin-bottom: 5%; 
 cursor: pointer;
 animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
-`
+`;
 
 export const RestartButton = styled.button`
 font-family: "Orbitron";
@@ -92,4 +92,4 @@ animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
 @media (min-width: 1024px) {
   width: 25%;
 }
-`
+`;

@@ -10,7 +10,6 @@ const questions = [
   {
     id: 1,
     imgUrl: question1,
-    /* imgUrl: question1, */
     questionText: 'What does AI stand for?',
     options: ['Automatic Intelligence', 'Artifical Information', 'Automatic Information', 'Artificial Intelligence'],
     hint: 'Artificial > Automatic. Intelligence > Information.',
@@ -19,7 +18,6 @@ const questions = [
   {
     id: 2,
     imgUrl: question2,
-    /* imgUrl: question2, */
     questionText: 'When was the term AI first used?',
     options: ['1956', '1943', '2022', '1997'],
     hint: 'Both AI and Tom Hanks were born this year.',
@@ -68,21 +66,6 @@ export const quiz = createSlice({
       state.hintsUsed += 1
     },
 
-    /**
-     * Use this action when a user selects an answer to the question.
-     * The answer will be stored in the `quiz.answers` state with the
-     * following values:
-     *
-     *    questionId  - The id of the question being answered.
-     *    answerIndex - The index of the selected answer from the question's options.
-     *    question    - A copy of the entire question object, to make it easier to show
-     *                  details about the question in your UI.
-     *    answer      - The answer string.
-     *    isCorrect   - true/false if the answer was the one which the question says is correct.
-     *
-     * When dispatching this action, you should pass an object as the payload with `questionId`
-     * and `answerIndex` keys. See the readme for more details.
-     */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
       const question = state.questions.find((q) => q.id === questionId)
@@ -104,13 +87,6 @@ export const quiz = createSlice({
       })
     },
 
-    /**
-     * Use this action to progress the quiz to the next question. If there's
-     * no more questions (the user was on the final question), set `quizOver`
-     * to `true`.
-     *
-     * This action does not require a payload.
-     */
     goToNextQuestion: (state) => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true;
@@ -119,13 +95,6 @@ export const quiz = createSlice({
       }
     },
 
-    /**
-     * Use this action to reset the state to the initial state the page had
-     * when it was loaded. Who doesn't like re-doing a quiz when you know the
-     * answers?!
-     *
-     * This action does not require a payload.
-     */
     restart: () => {
       return initialState
     }
