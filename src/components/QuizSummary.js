@@ -28,9 +28,9 @@ export const QuizSummary = () => {
   }, 0);
 
   return (
-    <div>
+    <div className="summary-section">
       <h2>Quiz Summary</h2>
-      <Button onClick={restartQuiz}>Play again
+      <Button type="button" onClick={restartQuiz}>Play again
       </Button>
       <div className="summary">
         <p>Total Correct Answers: {correctAnswers}</p>
