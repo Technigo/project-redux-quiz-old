@@ -91,9 +91,9 @@ export const RestartButton = styled.button`
 
 export const StyledRestartButton = styled(RestartButton)`
   display: block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1.5rem;
   margin: 1rem;
   background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   color: #112E2E;

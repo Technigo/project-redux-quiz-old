@@ -43,20 +43,20 @@ export const Footer = () => {
 };
 
 const FooterWrapper = styled.footer`
+    background:rgba(1, 25, 16, 0.8); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-top: 45px;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
   `;
 
 const FooterH2 = styled.h2`
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 400;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: var(--second-headings-font-family);
     color: white;
     margin-bottom: 0;
   `;
@@ -67,17 +67,16 @@ const NameWrapper = styled.div`
   `;
 
 const Name = styled.p`
-    font-family: 'Roboto';
-    font-size: 15px;
+    font-family: var(--second-headings-font-family);
+    font-size: 20px;
     margin-bottom: 0;
-    color: #be4145;
+    color: black;
   `;
 const GhLink = styled.img`
     width: 30px;
   `;
 
 const StyledA = styled.a`
-    text-shadow: #FC0 1px 0 10px;
     text-decoration-line: none;
     color: #be4145;
     display: flex;
@@ -85,7 +84,11 @@ const StyledA = styled.a`
     align-items: center;
     justify-content: center;
     &:hover {
-      color: white;
-      filter: brightness(150);
+      text-shadow: 0 0 10px #fed766, 
+             0 0 20px #fed766, 
+             0 0 30px #fed766, 
+             0 0 40px #fed766, 
+             0 0 50px #fed766, 
+             0 0 70px rgba(0,0,0,0.4);
     }
   `;

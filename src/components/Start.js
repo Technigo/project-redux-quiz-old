@@ -61,7 +61,7 @@ const Title = styled.h1`
 
 const gradientAnimation = keyframes`
   0% {color: #eaac8b;}
-  50% {color: #be56b6f;}
+  50% {color: #be56b6;}
   100% {color: #b56576;}
 `;
 
@@ -94,7 +94,7 @@ const Text = styled.p`
 
   @media (min-width: 1025px) {
     font-size: 2rem;
-    margin:bottom: 4rem;
+    margin-bottom: 4rem;
   }
 `;
 
@@ -126,31 +126,34 @@ const Button = styled.button`
 
 const Start = () => {
   const [isStarted, setIsStarted] = useState(false);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  // const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const soundEffect = new Audio(noise);
   const dispatch = useDispatch();
 
   const handleClick = () => {
     soundEffect.play();
-    dispatch(quiz.actions.startQuiz());
-    dispatch(quiz.actions.setCurrentQuestionIndex(0));
+    dispatch(quiz.actions.restart());
+    // dispatch(quiz.actions.setCurrentQuestionIndex(0));
     setIsStarted(true);
   }
 
-  return (
-    <StartQuiz>
-      <StartContainer>
-        <Title>Welcome to the amazing trivia quiz!</Title>
-        <Text>Test your knowledge of the quiz-creators</Text>
-        <Button onClick={handleClick}>Click to start</Button>
-        {isStarted && (
-          <CurrentQuestion
-            currentQuestionIndex={currentQuestionIndex}
-            setCurrentQuestionIndex={setCurrentQuestionIndex} />
-        )}
-      </StartContainer>
-    </StartQuiz>
-  );
+  if (!isStarted) {
+    return (
+      <StartQuiz>
+        <StartContainer>
+          <Title>Welcome to the amazing trivia quiz!</Title>
+          <Text>Test your knowledge of the quiz-creators</Text>
+          <Button onClick={handleClick}>Click to start</Button>
+        </StartContainer>
+      </StartQuiz>
+    )
+  }
+
+  if (isStarted) {
+    return (
+      <CurrentQuestion />
+    )
+  }
 }
 
 export default Start;

@@ -2,9 +2,9 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { AnswerButton, NextQuestion } from './Button'
+import { AnswerButton } from './Button'
 import { QuestionTitle, QuestionWrapper, QuestionText, ButtonWrapper } from './CurrentQuestionStyling'
-import { SummaryTest } from './SummaryTest';
+import { Summary } from './Summary';
 import { ProgressBar } from './ProgressBar';
 
 export const CurrentQuestion = () => {
@@ -17,18 +17,18 @@ export const CurrentQuestion = () => {
   const userAnswer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id));
   if (!question) {
-    return <h1>Oh no! I could not find the current question!</h1>
+    return <h2>Oh no! I could not find the current question!</h2>
   }
   if (quizOver) {
     return (
-      <SummaryTest />
+      <Summary />
     )
   }
 
   return (
     <QuestionWrapper>
-      <QuestionTitle><h1>{question.questionText}</h1></QuestionTitle>
-      <QuestionText><p>{question.id}/5</p></QuestionText>
+      <QuestionTitle>{question.questionText}</QuestionTitle>
+      <QuestionText>{question.id}/5</QuestionText>
       <ButtonWrapper>
         {question.options.map((item, index) => (
           <AnswerButton
@@ -42,7 +42,6 @@ export const CurrentQuestion = () => {
         ))}
       </ButtonWrapper>
       <ProgressBar />
-      <NextQuestion />
     </QuestionWrapper>
   )
 }

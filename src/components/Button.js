@@ -5,22 +5,32 @@ import { useDispatch } from 'react-redux'
 import { quiz } from 'reducers/quiz'
 import styled from 'styled-components'
 
-const StyledButton = styled.button`
+const StyledButtonContainer = styled.div`
+display: flex;
+flex-direction: row;
+padding: 20px;`
 
-padding: 3rem;
-background-color: white;
+const StyledButton = styled.button`
+padding: 2rem;
 margin-bottom: 50px;
+border-radius: 10px;
+font-size: large;
+font-weight: bold;
 
 &.defaultbtn {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: #112E2E;
 }
 &.correct {
-  border: 5px solid green;
+  border: 0.3rem inset;
+  border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
+  background-color: rgb(2, 75, 48);
+  color: white;
 }
 &.wrong {
-  border: 5px solid red;
+  background-color: rgba(77, 0, 19, 0.6);
+  color: white;
 }
-
-
 `
 
 /* We might add this later export const StartButton */
@@ -70,23 +80,25 @@ export const AnswerButton = ({
   };
 
   return (
-    <StyledButton
-      className={
-        !answer
-          ? 'defaultbtn'
-          : index === question.correctAnswerIndex
-            ? 'correct'
-            : 'wrong'
-      }
-      type="submit"
-      disabled={disabled}
-      onClick={() => {
-        onAnswerSubmit(questionId, index);
-        setTimeout(() => nextQuestion(), 2000);
-      }}
-      key={item}>
-      {item}
-    </StyledButton>
+    <StyledButtonContainer>
+      <StyledButton
+        className={
+          !answer
+            ? 'defaultbtn'
+            : index === question.correctAnswerIndex
+              ? 'correct'
+              : 'wrong'
+        }
+        type="submit"
+        disabled={disabled}
+        onClick={() => {
+          onAnswerSubmit(questionId, index);
+          setTimeout(() => nextQuestion(), 2000);
+        }}
+        key={item}>
+        {item}
+      </StyledButton>
+    </StyledButtonContainer>
   );
 }
 

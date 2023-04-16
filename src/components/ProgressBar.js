@@ -9,27 +9,26 @@ export const ProgressBar = () => {
   const currentQuestion = useSelector(
     (state) => state.quiz.currentQuestionIndex
   );
-  const correctPercent = (currentQuestion * 100) / 4;
+  const correctPercent = (currentQuestion * 100) / 5;
   const percent = Number(correctPercent).toFixed();
 
   const StyledContainer = styled.div`
-    height: 1.5rem;
-    width: 100%;
-    background-color: #ffffff;
+    height: 2.5rem;
+    width: 80%;
+    background-color: lightgrey;
     border-radius: 10px;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem auto;
 `;
   const StyledBar = styled.div`
     display: flex;
     height: 100%;
     width: ${percent}%;
-    margin-top: 2%;
-    background-color: #5c1fdf;
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); 
     border-radius: 10px;
     align-items: center;
-    font-family: 'Roboto';
+    font-family: var(--paragraph-font-family);
     font-weight: bold;
-    color: white;
+    color: black;
   `;
   const PaddedP = styled.p`
    padding-left: 15px;

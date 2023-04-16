@@ -4,7 +4,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quiz } from '../reducers/quiz';
 import { HeroSummaryContainer, StyledTitle, Question, UserAnswer,
-  CorrectAnswer, StyledRestartButton, ResultContainer, StyledCorrectAnswer, CorrectAnswerContainer } from './SummaryTestStyling';
+  CorrectAnswer, StyledRestartButton, ResultContainer, StyledCorrectAnswer, CorrectAnswerContainer } from './SummaryStyling';
 import Balloons from './Balloons'
 import heroSummaryImage from '../assets/hero-summary-image.jpg';
 
@@ -17,7 +17,7 @@ import heroSummaryImage from '../assets/hero-summary-image.jpg';
 // The CorrectAnswer component that displays the correct answer if the user's answer is incorrect, or the text "CORRECT" if the user's answer is correct.
 // A summary of the user's score is displayed.
 
-export const SummaryTest = () => {
+export const Summary = () => {
   const dispatch = useDispatch();
   const answers = useSelector((state) => state.quiz.answers);
   const correctAnswers = answers.filter((answer) => answer.isCorrect).length;
