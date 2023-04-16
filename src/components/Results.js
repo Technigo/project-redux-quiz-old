@@ -28,7 +28,7 @@ export const Results = () => {
   const score = answers.filter((a) => a.isCorrect).length
 
   const scoreMessage = () => {
-    if (score < 3) {
+    if (score < 4) {
       return 'Hey, atleast you tried. Back to studying!'
     }
     if (score === 4) {
