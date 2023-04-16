@@ -124,6 +124,7 @@ const GlitchHeading = styled.h1`
   `).join('')}
 `;
 */
+
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const dispatch = useDispatch();
@@ -141,8 +142,8 @@ export const CurrentQuestion = () => {
     setWasClicked(false);
     setSelectedAnswer(null);
     setAnswerCorrect(null);
-    setShowCorrectAnswer(false);
-  }, [question]); // Sets state to false every time the question changes
+    setShowCorrectAnswer(null);
+  }, [question]); // Sets state to false or null every time the question changes
 
   const handleAnswerClick = (answerIndex) => {
     const isCorrect = question.correctAnswerIndex === answerIndex;
@@ -185,6 +186,7 @@ export const CurrentQuestion = () => {
               disabled={wasClicked}
               isCorrect={(selectedAnswer === optionIndex && answerCorrect)
                 || (optionIndex === question.correctAnswerIndex && showCorrectAnswer)}
+              // Shows correct answer after any click, correct or not
               isIncorrect={selectedAnswer === optionIndex && !answerCorrect}>
               {optionText}
             </OptionButton>

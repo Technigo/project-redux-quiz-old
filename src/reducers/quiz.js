@@ -111,6 +111,5 @@ export const quiz = createSlice({
     restart: () => {
       return initialState
     }
-
   }
 })
