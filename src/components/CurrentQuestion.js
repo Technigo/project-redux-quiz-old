@@ -2,10 +2,10 @@
 /* eslint-disable implicit-arrow-linebreak */
 import React from 'react'
 import { useSelector } from 'react-redux'
-// import { quiz } from 'reducers/quiz';
-import { QuestionTitle, QuestionWrapper, QuestionText, ButtonWrapper } from './CurrentQuestionStyling'
 import { AnswerButton, NextQuestion } from './Button'
-import { SummaryTest } from './SummaryTest'
+import { QuestionTitle, QuestionWrapper, QuestionText, ButtonWrapper } from './CurrentQuestionStyling'
+import { SummaryTest } from './SummaryTest';
+import { ProgressBar } from './ProgressBar';
 
 export const CurrentQuestion = () => {
   // const [disabled, setDisabled] = useState(false);
@@ -13,15 +13,9 @@ export const CurrentQuestion = () => {
   const question = useSelector(
     (state) => state.quiz.questions[state.quiz.currentQuestionIndex]
   );
-  // const dispatch = useDispatch();
-  // const answerSubmit = (id, index) => {
-  //   dispatch(quiz.actions.submitAnswer({ questionId: id, answerIndex: index }))
-  // }
   const quizOver = useSelector((state) => state.quiz.quizOver);
-
   const userAnswer = useSelector((state) =>
     state.quiz.answers.find((a) => a.questionId === question.id));
-
   if (!question) {
     return <h1>Oh no! I could not find the current question!</h1>
   }
@@ -47,6 +41,7 @@ export const CurrentQuestion = () => {
             disabled={userAnswer} />
         ))}
       </ButtonWrapper>
+      <ProgressBar />
       <NextQuestion />
     </QuestionWrapper>
   )
