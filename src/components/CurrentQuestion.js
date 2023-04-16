@@ -68,6 +68,8 @@ ${({ isCorrect }) => isCorrect && css`
     border: 2px solid white;
     font-size: 23px;
     font-weight: bold;
+    min-height: 4rem;
+    height: fit-content;
   `}
   :disabled {
     ${({ isCorrect }) => !isCorrect && css`
@@ -88,6 +90,11 @@ const ImgQuestion = styled.img`
   width: 100%;
   height: 30vh;
   z-index: 1;
+
+  @media (min-width: 667px) {
+    object-fit: cover;
+    width:100%
+  }
 `;
 
 const HintContainer = styled.div`

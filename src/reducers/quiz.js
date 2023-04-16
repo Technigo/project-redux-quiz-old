@@ -7,38 +7,48 @@ import question4 from '../images/question4.jpg';
 import question5 from '../images/question5.jpg';
 
 const questions = [
-  { id: 1,
+  {
+    id: 1,
     imgUrl: question1,
     /* imgUrl: question1, */
     questionText: 'What does AI stand for?',
-    options: ['Automatic Intelligence', 'Artifical Information', 'Automatic information', 'Artificial intelligence'],
+    options: ['Automatic Intelligence', 'Artifical Information', 'Automatic Information', 'Artificial Intelligence'],
     hint: 'Artificial > Automatic. Intelligence > Information.',
-    correctAnswerIndex: 3 },
-  { id: 2,
+    correctAnswerIndex: 3
+  },
+  {
+    id: 2,
     imgUrl: question2,
     /* imgUrl: question2, */
     questionText: 'When was the term AI first used?',
     options: ['1956', '1943', '2022', '1997'],
     hint: 'Both AI and Tom Hanks were born this year.',
-    correctAnswerIndex: 0 },
-  { id: 3,
+    correctAnswerIndex: 0
+  },
+  {
+    id: 3,
     imgUrl: question3,
     questionText: 'What is the name of Google´s AI Chatbot?',
     options: ['Barry', 'Bard', 'Bert', 'Burt'],
     hint: 'It is also another term for poet.',
-    correctAnswerIndex: 1 },
-  { id: 4,
+    correctAnswerIndex: 1
+  },
+  {
+    id: 4,
     imgUrl: question4,
     questionText: 'Which of the following is an example of AI-technology?',
     options: ['Deep learning', 'Quick learning', 'Shallow learning', 'Heavy learning'],
     hint: 'Shares beginning of name with famous Chicago style pizza.',
-    correctAnswerIndex: 0 },
-  { id: 5,
+    correctAnswerIndex: 0
+  },
+  {
+    id: 5,
     imgUrl: question5,
     questionText: 'The term "Friendly AI" was introduced by...?',
     options: ['Steve Jobs', 'Alan Turing', 'Marvin Minsky', 'Eliezer Yudkowsky'],
     hint: 'Say initials out loud and it almost sounds like AI…',
-    correctAnswerIndex: 3 }
+    correctAnswerIndex: 3
+  }
 ]
 
 const initialState = {

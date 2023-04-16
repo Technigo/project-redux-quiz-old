@@ -69,7 +69,7 @@ export const QuizSummary = ({ onRestart }) => {
   } else if (correctAnswers === 1) {
     message = 'Some more training is needed before you become an AI-genius';
   } else if (correctAnswers === 2) {
-    message = 'Keep the spirits up and do some more research. You can do it!';
+    message = 'Keep up the spirit and do some more research. You can do it!';
   } else if (correctAnswers === 3) {
     message = 'More than half of the answers right, well done!';
   } else {

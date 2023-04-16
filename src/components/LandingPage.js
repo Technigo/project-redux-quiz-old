@@ -2,16 +2,33 @@ import React from 'react';
 import styled from 'styled-components';
 import { StartButton } from './styled_components/buttons';
 import videoBackground from '../images/videoBackground.mp4';
+import Imagebackground from '../images/img-landingpage.jpg'
 
-const VideoBackground = styled.video`
-  position: absolute;
-  width: 100%;
-  height: 40vh;
+const PhoneBackground = styled.img`
   object-fit: cover;
+  position: absolute;
+  height: 40vh;
+  width: 100%;
 
   @media (min-width: 667px) {
-    height: 70vh;
+    display: none;
   }
+`
+
+const VideoBackground = styled.video`
+  display: none;
+
+@media (min-width: 667px) {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  height: 50vh;
+}
 `;
 
 const BackgroundContainer = styled.div`
@@ -22,7 +39,7 @@ const BackgroundContainer = styled.div`
 
 const LandingContainer = styled.div`
   position: absolute;
-  top: 50%;
+  top: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +47,11 @@ const LandingContainer = styled.div`
   width: 100%;
 
   @media (min-width: 667px) {
-    top: 70%;
+    top: 60%;
+  }
+
+  @media (min-width: 1024px) {
+    top: 40%;
   }
 `;
 
@@ -69,6 +90,7 @@ export const LandingPage = ({ onStart }) => {
   return (
     <>
       <BackgroundContainer>
+        <PhoneBackground src={Imagebackground} />
         <VideoBackground
           src={videoBackground}
           autoPlay
