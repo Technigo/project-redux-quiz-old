@@ -6,20 +6,15 @@ const HeroSummaryContainer = styled.div`
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   object-fit: cover;
   position: relative;
   min-height: 100vh;
+  align-items: center;
+  text-align: center;
+
   @media screen and (max-width: 768px) {
     min-height: 100vh;
-  }
-  @media screen and (min-width: 1440px) {
-      min-height: 100vh;
-  }
-  @media screen and (min-width: 1632px) {
-      min-height: 100vh;
-  }
-  @media screen and (max-width: 1024px) {
-      min-height: 100vh;
   }
 `;
 
@@ -31,10 +26,8 @@ export const StyledTitle = styled.h1`
  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
-  position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 2rem auto 0;
 `
 
 const Title = ({ text }) => {
@@ -43,30 +36,75 @@ const Title = ({ text }) => {
   );
 };
 
-const AnswerContainer = styled.div`
-  margin: 20px 0;
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
+export const CorrectAnswerContainer = styled.div`
+  /* display: flex; */
+  margin-top: 2rem;
+  width: 90%;
+`
+
+export const StyledCorrectAnswer = styled.p`
+  color: #fff;
+  font-family: var(--paragraph-font-family);
+  font-size: 1.2rem;
 `;
 
-const Question = styled.h2`
+export const ResultContainer = styled.div`
+  background:rgba(13, 42, 42, 0.3);
+  border: 0.3rem inset;
+  border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1;
+  padding: 1rem;
+  margin: 0 3rem;
+
+  @media screen and (min-width: 1440px) {
+    min-height: 80vh;
+    padding: 0 10rem 4rem 10rem;
+  }
+`;
+
+export const Question = styled.h2`
+ background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+  font-family: var(--second-headings-font-family);
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin: 3rem 0 0 0;
 `;
 
-const UserAnswer = styled.p`
+export const UserAnswer = styled.p`
+  font-family: var(--paragraph-font-family);
   font-size: 1.2rem;
-  margin: 10px 0;
+  color: #fff;
+  margin-top: 0;
 `;
 
-const CorrectAnswer = styled.p`
+export const CorrectAnswer = styled.p`
+  font-family: var(--paragraph-font-family);
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0;
+`;
+
+export const RestartButton = styled.button`
+ cursor: pointer;
+`
+
+export const StyledRestartButton = styled(RestartButton)`
+  display: block;
   font-size: 1rem;
-  margin: 10px 0;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  color: #112E2E;
+  border: none;
+  border-radius: 1rem;
+
+  &:hover {
+    background-color: #B38728;
+  }
 `;
 
-HeroSummaryContainer.AnswerContainer = AnswerContainer;
 HeroSummaryContainer.Question = Question;
 HeroSummaryContainer.UserAnswer = UserAnswer;
 HeroSummaryContainer.CorrectAnswer = CorrectAnswer;
