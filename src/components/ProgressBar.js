@@ -20,14 +20,14 @@ export const ProgressBar = () => {
   const percent = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
 
   const StyledContainer = styled.div`
-   background-color: darkgreen;
-   border: black solid 2px;
+   
+   
   `;
   const StyledBar = styled.div`
     display: flex;
     height: 100%;
     width: 50px;
-    background-color: lightgreen;
+    background-color: transparent;
     border-radius: 50px;
     font-weight: bold;
     color: black;

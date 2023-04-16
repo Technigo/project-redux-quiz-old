@@ -34,7 +34,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   
   padding: 0 10px 0 10px;
@@ -46,10 +46,15 @@ code {
 .next-button {
   color: rgb(35, 38, 38);
   background-color: rgb(145, 203, 166);
-  border-radius: 10px;
   padding: 15px;
   cursor: pointer;
 }
+
+.next-button:hover {
+  transform: scale(1.1);
+  background-color:beige;
+}
+
 
 .selected {
   color: blue;
@@ -69,8 +74,13 @@ code {
 
 button {
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 0px;
   padding: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(208, 235, 167);
 }
 
 .options {
