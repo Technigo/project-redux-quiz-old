@@ -27,6 +27,10 @@ const RestartButtonStyle = styled.button`
   box-shadow: 0px 15px 20px rgba(229, 46, 177, 0.4);
   color: #fff;
   transform: translateY(-7px);
+}
+
+@media (max-width: 321px) {
+  width: 200px;
 }`
 
 const RestartButton = () => {

@@ -26,6 +26,11 @@ cursor: pointer;
 background-color: #EFEAFE;
 
 }
+
+@media (max-width: 321px) {
+  width: 250px;
+  height: 60px;
+}
 `
 
 const OptionButton = ({ index, option }) => {

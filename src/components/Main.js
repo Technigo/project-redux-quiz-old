@@ -10,11 +10,16 @@ background-color: white;
 border-radius: 10px;
 padding: 20px;
 width: 325px;
-height: 500px;
+height: 450px;
 display: flex;
 flex-direction: column;
 text-align: center;
 box-shadow: 0px 5px 10px 0 rgba(89, 52, 96, 0.2), 0 6px 20px 0 rgba(135, 41, 113, 0.19);
+
+@media (max-width: 321px) {
+  width: 250px;
+  height: 470px;
+}
 `
 
 export const Main = () => {
