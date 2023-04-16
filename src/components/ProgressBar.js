@@ -15,9 +15,8 @@ export const ProgressBar = () => {
   const totalQuestions = useSelector(
     (state) => state.quiz.questions.length
   );
-    // Calculate percentage progress based on current question index and total number of questions
-    // Subtract 1 from both currentQuestion and totalQuestions because array indices start from 0
-  const percent = ((currentQuestion - 1) / (totalQuestions - 1)) * 100;
+
+  const percent = (currentQuestion / (totalQuestions - 1)) * 100;
 
   const StyledContainer = styled.div`
    
@@ -46,7 +45,7 @@ export const ProgressBar = () => {
         aria-valuemax={100}
       >
         <PaddedP>
-          {currentQuestion}/{totalQuestions}
+          {currentQuestion + 1}/{totalQuestions}
         </PaddedP>
       </StyledBar>
     </StyledContainer>
