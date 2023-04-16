@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components'
 import { quiz } from '../reducers/quiz';
-import NextButton from './NextButton';
 import OptionButton from './OptionButton';
 
 const QuestionText = styled.h1`
@@ -33,9 +32,6 @@ export const CurrentQuestion = () => {
               option={option} />
           )
         })}
-      </div>
-      <div>
-        <NextButton />
       </div>
     </div>
   )

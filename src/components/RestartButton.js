@@ -37,7 +37,7 @@ const NextButton = () => {
 
   return (
     <div>
-      <NextQuestionButton onClick={onButtonClick}>Next Question</NextQuestionButton>
+      <NextQuestionButton onClick={onButtonClick}>Restart Quiz!</NextQuestionButton>
     </div>
   )
 }

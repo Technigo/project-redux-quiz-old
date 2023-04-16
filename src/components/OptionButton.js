@@ -33,6 +33,10 @@ const OptionButton = ({ index, option }) => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
   const selectedOption = useSelector((state) => state.quiz.answers[state.quiz.currentQuestionIndex]);
 
+  const nextQuestion = () => {
+    dispatch(quiz.actions.goToNextQuestion())
+  }
+
   const selectOption = (questionId, answerIndex) => {
     dispatch(quiz.actions.submitAnswer({ questionId, answerIndex }))
     if (question.correctAnswerIndex === answerIndex) {
@@ -41,14 +45,14 @@ const OptionButton = ({ index, option }) => {
         title: 'Correct!',
         text: 'Great job!',
         button: 'Next question'
-      });
+      }).then(nextQuestion)
     } else {
       swal({
         icon: 'error',
         title: 'Not quite :(',
         text: 'Better luck next time!',
         button: 'Next question'
-      });
+      }).then(nextQuestion)
     }
   }
 
