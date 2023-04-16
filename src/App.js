@@ -19,17 +19,18 @@ export const App = () => {
     setStartQuiz(true);
   };
 
+  const handleRestart = () => {
+    setStartQuiz(false);
+  };
+
   return (
     <>
       <GlobalStyle />
       <Provider store={store}>
-        {/* When startQuiz is false, it renders the LandingPage component.
-      When startQuiz becomes true (after the user clicks the "Start Quiz" button),
-  the CurrentQuestion component is rendered instead. */}
         {!startQuiz ? (
           <LandingPage onStart={handleStartQuiz} />
         ) : (
-          <CurrentQuestion />
+          <CurrentQuestion onRestart={handleRestart} />
         )}
       </Provider>
     </>

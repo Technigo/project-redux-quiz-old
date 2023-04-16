@@ -5,11 +5,10 @@ display: block;
 width: fit-content;
 margin-left: auto;
 margin-right:auto;
-background-color: black;
 color: white;
-font-family: "Open Sans";
+background-color: black;
+font-family: "Sarpanch";
 font-size: 16px;
-font-style: italic;
 cursor: pointer;
 `
 const blink = keyframes`
@@ -67,7 +66,7 @@ const glitch = keyframes`
 `;
 
 export const StartButton = styled.button`
-border: 10px solid orange;
+border: 10px solid #b5cbce;
 font-family: "Orbitron";
 font-size: 16px; 
 cursor: pointer;
@@ -78,8 +77,8 @@ export const RestartButton = styled.button`
 font-family: "Orbitron";
 font-size: 18px;
 border-radius: 30px;
-border:2px solid yellow; 
+border:2px solid black; 
 height: 2rem;
-width: 20%;
+width: 50%;
 cursor: pointer;
 `
