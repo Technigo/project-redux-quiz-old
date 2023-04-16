@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { CurrentQuestion } from './CurrentQuestion';
 import { Results } from './Results';
 
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const QuizWrapper = styled.section`
+animation: ${fadeIn} 1.2s ease-in;
 margin: auto;
 background-color: white;
 border-radius: 10px;
