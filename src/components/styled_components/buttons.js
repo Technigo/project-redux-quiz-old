@@ -28,7 +28,7 @@ const blink = keyframes`
 const glitch = keyframes`
   0%, 4%, 8%, 16%, 100% {
     transform: none;
-    clip-path: inset(0.2);
+    clip-path: inset(0.3);
     filter: none;
   }
 
@@ -51,8 +51,8 @@ const glitch = keyframes`
   }
 
   12% {
-    transform: skewX(0.5deg) skewY(0.7deg);
-    clip-path: inset(0.5% 0 1.5% 0);
+    transform: skewX(0.9deg) skewY(0.7deg);
+    clip-path: inset(0.5% 0 4.5% 0);
     filter: drop-shadow(0px 0px 4px #ff00ff);
   }
 
@@ -65,6 +65,11 @@ const glitch = keyframes`
   18% {
     transform: none;
     clip-path: inset(0.5% 0 1.5% 0);
+    filter: drop-shadow(0px 0px 4px white);
+  }
+  24% {
+    transform: skewX(0.9deg) skewY(0.3deg) translateX(0.5px) translateY(-0.9px);
+    clip-path: inset(0.5% 0.5% 0.5% 0);
     filter: drop-shadow(0px 0px 4px white);
   }
 `;
@@ -86,6 +91,7 @@ border-radius: 30px;
 border:2px solid black; 
 height: 2rem;
 width: 50%;
+background-color: #b5cbce;
 cursor: pointer;
 animation: ${blink} 5s ease-in-out infinite, ${glitch} 1s linear infinite;
 
