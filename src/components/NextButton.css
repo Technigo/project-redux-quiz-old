@@ -1,0 +1,22 @@
+.nextButton {
+    cursor: pointer;
+    text-underline-offset: 6px;
+    font-family: futura-pt, "sans-serif";
+    font-weight: 600;
+    transition: all 0.2s ease 0s;
+    
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    border: 5px solid #e33fec;
+   
+    color: #f37af1;
+    background: transparent;
+    align-self: center;
+    margin-top:40px;
+    margin-bottom:40px;
+  
+  }
+  
+ 

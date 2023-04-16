@@ -1,0 +1,33 @@
+.resetButton {
+    cursor: pointer;
+    text-underline-offset: 6px;
+    /*font-family: futura-pt, 'sans-serif'; */
+    font-weight: 600;
+    transition: all 0.2s ease 0s;
+    display: inline-block;
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #e878f3;
+    place-self: flex-start;
+    color: rgb(211, 214, 247);
+    background: #f18bda;
+    /* animation: bounce 1s infinite alternate; */
+  }
+  
+  /* @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    } */
+    /* 100% {
+      transform: translateY(50px);
+    }
+  } */
+  .resetButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }

@@ -1,0 +1,22 @@
+.summary {
+    height: 100vh;
+    border-color: #da78e1;
+    border-width: 16px 16px 16px 16px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary h1, h3 {
+    font-family: futura-pt, "sans-serif";
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    color: #d463cb;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.summary p {
+    padding-top: 40px;
+    text-align: center;
+}
