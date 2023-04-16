@@ -16,7 +16,7 @@ const FooterDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: ${fadeIn} 1.2s ease-in;
+    animation: ${fadeIn} 1s ease-in;
 `
 
 export const Footer = () => {

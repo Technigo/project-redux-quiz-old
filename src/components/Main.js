@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 `;
 
 const QuizWrapper = styled.section`
-animation: ${fadeIn} 1.2s ease-in;
+animation: ${fadeIn} 1s ease-in;
 margin: auto;
 background-color: white;
 border-radius: 10px;
