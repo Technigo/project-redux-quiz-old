@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { quiz } from 'reducers/quiz';
@@ -8,12 +9,14 @@ import { QuizSummary } from './QuizSummary';
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
   const [selectedOption, setSelectedOption] = useState(null);
+  const [disabled, setDisabled] = useState(false); // added state for disabling options buttons
   const isQuizOver = useSelector((state) => state.quiz.quizOver);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     setSelectedOption(null);
+    setDisabled(false); // Reset the disabled state when the question changes
   }, [question, isQuizOver]);
 
   const onButtonClick = () => {
@@ -27,6 +30,7 @@ export const CurrentQuestion = () => {
 
   const onAnswerSelect = (index) => {
     setSelectedOption(index);
+    setDisabled(true); // disable options buttons once an answer is selected
   }
 
   if (!question) {
@@ -50,7 +54,17 @@ export const CurrentQuestion = () => {
             <button
               className={selectedOption === index ? 'selected' : ''}
               type="button"
-              onClick={() => onAnswerSelect(index)}>
+              disabled={disabled}
+              onClick={() => onAnswerSelect(index)}
+              style={{
+                border:
+                  selectedOption !== null
+                  && index === question.correctAnswerIndex
+                    ? '4px solid green'
+                    : selectedOption !== null && selectedOption === index
+                      ? '4px solid red'
+                      : 'none'
+              }}>
               {singleOption}
             </button>
           ))}
