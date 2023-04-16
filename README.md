@@ -4,8 +4,11 @@ Five people collaborated on this project to develop a React and Redux-based mult
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We branched out and worked separately on different components during the week.
+After that we mob-programmed and fixed merging and styling together before deploying the project.
+If we had more time we would do more on the styling, and add more questions and functionality.
+
 
 ## View it live
 
-https://w10-react-redux-quiz-group2-elephants.netlify.app/
+https://w10-team-elephants-group2-redux-quiz.netlify.app/
