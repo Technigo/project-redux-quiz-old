@@ -77,9 +77,10 @@ const bounceAnimation = keyframes`
   }
 `;
 
-const Text = styled.p`
+const Text = styled.h2`
   font-size: 1rem;
   color: #1a5e63;
+  font-family: var(--second-headings-font-family);
   font-weight: bold;
   margin-bottom: 1rem;
   animation-name: ${gradientAnimation}, ${bounceAnimation};
