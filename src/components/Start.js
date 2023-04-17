@@ -78,6 +78,7 @@ const bounceAnimation = keyframes`
 `;
 
 const Text = styled.p`
+  font-family: var(--second-headings-font-family);
   font-size: 1rem;
   color: #1a5e63;
   font-weight: bold;
