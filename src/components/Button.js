@@ -93,7 +93,7 @@ export const AnswerButton = ({
         disabled={disabled}
         onClick={() => {
           onAnswerSubmit(questionId, index);
-          setTimeout(() => nextQuestion(), 1500);
+          setTimeout(() => nextQuestion(), 1300);
         }}
         key={item}>
         {item}
