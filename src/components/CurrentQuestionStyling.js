@@ -14,8 +14,6 @@ export const QuestionTitle = styled.h1`
 `
 
 export const QuestionWrapper = styled.div`
-  /* background-color: pink; */
-  /* background-color: rgb(255, 255, 255, 0.3); */
   background-image: url(${BackgroundImage});
   background-size: cover;
   padding: 10px;
