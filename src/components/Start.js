@@ -112,6 +112,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     background-color: #ffeedb;
     color: #553739;
     box-shadow: 0 0 10px 0 #fed766, 0 0 20px 0 #fed766, 0 0 30px 0 #fed766, 0 0 40px 0 #fed766, 0 0 50px 1rem #fed766;
