@@ -112,7 +112,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #ffeedb;
+    background-color: #ffeedb; //This seems to get overridden by the linear gradient in the non-hover state
     color: #553739;
     box-shadow: 0 0 10px 0 #fed766, 0 0 20px 0 #fed766, 0 0 30px 0 #fed766, 0 0 40px 0 #fed766, 0 0 50px 1rem #fed766;
   }
