@@ -101,10 +101,10 @@ const Text = styled.h2`
 
 const Button = styled.button`
   font-size: 0.8rem;
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-  /* background-color: rgba(181, 101, 118, 0.3); */
-  /* color: #eff1f3; */
-  color: #000000;
+  background-color: rgba(181, 101, 118, 0.3);
+  color: #eff1f3; 
+  // background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  // color: #000000;
   font-weight: bold;
   border: 3px solid #fed766;
   padding: 0.4rem 0.8rem;
