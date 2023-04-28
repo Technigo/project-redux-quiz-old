@@ -41,7 +41,7 @@ export const CurrentQuestion = () => {
             <h2> Question {question.id} of 5 </h2>
             <h3> {question.questionText} </h3>
 
-            <div>
+            <div className=" que ">
               {question.options.map((option, index) => {
                 return (
                   <Form
@@ -58,12 +58,14 @@ export const CurrentQuestion = () => {
             </div>
 
             <button
+              className="ok"
               type="button"
               onClick={() => handleOkayButtonClick(question.id, optionIndex)}
               disabled={questionAnswered || answer === null}>
               Ok
             </button>
             <button
+              className="next"
               type="submit"
               onClick={handleNextButton}
               disabled={!questionAnswered || answer === null}>
