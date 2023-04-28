@@ -2,8 +2,26 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1,
+    questionText: 'Vad heter Sköldpadda på spanska? ¿Como se llama 🐢 en castellano? ',
+    options: ['Tortuga', 'Tartaruga', 'tortue', 'Schildkröte'],
+    correctAnswerIndex: 0 },
+  { id: 2,
+    questionText: 'Vad heter hund på spanska? ¿Como se llama 🐶 en castellano? ',
+    options: ['Cao', 'Koira', 'Perro', 'Chien'],
+    correctAnswerIndex: 2 },
+  { id: 3,
+    questionText: 'Vad heter Björn på spanska? ¿Como se llama 🐻 en castellano?',
+    options: ['Orso', 'Bjørn', 'Oso', 'Bear'],
+    correctAnswerIndex: 2 },
+  { id: 4,
+    questionText: 'Vad heter Giraff på spanska? ¿Como se llama 🦒 en castellano? ',
+    options: ['Twiga', 'Giraffe', 'Musumbu', 'Jirafa'],
+    correctAnswerIndex: 3 },
+  { id: 5,
+    questionText: 'Vad heter Sköldpadda på spanska? ¿Como se llama 🦈 en castellano? ',
+    options: ['Kururu', 'Tiburon', 'Hualaihue', 'Haai'],
+    correctAnswerIndex: 1 }
 ]
 
 const initialState = {
