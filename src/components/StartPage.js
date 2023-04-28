@@ -1,18 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
-export const StarterPage = (() => {
+export const StartPage = (() => {
   return (
     <div>
-      <h1>
+      <Link to="/quiz">
+        <button type="button">
+          <h1>
 What heter djuret?
-      </h1>
+          </h1>
 
-      <h2>
+          <h2>
 ¿Como se llama el animal?
-      </h2>
-      <a to="/quiz">
-        <button type="button">Lets go!</button>
-      </a>
+          </h2>
+          <p>Börja spela empieza a jugar</p>
+        </button>
+      </Link>
     </div>
   )
 })

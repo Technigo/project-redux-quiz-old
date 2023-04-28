@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { quiz } from 'reducers/quiz';
 import { CurrentQuestion } from 'components/CurrentQuestion';
 // import { Footer } from 'components/Footer';
-import { StarterPage } from 'components/StartPage';
+import { StartPage } from 'components/StartPage';
 
 const Container = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ export const App = () => {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<StarterPage />} />
+            <Route path="/" element={<StartPage />} />
             <Route path="/quiz" element={<CurrentQuestion />} />
           </Routes>
         </BrowserRouter>
