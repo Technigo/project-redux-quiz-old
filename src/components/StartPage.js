@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { Player } from '@lottiefiles/react-lottie-player';
 
 export const StartPage = (() => {
   return (
@@ -14,8 +15,35 @@ What heter djuret?
 ¿Como se llama el animal?
           </h2>
           <p>Börja spela empieza a jugar</p>
+
+          <Player
+            src="https://assets6.lottiefiles.com/packages/lf20_lb6Gsk.json"
+            className="player"
+            loop
+            autoplay
+            speed={1}
+            style={{
+              width: '100%',
+              height: '10rem',
+              top: 0,
+              left: 0
+            }} />
+
+          <Player
+            src="https://assets6.lottiefiles.com/packages/lf20_lc46h4dr.json"
+            className="player"
+            loop
+            autoplay
+            speed={1}
+            style={{
+              width: '100%',
+              height: '10rem',
+              top: 0,
+              left: 0
+            }} />
         </button>
       </Link>
+
     </div>
   )
 })
