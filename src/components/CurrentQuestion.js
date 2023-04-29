@@ -4,7 +4,7 @@ import { quiz } from 'reducers/quiz';
 // import Confetti from 'react-confetti-explosion';
 import { Summary } from './summary';
 import { ProgressBar } from './progress';
-import { Form } from './form';
+import { Form } from './AnswerButton';
 
 export const CurrentQuestion = () => {
   const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex]);
@@ -41,7 +41,7 @@ export const CurrentQuestion = () => {
             <h2> Question {question.id} of 5 </h2>
             <h3> {question.questionText} </h3>
 
-            <div className=" que ">
+            <div className=" question-container">
               {question.options.map((option, index) => {
                 return (
                   <Form

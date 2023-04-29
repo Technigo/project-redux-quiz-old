@@ -66,8 +66,17 @@ a {
 
 }
 
-.que{
+.question-container{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: solid 5px green;
+
+}
+
+.form{
+  border: solid 2px pink;
+}
+
+button-container{
+  display: grid;
+  justify-content: center;
 }

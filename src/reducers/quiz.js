@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const questions = [
   { id: 1,
     questionText: 'Vad heter Sköldpadda på spanska? ¿Como se llama 🐢 en castellano? ',
-    options: ['Tortuga', 'Tartaruga', 'tortue', 'Schildkröte'],
+    options: ['Tortuga', 'Tartaruga', 'Tortue', 'Schildkröte'],
     correctAnswerIndex: 0 },
   { id: 2,
     questionText: 'Vad heter hund på spanska? ¿Como se llama 🐶 en castellano? ',
@@ -19,7 +19,7 @@ const questions = [
     options: ['Twiga', 'Giraffe', 'Musumbu', 'Jirafa'],
     correctAnswerIndex: 3 },
   { id: 5,
-    questionText: 'Vad heter Sköldpadda på spanska? ¿Como se llama 🦈 en castellano? ',
+    questionText: 'Vad heter Haj på spanska? ¿Como se llama 🦈 en castellano? ',
     options: ['Kururu', 'Tiburon', 'Hualaihue', 'Haai'],
     correctAnswerIndex: 1 }
 ]
