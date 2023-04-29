@@ -1,13 +1,14 @@
 # Redux quiz group project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Five people collaborated on this project to develop a React and Redux-based multiple-choice quiz game. Users answer questions, and the game displays the current or remaining question count. Finally, a summary screen shows the number of correct and incorrect answers.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We branched out and worked separately on different components during the week.
+After that we mob-programmed and fixed merging and styling together before deploying the project.
+If we had more time we would do more on the styling, and add more questions and functionality.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://w10-team-elephants-group2-redux-quiz.netlify.app/
