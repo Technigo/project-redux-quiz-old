@@ -66,7 +66,7 @@ export const CurrentQuestion = () => {
             </button>
             <button
               className="next"
-              type="submit"
+              type="button"
               onClick={handleNextButton}
               disabled={!questionAnswered || answer === null}>
               Next
