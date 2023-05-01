@@ -2,8 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Who set the Olympic record for the 100m dash in 2012?', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'When was Michael Phelps last named male World Swimmer of the Year?', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  { id: 1, questionText: 'What is the output of the following code: console.log("2" + 2);', options: ['4', '"22"', 'TypeError', 'NaN'], correctAnswerIndex: 1 },
+  { id: 2, questionText: 'Which keyword is used to declare a variable in JavaScript? ', options: ['int', 'var', 'let', 'const'], correctAnswerIndex: 1 },
+  { id: 3, questionText: 'Which of the following is NOT a primitive data type in JavaScript? ', options: ['number', 'string', 'boolean', 'object'], correctAnswerIndex: 3 },
+  { id: 4, questionText: 'Which method is used to add an element to the end of an array in JavaScript?', options: ['push()', 'pop()', 'shift()', 'unshift()'], correctAnswerIndex: 0 },
+  { id: 5, questionText: 'What is the output of the following code: console.log(typeof null); ', options: ['"null"', '"undefined"', '"object"', '"string"'], correctAnswerIndex: 2 },
+  { id: 6, questionText: 'Which operator is used to check if two values are equal in JavaScript? ', options: ['==', '===', '=', '!='], correctAnswerIndex: 0 }
 ]
 
 const initialState = {
@@ -52,6 +56,7 @@ export const quiz = createSlice({
         answer: question.options[answerIndex],
         isCorrect: question.correctAnswerIndex === answerIndex
       })
+      console.log(state.answers)
     },
 
     /**
