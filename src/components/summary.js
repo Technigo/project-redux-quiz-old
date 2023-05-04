@@ -9,38 +9,40 @@ export const Summary = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>Hello</h1>
-      <div>
+    <div className="summary">
+      <div className="summaryText">
         {/* This return a fitting text depending on how many correct answers you got */}
-        {(rightAnswers.length <= 2 && <p>You can do better!</p>)
-          || (rightAnswers.length === 3 && <h2>hej</h2>)
-          || (rightAnswers.length >= 4 && <p>Youre a genius!</p>)}
+        {(rightAnswers.length <= 2 && <p>Oj då nästa gång går det bättre!</p>)
+          || (rightAnswers.length === 3 && <h2>Ja det var ju riktigt bra</h2>)
+          || (rightAnswers.length >= 4 && <p>Hurrraaaa vilken stjärna!</p>)}
         {/* This display number of correct answers and number of total answers */}
-        You got {rightAnswers.length} out of {question.length} correct answers!
-        <button
-          type="button"
-          onClick={() => {
-            dispatch(quiz.actions.restart());
-          }}>
-          {' '}
-          Start over{' '}
-        </button>
-        {answer.map((answerr) => {
-          //   This returns the chosen answer and the correct answer to every question
-          return (
-            <div key={answerr.questionId}>
-              <p>
-                <b>Question: {answerr.question.id}</b>
-              </p>
-              <span>
-                <p>Right answer: {answerr.question.options[answerr.question.correctAnswerIndex]}</p>
-              </span>
-              <p>Your answer: {answerr.answer}</p>
-            </div>
-          );
-        })}
+        <p> Du fick {rightAnswers.length} av {question.length}! </p>
       </div>
+      <button
+        className="restartButton"
+        type="button"
+        onClick={() => {
+          dispatch(quiz.actions.restart());
+        }}>
+        {' '}
+          Spela igen{' '}
+      </button>
+      {answer.map((answerr) => {
+        //   This returns the chosen answer and the correct answer to every question
+        return (
+          <div key={answerr.questionId} className="rightAnswers">
+            <p>
+              <b>Question: {answerr.question.id}</b>
+            </p>
+
+            <span>
+              <p>Right answer: {answerr.question.options[answerr.question.correctAnswerIndex]}</p>
+            </span>
+            <p>Your answer: {answerr.answer}</p>
+          </div>
+        );
+      })}
+
     </div>
   );
 };

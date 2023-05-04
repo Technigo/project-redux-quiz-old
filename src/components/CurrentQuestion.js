@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
-// import Confetti from 'react-confetti-explosion';
 import { Summary } from './summary';
 import { ProgressBar } from './progress';
 import { Form } from './AnswerButton';
@@ -13,7 +12,7 @@ export const CurrentQuestion = () => {
   const quizOver = useSelector((state) => state.quiz.quizOver);
 
   const [answer, setAnswer] = useState(null);
-  const [optionIndex, setOptionIndex] = useState(0);
+  const [optionIndex, setOptionIndex] = useState(undefined);
   const [questionAnswered, setQuestionAnswered] = useState(false);
 
   if (!question) {

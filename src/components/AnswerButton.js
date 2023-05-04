@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
 background-color: ${(props) => {
-    if (props.clicked) {
-      return '#28a745';
-    } else if (props.correct) {
+    if (props.clicked && !props.disabled) {
+      return '#DFFF00';
+    } else if (props.clicked && !props.correct && props.disabled) {
+      return '#D2042D';
+    } else if (props.clicked && props.correct && props.disabled) {
       return '#28a745';
     } else {
       return '#FF00FF';
