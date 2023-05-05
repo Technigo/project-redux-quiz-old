@@ -26,7 +26,7 @@ export const Summary = () => {
 
             <div key={answerr.questionId} className="answers">
               <p>
-                <b>Question: {answerr.question.id}</b>
+                <b>Fråga: {answerr.question.id}</b>
               </p>
 
               <span>

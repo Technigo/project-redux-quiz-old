@@ -39,7 +39,7 @@ export const CurrentQuestion = () => {
         <div>
           <div>
             <div className="title-container">
-              <h2> Question {question.id} of 5 </h2>
+              <h2> Fråga {question.id} of 5 </h2>
               <h3> {question.questionText} </h3>
             </div>
 
@@ -77,14 +77,14 @@ export const CurrentQuestion = () => {
               type="button"
               onClick={() => handleOkayButtonClick(question.id, optionIndex)}
               disabled={questionAnswered || answer === null}>
-              Ok
+              Svara
             </button>
             <button
               className="nextBtn"
               type="button"
               onClick={handleNextButton}
               disabled={!questionAnswered || answer === null}>
-              Next
+             Spela Vidare
             </button>
           </div>
           <Progress />

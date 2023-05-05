@@ -66,27 +66,31 @@ text-align: center;
  
 }
 .okBtn{
-  background-color: aqua;
+  background-color: violet;
   border: none;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
   color: black;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 30px;
   margin: 5px;
+  padding: 5px;
+  color: white;
 
 }
 
 .nextBtn{
   
-  background-color: aqua;
+  background-color: violet;
   border: none;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
   color: black;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 30px;
   margin: 5px;
+  padding: 5px;
+  color: white;
 
 }
 
