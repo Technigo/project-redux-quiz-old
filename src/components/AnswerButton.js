@@ -5,11 +5,14 @@ const StyledButton = styled.button`
 background-color: ${(props) => {
     if (props.clicked && !props.disabled) {
       return '#DFFF00';
-    } else if (props.clicked && !props.correct && props.disabled) {
+    }
+    if (props.clicked && !props.correct && props.disabled) {
       return '#D2042D';
-    } else if (props.clicked && props.correct && props.disabled) {
+    }
+    if (props.correctIndex && props.disabled) {
       return '#28a745';
-    } else {
+    }
+    if (!props.clicked) {
       return '#FF00FF';
     }
   }};
@@ -27,7 +30,7 @@ background-color: ${(props) => {
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-  }}
+  }
 `;
 
 export const Form = ({
@@ -61,6 +64,7 @@ export const Form = ({
         clicked={clickedOption}
         correct={correctOption}
         disabled={questionAnswered}
+        correctIndex={index === correctIndex}
         allAnswersSubmitted={allAnswersSubmitted}>
         {`${option}`}
       </StyledButton>
