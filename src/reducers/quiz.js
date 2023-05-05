@@ -21,7 +21,7 @@ const questions = [
     questionText: 'Vad heter Giraff på spanska? ¿Como se llama 🦒 en castellano? ',
     options: ['Twiga', 'Giraffe', 'Musumbu', 'Jirafa'],
     correctAnswerIndex: 3,
-    animation: 'https://assets1.lottiefiles.com/packages/lf20_5lTxAupekw.json' },
+    animation: 'https://assets7.lottiefiles.com/packages/lf20_whwrxcwy.json' },
   { id: 5,
     questionText: 'Vad heter Haj på spanska? ¿Como se llama 🦈 en castellano? ',
     options: ['Kururu', 'Tiburon', 'Hualaihue', 'Haai'],

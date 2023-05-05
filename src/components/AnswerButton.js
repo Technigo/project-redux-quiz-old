@@ -53,6 +53,7 @@ export const Form = ({
 
   return (
     <section className="button-container">
+
       <StyledButton
         id={option}
         type="button"

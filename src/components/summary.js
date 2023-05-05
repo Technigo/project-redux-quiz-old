@@ -18,22 +18,13 @@ export const Summary = () => {
         {/* This display number of correct answers and number of total answers */}
         <p> Du fick {rightAnswers.length} av {question.length}! </p>
       </div>
-      <button
-        className="restartButton"
-        type="button"
-        onClick={() => {
-          dispatch(quiz.actions.restart());
-        }}>
-        {' '}
-          Spela igen{' '}
-      </button>
       <div className="rightAnswers">
         {answer.map((answerr) => {
         //   This returns the chosen answer and the correct answer to every question
 
           return (
 
-            <div key={answerr.questionId}>
+            <div key={answerr.questionId} className="answers">
               <p>
                 <b>Question: {answerr.question.id}</b>
               </p>
@@ -46,7 +37,15 @@ export const Summary = () => {
           );
         })}
       </div>
-
+      <button
+        className="restartButton"
+        type="button"
+        onClick={() => {
+          dispatch(quiz.actions.restart());
+        }}>
+        {' '}
+          Spela igen{' '}
+      </button>
     </div>
   );
 };

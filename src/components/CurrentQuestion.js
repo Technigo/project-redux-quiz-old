@@ -42,15 +42,19 @@ export const CurrentQuestion = () => {
               <h2> Question {question.id} of 5 </h2>
               <h3> {question.questionText} </h3>
             </div>
-            <Player
-              src={question.animation}
-              loop
-              autoplay
-              speed={1}
-              style={{
-                width: '100%',
-                height: '20rem'
-              }} />
+
+            <div className="lottie-container">
+              <Player
+                src={question.animation}
+                loop
+                autoplay
+                speed={1}
+                style={{
+                  width: '100%',
+                  height: '20rem',
+                  margin: '0'
+                }} />
+            </div>
             <div className=" question-container">
               {question.options.map((option, index) => {
                 return (
@@ -66,22 +70,22 @@ export const CurrentQuestion = () => {
                 );
               })}
             </div>
-            <div className="buttons">
-              <button
-                className="okBtn"
-                type="button"
-                onClick={() => handleOkayButtonClick(question.id, optionIndex)}
-                disabled={questionAnswered || answer === null}>
+          </div>
+          <div className="buttons">
+            <button
+              className="okBtn"
+              type="button"
+              onClick={() => handleOkayButtonClick(question.id, optionIndex)}
+              disabled={questionAnswered || answer === null}>
               Ok
-              </button>
-              <button
-                className="nextBtn"
-                type="button"
-                onClick={handleNextButton}
-                disabled={!questionAnswered || answer === null}>
+            </button>
+            <button
+              className="nextBtn"
+              type="button"
+              onClick={handleNextButton}
+              disabled={!questionAnswered || answer === null}>
               Next
-              </button>
-            </div>
+            </button>
           </div>
           <Progress />
         </div>
