@@ -16,7 +16,7 @@ background-color: ${(props) => {
       return '#FF00FF';
     }
   }};
-  color: rgb(255, 255, 255);
+  color:#000000;
   border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -26,9 +26,10 @@ background-color: ${(props) => {
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
   width: 100px;
   height: 100px;
+  font-weight: 500px;
 
   &:disabled {
-    opacity: 0.5;
+    color: #000000;
     cursor: not-allowed;
   }
 `;

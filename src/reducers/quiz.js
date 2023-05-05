@@ -5,23 +5,28 @@ const questions = [
   { id: 1,
     questionText: 'Vad heter Sköldpadda på spanska? ¿Como se llama 🐢 en castellano? ',
     options: ['Tortuga', 'Tartaruga', 'Tortue', 'Schildkröte'],
-    correctAnswerIndex: 0 },
+    correctAnswerIndex: 0,
+    animation: 'https://assets5.lottiefiles.com/packages/lf20_gn57ndas.json' },
   { id: 2,
     questionText: 'Vad heter hund på spanska? ¿Como se llama 🐶 en castellano? ',
     options: ['Cao', 'Koira', 'Perro', 'Chien'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 2,
+    animation: 'https://assets8.lottiefiles.com/packages/lf20_syqnfe7c.json' },
   { id: 3,
     questionText: 'Vad heter Björn på spanska? ¿Como se llama 🐻 en castellano?',
     options: ['Orso', 'Bjørn', 'Oso', 'Bear'],
-    correctAnswerIndex: 2 },
+    correctAnswerIndex: 2,
+    animation: 'https://assets7.lottiefiles.com/packages/lf20_C85CKF0XNW.json' },
   { id: 4,
     questionText: 'Vad heter Giraff på spanska? ¿Como se llama 🦒 en castellano? ',
     options: ['Twiga', 'Giraffe', 'Musumbu', 'Jirafa'],
-    correctAnswerIndex: 3 },
+    correctAnswerIndex: 3,
+    animation: 'https://assets1.lottiefiles.com/packages/lf20_5lTxAupekw.json' },
   { id: 5,
     questionText: 'Vad heter Haj på spanska? ¿Como se llama 🦈 en castellano? ',
     options: ['Kururu', 'Tiburon', 'Hualaihue', 'Haai'],
-    correctAnswerIndex: 1 }
+    correctAnswerIndex: 1,
+    animation: 'https://assets3.lottiefiles.com/animated_stickers/lf_tgs_iphcyng1.json' }
 ]
 
 const initialState = {

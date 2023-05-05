@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { quiz } from 'reducers/quiz';
+import { Player } from '@lottiefiles/react-lottie-player';
 import { Summary } from './summary';
-import { ProgressBar } from './progress';
+import { Progress } from './progress';
 import { Form } from './AnswerButton';
 
 export const CurrentQuestion = () => {
@@ -37,9 +38,19 @@ export const CurrentQuestion = () => {
       ) : (
         <div>
           <div>
-            <h2> Question {question.id} of 5 </h2>
-            <h3> {question.questionText} </h3>
-
+            <div className="title-container">
+              <h2> Question {question.id} of 5 </h2>
+              <h3> {question.questionText} </h3>
+            </div>
+            <Player
+              src={question.animation}
+              loop
+              autoplay
+              speed={1}
+              style={{
+                width: '100%',
+                height: '20rem'
+              }} />
             <div className=" question-container">
               {question.options.map((option, index) => {
                 return (
@@ -55,23 +66,24 @@ export const CurrentQuestion = () => {
                 );
               })}
             </div>
-
-            <button
-              className="ok"
-              type="button"
-              onClick={() => handleOkayButtonClick(question.id, optionIndex)}
-              disabled={questionAnswered || answer === null}>
+            <div className="buttons">
+              <button
+                className="okBtn"
+                type="button"
+                onClick={() => handleOkayButtonClick(question.id, optionIndex)}
+                disabled={questionAnswered || answer === null}>
               Ok
-            </button>
-            <button
-              className="next"
-              type="button"
-              onClick={handleNextButton}
-              disabled={!questionAnswered || answer === null}>
+              </button>
+              <button
+                className="nextBtn"
+                type="button"
+                onClick={handleNextButton}
+                disabled={!questionAnswered || answer === null}>
               Next
-            </button>
+              </button>
+            </div>
           </div>
-          <ProgressBar />
+          <Progress />
         </div>
       )}
     </section>

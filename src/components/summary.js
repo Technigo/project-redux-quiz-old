@@ -13,7 +13,7 @@ export const Summary = () => {
       <div className="summaryText">
         {/* This return a fitting text depending on how many correct answers you got */}
         {(rightAnswers.length <= 2 && <p>Oj då nästa gång går det bättre!</p>)
-          || (rightAnswers.length === 3 && <h2>Ja det var ju riktigt bra</h2>)
+          || (rightAnswers.length === 3 && <h2>Det var ju riktigt bra</h2>)
           || (rightAnswers.length >= 4 && <p>Hurrraaaa vilken stjärna!</p>)}
         {/* This display number of correct answers and number of total answers */}
         <p> Du fick {rightAnswers.length} av {question.length}! </p>
@@ -27,21 +27,25 @@ export const Summary = () => {
         {' '}
           Spela igen{' '}
       </button>
-      {answer.map((answerr) => {
+      <div className="rightAnswers">
+        {answer.map((answerr) => {
         //   This returns the chosen answer and the correct answer to every question
-        return (
-          <div key={answerr.questionId} className="rightAnswers">
-            <p>
-              <b>Question: {answerr.question.id}</b>
-            </p>
 
-            <span>
-              <p>Right answer: {answerr.question.options[answerr.question.correctAnswerIndex]}</p>
-            </span>
-            <p>Your answer: {answerr.answer}</p>
-          </div>
-        );
-      })}
+          return (
+
+            <div key={answerr.questionId}>
+              <p>
+                <b>Question: {answerr.question.id}</b>
+              </p>
+
+              <span>
+                <p>Right answer: {answerr.question.options[answerr.question.correctAnswerIndex]}</p>
+              </span>
+              <p>Your answer: {answerr.answer}</p>
+            </div>
+          );
+        })}
+      </div>
 
     </div>
   );
