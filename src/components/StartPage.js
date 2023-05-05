@@ -4,7 +4,7 @@ import { Player } from '@lottiefiles/react-lottie-player';
 
 export const StartPage = (() => {
   return (
-    <div>
+    <div className="start-container">
       <Link to="/quiz">
         <button type="button" className="StartButton">
           <div className="Text">
