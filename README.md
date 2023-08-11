@@ -10,3 +10,5 @@ As this was my first time working with Redux, I was pretty intimidated. I unders
 ## View it live
 
 https://antonias-reactquiz.netlify.app
+
+<img width="300" alt="reduxquiz-screenshot" src="https://github.com/AntoniaGranit/project-redux-quiz/assets/95037306/92eac172-82a7-4495-8b3a-00b8bc0cbc5a">
