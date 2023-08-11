@@ -1,13 +1,12 @@
-# Redux quiz group project
+# Redux quiz
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The first project familiarizing us with Redux and how to manage global state in React. It was originally a group project but scheduling issues meant that I had to work alone. I took the idea of a quiz about React from my original group, but I coded and styled the quiz myself.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+As this was my first time working with Redux, I was pretty intimidated. I understand the benefits of Redux, especially when you're working with a larger code base, but the logic is still quite abstract. I had some trouble understanding how the amount of correct and incorrect answers is stored in the Redux slice. This was also the first time I used an custom alert package, which I found really fun to style.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://antonias-reactquiz.netlify.app
