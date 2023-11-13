@@ -1,13 +1,102 @@
+@font-face {
+  font-family: 'cc-deadline-variable';
+  src: url('https://fonts.googleapis.com/css2?family=Chivo+Mono&family=Dancing+Script&family=Inter:wght@200&family=Mynerve&display=swap" rel="stylesheet');
+  
+  font-style: normal;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  height: 100%;
+  font-family: 'Chivo Mono', monospace;
+  font-variation-settings: 'wdth' 50, 'slnt' 0;
+  font-size: 16px;
+  line-height: 1.5; 
+  font-weight: normal; 
+  color: black;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: beige;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Chivo Mono', sans-serif;
+}
+
+.quiz-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 20px;
+  background-color: rgb(204, 230, 221);
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px 0 10px;
+  margin: 0;
+  
+}
+
+.next-button {
+  color: rgb(35, 38, 38);
+  background-color: rgb(145, 203, 166);
+  padding: 15px;
+  cursor: pointer;
+}
+
+.next-button:hover {
+  transform: scale(1.1);
+  background-color:beige;
+}
+
+
+.selected {
+  color: blue;
+  background-color: rgb(168, 226, 226);
+  cursor: pointer;
+}
+
+.background {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+}
+
+button {
+  cursor: pointer;
+  border-radius: 0px;
+  padding: 10px;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: rgb(208, 235, 167);
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1vh;
+  margin: 10px;
+}
+
+.summary-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: beige;
+
 }
